@@ -33,6 +33,51 @@
   * [How does the Staking Pool work?](protocol/pool-cover/how-does-the-insurance-pool-work.md)
   * [How to deposit and withdraw stake?](protocol/pool-cover/how-to-deposit-and-withdraw-stake.md)
 
+## API
+
+* General
+  * [Globals](api/general/MapleGlobals.md)
+  * [Treasury](api/general/MapleTreasury.md)
+  * [MPL Rewards](api/general/MplRewards.md)
+  * [MPL Rewards Factory](api/general/MplRewardsFactory.md)
+* Calculators
+  * [Calculator](api/calculators/Calc.md)
+  * [Late Fee Calculator](api/calculators/LateFeeCalc.md)
+  * [Premium Calculator](api/calculators/PremiumCalc.md)
+  * [Repayment Calculator](api/calculators/RepaymentCalc.md)
+* Funds Distribution Tokens (FDTs)
+  * [Basic FDT](api/fdts/BasicFDT.md)
+  * [Extended FDT](api/fdts/ExtendedFDT.md)
+  * [Loan FDT](api/fdts/LoanFDT.md)
+  * [Pool FDT](api/fdts/PoolFDT.md)
+  * [Stake Locker FDT](api/fdts/StakeLockerFDT.md)
+* Loans
+  * [Loan](api/loans/Loan.md)
+  * [LoanFactory](api/loans/LoanFactory.md)
+  * [LoanLib](api/loans/LoanLib.md)
+* Lockers
+  * [Collateral Locker](api/lockers/CollateralLocker.md)
+  * [Collateral Locker Factory](api/lockers/CollateralLockerFactory.md)
+  * [Debt Locker](api/lockers/DebtLocker.md)
+  * [Debt Locker Factory](api/lockers/DebtLockerFactory.md)
+  * [Funding Locker](api/lockers/FundingLocker.md)
+  * [Funding Locker Factory](api/lockers/FundingLockerFactory.md)
+  * [Liquidity Locker](api/lockers/LiquidityLocker.md)
+  * [Liquidity Locker Factory](api/lockers/LiquidityLockerFactory.md)
+  * [Stake Locker](api/lockers/StakeLocker.md)
+  * [Stake Locker Factory](api/lockers/StakeLockerFactory.md)
+  * [Sub Factory](api/lockers/SubFactory.md)
+* Oracles
+  * [Chainlink Oracle](api/oracles/ChainlinkOracle.md)
+  * [Oracle](api/oracles/Oracle.md)
+  * [USD Oracle](api/oracles/UsdOracle.md)
+* Pools
+  * [Pool](api/pools/Pool.md)
+  * [PoolFactory](api/pools/PoolFactory.md)
+  * [PoolLib](api/pools/PoolLib.md)
+* Utils
+  * [Pool](api/utils/Util.md)
+
 ## Archive - LBP <a id="maple-lbp"></a>
 
 ---
