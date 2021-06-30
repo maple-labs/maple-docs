@@ -19,9 +19,9 @@ Returns the constant USD price.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `int256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `int256` | `int256` | 
 
 
 

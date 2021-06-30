@@ -19,9 +19,9 @@ The type of the factory (i.e FactoryType::LIQUIDITY_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### isLocker 
@@ -43,9 +43,9 @@ The type of the factory (i.e FactoryType::LIQUIDITY_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;.
 
 
 ### newLocker 
@@ -67,9 +67,9 @@ Instantiates a LiquidityLocker contract.It emits a &#x60;LiquidityLockerCreated&
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `liquidityLocker` | `address` | The address of the instantiated LiquidityLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `liquidityLocker` | `address` | `address` | The address of the instantiated LiquidityLocker.
 
 
 ### owner (state variable)
@@ -91,9 +91,9 @@ Instantiates a LiquidityLocker contract.It emits a &#x60;LiquidityLockerCreated&
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;.
 
 
 

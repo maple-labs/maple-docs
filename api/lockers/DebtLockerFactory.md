@@ -19,9 +19,9 @@ The type of the factory (i.e FactoryType::DEBT_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### isLocker (state variable)
@@ -43,9 +43,9 @@ The type of the factory (i.e FactoryType::DEBT_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;debtLocker&#x60; is a DebtLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;debtLocker&#x60; is a DebtLocker.
 
 
 ### newLocker 
@@ -67,9 +67,9 @@ Instantiates a DebtLocker. It emits a &#x60;DebtLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `debtLocker` | `address` | The address of the instantiated DebtLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `debtLocker` | `address` | `address` | The address of the instantiated DebtLocker.
 
 
 ### owner (state variable)
@@ -91,9 +91,9 @@ Instantiates a DebtLocker. It emits a &#x60;DebtLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the owner of DebtLocker at &#x60;debtLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the owner of DebtLocker at &#x60;debtLocker&#x60;.
 
 
 

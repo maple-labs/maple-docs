@@ -19,9 +19,9 @@ LoanLib is a library of utility functions used by Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### canTriggerDefault 
@@ -51,9 +51,9 @@ Returns if a default can be triggered.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether a default can be triggered.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether a default can be triggered.
 
 
 ### collateralRequiredForDrawdown 
@@ -83,9 +83,9 @@ Calculates collateral required to drawdown amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of Collateral Asset required to post in CollateralLocker for given drawdown amount.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of Collateral Asset required to post in CollateralLocker for given drawdown amount.
 
 
 ### getFullPayment 
@@ -115,11 +115,11 @@ Returns information on full payment amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `total` | `uint256` |           The Principal + Interest for the full payment.
-| 1 | `principal` | `uint256` |       The entitled principal amount needed to be paid in the full payment.
-| 2 | `interest` | `uint256` |        The entitled interest amount needed to be paid in the full payment.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `total` | `uint256` | `uint256` |           The Principal + Interest for the full payment.
+| 1 | `principal` | `uint256` | `uint256` |       The entitled principal amount needed to be paid in the full payment.
+| 2 | `interest` | `uint256` | `uint256` |        The entitled interest amount needed to be paid in the full payment.
 
 
 ### getNextPayment 
@@ -149,13 +149,13 @@ Returns information on next payment amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `total` | `uint256` |           The entitled total amount needed to be paid in the next payment (Principal + Interest only when the next payment is last payment of the Loan).
-| 1 | `principal` | `uint256` |       The entitled principal amount needed to be paid in the next payment.
-| 2 | `interest` | `uint256` |        The entitled interest amount needed to be paid in the next payment.
-| 3 | `_nextPaymentDue` | `uint256` | The payment due date.
-| 4 | `paymentLate` | `bool` |     Whether payment is late.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `total` | `uint256` | `uint256` |           The entitled total amount needed to be paid in the next payment (Principal + Interest only when the next payment is last payment of the Loan).
+| 1 | `principal` | `uint256` | `uint256` |       The entitled principal amount needed to be paid in the next payment.
+| 2 | `interest` | `uint256` | `uint256` |        The entitled interest amount needed to be paid in the next payment.
+| 3 | `_nextPaymentDue` | `uint256` | `uint256` | The payment due date.
+| 4 | `paymentLate` | `bool` | `bool` |     Whether payment is late.
 
 
 ### loanSanityChecks 

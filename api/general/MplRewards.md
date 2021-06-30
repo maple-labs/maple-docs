@@ -45,9 +45,9 @@ MplRewards Synthetix farming contract fork for liquidity mining.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The balance of &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The balance of &#x60;account&#x60;.
 
 
 ### earned 
@@ -69,9 +69,9 @@ MplRewards Synthetix farming contract fork for liquidity mining.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The rewards earned of &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The rewards earned of &#x60;account&#x60;.
 
 
 ### exit 
@@ -110,9 +110,9 @@ It emits a &#x60;RewardPaid&#x60; event if any rewards are received.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The reward for a duration.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The reward for a duration.
 
 
 ### lastPauseTime (state variable)
@@ -129,9 +129,9 @@ The last pause time.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastTimeRewardApplicable 
@@ -148,9 +148,9 @@ The last pause time.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The last time rewards were applicable.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The last time rewards were applicable.
 
 
 ### lastUpdateTime (state variable)
@@ -167,9 +167,9 @@ The last update time.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### notifyRewardAmount 
@@ -202,9 +202,9 @@ Returns the address of the current owner.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### paused (state variable)
@@ -221,9 +221,9 @@ Whether the contract is paused.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### periodFinish (state variable)
@@ -240,9 +240,9 @@ The period finish.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### recoverERC20 
@@ -288,9 +288,9 @@ Leaves the contract without owner. It will not be possible to call &#x60;onlyOwn
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The reward per token.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The reward per token.
 
 
 ### rewardPerTokenStored (state variable)
@@ -307,9 +307,9 @@ The reward per token stored.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### rewardRate (state variable)
@@ -326,9 +326,9 @@ The rewards rate.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### rewards (state variable)
@@ -350,9 +350,9 @@ The rewards rate.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The rewards &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The rewards &#x60;account&#x60;.
 
 
 ### rewardsDuration (state variable)
@@ -369,9 +369,9 @@ The rewards duration.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### rewardsToken (state variable)
@@ -388,9 +388,9 @@ The rewards token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### setPaused 
@@ -455,9 +455,9 @@ The staking token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC2258` | 
 
 
 ### totalSupply 
@@ -474,9 +474,9 @@ The staking token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The total supply.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The total supply.
 
 
 ### transferOwnership 
@@ -530,9 +530,9 @@ End rewards emission earlier. Only the contract Owner may call this.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The reward per token paid for &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The reward per token paid for &#x60;account&#x60;.
 
 
 ### withdraw 

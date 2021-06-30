@@ -45,9 +45,9 @@ Returns the amount of funds that an account has earned in total. accumulativeFun
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
 
 
 ### accumulativeLossesOf 
@@ -69,9 +69,9 @@ Returns the amount of losses that an account has earned in total. accumulativeLo
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; has earned in total.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; has earned in total.
 
 
 ### allowance 
@@ -95,9 +95,9 @@ Returns the remaining number of tokens that &#x60;spender&#x60; will be allowed 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### allowed (state variable)
@@ -119,9 +119,9 @@ Returns the remaining number of tokens that &#x60;spender&#x60; will be allowed 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;account&#x60; is allowed.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;account&#x60; is allowed.
 
 
 ### approve 
@@ -145,9 +145,9 @@ Sets &#x60;amount&#x60; as the allowance of &#x60;spender&#x60; over the caller&
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### balanceOf 
@@ -169,9 +169,9 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### bptLosses 
@@ -188,9 +188,9 @@ The sum of all unrecognized losses.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### cancelUnstake 
@@ -225,9 +225,9 @@ Cancels an initiated unstake by resetting the calling account&#x27;s unstake coo
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of StakeLockerFDTs of &#x60;account&#x60; that are &quot;locked&quot; at &#x60;custodian&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of StakeLockerFDTs of &#x60;account&#x60; that are &quot;locked&quot; at &#x60;custodian&#x60;.
 
 
 ### decimals 
@@ -244,9 +244,9 @@ Returns the number of decimals used to get its user representation. For example,
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### decreaseAllowance 
@@ -270,9 +270,9 @@ Atomically decreases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### fundsToken 
@@ -289,9 +289,9 @@ The ERC-2222 Funds Token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### fundsTokenBalance 
@@ -308,9 +308,9 @@ The amount of &#x60;fundsToken&#x60; (Liquidity Asset) currently present and acc
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### increaseAllowance 
@@ -334,9 +334,9 @@ Atomically increases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### increaseCustodyAllowance 
@@ -387,9 +387,9 @@ Returns if an account is allowed to receive a transfer. This is only possible if
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### isUnstakeAllowed 
@@ -411,9 +411,9 @@ Returns if the unstake cooldown period has passed for &#x60;msg.sender&#x60; and
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### liquidityAsset (state variable)
@@ -430,9 +430,9 @@ The Liquidity Asset for the Pool as well as the dividend token for StakeLockerFD
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### lockupPeriod (state variable)
@@ -449,9 +449,9 @@ The number of seconds for which unstaking is not allowed.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lossesBalance 
@@ -468,9 +468,9 @@ The amount of losses present and accounted for in this contract.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### name 
@@ -487,9 +487,9 @@ Returns the name of the token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### openStakeLockerToPublic 
@@ -517,9 +517,9 @@ Sets the StakeLocker as open to the public. Only the Pool Delegate can call this
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### pause 
@@ -547,9 +547,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### pool (state variable)
@@ -566,9 +566,9 @@ The parent Pool.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### pull 
@@ -608,9 +608,9 @@ Returns the amount of losses that an account can withdraw.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; can withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; can withdraw.
 
 
 ### recognizedLossesOf 
@@ -632,9 +632,9 @@ Returns the amount of losses that an account has recognized.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; has recognized.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; has recognized.
 
 
 ### setAllowlist 
@@ -701,9 +701,9 @@ The asset deposited by Stakers into this contract, for liquidation during defaul
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### stakeDate (state variable)
@@ -725,9 +725,9 @@ The asset deposited by Stakers into this contract, for liquidation during defaul
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The effective stake date of &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The effective stake date of &#x60;account&#x60;.
 
 
 ### symbol 
@@ -744,9 +744,9 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### totalCustodyAllowance (state variable)
@@ -768,9 +768,9 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The total amount of StakeLockerFDTs that are &quot;locked&quot; for a given account, cannot be greater than balance.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The total amount of StakeLockerFDTs that are &quot;locked&quot; for a given account, cannot be greater than balance.
 
 
 ### totalSupply 
@@ -787,9 +787,9 @@ Returns the amount of tokens in existence.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### transfer 
@@ -813,9 +813,9 @@ Moves &#x60;amount&#x60; tokens from the caller&#x27;s account to &#x60;recipien
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### transferByCustodian 
@@ -861,9 +861,9 @@ Moves &#x60;amount&#x60; tokens from &#x60;sender&#x60; to &#x60;recipient&#x60;
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### unpause 
@@ -912,9 +912,9 @@ Handles a Staker&#x27;s withdrawing of an amount of Stake Asset, minus any losse
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The timestamp of when &#x60;account&#x60; called &#x60;cooldown()&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The timestamp of when &#x60;account&#x60; called &#x60;cooldown()&#x60;.
 
 
 ### updateFundsReceived 
@@ -985,9 +985,9 @@ Returns the amount of funds that an account can withdraw.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
 
 
 ### withdrawnFundsOf 
@@ -1009,9 +1009,9 @@ Returns the amount of funds that an account has withdrawn.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
 
 
 

@@ -30,9 +30,9 @@ Calculates the minimum amount from a swap (adjustable for price slippage).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The expected amount of &#x60;toAsset&#x60; to receive from swap based on current oracle prices.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The expected amount of &#x60;toAsset&#x60; to receive from swap based on current oracle prices.
 
 
 

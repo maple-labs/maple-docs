@@ -65,9 +65,9 @@ Calculates the value of BPT in units of Liquidity Asset.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | USDC value of staker BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | USDC value of staker BPTs.
 
 
 ### DL_FACTORY (state variable)
@@ -84,9 +84,9 @@ The factory type of &#x60;DebtLockerFactory&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### accumulativeFundsOf 
@@ -108,9 +108,9 @@ Returns the amount of funds that an account has earned in total. accumulativeFun
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
 
 
 ### accumulativeLossesOf 
@@ -132,9 +132,9 @@ Returns the amount of losses that an account has earned in total. accumulativeLo
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; has earned in total.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; has earned in total.
 
 
 ### allowance 
@@ -158,9 +158,9 @@ Returns the remaining number of tokens that &#x60;spender&#x60; will be allowed 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### allowedLiquidityProviders (state variable)
@@ -182,9 +182,9 @@ Returns the remaining number of tokens that &#x60;spender&#x60; will be allowed 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;liquidityProvider&#x60; has early access to the Pool.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;liquidityProvider&#x60; has early access to the Pool.
 
 
 ### approve 
@@ -208,9 +208,9 @@ Sets &#x60;amount&#x60; as the allowance of &#x60;spender&#x60; over the caller&
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### balanceOf 
@@ -232,9 +232,9 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### cancelWithdraw 
@@ -269,9 +269,9 @@ Claims available funds for the Loan through a specified DebtLockerFactory. Only 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `claimInfo` | `uint256[7]` | The claim details.  [0] &#x3D;&gt; Total amount claimed,  [1] &#x3D;&gt; Interest portion claimed,  [2] &#x3D;&gt; Principal portion claimed,  [3] &#x3D;&gt; Fee portion claimed,  [4] &#x3D;&gt; Excess portion claimed,  [5] &#x3D;&gt; Recovered portion claimed (from liquidations),  [6] &#x3D;&gt; Default suffered. 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `claimInfo` | `uint256[7]` | `uint256[7]` | The claim details.  [0] &#x3D;&gt; Total amount claimed,  [1] &#x3D;&gt; Interest portion claimed,  [2] &#x3D;&gt; Principal portion claimed,  [3] &#x3D;&gt; Fee portion claimed,  [4] &#x3D;&gt; Excess portion claimed,  [5] &#x3D;&gt; Recovered portion claimed (from liquidations),  [6] &#x3D;&gt; Default suffered. 
 
 
 ### custodyAllowance (state variable)
@@ -295,9 +295,9 @@ Claims available funds for the Loan through a specified DebtLockerFactory. Only 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of PoolFDTs of &#x60;account&#x60; that are &quot;locked&quot; at &#x60;custodian&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of PoolFDTs of &#x60;account&#x60; that are &quot;locked&quot; at &#x60;custodian&#x60;.
 
 
 ### deactivate 
@@ -332,9 +332,9 @@ Triggers deactivation, permanently shutting down the Pool. Must have less than 1
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the DebtLocker corresponding to &#x60;loan&#x60; and &#x60;debtLockerFactory&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the DebtLocker corresponding to &#x60;loan&#x60; and &#x60;debtLockerFactory&#x60;.
 
 
 ### decimals 
@@ -351,9 +351,9 @@ Returns the number of decimals used to get its user representation. For example,
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### decreaseAllowance 
@@ -377,9 +377,9 @@ Atomically decreases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### delegateFee (state variable)
@@ -396,9 +396,9 @@ The fee the Pool Delegate earns (in basis points).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### deposit 
@@ -436,9 +436,9 @@ Used for withdraw penalty calculation.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The unix timestamp of the weighted average deposit date of &#x60;account&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The unix timestamp of the weighted average deposit date of &#x60;account&#x60;.
 
 
 ### finalize 
@@ -490,13 +490,13 @@ Returns information on the stake requirements.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The min amount of Liquidity Asset coverage from staking required.
-| 1 |  | `uint256` | The present amount of Liquidity Asset coverage from the Pool Delegate stake.
-| 2 |  | `bool` | Whether enough stake is present from the Pool Delegate for finalization.
-| 3 |  | `uint256` | The staked BPTs required for minimum Liquidity Asset coverage.
-| 4 |  | `uint256` | The current staked BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The min amount of Liquidity Asset coverage from staking required.
+| 1 |  | `uint256` | `uint256` | The present amount of Liquidity Asset coverage from the Pool Delegate stake.
+| 2 |  | `bool` | `bool` | Whether enough stake is present from the Pool Delegate for finalization.
+| 3 |  | `uint256` | `uint256` | The staked BPTs required for minimum Liquidity Asset coverage.
+| 4 |  | `uint256` | `uint256` | The current staked BPTs.
 
 
 ### getPoolSharesRequired 
@@ -527,10 +527,10 @@ Calculates BPTs required if burning BPTs for the Liquidity Asset, given supplied
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The &#x60;poolAmountIn&#x60; required.
-| 1 |  | `uint256` | The &#x60;poolAmountIn&#x60; currently staked.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The &#x60;poolAmountIn&#x60; required.
+| 1 |  | `uint256` | `uint256` | The &#x60;poolAmountIn&#x60; currently staked.
 
 
 ### increaseAllowance 
@@ -554,9 +554,9 @@ Atomically increases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### increaseCustodyAllowance 
@@ -602,9 +602,9 @@ The amount of earned interest present and accounted for in this contract.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### interestSum 
@@ -621,9 +621,9 @@ The sum of all withdrawable interest.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### isDepositAllowed 
@@ -645,9 +645,9 @@ Checks that the given deposit amount is acceptable based on current liquidityCap
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### isPoolFinalized 
@@ -664,9 +664,9 @@ Checks that the Pool state is &#x60;Finalized&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether the Pool is in a Finalized state.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether the Pool is in a Finalized state.
 
 
 ### liquidityAsset (state variable)
@@ -683,9 +683,9 @@ The asset deposited by Lenders into the LiquidityLocker, for funding Loans.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### liquidityCap (state variable)
@@ -702,9 +702,9 @@ The amount of liquidity tokens accepted by the Pool.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### liquidityLocker (state variable)
@@ -721,9 +721,9 @@ The address of the asset deposited by Stakers into the StakeLocker (BPTs), for l
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### lockupPeriod (state variable)
@@ -740,9 +740,9 @@ The period of time from an account&#x27;s deposit date during which they cannot 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lossesBalance 
@@ -759,9 +759,9 @@ The amount of losses present and accounted for in this contract.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### name 
@@ -778,9 +778,9 @@ Returns the name of the token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### openToPublic (state variable)
@@ -797,9 +797,9 @@ Whether the Pool is open to the public for LP deposits.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### poolAdmins (state variable)
@@ -821,9 +821,9 @@ Whether the Pool is open to the public for LP deposits.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;poolAdmin&#x60; has permission to do certain operations in case of disaster management.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;poolAdmin&#x60; has permission to do certain operations in case of disaster management.
 
 
 ### poolDelegate (state variable)
@@ -840,9 +840,9 @@ The Pool Delegate address, maintains full authority over the Pool.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### poolLosses 
@@ -859,9 +859,9 @@ The sum of all unrecognized losses.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### poolState (state variable)
@@ -878,9 +878,9 @@ The state of the Pool.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `enum IPool.State` | 
 
 
 ### principalOut (state variable)
@@ -897,9 +897,9 @@ The sum of all outstanding principal on Loans.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### reclaimERC20 
@@ -937,9 +937,9 @@ Returns the amount of losses that an account can withdraw.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; can withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; can withdraw.
 
 
 ### recognizedLossesOf 
@@ -961,9 +961,9 @@ Returns the amount of losses that an account has recognized.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of losses that &#x60;_owner&#x60; has recognized.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of losses that &#x60;_owner&#x60; has recognized.
 
 
 ### setAllowList 
@@ -1080,9 +1080,9 @@ The address of the asset deposited by Stakers into the StakeLocker (BPTs), for l
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### stakeLocker (state variable)
@@ -1099,9 +1099,9 @@ The address of the StakeLocker, escrowing &#x60;stakeAsset&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### stakingFee (state variable)
@@ -1118,9 +1118,9 @@ The fee Stakers earn (in basis points).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### superFactory (state variable)
@@ -1137,9 +1137,9 @@ The factory that deployed this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### symbol 
@@ -1156,9 +1156,9 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### totalCustodyAllowance (state variable)
@@ -1180,9 +1180,9 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The total amount of PoolFDTs that are &quot;locked&quot; for &#x60;account&#x60;. Cannot be greater than the account&#x27;s balance.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The total amount of PoolFDTs that are &quot;locked&quot; for &#x60;account&#x60;. Cannot be greater than the account&#x27;s balance.
 
 
 ### totalSupply 
@@ -1199,9 +1199,9 @@ Returns the amount of tokens in existence.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### transfer 
@@ -1225,9 +1225,9 @@ Moves &#x60;amount&#x60; tokens from the caller&#x27;s account to &#x60;recipien
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### transferByCustodian 
@@ -1273,9 +1273,9 @@ Moves &#x60;amount&#x60; tokens from &#x60;sender&#x60; to &#x60;recipient&#x60;
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### triggerDefault 
@@ -1353,9 +1353,9 @@ Handles Liquidity Providers withdrawing of Liquidity Asset from the LiquidityLoc
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The unix timestamp of when individual LPs have notified of their intent to withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The unix timestamp of when individual LPs have notified of their intent to withdraw.
 
 
 ### withdrawFunds 
@@ -1388,9 +1388,9 @@ Returns the amount of funds that an account can withdraw.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
 
 
 ### withdrawnFundsOf 
@@ -1412,9 +1412,9 @@ Returns the amount of funds that an account has withdrawn.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
 
 
 

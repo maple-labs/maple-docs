@@ -43,9 +43,9 @@ Instantiates a MplRewards contract. Only the Governor can call this function. It
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `mplRewards` | `address` |  The address of the instantiated MplRewards.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `mplRewards` | `address` | `address` |  The address of the instantiated MplRewards.
 
 
 ### globals (state variable)
@@ -62,9 +62,9 @@ The instance of MapleGlobals, used to retrieve the current Governor.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IMapleGlobals` | 
 
 
 ### isMplRewards (state variable)
@@ -86,9 +86,9 @@ The instance of MapleGlobals, used to retrieve the current Governor.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;mpeRewards&#x60; is a MplRewards contract.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;mpeRewards&#x60; is a MplRewards contract.
 
 
 ### setGlobals 

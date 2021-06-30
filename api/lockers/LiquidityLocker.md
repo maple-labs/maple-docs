@@ -58,9 +58,9 @@ The Liquidity Asset which this LiquidityLocker will escrow.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### pool (state variable)
@@ -77,9 +77,9 @@ The Pool contract address that owns this LiquidityLocker.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### transfer 

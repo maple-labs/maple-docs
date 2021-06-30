@@ -19,9 +19,9 @@ The type of the factory (i.e FactoryType::FUNDING_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### isLocker (state variable)
@@ -43,9 +43,9 @@ The type of the factory (i.e FactoryType::FUNDING_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;fundingLocker&#x60; is a FundingLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;fundingLocker&#x60; is a FundingLocker.
 
 
 ### newLocker 
@@ -67,9 +67,9 @@ Instantiates a FundingLocker. It emits a &#x60;FundingLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `fundingLocker` | `address` |  The address of the instantiated FundingLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `fundingLocker` | `address` | `address` |  The address of the instantiated FundingLocker.
 
 
 ### owner (state variable)
@@ -91,9 +91,9 @@ Instantiates a FundingLocker. It emits a &#x60;FundingLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the owner of FundingLocker at &#x60;fundingLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the owner of FundingLocker at &#x60;fundingLocker&#x60;.
 
 
 

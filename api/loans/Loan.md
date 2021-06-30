@@ -53,9 +53,9 @@ Returns the amount of funds that an account has earned in total. accumulativeFun
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total.
 
 
 ### allowance 
@@ -79,9 +79,9 @@ Returns the remaining number of tokens that &#x60;spender&#x60; will be allowed 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### amountLiquidated (state variable)
@@ -98,9 +98,9 @@ The amount of Collateral Asset that has been liquidated after default.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### amountRecovered (state variable)
@@ -117,9 +117,9 @@ The amount of Liquidity Asset that has been recovered after default.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### approve 
@@ -143,9 +143,9 @@ Sets &#x60;amount&#x60; as the allowance of &#x60;spender&#x60; over the caller&
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### apr (state variable)
@@ -162,9 +162,9 @@ The APR in basis points.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### balanceOf 
@@ -186,9 +186,9 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### borrower (state variable)
@@ -205,9 +205,9 @@ The Borrower of this Loan, responsible for repayments.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### clFactory (state variable)
@@ -224,9 +224,9 @@ The CollateralLockerFactory.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### collateralAsset (state variable)
@@ -243,9 +243,9 @@ The asset deposited by Borrower into the CollateralLocker, for collateralizing t
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### collateralLocker (state variable)
@@ -262,9 +262,9 @@ The CollateralLocker that holds custody of Loan collateral.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### collateralRatio (state variable)
@@ -281,9 +281,9 @@ The percentage of value of the drawdown amount to post as collateral in basis po
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### collateralRequiredForDrawdown 
@@ -305,9 +305,9 @@ Calculates the collateral required to draw down amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of the Collateral Asset required to post in the CollateralLocker for a given drawdown amount.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of the Collateral Asset required to post in the CollateralLocker for a given drawdown amount.
 
 
 ### createdAt (state variable)
@@ -324,9 +324,9 @@ The timestamp of when Loan was instantiated.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### decimals 
@@ -343,9 +343,9 @@ Returns the number of decimals used to get its user representation. For example,
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### decreaseAllowance 
@@ -369,9 +369,9 @@ Atomically decreases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### defaultGracePeriod (state variable)
@@ -388,9 +388,9 @@ The time a Borrower has, after a payment is due, to make a payment before a liqu
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### defaultSuffered (state variable)
@@ -407,9 +407,9 @@ The difference between &#x60;amountRecovered&#x60; and &#x60;principalOwed&#x60;
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### drawdown 
@@ -442,9 +442,9 @@ The amount of excess that has been returned to the Lenders after the Loan drawdo
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### feePaid (state variable)
@@ -461,9 +461,9 @@ The amount of fees that have been paid by the Borrower since the Loan instantiat
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### flFactory (state variable)
@@ -480,9 +480,9 @@ The FundingLockerFactory.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### fundLoan 
@@ -517,9 +517,9 @@ The FundingLocker that holds custody of Loan funds before drawdown.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### fundingPeriod (state variable)
@@ -536,9 +536,9 @@ The time for a Loan to be funded in seconds.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### fundsToken 
@@ -555,9 +555,9 @@ The &#x60;fundsToken&#x60; (dividends).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### fundsTokenBalance 
@@ -574,9 +574,9 @@ The amount of &#x60;fundsToken&#x60; (Liquidity Asset) currently present and acc
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### getExpectedAmountRecovered 
@@ -593,9 +593,9 @@ Returns the expected amount of Liquidity Asset to be recovered from a liquidatio
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The minimum amount of Liquidity Asset that can be expected by swapping Collateral Asset.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The minimum amount of Liquidity Asset that can be expected by swapping Collateral Asset.
 
 
 ### getFullPayment 
@@ -614,11 +614,11 @@ Returns the information of a full payment amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `total` | `uint256` |     Principal and interest owed, combined.
-| 1 | `principal` | `uint256` | Principal owed.
-| 2 | `interest` | `uint256` |  Interest owed.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `total` | `uint256` | `uint256` |     Principal and interest owed, combined.
+| 1 | `principal` | `uint256` | `uint256` | Principal owed.
+| 2 | `interest` | `uint256` | `uint256` |  Interest owed.
 
 
 ### getNextPayment 
@@ -639,13 +639,13 @@ Returns information of the next payment amount.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The entitled interest of the next payment (Principal + Interest only when the next payment is last payment of the Loan).
-| 1 |  | `uint256` | The entitled principal amount needed to be paid in the next payment.
-| 2 |  | `uint256` | The entitled interest amount needed to be paid in the next payment.
-| 3 |  | `uint256` | The payment due date.
-| 4 |  | `bool` | Whether the payment is late.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The entitled interest of the next payment (Principal + Interest only when the next payment is last payment of the Loan).
+| 1 |  | `uint256` | `uint256` | The entitled principal amount needed to be paid in the next payment.
+| 2 |  | `uint256` | `uint256` | The entitled interest amount needed to be paid in the next payment.
+| 3 |  | `uint256` | `uint256` | The payment due date.
+| 4 |  | `bool` | `bool` | Whether the payment is late.
 
 
 ### increaseAllowance 
@@ -669,9 +669,9 @@ Atomically increases the allowance granted to &#x60;spender&#x60; by the caller.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### interestPaid (state variable)
@@ -688,9 +688,9 @@ The amount of interest that has been paid by the Borrower since the Loan instant
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lateFeeCalc (state variable)
@@ -707,9 +707,9 @@ The LateFeeCalc for this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### liquidationExcess (state variable)
@@ -726,9 +726,9 @@ The amount of Liquidity Asset that is to be returned to the Borrower, if &#x60;a
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### liquidityAsset (state variable)
@@ -745,9 +745,9 @@ The asset deposited by Lenders into the FundingLocker, when funding this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### loanAdmins (state variable)
@@ -769,9 +769,9 @@ The asset deposited by Lenders into the FundingLocker, when funding this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether the &#x60;loanAdmin&#x60; has permission to do certain operations in case of disaster management.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether the &#x60;loanAdmin&#x60; has permission to do certain operations in case of disaster management.
 
 
 ### loanState (state variable)
@@ -788,9 +788,9 @@ The current state of this Loan, as defined in the State enum below.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `enum ILoan.State` | 
 
 
 ### makeFullPayment 
@@ -829,9 +829,9 @@ Returns the name of the token.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### nextPaymentDue (state variable)
@@ -848,9 +848,9 @@ The unix timestamp due date of the next payment.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### pause 
@@ -878,9 +878,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### paymentIntervalSeconds (state variable)
@@ -897,9 +897,9 @@ The time between Loan payments in seconds.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### paymentsRemaining (state variable)
@@ -916,9 +916,9 @@ The number of payments remaining on the Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### premiumCalc (state variable)
@@ -935,9 +935,9 @@ The PremiumCalc for this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### principalOwed (state variable)
@@ -954,9 +954,9 @@ The amount of principal owed (initially the drawdown amount).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### principalPaid (state variable)
@@ -973,9 +973,9 @@ The amount of principal that has been paid by the Borrower since the Loan instan
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### reclaimERC20 
@@ -1008,9 +1008,9 @@ The RepaymentCalc for this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### requestAmount (state variable)
@@ -1027,9 +1027,9 @@ The total requested amount for Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### setLoanAdmin 
@@ -1064,9 +1064,9 @@ The LoanFactory that deployed this Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### symbol 
@@ -1083,9 +1083,9 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `string` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `string` | `string` | 
 
 
 ### termDays (state variable)
@@ -1102,9 +1102,9 @@ The total length of the Loan term in days.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### totalSupply 
@@ -1121,9 +1121,9 @@ Returns the amount of tokens in existence.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### transfer 
@@ -1147,9 +1147,9 @@ Moves &#x60;amount&#x60; tokens from the caller&#x27;s account to &#x60;recipien
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### transferFrom 
@@ -1175,9 +1175,9 @@ Moves &#x60;amount&#x60; tokens from &#x60;sender&#x60; to &#x60;recipient&#x60;
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### triggerDefault 
@@ -1254,9 +1254,9 @@ Returns the amount of funds that an account can withdraw.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw.
 
 
 ### withdrawnFundsOf 
@@ -1278,9 +1278,9 @@ Returns the amount of funds that an account has withdrawn.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn.
 
 
 

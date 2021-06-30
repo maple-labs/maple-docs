@@ -36,9 +36,9 @@ The Calculator type.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### getPremiumPayment 
@@ -62,11 +62,11 @@ Calculates the premium payment for a Loan, when making a full payment.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `total` | `uint256` |         The principal + interest.
-| 1 | `principalOwed` | `uint256` | The principal.
-| 2 | `interest` | `uint256` |      The interest.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `total` | `uint256` | `uint256` |         The principal + interest.
+| 1 | `principalOwed` | `uint256` | `uint256` | The principal.
+| 2 | `interest` | `uint256` | `uint256` |      The interest.
 
 
 ### name (state variable)
@@ -83,9 +83,9 @@ The Calculator name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bytes32` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bytes32` | `bytes32` | 
 
 
 ### premiumFee (state variable)
@@ -102,9 +102,9 @@ The flat percentage fee (in basis points) of principal to charge as a premium wh
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 

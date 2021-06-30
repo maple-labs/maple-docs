@@ -19,9 +19,9 @@ The Calculator type.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### getNextPayment 
@@ -45,11 +45,11 @@ Calculates the next payment for a Loan.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `total` | `uint256` |         The entitled interest of the next payment (Principal + Interest only when the next payment is last payment of the Loan).
-| 1 | `principalOwed` | `uint256` | The entitled principal amount needed to be paid in the next payment.
-| 2 | `interest` | `uint256` |      The entitled interest amount needed to be paid in the next payment.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `total` | `uint256` | `uint256` |         The entitled interest of the next payment (Principal + Interest only when the next payment is last payment of the Loan).
+| 1 | `principalOwed` | `uint256` | `uint256` | The entitled principal amount needed to be paid in the next payment.
+| 2 | `interest` | `uint256` | `uint256` |      The entitled interest amount needed to be paid in the next payment.
 
 
 ### name (state variable)
@@ -66,9 +66,9 @@ The Calculator name.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bytes32` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bytes32` | `bytes32` | 
 
 
 

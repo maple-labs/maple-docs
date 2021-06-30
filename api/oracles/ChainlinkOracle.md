@@ -40,9 +40,9 @@ The address of the asset token contract.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### changeAggregator 
@@ -75,9 +75,9 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the oracled currency (0x0 for ETH).
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the oracled currency (0x0 for ETH).
 
 
 ### getDenomination 
@@ -94,9 +94,9 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bytes32` | The denomination of the price.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bytes32` | `bytes32` | The denomination of the price.
 
 
 ### getLatestPrice 
@@ -113,9 +113,9 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `int256` | The latest price.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `int256` | `int256` | The latest price.
 
 
 ### globals (state variable)
@@ -132,9 +132,9 @@ The MapleGlobals.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IMapleGlobals` | 
 
 
 ### manualOverride (state variable)
@@ -151,9 +151,9 @@ Whether the price is manually overridden.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### manualPrice (state variable)
@@ -170,9 +170,9 @@ The manually overridden price.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `int256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `int256` | `int256` | 
 
 
 ### owner 
@@ -189,9 +189,9 @@ Returns the address of the current owner.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### priceFeed (state variable)
@@ -208,9 +208,9 @@ The Chainlink Aggregator V3 price feed.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IChainlinkAggregatorV3` | 
 
 
 ### renounceOwnership 

@@ -19,9 +19,9 @@ The type of the factory (i.e FactoryType::STAKE_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### isLocker (state variable)
@@ -43,9 +43,9 @@ The type of the factory (i.e FactoryType::STAKE_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;stakeLocker&#x60; is a StakeLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;stakeLocker&#x60; is a StakeLocker.
 
 
 ### newLocker 
@@ -69,9 +69,9 @@ Instantiate a StakeLocker.It emits a &#x60;StakeLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `stakeLocker` | `address` |    The address of the instantiated StakeLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `stakeLocker` | `address` | `address` |    The address of the instantiated StakeLocker.
 
 
 ### owner (state variable)
@@ -93,9 +93,9 @@ Instantiate a StakeLocker.It emits a &#x60;StakeLockerCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the owner of StakeLocker at &#x60;stakeLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the owner of StakeLocker at &#x60;stakeLocker&#x60;.
 
 
 

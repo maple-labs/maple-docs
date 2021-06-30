@@ -36,9 +36,9 @@ The factory type of &#x60;LiquidityLockerFactory&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### SL_FACTORY (state variable)
@@ -55,9 +55,9 @@ The factory type of &#x60;StakeLockerFactory&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### createPool 
@@ -91,9 +91,9 @@ Instantiates a Pool. It emits a &#x60;PoolCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `poolAddress` | `address` |    The address of the instantiated Pool.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `poolAddress` | `address` | `address` |    The address of the instantiated Pool.
 
 
 ### globals (state variable)
@@ -110,9 +110,9 @@ The current MapleGlobals instance.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IMapleGlobals` | 
 
 
 ### isPool (state variable)
@@ -134,9 +134,9 @@ The current MapleGlobals instance.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether the contract at &#x60;address&#x60; is a Pool.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether the contract at &#x60;address&#x60; is a Pool.
 
 
 ### pause 
@@ -164,9 +164,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### poolFactoryAdmins (state variable)
@@ -188,9 +188,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether the &#x60;poolFactoryAdmin&#x60; has permission to do certain operations in case of disaster management
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether the &#x60;poolFactoryAdmin&#x60; has permission to do certain operations in case of disaster management
 
 
 ### pools (state variable)
@@ -212,9 +212,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the Pool at &#x60;index&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the Pool at &#x60;index&#x60;.
 
 
 ### poolsCreated (state variable)
@@ -231,9 +231,9 @@ The incrementor for number of Pools created.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### setGlobals 

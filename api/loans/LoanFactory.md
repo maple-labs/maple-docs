@@ -36,9 +36,9 @@ The Factory type of &#x60;CollateralLockerFactory&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### FL_FACTORY (state variable)
@@ -55,9 +55,9 @@ The Factory type of &#x60;FundingLockerFactory&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### INTEREST_CALC_TYPE (state variable)
@@ -74,9 +74,9 @@ The Calc type of &#x60;RepaymentCalc&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### LATEFEE_CALC_TYPE (state variable)
@@ -93,9 +93,9 @@ The Calc type of &#x60;LateFeeCalc&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### PREMIUM_CALC_TYPE (state variable)
@@ -112,9 +112,9 @@ The Calc type of &#x60;PremiumCalc&#x60;.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### createLoan 
@@ -146,9 +146,9 @@ Create a new Loan. It emits a &#x60;LoanCreated&#x60; event.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `loanAddress` | `address` |     Address of the instantiated Loan.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loanAddress` | `address` | `address` |     Address of the instantiated Loan.
 
 
 ### globals (state variable)
@@ -165,9 +165,9 @@ The instance of the MapleGlobals.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IMapleGlobals` | 
 
 
 ### isLoan (state variable)
@@ -189,9 +189,9 @@ The instance of the MapleGlobals.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;loan&#x60; is a Loan.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;loan&#x60; is a Loan.
 
 
 ### loanFactoryAdmins (state variable)
@@ -213,9 +213,9 @@ The instance of the MapleGlobals.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;admin&#x60; has permission to do certain operations in case of disaster management.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;admin&#x60; has permission to do certain operations in case of disaster management.
 
 
 ### loans (state variable)
@@ -237,9 +237,9 @@ The instance of the MapleGlobals.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the Loan at &#x60;index&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the Loan at &#x60;index&#x60;.
 
 
 ### loansCreated (state variable)
@@ -256,9 +256,9 @@ The incrementor for number of Loans created.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### pause 
@@ -286,9 +286,9 @@ Returns true if the contract is paused, and false otherwise.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### setGlobals 

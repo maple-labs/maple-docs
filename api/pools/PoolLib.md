@@ -30,9 +30,9 @@ Calculates the value of BPT in units of Liquidity Asset. Vulnerable to flash-loa
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The USDC value of Staker BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The USDC value of Staker BPTs.
 
 
 ### DL_FACTORY 
@@ -49,9 +49,9 @@ Calculates the value of BPT in units of Liquidity Asset. Vulnerable to flash-loa
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### MAX_UINT256 
@@ -68,9 +68,9 @@ Calculates the value of BPT in units of Liquidity Asset. Vulnerable to flash-loa
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### WAD 
@@ -87,9 +87,9 @@ Calculates the value of BPT in units of Liquidity Asset. Vulnerable to flash-loa
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### calculateClaimAndPortions 
@@ -118,12 +118,12 @@ Calculates portions of claim from DebtLocker to be used by Pool &#x60;claim&#x60
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `poolDelegatePortion` | `uint256` | The total funds to send to the Pool Delegate.
-| 1 | `stakeLockerPortion` | `uint256` |  The total funds to send to the StakeLocker.
-| 2 | `principalClaim` | `uint256` |      The total principal claim.
-| 3 | `interestClaim` | `uint256` |       The total interest claim.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `poolDelegatePortion` | `uint256` | `uint256` | The total funds to send to the Pool Delegate.
+| 1 | `stakeLockerPortion` | `uint256` | `uint256` |  The total funds to send to the StakeLocker.
+| 2 | `principalClaim` | `uint256` | `uint256` |      The total principal claim.
+| 3 | `interestClaim` | `uint256` | `uint256` |       The total interest claim.
 
 
 ### fromWad 
@@ -147,9 +147,9 @@ Converts from WAD precision to Liquidity Asset precision.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### getInitialStakeRequirements 
@@ -183,13 +183,13 @@ Returns information on the stake requirements.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `swapOutAmountRequired` | `uint256` |      The minimum amount of Liquidity Asset coverage from staking required (in Liquidity Asset units).
-| 1 | `currentPoolDelegateCover` | `uint256` |   The present amount of Liquidity Asset coverage from Pool Delegate stake (in Liquidity Asset units).
-| 2 | `enoughStakeForFinalization` | `bool` | Whether enough stake is present from Pool Delegate for Pool finalization.
-| 3 | `poolAmountInRequired` | `uint256` |       The BPTs required for minimum Liquidity Asset coverage.
-| 4 | `poolAmountPresent` | `uint256` |          The current staked BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `swapOutAmountRequired` | `uint256` | `uint256` |      The minimum amount of Liquidity Asset coverage from staking required (in Liquidity Asset units).
+| 1 | `currentPoolDelegateCover` | `uint256` | `uint256` |   The present amount of Liquidity Asset coverage from Pool Delegate stake (in Liquidity Asset units).
+| 2 | `enoughStakeForFinalization` | `bool` | `bool` | Whether enough stake is present from Pool Delegate for Pool finalization.
+| 3 | `poolAmountInRequired` | `uint256` | `uint256` |       The BPTs required for minimum Liquidity Asset coverage.
+| 4 | `poolAmountPresent` | `uint256` | `uint256` |          The current staked BPTs.
 
 
 ### getPoolSharesRequired 
@@ -220,10 +220,10 @@ Calculates BPTs required if burning BPTs for liquidityAsset, given supplied toke
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `poolAmountInRequired` | `uint256` |         The required poolAmountIn.
-| 1 | `stakerBalance` | `uint256` |                The poolAmountIn currently staked.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `poolAmountInRequired` | `uint256` | `uint256` |         The required poolAmountIn.
+| 1 | `stakerBalance` | `uint256` | `uint256` |                The poolAmountIn currently staked.
 
 
 ### getSwapOutValue 
@@ -251,9 +251,9 @@ Calculates Liquidity Asset swap out value of staker BPT balance escrowed in Stak
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | liquidityAsset The swap out value of staker BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | liquidityAsset The swap out value of staker BPTs.
 
 
 ### getSwapOutValueLocker 
@@ -279,9 +279,9 @@ Calculates Liquidity Asset swap out value of entire BPT balance escrowed in Stak
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | liquidityAsset The swap out value of StakeLocker BPTs.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | liquidityAsset The swap out value of StakeLocker BPTs.
 
 
 ### increaseCustodyAllowanceChecks 

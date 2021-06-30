@@ -38,9 +38,9 @@ Claims funds distribution for Loan via LoanFDT. Only the Pool can call this func
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256[7]` | [0] &#x3D;&gt; Total Claimed. [1] &#x3D;&gt; Interest Claimed. [2] &#x3D;&gt; Principal Claimed. [3] &#x3D;&gt; Pool Delegate Fee Claimed. [4] &#x3D;&gt; Excess Returned Claimed. [5] &#x3D;&gt; Amount Recovered (from Liquidation). [6] &#x3D;&gt; Default Suffered.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256[7]` | `uint256[7]` | [0] &#x3D;&gt; Total Claimed. [1] &#x3D;&gt; Interest Claimed. [2] &#x3D;&gt; Principal Claimed. [3] &#x3D;&gt; Pool Delegate Fee Claimed. [4] &#x3D;&gt; Excess Returned Claimed. [5] &#x3D;&gt; Amount Recovered (from Liquidation). [6] &#x3D;&gt; Default Suffered.
 
 
 ### lastAmountRecovered (state variable)
@@ -57,9 +57,9 @@ Then Liquidity Asset (a.k.a. loan asset) recovered from liquidation of Loan coll
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastDefaultSuffered (state variable)
@@ -76,9 +76,9 @@ The Loan total default suffered at last time &#x60;claim()&#x60; was called.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastExcessReturned (state variable)
@@ -95,9 +95,9 @@ The Loan total excess returned at last time &#x60;claim()&#x60; was called.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastFeePaid (state variable)
@@ -114,9 +114,9 @@ The Loan total fees paid at last time &#x60;claim()&#x60; was called.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastInterestPaid (state variable)
@@ -133,9 +133,9 @@ The Loan total interest paid at last time &#x60;claim()&#x60; was called.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lastPrincipalPaid (state variable)
@@ -152,9 +152,9 @@ The Loan total principal paid at last time &#x60;claim()&#x60; was called.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### liquidityAsset (state variable)
@@ -171,9 +171,9 @@ The Liquidity Asset this locker can claim.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract IERC20` | 
 
 
 ### loan (state variable)
@@ -190,9 +190,9 @@ The Loan contract this locker is holding tokens for.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `contract ILoan` | 
 
 
 ### pool (state variable)
@@ -209,9 +209,9 @@ The owner of this Locker (the Pool).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### triggerDefault 

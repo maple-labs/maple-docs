@@ -51,9 +51,9 @@ The amount of time a Borrower has to make a missed payment before a default can 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### defaultUniswapPath (state variable)
@@ -77,9 +77,9 @@ Determines the liquidation path of various assets in Loans and the Treasury. The
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The intermediary asset for swaps, if any.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The intermediary asset for swaps, if any.
 
 
 ### fundingPeriod (state variable)
@@ -96,9 +96,9 @@ The amount of time to allow a Borrower to drawdown on their Loan after funding p
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### getLatestPrice 
@@ -120,9 +120,9 @@ Fetch price for asset from Chainlink oracles.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The price of asset in USD.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The price of asset in USD.
 
 
 ### getLpCooldownParams 
@@ -140,10 +140,10 @@ Returns the &#x60;lpCooldownPeriod&#x60; and &#x60;lpWithdrawWindow&#x60; as a t
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | The value of &#x60;lpCooldownPeriod&#x60;.
-| 1 |  | `uint256` | The value of &#x60;lpWithdrawWindow&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The value of &#x60;lpCooldownPeriod&#x60;.
+| 1 |  | `uint256` | `uint256` | The value of &#x60;lpWithdrawWindow&#x60;.
 
 
 ### globalAdmin (state variable)
@@ -160,9 +160,9 @@ The Global Admin of the whole network. Has the power to switch off/on the functi
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### governor (state variable)
@@ -179,9 +179,9 @@ The Governor responsible for management of global Maple variables.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### investorFee (state variable)
@@ -198,9 +198,9 @@ The portion of drawdown that goes to the Pool Delegates and individual Lenders.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### isValidBalancerPool (state variable)
@@ -222,9 +222,9 @@ The portion of drawdown that goes to the Pool Delegates and individual Lenders.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether Maple has approved &#x60;balancerPool&#x60; for BPT staking.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether Maple has approved &#x60;balancerPool&#x60; for BPT staking.
 
 
 ### isValidCalc 
@@ -248,9 +248,9 @@ Checks that a Calculator is valid.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### isValidCollateralAsset (state variable)
@@ -272,9 +272,9 @@ Checks that a Calculator is valid.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;collateralAsset&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;collateralAsset&#x60; is valid.
 
 
 ### isValidLiquidityAsset (state variable)
@@ -296,9 +296,9 @@ Checks that a Calculator is valid.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;liquidityAsset&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;liquidityAsset&#x60; is valid.
 
 
 ### isValidLoanFactory (state variable)
@@ -320,9 +320,9 @@ Checks that a Calculator is valid.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;loanFactory&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;loanFactory&#x60; is valid.
 
 
 ### isValidPoolDelegate (state variable)
@@ -344,9 +344,9 @@ Prevents unauthorized/unknown addresses from creating Pools.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;poolDelegate&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;poolDelegate&#x60; is valid.
 
 
 ### isValidPoolFactory (state variable)
@@ -368,9 +368,9 @@ Prevents unauthorized/unknown addresses from creating Pools.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;poolFactory&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;poolFactory&#x60; is valid.
 
 
 ### isValidSubFactory 
@@ -396,9 +396,9 @@ Checks that a &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactor
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### lpCooldownPeriod (state variable)
@@ -415,9 +415,9 @@ The period (in secs) after which LPs are allowed to withdraw their funds from a 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### lpWithdrawWindow (state variable)
@@ -434,9 +434,9 @@ The window of time (in secs) after &#x60;lpCooldownPeriod&#x60; that an account 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### mapleTreasury (state variable)
@@ -453,9 +453,9 @@ The MapleTreasury is the Treasury where all fees pass through for conversion, pr
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### maxSwapSlippage (state variable)
@@ -472,9 +472,9 @@ The maximum amount of slippage for Uniswap transactions.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### minLoanEquity (state variable)
@@ -491,9 +491,9 @@ The minimum amount of LoanFDTs required to trigger liquidations (basis points pe
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### mpl (state variable)
@@ -510,9 +510,9 @@ The ERC-2222 Maple Token for the Maple protocol.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### oracleFor (state variable)
@@ -534,9 +534,9 @@ The ERC-2222 Maple Token for the Maple protocol.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The Chainlink Oracle for the price of &#x60;asset&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The Chainlink Oracle for the price of &#x60;asset&#x60;.
 
 
 ### pendingGovernor (state variable)
@@ -553,9 +553,9 @@ The Governor that is declared for governorship transfer. Must be accepted for tr
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | 
 
 
 ### protocolPaused (state variable)
@@ -572,9 +572,9 @@ Whether the functionality of the entire protocol is paused.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | 
 
 
 ### setCalc 
@@ -1015,9 +1015,9 @@ The period (in secs) after which Stakers are allowed to unstake their BPTs from 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### stakerUnstakeWindow (state variable)
@@ -1034,9 +1034,9 @@ The window of time (in secs) after &#x60;stakerCooldownPeriod&#x60; that an acco
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### swapOutRequired (state variable)
@@ -1053,9 +1053,9 @@ The minimum amount of Pool cover that a Pool Delegate has to provide before they
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### treasuryFee (state variable)
@@ -1072,9 +1072,9 @@ The portion of drawdown that goes to the MapleTreasury.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint256` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | 
 
 
 ### validCalcs (state variable)
@@ -1096,9 +1096,9 @@ The portion of drawdown that goes to the MapleTreasury.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;calc&#x60; is valid.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;calc&#x60; is valid.
 
 
 ### validSubFactories (state variable)
@@ -1122,9 +1122,9 @@ The portion of drawdown that goes to the MapleTreasury.
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactory&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactory&#x60;.
 
 
 

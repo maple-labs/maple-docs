@@ -19,9 +19,9 @@ The type of the factory (i.e FactoryType::COLLATERAL_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `uint8` | 
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint8` | `uint8` | 
 
 
 ### isLocker (state variable)
@@ -43,9 +43,9 @@ The type of the factory (i.e FactoryType::COLLATERAL_LOCKER_FACTORY).
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `bool` | Whether &#x60;collateralLocker&#x60; is a CollateralLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;collateralLocker&#x60; is a CollateralLocker.
 
 
 ### newLocker 
@@ -67,9 +67,9 @@ Instantiates a CollateralLocker. It emits a &#x60;CollateralLockerCreated&#x60; 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 | `collateralLocker` | `address` | The address of the instantiated CollateralLocker.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `collateralLocker` | `address` | `address` | The address of the instantiated CollateralLocker.
 
 
 ### owner (state variable)
@@ -91,9 +91,9 @@ Instantiates a CollateralLocker. It emits a &#x60;CollateralLockerCreated&#x60; 
 
 
 #### Return Values:
-| Index | Name | Type | Description |
-| :---: | :--: | :--: | :---------- |
-| 0 |  | `address` | The address of the owner of CollateralLocker at &#x60;collateralLocker&#x60;.
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` | The address of the owner of CollateralLocker at &#x60;collateralLocker&#x60;.
 
 
 
