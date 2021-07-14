@@ -1,6 +1,6 @@
 # How to deposit and withdraw stake?
 
-While Stakers can claim their earned interest at any time, they must wait for their withdraw timer prior to removing their principle. 
+While Stakers can claim their earned interest at any time, they must wait for their withdraw timer prior to removing their principal. 
 
 {% hint style="info" %}
 Find more info on the pool cooldown [here](https://github.com/maple-labs/maple-core/wiki/FDT-Exit-Defense-Mechanisms).
