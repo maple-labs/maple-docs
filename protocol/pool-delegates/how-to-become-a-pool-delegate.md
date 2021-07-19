@@ -2,11 +2,11 @@
 
 ### Create Pool and Attract Funding
 
-Once whitelisted, Pool Delegates complete a Pool Delegate Profile to be published alongside their Liquidity Pool. This profile will include their background and their strategy for the Liquidity Pool.
+Once whitelisted, Pool Delegates complete a Profile to be published alongside their Lending Pool. This profile will include their background and their strategy for the Pool.
 
-Next, the Pool Delegate will establish their Liquidity Pool on-chain. They will select the cryptocurrency their Liquidity Pool will lend in and set the Ongoing Fee charged to Liquidity Pool for management, including the amount which will go to MPL holders who stake the Pool. Pool Delegates will be required to stake Maple Tokens \(MPL\) to their managed Liquidity Pool to serve as first-loss capital to the Pool and align interests with Liquidity Providers.
+Next the Pool Delegate will establish their Lending Pool on-chain. They will select the cryptocurrency their Lending Pool will lend in and set the Ongoing Fee charged to Lending Pool for management, including the amount which will go to MPL holders who stake the Pool. Pool Delegates will be required to stake Maple Tokens \(MPL\) to their managed Lending Pool to serve as first-loss capital to the Pool and align interests with Lenders.
 
 ### Interested in becoming a Pool Delegate?
 
-Maple's first Liquidity Pool will be managed by [Orthogonal Trading](https://maplefinance.ghost.io/orthogonal-trading-pool-delegate/). All Pool Delegates on Maple must be whitelisted prior to establishing a Liquidity Pool.
+All Pool Delegates on Maple must be whitelisted prior to establishing a Lending Pool. Pool Delegates are funds and industry professionals with credit experience. If you'd like to explore becoming a Pool Delegate, please connect with the Maple team on any of our platforms.
 

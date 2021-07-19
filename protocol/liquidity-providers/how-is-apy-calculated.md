@@ -1,10 +1,10 @@
 # How is APY calculated?
 
-There are multiple APY figures involved in a Maple Liquidity Pool. Each comes from a combination of platform fees, interest fees, and MPL rewards.
+There are multiple APY figures involved in a Maple Lending Pool. Each comes from a combination of platform fees, interest fees, and MPL rewards.
 
 ### LP Interest
 
-APY representing the LP interest is listed on each pool page in the "Your Investment" block on the webapp. This APY is a fixed interest yield based on the borrower terms the pool participates in. It will change with the interest payments and occurrence of defaults. 
+APY representing the Lender interest is listed on each pool page in the "Your Investment" block on the webapp. This APY is a fixed interest yield based on the borrower terms the pool participates in. It will change with the interest payments and occurrence of defaults. 
 
 ### MPL Rewards
 

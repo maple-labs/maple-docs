@@ -13,12 +13,12 @@
   * [What criteria do Pool Delegates use to assess borrowers?](protocol/pool-delegates/what-criteria-do-pool-delegates-use-to-assess-borrowers.md)
   * [How to become a Pool Delegate](protocol/pool-delegates/how-to-become-a-pool-delegate.md)
 * [Borrowers](protocol/borrowers/README.md)
-  * [How to borrow on Maple?](protocol/borrowers/how-can-i-borrow-on-maple.md)
+  * [How to borrow on Maple](protocol/borrowers/how-can-i-borrow-on-maple.md)
   * [How do liquidations work?](protocol/borrowers/how-do-liquidations-work.md)
   * [What are the fees?](protocol/borrowers/what-are-the-fees.md)
   * [What collateral do borrowers have to put up?](protocol/borrowers/what-collateral-do-borrowers-have-to-put-up.md)
-* [Liquidity Providers](protocol/liquidity-providers/README.md)
-  * [How do Liquidity Pools work?](protocol/liquidity-providers/how-do-liquidity-pools-work.md)
+* [Lenders](protocol/liquidity-providers/README.md)
+  * [How do Lending Pools work?](protocol/liquidity-providers/how-do-liquidity-pools-work.md)
   * [How can I add or withdraw liquidity?](protocol/liquidity-providers/how-can-i-add-or-withdraw-liquidity.md)
   * [How is APY calculated?](protocol/liquidity-providers/how-is-apy-calculated.md)
   * [How do liquidations work?](protocol/liquidity-providers/how-do-liquidations-work.md)
@@ -31,7 +31,8 @@
 * [Staking Pool Cover](protocol/pool-cover/README.md)
   * [Why USDC:MPL?](protocol/pool-cover/why-usdc-mpl.md)
   * [How does the Staking Pool work?](protocol/pool-cover/how-does-the-insurance-pool-work.md)
-  * [How to deposit and withdraw stake?](protocol/pool-cover/how-to-deposit-and-withdraw-stake.md)
+  * [How to deposit and withdraw stake](protocol/pool-cover/how-to-deposit-and-withdraw-stake.md)
+  * [Staking Rewards](protocol/pool-cover/staking-rewards.md)
 
 ## API
 

@@ -1,4 +1,4 @@
-# How to deposit and withdraw stake?
+# How to deposit and withdraw stake
 
 While Stakers can claim their earned interest at any time, they must wait for their withdraw timer prior to removing their principal. 
 

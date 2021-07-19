@@ -4,7 +4,7 @@ The Maple protocol offers the most capital efficient option for institutional bo
 
 ## High Level
 
-Users can access reliable yield opportunities on Maple by depositing capital into Liquidity Pools. These Liquidity Pools are managed by experienced investors, known as _Pool Delegates_.
+Users can access reliable yield opportunities on Maple by depositing capital into lending pools. These lending pools are managed by experienced investors, known as _Pool Delegates_.
 
 {% hint style="info" %}
 See our technical documentation [here](https://github.com/maple-labs/maple-core/wiki).
@@ -14,15 +14,15 @@ _Institutional_ _Borrowers_ can access transparent and efficient financing on-ch
 
 _Pool Delegates_ conduct due diligence and agree on terms with _Borrowers_ before funding loans from their designated Liquidity Pool.
 
-_Liquidity Providers_ earn a sustainable yield through diversified exposure to crypto's premium institutions and enjoy a set-and-forget solution as diligence is conducted by _Pool Delegates_.
+_Lenders_ earn a sustainable yield through diversified exposure to crypto's premium institutions and enjoy a set-and-forget solution as diligence is conducted by _Pool Delegates_.
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
 ## Users
 
-_Liquidity Providers \(LPs\) -_ provide liquidity to a pool for the opportunity to earn a fixed interest \(based on borrower terms\) as well as any associated MPL mining rewards.
+_Lenders -_ provide capital to a pool to earn a fixed interest \(based on borrower terms\) as well as any associated MPL mining rewards.
 
-_Pool Delegates -_  credible asset managers who launch and manage liquidity pools. They each develop their own investment strategy and underwriting process for determining creditworthy borrowers.
+_Pool Delegates -_  credible asset managers who launch and manage lending pools. They each develop their own investment strategy and underwriting process for determining creditworthy borrowers.
 
 _Borrowers -_ institutions looking for working capital. Borrowers include hedge funds, prop traders, market makers, exchanges, centralized lenders, crypto miners, and scale-ups.
 
@@ -40,10 +40,10 @@ Find the detailed smart contract architecture [here](https://github.com/maple-la
 
 1. Maple Governance approves Pool Delegate 
 2. Delegate creates profile and strategy 
-3. Delegate deploys and initiates pool 
+3. Delegate deploys and initiates lending pool 
 4. Delegate activates pool by staking pool cover minimum amount of MPL:USDC Balancer Pool Tokens \(BPT\) 
 5. Stakers view delegate profile and add additional BPTs for pool cover to desirable pools
-6. Liquidity Providers \(LPs\) review delegate profile and add liquidity to desirable pools 
+6. Lenders \(LPs\) review delegate profile and add liquidity to desirable pools 
 7. Borrower creates borrower profile and details loan terms 
 8. Delegate views borrower requests and conducts private diligence on terms directly with borrower 
 9. Once terms are agreed, borrower launches loan contract 
@@ -51,7 +51,7 @@ Find the detailed smart contract architecture [here](https://github.com/maple-la
 11. Borrower draws down the loan and stakes collateral in one transaction. An Establishment Fee is taken from drawdown and sent to the delegate and Maple DAO Treasury 
 12. Borrower pays interest according to the scheduled repayment cycle and pays principal with final repayment upon maturity 
 13. Delegate claims interest on behalf of the pool throughout the loan term and claims principal with final repayment upon maturity 
-14. Delegates, LPs, and Stakers can all claim available interest throughout the process
+14. Delegates, Lenders, and Stakers can all claim available interest throughout the process
 
 ## Protocol Parameters
 

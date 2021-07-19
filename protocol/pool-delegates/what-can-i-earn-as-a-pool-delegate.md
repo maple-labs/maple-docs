@@ -14,5 +14,5 @@ Establishment Fees are paid by Borrowers for the work involved in due diligence 
 
 ### Ongoing Fees
 
-Ongoing Fees are paid for the ongoing management of each Liquidity Pool. They are set by the Pool Delegate when creating the Liquidity Pool and are paid out of a percentage of the interest yield received. The Ongoing Fee is shared between the Pool Delegate and MPL Stakers.
+Ongoing Fees are paid for the ongoing management of each Lending Pool. They are set by the Pool Delegate when creating the Lending Pool and are paid out of a percentage of the interest yield received. The Ongoing Fee is shared between the Pool Delegate and MPL Stakers.
 

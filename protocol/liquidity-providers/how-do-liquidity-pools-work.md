@@ -1,6 +1,6 @@
-# How do Liquidity Pools work?
+# How do Lending Pools work?
 
-Liquidity Pools are established and managed by industry professionals, known as Pool Delegates. Pool Delegates participate by liaising with Borrowers, credit assessing them and agreeing terms with them before lending from their designated Liquidity Pool. Once a Pool Delegate creates a Liquidity Pool, they are required to stake Maple Tokens \(MPL\) to their Liquidity Pool to serve as first-loss capital to the Pools, aligning their interests with Liquidity Providers. Maple Token Holders will have the opportunity to stake to Liquidity Pools to provide default insurance.
+Lending Pools are established and managed by funds and industry professionals, known as Pool Delegates. Pool Delegates participate by liaising with Borrowers, credit assessing them and agreeing terms with them before lending from their managed Lending Pool. Once a Pool Delegate creates a Lending Pool, they are required to stake Maple Tokens \(MPL\) to their Lending Pool to serve as first-loss capital to the Pools, aligning their interests with Lenders. Maple Token Holders will have the opportunity to stake to Lending Pools to provide default insurance.
 
-Liquidity Providers will be able to select which Liquidity Pools to fund to earn sustainable yield.
+Lenders will be able to select which Lending Pools to fund to earn sustainable yield.
 

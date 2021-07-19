@@ -1,6 +1,6 @@
 # Why USDC:MPL?
 
-While the staking system may be modified in the future, the initial pools require BPTs created from the MPL:USDC Balancer pool. The tokens in the stake locker contract must be easily liquidated in order to provide cover for LPs under default conditions. In order for this to happen:
+While the staking system may be modified with future governance initiatives, the initial pools require BPTs created from the MPL:USDC Balancer pool. The tokens in the stake locker contract must be easily liquidated in order to provide cover for lenders under default conditions. In order for this to happen:
 
 1. MPL needs a liquid decentralized marketplace
 2. Liquidation of MPL needs to produce the lending pool liquidity asset \(USDC\)

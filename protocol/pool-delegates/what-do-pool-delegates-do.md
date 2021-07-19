@@ -4,7 +4,7 @@
 
 ### **Create Pool and Attract Funding**
 
-Once whitelisted, Pool Delegates complete a Pool Delegate Profile to be published alongside their Liquidity Pool. This profile will include their background, their strategy for the Liquidity Pool, and the target yield. Pool Delegates will be required to stake Maple Tokens \(MPL\) to their Liquidity Pool to serve as a reserve of first-loss capital in the Pool and to align the Delegate's interests with Liquidity Providers.
+Once whitelisted, Pool Delegates complete a Pool Delegate Profile to be published alongside their Lending Pool. This profile will include their background, their strategy for the Lending Pool, and the target yield. Pool Delegates will be required to stake Maple Tokens \(MPL\) to their Lending Pool to serve as a reserve of first-loss capital in the Pool and to align the Delegate's interests with Lenders.
 
 ### **Assess New Borrowers**
 
@@ -12,13 +12,13 @@ Interested Borrowers create a Request for Quote \(RFQ\) for a loan on Maple. The
 
 ### **Agree Terms and Fund Loan from Pool**
 
-Once an agreement is reached between Borrower and Pool Delegate, the Borrower will create the on-chain loan request and the Pool Delegate will be able to approve a transfer of funds from their designated Liquidity Pool.
+Once an agreement is reached between Borrower and Pool Delegate, the Borrower will create the on-chain loan request and the Pool Delegate will be able to approve a transfer of funds from their designated Lending Pool.
 
-### **Manage Balance in Liquidity Pool**
+### **Manage Balance in Lending Pool**
 
-While overseeing their Liquidity Pools, Pool Delegates should be mindful of maintaining a sufficient stablecoin balance in the Liquidity Pool to enable withdrawals by Liquidity Providers.
+While overseeing their Lending Pool, Pool Delegates should be mindful of maintaining a sufficient stablecoin balance in the Lending Pool to enable withdrawals by Lenders.
 
 ### Assist in Special **Liquidations**
 
-If a Borrower misses their repayments, their collateral can be liquidated by the Maple smart contracts after a 5 day grace period by being sent to an AMM. For less liquid collateral or large amounts that would incur slippage, the collateral may be sold OTC to get the best price before the proceeds are transferred back to the Liquidity Pool.
+If a Borrower misses their repayments, their collateral can be liquidated by the Maple smart contracts after a 5 day grace period by being sent to an AMM. For less liquid collateral or large amounts that would incur slippage, the collateral may be sold OTC to get the best price before the proceeds are transferred back to the Lending Pool.
 
