@@ -4,7 +4,7 @@
 
 ## How to Participate
 
-* [How to lend](how-to-participate/untitled-1.md)
+* [How to lend](how-to-participate/how-to-lend.md)
 * [How to stake](how-to-participate/how-to-stake.md)
 * [How to borrow](how-to-participate/borrowing-with-maple.md)
 * [How to become a Pool Delegate](how-to-participate/earning-with-maple.md)
