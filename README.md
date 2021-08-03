@@ -8,5 +8,7 @@ The protocol is governed by the Maple Token \(MPL\), which enables token holders
 
 [The technical guide to Maple is available on Github](https://github.com/maple-labs/maple-core/wiki).
 
+{% hint style="info" %}
 Join the Maple community [here](https://discord.gg/rn3fU7Zxxj)!
+{% endhint %}
 
