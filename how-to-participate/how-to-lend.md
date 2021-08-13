@@ -4,14 +4,14 @@ This is the easiest way to earn with Maple Finance. Lenders deposit into a pool 
 
 ![](../.gitbook/assets/maple-lending.png)
 
-Before lending you will need to prepare USDC in your Metamask wallet and ETH for gas payments. **You will not need MPL tokens to participate lending.**
+Before lending, you will need to prepare USDC in your Metamask wallet and ETH for gas payments. **You will not need MPL tokens to participate in lending.**
 
-1. Deposit USDC on the [Maple webapp](https://app.maple.finance/#/liquidity) to a lending pool of you choice
+1. Deposit USDC on the [Maple webapp](https://app.maple.finance/#/liquidity) to a lending pool of your choice
 2. You will receive Maple Pool Tokens \(MPTs\) representing your share of the lending pool
 3. **To earn MPL rewards, you must deposit your MPTs to the Liquidity Mining contract**
 4. You will be able to claim your USDC interest and mined MPL tokens directly from the webapp
 
-_Deposits will be locked for a six month period in order to fund consecutive tranches of institutional loans on Maple. **There is no minimum deposit amount to participate.**_
+_Deposits will be locked for a six-month period in order to fund consecutive tranches of institutional loans on Maple. **There is no minimum deposit amount to participate.**_
 
 {% embed url="https://youtu.be/REsInfEJX5k" %}
 
