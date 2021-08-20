@@ -1,8 +1,8 @@
 # LBP Overview
 
-Maple Finance will distribute 500,000 [MPL](https://maplefinance.ghost.io/mpl-tokenomics/) governance tokens \(5% of total supply\) via a [Balancer Liqudity Bootstrapping Pool](https://docs.balancer.finance/getting-started/faq#using-balancer-protocol) \(LBP\) on April 28, 2021 at around 4:30PM EST. The Balancer LBP will last for 72 hours, ending on May 1, 2021 at around 4:30PM EST.
+Maple Finance will distribute 500,000 [MPL](https://maplefinance.ghost.io/mpl-tokenomics/) governance tokens \(5% of total supply\) via a [Balancer Liqudity Bootstrapping Pool](https://docs.balancer.finance/getting-started/faq#using-balancer-protocol) \(LBP\) on April 28, 2021, at around 4:30 PM EST. The Balancer LBP will last for 72 hours, ending on May 1, 2021, at around 4:30 PM EST.
 
-The Balancer LBP will start at 4:30PM EST, available for a duration of three days. The LBP will start at a pool weight of MPL:USDC = 96:4 and will gradually shift on a linear function to MPL:USDC = 4:96 over the period, creating downward pressure on the price.
+The Balancer LBP will start at 4:30 PM EST, available for a duration of three days. The LBP will start at a pool weight of MPL:USDC = 96:4 and will gradually shift on a linear function to MPL:USDC = 4:96 over the period, creating downward pressure on the price.
 
 ### How to Participate in the Maple LBP
 
