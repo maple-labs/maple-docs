@@ -86,10 +86,10 @@
 
 ## API
 
-* [Public](api/public-resolvers.md)
-* [Private](api/private-resolvers.md)
-* [Auth](api/auth-resolvers.md)
-* [Rates](api/loanscan.md)
+* [Public](api/public.md)
+* [Private](api/private.md)
+* [Auth](api/auth.md)
+* [Rates](api/rates.md)
 
 ## Archive - LBP <a id="maple-lbp"></a>
 

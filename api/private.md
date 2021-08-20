@@ -4,7 +4,7 @@ description: Private GraphQL resolvers for Maple Finance Protocol
 
 # Private
 
-The private GraphQL endpoint is [https://api.maple.finance/private](https://api.maple.finance/private). The following authentication headers must be passed with each request. Please refer to the [Auth](auth-resolvers.md) section to get your auth challenge and how to create a signature.
+The private GraphQL endpoint is [https://api.maple.finance/private](https://api.maple.finance/private). The following authentication headers must be passed with each request. Please refer to the [Auth](auth.md) section to get your auth challenge and how to create a signature.
 
 ```typescript
 interface AuthHeaders {
