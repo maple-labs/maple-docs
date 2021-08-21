@@ -4,7 +4,7 @@ description: Authentication related resolvers for Maple Finance
 
 # Auth
 
-{% api-method method="post" host="https://api.maple.finance" path="/auth/:address" %}
+{% api-method method="get" host="https://api.maple.finance" path="/auth/:address" %}
 {% api-method-summary %}
 Get Auth Challenge
 {% endapi-method-summary %}
@@ -53,7 +53,7 @@ If address is badly formatted or invalid.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.maple.finance" path="/signature/check" %}
+{% api-method method="get" host="https://api.maple.finance" path="/signature/check" %}
 {% api-method-summary %}
 Check Signature
 {% endapi-method-summary %}
