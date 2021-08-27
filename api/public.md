@@ -487,7 +487,7 @@ query AllPoolWithdrawnLoans {
           "drawdownDate": "1626329218",
           "requestAmount": "4000000000000",
           "state": "Active",
-          "termDays": 180,
+          "termDays": 90,
           "borrower": {
             "companyName": "Folkvang"
           },
@@ -525,7 +525,7 @@ query AllPoolWithdrawnLoans {
           "drawdownDate": "1627973247",
           "requestAmount": "5000000000000",
           "state": "Active",
-          "termDays": 180,
+          "termDays": 90,
           "borrower": {
             "companyName": "Parallel Capital"
           },
