@@ -435,6 +435,7 @@ query AllPoolWithdrawnLoans {
       requestAmount
       state
       termDays
+      treasuryFees
       borrower {
         companyName
       }
