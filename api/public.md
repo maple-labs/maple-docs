@@ -201,6 +201,8 @@ query AllPools {
       numActiveLoans
       lpApy
       stakingApy
+      farmingApy
+      stakeRewardsApy
       balance
       liquidity
       stake
@@ -242,13 +244,15 @@ query AllPools {
           "delegateFee": "1000",
           "ongoingFee": "2000",
           "name": "Maple Pool Token",
-          "numActiveLoans": "8",
-          "lpApy": "950",
+          "numActiveLoans": "14",
+          "lpApy": "901",
           "stakingApy": "0",
-          "balance": "36297887567008",
-          "liquidity": "12047887567008",
-          "stake": "196336740867262850291",
-          "currentLoaned": "24250000000000",
+          "farmingApy": "1309",
+          "stakeRewardsApy": "809",
+          "balance": "68716215934881",
+          "liquidity": "116215934881",
+          "stake": "247403831141476416291",
+          "currentLoaned": "68600000000000",
           "strategy": "The strategy of this pool will be to target borrowers with capital intensive businesses supported by a strong balance sheet. The Pool Delegate will methodically build the credit history of the borrowers by starting with smaller loans. These will grow in size as PD becomes more comfortable with the counter parties. Creditworthiness is assessed based on balance sheet, recent profitability, leverage, liquidity risk, internal (risk) control systems, strength and track record of the team, among other things. The pool is USDC denominated. Collateralization ratios can vary between 0 - 100%.",
           "poolName": "Maven 11 - USDC 01",
           "contractAddress": "0x6f6c8013f639979c84b756c7fc1500eb5af18dc4",
@@ -256,7 +260,7 @@ query AllPools {
             "address": null,
             "symbol": "BPT"
           },
-          "liquidityCap": "41500000000000",
+          "liquidityCap": "75000000000000",
           "liquidityAsset": {
             "address": null,
             "symbol": "USDC"
@@ -275,12 +279,14 @@ query AllPools {
           "ongoingFee": "2000",
           "name": "Maple Pool Token",
           "numActiveLoans": "15",
-          "lpApy": "986",
+          "lpApy": "821",
           "stakingApy": "0",
-          "balance": "60965119176499",
-          "liquidity": "12165119176499",
-          "stake": "284848759795089567928",
-          "currentLoaned": "48800000000000",
+          "farmingApy": "1376",
+          "stakeRewardsApy": "1371",
+          "balance": "101007145602468",
+          "liquidity": "3707145602468",
+          "stake": "346781754665097345072",
+          "currentLoaned": "97300000000000",
           "strategy": "The strategy of this Pool will be to target industry-leading funds and prop trading desks. The focus will be on mitigating risk by lending to market makers and arbitrage traders to avoid taking directional risk on the prices of crypto assets. Borrowers' creditworthiness is assessed based on how they manage leverage, liquidity risk, operational risk controls, management's level of experience, their balance sheet strength and recent financial performance. Loans in the pool will generally vary between 0 and 50% collateralization and target a weighted average APY of low-to-mid teens in line with the market for stablecoin lending.",
           "poolName": "Orthogonal Trading - USDC01",
           "contractAddress": "0xfebd6f15df3b73dc4307b1d7e65d46413e710c27",
@@ -288,7 +294,7 @@ query AllPools {
             "address": null,
             "symbol": "BPT"
           },
-          "liquidityCap": "62000000000000",
+          "liquidityCap": "150000000000000",
           "liquidityAsset": {
             "address": null,
             "symbol": "USDC"
