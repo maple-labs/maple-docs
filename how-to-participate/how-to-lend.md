@@ -13,5 +13,5 @@ Before lending, you will need to prepare USDC in your Metamask wallet and ETH fo
 
 _Deposits will be locked for a six-month period in order to fund consecutive tranches of institutional loans on Maple. **There is no minimum deposit amount to participate.**_
 
-{% embed url="https://youtu.be/REsInfEJX5k" %}
+{% embed url="https://youtu.be/OujH\_MW4O5M" %}
 
