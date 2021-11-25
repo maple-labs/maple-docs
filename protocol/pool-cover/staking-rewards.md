@@ -4,13 +4,13 @@ description: These rewards are subject to change.
 
 # Staking Rewards
 
-Staking receives one-tenth of the interest yield in a pool plus MPL rewards. 
+Staking receives one-tenth of the interest yield in a pool plus MPL rewards.&#x20;
 
-The APY from MPL rewards will vary depending on 1\) the volume of MPL which is Staked; and 2\) the MPL price. 
+The APY from MPL rewards will vary depending on 1) the volume of MPL which is Staked; and 2) the MPL price.&#x20;
 
 The MPL Rewards implementation will be a single deposit of a fixed number of MPL to the Staking Rewards Contract at the start of each month.
 
-This will be determined based on: 
+This will be determined based on:&#x20;
 
 * Average MPL price over preceding 7 days
 * Target Staking Volume in the protocol for the next month
@@ -18,17 +18,16 @@ This will be determined based on:
 
 **Target Staking Volume size**
 
-The Staking Reserve provides additional collateral protection in case of defaults on the undercollateralized loans in a Lending Pool. The target reserve size is around 8-12% of the balance of loans in a pool. The MPL rewards would be sized to hit the target all-in APY if actual staking volume meets the target reserve size. Eg if a pool has $100M of loans, then $8M-$12M staking reserve.   
+The Staking Reserve provides additional collateral protection in case of defaults on the undercollateralized loans in a Lending Pool. The target reserve size is around 8-12% of the balance of loans in a pool. The MPL rewards would be sized to hit the target all-in APY if actual staking volume meets the target reserve size. Eg if a pool has $100M of loans, then $8M-$12M staking reserve. \
 
 
 **Target all-in APY**
 
-The target all in APY factors is calculated as this USDC fee plus MPL rewards. Current market conditions for stablecoin farming are generally 15-20% APY. The Staking Reserve receives 0.1x the interest yield in the pool as fees. 
+The target all in APY factors is calculated as this USDC fee plus MPL rewards. Current market conditions for stablecoin farming are generally 15-20% APY. The Staking Reserve receives 0.1x the interest yield in the pool as fees.&#x20;
 
-* If the average interest rate on loans in the pool is 10%, then 1% \(ie 0.1\*10%\) goes to the reserve as fees. 
-* If the Staking Reserve is 10% of the loans outstanding, then USDC fee APY is 10% \(ie 1% / 10%\). 
+* If the average interest rate on loans in the pool is 10%, then 1% (ie 0.1\*10%) goes to the reserve as fees.&#x20;
+* If the Staking Reserve is 10% of the loans outstanding, then USDC fee APY is 10% (ie 1% / 10%).&#x20;
 * Thus to achieve the target all-in APY of 15-20%, the target MPL rewards would be 5%-10% and the number of MPL deposited at the start of the month would be set accordingly.
 
-[Calculated example can be found here](https://docs.google.com/spreadsheets/d/1z1uGemb9gEPVavwLF11N_g6iUyrUG7lXgRRhEzHgSkc/edit?usp=sharing)  
+[Calculated example can be found here](https://docs.google.com/spreadsheets/d/1z1uGemb9gEPVavwLF11N\_g6iUyrUG7lXgRRhEzHgSkc/edit?usp=sharing)****\
 ****
-

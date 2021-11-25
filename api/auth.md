@@ -4,30 +4,16 @@ description: Authentication related resolvers for Maple Finance
 
 # Auth
 
-{% api-method method="get" host="https://api.maple.finance" path="/auth/:address" %}
-{% api-method-summary %}
-Get Auth Challenge
-{% endapi-method-summary %}
+{% swagger baseUrl="https://api.maple.finance" path="/auth/:address" method="get" summary="Get Auth Challenge" %}
+{% swagger-description %}
+The message (x-auth-message) is obtained here, which can be then used for signing (x-auth-signature)
+{% endswagger-description %}
 
-{% api-method-description %}
-The message \(x-auth-message\) is obtained here, which can be then used for signing \(x-auth-signature\)
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="address" type="string" %}
+The Ethereum address that has been used to sign on your wallet (MetaMask/WalletConnect)
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="address" type="string" required=true %}
-The Ethereum address that has been used to sign on your wallet \(MetaMask/WalletConnect\)
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-A valid cryptic message is sent.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="A valid cryptic message is sent." %}
 ```
 {
     "data": {
@@ -38,66 +24,39 @@ A valid cryptic message is sent.
     }
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-If address is badly formatted or invalid.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="If address is badly formatted or invalid." %}
 ```
 { "message": "BAD_ADDRESS" }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://api.maple.finance" path="/signature/check" %}
-{% api-method-summary %}
-Check Signature
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://api.maple.finance" path="/signature/check" method="get" summary="Check Signature" %}
+{% swagger-description %}
 Checks for valid signature, ensuring authentication.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="x-auth-signature" type="string" required=true %}
+{% swagger-parameter in="header" name="x-auth-signature" type="string" %}
 The cryptographic signature, which is received from either MetaMask or any other signing Ethereum wallet.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="x-auth-message" type="string" required=true %}
+{% swagger-parameter in="header" name="x-auth-message" type="string" %}
 The message received from the above endpoint
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-The message and signature match and the right user address is sent
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="The message and signature match and the right user address is sent" %}
 ```
 {
     "owner": "0x3489Dee7e8Fcec81F15e1C00209781779C5AAFF1"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-If address is badly formatted or invalid, or if signature invalid
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="If address is badly formatted or invalid, or if signature invalid" %}
 ```
 { "message": "BAD_ADDRESS" / "BAD_SIGNATURE" }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

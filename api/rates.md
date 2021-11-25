@@ -10,9 +10,10 @@ description: Maple Lend and Borrow rates
 
 {% tabs %}
 {% tab title="Response" %}
-* **`200: OK`** Borrow and lend rates successfully retrieved
+* **`200: OK`**\
+  Borrow and lend rates successfully retrieved
 
-```text
+```
 { 
     "lendRates": [{
         "apr": 0.08458234,
@@ -28,11 +29,11 @@ description: Maple Lend and Borrow rates
 }
 ```
 
-* **`500: Internal Server Error`** Could not fetch rates
+* **`500: Internal Server Error`**\
+  Could not fetch rates
 
-```text
+```
 { "statusCode": 500, message: "Unable to fetch rates" }
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -4,7 +4,7 @@ The Maple protocol offers the most capital efficient option for institutional bo
 
 ## High Level
 
-Users can access reliable yield opportunities on Maple by depositing capital into lending pools. These lending pools are managed by experienced investors, known as _Pool Delegates_.
+_Lenders_ can access reliable yield opportunities on Maple by depositing capital into lending pools. These lending pools are managed by experienced professionals, known as _Pool Delegates_.
 
 {% hint style="info" %}
 See our technical documentation [here](https://github.com/maple-labs/maple-core/wiki).
@@ -14,48 +14,46 @@ _Institutional_ _Borrowers_ can access transparent and efficient financing on-ch
 
 _Pool Delegates_ conduct due diligence and agree on terms with _Borrowers_ before funding loans from their designated Liquidity Pool.
 
-_Lenders_ earn a sustainable yield through diversified exposure to crypto's premium institutions and enjoy a set-and-forget solution as diligence is conducted by _Pool Delegates_.
+_Lenders _earn a sustainable yield through diversified exposure to crypto's premium institutions and enjoy a set-and-forget solution as diligence is conducted by _Pool Delegates_.
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](<../.gitbook/assets/image (26).png>)
 
 ## Users
 
-_Lenders -_ provide capital to a pool to earn a fixed interest \(based on borrower terms\) as well as any associated MPL mining rewards.
+_Lenders -_ provide capital to a pool to earn interest from Institutional Borrowers as well as any associated MPL lending rewards.
 
-_Pool Delegates -_  credible asset managers who launch and manage lending pools. They each develop their own investment strategy and underwriting process for determining creditworthy borrowers.
+_Pool Delegates -_  credible experts who launch and manage Lending Pools. They each develop their own investment strategy and underwriting process for determining creditworthy borrowers.
 
-_Borrowers -_ institutions looking for working capital. Borrowers include hedge funds, prop traders, market makers, exchanges, centralized lenders, crypto miners, and scale-ups.
+_Borrowers -_ institutions looking for capital to fund operations and grow their business. Borrowers currently include hedge frequency traders, prop traders, market makers, exchanges and centralized lenders with a strong requirement for delta neutral strategies.
 
-_Stakers -_ provide pool cover by staking tokens into pool stake locker contracts. These tokens will be first to be liquidated in a default. Stakers receive a percentage of the interest earned by the pool from borrowers.
+_Stakers -_ provide Pool Cover by staking MPL tokens into Pools to provide first loss capital. These tokens will be first to be liquidated in the event a Borrower defaults. Stakers receive a percentage of the interest earned by the pool from borrowers and MPL staking rewards.
 
-## Protocol Diagram Overview
+## Protocol Overview
 
-![](../.gitbook/assets/numbered-protocol.png)
+### End to End Steps on Maple
+
+1. Maple Governance approves Pool Delegate&#x20;
+2. Delegate creates profile and strategy&#x20;
+3. Delegate deploys and initiates lending pool&#x20;
+4. Delegate activates pool by staking pool cover minimum amount of MPL:USDC Balancer Pool Tokens (BPT)&#x20;
+5. Stakers view delegate profile and add additional BPTs for pool cover to desirable pools
+6. Lenders (LPs) review delegate profile and add liquidity to desirable pools&#x20;
+7. Borrower creates borrower profile and details loan terms&#x20;
+8. Delegate views borrower requests and conducts private diligence on terms directly with borrower&#x20;
+9. Once terms are agreed, borrower launches loan contract&#x20;
+10. Delegate funds the loan contract with the pool liquidity&#x20;
+11. Borrower draws down the loan and stakes collateral in one transaction. An Establishment Fee is taken from drawdown and sent to the delegate and Maple DAO Treasury&#x20;
+12. Borrower pays interest according to the scheduled repayment cycle and pays principal with final repayment upon maturity&#x20;
+13. Delegate claims interest on behalf of the pool throughout the loan term and claims principal with final repayment upon maturity&#x20;
+14. Delegates, Lenders, and Stakers can all claim available interest throughout the process
 
 {% hint style="info" %}
 Find the detailed smart contract architecture [here](https://github.com/maple-labs/maple-core/wiki/Smart-Contract-Architecture).
 {% endhint %}
 
-### Steps to Launch and Lend on Maple
-
-1. Maple Governance approves Pool Delegate 
-2. Delegate creates profile and strategy 
-3. Delegate deploys and initiates lending pool 
-4. Delegate activates pool by staking pool cover minimum amount of MPL:USDC Balancer Pool Tokens \(BPT\) 
-5. Stakers view delegate profile and add additional BPTs for pool cover to desirable pools
-6. Lenders \(LPs\) review delegate profile and add liquidity to desirable pools 
-7. Borrower creates borrower profile and details loan terms 
-8. Delegate views borrower requests and conducts private diligence on terms directly with borrower 
-9. Once terms are agreed, borrower launches loan contract 
-10. Delegate funds the loan contract with the pool liquidity 
-11. Borrower draws down the loan and stakes collateral in one transaction. An Establishment Fee is taken from drawdown and sent to the delegate and Maple DAO Treasury 
-12. Borrower pays interest according to the scheduled repayment cycle and pays principal with final repayment upon maturity 
-13. Delegate claims interest on behalf of the pool throughout the loan term and claims principal with final repayment upon maturity 
-14. Delegates, Lenders, and Stakers can all claim available interest throughout the process
-
 ## Protocol Parameters
 
-Parameters associated with the Maple protocol include those that are pool specific \(Pool Parameters\), and those that affect the entire system \(Global Parameters\).
+Parameters associated with the Maple protocol include those that are pool specific (Pool Parameters), and those that affect the entire system (Global Parameters).
 
 ### Pool Parameters
 
@@ -63,25 +61,25 @@ These parameters are determined by the Pool Delegate when first configuring and 
 
 #### Static Parameters
 
-These parameters define aspects that **cannot be changed** post pool deployment.
+These parameters define aspects that** cannot be changed** post pool deployment.
 
-_Liquidity Asset_ **-** denominated ERC20 token asset used for a pool to lend to borrowers and accept as interest.
+_Liquidity Asset_** - **denominated ERC20 token asset used for a pool to lend to borrowers and accept as interest.
 
-_Delegate Fee_ **-** percentage of interest generated by the pool that is allocated to delegate.
+_Delegate Fee_** - **percentage of interest generated by the pool that is allocated to delegate.
 
-_Staker Fee_ **-** this is the percentage of interest generated by the pool that is given to Stakers.
+_Staker Fee_** -** this is the percentage of interest generated by the pool that is given to Stakers.
 
 #### Flexible Parameters
 
 These parameters **can be changed** post pool deployment.
 
-_Pool Capacity_ **-** total liquidity value a pool will accept. Once this value is reached, the pool has no more capacity for additional liquidity.
+_Pool Capacity_** -** total liquidity value a pool will accept. Once this value is reached, the pool has no more capacity for additional liquidity.
 
-_Liquidity Access_ **-** delegates determine whether the opportunity to provide liquidity in a pool is open privately to a select list of Ethereum addresses or open publicly to any address.
+_Liquidity Access_** - **delegates determine whether the opportunity to provide liquidity in a pool is open privately to a select list of Ethereum addresses or open publicly to any address.
 
-_Staker Access_ **-** delegates determine whether the opportunity to stake cover for a pool is open privately to a select list of Ethereum addresses or open publicly to any address.
+_Staker Access _**- **delegates determine whether the opportunity to stake cover for a pool is open privately to a select list of Ethereum addresses or open publicly to any address.
 
-_Lockup Period_ **-** this period determines the length of time liquidity in a pool must be locked prior to withdrawal by LPs or Stakers. The period can be decreased by the pool delegate, but not increased.
+_Lockup Period _**- **this period determines the length of time liquidity in a pool must be locked prior to withdrawal by LPs or Stakers. The period can be decreased by the pool delegate, but not increased.
 
 ### Global Parameters
 
@@ -91,5 +89,4 @@ _Treasury Fee -_ fee sent to the Maple DAO Treasury from every loan drawn down f
 
 _Delegate Fee -_ fee sent to the delegate from every loan drawn down in their specific pool.
 
-_Cooldown Period_ - the cooldown period is a period of time require to past after an LP or Staker initiates withdraw.
-
+_Cooldown Period _- the cooldown period is a period of time require to past after an LP or Staker initiates withdraw.

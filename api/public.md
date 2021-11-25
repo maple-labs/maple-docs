@@ -4,7 +4,7 @@ description: Public GraphQL resolvers for Maple Finance Protocol
 
 # Public
 
-The public GraphQL endpoint is [https://api.maple.finance/public](https://api.maple.finance/public)**.** No authentication headers are required.
+The public GraphQL endpoint is [https://api.maple.finance/public](https://api.maple.finance/public)**. **No authentication headers are required.
 
 ### Maple Globals
 
@@ -180,7 +180,7 @@ type MapleGlobals {
 {% endtab %}
 {% endtabs %}
 
-### All Pools <a id="maple-globals"></a>
+### All Pools <a href="maple-globals" id="maple-globals"></a>
 
 {% tabs %}
 {% tab title="Request" %}
@@ -424,7 +424,7 @@ type Pool {
 
 
 
-### Pool Loans <a id="maple-globals"></a>
+### Pool Loans <a href="maple-globals" id="maple-globals"></a>
 
 {% tabs %}
 {% tab title="Request" %}
@@ -661,7 +661,7 @@ type LoanPublic {
 
 
 
-### Pool by ID <a id="maple-globals"></a>
+### Pool by ID <a href="maple-globals" id="maple-globals"></a>
 
 {% tabs %}
 {% tab title="Request" %}
@@ -857,4 +857,3 @@ type Pool {
 ```
 {% endtab %}
 {% endtabs %}
-
