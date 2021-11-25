@@ -1,5 +1,7 @@
 # How to borrow
 
+{% embed url="https://www.youtube.com/watch?v=rRlXOoi_unY" %}
+
 Maple offers borrowers the most capital efficient option in decentralized lending. Those accepted by pool delegates must go through a pool-specific underwriting process prior to receiving their loan.
 
 1\) If you are a new Borrower to Maple you will need to create an account and go through an approval process. Complete the form and a member of the Maple team will be in touch to discuss next steps. If you are already an approved Borrower, simply connect your wallet and you will be taken to your Borrower Dashboard.
