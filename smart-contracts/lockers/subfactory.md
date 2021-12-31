@@ -1,23 +1,33 @@
-# Sub Factory
+# ISubFactory
 
 SubFactory creates instances downstream of another factory.
 
+<br />
+
+
 ## Functions
 
-### factoryType
+### `factoryType` 
 
 The type of the factory
 
-```text
-  function factoryType(
-  ) pure returns (
-    uint8
-  )
+```solidity
+    function factoryType()
+        pure
+        returns (
+            uint8
+        );
 ```
 
-#### Return Values:
 
+
+#### Return Values:
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 |  | `uint8` | `uint8` |  |
+
+
+<br />
+
+
 

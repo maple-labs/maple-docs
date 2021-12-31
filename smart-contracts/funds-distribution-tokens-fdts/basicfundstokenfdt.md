@@ -1,6 +1,6 @@
-# BasicFDT
+# BasicFundsTokenFDT
 
-BasicFDT implements the basic level FDT functionality for accounting for revenues.
+BasicFundsTokenFDT implements the Basic FDT functionality with a separate Funds Token.
 
 <br />
 
@@ -12,7 +12,8 @@ BasicFDT implements the basic level FDT functionality for accounting for revenue
 ```solidity
     constructor(
         string name,
-        string symbol
+        string symbol,
+        address _fundsToken
     );
 ```
 
@@ -21,6 +22,7 @@ BasicFDT implements the basic level FDT functionality for accounting for revenue
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `name` | `string` | `string` |  |
 | 1 | `symbol` | `string` | `string` |  |
+| 2 | `_fundsToken` | `address` | `address` |  |
 
 
 <br />
@@ -144,6 +146,50 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 
 <br />
 
+### `fundsToken` _[state variable]_
+
+The &#x60;fundsToken&#x60; (dividends).
+
+```solidity
+    function fundsToken()
+        view
+        returns (
+            address
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` |  |
+
+
+<br />
+
+### `fundsTokenBalance` _[state variable]_
+
+The amount of &#x60;fundsToken&#x60; currently present and accounted for in this contract.
+
+```solidity
+    function fundsTokenBalance()
+        view
+        returns (
+            uint256
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
+
 ### `totalSupply`
 
 Returns the amount of tokens in existence.
@@ -243,7 +289,7 @@ Registers a payment of funds in tokens. May be called directly after a deposit i
 
 ### `withdrawFunds`
 
-Withdraws all available funds for the calling FDT holder.
+Withdraws all available funds for a token holder.
 
 ```solidity
     function withdrawFunds()

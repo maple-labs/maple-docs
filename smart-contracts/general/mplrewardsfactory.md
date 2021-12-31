@@ -1,125 +1,153 @@
-# MPL Rewards Factory
+# MplRewardsFactory
 
 MplRewardsFactory instantiates MplRewards contracts.
 
+<br />
+
 ## Constructor
 
-```text
-  constructor(
-    address _globals
-  )
+
+
+
+```solidity
+    constructor(
+        address _globals
+    );
 ```
 
 #### Parameters:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `_globals` | `address` | `address` |  |
+
+
+<br />
+
 
 ## Functions
 
-### createMplRewards
+### `createMplRewards`
 
-Instantiates a MplRewards contract. Only the Governor can call this function. It emits a \`MplRewardsCreated\` event.
+Instantiates a MplRewards contract. Only the Governor can call this function. It emits a &#x60;MplRewardsCreated&#x60; event.
 
-```text
-  function createMplRewards(
-    address rewardsToken,
-    address stakingToken
-  ) nonpayable returns (
-    address mplRewards
-  )
+```solidity
+    function createMplRewards(
+        address rewardsToken,
+        address stakingToken
+    )
+        nonpayable
+        returns (
+            address mplRewards
+        );
 ```
 
 #### Parameters:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
-| 0 | `rewardsToken` | `address` | `address` | The address of the rewards token \(will always be MPL\). |
-| 1 | `stakingToken` | `address` | `address` | The address of the staking token \(token used to stake to earn rewards\).  \(i.e., Pool address for PoolFDT mining, StakeLocker address for staked BPT mining.\) |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `rewardsToken` | `address` | `address` | The address of the rewards token (will always be MPL). |
+| 1 | `stakingToken` | `address` | `address` | The address of the staking token (token used to stake to earn rewards).  (i.e., Pool address for PoolFDT mining, StakeLocker address for staked BPT mining.)  |
+
 
 #### Return Values:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
-| 0 | `mplRewards` | `address` | `address` | The address of the instantiated MplRewards. |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `mplRewards` | `address` | `address` |  The address of the instantiated MplRewards. |
 
-### globals \(state variable\)
+
+<br />
+
+### `globals` _[state variable]_
 
 The instance of MapleGlobals, used to retrieve the current Governor.
 
-```text
-  function globals(
-  ) view returns (
-    address
-  )
+```solidity
+    function globals()
+        view
+        returns (
+            address
+        );
 ```
 
+
+
 #### Return Values:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
-| 0 |  | `address` | `contract IMapleGlobals` |  |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` |  |
 
-### isMplRewards \(state variable\)
 
-```text
-  function isMplRewards(
-    address
-  ) view returns (
-    bool
-  )
+<br />
+
+### `isMplRewards` _[state variable]_
+
+
+
+```solidity
+    function isMplRewards(
+        address mpeRewards
+    )
+        view
+        returns (
+            bool
+        );
 ```
 
 #### Parameters:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
-| 0 | \`\` | `address` | `address` |  |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `mpeRewards` | `address` | `address` | A MplRewards contract. |
+
 
 #### Return Values:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
-| 0 |  | `bool` | `bool` | Whether \`mpeRewards\` is a MplRewards contract. |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` | Whether &#x60;mpeRewards&#x60; is a MplRewards contract. |
 
-### setGlobals
+
+<br />
+
+### `setGlobals`
 
 Updates the MapleGlobals instance. Only the Governor can call this function.
 
-```text
-  function setGlobals(
-    address _globals
-  ) nonpayable
+```solidity
+    function setGlobals(
+        address _globals
+    )
+        nonpayable;
 ```
 
 #### Parameters:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `_globals` | `address` | `address` | Address of new MapleGlobals contract. |
+
+
+<br />
+
 
 ## Events
 
-### MplRewardsCreated
+### `MplRewardsCreated`
 
 Emits an event indicating that a MplRewards contract was created.
 
-```text
-  event MplRewardsCreated(
-    address rewardsToken,
-    address stakingToken,
-    address mplRewards,
-    address owner
-  )
+```solidity
+    event MplRewardsCreated(
+        address rewardsToken,
+        address stakingToken,
+        address mplRewards,
+        address owner
+    );
 ```
 
 #### Parameters:
-
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `rewardsToken` | `address` | `address` | The asset used for rewards. |
 | 1 | `stakingToken` | `address` | `address` | The asset used for staking. |
 | 2 | `mplRewards` | `address` | `address` | The address of the MplRewards contract. |
 | 3 | `owner` | `address` | `address` | The owner of the MplRewards. |
+
+<br />
 

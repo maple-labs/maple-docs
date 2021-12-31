@@ -1,23 +1,33 @@
-# USD Oracle
+# UsdOracle
 
 UsdOracle is a constant price oracle feed that always returns 1 USD in 8 decimal precision.
 
+<br />
+
+
 ## Functions
 
-### getLatestPrice
+### `getLatestPrice` 
 
 Returns the constant USD price.
 
-```text
-  function getLatestPrice(
-  ) view returns (
-    int256
-  )
+```solidity
+    function getLatestPrice()
+        view
+        returns (
+            int256
+        );
 ```
 
-#### Return Values:
 
+
+#### Return Values:
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 |  | `int256` | `int256` |  |
+
+
+<br />
+
+
 
