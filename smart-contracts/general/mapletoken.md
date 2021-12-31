@@ -1,32 +1,78 @@
-# BasicFDT
+# MapleToken
 
-BasicFDT implements the basic level FDT functionality for accounting for revenues.
+
 
 <br />
 
 ## Constructor
 
 
-
+Instantiates the MapleToken.
 
 ```solidity
     constructor(
         string name,
-        string symbol
+        string symbol,
+        address fundsToken
     );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `name` | `string` | `string` |  |
-| 1 | `symbol` | `string` | `string` |  |
+| 0 | `name` | `string` | `string` | Name of the token. |
+| 1 | `symbol` | `string` | `string` | Symbol of the token. |
+| 2 | `fundsToken` | `address` | `address` | The asset claimable / distributed via ERC-2222, deposited to MapleToken contract. |
 
 
 <br />
 
 
 ## Functions
+
+### `DOMAIN_SEPARATOR`
+
+
+
+```solidity
+    function DOMAIN_SEPARATOR()
+        pure
+        returns (
+            bytes32
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bytes32` | `bytes32` |  |
+
+
+<br />
+
+### `PERMIT_TYPEHASH`
+
+
+
+```solidity
+    function PERMIT_TYPEHASH()
+        pure
+        returns (
+            bytes32
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bytes32` | `bytes32` |  |
+
+
+<br />
 
 ### `accumulativeFundsOf`
 
@@ -52,6 +98,210 @@ Returns the amount of funds that an account has earned in total. accumulativeFun
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has earned in total. |
+
+
+<br />
+
+### `fundsToken`
+
+The &#x60;fundsToken&#x60; (dividends).
+
+```solidity
+    function fundsToken()
+        view
+        returns (
+            address
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` |  |
+
+
+<br />
+
+### `fundsTokenBalance`
+
+The amount of &#x60;fundsToken&#x60; currently present and accounted for in this contract.
+
+```solidity
+    function fundsTokenBalance()
+        view
+        returns (
+            uint256
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
+
+### `nonces`
+
+
+
+```solidity
+    function nonces(
+        address
+    )
+        view
+        returns (
+            uint256
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `` | `address` | `address` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
+
+### `permit`
+
+Approve by signature.
+
+```solidity
+    function permit(
+        address owner,
+        address spender,
+        uint256 amount,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `owner` | `address` | `address` | Owner address that signed the permit |
+| 1 | `spender` | `address` | `address` | Spender of the permit |
+| 2 | `amount` | `uint256` | `uint256` | Permit approval spend limit |
+| 3 | `deadline` | `uint256` | `uint256` | Deadline after which the permit is invalid |
+| 4 | `v` | `uint8` | `uint8` | ECDSA signature v component |
+| 5 | `r` | `bytes32` | `bytes32` | ECDSA signature r component |
+| 6 | `s` | `bytes32` | `bytes32` | ECDSA signature s component |
+
+
+<br />
+
+### `updateFundsReceived`
+
+Registers a payment of funds in tokens. May be called directly after a deposit is made. Calls _updateFundsTokenBalance(), whereby the contract computes the delta of the new and previous  &#x60;fundsToken&#x60; balance and increments the total received funds (cumulative), by delta, by calling _distributeFunds().
+
+```solidity
+    function updateFundsReceived()
+        nonpayable;
+```
+
+
+
+<br />
+
+### `withdrawFunds`
+
+Withdraws all available funds for the calling FDT holder.
+
+```solidity
+    function withdrawFunds()
+        nonpayable;
+```
+
+
+
+<br />
+
+### `withdrawFundsOnBehalf`
+
+Withdraws all available funds for a token holder, on behalf of token holder
+
+```solidity
+    function withdrawFundsOnBehalf(
+        address user
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `user` | `address` | `address` |  |
+
+
+<br />
+
+### `withdrawableFundsOf`
+
+Returns the amount of funds that an account can withdraw.
+
+```solidity
+    function withdrawableFundsOf(
+        address _owner
+    )
+        view
+        returns (
+            uint256
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `_owner` | `address` | `address` | The address of some FDT holder. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw. |
+
+
+<br />
+
+### `withdrawnFundsOf`
+
+Returns the amount of funds that an account has withdrawn.
+
+```solidity
+    function withdrawnFundsOf(
+        address _owner
+    )
+        view
+        returns (
+            uint256
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `_owner` | `address` | `address` | The address of a token holder. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn. |
 
 
 <br />
@@ -140,172 +390,6 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 |  | `uint256` | `uint256` |  |
-
-
-<br />
-
-### `totalSupply`
-
-Returns the amount of tokens in existence.
-
-```solidity
-    function totalSupply()
-        view
-        returns (
-            uint256
-        );
-```
-
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
-
-
-<br />
-
-### `transfer`
-
-Moves &#x60;amount&#x60; tokens from the caller&#x27;s account to &#x60;recipient&#x60;. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Requirements: - &#x60;recipient&#x60; cannot be the zero address. - the caller must have a balance of at least &#x60;amount&#x60;.
-
-```solidity
-    function transfer(
-        address recipient,
-        uint256 amount
-    )
-        nonpayable
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `recipient` | `address` | `address` |  |
-| 1 | `amount` | `uint256` | `uint256` |  |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
-### `transferFrom`
-
-Moves &#x60;amount&#x60; tokens from &#x60;sender&#x60; to &#x60;recipient&#x60; using the allowance mechanism. &#x60;amount&#x60; is then deducted from the caller&#x27;s allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. Requirements: - &#x60;sender&#x60; and &#x60;recipient&#x60; cannot be the zero address. - &#x60;sender&#x60; must have a balance of at least &#x60;amount&#x60;. - the caller must have allowance for &#x60;&#x60;sender&#x60;&#x60;&#x27;s tokens of at least &#x60;amount&#x60;.
-
-```solidity
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint256 amount
-    )
-        nonpayable
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `sender` | `address` | `address` |  |
-| 1 | `recipient` | `address` | `address` |  |
-| 2 | `amount` | `uint256` | `uint256` |  |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
-### `updateFundsReceived`
-
-Registers a payment of funds in tokens. May be called directly after a deposit is made. Calls _updateFundsTokenBalance(), whereby the contract computes the delta of the new and previous  &#x60;fundsToken&#x60; balance and increments the total received funds (cumulative), by delta, by calling _distributeFunds().
-
-```solidity
-    function updateFundsReceived()
-        nonpayable;
-```
-
-
-
-<br />
-
-### `withdrawFunds`
-
-Withdraws all available funds for the calling FDT holder.
-
-```solidity
-    function withdrawFunds()
-        nonpayable;
-```
-
-
-
-<br />
-
-### `withdrawableFundsOf`
-
-Returns the amount of funds that an account can withdraw.
-
-```solidity
-    function withdrawableFundsOf(
-        address _owner
-    )
-        view
-        returns (
-            uint256
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_owner` | `address` | `address` | The address of some FDT holder. |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The amount funds that &#x60;_owner&#x60; can withdraw. |
-
-
-<br />
-
-### `withdrawnFundsOf`
-
-Returns the amount of funds that an account has withdrawn.
-
-```solidity
-    function withdrawnFundsOf(
-        address _owner
-    )
-        view
-        returns (
-            uint256
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_owner` | `address` | `address` | The address of a token holder. |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The amount of funds that &#x60;_owner&#x60; has withdrawn. |
 
 
 <br />
@@ -436,29 +520,92 @@ Returns the symbol of the token, usually a shorter version of the name.
 
 <br />
 
+### `totalSupply`
 
-## Events
-
-### `Approval`
-
-Emitted when the allowance of a &#x60;spender&#x60; for an &#x60;owner&#x60; is set by a call to {approve}. &#x60;value&#x60; is the new allowance.
+Returns the amount of tokens in existence.
 
 ```solidity
-    event Approval(
-        address owner,
-        address spender,
-        uint256 value
-    );
+    function totalSupply()
+        view
+        returns (
+            uint256
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
+
+### `transfer`
+
+Moves &#x60;amount&#x60; tokens from the caller&#x27;s account to &#x60;recipient&#x60;. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Requirements: - &#x60;recipient&#x60; cannot be the zero address. - the caller must have a balance of at least &#x60;amount&#x60;.
+
+```solidity
+    function transfer(
+        address recipient,
+        uint256 amount
+    )
+        nonpayable
+        returns (
+            bool
+        );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` |  |
-| 1 | `spender` | `address` | `address` |  |
-| 2 | `value` | `uint256` | `uint256` |  |
+| 0 | `recipient` | `address` | `address` |  |
+| 1 | `amount` | `uint256` | `uint256` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` |  |
+
 
 <br />
+
+### `transferFrom`
+
+Moves &#x60;amount&#x60; tokens from &#x60;sender&#x60; to &#x60;recipient&#x60; using the allowance mechanism. &#x60;amount&#x60; is then deducted from the caller&#x27;s allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. Requirements: - &#x60;sender&#x60; and &#x60;recipient&#x60; cannot be the zero address. - &#x60;sender&#x60; must have a balance of at least &#x60;amount&#x60;. - the caller must have allowance for &#x60;&#x60;sender&#x60;&#x60;&#x27;s tokens of at least &#x60;amount&#x60;.
+
+```solidity
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    )
+        nonpayable
+        returns (
+            bool
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `sender` | `address` | `address` |  |
+| 1 | `recipient` | `address` | `address` |  |
+| 2 | `amount` | `uint256` | `uint256` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` |  |
+
+
+<br />
+
+
+## Events
 
 ### `FundsDistributed`
 
@@ -533,6 +680,27 @@ This event emits when the internal &#x60;pointsPerShare&#x60; is updated.First, 
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `pointsPerShare` | `uint256` | `uint256` |  |
+
+<br />
+
+### `Approval`
+
+Emitted when the allowance of a &#x60;spender&#x60; for an &#x60;owner&#x60; is set by a call to {approve}. &#x60;value&#x60; is the new allowance.
+
+```solidity
+    event Approval(
+        address owner,
+        address spender,
+        uint256 value
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `owner` | `address` | `address` |  |
+| 1 | `spender` | `address` | `address` |  |
+| 2 | `value` | `uint256` | `uint256` |  |
 
 <br />
 

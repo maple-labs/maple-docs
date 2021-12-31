@@ -2,22 +2,32 @@
 
 Oracle is a price oracle feed.
 
+<br />
+
+
 ## Functions
 
-### getLatestPrice
+### `getLatestPrice`
 
 Returns the price of the asset.
 
-```text
-  function getLatestPrice(
-  ) view returns (
-    int256
-  )
+```solidity
+    function getLatestPrice()
+        view
+        returns (
+            int256
+        );
 ```
 
-#### Return Values:
 
+
+#### Return Values:
 | Index | Name | Type | Internal Type | Description |
-| :---: | :---: | :---: | :---: | :--- |
+| :---: | :--: | :--: | :-----------: | :---------- |
 | 0 |  | `int256` | `int256` |  |
+
+
+<br />
+
+
 
