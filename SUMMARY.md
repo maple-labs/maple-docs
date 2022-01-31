@@ -52,7 +52,7 @@
   * [Late Fee Calculator](smart-contracts/calculators/v1/latefeecalc.md)
   * [Premium Calculator](smart-contracts/calculators/v1/premiumcalc.md)
   * [Repayment Calculator](smart-contracts/calculators/v1/repaymentcalc.md)
-* [Funds Distribution Tokens \(FDTs\)](smart-contracts/funds-distribution-tokens-fdts/README.md)
+* [Funds Distribution Tokens (FDTs)](smart-contracts/funds-distribution-tokens-fdts/README.md)
   * [Basic FDT](smart-contracts/funds-distribution-tokens-fdts/basicfdt.md)
   * [Basic Funds Token FDT](smart-contracts/funds-distribution-tokens-fdts/basicfundstokenfdt.md)
   * [Extended FDT](smart-contracts/funds-distribution-tokens-fdts/extendedfdt.md)
@@ -60,11 +60,11 @@
   * [Stake Locker FDT](smart-contracts/funds-distribution-tokens-fdts/stakelockerfdt.md)
 * [Liquidator](smart-contracts/liquidator/Liquidator.md)
 * [Loans](smart-contracts/loans/README.md)
-  * V1
+  * [V1](smart-contracts/loans/v1/README.md)
     * [Loan Factory](smart-contracts/loans/v1/loanfactory.md)
-    * [Loan](smart-contracts/loans/loan.md)
+    * [Loan](smart-contracts/loans/v1/loan.md)
     * [Loan Lib](smart-contracts/loans/v1/loanlib.md)
-  * V2
+  * [V2](smart-contracts/loans/v2/README.md)
     * [Loan Factory](smart-contracts/loans/v2/MapleLoanFactory.md)
     * [Loan](smart-contracts/loans/v2/MapleLoan.md)
     * [Loan Initializer](smart-contracts/loans/v2/MapleLoanInitializer.md)
@@ -72,11 +72,11 @@
 * [Lockers](smart-contracts/lockers/README.md)
   * [Collateral Locker Factory](smart-contracts/lockers/collaterallockers/collaterallockerfactory.md)
   * [Collateral Locker](smart-contracts/lockers/collaterallockers/collaterallocker.md)
-  * Debt Locker
-    * V1
+  * [Debt Locker](smart-contracts/lockers/debt-locker/README.md)
+    * [V1](smart-contracts/lockers/debt-locker/v1/README.md)
       * [Debt Locker Factory](smart-contracts/lockers/debtlockers/v1/debtlockerfactory.md)
       * [Debt Locker](smart-contracts/lockers/debtlockers/v1/debtlocker.md)
-    * V2
+    * [V2](smart-contracts/lockers/debt-locker/v2/README.md)
       * [Debt Locker Factory](smart-contracts/lockers/debtlockers/v2/debtlockerfactory.md)
       * [Debt Locker](smart-contracts/lockers/debtlockers/v2/debtlocker.md)
       * [Debt Locker Initializer](smart-contracts/lockers/debtlockers/v2/debtlockerinitializer.md)
@@ -111,17 +111,16 @@
 * [Auth](api/auth.md)
 * [Rates](api/rates.md)
 
-## Archive - LBP <a id="maple-lbp"></a>
+## Archive - LBP <a href="#maple-lbp" id="maple-lbp"></a>
 
 * [LBP Overview](maple-lbp/overview-1.md)
 * [Frequently Asked Questions](maple-lbp/lbp-frequently-asked-questions.md)
 
-## Additional Links and Resources <a id="additional-links"></a>
+## Additional Links and Resources <a href="#additional-links" id="additional-links"></a>
 
 * [Risks](additional-links/risks.md)
 * [Developer Documentation](https://github.com/maple-labs/maple-core)
 * [Discord](https://discord.gg/Xy6sqxRhFG)
-* [Blog](https://maplefinance.ghost.io/)
+* [Blog](https://maplefinance.ghost.io)
 * [Interface Terms of Use](additional-links/interface-terms-of-use.md)
 * [Privacy Policy](additional-links/privacy-policy.md)
-
