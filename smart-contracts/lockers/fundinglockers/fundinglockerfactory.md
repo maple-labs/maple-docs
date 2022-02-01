@@ -1,15 +1,15 @@
-# FundingLockerFactory
+# Funding Locker Factory
 
 FundingLockerFactory instantiates FundingLockers.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
-The type of the factory (i.e FactoryType::FUNDING_LOCKER_FACTORY).
+The type of the factory (i.e FactoryType::FUNDING\_LOCKER\_FACTORY).
 
 ```solidity
     function factoryType()
@@ -19,19 +19,16 @@ The type of the factory (i.e FactoryType::FUNDING_LOCKER_FACTORY).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `isLocker` _[state variable]_
-
-
+### `isLocker` _\[state variable]_
 
 ```solidity
     function isLocker(
@@ -44,22 +41,23 @@ The type of the factory (i.e FactoryType::FUNDING_LOCKER_FACTORY).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundingLocker` | `address` | `address` | Some address. |
 
+| Index |       Name      |    Type   | Internal Type | Description   |
+| :---: | :-------------: | :-------: | :-----------: | ------------- |
+|   0   | `fundingLocker` | `address` |   `address`   | Some address. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;fundingLocker&#x60; is a FundingLocker. |
 
+| Index | Name |  Type  | Internal Type | Description                                   |
+| :---: | :--: | :----: | :-----------: | --------------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`fundingLocker\` is a FundingLocker. |
 
-<br />
+\
+
 
 ### `newLocker`
 
-Instantiates a FundingLocker. It emits a &#x60;FundingLockerCreated&#x60; event.
+Instantiates a FundingLocker. It emits a \`FundingLockerCreated\` event.
 
 ```solidity
     function newLocker(
@@ -72,22 +70,21 @@ Instantiates a FundingLocker. It emits a &#x60;FundingLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityAsset` | `address` | `address` | The Liquidity Asset this FundingLocker will escrow. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                         |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   | `liquidityAsset` | `address` |   `address`   | The Liquidity Asset this FundingLocker will escrow. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundingLocker` | `address` | `address` |  The address of the instantiated FundingLocker. |
+
+| Index |       Name      |    Type   | Internal Type | Description                                    |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `fundingLocker` | `address` |   `address`   | The address of the instantiated FundingLocker. |
+
+\
 
 
-<br />
-
-### `owner` _[state variable]_
-
-
+### `owner` _\[state variable]_
 
 ```solidity
     function owner(
@@ -100,18 +97,18 @@ Instantiates a FundingLocker. It emits a &#x60;FundingLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundingLocker` | `address` | `address` | The address of a FundingLocker. |
 
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `fundingLocker` | `address` |   `address`   | The address of a FundingLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the owner of FundingLocker at &#x60;fundingLocker&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                                     |
+| :---: | :--: | :-------: | :-----------: | --------------------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the owner of FundingLocker at \`fundingLocker\`. |
 
-<br />
+\
 
 
 ## Events
@@ -129,11 +126,11 @@ Emits an event indicating a FundingLocker was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | The owner of the FundingLocker. |
-| 1 | `fundingLocker` | `address` | `address` | The address of the FundingLocker. |
-| 2 | `liquidityAsset` | `address` | `address` | The Liquidity Asset this FundingLocker will escrow. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                                         |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |      `owner`     | `address` |   `address`   | The owner of the FundingLocker.                     |
+|   1   |  `fundingLocker` | `address` |   `address`   | The address of the FundingLocker.                   |
+|   2   | `liquidityAsset` | `address` |   `address`   | The Liquidity Asset this FundingLocker will escrow. |
 
+\

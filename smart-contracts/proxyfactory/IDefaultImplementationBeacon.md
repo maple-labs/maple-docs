@@ -2,7 +2,7 @@
 
 An beacon that provides a default implementation for proxies, must implement IDefaultImplementationBeacon.
 
-<br />
+\
 
 
 ## Functions
@@ -19,15 +19,10 @@ The address of an implementation for proxies.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `defaultImplementation_` | `address` | `address` |  |
 
+| Index |           Name           |    Type   | Internal Type | Description |
+| :---: | :----------------------: | :-------: | :-----------: | ----------- |
+|   0   | `defaultImplementation_` | `address` |   `address`   |             |
 
-<br />
-
-
-
+\

@@ -1,15 +1,15 @@
-# CollateralLockerFactory
+# Collateral Locker Factory
 
 CollateralLockerFactory instantiates CollateralLockers.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
-The type of the factory (i.e FactoryType::COLLATERAL_LOCKER_FACTORY).
+The type of the factory (i.e FactoryType::COLLATERAL\_LOCKER\_FACTORY).
 
 ```solidity
     function factoryType()
@@ -19,19 +19,16 @@ The type of the factory (i.e FactoryType::COLLATERAL_LOCKER_FACTORY).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `isLocker` _[state variable]_
-
-
+### `isLocker` _\[state variable]_
 
 ```solidity
     function isLocker(
@@ -44,22 +41,23 @@ The type of the factory (i.e FactoryType::COLLATERAL_LOCKER_FACTORY).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralLocker` | `address` | `address` | Some address. |
 
+| Index |        Name        |    Type   | Internal Type | Description   |
+| :---: | :----------------: | :-------: | :-----------: | ------------- |
+|   0   | `collateralLocker` | `address` |   `address`   | Some address. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;collateralLocker&#x60; is a CollateralLocker. |
 
+| Index | Name |  Type  | Internal Type | Description                                         |
+| :---: | :--: | :----: | :-----------: | --------------------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`collateralLocker\` is a CollateralLocker. |
 
-<br />
+\
+
 
 ### `newLocker`
 
-Instantiates a CollateralLocker. It emits a &#x60;CollateralLockerCreated&#x60; event.
+Instantiates a CollateralLocker. It emits a \`CollateralLockerCreated\` event.
 
 ```solidity
     function newLocker(
@@ -72,22 +70,21 @@ Instantiates a CollateralLocker. It emits a &#x60;CollateralLockerCreated&#x60; 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralAsset` | `address` | `address` | The Collateral Asset this CollateralLocker will escrow. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                             |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------------- |
+|   0   | `collateralAsset` | `address` |   `address`   | The Collateral Asset this CollateralLocker will escrow. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralLocker` | `address` | `address` | The address of the instantiated CollateralLocker. |
+
+| Index |        Name        |    Type   | Internal Type | Description                                       |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `collateralLocker` | `address` |   `address`   | The address of the instantiated CollateralLocker. |
+
+\
 
 
-<br />
-
-### `owner` _[state variable]_
-
-
+### `owner` _\[state variable]_
 
 ```solidity
     function owner(
@@ -100,18 +97,18 @@ Instantiates a CollateralLocker. It emits a &#x60;CollateralLockerCreated&#x60; 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralLocker` | `address` | `address` | The address of a CollateralLocker. |
 
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `collateralLocker` | `address` |   `address`   | The address of a CollateralLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the owner of CollateralLocker at &#x60;collateralLocker&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                                           |
+| :---: | :--: | :-------: | :-----------: | --------------------------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the owner of CollateralLocker at \`collateralLocker\`. |
 
-<br />
+\
 
 
 ## Events
@@ -129,11 +126,11 @@ Emits an event indicating a CollateralLocker was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | The owner of the CollateralLocker. |
-| 1 | `collateralLocker` | `address` | `address` | The address of the CollateralLocker. |
-| 2 | `collateralAsset` | `address` | `address` | The Collateral Asset of the CollateralLocker. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                                   |
+| :---: | :----------------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   |       `owner`      | `address` |   `address`   | The owner of the CollateralLocker.            |
+|   1   | `collateralLocker` | `address` |   `address`   | The address of the CollateralLocker.          |
+|   2   |  `collateralAsset` | `address` |   `address`   | The Collateral Asset of the CollateralLocker. |
 
+\

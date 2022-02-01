@@ -1,15 +1,15 @@
-# LiquidityLockerFactory
+# Liquidity Locker Factory
 
 LiquidityLockerFactory instantiates LiquidityLockers.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
-The type of the factory (i.e FactoryType::LIQUIDITY_LOCKER_FACTORY).
+The type of the factory (i.e FactoryType::LIQUIDITY\_LOCKER\_FACTORY).
 
 ```solidity
     function factoryType()
@@ -19,19 +19,16 @@ The type of the factory (i.e FactoryType::LIQUIDITY_LOCKER_FACTORY).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
 
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
 
-<br />
+\
+
 
 ### `isLocker`
-
-
 
 ```solidity
     function isLocker(
@@ -44,22 +41,23 @@ The type of the factory (i.e FactoryType::LIQUIDITY_LOCKER_FACTORY).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityLocker` | `address` | `address` | The address of a LiquidityLocker. |
 
+| Index |        Name       |    Type   | Internal Type | Description                       |
+| :---: | :---------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `liquidityLocker` | `address` |   `address`   | The address of a LiquidityLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;. |
 
+| Index | Name |  Type  | Internal Type | Description                                                         |
+| :---: | :--: | :----: | :-----------: | ------------------------------------------------------------------- |
+|   0   |      | `bool` |     `bool`    | The address of the owner of LiquidityLocker at \`liquidityLocker\`. |
 
-<br />
+\
+
 
 ### `newLocker`
 
-Instantiates a LiquidityLocker contract.It emits a &#x60;LiquidityLockerCreated&#x60; event.
+Instantiates a LiquidityLocker contract.It emits a \`LiquidityLockerCreated\` event.
 
 ```solidity
     function newLocker(
@@ -72,22 +70,21 @@ Instantiates a LiquidityLocker contract.It emits a &#x60;LiquidityLockerCreated&
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityAsset` | `address` | `address` | The Liquidity Asset this LiquidityLocker will escrow. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                           |
+| :---: | :--------------: | :-------: | :-----------: | ----------------------------------------------------- |
+|   0   | `liquidityAsset` | `address` |   `address`   | The Liquidity Asset this LiquidityLocker will escrow. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityLocker` | `address` | `address` | The address of the instantiated LiquidityLocker. |
+
+| Index |        Name       |    Type   | Internal Type | Description                                      |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `liquidityLocker` | `address` |   `address`   | The address of the instantiated LiquidityLocker. |
+
+\
 
 
-<br />
-
-### `owner` _[state variable]_
-
-
+### `owner` _\[state variable]_
 
 ```solidity
     function owner(
@@ -100,18 +97,18 @@ Instantiates a LiquidityLocker contract.It emits a &#x60;LiquidityLockerCreated&
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityLocker` | `address` | `address` | The address of a LiquidityLocker. |
 
+| Index |        Name       |    Type   | Internal Type | Description                       |
+| :---: | :---------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `liquidityLocker` | `address` |   `address`   | The address of a LiquidityLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the owner of LiquidityLocker at &#x60;liquidityLocker&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                                         |
+| :---: | :--: | :-------: | :-----------: | ------------------------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the owner of LiquidityLocker at \`liquidityLocker\`. |
 
-<br />
+\
 
 
 ## Events
@@ -129,11 +126,11 @@ Emits an event indicating a LiquidityLocker was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | The owner of the LiquidityLocker. |
-| 1 | `liquidityLocker` | `address` | `address` | The address of the LiquidityLocker. |
-| 2 | `liquidityAsset` | `address` | `address` | The Liquidity Asset of the LiquidityLocker. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                                 |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |      `owner`      | `address` |   `address`   | The owner of the LiquidityLocker.           |
+|   1   | `liquidityLocker` | `address` |   `address`   | The address of the LiquidityLocker.         |
+|   2   |  `liquidityAsset` | `address` |   `address`   | The Liquidity Asset of the LiquidityLocker. |
 
+\

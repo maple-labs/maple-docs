@@ -1,13 +1,11 @@
-# PremiumCalc
+# Premium Calculator
 
 PremiumCalc calculates premium fees on Loans.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -16,17 +14,17 @@ PremiumCalc calculates premium fees on Loans.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_premiumFee` | `uint256` | `uint256` |  |
 
+| Index |      Name     |    Type   | Internal Type | Description |
+| :---: | :-----------: | :-------: | :-----------: | ----------- |
+|   0   | `_premiumFee` | `uint256` |   `uint256`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `calcType` _[state variable]_
+### `calcType` _\[state variable]_
 
 The Calculator type.
 
@@ -38,17 +36,16 @@ The Calculator type.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `getPremiumPayment` 
+### `getPremiumPayment`
 
 Calculates the premium payment for a Loan, when making a full payment.
 
@@ -65,22 +62,23 @@ Calculates the premium payment for a Loan, when making a full payment.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_loan` | `address` | `address` | The address of a Loan to calculate a premium payment for. |
 
+| Index |   Name  |    Type   | Internal Type | Description                                               |
+| :---: | :-----: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `_loan` | `address` |   `address`   | The address of a Loan to calculate a premium payment for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `total` | `uint256` | `uint256` |         The principal + interest. |
-| 1 | `principalOwed` | `uint256` | `uint256` | The principal. |
-| 2 | `interest` | `uint256` | `uint256` |      The interest. |
+
+| Index |       Name      |    Type   | Internal Type | Description               |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------- |
+|   0   |     `total`     | `uint256` |   `uint256`   | The principal + interest. |
+|   1   | `principalOwed` | `uint256` |   `uint256`   | The principal.            |
+|   2   |    `interest`   | `uint256` |   `uint256`   | The interest.             |
+
+\
 
 
-<br />
-
-### `name` _[state variable]_
+### `name` _\[state variable]_
 
 The Calculator name.
 
@@ -92,17 +90,16 @@ The Calculator name.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
+
+\
 
 
-<br />
-
-### `premiumFee` _[state variable]_
+### `premiumFee` _\[state variable]_
 
 The flat percentage fee (in basis points) of principal to charge as a premium when calling a Loan.
 
@@ -114,15 +111,10 @@ The flat percentage fee (in basis points) of principal to charge as a premium wh
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
-
-
-
+\

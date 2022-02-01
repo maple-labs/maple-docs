@@ -1,13 +1,11 @@
-# FundingLocker
+# Funding Locker
 
 FundingLocker holds custody of Liquidity Asset tokens during the funding period of a Loan.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -17,31 +15,30 @@ FundingLocker holds custody of Liquidity Asset tokens during the funding period 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_liquidityAsset` | `address` | `address` |  |
-| 1 | `_loan` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `_liquidityAsset` | `address` |   `address`   |             |
+|   1   |      `_loan`      | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `drain` 
+### `drain`
 
-Transfers entire amount of Liquidity Asset held in escrow to the Loan. Only the Loan can call this function. 
+Transfers entire amount of Liquidity Asset held in escrow to the Loan. Only the Loan can call this function.
 
 ```solidity
     function drain()
         nonpayable;
 ```
 
+\
 
 
-<br />
-
-### `liquidityAsset` _[state variable]_
+### `liquidityAsset` _\[state variable]_
 
 The asset the Loan was funded with.
 
@@ -53,17 +50,16 @@ The asset the Loan was funded with.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `loan` _[state variable]_
+### `loan` _\[state variable]_
 
 The Loan this FundingLocker has funded.
 
@@ -75,19 +71,18 @@ The Loan this FundingLocker has funded.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
+### `pull`
 
-### `pull` 
-
-Transfers &#x60;amt&#x60; of Liquidity Asset to &#x60;dst&#x60;. Only the Loan can call this function. 
+Transfers \`amt\` of Liquidity Asset to \`dst\`. Only the Loan can call this function.
 
 ```solidity
     function pull(
@@ -98,13 +93,10 @@ Transfers &#x60;amt&#x60; of Liquidity Asset to &#x60;dst&#x60;. Only the Loan c
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `dst` | `address` | `address` | The destination to transfer Liquidity Asset to. |
-| 1 | `amt` | `uint256` | `uint256` | The amount of Liquidity Asset to transfer. |
 
+| Index |  Name |    Type   | Internal Type | Description                                     |
+| :---: | :---: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `dst` | `address` |   `address`   | The destination to transfer Liquidity Asset to. |
+|   1   | `amt` | `uint256` |   `uint256`   | The amount of Liquidity Asset to transfer.      |
 
-<br />
-
-
-
+\

@@ -1,13 +1,13 @@
-# ICalc
+# Calculator
 
 Calc calculates.
 
-<br />
+\
 
 
 ## Functions
 
-### `calcType` 
+### `calcType`
 
 The Calculator type.
 
@@ -19,17 +19,16 @@ The Calculator type.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `name` 
+### `name`
 
 The Calculator name.
 
@@ -41,15 +40,10 @@ The Calculator name.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
 
-<br />
-
-
-
+\

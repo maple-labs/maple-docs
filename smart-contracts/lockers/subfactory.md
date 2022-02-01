@@ -1,13 +1,13 @@
-# ISubFactory
+# Sub Factory
 
 SubFactory creates instances downstream of another factory.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` 
+### `factoryType`
 
 The type of the factory
 
@@ -19,15 +19,10 @@ The type of the factory
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
 
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
 
-<br />
-
-
-
+\

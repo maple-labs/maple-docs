@@ -1,11 +1,11 @@
-# ChainlinkOracle
+# Chainlink Oracle
 
 ChainlinkOracle is a wrapper contract for Chainlink oracle price feeds that allows for manual price feed overrides.
 
-<br />
+\
+
 
 ## Constructor
-
 
 Creates a new Chainlink based oracle.
 
@@ -18,19 +18,19 @@ Creates a new Chainlink based oracle.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_aggregator` | `address` | `address` | Address of Chainlink aggregator. |
-| 1 | `_assetAddress` | `address` | `address` | Address of currency (0x0 for ETH). |
-| 2 | `_owner` | `address` | `address` | Address of the owner of the contract. |
 
+| Index |       Name      |    Type   | Internal Type | Description                           |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |  `_aggregator`  | `address` |   `address`   | Address of Chainlink aggregator.      |
+|   1   | `_assetAddress` | `address` |   `address`   | Address of currency (0x0 for ETH).    |
+|   2   |     `_owner`    | `address` |   `address`   | Address of the owner of the contract. |
 
-<br />
+\
 
 
 ## Functions
 
-### `assetAddress` _[state variable]_
+### `assetAddress` _\[state variable]_
 
 The address of the asset token contract.
 
@@ -42,19 +42,18 @@ The address of the asset token contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `changeAggregator`
 
-Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owner can call this function. It emits a &#x60;ChangeAggregatorFeed&#x60; event.
+Updates the aggregator address to \`aggregator\`. Only the contract Owner can call this function. It emits a \`ChangeAggregatorFeed\` event.
 
 ```solidity
     function changeAggregator(
@@ -64,16 +63,15 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `aggregator` | `address` | `address` | The address of a Chainlink aggregator. |
 
+| Index |     Name     |    Type   | Internal Type | Description                            |
+| :---: | :----------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `aggregator` | `address` |   `address`   | The address of a Chainlink aggregator. |
 
-<br />
+\
+
 
 ### `getAssetAddress`
-
-
 
 ```solidity
     function getAssetAddress()
@@ -83,19 +81,16 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the oracled currency (0x0 for ETH). |
 
+| Index | Name |    Type   | Internal Type | Description                                        |
+| :---: | :--: | :-------: | :-----------: | -------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the oracled currency (0x0 for ETH). |
 
-<br />
+\
+
 
 ### `getDenomination`
-
-
 
 ```solidity
     function getDenomination()
@@ -105,19 +100,16 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` | The denomination of the price. |
 
+| Index | Name |    Type   | Internal Type | Description                    |
+| :---: | :--: | :-------: | :-----------: | ------------------------------ |
+|   0   |      | `bytes32` |   `bytes32`   | The denomination of the price. |
 
-<br />
+\
+
 
 ### `getLatestPrice`
-
-
 
 ```solidity
     function getLatestPrice()
@@ -127,17 +119,16 @@ Updates the aggregator address to &#x60;aggregator&#x60;. Only the contract Owne
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `int256` | `int256` | The latest price. |
+
+| Index | Name |   Type   | Internal Type | Description       |
+| :---: | :--: | :------: | :-----------: | ----------------- |
+|   0   |      | `int256` |    `int256`   | The latest price. |
+
+\
 
 
-<br />
-
-### `globals` _[state variable]_
+### `globals` _\[state variable]_
 
 The MapleGlobals.
 
@@ -149,17 +140,16 @@ The MapleGlobals.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `manualOverride` _[state variable]_
+### `manualOverride` _\[state variable]_
 
 Whether the price is manually overridden.
 
@@ -171,17 +161,16 @@ Whether the price is manually overridden.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `manualPrice` _[state variable]_
+### `manualPrice` _\[state variable]_
 
 The manually overridden price.
 
@@ -193,17 +182,16 @@ The manually overridden price.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `int256` | `int256` |  |
+
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `int256` |    `int256`   |             |
+
+\
 
 
-<br />
-
-### `priceFeed` _[state variable]_
+### `priceFeed` _\[state variable]_
 
 The Chainlink Aggregator V3 price feed.
 
@@ -215,19 +203,18 @@ The Chainlink Aggregator V3 price feed.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `setManualOverride`
 
-Sets manual override, allowing for manual price setting. Only the contract Owner can call this function. It emits a &#x60;SetManualOverride&#x60; event.
+Sets manual override, allowing for manual price setting. Only the contract Owner can call this function. It emits a \`SetManualOverride\` event.
 
 ```solidity
     function setManualOverride(
@@ -237,16 +224,17 @@ Sets manual override, allowing for manual price setting. Only the contract Owner
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_override` | `bool` | `bool` | Whether manual override price should be used. |
 
+| Index |     Name    |  Type  | Internal Type | Description                                   |
+| :---: | :---------: | :----: | :-----------: | --------------------------------------------- |
+|   0   | `_override` | `bool` |     `bool`    | Whether manual override price should be used. |
 
-<br />
+\
+
 
 ### `setManualPrice`
 
-Sets a manual price. Only the contract Owner can call this function. This can only be used if manualOverride &#x3D;&#x3D; true. It emits a &#x60;SetManualPrice&#x60; event.
+Sets a manual price. Only the contract Owner can call this function. This can only be used if manualOverride == true. It emits a \`SetManualPrice\` event.
 
 ```solidity
     function setManualPrice(
@@ -256,12 +244,13 @@ Sets a manual price. Only the contract Owner can call this function. This can on
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_price` | `int256` | `int256` | Price to set. |
 
+| Index |   Name   |   Type   | Internal Type | Description   |
+| :---: | :------: | :------: | :-----------: | ------------- |
+|   0   | `_price` | `int256` |    `int256`   | Price to set. |
 
-<br />
+\
+
 
 ### `owner`
 
@@ -275,32 +264,30 @@ Returns the address of the current owner.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `renounceOwnership`
 
-Leaves the contract without owner. It will not be possible to call &#x60;onlyOwner&#x60; functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
+Leaves the contract without owner. It will not be possible to call \`onlyOwner\` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
 
 ```solidity
     function renounceOwnership()
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `transferOwnership`
 
-Transfers ownership of the contract to a new account (&#x60;newOwner&#x60;). Can only be called by the current owner.
+Transfers ownership of the contract to a new account (\`newOwner\`). Can only be called by the current owner.
 
 ```solidity
     function transferOwnership(
@@ -310,19 +297,19 @@ Transfers ownership of the contract to a new account (&#x60;newOwner&#x60;). Can
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newOwner` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `newOwner` | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Events
 
 ### `ChangeAggregatorFeed`
 
-Emits an event indicating that the price feed aggregator has changed from &#x60;_oldMedianizer&#x60; to &#x60;_newMedianizer&#x60;.
+Emits an event indicating that the price feed aggregator has changed from \`\_oldMedianizer\` to \`\_newMedianizer\`.
 
 ```solidity
     event ChangeAggregatorFeed(
@@ -332,12 +319,14 @@ Emits an event indicating that the price feed aggregator has changed from &#x60;
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_newMedianizer` | `address` | `address` | The new price feed aggregator. |
-| 1 | `_oldMedianizer` | `address` | `address` | The old price feed aggregator. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                    |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `_newMedianizer` | `address` |   `address`   | The new price feed aggregator. |
+|   1   | `_oldMedianizer` | `address` |   `address`   | The old price feed aggregator. |
+
+\
+
 
 ### `SetManualOverride`
 
@@ -350,15 +339,17 @@ Emits an event indicating whether manual price overriding is enabled.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_override` | `bool` | `bool` | The state of manual price overriding. |
 
-<br />
+| Index |     Name    |  Type  | Internal Type | Description                           |
+| :---: | :---------: | :----: | :-----------: | ------------------------------------- |
+|   0   | `_override` | `bool` |     `bool`    | The state of manual price overriding. |
+
+\
+
 
 ### `SetManualPrice`
 
-Emits an event indicating that the price has been updated manually from &#x60;_oldPrice&#x60; to &#x60;_newPrice&#x60;.
+Emits an event indicating that the price has been updated manually from \`\_oldPrice\` to \`\_newPrice\`.
 
 ```solidity
     event SetManualPrice(
@@ -368,15 +359,16 @@ Emits an event indicating that the price has been updated manually from &#x60;_o
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_oldPrice` | `int256` | `int256` | The old price. |
-| 1 | `_newPrice` | `int256` | `int256` | The new price. |
 
-<br />
+| Index |     Name    |   Type   | Internal Type | Description    |
+| :---: | :---------: | :------: | :-----------: | -------------- |
+|   0   | `_oldPrice` | `int256` |    `int256`   | The old price. |
+|   1   | `_newPrice` | `int256` |    `int256`   | The new price. |
+
+\
+
 
 ### `OwnershipTransferred`
-
 
 ```solidity
     event OwnershipTransferred(
@@ -386,10 +378,10 @@ Emits an event indicating that the price has been updated manually from &#x60;_o
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousOwner` | `address` | `address` |  |
-| 1 | `newOwner` | `address` | `address` |  |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `previousOwner` | `address` |   `address`   |             |
+|   1   |    `newOwner`   | `address` |   `address`   |             |
 
+\

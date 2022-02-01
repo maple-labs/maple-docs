@@ -31,7 +31,7 @@ We collect information from and about users of our Interface:
 * Directly from you when you provide it to us.
 * Automatically when you access the Website or use the Interface.
 
-### **Information You Provide to Us  **
+### **Information You Provide to Us** &#x20;
 
 When you use the Interface, we may ask you provide information:
 
@@ -50,13 +50,13 @@ Aside from Blockchain Identifiers and IP Addresses, we do not collect any inform
 
 When you access the Website or use the Interface, they may use technology to automatically collect:
 
-* **Usage Details. **When you access and use the Interface, we may automatically collect certain details of your access to and use of the Interface, including traffic data,  generalized location data, logs, and other communication data and the resources that you access and use on or through the Interface.&#x20;
+* **Usage Details.** When you access and use the Interface, we may automatically collect certain details of your access to and use of the Interface, including traffic data,  generalized location data, logs, and other communication data and the resources that you access and use on or through the Interface.&#x20;
 * **Device Information.** We may collect information about your device and internet connection, including the device's unique device identifier, IP address, operating system, browser type, or network information.
 * **Blockchain Identifiers and Web3 Service Information.** We may collect Blockchain Identifiers and information provided by your Web3 Service (as is standard according to its typical behavior).
 
 If you do not want us to collect this information do not access the Website or use the Interface. For more information, see the section titled “Your Choices About Our Collection, Use and Disclosure of Your Information” below.
 
-### **Information Collection and Tracking Technologies **
+### **Information Collection and Tracking Technologies**&#x20;
 
 The technologies we use for automatic information collection may include:
 
@@ -84,7 +84,7 @@ We do not control these third parties' tracking technologies or how they may be 
 
 ### **Important Note About Public Blockchains**
 
-Information stored on a blockchain may be public, immutable, and not easily removed or deleted. Your transactions and addresses may reveal information about you, and information can potentially be correlated now or in the future by any party who chooses to do so, including law enforcement.** We do not control how other parties may use this information and cannot provide you any protection related to such information. Use our Interface at your own risk!**
+Information stored on a blockchain may be public, immutable, and not easily removed or deleted. Your transactions and addresses may reveal information about you, and information can potentially be correlated now or in the future by any party who chooses to do so, including law enforcement. **We do not control how other parties may use this information and cannot provide you any protection related to such information. Use our Interface at your own risk!**
 
 ## **How We Use Your Information**
 
@@ -123,7 +123,7 @@ In addition, we may disclose personal information that we collect or you provide
 
 We strive to provide you with choices regarding the personal information you provide to us. This section describes mechanisms we provide for you to control certain uses and disclosures of over your information.&#x20;
 
-* **Tracking Technologies. **You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent. If you disable or refuse cookies or block the use of other tracking technologies, some parts of the Interface may then be inaccessible or not function properly.
+* **Tracking Technologies.** You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent. If you disable or refuse cookies or block the use of other tracking technologies, some parts of the Interface may then be inaccessible or not function properly.
 
 We do not use your information for advertising purposes beyond that normally and reasonably expected through the use of the Interface. We do not control third parties' collection or use of your information to serve interest-based advertising. However, these third parties may provide you with ways to choose not to have your information collected or used in this way.
 

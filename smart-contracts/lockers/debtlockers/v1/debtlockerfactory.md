@@ -1,15 +1,15 @@
-# DebtLockerFactory
+# Debt Locker Factory
 
 DebtLockerFactory instantiates DebtLockers.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
-The type of the factory (i.e FactoryType::DEBT_LOCKER_FACTORY).
+The type of the factory (i.e FactoryType::DEBT\_LOCKER\_FACTORY).
 
 ```solidity
     function factoryType()
@@ -19,19 +19,16 @@ The type of the factory (i.e FactoryType::DEBT_LOCKER_FACTORY).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `isLocker` _[state variable]_
-
-
+### `isLocker` _\[state variable]_
 
 ```solidity
     function isLocker(
@@ -44,22 +41,23 @@ The type of the factory (i.e FactoryType::DEBT_LOCKER_FACTORY).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `debtLocker` | `address` | `address` | Some address. |
 
+| Index |     Name     |    Type   | Internal Type | Description   |
+| :---: | :----------: | :-------: | :-----------: | ------------- |
+|   0   | `debtLocker` | `address` |   `address`   | Some address. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;debtLocker&#x60; is a DebtLocker. |
 
+| Index | Name |  Type  | Internal Type | Description                             |
+| :---: | :--: | :----: | :-----------: | --------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`debtLocker\` is a DebtLocker. |
 
-<br />
+\
+
 
 ### `newLocker`
 
-Instantiates a DebtLocker. It emits a &#x60;DebtLockerCreated&#x60; event.
+Instantiates a DebtLocker. It emits a \`DebtLockerCreated\` event.
 
 ```solidity
     function newLocker(
@@ -72,22 +70,21 @@ Instantiates a DebtLocker. It emits a &#x60;DebtLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan` | `address` | `address` | The Loan this DebtLocker will be tied to. |
 
+| Index |  Name  |    Type   | Internal Type | Description                               |
+| :---: | :----: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `loan` | `address` |   `address`   | The Loan this DebtLocker will be tied to. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `debtLocker` | `address` | `address` | The address of the instantiated DebtLocker. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                 |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `debtLocker` | `address` |   `address`   | The address of the instantiated DebtLocker. |
+
+\
 
 
-<br />
-
-### `owner` _[state variable]_
-
-
+### `owner` _\[state variable]_
 
 ```solidity
     function owner(
@@ -100,18 +97,18 @@ Instantiates a DebtLocker. It emits a &#x60;DebtLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `debtLocker` | `address` | `address` | The address of a DebtLocker. |
 
+| Index |     Name     |    Type   | Internal Type | Description                  |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `debtLocker` | `address` |   `address`   | The address of a DebtLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the owner of DebtLocker at &#x60;debtLocker&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                               |
+| :---: | :--: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the owner of DebtLocker at \`debtLocker\`. |
 
-<br />
+\
 
 
 ## Events
@@ -129,11 +126,11 @@ Emits an event indicating a DebtLocker was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | The owner of the DebtLocker. |
-| 1 | `debtLocker` | `address` | `address` | The address of the DebtLocker. |
-| 2 | `loan` | `address` | `address` | The Loan tied to the DebtLocker. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                      |
+| :---: | :----------: | :-------: | :-----------: | -------------------------------- |
+|   0   |    `owner`   | `address` |   `address`   | The owner of the DebtLocker.     |
+|   1   | `debtLocker` | `address` |   `address`   | The address of the DebtLocker.   |
+|   2   |    `loan`    | `address` |   `address`   | The Loan tied to the DebtLocker. |
 
+\

@@ -107,8 +107,6 @@
 ## API
 
 * [Public](api/public.md)
-* [Private](api/private.md)
-* [Auth](api/auth.md)
 * [Rates](api/rates.md)
 
 ## Archive - LBP <a href="#maple-lbp" id="maple-lbp"></a>

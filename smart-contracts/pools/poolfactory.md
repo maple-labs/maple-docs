@@ -2,12 +2,10 @@
 
 PoolFactory instantiates Pools.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -16,19 +14,19 @@ PoolFactory instantiates Pools.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_globals` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `_globals` | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `LL_FACTORY` _[state variable]_
+### `LL_FACTORY` _\[state variable]_
 
-The factory type of &#x60;LiquidityLockerFactory&#x60;.
+The factory type of \`LiquidityLockerFactory\`.
 
 ```solidity
     function LL_FACTORY()
@@ -38,19 +36,18 @@ The factory type of &#x60;LiquidityLockerFactory&#x60;.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
+### `SL_FACTORY` _\[state variable]_
 
-### `SL_FACTORY` _[state variable]_
-
-The factory type of &#x60;StakeLockerFactory&#x60;.
+The factory type of \`StakeLockerFactory\`.
 
 ```solidity
     function SL_FACTORY()
@@ -60,19 +57,18 @@ The factory type of &#x60;StakeLockerFactory&#x60;.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
 
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
 
-<br />
+\
+
 
 ### `createPool`
 
-Instantiates a Pool. It emits a &#x60;PoolCreated&#x60; event.
+Instantiates a Pool. It emits a \`PoolCreated\` event.
 
 ```solidity
     function createPool(
@@ -91,26 +87,27 @@ Instantiates a Pool. It emits a &#x60;PoolCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityAsset` | `address` | `address` | The asset escrowed in a LiquidityLocker. |
-| 1 | `stakeAsset` | `address` | `address` | The asset escrowed in a StakeLocker. |
-| 2 | `slFactory` | `address` | `address` | The factory to instantiate a StakeLocker from. |
-| 3 | `llFactory` | `address` | `address` | The factory to instantiate a LiquidityLocker from. |
-| 4 | `stakingFee` | `uint256` | `uint256` | The fee that Stakers earn on interest, in basis points. |
-| 5 | `delegateFee` | `uint256` | `uint256` | The fee that the Pool Delegate earns on interest, in basis points. |
-| 6 | `liquidityCap` | `uint256` | `uint256` | The amount of Liquidity Asset accepted by the Pool. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                                        |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------------------------------ |
+|   0   | `liquidityAsset` | `address` |   `address`   | The asset escrowed in a LiquidityLocker.                           |
+|   1   |   `stakeAsset`   | `address` |   `address`   | The asset escrowed in a StakeLocker.                               |
+|   2   |    `slFactory`   | `address` |   `address`   | The factory to instantiate a StakeLocker from.                     |
+|   3   |    `llFactory`   | `address` |   `address`   | The factory to instantiate a LiquidityLocker from.                 |
+|   4   |   `stakingFee`   | `uint256` |   `uint256`   | The fee that Stakers earn on interest, in basis points.            |
+|   5   |   `delegateFee`  | `uint256` |   `uint256`   | The fee that the Pool Delegate earns on interest, in basis points. |
+|   6   |  `liquidityCap`  | `uint256` |   `uint256`   | The amount of Liquidity Asset accepted by the Pool.                |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolAddress` | `address` | `address` |    The address of the instantiated Pool. |
+
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `poolAddress` | `address` |   `address`   | The address of the instantiated Pool. |
+
+\
 
 
-<br />
-
-### `globals` _[state variable]_
+### `globals` _\[state variable]_
 
 The current MapleGlobals instance.
 
@@ -122,19 +119,16 @@ The current MapleGlobals instance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `isPool` _[state variable]_
-
-
+### `isPool` _\[state variable]_
 
 ```solidity
     function isPool(
@@ -147,18 +141,19 @@ The current MapleGlobals instance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool` | `address` | `address` | The address of a Pool. |
 
+| Index |  Name  |    Type   | Internal Type | Description            |
+| :---: | :----: | :-------: | :-----------: | ---------------------- |
+|   0   | `pool` | `address` |   `address`   | The address of a Pool. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether the contract at &#x60;address&#x60; is a Pool. |
 
+| Index | Name |  Type  | Internal Type | Description                                    |
+| :---: | :--: | :----: | :-----------: | ---------------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether the contract at \`address\` is a Pool. |
 
-<br />
+\
+
 
 ### `pause`
 
@@ -169,13 +164,10 @@ Triggers paused state. Halts functionality for certain functions. Only the Gover
         nonpayable;
 ```
 
+\
 
 
-<br />
-
-### `poolFactoryAdmins` _[state variable]_
-
-
+### `poolFactoryAdmins` _\[state variable]_
 
 ```solidity
     function poolFactoryAdmins(
@@ -188,22 +180,21 @@ Triggers paused state. Halts functionality for certain functions. Only the Gover
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolFactoryAdmin` | `address` | `address` | The address of a PoolFactoryAdmin. |
 
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `poolFactoryAdmin` | `address` |   `address`   | The address of a PoolFactoryAdmin. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether the &#x60;poolFactoryAdmin&#x60; has permission to do certain operations in case of disaster management |
+
+| Index | Name |  Type  | Internal Type | Description                                                                                             |
+| :---: | :--: | :----: | :-----------: | ------------------------------------------------------------------------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether the \`poolFactoryAdmin\` has permission to do certain operations in case of disaster management |
+
+\
 
 
-<br />
-
-### `pools` _[state variable]_
-
-
+### `pools` _\[state variable]_
 
 ```solidity
     function pools(
@@ -216,20 +207,21 @@ Triggers paused state. Halts functionality for certain functions. Only the Gover
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `index` | `uint256` | `uint256` | An index of a Pool. |
 
+| Index |   Name  |    Type   | Internal Type | Description         |
+| :---: | :-----: | :-------: | :-----------: | ------------------- |
+|   0   | `index` | `uint256` |   `uint256`   | An index of a Pool. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the Pool at &#x60;index&#x60;. |
+
+| Index | Name |    Type   | Internal Type | Description                           |
+| :---: | :--: | :-------: | :-----------: | ------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the Pool at \`index\`. |
+
+\
 
 
-<br />
-
-### `poolsCreated` _[state variable]_
+### `poolsCreated` _\[state variable]_
 
 The incrementor for number of Pools created.
 
@@ -241,15 +233,14 @@ The incrementor for number of Pools created.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `setGlobals`
 
@@ -263,16 +254,17 @@ Sets MapleGlobals instance. Only the Governor can call this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newGlobals` | `address` | `address` | The address of new MapleGlobals. |
 
+| Index |     Name     |    Type   | Internal Type | Description                      |
+| :---: | :----------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `newGlobals` | `address` |   `address`   | The address of new MapleGlobals. |
 
-<br />
+\
+
 
 ### `setPoolFactoryAdmin`
 
-Sets a PoolFactory Admin. Only the Governor can call this function. It emits a &#x60;PoolFactoryAdminSet&#x60; event.
+Sets a PoolFactory Admin. Only the Governor can call this function. It emits a \`PoolFactoryAdminSet\` event.
 
 ```solidity
     function setPoolFactoryAdmin(
@@ -283,13 +275,14 @@ Sets a PoolFactory Admin. Only the Governor can call this function. It emits a &
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolFactoryAdmin` | `address` | `address` | An address being allowed or disallowed as a PoolFactory Admin. |
-| 1 | `allowed` | `bool` | `bool` | Whether &#x60;poolFactoryAdmin&#x60; is allowed as a PoolFactory Admin. |
 
+| Index |        Name        |    Type   | Internal Type | Description                                                     |
+| :---: | :----------------: | :-------: | :-----------: | --------------------------------------------------------------- |
+|   0   | `poolFactoryAdmin` | `address` |   `address`   | An address being allowed or disallowed as a PoolFactory Admin.  |
+|   1   |      `allowed`     |   `bool`  |     `bool`    | Whether \`poolFactoryAdmin\` is allowed as a PoolFactory Admin. |
 
-<br />
+\
+
 
 ### `unpause`
 
@@ -300,9 +293,8 @@ Triggers unpaused state. Restores functionality for certain functions. Only the 
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `paused`
 
@@ -316,15 +308,13 @@ Returns true if the contract is paused, and false otherwise.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
 
 
 ## Events
@@ -350,21 +340,23 @@ Emits an event indicating a Pool was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool` | `address` | `address` | The address of the Pool. |
-| 1 | `delegate` | `address` | `address` | The PoolDelegate. |
-| 2 | `liquidityAsset` | `address` | `address` | The asset Loans will be funded in. |
-| 3 | `stakeAsset` | `address` | `address` | The asset stake will be locked in. |
-| 4 | `liquidityLocker` | `address` | `address` | The address of the LiquidityLocker. |
-| 5 | `stakeLocker` | `address` | `address` | The address of the StakeLocker. |
-| 6 | `stakingFee` | `uint256` | `uint256` | The fee paid to the Pool Delegate on Loans. |
-| 7 | `delegateFee` | `uint256` | `uint256` |  |
-| 8 | `liquidityCap` | `uint256` | `uint256` | The maximum liquidity the Pool will hold. |
-| 9 | `name` | `string` | `string` | The name of the Pool FDTs. |
-| 10 | `symbol` | `string` | `string` | The symbol of the Pool FDTs. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                                 |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |       `pool`      | `address` |   `address`   | The address of the Pool.                    |
+|   1   |     `delegate`    | `address` |   `address`   | The PoolDelegate.                           |
+|   2   |  `liquidityAsset` | `address` |   `address`   | The asset Loans will be funded in.          |
+|   3   |    `stakeAsset`   | `address` |   `address`   | The asset stake will be locked in.          |
+|   4   | `liquidityLocker` | `address` |   `address`   | The address of the LiquidityLocker.         |
+|   5   |   `stakeLocker`   | `address` |   `address`   | The address of the StakeLocker.             |
+|   6   |    `stakingFee`   | `uint256` |   `uint256`   | The fee paid to the Pool Delegate on Loans. |
+|   7   |   `delegateFee`   | `uint256` |   `uint256`   |                                             |
+|   8   |   `liquidityCap`  | `uint256` |   `uint256`   | The maximum liquidity the Pool will hold.   |
+|   9   |       `name`      |  `string` |    `string`   | The name of the Pool FDTs.                  |
+|   10  |      `symbol`     |  `string` |    `string`   | The symbol of the Pool FDTs.                |
+
+\
+
 
 ### `PoolFactoryAdminSet`
 
@@ -378,16 +370,18 @@ Emits an event indicating a PoolFactoryAdmin was allowed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolFactoryAdmin` | `address` | `address` | The address of a PoolFactoryAdmin. |
-| 1 | `allowed` | `bool` | `bool` | Whether &#x60;poolFactoryAdmin&#x60; is allowed as an admin of the PoolFactory. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                                                             |
+| :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------------------------------- |
+|   0   | `poolFactoryAdmin` | `address` |   `address`   | The address of a PoolFactoryAdmin.                                      |
+|   1   |      `allowed`     |   `bool`  |     `bool`    | Whether \`poolFactoryAdmin\` is allowed as an admin of the PoolFactory. |
+
+\
+
 
 ### `Paused`
 
-Emitted when the pause is triggered by &#x60;account&#x60;.
+Emitted when the pause is triggered by \`account\`.
 
 ```solidity
     event Paused(
@@ -396,15 +390,17 @@ Emitted when the pause is triggered by &#x60;account&#x60;.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` |  |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `account` | `address` |   `address`   |             |
+
+\
+
 
 ### `Unpaused`
 
-Emitted when the pause is lifted by &#x60;account&#x60;.
+Emitted when the pause is lifted by \`account\`.
 
 ```solidity
     event Unpaused(
@@ -413,9 +409,9 @@ Emitted when the pause is lifted by &#x60;account&#x60;.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` |  |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `account` | `address` |   `address`   |             |
 
+\

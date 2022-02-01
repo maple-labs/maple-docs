@@ -1,15 +1,13 @@
-# DebtLockerInitializer
+# Debt Locker Initializer
 
 DebtLockerInitializer is intended to initialize the storage of a DebtLocker proxy.
 
-<br />
+\
 
 
 ## Functions
 
-### `decodeArguments` 
-
-
+### `decodeArguments`
 
 ```solidity
     function decodeArguments(
@@ -23,23 +21,22 @@ DebtLockerInitializer is intended to initialize the storage of a DebtLocker prox
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` |  |
-| 1 | `pool_` | `address` | `address` |  |
+
+| Index |   Name  |    Type   | Internal Type | Description |
+| :---: | :-----: | :-------: | :-----------: | ----------- |
+|   0   | `loan_` | `address` |   `address`   |             |
+|   1   | `pool_` | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `encodeArguments` 
-
-
+### `encodeArguments`
 
 ```solidity
     function encodeArguments(
@@ -53,19 +50,16 @@ DebtLockerInitializer is intended to initialize the storage of a DebtLocker prox
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` |  |
-| 1 | `pool_` | `address` | `address` |  |
 
+| Index |   Name  |    Type   | Internal Type | Description |
+| :---: | :-----: | :-------: | :-----------: | ----------- |
+|   0   | `loan_` | `address` |   `address`   |             |
+|   1   | `pool_` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-<br />
-
-
-
+\

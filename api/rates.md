@@ -13,27 +13,33 @@ description: Maple Lend and Borrow rates
 * **`200: OK`**\
   Borrow and lend rates successfully retrieved
 
-```
-{ 
-    "lendRates": [{
-        "apr": 0.08458234,
-        "apy": 0.08712394,
-        "tokenSymbol": "USDC"
-    }], 
-
-    "borrowRates": [{
-        "apr": 0.08458234,
-        "apy": 0.08712394,
-        "tokenSymbol": "USDC"
-    }] 
+```json
+{
+    "lendRates": [
+        {
+            "apr": 0.09723340336134453,
+            "tokenSymbol": "USDC",
+            "apy": 0.09984767920936122
+        }
+    ],
+    "borrowRates": [
+        {
+            "apr": 0,
+            "tokenSymbol": "USDC",
+            "apy": 0
+        }
+    ]
 }
 ```
 
 * **`500: Internal Server Error`**\
   Could not fetch rates
 
-```
-{ "statusCode": 500, message: "Unable to fetch rates" }
+```json
+{
+  "statusCode": 500,
+  "message": "Unable to fetch rates"
+}
 ```
 {% endtab %}
 {% endtabs %}

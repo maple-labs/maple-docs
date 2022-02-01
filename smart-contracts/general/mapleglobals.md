@@ -1,13 +1,13 @@
-# MapleGlobals
+# Globals
 
 MapleGlobals maintains a central source of parameters and allowlists for the Maple protocol.
 
-<br />
+\
+
 
 ## Constructor
 
-
-Constructor function. It emits an &#x60;Initialized&#x60; event.
+Constructor function. It emits an \`Initialized\` event.
 
 ```solidity
     constructor(
@@ -18,32 +18,31 @@ Constructor function. It emits an &#x60;Initialized&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_governor` | `address` | `address` | Address of Governor. |
-| 1 | `_mpl` | `address` | `address` | Address of the ERC-2222 Maple Token for the Maple protocol. |
-| 2 | `_globalAdmin` | `address` | `address` | Address the Global Admin. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                                 |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------------------- |
+|   0   |   `_governor`  | `address` |   `address`   | Address of Governor.                                        |
+|   1   |     `_mpl`     | `address` |   `address`   | Address of the ERC-2222 Maple Token for the Maple protocol. |
+|   2   | `_globalAdmin` | `address` |   `address`   | Address the Global Admin.                                   |
 
-<br />
+\
 
 
 ## Functions
 
 ### `acceptGovernor`
 
-Accept the Governor position. Only the Pending Governor can call this function. It emits a &#x60;GovernorAccepted&#x60; event.
+Accept the Governor position. Only the Pending Governor can call this function. It emits a \`GovernorAccepted\` event.
 
 ```solidity
     function acceptGovernor()
         nonpayable;
 ```
 
+\
 
 
-<br />
-
-### `defaultGracePeriod` _[state variable]_
+### `defaultGracePeriod` _\[state variable]_
 
 The amount of time a Borrower has to make a missed payment before a default can be triggered.
 
@@ -55,19 +54,18 @@ The amount of time a Borrower has to make a missed payment before a default can 
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `defaultUniswapPath` _\[state variable]_
 
-### `defaultUniswapPath` _[state variable]_
-
-Determines the liquidation path of various assets in Loans and the Treasury. The value provided will determine whether or not to perform a bilateral or triangular swap on Uniswap. For example, &#x60;defaultUniswapPath[WBTC][USDC]&#x60; value would indicate what asset to convert WBTC into before conversion to USDC. If &#x60;defaultUniswapPath[WBTC][USDC] &#x3D;&#x3D; USDC&#x60;, then the swap is bilateral and no middle asset is swapped. If &#x60;defaultUniswapPath[WBTC][USDC] &#x3D;&#x3D; WETH&#x60;, then swap WBTC for WETH, then WETH for USDC.
+Determines the liquidation path of various assets in Loans and the Treasury. The value provided will determine whether or not to perform a bilateral or triangular swap on Uniswap. For example, \`defaultUniswapPath\[WBTC]\[USDC]\` value would indicate what asset to convert WBTC into before conversion to USDC. If \`defaultUniswapPath\[WBTC]\[USDC] == USDC\`, then the swap is bilateral and no middle asset is swapped. If \`defaultUniswapPath\[WBTC]\[USDC] == WETH\`, then swap WBTC for WETH, then WETH for USDC.
 
 ```solidity
     function defaultUniswapPath(
@@ -81,21 +79,22 @@ Determines the liquidation path of various assets in Loans and the Treasury. The
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `tokenA` | `address` | `address` | The address of the asset being swapped. |
-| 1 | `tokenB` | `address` | `address` | The address of the final asset to receive. |
 
+| Index |   Name   |    Type   | Internal Type | Description                                |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `tokenA` | `address` |   `address`   | The address of the asset being swapped.    |
+|   1   | `tokenB` | `address` |   `address`   | The address of the final asset to receive. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The intermediary asset for swaps, if any. |
+
+| Index | Name |    Type   | Internal Type | Description                               |
+| :---: | :--: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |      | `address` |   `address`   | The intermediary asset for swaps, if any. |
+
+\
 
 
-<br />
-
-### `fundingPeriod` _[state variable]_
+### `fundingPeriod` _\[state variable]_
 
 The amount of time to allow a Borrower to drawdown on their Loan after funding period ends.
 
@@ -107,15 +106,14 @@ The amount of time to allow a Borrower to drawdown on their Loan after funding p
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `getLatestPrice`
 
@@ -132,22 +130,23 @@ Fetch price for asset from Chainlink oracles.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The asset to fetch the price of. |
 
+| Index |   Name  |    Type   | Internal Type | Description                      |
+| :---: | :-----: | :-------: | :-----------: | -------------------------------- |
+|   0   | `asset` | `address` |   `address`   | The asset to fetch the price of. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The price of asset in USD. |
 
+| Index | Name |    Type   | Internal Type | Description                |
+| :---: | :--: | :-------: | :-----------: | -------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The price of asset in USD. |
 
-<br />
+\
+
 
 ### `getLpCooldownParams`
 
-Returns the &#x60;lpCooldownPeriod&#x60; and &#x60;lpWithdrawWindow&#x60; as a tuple, for convenience.
+Returns the \`lpCooldownPeriod\` and \`lpWithdrawWindow\` as a tuple, for convenience.
 
 ```solidity
     function getLpCooldownParams()
@@ -158,18 +157,17 @@ Returns the &#x60;lpCooldownPeriod&#x60; and &#x60;lpWithdrawWindow&#x60; as a t
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The value of &#x60;lpCooldownPeriod&#x60;. |
-| 1 |  | `uint256` | `uint256` | The value of &#x60;lpWithdrawWindow&#x60;. |
+
+| Index | Name |    Type   | Internal Type | Description                        |
+| :---: | :--: | :-------: | :-----------: | ---------------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The value of \`lpCooldownPeriod\`. |
+|   1   |      | `uint256` |   `uint256`   | The value of \`lpWithdrawWindow\`. |
+
+\
 
 
-<br />
-
-### `globalAdmin` _[state variable]_
+### `globalAdmin` _\[state variable]_
 
 The Global Admin of the whole network. Has the power to switch off/on the functionality of entire protocol.
 
@@ -181,17 +179,16 @@ The Global Admin of the whole network. Has the power to switch off/on the functi
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `governor` _[state variable]_
+### `governor` _\[state variable]_
 
 The Governor responsible for management of global Maple variables.
 
@@ -203,17 +200,16 @@ The Governor responsible for management of global Maple variables.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `investorFee` _[state variable]_
+### `investorFee` _\[state variable]_
 
 The portion of drawdown that goes to the Pool Delegates and individual Lenders.
 
@@ -225,19 +221,16 @@ The portion of drawdown that goes to the Pool Delegates and individual Lenders.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `isValidBalancerPool` _[state variable]_
-
-
+### `isValidBalancerPool` _\[state variable]_
 
 ```solidity
     function isValidBalancerPool(
@@ -250,18 +243,19 @@ The portion of drawdown that goes to the Pool Delegates and individual Lenders.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `balancerPool` | `address` | `address` | The address of a Balancer Pool. |
 
+| Index |      Name      |    Type   | Internal Type | Description                     |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `balancerPool` | `address` |   `address`   | The address of a Balancer Pool. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether Maple has approved &#x60;balancerPool&#x60; for BPT staking. |
 
+| Index | Name |  Type  | Internal Type | Description                                                  |
+| :---: | :--: | :----: | :-----------: | ------------------------------------------------------------ |
+|   0   |      | `bool` |     `bool`    | Whether Maple has approved \`balancerPool\` for BPT staking. |
 
-<br />
+\
+
 
 ### `isValidCalc`
 
@@ -279,23 +273,22 @@ Checks that a Calculator is valid.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calc` | `address` | `address` | The Calculator address. |
-| 1 | `calcType` | `uint8` | `uint8` | The Calculator type. |
 
+| Index |    Name    |    Type   | Internal Type | Description             |
+| :---: | :--------: | :-------: | :-----------: | ----------------------- |
+|   0   |   `calc`   | `address` |   `address`   | The Calculator address. |
+|   1   | `calcType` |  `uint8`  |    `uint8`    | The Calculator type.    |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `isValidCollateralAsset` _[state variable]_
-
-
+### `isValidCollateralAsset` _\[state variable]_
 
 ```solidity
     function isValidCollateralAsset(
@@ -308,22 +301,21 @@ Checks that a Calculator is valid.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralAsset` | `address` | `address` | The address of a Collateral Asset. |
 
+| Index |        Name       |    Type   | Internal Type | Description                        |
+| :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `collateralAsset` | `address` |   `address`   | The address of a Collateral Asset. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;collateralAsset&#x60; is valid. |
+
+| Index | Name |  Type  | Internal Type | Description                           |
+| :---: | :--: | :----: | :-----------: | ------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`collateralAsset\` is valid. |
+
+\
 
 
-<br />
-
-### `isValidLiquidityAsset` _[state variable]_
-
-
+### `isValidLiquidityAsset` _\[state variable]_
 
 ```solidity
     function isValidLiquidityAsset(
@@ -336,22 +328,21 @@ Checks that a Calculator is valid.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityAsset` | `address` | `address` | The address of a Liquidity Asset. |
 
+| Index |       Name       |    Type   | Internal Type | Description                       |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `liquidityAsset` | `address` |   `address`   | The address of a Liquidity Asset. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;liquidityAsset&#x60; is valid. |
+
+| Index | Name |  Type  | Internal Type | Description                          |
+| :---: | :--: | :----: | :-----------: | ------------------------------------ |
+|   0   |      | `bool` |     `bool`    | Whether \`liquidityAsset\` is valid. |
+
+\
 
 
-<br />
-
-### `isValidLoanFactory` _[state variable]_
-
-
+### `isValidLoanFactory` _\[state variable]_
 
 ```solidity
     function isValidLoanFactory(
@@ -364,20 +355,21 @@ Checks that a Calculator is valid.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanFactory` | `address` | `address` | The address of a Loan Factory. |
 
+| Index |      Name     |    Type   | Internal Type | Description                    |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `loanFactory` | `address` |   `address`   | The address of a Loan Factory. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;loanFactory&#x60; is valid. |
+
+| Index | Name |  Type  | Internal Type | Description                       |
+| :---: | :--: | :----: | :-----------: | --------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`loanFactory\` is valid. |
+
+\
 
 
-<br />
-
-### `isValidPoolDelegate` _[state variable]_
+### `isValidPoolDelegate` _\[state variable]_
 
 Prevents unauthorized/unknown addresses from creating Pools.
 
@@ -392,22 +384,21 @@ Prevents unauthorized/unknown addresses from creating Pools.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate` | `address` | `address` | The address of a Pool Delegate. |
 
+| Index |      Name      |    Type   | Internal Type | Description                     |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `poolDelegate` | `address` |   `address`   | The address of a Pool Delegate. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;poolDelegate&#x60; is valid. |
+
+| Index | Name |  Type  | Internal Type | Description                        |
+| :---: | :--: | :----: | :-----------: | ---------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`poolDelegate\` is valid. |
+
+\
 
 
-<br />
-
-### `isValidPoolFactory` _[state variable]_
-
-
+### `isValidPoolFactory` _\[state variable]_
 
 ```solidity
     function isValidPoolFactory(
@@ -420,22 +411,23 @@ Prevents unauthorized/unknown addresses from creating Pools.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolFactory` | `address` | `address` | The address of a Pool Factory. |
 
+| Index |      Name     |    Type   | Internal Type | Description                    |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `poolFactory` | `address` |   `address`   | The address of a Pool Factory. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;poolFactory&#x60; is valid. |
 
+| Index | Name |  Type  | Internal Type | Description                       |
+| :---: | :--: | :----: | :-----------: | --------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`poolFactory\` is valid. |
 
-<br />
+\
+
 
 ### `isValidSubFactory`
 
-Checks that a &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactory&#x60;.
+Checks that a \`subFactory\` is valid as it relates to \`superFactory\`.
 
 ```solidity
     function isValidSubFactory(
@@ -450,22 +442,23 @@ Checks that a &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactor
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `superFactory` | `address` | `address` | The core factory (e.g. PoolFactory, LoanFactory). |
-| 1 | `subFactory` | `address` | `address` | The sub factory used by core factory (e.g. LiquidityLockerFactory). |
-| 2 | `factoryType` | `uint8` | `uint8` | The type expected for the subFactory.  0 &#x3D; COLLATERAL_LOCKER_FACTORY,  1 &#x3D; DEBT_LOCKER_FACTORY,  2 &#x3D; FUNDING_LOCKER_FACTORY,  3 &#x3D; LIQUIDITY_LOCKER_FACTORY,  4 &#x3D; STAKE_LOCKER_FACTORY.  |
 
+| Index |      Name      |    Type   | Internal Type | Description                                                                                                                                                                                 |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   0   | `superFactory` | `address` |   `address`   | The core factory (e.g. PoolFactory, LoanFactory).                                                                                                                                           |
+|   1   |  `subFactory`  | `address` |   `address`   | The sub factory used by core factory (e.g. LiquidityLockerFactory).                                                                                                                         |
+|   2   |  `factoryType` |  `uint8`  |    `uint8`    | The type expected for the subFactory. 0 = COLLATERAL\_LOCKER\_FACTORY, 1 = DEBT\_LOCKER\_FACTORY, 2 = FUNDING\_LOCKER\_FACTORY, 3 = LIQUIDITY\_LOCKER\_FACTORY, 4 = STAKE\_LOCKER\_FACTORY. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `lpCooldownPeriod` _[state variable]_
+### `lpCooldownPeriod` _\[state variable]_
 
 The period (in secs) after which LPs are allowed to withdraw their funds from a Pool.
 
@@ -477,19 +470,18 @@ The period (in secs) after which LPs are allowed to withdraw their funds from a 
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lpWithdrawWindow` _\[state variable]_
 
-### `lpWithdrawWindow` _[state variable]_
-
-The window of time (in secs) after &#x60;lpCooldownPeriod&#x60; that an account has to withdraw before their intent to withdraw is invalidated.
+The window of time (in secs) after \`lpCooldownPeriod\` that an account has to withdraw before their intent to withdraw is invalidated.
 
 ```solidity
     function lpWithdrawWindow()
@@ -499,17 +491,16 @@ The window of time (in secs) after &#x60;lpCooldownPeriod&#x60; that an account 
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `mapleTreasury` _[state variable]_
+### `mapleTreasury` _\[state variable]_
 
 The MapleTreasury is the Treasury where all fees pass through for conversion, prior to distribution.
 
@@ -521,17 +512,16 @@ The MapleTreasury is the Treasury where all fees pass through for conversion, pr
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `maxSwapSlippage` _[state variable]_
+### `maxSwapSlippage` _\[state variable]_
 
 The maximum amount of slippage for Uniswap transactions.
 
@@ -543,17 +533,16 @@ The maximum amount of slippage for Uniswap transactions.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `minLoanEquity` _[state variable]_
+### `minLoanEquity` _\[state variable]_
 
 The minimum amount of LoanFDTs required to trigger liquidations (basis points percentage of totalSupply).
 
@@ -565,17 +554,16 @@ The minimum amount of LoanFDTs required to trigger liquidations (basis points pe
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `mpl` _[state variable]_
+### `mpl` _\[state variable]_
 
 The ERC-2222 Maple Token for the Maple protocol.
 
@@ -587,19 +575,16 @@ The ERC-2222 Maple Token for the Maple protocol.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `oracleFor` _[state variable]_
-
-
+### `oracleFor` _\[state variable]_
 
 ```solidity
     function oracleFor(
@@ -612,20 +597,21 @@ The ERC-2222 Maple Token for the Maple protocol.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The address of some token. |
 
+| Index |   Name  |    Type   | Internal Type | Description                |
+| :---: | :-----: | :-------: | :-----------: | -------------------------- |
+|   0   | `asset` | `address` |   `address`   | The address of some token. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The Chainlink Oracle for the price of &#x60;asset&#x60;. |
+
+| Index | Name |    Type   | Internal Type | Description                                      |
+| :---: | :--: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |      | `address` |   `address`   | The Chainlink Oracle for the price of \`asset\`. |
+
+\
 
 
-<br />
-
-### `pendingGovernor` _[state variable]_
+### `pendingGovernor` _\[state variable]_
 
 The Governor that is declared for governorship transfer. Must be accepted for transfer to take effect.
 
@@ -637,17 +623,16 @@ The Governor that is declared for governorship transfer. Must be accepted for tr
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `protocolPaused` _[state variable]_
+### `protocolPaused` _\[state variable]_
 
 Whether the functionality of the entire protocol is paused.
 
@@ -659,15 +644,14 @@ Whether the functionality of the entire protocol is paused.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `setCalc`
 
@@ -682,17 +666,18 @@ Sets the validity of a calculator contract. Only the Governor can call this func
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calc` | `address` | `address` | The Calculator address. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of a Calculator. |
 
+| Index |   Name  |    Type   | Internal Type | Description                              |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------------- |
+|   0   |  `calc` | `address` |   `address`   | The Calculator address.                  |
+|   1   | `valid` |   `bool`  |     `bool`    | The new validity status of a Calculator. |
 
-<br />
+\
+
 
 ### `setCollateralAsset`
 
-Sets the validity of an asset for collateral. Only the Governor can call this function. It emits a &#x60;CollateralAssetSet&#x60; event.
+Sets the validity of an asset for collateral. Only the Governor can call this function. It emits a \`CollateralAssetSet\` event.
 
 ```solidity
     function setCollateralAsset(
@@ -703,17 +688,18 @@ Sets the validity of an asset for collateral. Only the Governor can call this fu
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The asset to assign validity to. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of a Collateral Asset. |
 
+| Index |   Name  |    Type   | Internal Type | Description                                    |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `asset` | `address` |   `address`   | The asset to assign validity to.               |
+|   1   | `valid` |   `bool`  |     `bool`    | The new validity status of a Collateral Asset. |
 
-<br />
+\
+
 
 ### `setDefaultGracePeriod`
 
-Sets the default grace period. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the default grace period. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setDefaultGracePeriod(
@@ -723,16 +709,17 @@ Sets the default grace period. Only the Governor can call this function. It emit
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_defaultGracePeriod` | `uint256` | `uint256` | The new number of seconds to set the grace period to. |
 
+| Index |          Name         |    Type   | Internal Type | Description                                           |
+| :---: | :-------------------: | :-------: | :-----------: | ----------------------------------------------------- |
+|   0   | `_defaultGracePeriod` | `uint256` |   `uint256`   | The new number of seconds to set the grace period to. |
 
-<br />
+\
+
 
 ### `setDefaultUniswapPath`
 
-Sets the path to swap an asset through Uniswap. Only the Governor can call this function. Set to &#x3D;&#x3D; mid to enable a bilateral swap (single path swap). Set to !&#x3D; mid to enable a triangular swap (multi path swap).
+Sets the path to swap an asset through Uniswap. Only the Governor can call this function. Set to == mid to enable a bilateral swap (single path swap). Set to != mid to enable a triangular swap (multi path swap).
 
 ```solidity
     function setDefaultUniswapPath(
@@ -744,18 +731,19 @@ Sets the path to swap an asset through Uniswap. Only the Governor can call this 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `from` | `address` | `address` | The address of the asset being swapped. |
-| 1 | `to` | `address` | `address` | The address of the final asset to receive. |
-| 2 | `mid` | `address` | `address` | The intermediary asset for swaps, if any. |
 
+| Index |  Name  |    Type   | Internal Type | Description                                |
+| :---: | :----: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `from` | `address` |   `address`   | The address of the asset being swapped.    |
+|   1   |  `to`  | `address` |   `address`   | The address of the final asset to receive. |
+|   2   |  `mid` | `address` |   `address`   | The intermediary asset for swaps, if any.  |
 
-<br />
+\
+
 
 ### `setFundingPeriod`
 
-Sets the funding period. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the funding period. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setFundingPeriod(
@@ -765,16 +753,17 @@ Sets the funding period. Only the Governor can call this function. It emits a &#
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_fundingPeriod` | `uint256` | `uint256` | The number of seconds to set the drawdown grace period to. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                                |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   | `_fundingPeriod` | `uint256` |   `uint256`   | The number of seconds to set the drawdown grace period to. |
 
-<br />
+\
+
 
 ### `setGlobalAdmin`
 
-Sets the Global Admin. Only the Governor can call this function. It emits a &#x60;GlobalAdminSet&#x60; event.
+Sets the Global Admin. Only the Governor can call this function. It emits a \`GlobalAdminSet\` event.
 
 ```solidity
     function setGlobalAdmin(
@@ -784,16 +773,17 @@ Sets the Global Admin. Only the Governor can call this function. It emits a &#x6
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newGlobalAdmin` | `address` | `address` | The new global admin address. |
 
+| Index |       Name       |    Type   | Internal Type | Description                   |
+| :---: | :--------------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `newGlobalAdmin` | `address` |   `address`   | The new global admin address. |
 
-<br />
+\
+
 
 ### `setInvestorFee`
 
-Sets the investor fee (in basis points). Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the investor fee (in basis points). Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setInvestorFee(
@@ -803,16 +793,17 @@ Sets the investor fee (in basis points). Only the Governor can call this functio
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_fee` | `uint256` | `uint256` | The fee, e.g., 50 &#x3D; 0.50%. |
 
+| Index |  Name  |    Type   | Internal Type | Description                |
+| :---: | :----: | :-------: | :-----------: | -------------------------- |
+|   0   | `_fee` | `uint256` |   `uint256`   | The fee, e.g., 50 = 0.50%. |
 
-<br />
+\
+
 
 ### `setLiquidityAsset`
 
-Sets the validity of an asset for liquidity in Pools. Only the Governor can call this function. It emits a &#x60;LiquidityAssetSet&#x60; event.
+Sets the validity of an asset for liquidity in Pools. Only the Governor can call this function. It emits a \`LiquidityAssetSet\` event.
 
 ```solidity
     function setLiquidityAsset(
@@ -823,17 +814,18 @@ Sets the validity of an asset for liquidity in Pools. Only the Governor can call
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The asset to assign validity to. |
-| 1 | `valid` | `bool` | `bool` | The new validity status a Liquidity Asset in Pools. |
 
+| Index |   Name  |    Type   | Internal Type | Description                                         |
+| :---: | :-----: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   | `asset` | `address` |   `address`   | The asset to assign validity to.                    |
+|   1   | `valid` |   `bool`  |     `bool`    | The new validity status a Liquidity Asset in Pools. |
 
-<br />
+\
+
 
 ### `setLpCooldownPeriod`
 
-Sets the Liquidity Pool cooldown period. This change will affect the existing cool down period for the LPs that already intended to withdraw. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the Liquidity Pool cooldown period. This change will affect the existing cool down period for the LPs that already intended to withdraw. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setLpCooldownPeriod(
@@ -843,16 +835,17 @@ Sets the Liquidity Pool cooldown period. This change will affect the existing co
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newCooldownPeriod` | `uint256` | `uint256` | The new value for the cool down period. |
 
+| Index |         Name        |    Type   | Internal Type | Description                             |
+| :---: | :-----------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `newCooldownPeriod` | `uint256` |   `uint256`   | The new value for the cool down period. |
 
-<br />
+\
+
 
 ### `setLpWithdrawWindow`
 
-Sets the Liquidity Pool withdraw window. This change will affect the existing window for the LPs that already intended to withdraw. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the Liquidity Pool withdraw window. This change will affect the existing window for the LPs that already intended to withdraw. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setLpWithdrawWindow(
@@ -862,16 +855,17 @@ Sets the Liquidity Pool withdraw window. This change will affect the existing wi
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newLpWithdrawWindow` | `uint256` | `uint256` | The new value for the withdraw window. |
 
+| Index |          Name         |    Type   | Internal Type | Description                            |
+| :---: | :-------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `newLpWithdrawWindow` | `uint256` |   `uint256`   | The new value for the withdraw window. |
 
-<br />
+\
+
 
 ### `setMapleTreasury`
 
-Sets the MapleTreasury. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the MapleTreasury. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setMapleTreasury(
@@ -881,16 +875,17 @@ Sets the MapleTreasury. Only the Governor can call this function. It emits a &#x
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_mapleTreasury` | `address` | `address` | A new MapleTreasury address. |
 
+| Index |       Name       |    Type   | Internal Type | Description                  |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `_mapleTreasury` | `address` |   `address`   | A new MapleTreasury address. |
 
-<br />
+\
+
 
 ### `setMaxSwapSlippage`
 
-Sets the allowed Uniswap slippage percentage, in basis points. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the allowed Uniswap slippage percentage, in basis points. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setMaxSwapSlippage(
@@ -900,16 +895,17 @@ Sets the allowed Uniswap slippage percentage, in basis points. Only the Governor
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newMaxSlippage` | `uint256` | `uint256` | The new max slippage percentage (in basis points) |
 
+| Index |       Name       |    Type   | Internal Type | Description                                       |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `newMaxSlippage` | `uint256` |   `uint256`   | The new max slippage percentage (in basis points) |
 
-<br />
+\
+
 
 ### `setMinLoanEquity`
 
-Sets the minimum Loan equity. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the minimum Loan equity. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setMinLoanEquity(
@@ -919,16 +915,17 @@ Sets the minimum Loan equity. Only the Governor can call this function. It emits
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_minLoanEquity` | `uint256` | `uint256` | The new minimum percentage of Loan equity an account must have to trigger liquidations. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                                                             |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------------------------------------------------------------- |
+|   0   | `_minLoanEquity` | `uint256` |   `uint256`   | The new minimum percentage of Loan equity an account must have to trigger liquidations. |
 
-<br />
+\
+
 
 ### `setPendingGovernor`
 
-Sets a new Pending Governor. This address can become Governor if they accept. Only the Governor can call this function. It emits a &#x60;PendingGovernorSet&#x60; event.
+Sets a new Pending Governor. This address can become Governor if they accept. Only the Governor can call this function. It emits a \`PendingGovernorSet\` event.
 
 ```solidity
     function setPendingGovernor(
@@ -938,16 +935,17 @@ Sets a new Pending Governor. This address can become Governor if they accept. On
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_pendingGovernor` | `address` | `address` | The address of a new Pending Governor. |
 
+| Index |        Name        |    Type   | Internal Type | Description                            |
+| :---: | :----------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `_pendingGovernor` | `address` |   `address`   | The address of a new Pending Governor. |
 
-<br />
+\
+
 
 ### `setPoolDelegateAllowlist`
 
-Sets the validity of a Pool Delegate (those allowed to create Pools). Only the Governor can call this function. It emits a &#x60;PoolDelegateSet&#x60; event.
+Sets the validity of a Pool Delegate (those allowed to create Pools). Only the Governor can call this function. It emits a \`PoolDelegateSet\` event.
 
 ```solidity
     function setPoolDelegateAllowlist(
@@ -958,17 +956,18 @@ Sets the validity of a Pool Delegate (those allowed to create Pools). Only the G
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate` | `address` | `address` | The address to manage permissions for. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of a Pool Delegate. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                 |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolDelegate` | `address` |   `address`   | The address to manage permissions for.      |
+|   1   |     `valid`    |   `bool`  |     `bool`    | The new validity status of a Pool Delegate. |
 
-<br />
+\
+
 
 ### `setPriceOracle`
 
-Sets a price feed&#x27;s oracle. Only the Governor can call this function. It emits a &#x60;OracleSet&#x60; event.
+Sets a price feed's oracle. Only the Governor can call this function. It emits a \`OracleSet\` event.
 
 ```solidity
     function setPriceOracle(
@@ -979,17 +978,18 @@ Sets a price feed&#x27;s oracle. Only the Governor can call this function. It em
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The asset to update price for. |
-| 1 | `oracle` | `address` | `address` | The new Oracle to use for the price of &#x60;asset&#x60;. |
 
+| Index |   Name   |    Type   | Internal Type | Description                                       |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   |  `asset` | `address` |   `address`   | The asset to update price for.                    |
+|   1   | `oracle` | `address` |   `address`   | The new Oracle to use for the price of \`asset\`. |
 
-<br />
+\
+
 
 ### `setProtocolPause`
 
-Sets the paused/unpaused state of the protocol. Only the Global Admin can call this function. It emits a &#x60;ProtocolPaused&#x60; event.
+Sets the paused/unpaused state of the protocol. Only the Global Admin can call this function. It emits a \`ProtocolPaused\` event.
 
 ```solidity
     function setProtocolPause(
@@ -999,16 +999,17 @@ Sets the paused/unpaused state of the protocol. Only the Global Admin can call t
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pause` | `bool` | `bool` | A boolean flag to switch externally facing functionality in the protocol on/off. |
 
+| Index |   Name  |  Type  | Internal Type | Description                                                                      |
+| :---: | :-----: | :----: | :-----------: | -------------------------------------------------------------------------------- |
+|   0   | `pause` | `bool` |     `bool`    | A boolean flag to switch externally facing functionality in the protocol on/off. |
 
-<br />
+\
+
 
 ### `setStakerCooldownPeriod`
 
-Sets the Staker cooldown period. This change will affect the existing cool down period for the Stakers that already intended to unstake. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the Staker cooldown period. This change will affect the existing cool down period for the Stakers that already intended to unstake. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setStakerCooldownPeriod(
@@ -1018,16 +1019,17 @@ Sets the Staker cooldown period. This change will affect the existing cool down 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newCooldownPeriod` | `uint256` | `uint256` | The new value for the cool down period. |
 
+| Index |         Name        |    Type   | Internal Type | Description                             |
+| :---: | :-----------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `newCooldownPeriod` | `uint256` |   `uint256`   | The new value for the cool down period. |
 
-<br />
+\
+
 
 ### `setStakerUnstakeWindow`
 
-Sets the Staker unstake window. This change will affect the existing window for the Stakers that already intended to unstake. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the Staker unstake window. This change will affect the existing window for the Stakers that already intended to unstake. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setStakerUnstakeWindow(
@@ -1037,16 +1039,17 @@ Sets the Staker unstake window. This change will affect the existing window for 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newUnstakeWindow` | `uint256` | `uint256` | The new value for the unstake window. |
 
+| Index |        Name        |    Type   | Internal Type | Description                           |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `newUnstakeWindow` | `uint256` |   `uint256`   | The new value for the unstake window. |
 
-<br />
+\
+
 
 ### `setSwapOutRequired`
 
-Sets the the minimum Pool cover required to finalize a Pool. Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the the minimum Pool cover required to finalize a Pool. Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setSwapOutRequired(
@@ -1056,16 +1059,17 @@ Sets the the minimum Pool cover required to finalize a Pool. Only the Governor c
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amt` | `uint256` | `uint256` | The new minimum swap out required. |
 
+| Index |  Name |    Type   | Internal Type | Description                        |
+| :---: | :---: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `amt` | `uint256` |   `uint256`   | The new minimum swap out required. |
 
-<br />
+\
+
 
 ### `setTreasuryFee`
 
-Sets the treasury fee (in basis points). Only the Governor can call this function. It emits a &#x60;GlobalsParamSet&#x60; event.
+Sets the treasury fee (in basis points). Only the Governor can call this function. It emits a \`GlobalsParamSet\` event.
 
 ```solidity
     function setTreasuryFee(
@@ -1075,16 +1079,17 @@ Sets the treasury fee (in basis points). Only the Governor can call this functio
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_fee` | `uint256` | `uint256` | The fee, e.g., 50 &#x3D; 0.50%. |
 
+| Index |  Name  |    Type   | Internal Type | Description                |
+| :---: | :----: | :-------: | :-----------: | -------------------------- |
+|   0   | `_fee` | `uint256` |   `uint256`   | The fee, e.g., 50 = 0.50%. |
 
-<br />
+\
+
 
 ### `setValidBalancerPool`
 
-Sets the validity of a Balancer Pool. Only the Governor can call this function. It emits a &#x60;BalancerPoolSet&#x60; event.
+Sets the validity of a Balancer Pool. Only the Governor can call this function. It emits a \`BalancerPoolSet\` event.
 
 ```solidity
     function setValidBalancerPool(
@@ -1095,13 +1100,14 @@ Sets the validity of a Balancer Pool. Only the Governor can call this function. 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `balancerPool` | `address` | `address` | The address of Balancer Pool contract. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of a Balancer Pool. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                 |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `balancerPool` | `address` |   `address`   | The address of Balancer Pool contract.      |
+|   1   |     `valid`    |   `bool`  |     `bool`    | The new validity status of a Balancer Pool. |
 
-<br />
+\
+
 
 ### `setValidLoanFactory`
 
@@ -1116,13 +1122,14 @@ Sets the validity of a LoanFactory. Only the Governor can call this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanFactory` | `address` | `address` | The address of a LoanFactory. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of &#x60;loanFactory&#x60;. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                 |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `loanFactory` | `address` |   `address`   | The address of a LoanFactory.               |
+|   1   |    `valid`    |   `bool`  |     `bool`    | The new validity status of \`loanFactory\`. |
 
-<br />
+\
+
 
 ### `setValidPoolFactory`
 
@@ -1137,17 +1144,18 @@ Sets the validity of a PoolFactory. Only the Governor can call this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolFactory` | `address` | `address` | The address of a PoolFactory. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of &#x60;poolFactory&#x60;. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                 |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolFactory` | `address` |   `address`   | The address of a PoolFactory.               |
+|   1   |    `valid`    |   `bool`  |     `bool`    | The new validity status of \`poolFactory\`. |
 
-<br />
+\
+
 
 ### `setValidSubFactory`
 
-Sets the validity of &#x60;subFactory&#x60; as it relates to &#x60;superFactory&#x60;. Only the Governor can call this function.
+Sets the validity of \`subFactory\` as it relates to \`superFactory\`. Only the Governor can call this function.
 
 ```solidity
     function setValidSubFactory(
@@ -1159,16 +1167,17 @@ Sets the validity of &#x60;subFactory&#x60; as it relates to &#x60;superFactory&
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `superFactory` | `address` | `address` | The core factory (e.g. PoolFactory, LoanFactory). |
-| 1 | `subFactory` | `address` | `address` | The sub factory used by core factory (e.g. LiquidityLockerFactory). |
-| 2 | `valid` | `bool` | `bool` | The new validity status of &#x60;subFactory&#x60; within context of &#x60;superFactory&#x60;. |
+
+| Index |      Name      |    Type   | Internal Type | Description                                                                   |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------------------------------------- |
+|   0   | `superFactory` | `address` |   `address`   | The core factory (e.g. PoolFactory, LoanFactory).                             |
+|   1   |  `subFactory`  | `address` |   `address`   | The sub factory used by core factory (e.g. LiquidityLockerFactory).           |
+|   2   |     `valid`    |   `bool`  |     `bool`    | The new validity status of \`subFactory\` within context of \`superFactory\`. |
+
+\
 
 
-<br />
-
-### `stakerCooldownPeriod` _[state variable]_
+### `stakerCooldownPeriod` _\[state variable]_
 
 The period (in secs) after which Stakers are allowed to unstake their BPTs from a StakeLocker.
 
@@ -1180,19 +1189,18 @@ The period (in secs) after which Stakers are allowed to unstake their BPTs from 
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `stakerUnstakeWindow` _\[state variable]_
 
-### `stakerUnstakeWindow` _[state variable]_
-
-The window of time (in secs) after &#x60;stakerCooldownPeriod&#x60; that an account has to withdraw before their intent to unstake is invalidated.
+The window of time (in secs) after \`stakerCooldownPeriod\` that an account has to withdraw before their intent to unstake is invalidated.
 
 ```solidity
     function stakerUnstakeWindow()
@@ -1202,17 +1210,16 @@ The window of time (in secs) after &#x60;stakerCooldownPeriod&#x60; that an acco
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `swapOutRequired` _[state variable]_
+### `swapOutRequired` _\[state variable]_
 
 The minimum amount of Pool cover that a Pool Delegate has to provide before they can finalize a Pool.
 
@@ -1224,17 +1231,16 @@ The minimum amount of Pool cover that a Pool Delegate has to provide before they
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `treasuryFee` _[state variable]_
+### `treasuryFee` _\[state variable]_
 
 The portion of drawdown that goes to the MapleTreasury.
 
@@ -1246,19 +1252,16 @@ The portion of drawdown that goes to the MapleTreasury.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `validCalcs` _[state variable]_
-
-
+### `validCalcs` _\[state variable]_
 
 ```solidity
     function validCalcs(
@@ -1271,22 +1274,21 @@ The portion of drawdown that goes to the MapleTreasury.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calc` | `address` | `address` | The address of a Calculator. |
 
+| Index |  Name  |    Type   | Internal Type | Description                  |
+| :---: | :----: | :-------: | :-----------: | ---------------------------- |
+|   0   | `calc` | `address` |   `address`   | The address of a Calculator. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;calc&#x60; is valid. |
+
+| Index | Name |  Type  | Internal Type | Description                |
+| :---: | :--: | :----: | :-----------: | -------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`calc\` is valid. |
+
+\
 
 
-<br />
-
-### `validSubFactories` _[state variable]_
-
-
+### `validSubFactories` _\[state variable]_
 
 ```solidity
     function validSubFactories(
@@ -1300,19 +1302,19 @@ The portion of drawdown that goes to the MapleTreasury.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `superFactory` | `address` | `address` | The core factory (e.g. PoolFactory, LoanFactory). |
-| 1 | `subFactory` | `address` | `address` | The sub factory used by core factory (e.g. LiquidityLockerFactory). |
 
+| Index |      Name      |    Type   | Internal Type | Description                                                         |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------------------------------- |
+|   0   | `superFactory` | `address` |   `address`   | The core factory (e.g. PoolFactory, LoanFactory).                   |
+|   1   |  `subFactory`  | `address` |   `address`   | The sub factory used by core factory (e.g. LiquidityLockerFactory). |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;subFactory&#x60; is valid as it relates to &#x60;superFactory&#x60;. |
 
+| Index | Name |  Type  | Internal Type | Description                                                        |
+| :---: | :--: | :----: | :-----------: | ------------------------------------------------------------------ |
+|   0   |      | `bool` |     `bool`    | Whether \`subFactory\` is valid as it relates to \`superFactory\`. |
 
-<br />
+\
 
 
 ## Events
@@ -1329,12 +1331,14 @@ Emits an event indicating the validity of a Balancer Pool was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `balancerPool` | `address` | `address` | The address of Balancer Pool contract. |
-| 1 | `valid` | `bool` | `bool` | The new validity status of a Balancer Pool. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                 |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `balancerPool` | `address` |   `address`   | The address of Balancer Pool contract.      |
+|   1   |     `valid`    |   `bool`  |     `bool`    | The new validity status of a Balancer Pool. |
+
+\
+
 
 ### `CollateralAssetSet`
 
@@ -1350,14 +1354,16 @@ Emits an event indicating the validity of a Collateral Asset was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The Collateral Asset to assign validity to. |
-| 1 | `decimals` | `uint256` | `uint256` | The number of decimal places of &#x60;asset&#x60;. |
-| 2 | `symbol` | `string` | `string` | The symbol of &#x60;asset&#x60;. |
-| 3 | `valid` | `bool` | `bool` | The new validity status of &#x60;asset&#x60;. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                                 |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |   `asset`  | `address` |   `address`   | The Collateral Asset to assign validity to. |
+|   1   | `decimals` | `uint256` |   `uint256`   | The number of decimal places of \`asset\`.  |
+|   2   |  `symbol`  |  `string` |    `string`   | The symbol of \`asset\`.                    |
+|   3   |   `valid`  |   `bool`  |     `bool`    | The new validity status of \`asset\`.       |
+
+\
+
 
 ### `GlobalAdminSet`
 
@@ -1370,11 +1376,13 @@ Emits an event indicating the GlobalAdmin was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newGlobalAdmin` | `address` | `address` | The address of the new GlobalAdmin. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                         |
+| :---: | :--------------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `newGlobalAdmin` | `address` |   `address`   | The address of the new GlobalAdmin. |
+
+\
+
 
 ### `GlobalsAddressSet`
 
@@ -1388,12 +1396,14 @@ Emits an event indicating that some Governor controlled address was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `which` | `bytes32` | `bytes32` | The identifier of the address that was set. |
-| 1 | `addr` | `address` | `address` | The address that was set. |
 
-<br />
+| Index |   Name  |    Type   | Internal Type | Description                                 |
+| :---: | :-----: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `which` | `bytes32` |   `bytes32`   | The identifier of the address that was set. |
+|   1   |  `addr` | `address` |   `address`   | The address that was set.                   |
+
+\
+
 
 ### `GlobalsParamSet`
 
@@ -1407,12 +1417,14 @@ Emits an event indicating that some Governor controlled parameter was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `which` | `bytes32` | `bytes32` | The identifier of the parameter that was set. |
-| 1 | `value` | `uint256` | `uint256` | The value the parameter was set to. |
 
-<br />
+| Index |   Name  |    Type   | Internal Type | Description                                   |
+| :---: | :-----: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `which` | `bytes32` |   `bytes32`   | The identifier of the parameter that was set. |
+|   1   | `value` | `uint256` |   `uint256`   | The value the parameter was set to.           |
+
+\
+
 
 ### `GovernorAccepted`
 
@@ -1425,11 +1437,13 @@ Emits an event indicating Governorship was accepted by a new account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `governor` | `address` | `address` | The account that has accepted Governorship. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                                 |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `governor` | `address` |   `address`   | The account that has accepted Governorship. |
+
+\
+
 
 ### `Initialized`
 
@@ -1439,8 +1453,8 @@ Emits an event indicating the MapleGlobals contract was created.
     event Initialized();
 ```
 
+\
 
-<br />
 
 ### `LiquidityAssetSet`
 
@@ -1456,14 +1470,16 @@ Emits an event indicating the validity of a Liquidity Asset was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The Liquidity Asset to assign validity to. |
-| 1 | `decimals` | `uint256` | `uint256` | The number of decimal places of &#x60;asset&#x60;. |
-| 2 | `symbol` | `string` | `string` | The symbol of &#x60;asset&#x60;. |
-| 3 | `valid` | `bool` | `bool` | The new validity status of &#x60;asset&#x60;. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                                |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   |   `asset`  | `address` |   `address`   | The Liquidity Asset to assign validity to. |
+|   1   | `decimals` | `uint256` |   `uint256`   | The number of decimal places of \`asset\`. |
+|   2   |  `symbol`  |  `string` |    `string`   | The symbol of \`asset\`.                   |
+|   3   |   `valid`  |   `bool`  |     `bool`    | The new validity status of \`asset\`.      |
+
+\
+
 
 ### `OracleSet`
 
@@ -1477,12 +1493,14 @@ Emits an event indicating the Oracle for an asset was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The asset to update price for. |
-| 1 | `oracle` | `address` | `address` | The new Oracle to use. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                    |
+| :---: | :------: | :-------: | :-----------: | ------------------------------ |
+|   0   |  `asset` | `address` |   `address`   | The asset to update price for. |
+|   1   | `oracle` | `address` |   `address`   | The new Oracle to use.         |
+
+\
+
 
 ### `PendingGovernorSet`
 
@@ -1495,11 +1513,13 @@ Emits an event indicating a PendingGovernor was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingGovernor` | `address` | `address` | The address of the new Pending Governor. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                              |
+| :---: | :---------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `pendingGovernor` | `address` |   `address`   | The address of the new Pending Governor. |
+
+\
+
 
 ### `PoolDelegateSet`
 
@@ -1513,16 +1533,18 @@ Emits an event indicating the validity of a Pool Delegate was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate` | `address` | `address` | The address of a Pool Delegate. |
-| 1 | `valid` | `bool` | `bool` | Whether &#x60;poolDelegate&#x60; is a valid Pool Delegate. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                        |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------------- |
+|   0   | `poolDelegate` | `address` |   `address`   | The address of a Pool Delegate.                    |
+|   1   |     `valid`    |   `bool`  |     `bool`    | Whether \`poolDelegate\` is a valid Pool Delegate. |
+
+\
+
 
 ### `ProtocolPaused`
 
-Emits an event indicating the protocol&#x27;s paused state has been set.
+Emits an event indicating the protocol's paused state has been set.
 
 ```solidity
     event ProtocolPaused(
@@ -1531,11 +1553,13 @@ Emits an event indicating the protocol&#x27;s paused state has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pause` | `bool` | `bool` | Whether the protocol was paused. |
 
-<br />
+| Index |   Name  |  Type  | Internal Type | Description                      |
+| :---: | :-----: | :----: | :-----------: | -------------------------------- |
+|   0   | `pause` | `bool` |     `bool`    | Whether the protocol was paused. |
+
+\
+
 
 ### `TransferRestrictionExemptionSet`
 
@@ -1549,10 +1573,10 @@ This is unused.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `exemptedContract` | `address` | `address` |  |
-| 1 | `valid` | `bool` | `bool` |  |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   | `exemptedContract` | `address` |   `address`   |             |
+|   1   |       `valid`      |   `bool`  |     `bool`    |             |
 
+\

@@ -1,13 +1,11 @@
-# LiquidityLocker
+# Liquidity Locker
 
 LiquidityLocker holds custody of Liquidity Asset tokens for a given Pool.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -17,20 +15,20 @@ LiquidityLocker holds custody of Liquidity Asset tokens for a given Pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_liquidityAsset` | `address` | `address` |  |
-| 1 | `_pool` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `_liquidityAsset` | `address` |   `address`   |             |
+|   1   |      `_pool`      | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `fundLoan` 
+### `fundLoan`
 
-Funds a Loan using available assets in this LiquidityLocker. Only the Pool can call this function. 
+Funds a Loan using available assets in this LiquidityLocker. Only the Pool can call this function.
 
 ```solidity
     function fundLoan(
@@ -42,16 +40,17 @@ Funds a Loan using available assets in this LiquidityLocker. Only the Pool can c
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan` | `address` | `address` | The Loan to fund. |
-| 1 | `debtLocker` | `address` | `address` | The DebtLocker that will escrow debt tokens. |
-| 2 | `amount` | `uint256` | `uint256` | The amount of Liquidity Asset to fund the Loan for. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                         |
+| :---: | :----------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |    `loan`    | `address` |   `address`   | The Loan to fund.                                   |
+|   1   | `debtLocker` | `address` |   `address`   | The DebtLocker that will escrow debt tokens.        |
+|   2   |   `amount`   | `uint256` |   `uint256`   | The amount of Liquidity Asset to fund the Loan for. |
+
+\
 
 
-<br />
-
-### `liquidityAsset` _[state variable]_
+### `liquidityAsset` _\[state variable]_
 
 The Liquidity Asset which this LiquidityLocker will escrow.
 
@@ -63,17 +62,16 @@ The Liquidity Asset which this LiquidityLocker will escrow.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `pool` _[state variable]_
+### `pool` _\[state variable]_
 
 The Pool contract address that owns this LiquidityLocker.
 
@@ -85,19 +83,18 @@ The Pool contract address that owns this LiquidityLocker.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
+### `transfer`
 
-### `transfer` 
-
-Transfers amount of Liquidity Asset to a destination account. Only the Pool can call this function. 
+Transfers amount of Liquidity Asset to a destination account. Only the Pool can call this function.
 
 ```solidity
     function transfer(
@@ -108,13 +105,10 @@ Transfers amount of Liquidity Asset to a destination account. Only the Pool can 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `dst` | `address` | `address` | The destination to transfer Liquidity Asset to. |
-| 1 | `amt` | `uint256` | `uint256` | The amount of Liquidity Asset to transfer. |
 
+| Index |  Name |    Type   | Internal Type | Description                                     |
+| :---: | :---: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `dst` | `address` |   `address`   | The destination to transfer Liquidity Asset to. |
+|   1   | `amt` | `uint256` |   `uint256`   | The amount of Liquidity Asset to transfer.      |
 
-<br />
-
-
-
+\

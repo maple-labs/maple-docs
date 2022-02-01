@@ -1,13 +1,11 @@
-# DebtLocker
+# Debt Locker
 
 DebtLocker holds custody of LoanFDT tokens.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -17,20 +15,20 @@ DebtLocker holds custody of LoanFDT tokens.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_loan` | `address` | `address` |  |
-| 1 | `_pool` | `address` | `address` |  |
 
+| Index |   Name  |    Type   | Internal Type | Description |
+| :---: | :-----: | :-------: | :-----------: | ----------- |
+|   0   | `_loan` | `address` |   `address`   |             |
+|   1   | `_pool` | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `claim` 
+### `claim`
 
-Claims funds distribution for Loan via LoanFDT. Only the Pool can call this function. 
+Claims funds distribution for Loan via LoanFDT. Only the Pool can call this function.
 
 ```solidity
     function claim()
@@ -40,17 +38,16 @@ Claims funds distribution for Loan via LoanFDT. Only the Pool can call this func
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256[7]` | `uint256[7]` | [0] &#x3D;&gt; Total Claimed. [1] &#x3D;&gt; Interest Claimed. [2] &#x3D;&gt; Principal Claimed. [3] &#x3D;&gt; Pool Delegate Fee Claimed. [4] &#x3D;&gt; Excess Returned Claimed. [5] &#x3D;&gt; Amount Recovered (from Liquidation). [6] &#x3D;&gt; Default Suffered. |
+
+| Index | Name |     Type     | Internal Type | Description                                                                                                                                                                                                            |
+| :---: | :--: | :----------: | :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   0   |      | `uint256[7]` |  `uint256[7]` | \[0] => Total Claimed. \[1] => Interest Claimed. \[2] => Principal Claimed. \[3] => Pool Delegate Fee Claimed. \[4] => Excess Returned Claimed. \[5] => Amount Recovered (from Liquidation). \[6] => Default Suffered. |
+
+\
 
 
-<br />
-
-### `lastAmountRecovered` _[state variable]_
+### `lastAmountRecovered` _\[state variable]_
 
 Then Liquidity Asset (a.k.a. loan asset) recovered from liquidation of Loan collateral.
 
@@ -62,19 +59,18 @@ Then Liquidity Asset (a.k.a. loan asset) recovered from liquidation of Loan coll
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lastDefaultSuffered` _\[state variable]_
 
-### `lastDefaultSuffered` _[state variable]_
-
-The Loan total default suffered at last time &#x60;claim()&#x60; was called.
+The Loan total default suffered at last time \`claim()\` was called.
 
 ```solidity
     function lastDefaultSuffered()
@@ -84,19 +80,18 @@ The Loan total default suffered at last time &#x60;claim()&#x60; was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lastExcessReturned` _\[state variable]_
 
-### `lastExcessReturned` _[state variable]_
-
-The Loan total excess returned at last time &#x60;claim()&#x60; was called.
+The Loan total excess returned at last time \`claim()\` was called.
 
 ```solidity
     function lastExcessReturned()
@@ -106,19 +101,18 @@ The Loan total excess returned at last time &#x60;claim()&#x60; was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lastFeePaid` _\[state variable]_
 
-### `lastFeePaid` _[state variable]_
-
-The Loan total fees paid at last time &#x60;claim()&#x60; was called.
+The Loan total fees paid at last time \`claim()\` was called.
 
 ```solidity
     function lastFeePaid()
@@ -128,19 +122,18 @@ The Loan total fees paid at last time &#x60;claim()&#x60; was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lastInterestPaid` _\[state variable]_
 
-### `lastInterestPaid` _[state variable]_
-
-The Loan total interest paid at last time &#x60;claim()&#x60; was called.
+The Loan total interest paid at last time \`claim()\` was called.
 
 ```solidity
     function lastInterestPaid()
@@ -150,19 +143,18 @@ The Loan total interest paid at last time &#x60;claim()&#x60; was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `lastPrincipalPaid` _\[state variable]_
 
-### `lastPrincipalPaid` _[state variable]_
-
-The Loan total principal paid at last time &#x60;claim()&#x60; was called.
+The Loan total principal paid at last time \`claim()\` was called.
 
 ```solidity
     function lastPrincipalPaid()
@@ -172,17 +164,16 @@ The Loan total principal paid at last time &#x60;claim()&#x60; was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `liquidityAsset` _[state variable]_
+### `liquidityAsset` _\[state variable]_
 
 The Liquidity Asset this locker can claim.
 
@@ -194,17 +185,16 @@ The Liquidity Asset this locker can claim.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `contract IERC20` |  |
+
+| Index | Name |    Type   |   Internal Type   | Description |
+| :---: | :--: | :-------: | :---------------: | ----------- |
+|   0   |      | `address` | `contract IERC20` |             |
+
+\
 
 
-<br />
-
-### `loan` _[state variable]_
+### `loan` _\[state variable]_
 
 The Loan contract this locker is holding tokens for.
 
@@ -216,17 +206,16 @@ The Loan contract this locker is holding tokens for.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `contract ILoanLike` |  |
+
+| Index | Name |    Type   |     Internal Type    | Description |
+| :---: | :--: | :-------: | :------------------: | ----------- |
+|   0   |      | `address` | `contract ILoanLike` |             |
+
+\
 
 
-<br />
-
-### `pool` _[state variable]_
+### `pool` _\[state variable]_
 
 The owner of this Locker (the Pool).
 
@@ -238,28 +227,22 @@ The owner of this Locker (the Pool).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
+### `triggerDefault`
 
-### `triggerDefault` 
-
-Liquidates a Loan that is held by this contract. Only the Pool can call this function. 
+Liquidates a Loan that is held by this contract. Only the Pool can call this function.
 
 ```solidity
     function triggerDefault()
         nonpayable;
 ```
 
-
-
-<br />
-
-
-
+\

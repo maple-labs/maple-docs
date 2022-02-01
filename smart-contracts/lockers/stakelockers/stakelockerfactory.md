@@ -1,15 +1,15 @@
-# StakeLockerFactory
+# Stake Locker Factory
 
 StakeLockerFactory instantiates StakeLockers.
 
-<br />
+\
 
 
 ## Functions
 
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
-The type of the factory (i.e FactoryType::STAKE_LOCKER_FACTORY).
+The type of the factory (i.e FactoryType::STAKE\_LOCKER\_FACTORY).
 
 ```solidity
     function factoryType()
@@ -19,19 +19,16 @@ The type of the factory (i.e FactoryType::STAKE_LOCKER_FACTORY).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
+
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
+
+\
 
 
-<br />
-
-### `isLocker` _[state variable]_
-
-
+### `isLocker` _\[state variable]_
 
 ```solidity
     function isLocker(
@@ -44,22 +41,23 @@ The type of the factory (i.e FactoryType::STAKE_LOCKER_FACTORY).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `stakeLocker` | `address` | `address` | Some address. |
 
+| Index |      Name     |    Type   | Internal Type | Description   |
+| :---: | :-----------: | :-------: | :-----------: | ------------- |
+|   0   | `stakeLocker` | `address` |   `address`   | Some address. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;stakeLocker&#x60; is a StakeLocker. |
 
+| Index | Name |  Type  | Internal Type | Description                               |
+| :---: | :--: | :----: | :-----------: | ----------------------------------------- |
+|   0   |      | `bool` |     `bool`    | Whether \`stakeLocker\` is a StakeLocker. |
 
-<br />
+\
+
 
 ### `newLocker`
 
-Instantiate a StakeLocker.It emits a &#x60;StakeLockerCreated&#x60; event.
+Instantiate a StakeLocker.It emits a \`StakeLockerCreated\` event.
 
 ```solidity
     function newLocker(
@@ -73,23 +71,22 @@ Instantiate a StakeLocker.It emits a &#x60;StakeLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `stakeAsset` | `address` | `address` | The address of the Stake Asset (generally Balancer Pool BPTs). |
-| 1 | `liquidityAsset` | `address` | `address` | The address of the Liquidity Asset (as defined in the Pool). |
 
+| Index |       Name       |    Type   | Internal Type | Description                                                    |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------------------------- |
+|   0   |   `stakeAsset`   | `address` |   `address`   | The address of the Stake Asset (generally Balancer Pool BPTs). |
+|   1   | `liquidityAsset` | `address` |   `address`   | The address of the Liquidity Asset (as defined in the Pool).   |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `stakeLocker` | `address` | `address` |    The address of the instantiated StakeLocker. |
+
+| Index |      Name     |    Type   | Internal Type | Description                                  |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `stakeLocker` | `address` |   `address`   | The address of the instantiated StakeLocker. |
+
+\
 
 
-<br />
-
-### `owner` _[state variable]_
-
-
+### `owner` _\[state variable]_
 
 ```solidity
     function owner(
@@ -102,18 +99,18 @@ Instantiate a StakeLocker.It emits a &#x60;StakeLockerCreated&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `stakeLocker` | `address` | `address` | The address of a StakeLocker. |
 
+| Index |      Name     |    Type   | Internal Type | Description                   |
+| :---: | :-----------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `stakeLocker` | `address` |   `address`   | The address of a StakeLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` | The address of the owner of StakeLocker at &#x60;stakeLocker&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                                 |
+| :---: | :--: | :-------: | :-----------: | ----------------------------------------------------------- |
+|   0   |      | `address` |   `address`   | The address of the owner of StakeLocker at \`stakeLocker\`. |
 
-<br />
+\
 
 
 ## Events
@@ -134,14 +131,14 @@ Emits an event indicating a StakeLocker was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | The owner of the StakeLocker. |
-| 1 | `stakeLocker` | `address` | `address` | The address of the StakeLocker. |
-| 2 | `stakeAsset` | `address` | `address` | The Stake Asset this StakeLocker will escrow. |
-| 3 | `liquidityAsset` | `address` | `address` | The address of the Liquidity Asset (as defined in the Pool). |
-| 4 | `name` | `string` | `string` | The name of the StakeLockerFDTs. |
-| 5 | `symbol` | `string` | `string` | The symbol of the StakeLockerFDTs. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                                                  |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   |      `owner`     | `address` |   `address`   | The owner of the StakeLocker.                                |
+|   1   |   `stakeLocker`  | `address` |   `address`   | The address of the StakeLocker.                              |
+|   2   |   `stakeAsset`   | `address` |   `address`   | The Stake Asset this StakeLocker will escrow.                |
+|   3   | `liquidityAsset` | `address` |   `address`   | The address of the Liquidity Asset (as defined in the Pool). |
+|   4   |      `name`      |  `string` |    `string`   | The name of the StakeLockerFDTs.                             |
+|   5   |     `symbol`     |  `string` |    `string`   | The symbol of the StakeLockerFDTs.                           |
 
+\

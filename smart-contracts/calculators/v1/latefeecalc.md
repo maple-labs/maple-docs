@@ -1,13 +1,11 @@
-# LateFeeCalc
+# Late Fee Calculator
 
 LateFeeCalc calculates late fees on Loans.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -16,17 +14,17 @@ LateFeeCalc calculates late fees on Loans.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_lateFee` | `uint256` | `uint256` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `_lateFee` | `uint256` |   `uint256`   |             |
 
-<br />
+\
 
 
 ## Functions
 
-### `calcType` _[state variable]_
+### `calcType` _\[state variable]_
 
 The Calculator type.
 
@@ -38,15 +36,14 @@ The Calculator type.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint8` | `uint8` |  |
 
+| Index | Name |   Type  | Internal Type | Description |
+| :---: | :--: | :-----: | :-----------: | ----------- |
+|   0   |      | `uint8` |    `uint8`    |             |
 
-<br />
+\
+
 
 ### `getLateFee`
 
@@ -63,20 +60,21 @@ Calculates the late fee payment for a Loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interest` | `uint256` | `uint256` | Amount of interest to be used to calculate late fee for. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                              |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------------------------------- |
+|   0   | `interest` | `uint256` |   `uint256`   | Amount of interest to be used to calculate late fee for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | Late fee that is charged to the Borrower. |
+
+| Index | Name |    Type   | Internal Type | Description                               |
+| :---: | :--: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |      | `uint256` |   `uint256`   | Late fee that is charged to the Borrower. |
+
+\
 
 
-<br />
-
-### `lateFee` _[state variable]_
+### `lateFee` _\[state variable]_
 
 The fee in basis points, charged on the payment amount.
 
@@ -88,17 +86,16 @@ The fee in basis points, charged on the payment amount.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `name` _[state variable]_
+### `name` _\[state variable]_
 
 The Calculator name.
 
@@ -110,15 +107,10 @@ The Calculator name.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
 
-<br />
-
-
-
+\

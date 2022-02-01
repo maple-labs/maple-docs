@@ -1,11 +1,11 @@
-# MapleTreasury
+# Treasury
 
 MapleTreasury earns revenue from Loans and distributes it to token holders and the Maple development team.
 
-<br />
+\
+
 
 ## Constructor
-
 
 Instantiates the MapleTreasury contract.
 
@@ -19,22 +19,22 @@ Instantiates the MapleTreasury contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_mpl` | `address` | `address` | The address of ERC-2222 Maple Token for the Maple protocol. |
-| 1 | `_fundsToken` | `address` | `address` | The address of the &#x60;fundsToken&#x60; of the ERC-2222 Maple Token. |
-| 2 | `_uniswapRouter` | `address` | `address` | The address of the official UniswapV2 router. |
-| 3 | `_globals` | `address` | `address` | The address of an instance of MapleGlobals. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                                    |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------------------------- |
+|   0   |      `_mpl`      | `address` |   `address`   | The address of ERC-2222 Maple Token for the Maple protocol.    |
+|   1   |   `_fundsToken`  | `address` |   `address`   | The address of the \`fundsToken\` of the ERC-2222 Maple Token. |
+|   2   | `_uniswapRouter` | `address` |   `address`   | The address of the official UniswapV2 router.                  |
+|   3   |    `_globals`    | `address` |   `address`   | The address of an instance of MapleGlobals.                    |
 
-<br />
+\
 
 
 ## Functions
 
 ### `convertERC20`
 
-Converts an ERC-20 asset, via Uniswap, to &#x60;fundsToken&#x60;. Only the Governor can call this function. It emits a &#x60;ERC20Conversion&#x60; event.
+Converts an ERC-20 asset, via Uniswap, to \`fundsToken\`. Only the Governor can call this function. It emits a \`ERC20Conversion\` event.
 
 ```solidity
     function convertERC20(
@@ -44,29 +44,29 @@ Converts an ERC-20 asset, via Uniswap, to &#x60;fundsToken&#x60;. Only the Gover
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The ERC-20 asset to convert to &#x60;fundsToken&#x60;. |
 
+| Index |   Name  |    Type   | Internal Type | Description                                    |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `asset` | `address` |   `address`   | The ERC-20 asset to convert to \`fundsToken\`. |
 
-<br />
+\
+
 
 ### `distributeToHolders`
 
-Passes through the current &#x60;fundsToken&#x60; balance of the Treasury to Maple Token, where it can be claimed by MPL holders. Only the Governor can call this function. It emits a &#x60;DistributedToHolders&#x60; event.
+Passes through the current \`fundsToken\` balance of the Treasury to Maple Token, where it can be claimed by MPL holders. Only the Governor can call this function. It emits a \`DistributedToHolders\` event.
 
 ```solidity
     function distributeToHolders()
         nonpayable;
 ```
 
+\
 
 
-<br />
+### `fundsToken` _\[state variable]_
 
-### `fundsToken` _[state variable]_
-
-The address of the &#x60;fundsToken&#x60; of the ERC-2222 Maple Token.
+The address of the \`fundsToken\` of the ERC-2222 Maple Token.
 
 ```solidity
     function fundsToken()
@@ -76,17 +76,16 @@ The address of the &#x60;fundsToken&#x60; of the ERC-2222 Maple Token.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `globals` _[state variable]_
+### `globals` _\[state variable]_
 
 The address of an instance of MapleGlobals.
 
@@ -98,17 +97,16 @@ The address of an instance of MapleGlobals.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `mpl` _[state variable]_
+### `mpl` _\[state variable]_
 
 The address of ERC-2222 Maple Token for the Maple protocol.
 
@@ -120,19 +118,18 @@ The address of ERC-2222 Maple Token for the Maple protocol.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `reclaimERC20`
 
-Reclaims Treasury funds to the Governor. Only the Governor can call this function. It emits a &#x60;ERC20Reclaimed&#x60; event.
+Reclaims Treasury funds to the Governor. Only the Governor can call this function. It emits a \`ERC20Reclaimed\` event.
 
 ```solidity
     function reclaimERC20(
@@ -143,17 +140,18 @@ Reclaims Treasury funds to the Governor. Only the Governor can call this functio
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The address of the token to be reclaimed. |
-| 1 | `amount` | `uint256` | `uint256` | The amount reclaimed. |
 
+| Index |   Name   |    Type   | Internal Type | Description                               |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |  `asset` | `address` |   `address`   | The address of the token to be reclaimed. |
+|   1   | `amount` | `uint256` |   `uint256`   | The amount reclaimed.                     |
 
-<br />
+\
+
 
 ### `setGlobals`
 
-Updates the MapleGlobals instance. Only the Governor can call this function. It emits a &#x60;GlobalsSet&#x60; event.
+Updates the MapleGlobals instance. Only the Governor can call this function. It emits a \`GlobalsSet\` event.
 
 ```solidity
     function setGlobals(
@@ -163,14 +161,15 @@ Updates the MapleGlobals instance. Only the Governor can call this function. It 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newGlobals` | `address` | `address` | The address of a new MapleGlobals instance. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                 |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `newGlobals` | `address` |   `address`   | The address of a new MapleGlobals instance. |
+
+\
 
 
-<br />
-
-### `uniswapRouter` _[state variable]_
+### `uniswapRouter` _\[state variable]_
 
 The address of the official UniswapV2 router.
 
@@ -182,15 +181,13 @@ The address of the official UniswapV2 router.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Events
@@ -206,15 +203,17 @@ Emits an event indicating that a distribution was made to token holders.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount` | `uint256` | `uint256` | The amount distributed to token holders. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                              |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `amount` | `uint256` |   `uint256`   | The amount distributed to token holders. |
+
+\
+
 
 ### `ERC20Conversion`
 
-Emits an event indicating that an amount of some asset was converted to &#x60;fundsToken&#x60;.
+Emits an event indicating that an amount of some asset was converted to \`fundsToken\`.
 
 ```solidity
     event ERC20Conversion(
@@ -225,13 +224,15 @@ Emits an event indicating that an amount of some asset was converted to &#x60;fu
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The ERC-20 asset to convert to &#x60;fundsToken&#x60;. |
-| 1 | `amountIn` | `uint256` | `uint256` | The amount of the asset being converted to &#x60;fundsToken&#x60;. |
-| 2 | `amountOut` | `uint256` | `uint256` | The amount of &#x60;fundsToken&#x60; received from the conversion. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                                                |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   |   `asset`   | `address` |   `address`   | The ERC-20 asset to convert to \`fundsToken\`.             |
+|   1   |  `amountIn` | `uint256` |   `uint256`   | The amount of the asset being converted to \`fundsToken\`. |
+|   2   | `amountOut` | `uint256` |   `uint256`   | The amount of \`fundsToken\` received from the conversion. |
+
+\
+
 
 ### `ERC20Reclaimed`
 
@@ -245,12 +246,14 @@ Emits an event indicating the Governor reclaimed some token.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset` | `address` | `address` | The address of the token to reclaimed. |
-| 1 | `amount` | `uint256` | `uint256` | The amount reclaimed. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                            |
+| :---: | :------: | :-------: | :-----------: | -------------------------------------- |
+|   0   |  `asset` | `address` |   `address`   | The address of the token to reclaimed. |
+|   1   | `amount` | `uint256` |   `uint256`   | The amount reclaimed.                  |
+
+\
+
 
 ### `GlobalsSet`
 
@@ -263,9 +266,9 @@ Emits an event indicating the MapleGlobals instance has changed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newGlobals` | `address` | `address` | The address of a new MapleGlobals. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                        |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `newGlobals` | `address` |   `address`   | The address of a new MapleGlobals. |
 
+\

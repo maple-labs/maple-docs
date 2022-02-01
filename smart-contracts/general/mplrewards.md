@@ -1,13 +1,11 @@
-# MplRewards
+# MPL Rewards
 
 MplRewards Synthetix farming contract fork for liquidity mining.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -18,21 +16,21 @@ MplRewards Synthetix farming contract fork for liquidity mining.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_rewardsToken` | `address` | `address` |  |
-| 1 | `_stakingToken` | `address` | `address` |  |
-| 2 | `_owner` | `address` | `address` |  |
 
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `_rewardsToken` | `address` |   `address`   |             |
+|   1   | `_stakingToken` | `address` |   `address`   |             |
+|   2   |     `_owner`    | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
 ### `balanceOf`
 
-Returns the amount of tokens owned by &#x60;account&#x60;.
+Returns the amount of tokens owned by \`account\`.
 
 ```solidity
     function balanceOf(
@@ -45,22 +43,21 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of an account. |
 
+| Index |    Name   |    Type   | Internal Type | Description                |
+| :---: | :-------: | :-------: | :-----------: | -------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of an account. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The balance of &#x60;account&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                 |
+| :---: | :--: | :-------: | :-----------: | --------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The balance of \`account\`. |
 
-<br />
+\
+
 
 ### `earned`
-
-
 
 ```solidity
     function earned(
@@ -73,18 +70,19 @@ Returns the amount of tokens owned by &#x60;account&#x60;.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of an account. |
 
+| Index |    Name   |    Type   | Internal Type | Description                |
+| :---: | :-------: | :-------: | :-----------: | -------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of an account. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The rewards earned of &#x60;account&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                        |
+| :---: | :--: | :-------: | :-----------: | ---------------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The rewards earned of \`account\`. |
 
-<br />
+\
+
 
 ### `exit`
 
@@ -95,26 +93,22 @@ Withdraw the entire balance and get the reward.
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `getReward`
 
-It emits a &#x60;RewardPaid&#x60; event if any rewards are received.
+It emits a \`RewardPaid\` event if any rewards are received.
 
 ```solidity
     function getReward()
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `getRewardForDuration`
-
-
 
 ```solidity
     function getRewardForDuration()
@@ -124,17 +118,16 @@ It emits a &#x60;RewardPaid&#x60; event if any rewards are received.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The reward for a duration. |
+
+| Index | Name |    Type   | Internal Type | Description                |
+| :---: | :--: | :-------: | :-----------: | -------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The reward for a duration. |
+
+\
 
 
-<br />
-
-### `lastPauseTime` _[state variable]_
+### `lastPauseTime` _\[state variable]_
 
 The last pause time.
 
@@ -146,19 +139,16 @@ The last pause time.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `lastTimeRewardApplicable`
-
-
 
 ```solidity
     function lastTimeRewardApplicable()
@@ -168,17 +158,16 @@ The last pause time.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The last time rewards were applicable. |
+
+| Index | Name |    Type   | Internal Type | Description                            |
+| :---: | :--: | :-------: | :-----------: | -------------------------------------- |
+|   0   |      | `uint256` |   `uint256`   | The last time rewards were applicable. |
+
+\
 
 
-<br />
-
-### `lastUpdateTime` _[state variable]_
+### `lastUpdateTime` _\[state variable]_
 
 The last update time.
 
@@ -190,19 +179,18 @@ The last update time.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `notifyRewardAmount`
 
-Only the contract Owner may call this. It emits a &#x60;RewardAdded&#x60; event.
+Only the contract Owner may call this. It emits a \`RewardAdded\` event.
 
 ```solidity
     function notifyRewardAmount(
@@ -212,14 +200,15 @@ Only the contract Owner may call this. It emits a &#x60;RewardAdded&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `reward` | `uint256` | `uint256` | A reward amount. |
+
+| Index |   Name   |    Type   | Internal Type | Description      |
+| :---: | :------: | :-------: | :-----------: | ---------------- |
+|   0   | `reward` | `uint256` |   `uint256`   | A reward amount. |
+
+\
 
 
-<br />
-
-### `paused` _[state variable]_
+### `paused` _\[state variable]_
 
 Whether the contract is paused.
 
@@ -231,17 +220,16 @@ Whether the contract is paused.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `periodFinish` _[state variable]_
+### `periodFinish` _\[state variable]_
 
 The period finish.
 
@@ -253,19 +241,18 @@ The period finish.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `recoverERC20`
 
-Added to support recovering tokens unintentionally sent to this contract. Only the contract Owner may call this. It emits a &#x60;Recovered&#x60; event.
+Added to support recovering tokens unintentionally sent to this contract. Only the contract Owner may call this. It emits a \`Recovered\` event.
 
 ```solidity
     function recoverERC20(
@@ -276,17 +263,16 @@ Added to support recovering tokens unintentionally sent to this contract. Only t
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `tokenAddress` | `address` | `address` | The address of a token to recover. |
-| 1 | `tokenAmount` | `uint256` | `uint256` | The amount to recover. |
 
+| Index |      Name      |    Type   | Internal Type | Description                        |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `tokenAddress` | `address` |   `address`   | The address of a token to recover. |
+|   1   |  `tokenAmount` | `uint256` |   `uint256`   | The amount to recover.             |
 
-<br />
+\
+
 
 ### `rewardPerToken`
-
-
 
 ```solidity
     function rewardPerToken()
@@ -296,17 +282,16 @@ Added to support recovering tokens unintentionally sent to this contract. Only t
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The reward per token. |
+
+| Index | Name |    Type   | Internal Type | Description           |
+| :---: | :--: | :-------: | :-----------: | --------------------- |
+|   0   |      | `uint256` |   `uint256`   | The reward per token. |
+
+\
 
 
-<br />
-
-### `rewardPerTokenStored` _[state variable]_
+### `rewardPerTokenStored` _\[state variable]_
 
 The reward per token stored.
 
@@ -318,17 +303,16 @@ The reward per token stored.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `rewardRate` _[state variable]_
+### `rewardRate` _\[state variable]_
 
 The rewards rate.
 
@@ -340,19 +324,16 @@ The rewards rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `rewards` _[state variable]_
-
-
+### `rewards` _\[state variable]_
 
 ```solidity
     function rewards(
@@ -365,20 +346,21 @@ The rewards rate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of an account. |
 
+| Index |    Name   |    Type   | Internal Type | Description                |
+| :---: | :-------: | :-------: | :-----------: | -------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of an account. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The rewards &#x60;account&#x60;. |
+
+| Index | Name |    Type   | Internal Type | Description              |
+| :---: | :--: | :-------: | :-----------: | ------------------------ |
+|   0   |      | `uint256` |   `uint256`   | The rewards \`account\`. |
+
+\
 
 
-<br />
-
-### `rewardsDuration` _[state variable]_
+### `rewardsDuration` _\[state variable]_
 
 The rewards duration.
 
@@ -390,17 +372,16 @@ The rewards duration.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `rewardsToken` _[state variable]_
+### `rewardsToken` _\[state variable]_
 
 The rewards token.
 
@@ -412,19 +393,18 @@ The rewards token.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `setPaused`
 
-Change the paused state of the contract. Only the contract Owner may call this. It emits a &#x60;PauseChanged&#x60; event.
+Change the paused state of the contract. Only the contract Owner may call this. It emits a \`PauseChanged\` event.
 
 ```solidity
     function setPaused(
@@ -434,16 +414,17 @@ Change the paused state of the contract. Only the contract Owner may call this. 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_paused` | `bool` | `bool` | Whether to pause the contract. |
 
+| Index |    Name   |  Type  | Internal Type | Description                    |
+| :---: | :-------: | :----: | :-----------: | ------------------------------ |
+|   0   | `_paused` | `bool` |     `bool`    | Whether to pause the contract. |
 
-<br />
+\
+
 
 ### `setRewardsDuration`
 
-Only the contract Owner may call this. It emits a &#x60;RewardsDurationUpdated&#x60; event.
+Only the contract Owner may call this. It emits a \`RewardsDurationUpdated\` event.
 
 ```solidity
     function setRewardsDuration(
@@ -453,16 +434,17 @@ Only the contract Owner may call this. It emits a &#x60;RewardsDurationUpdated&#
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_rewardsDuration` | `uint256` | `uint256` | The new duration for rewards. |
 
+| Index |        Name        |    Type   | Internal Type | Description                   |
+| :---: | :----------------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `_rewardsDuration` | `uint256` |   `uint256`   | The new duration for rewards. |
 
-<br />
+\
+
 
 ### `stake`
 
-It emits a &#x60;Staked&#x60; event.
+It emits a \`Staked\` event.
 
 ```solidity
     function stake(
@@ -472,14 +454,15 @@ It emits a &#x60;Staked&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount` | `uint256` | `uint256` | An amount to stake. |
+
+| Index |   Name   |    Type   | Internal Type | Description         |
+| :---: | :------: | :-------: | :-----------: | ------------------- |
+|   0   | `amount` | `uint256` |   `uint256`   | An amount to stake. |
+
+\
 
 
-<br />
-
-### `stakingToken` _[state variable]_
+### `stakingToken` _\[state variable]_
 
 The staking token.
 
@@ -491,15 +474,14 @@ The staking token.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `totalSupply`
 
@@ -513,15 +495,14 @@ Returns the amount of tokens in existence.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The total supply. |
 
+| Index | Name |    Type   | Internal Type | Description       |
+| :---: | :--: | :-------: | :-----------: | ----------------- |
+|   0   |      | `uint256` |   `uint256`   | The total supply. |
 
-<br />
+\
+
 
 ### `updatePeriodFinish`
 
@@ -535,16 +516,15 @@ End rewards emission earlier. Only the contract Owner may call this.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `timestamp` | `uint256` | `uint256` | A unix timestamp to finish rewards. |
+
+| Index |     Name    |    Type   | Internal Type | Description                         |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `timestamp` | `uint256` |   `uint256`   | A unix timestamp to finish rewards. |
+
+\
 
 
-<br />
-
-### `userRewardPerTokenPaid` _[state variable]_
-
-
+### `userRewardPerTokenPaid` _\[state variable]_
 
 ```solidity
     function userRewardPerTokenPaid(
@@ -557,22 +537,23 @@ End rewards emission earlier. Only the contract Owner may call this.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of an account. |
 
+| Index |    Name   |    Type   | Internal Type | Description                |
+| :---: | :-------: | :-------: | :-----------: | -------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of an account. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` | The reward per token paid for &#x60;account&#x60;. |
 
+| Index | Name |    Type   | Internal Type | Description                                |
+| :---: | :--: | :-------: | :-----------: | ------------------------------------------ |
+|   0   |      | `uint256` |   `uint256`   | The reward per token paid for \`account\`. |
 
-<br />
+\
+
 
 ### `withdraw`
 
-It emits a &#x60;Withdrawn&#x60; event.
+It emits a \`Withdrawn\` event.
 
 ```solidity
     function withdraw(
@@ -582,12 +563,13 @@ It emits a &#x60;Withdrawn&#x60; event.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount` | `uint256` | `uint256` | An amount to withdraw. |
 
+| Index |   Name   |    Type   | Internal Type | Description            |
+| :---: | :------: | :-------: | :-----------: | ---------------------- |
+|   0   | `amount` | `uint256` |   `uint256`   | An amount to withdraw. |
 
-<br />
+\
+
 
 ### `owner`
 
@@ -601,32 +583,30 @@ Returns the address of the current owner.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `renounceOwnership`
 
-Leaves the contract without owner. It will not be possible to call &#x60;onlyOwner&#x60; functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
+Leaves the contract without owner. It will not be possible to call \`onlyOwner\` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
 
 ```solidity
     function renounceOwnership()
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `transferOwnership`
 
-Transfers ownership of the contract to a new account (&#x60;newOwner&#x60;). Can only be called by the current owner.
+Transfers ownership of the contract to a new account (\`newOwner\`). Can only be called by the current owner.
 
 ```solidity
     function transferOwnership(
@@ -636,12 +616,12 @@ Transfers ownership of the contract to a new account (&#x60;newOwner&#x60;). Can
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newOwner` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `newOwner` | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Events
@@ -657,11 +637,13 @@ Emits an event indicating that pause state has changed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isPaused` | `bool` | `bool` | Whether the contract is paused. |
 
-<br />
+| Index |    Name    |  Type  | Internal Type | Description                     |
+| :---: | :--------: | :----: | :-----------: | ------------------------------- |
+|   0   | `isPaused` | `bool` |     `bool`    | Whether the contract is paused. |
+
+\
+
 
 ### `Recovered`
 
@@ -675,12 +657,14 @@ Emits an event indicating that some token was recovered.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `token` | `address` | `address` | The address of the token recovered. |
-| 1 | `amount` | `uint256` | `uint256` | The amount recovered. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                         |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------- |
+|   0   |  `token` | `address` |   `address`   | The address of the token recovered. |
+|   1   | `amount` | `uint256` |   `uint256`   | The amount recovered.               |
+
+\
+
 
 ### `RewardAdded`
 
@@ -693,11 +677,13 @@ Emits an event indicating that a reward was added.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `reward` | `uint256` | `uint256` | The amount of the added reward. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                     |
+| :---: | :------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `reward` | `uint256` |   `uint256`   | The amount of the added reward. |
+
+\
+
 
 ### `RewardPaid`
 
@@ -711,12 +697,14 @@ Emits an event indicating that some reward was paid to an account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of the account rewarded. |
-| 1 | `reward` | `uint256` | `uint256` | The amount rewarded to &#x60;account&#x60;. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                          |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account` | `address` |   `address`   | The address of the account rewarded. |
+|   1   |  `reward` | `uint256` |   `uint256`   | The amount rewarded to \`account\`.  |
+
+\
+
 
 ### `RewardsDurationUpdated`
 
@@ -729,11 +717,13 @@ Emits an event indicating that the duration of the ward period has updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newDuration` | `uint256` | `uint256` | The new duration of the rewards. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                      |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `newDuration` | `uint256` |   `uint256`   | The new duration of the rewards. |
+
+\
+
 
 ### `Staked`
 
@@ -747,12 +737,14 @@ Emits an event indicating that an account has staked.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of the account. |
-| 1 | `amount` | `uint256` | `uint256` | The amount staked. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                 |
+| :---: | :-------: | :-------: | :-----------: | --------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of the account. |
+|   1   |  `amount` | `uint256` |   `uint256`   | The amount staked.          |
+
+\
+
 
 ### `Withdrawn`
 
@@ -766,15 +758,16 @@ Emits an event indicating that reward was withdrawn.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account` | `address` | `address` | The address of the account. |
-| 1 | `amount` | `uint256` | `uint256` | The amount withdrawn. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                 |
+| :---: | :-------: | :-------: | :-----------: | --------------------------- |
+|   0   | `account` | `address` |   `address`   | The address of the account. |
+|   1   |  `amount` | `uint256` |   `uint256`   | The amount withdrawn.       |
+
+\
+
 
 ### `OwnershipTransferred`
-
 
 ```solidity
     event OwnershipTransferred(
@@ -784,10 +777,10 @@ Emits an event indicating that reward was withdrawn.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousOwner` | `address` | `address` |  |
-| 1 | `newOwner` | `address` | `address` |  |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `previousOwner` | `address` |   `address`   |             |
+|   1   |    `newOwner`   | `address` |   `address`   |             |
 
+\

@@ -1,13 +1,11 @@
-# DebtLockerFactory
+# Debt Locker Factory
 
 Deploys DebtLocker proxy instances.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -16,19 +14,19 @@ Deploys DebtLocker proxy instances.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleGlobals_` | `address` | `address` | The address of a Maple Globals contract. |
 
+| Index |       Name      |    Type   | Internal Type | Description                              |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `mapleGlobals_` | `address` |   `address`   | The address of a Maple Globals contract. |
 
-<br />
+\
 
 
 ## Functions
 
 ### `createInstance`
 
-This function is disabled in favour of a PoolV1-compatible &#x60;newLocker&#x60; function.
+This function is disabled in favour of a PoolV1-compatible \`newLocker\` function.
 
 ```solidity
     function createInstance(
@@ -42,19 +40,20 @@ This function is disabled in favour of a PoolV1-compatible &#x60;newLocker&#x60;
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `arguments_` | `bytes` | `bytes` | The initialization arguments to use for the instance deployment, if any. |
-| 1 | `salt_` | `bytes32` | `bytes32` | The salt to use in the contract creation process. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                                              |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   | `arguments_` |  `bytes`  |    `bytes`    | The initialization arguments to use for the instance deployment, if any. |
+|   1   |    `salt_`   | `bytes32` |   `bytes32`   | The salt to use in the contract creation process.                        |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instance_` | `address` | `address` |  The address of the deployed proxy contract. |
 
+| Index |     Name    |    Type   | Internal Type | Description                                 |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `instance_` | `address` |   `address`   | The address of the deployed proxy contract. |
 
-<br />
+\
+
 
 ### `defaultImplementation`
 
@@ -68,15 +67,14 @@ The address of an implementation for proxies.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `defaultImplementation_` | `address` | `address` |  |
 
+| Index |           Name           |    Type   | Internal Type | Description |
+| :---: | :----------------------: | :-------: | :-----------: | ----------- |
+|   0   | `defaultImplementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `defaultVersion`
 
@@ -90,19 +88,18 @@ The default version.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `defaultVersion_` | `uint256` | `uint256` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `defaultVersion_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `disableUpgradePath`
 
-Disables upgrading from a version to a version of a implementation.         Only the Governor can call this function.
+Disables upgrading from a version to a version of a implementation. Only the Governor can call this function.
 
 ```solidity
     function disableUpgradePath(
@@ -113,17 +110,18 @@ Disables upgrading from a version to a version of a implementation.         Only
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromVersion_` | `uint256` | `uint256` | The starting version of the upgrade path. |
-| 1 | `toVersion_` | `uint256` | `uint256` | The destination version of the upgrade path. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                  |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
 
-<br />
+\
+
 
 ### `enableUpgradePath`
 
-Enables upgrading from a version to a version of an implementation, with an optional migrator.         Only the Governor can call this function.
+Enables upgrading from a version to a version of an implementation, with an optional migrator. Only the Governor can call this function.
 
 ```solidity
     function enableUpgradePath(
@@ -135,16 +133,17 @@ Enables upgrading from a version to a version of an implementation, with an opti
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromVersion_` | `uint256` | `uint256` | The starting version of the upgrade path. |
-| 1 | `toVersion_` | `uint256` | `uint256` | The destination version of the upgrade path. |
-| 2 | `migrator_` | `address` | `address` | The address of the migrator, if any. |
+
+| Index |      Name      |    Type   | Internal Type | Description                                  |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
+|   2   |   `migrator_`  | `address` |   `address`   | The address of the migrator, if any.         |
+
+\
 
 
-<br />
-
-### `factoryType` _[state variable]_
+### `factoryType` _\[state variable]_
 
 The Maple factory type (to be deprecated).
 
@@ -156,19 +155,18 @@ The Maple factory type (to be deprecated).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factoryType_` | `uint8` | `uint8` |  |
 
+| Index |      Name      |   Type  | Internal Type | Description |
+| :---: | :------------: | :-----: | :-----------: | ----------- |
+|   0   | `factoryType_` | `uint8` |    `uint8`    |             |
 
-<br />
+\
+
 
 ### `getInstanceAddress`
 
-This function is disabled in since the PoolV1-compatible &#x60;newLocker&#x60; function is used instead of &#x60;createInstance&#x60;.
+This function is disabled in since the PoolV1-compatible \`newLocker\` function is used instead of \`createInstance\`.
 
 ```solidity
     function getInstanceAddress(
@@ -182,19 +180,20 @@ This function is disabled in since the PoolV1-compatible &#x60;newLocker&#x60; f
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `arguments_` | `bytes` | `bytes` | The initialization arguments to be used when deploying the proxy. |
-| 1 | `salt_` | `bytes32` | `bytes32` | The salt to be used when deploying the proxy. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                                       |
+| :---: | :----------: | :-------: | :-----------: | ----------------------------------------------------------------- |
+|   0   | `arguments_` |  `bytes`  |    `bytes`    | The initialization arguments to be used when deploying the proxy. |
+|   1   |    `salt_`   | `bytes32` |   `bytes32`   | The salt to be used when deploying the proxy.                     |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instanceAddress_` | `address` | `address` | The deterministic address of a potential proxy. |
 
+| Index |        Name        |    Type   | Internal Type | Description                                     |
+| :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `instanceAddress_` | `address` |   `address`   | The deterministic address of a potential proxy. |
 
-<br />
+\
+
 
 ### `implementationOf`
 
@@ -211,18 +210,19 @@ Returns the address of an implementation version.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The implementation version. |
 
+| Index |    Name    |    Type   | Internal Type | Description                 |
+| :---: | :--------: | :-------: | :-----------: | --------------------------- |
+|   0   | `version_` | `uint256` |   `uint256`   | The implementation version. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` | The address of the implementation. |
 
+| Index |        Name       |    Type   | Internal Type | Description                        |
+| :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `implementation_` | `address` |   `address`   | The address of the implementation. |
 
-<br />
+\
+
 
 ### `mapleGlobals`
 
@@ -236,19 +236,18 @@ The address of the MapleGlobals contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleGlobals_` | `address` | `address` |  |
 
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `mapleGlobals_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `migratorForPath`
 
-Returns the address of a migrator contract for a migration path (from version, to version).          If oldVersion_ &#x3D;&#x3D; newVersion_, the migrator is an initializer.
+Returns the address of a migrator contract for a migration path (from version, to version). If oldVersion\_ == newVersion\_, the migrator is an initializer.
 
 ```solidity
     function migratorForPath(
@@ -262,19 +261,20 @@ Returns the address of a migrator contract for a migration path (from version, t
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `oldVersion_` | `uint256` | `uint256` | The old version. |
-| 1 | `newVersion_` | `uint256` | `uint256` | The new version. |
 
+| Index |      Name     |    Type   | Internal Type | Description      |
+| :---: | :-----------: | :-------: | :-----------: | ---------------- |
+|   0   | `oldVersion_` | `uint256` |   `uint256`   | The old version. |
+|   1   | `newVersion_` | `uint256` |   `uint256`   | The new version. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` |   The address of a migrator contract. |
 
+| Index |     Name    |    Type   | Internal Type | Description                         |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `migrator_` | `address` |   `address`   | The address of a migrator contract. |
 
-<br />
+\
+
 
 ### `newLocker`
 
@@ -291,22 +291,23 @@ Deploys a new DebtLocker proxy instance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan contract that corresponds to DebtLocker. |
 
+| Index |   Name  |    Type   | Internal Type | Description                                   |
+| :---: | :-----: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `loan_` | `address` |   `address`   | Loan contract that corresponds to DebtLocker. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `debtLocker_` | `address` | `address` | The address of the deployed DebtLocker proxy. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                   |
+| :---: | :-----------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `debtLocker_` | `address` |   `address`   | The address of the deployed DebtLocker proxy. |
 
-<br />
+\
+
 
 ### `registerImplementation`
 
-Registers the address of an implementation contract as a version, with an optional initializer.         Only the Governor can call this function.
+Registers the address of an implementation contract as a version, with an optional initializer. Only the Governor can call this function.
 
 ```solidity
     function registerImplementation(
@@ -318,18 +319,19 @@ Registers the address of an implementation contract as a version, with an option
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The version to register. |
-| 1 | `implementationAddress_` | `address` | `address` | The address of the implementation. |
-| 2 | `initializer_` | `address` | `address` | The address of the initializer, if any. |
 
+| Index |           Name           |    Type   | Internal Type | Description                             |
+| :---: | :----------------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   |        `version_`        | `uint256` |   `uint256`   | The version to register.                |
+|   1   | `implementationAddress_` | `address` |   `address`   | The address of the implementation.      |
+|   2   |      `initializer_`      | `address` |   `address`   | The address of the initializer, if any. |
 
-<br />
+\
+
 
 ### `setDefaultVersion`
 
-Sets the default version.         Only the Governor can call this function.
+Sets the default version. Only the Governor can call this function.
 
 ```solidity
     function setDefaultVersion(
@@ -339,16 +341,17 @@ Sets the default version.         Only the Governor can call this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The implementation version to set as the default. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                       |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `version_` | `uint256` |   `uint256`   | The implementation version to set as the default. |
 
-<br />
+\
+
 
 ### `setGlobals`
 
-Sets the Maple Globals contract.         Only the Governor can call this function.
+Sets the Maple Globals contract. Only the Governor can call this function.
 
 ```solidity
     function setGlobals(
@@ -358,12 +361,13 @@ Sets the Maple Globals contract.         Only the Governor can call this functio
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleGlobals_` | `address` | `address` | The address of a Maple Globals contract. |
 
+| Index |       Name      |    Type   | Internal Type | Description                              |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `mapleGlobals_` | `address` |   `address`   | The address of a Maple Globals contract. |
 
-<br />
+\
+
 
 ### `upgradeEnabledForPath`
 
@@ -381,23 +385,24 @@ Whether the upgrade is enabled for a path from a version to another version.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The initial version. |
-| 1 | `fromVersion_` | `uint256` | `uint256` | The destination version. |
 
+| Index |      Name      |    Type   | Internal Type | Description              |
+| :---: | :------------: | :-------: | :-----------: | ------------------------ |
+|   0   |  `toVersion_`  | `uint256` |   `uint256`   | The initial version.     |
+|   1   | `fromVersion_` | `uint256` |   `uint256`   | The destination version. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `allowed_` | `bool` | `bool` |     Whether the upgrade is enabled. |
 
+| Index |    Name    |  Type  | Internal Type | Description                     |
+| :---: | :--------: | :----: | :-----------: | ------------------------------- |
+|   0   | `allowed_` | `bool` |     `bool`    | Whether the upgrade is enabled. |
 
-<br />
+\
+
 
 ### `upgradeInstance`
 
-Upgrades the calling proxy contract&#x27;s implementation, with some migration arguments.
+Upgrades the calling proxy contract's implementation, with some migration arguments.
 
 ```solidity
     function upgradeInstance(
@@ -408,13 +413,14 @@ Upgrades the calling proxy contract&#x27;s implementation, with some migration a
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The implementation version to upgrade the proxy contract to. |
-| 1 | `arguments_` | `bytes` | `bytes` | The migration arguments, if any. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                                  |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The implementation version to upgrade the proxy contract to. |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The migration arguments, if any.                             |
 
-<br />
+\
+
 
 ### `versionOf`
 
@@ -431,18 +437,18 @@ Returns the version of an implementation contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` | The address of an implementation contract. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `implementation_` | `address` |   `address`   | The address of an implementation contract. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` |        The version of the implementation contract. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                 |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `version_` | `uint256` |   `uint256`   | The version of the implementation contract. |
 
-<br />
+\
 
 
 ## Events
@@ -458,11 +464,13 @@ A default version was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The default version. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description          |
+| :---: | :--------: | :-------: | :-----------: | -------------------- |
+|   0   | `version_` | `uint256` |   `uint256`   | The default version. |
+
+\
+
 
 ### `ImplementationRegistered`
 
@@ -477,13 +485,15 @@ A version of an implementation, at some address, was registered, with an optiona
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The version registered. |
-| 1 | `implementationAddress_` | `address` | `address` | The address of the implementation. |
-| 2 | `initializer_` | `address` | `address` | The address of the initializer, if any. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description                             |
+| :---: | :----------------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   |        `version_`        | `uint256` |   `uint256`   | The version registered.                 |
+|   1   | `implementationAddress_` | `address` |   `address`   | The address of the implementation.      |
+|   2   |      `initializer_`      | `address` |   `address`   | The address of the initializer, if any. |
+
+\
+
 
 ### `InstanceDeployed`
 
@@ -498,13 +508,15 @@ A proxy contract was deployed with some initialization arguments.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` | The version of the implementation being proxied by the deployed proxy contract. |
-| 1 | `instance_` | `address` | `address` | The address of the proxy contract deployed. |
-| 2 | `initializationArguments_` | `bytes` | `bytes` | The arguments used to initialize the proxy contract, if any. |
 
-<br />
+| Index |            Name            |    Type   | Internal Type | Description                                                                     |
+| :---: | :------------------------: | :-------: | :-----------: | ------------------------------------------------------------------------------- |
+|   0   |         `version_`         | `uint256` |   `uint256`   | The version of the implementation being proxied by the deployed proxy contract. |
+|   1   |         `instance_`        | `address` |   `address`   | The address of the proxy contract deployed.                                     |
+|   2   | `initializationArguments_` |  `bytes`  |    `bytes`    | The arguments used to initialize the proxy contract, if any.                    |
+
+\
+
 
 ### `InstanceUpgraded`
 
@@ -520,14 +532,16 @@ A instance has upgraded by proxying to a new implementation, with some migration
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instance_` | `address` | `address` | The address of the proxy contract. |
-| 1 | `fromVersion_` | `uint256` | `uint256` | The initial implementation version being proxied. |
-| 2 | `toVersion_` | `uint256` | `uint256` | The new implementation version being proxied. |
-| 3 | `migrationArguments_` | `bytes` | `bytes` | The arguments used to migrate, if any. |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description                                       |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   |      `instance_`      | `address` |   `address`   | The address of the proxy contract.                |
+|   1   |     `fromVersion_`    | `uint256` |   `uint256`   | The initial implementation version being proxied. |
+|   2   |      `toVersion_`     | `uint256` |   `uint256`   | The new implementation version being proxied.     |
+|   3   | `migrationArguments_` |  `bytes`  |    `bytes`    | The arguments used to migrate, if any.            |
+
+\
+
 
 ### `MapleGlobalsSet`
 
@@ -540,11 +554,13 @@ The MapleGlobals was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleGlobals_` | `address` | `address` | The address of a Maple Globals contract. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                              |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `mapleGlobals_` | `address` |   `address`   | The address of a Maple Globals contract. |
+
+\
+
 
 ### `UpgradePathDisabled`
 
@@ -558,12 +574,14 @@ An upgrade path was disabled, with an optional migrator contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromVersion_` | `uint256` | `uint256` | The starting version of the upgrade path. |
-| 1 | `toVersion_` | `uint256` | `uint256` | The destination version of the upgrade path. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                  |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
+
+\
+
 
 ### `UpgradePathEnabled`
 
@@ -578,11 +596,11 @@ An upgrade path was enabled, with an optional migrator contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromVersion_` | `uint256` | `uint256` | The starting version of the upgrade path. |
-| 1 | `toVersion_` | `uint256` | `uint256` | The destination version of the upgrade path. |
-| 2 | `migrator_` | `address` | `address` | The address of the migrator, if any. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                  |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
+|   2   |   `migrator_`  | `address` |   `address`   | The address of the migrator, if any.         |
 
+\

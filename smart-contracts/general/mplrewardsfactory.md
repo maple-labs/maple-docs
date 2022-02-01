@@ -1,13 +1,11 @@
-# MplRewardsFactory
+# MPL Rewards Factory
 
 MplRewardsFactory instantiates MplRewards contracts.
 
-<br />
+\
+
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -16,19 +14,19 @@ MplRewardsFactory instantiates MplRewards contracts.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_globals` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `_globals` | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
 
 ### `createMplRewards`
 
-Instantiates a MplRewards contract. Only the Governor can call this function. It emits a &#x60;MplRewardsCreated&#x60; event.
+Instantiates a MplRewards contract. Only the Governor can call this function. It emits a \`MplRewardsCreated\` event.
 
 ```solidity
     function createMplRewards(
@@ -42,21 +40,22 @@ Instantiates a MplRewards contract. Only the Governor can call this function. It
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `rewardsToken` | `address` | `address` | The address of the rewards token (will always be MPL). |
-| 1 | `stakingToken` | `address` | `address` | The address of the staking token (token used to stake to earn rewards).  (i.e., Pool address for PoolFDT mining, StakeLocker address for staked BPT mining.)  |
 
+| Index |      Name      |    Type   | Internal Type | Description                                                                                                                                                 |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   0   | `rewardsToken` | `address` |   `address`   | The address of the rewards token (will always be MPL).                                                                                                      |
+|   1   | `stakingToken` | `address` |   `address`   | The address of the staking token (token used to stake to earn rewards). (i.e., Pool address for PoolFDT mining, StakeLocker address for staked BPT mining.) |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mplRewards` | `address` | `address` |  The address of the instantiated MplRewards. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                 |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `mplRewards` | `address` |   `address`   | The address of the instantiated MplRewards. |
+
+\
 
 
-<br />
-
-### `globals` _[state variable]_
+### `globals` _\[state variable]_
 
 The instance of MapleGlobals, used to retrieve the current Governor.
 
@@ -68,19 +67,16 @@ The instance of MapleGlobals, used to retrieve the current Governor.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `isMplRewards` _[state variable]_
-
-
+### `isMplRewards` _\[state variable]_
 
 ```solidity
     function isMplRewards(
@@ -93,18 +89,19 @@ The instance of MapleGlobals, used to retrieve the current Governor.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mpeRewards` | `address` | `address` | A MplRewards contract. |
 
+| Index |     Name     |    Type   | Internal Type | Description            |
+| :---: | :----------: | :-------: | :-----------: | ---------------------- |
+|   0   | `mpeRewards` | `address` |   `address`   | A MplRewards contract. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` | Whether &#x60;mpeRewards&#x60; is a MplRewards contract. |
 
+| Index | Name |  Type  | Internal Type | Description                                      |
+| :---: | :--: | :----: | :-----------: | ------------------------------------------------ |
+|   0   |      | `bool` |     `bool`    | Whether \`mpeRewards\` is a MplRewards contract. |
 
-<br />
+\
+
 
 ### `setGlobals`
 
@@ -118,12 +115,12 @@ Updates the MapleGlobals instance. Only the Governor can call this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `_globals` | `address` | `address` | Address of new MapleGlobals contract. |
 
+| Index |    Name    |    Type   | Internal Type | Description                           |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `_globals` | `address` |   `address`   | Address of new MapleGlobals contract. |
 
-<br />
+\
 
 
 ## Events
@@ -142,12 +139,12 @@ Emits an event indicating that a MplRewards contract was created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `rewardsToken` | `address` | `address` | The asset used for rewards. |
-| 1 | `stakingToken` | `address` | `address` | The asset used for staking. |
-| 2 | `mplRewards` | `address` | `address` | The address of the MplRewards contract. |
-| 3 | `owner` | `address` | `address` | The owner of the MplRewards. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                             |
+| :---: | :------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `rewardsToken` | `address` |   `address`   | The asset used for rewards.             |
+|   1   | `stakingToken` | `address` |   `address`   | The asset used for staking.             |
+|   2   |  `mplRewards`  | `address` |   `address`   | The address of the MplRewards contract. |
+|   3   |     `owner`    | `address` |   `address`   | The owner of the MplRewards.            |
 
+\

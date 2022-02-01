@@ -2,7 +2,7 @@
 
 A Maple implementation that is to be proxied, must implement IMapleProxied.
 
-<br />
+\
 
 
 ## Functions
@@ -19,15 +19,14 @@ The address of the proxy factory.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `factory_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `implementation`
 
@@ -41,19 +40,18 @@ The address of the implementation contract being proxied.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `migrate`
 
-Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Modifies the proxy's storage by delegate-calling a migrator contract with some arguments. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function migrate(
@@ -64,17 +62,18 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` | The address of a migrator contract. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the migration. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                      |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-<br />
+\
+
 
 ### `setImplementation`
 
-Modifies the proxy&#x27;s implementation address.
+Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
@@ -84,16 +83,17 @@ Modifies the proxy&#x27;s implementation address.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newImplementation_` | `address` | `address` | The address of an implementation contract. |
 
+| Index |         Name         |    Type   | Internal Type | Description                                |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
-<br />
+\
+
 
 ### `upgrade`
 
-Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Upgrades a contract implementation to a specific version. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function upgrade(
@@ -104,13 +104,13 @@ Upgrades a contract implementation to a specific version.         Access control
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The version to upgrade to. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the upgrade. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                    |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-<br />
+\
 
 
 ## Events
@@ -127,10 +127,10 @@ The instance was upgraded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The new version of the loan. |
-| 1 | `arguments_` | `bytes` | `bytes` | The upgrade arguments, if any. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                    |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
+\
