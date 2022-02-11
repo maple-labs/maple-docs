@@ -16,7 +16,7 @@ _Pool Delegates_ conduct due diligence and agree on terms with _Borrowers_ befor
 
 _Lenders_ earn a sustainable yield through diversified exposure to crypto's premium institutions and enjoy a set-and-forget solution as diligence is conducted by _Pool Delegates_.
 
-![](<../.gitbook/assets/image (26).png>)
+![](<../.gitbook/assets/UserDiagram\_0211 (1).png>)
 
 ## Users
 
