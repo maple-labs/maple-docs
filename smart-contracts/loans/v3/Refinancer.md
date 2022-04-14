@@ -1,8 +1,6 @@
 # Loan Refinancer
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -19,12 +17,13 @@ Function to increase the principal during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of which the value will increase by. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of which the value will increase by. |
 
-<br />
+\
+
 
 ### `setCollateralRequired`
 
@@ -38,12 +37,13 @@ Function to set the collateralRequired during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralRequired_` | `uint256` | `uint256` | The new value for collateralRequired. |
 
+| Index |          Name         |    Type   | Internal Type | Description                           |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `collateralRequired_` | `uint256` |   `uint256`   | The new value for collateralRequired. |
 
-<br />
+\
+
 
 ### `setEarlyFeeRate`
 
@@ -57,12 +57,13 @@ Function to set the earlyFeeRate during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `earlyFeeRate_` | `uint256` | `uint256` | The new value for earlyFeeRate. |
 
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `earlyFeeRate_` | `uint256` |   `uint256`   | The new value for earlyFeeRate. |
 
-<br />
+\
+
 
 ### `setEndingPrincipal`
 
@@ -76,12 +77,13 @@ Function to set the endingPrincipal during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `endingPrincipal_` | `uint256` | `uint256` | The new value for endingPrincipal. |
 
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `endingPrincipal_` | `uint256` |   `uint256`   | The new value for endingPrincipal. |
 
-<br />
+\
+
 
 ### `setGracePeriod`
 
@@ -95,12 +97,13 @@ Function to set the gracePeriod during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `gracePeriod_` | `uint256` | `uint256` | The new value for gracePeriod. |
 
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `gracePeriod_` | `uint256` |   `uint256`   | The new value for gracePeriod. |
 
-<br />
+\
+
 
 ### `setInterestRate`
 
@@ -114,12 +117,13 @@ Function to set the interestRate during a refinance. The interest rate is measur
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interestRate_` | `uint256` | `uint256` | The new value for interestRate. |
 
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `interestRate_` | `uint256` |   `uint256`   | The new value for interestRate. |
 
-<br />
+\
+
 
 ### `setLateFeeRate`
 
@@ -133,12 +137,13 @@ Function to set the lateFeeRate during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateFeeRate_` | `uint256` | `uint256` | The new value for lateFeeRate. |
 
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `lateFeeRate_` | `uint256` |   `uint256`   | The new value for lateFeeRate. |
 
-<br />
+\
+
 
 ### `setLateInterestPremium`
 
@@ -152,16 +157,17 @@ Function to set the lateInterestPremium during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` | The new value for lateInterestPremium. |
 
+| Index |          Name          |    Type   | Internal Type | Description                            |
+| :---: | :--------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `lateInterestPremium_` | `uint256` |   `uint256`   | The new value for lateInterestPremium. |
 
-<br />
+\
+
 
 ### `setPaymentInterval`
 
-Function to set the paymentInterval during a refinance.         The interval is denominated in seconds.
+Function to set the paymentInterval during a refinance. The interval is denominated in seconds.
 
 ```solidity
     function setPaymentInterval(
@@ -171,12 +177,13 @@ Function to set the paymentInterval during a refinance.         The interval is 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentInterval_` | `uint256` | `uint256` | The new value for paymentInterval. |
 
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `paymentInterval_` | `uint256` |   `uint256`   | The new value for paymentInterval. |
 
-<br />
+\
+
 
 ### `setPaymentsRemaining`
 
@@ -190,12 +197,12 @@ Function to set the paymentsRemaining during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentsRemaining_` | `uint256` | `uint256` | The new value for paymentsRemaining. |
 
+| Index |         Name         |    Type   | Internal Type | Description                          |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `paymentsRemaining_` | `uint256` |   `uint256`   | The new value for paymentsRemaining. |
 
-<br />
+\
 
 
 ## Events
@@ -211,11 +218,13 @@ A new value for collateralRequired has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralRequired_` | `uint256` | `uint256` | The new value for collateralRequired. |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description                           |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `collateralRequired_` | `uint256` |   `uint256`   | The new value for collateralRequired. |
+
+\
+
 
 ### `EarlyFeeRateSet`
 
@@ -228,11 +237,13 @@ A new value for earlyFeeRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `earlyFeeRate_` | `uint256` | `uint256` | The new value for earlyFeeRate. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `earlyFeeRate_` | `uint256` |   `uint256`   | The new value for earlyFeeRate. |
+
+\
+
 
 ### `EndingPrincipalSet`
 
@@ -245,11 +256,13 @@ A new value for endingPrincipal has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `endingPrincipal_` | `uint256` | `uint256` | The new value for endingPrincipal. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `endingPrincipal_` | `uint256` |   `uint256`   | The new value for endingPrincipal. |
+
+\
+
 
 ### `GracePeriodSet`
 
@@ -262,11 +275,13 @@ A new value for gracePeriod has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `gracePeriod_` | `uint256` | `uint256` | The new value for gracePeriod. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `gracePeriod_` | `uint256` |   `uint256`   | The new value for gracePeriod. |
+
+\
+
 
 ### `InterestRateSet`
 
@@ -279,11 +294,13 @@ A new value for interestRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interestRate_` | `uint256` | `uint256` | The new value for interestRate. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `interestRate_` | `uint256` |   `uint256`   | The new value for interestRate. |
+
+\
+
 
 ### `LateFeeRateSet`
 
@@ -296,11 +313,13 @@ A new value for lateFeeRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateFeeRate_` | `uint256` | `uint256` | The new value for lateFeeRate. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `lateFeeRate_` | `uint256` |   `uint256`   | The new value for lateFeeRate. |
+
+\
+
 
 ### `LateInterestPremiumSet`
 
@@ -313,11 +332,13 @@ A new value for lateInterestPremium has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` | The new value for lateInterestPremium. |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description                            |
+| :---: | :--------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `lateInterestPremium_` | `uint256` |   `uint256`   | The new value for lateInterestPremium. |
+
+\
+
 
 ### `PaymentIntervalSet`
 
@@ -330,11 +351,13 @@ A new value for paymentInterval has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentInterval_` | `uint256` | `uint256` | The new value for paymentInterval. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `paymentInterval_` | `uint256` |   `uint256`   | The new value for paymentInterval. |
+
+\
+
 
 ### `PaymentsRemainingSet`
 
@@ -347,11 +370,13 @@ A new value for paymentsRemaining has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentsRemaining_` | `uint256` | `uint256` | The new value for paymentsRemaining. |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description                          |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `paymentsRemaining_` | `uint256` |   `uint256`   | The new value for paymentsRemaining. |
+
+\
+
 
 ### `PrincipalIncreased`
 
@@ -364,8 +389,9 @@ The value of the principal has been increased.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `increasedBy_` | `uint256` | `uint256` | The amount of which the value was increased by. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                     |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `increasedBy_` | `uint256` |   `uint256`   | The amount of which the value was increased by. |
+
+\

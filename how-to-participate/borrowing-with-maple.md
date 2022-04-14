@@ -6,7 +6,7 @@ Maple offers borrowers the most capital efficient option in decentralized lendin
 
 1\) If you are a new Borrower to Maple you will need to create an account and go through an approval process. Complete the form and a member of the Maple team will be in touch to discuss next steps. If you are already an approved Borrower, simply connect your wallet and you will be taken to your Borrower Dashboard.
 
-![](<../.gitbook/assets/image (31) (1).png>)
+![](<../.gitbook/assets/image (20).png>)
 
 2\) Borrowers can view their full loan history including matured, active and unfunded loans.
 
@@ -22,7 +22,7 @@ Maple offers borrowers the most capital efficient option in decentralized lendin
 
 9\) Borrowers will return to the webapp to make their interest repayments on a recurring basis and view the details of their loans on Maple. The final payment at the end of the loan term will prompt repayment of the principal balance.
 
-![](<../.gitbook/assets/image (23) (1).png>)
+![](<../.gitbook/assets/image (29).png>)
 
 {% embed url="https://youtu.be/zeqyr-Dm9eI" %}
 Borrower Tutorial

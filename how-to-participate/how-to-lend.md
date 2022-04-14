@@ -8,7 +8,7 @@ Before lending, you will need to prepare USDC in your Ethereum wallet and ETH fo
 
 1. Head to the [Maple webapp](https://app.maple.finance/#/liquidity) to see an overview of all our available pools. Click on a pool to see more details.
 
-![](<../.gitbook/assets/image (21).png>)
+![](<../.gitbook/assets/image (25).png>)
 
 2\. Once you have selected a pool to lend into, you can click on "Deposit USDC" on the pool dashboard page.
 

@@ -78,15 +78,15 @@
 * [Lockers](smart-contracts/lockers/README.md)
   * [Collateral Locker Factory](smart-contracts/lockers/collaterallockers/collaterallockerfactory.md)
   * [Collateral Locker](smart-contracts/lockers/collaterallockers/collaterallocker.md)
-  * [Debt Locker](smart-contracts/lockers/debtlockers/README.md)
-    * [V1](smart-contracts/lockers/debtlockers/v1/README.md)
+  * [Debt Locker](smart-contracts/lockers/debt-locker/README.md)
+    * [V1](smart-contracts/lockers/debt-locker/v1/README.md)
       * [Debt Locker Factory](smart-contracts/lockers/debtlockers/v1/debtlockerfactory.md)
       * [Debt Locker](smart-contracts/lockers/debtlockers/v1/debtlocker.md)
-    * [V2](smart-contracts/lockers/debtlockers/v2/README.md)
+    * [V2](smart-contracts/lockers/debt-locker/v2/README.md)
       * [Debt Locker Factory](smart-contracts/lockers/debtlockers/v2/debtlockerfactory.md)
       * [Debt Locker](smart-contracts/lockers/debtlockers/v2/debtlocker.md)
       * [Debt Locker Initializer](smart-contracts/lockers/debtlockers/v2/debtlockerinitializer.md)
-    * [V3](smart-contracts/lockers/debtlockers/v3/README.md)
+    * [V3](smart-contracts/lockers/debt-locker/v3/README.md)
       * [Debt Locker Factory](smart-contracts/lockers/debtlockers/v3/debtlockerfactory.md)
       * [Debt Locker](smart-contracts/lockers/debtlockers/v3/debtlocker.md)
       * [Debt Locker Initializer](smart-contracts/lockers/debtlockers/v3/debtlockerinitializer.md)
@@ -116,7 +116,11 @@
 
 ## API
 
-* [Public](api/public.md)
+* [Public](api/public/README.md)
+  * [Globals](api/public/globals.md)
+  * [Pools](api/public/pools.md)
+  * [Loans](api/public/loans.md)
+  * [Accounts](api/public/accounts.md)
 * [Rates](api/rates.md)
 
 ## Archive - LBP <a href="#maple-lbp" id="maple-lbp"></a>

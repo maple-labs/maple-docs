@@ -17,9 +17,9 @@ description: Maple Lend and Borrow rates
 {
     "lendRates": [
         {
-            "apr": 0.09723340336134453,
+            "apr": 0.08909545157218274,
             "tokenSymbol": "USDC",
-            "apy": 0.09984767920936122
+            "apy": 0.09142956489738086
         }
     ],
     "borrowRates": [

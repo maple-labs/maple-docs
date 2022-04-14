@@ -1,15 +1,11 @@
-# MapleLoanInitializer
+# Loan Initializer
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `decodeArguments`
-
-
 
 ```solidity
     function decodeArguments(
@@ -26,26 +22,25 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` |  |
-| 1 | `assets_` | `address[2]` | `address[2]` |  |
-| 2 | `termDetails_` | `uint256[3]` | `uint256[3]` |  |
-| 3 | `amounts_` | `uint256[3]` | `uint256[3]` |  |
-| 4 | `rates_` | `uint256[4]` | `uint256[4]` |  |
 
+| Index |      Name      |     Type     | Internal Type | Description |
+| :---: | :------------: | :----------: | :-----------: | ----------- |
+|   0   |   `borrower_`  |   `address`  |   `address`   |             |
+|   1   |    `assets_`   | `address[2]` |  `address[2]` |             |
+|   2   | `termDetails_` | `uint256[3]` |  `uint256[3]` |             |
+|   3   |   `amounts_`   | `uint256[3]` |  `uint256[3]` |             |
+|   4   |    `rates_`    | `uint256[4]` |  `uint256[4]` |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
-
-
 
 ```solidity
     function encodeArguments(
@@ -62,19 +57,19 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` |  |
-| 1 | `assets_` | `address[2]` | `address[2]` |  |
-| 2 | `termDetails_` | `uint256[3]` | `uint256[3]` |  |
-| 3 | `amounts_` | `uint256[3]` | `uint256[3]` |  |
-| 4 | `rates_` | `uint256[4]` | `uint256[4]` |  |
 
+| Index |      Name      |     Type     | Internal Type | Description |
+| :---: | :------------: | :----------: | :-----------: | ----------- |
+|   0   |   `borrower_`  |   `address`  |   `address`   |             |
+|   1   |    `assets_`   | `address[2]` |  `address[2]` |             |
+|   2   | `termDetails_` | `uint256[3]` |  `uint256[3]` |             |
+|   3   |   `amounts_`   | `uint256[3]` |  `uint256[3]` |             |
+|   4   |    `rates_`    | `uint256[4]` |  `uint256[4]` |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-<br />
+\
