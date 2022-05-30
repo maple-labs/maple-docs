@@ -5,8 +5,9 @@
 ## How to Participate
 
 * [How to lend](how-to-participate/how-to-lend.md)
-* [How to stake](how-to-participate/how-to-stake.md)
+* [How to provide pool cover](how-to-participate/how-to-stake.md)
 * [How to borrow](how-to-participate/borrowing-with-maple.md)
+* [How to stake](how-to-participate/how-to-stake-1.md)
 * [How to become a Pool Delegate](how-to-participate/earning-with-maple.md)
 
 ## Protocol
@@ -29,15 +30,16 @@
   * [How do liquidations work?](protocol/liquidity-providers/how-do-liquidations-work.md)
   * [What are the fees?](protocol/liquidity-providers/what-are-the-fees.md)
 * [MPL Token](protocol/maple-token-holders/README.md)
-  * [Governance with MPL](protocol/maple-token-holders/governance-with-mpl.md)
+  * [Governance with MPL and xMPL](protocol/maple-token-holders/governance-with-mpl.md)
   * [What fees are shared with MPL holders?](protocol/maple-token-holders/what-fees-are-shared-with-mpl-holders.md)
-  * [How do I stake the Maple Token?](protocol/maple-token-holders/how-do-i-stake-the-maple-token.md)
-  * [How can you earn MPL rewards?](protocol/maple-token-holders/how-can-you-earn-mpl.md)
-* [Staking Pool Cover](protocol/pool-cover/README.md)
+  * [How can I earn MPL rewards?](protocol/maple-token-holders/how-can-you-earn-mpl.md)
+  * [How do I stake MPL?](protocol/maple-token-holders/how-do-i-stake-the-maple-token.md)
+  * [xMPL Token](protocol/maple-token-holders/xmpl-token.md)
+* [Providing Pool Cover](protocol/pool-cover/README.md)
   * [Why USDC:MPL?](protocol/pool-cover/why-usdc-mpl.md)
-  * [How does the Staking Pool work?](protocol/pool-cover/how-does-the-insurance-pool-work.md)
+  * [How does the Balancer Pool work?](protocol/pool-cover/how-does-the-insurance-pool-work.md)
   * [How to deposit and withdraw stake](protocol/pool-cover/how-to-deposit-and-withdraw-stake.md)
-  * [Staking Rewards](protocol/pool-cover/staking-rewards.md)
+  * [Pool Cover Returns](protocol/pool-cover/staking-rewards.md)
 
 ## Smart Contracts
 

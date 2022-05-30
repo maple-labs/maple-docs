@@ -1,6 +1,5 @@
-# How can you earn MPL rewards?
+# How can I earn MPL rewards?
 
-Lenders will be able to earn MPL rewards by providing liquidity to the network. There is also an opportunity to earn MPL by staking to select lending pools.
+Lenders can earn MPL rewards by providing liquidity to the network and staking MPL to the xMPL smart contract.&#x20;
 
-There is also a Balancer 50:50 MPL:USDC pool and Uniswap pool available for secondary liquidity.
-
+There is also a MPL:USDC Balancer pool.&#x20;
