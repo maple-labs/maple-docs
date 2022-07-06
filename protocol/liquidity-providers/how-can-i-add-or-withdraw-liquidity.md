@@ -20,7 +20,9 @@ Find more info on the pool cooldown [here](https://github.com/maple-labs/maple-c
 
 Currently the lending period for a pool is set to 90 days (this is a [flexible pool parameter](../maple-protocol-v1.0.0.md#flexible-parameters)). This countdown is visible in the Maple WebApp UI.&#x20;
 
-Once 90 days has passed, lenders are able to initiate a withdrawal, triggering the 10 day cool down.  The 10 day cooldown period is a [global parameter](../maple-protocol-v1.0.0.md#global-parameters) that is in place as a security measure during withdrawal. After 10 days has passed, there will be a 48 hour window for Lenders to withdraw funds from the protocol.&#x20;
+Incremental deposits to your lending position will add to your lending period on a weighted-average basis. For example, if you deposited $10,000 on day 1 and $10,000 on day 45, your total position of $20,000 would be locked for 60 days from the date of your second deposit.
+
+Once the lending period has passed, lenders are able to initiate a withdrawal, triggering the 10 day cool down.  The 10 day cooldown period is a [global parameter](../maple-protocol-v1.0.0.md#global-parameters) that is in place as a security measure during withdrawal. After 10 days has passed, there will be a 48 hour window for Lenders to withdraw funds from the protocol. If a lender fails to withdraw during this period, they will need to initate another withdrawal that is subject to the same 10-day wait.&#x20;
 
 ![Withdraw Timeline](../../.gitbook/assets/cooldown.png)
 
