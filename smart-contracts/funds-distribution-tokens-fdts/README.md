@@ -1,2 +1,0 @@
-# Funds Distribution Tokens \(FDTs\)
-
