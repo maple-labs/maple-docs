@@ -12,15 +12,15 @@ Before lending, lenders will need to prepare the pool denominated asset (e.g. US
 
 2\. Once lenders have selected a pool to lend into, click on the pool name to arrive at the diligence and deposit stage. This page displays the pool’s strategy, manager, track record, and return profile.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-12-08 at 12.35.08 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/pool-info.png" alt=""><figcaption></figcaption></figure>
 
 3\. After reviewing the available information, it is now time to lend! Connect wallet to lend funds and follow the instructions to complete the deposit process.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-12-08 at 12.35.34 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/lend-flow.png" alt=""><figcaption></figcaption></figure>
 
 4\. The success page appears, confirming the deposit has gone through!
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-12-08 at 12.35.59 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/lend-confirmed.png" alt=""><figcaption></figcaption></figure>
 
 5\. Lenders will then receive Pool LP (Liquidity Provider) Tokens in their wallet representing their share of the Lending Pool.
 
