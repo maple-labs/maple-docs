@@ -133,7 +133,7 @@ In addition, we may disclose personal information that we collect or you provide
 * For any other purpose disclosed by us when you provide the information.
 * With your consent.
 * To comply with any court order, law, or legal process, including to respond to any government or regulatory request.
-* To enforce our rights arising from any contracts entered into between you and us, including (without limitation) the Website [Terms of Use](https://maplefinance.gitbook.io/maple/legal/interface-terms-of-use).
+* To enforce our rights arising from any contracts entered into between you and us, including (without limitation) the Website [Terms of Use](https://maplefinance.gitbook.io/maple/additional-links/interface-terms-of-use).
 * If we believe disclosure is necessary or appropriate to protect the rights, property, or safety of our entities, the Maple DAO, the Protocol, our users, or others. This includes exchanging information with other companies and organizations for the purposes of fraud protection and scam deterrents.
 
 ## How We Protect Your Information&#x20;

@@ -97,8 +97,8 @@
 
 ## T\&Cs
 
-* [Interface Terms of Use](legal/interface-terms-of-use.md)
+* [Interface Terms of Use](additional-links/interface-terms-of-use.md)
 
 ## Privacy Policy
 
-* [Privacy Policy](legal/privacy-policy.md)
+* [Privacy Policy](additional-links/privacy-policy.md)
