@@ -6,7 +6,7 @@ This value is calculated using the following equation:
 
 $$
 \begin{align}
-totalAssets = cash + \sum{assetsUnderManagement_{loanManager}}
+\nonumber totalAssets = cash + \sum{assetsUnderManagement_{loanManager}}
 \end{align}
 $$
 
