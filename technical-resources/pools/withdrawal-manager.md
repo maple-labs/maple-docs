@@ -61,7 +61,6 @@ where
 
 
 $$
-\large
 \begin{align}
 \nonumber totalRequestedLiquidity = totalCycleShares(currentCycle) \times exchangeRate
 \end{align}
@@ -73,7 +72,6 @@ where
 
 
 $$
-\large
 \begin{align}
 \nonumber exchangeRate = \frac{totalAssets - unrealizedLosses}{totalSupply}
 \end{align}
@@ -87,7 +85,6 @@ It can be seen in a partial liquidity scenario, using the `exchangeRate` to conv
 
 
 $$
-\large
 \begin{align}
 \nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate
 \end{align}
@@ -99,7 +96,6 @@ Cancelling out `exchangeRate` yields:
 
 
 $$
-\large
 \begin{align}
 \nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)}
 \end{align}
@@ -111,7 +107,6 @@ Or, more intuitively:
 
 
 $$
-\large
 \begin{align}
 \nonumber redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)}
 \end{align}
