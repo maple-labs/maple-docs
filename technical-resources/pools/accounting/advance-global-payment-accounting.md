@@ -3,10 +3,10 @@
 Whenever any interaction is made with a `Loan` from the `LoanManager`, `_advanceGlobalPaymentAccounting` is called. The purpose of this function is to account all Loans' outstanding interest and to represent the current state at the current timestamp.
 
 For all of the below examples, the following abbreviations are used:
-- $AI$: `accountedInterest`
-- $IR$: `issuanceRate`
-- $DS$: `domainStart`
-- $DE$: `domainEnd`
+- $$ AI $$: `accountedInterest`
+- $$ IR $$: `issuanceRate`
+- $$ DS $$: `domainStart`
+- $$ DE $$: `domainEnd`
 
 For all of the below examples, $accountedInterest$ starts as the following:
 
@@ -15,8 +15,7 @@ For all of the below examples, $accountedInterest$ starts as the following:
 $$
 \large
 \begin{align}
-\nonumber AI_{pre-AGPA} = &\Big(IR_1 \times (DE_0 - DS_0)\Big) + \\
-                          &\Big(IR_{1+2} \times (DE_1 - DS_1)\Big)
+\nonumber AI_{pre-AGPA} = \Big(IR_1 \times (DE_0 - DS_0)\Big) + \Big(IR_{1+2} \times (DE_1 - DS_1)\Big)
 \end{align}
 $$
 
@@ -62,7 +61,10 @@ In this example, the payment is made after the `domainEnd` and Loan 2's payment 
 $$
 \large
 \begin{align}
-\nonumber AI_{post-AGPA} = AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \Big(IR_{2+3} \times (DE_3 - DS_3)\Big) +  \Big(IR_{3} \times (t_{payment} - DS_4)\Big)
+\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} +
+                           &\Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) +
+                           &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) +
+                           &\Big(IR_{3} \times (t_{payment} - DS_4)\Big)
 \end{align}
 $$
 
@@ -78,7 +80,11 @@ In this example, the payment is made after the `domainEnd`, Loan 2, and Loan 3's
 $$
 \large
 \begin{align}
-\nonumber AI_{post-AGPA} = AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \Big(IR_{3} \times (DE_4 - DS_4)\Big) + \Big(0 \times (t_{payment} - DS_5)\Big)
+\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} +
+                           &\Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) +
+                           &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) +
+                           &\Big(IR_{3} \times (DE_4 - DS_4)\Big) +
+                           &\Big(0 \times (t_{payment} - DS_5)\Big)
 \end{align}
 $$
 
