@@ -78,6 +78,6 @@ $$
 \nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \\
                            &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \Big(IR_{3} \times (DE_4 - DS_4)\Big) + \Big(0 \times (t_{payment} - DS_5)\Big)
 \end{align}
-
+$$
 
 ![AGPA 4](https://user-images.githubusercontent.com/44272939/196194328-a16a052d-f9b0-4897-a0b4-225b9035d6d7.svg)
