@@ -4,7 +4,7 @@ Maple is a technology services provider. Use of the Maple Protocol involves risk
 
 ### Smart Contract Risk
 
-Smart contracts increase their risk profile with the amount of value they hold. The Maple team takes this threat very seriously and has audited the protocol code both internally and externally. The most recent version of the smart contracts has been audited by [Spearbit](https://spearbit.com/), [Three Sigma](https://threesigma.xyz/labs/code-audits) and [Trail of Bits](https://www.trailofbits.com/).&#x20;
+Smart contracts increase their risk profile with the amount of value they hold. The Maple team takes this threat very seriously and has audited the protocol code both internally and externally. The most recent version of the smart contracts has been audited by [Spearbit](https://spearbit.com/), [Three Sigma](https://threesigma.xyz/labs/code-audits) and [Trail of Bits](https://www.trailofbits.com/).
 
 ### Default Risk
 
