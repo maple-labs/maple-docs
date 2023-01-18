@@ -91,5 +91,5 @@
 
 * [Borrower MLA](legal/borrower-MLA.md)
 * [KYC](legal/KYC.md)
-* [Interface Terms of Use](additional-links/interface-terms-of-use.md)
-* [Privacy Policy](additional-links/privacy-policy.md)
+* [Interface Terms of Use](legal/interface-terms-of-use.md)
+* [Privacy Policy](legal/privacy-policy.md)
