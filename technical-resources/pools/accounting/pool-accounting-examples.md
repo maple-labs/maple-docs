@@ -373,12 +373,12 @@ It can be seen that during this transaction, outstanding interest accounting get
 
 $$
 \large
-\begin{align}
+\begin{align*}
 \nonumber accountedInterest &= accountedInterest - 5000 + 250 \times 2 + 500 \times 2 = 2750 \\
 \nonumber issuanceRate      &= 750 - 500 + \frac{5000 - 1000}{20 - 12} = 750 - 500 + 500 = 750 \\
 \nonumber domainStart       &= 12 \\
 \nonumber domainEnd         &= 20
-\end{align}
+\end{align*}
 $$
 
 
