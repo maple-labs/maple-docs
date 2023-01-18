@@ -62,7 +62,7 @@ $$
 \large
 \begin{align}
 \nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \\
-                           &\Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) +
+                           &\Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \\
                            &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \\
                            &\Big(IR_{3} \times (t_{payment} - DS_4)\Big)
 \end{align}
