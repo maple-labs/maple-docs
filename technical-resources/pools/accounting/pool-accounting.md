@@ -4,10 +4,7 @@ Total pool value is represented using `totalAssets`.
 
 This value is calculated using the following equation:
 
-<br/>
-
 $$ totalAssets = cash + \sum{assetsUnderManagement_{loanManager}} $$
-<br/>
 
 where:
 
