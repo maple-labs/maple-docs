@@ -78,7 +78,7 @@ $$
 $$
 
 
-In a partial liquidity situation ( $availableLiquidity \lt totalRequestedLiquidity$ ) the cash will get distributed pro-rata based on how the equity of locked shares is distributed in the WithdrawalManager. The exchange rate will change over time. With no additional incoming cash, this will result in an even distribution of cash, but users that redeem when the exchange rate is higher will have to burn less shares to do so.
+In a partial liquidity situation ( $$ availableLiquidity \lt totalRequestedLiquidity $$ ) the cash will get distributed pro-rata based on how the equity of locked shares is distributed in the WithdrawalManager. The exchange rate will change over time. With no additional incoming cash, this will result in an even distribution of cash, but users that redeem when the exchange rate is higher will have to burn less shares to do so.
 
 It can be seen in a partial liquidity scenario, using the `exchangeRate` to convert the position to cash, that **the amount of cash that each user gets will remain constant**. The only thing that changes is the amount of shares that must be burned in order to obtain that cash amount. This is assuming constant `availableLiquidity`. Over the course of a withdrawal window, Borrowers can make payments and new LPs can deposit, increasing available cash. This will increase the amount of cash that will be able to be withdrawn by the users that remain. Note that this value can never decrease (except for users withdrawing), due to the fact that the PoolDelegate cannot fund new loans with cash above the `availableLiquidity` amount.
 
