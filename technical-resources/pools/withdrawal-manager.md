@@ -48,18 +48,21 @@ Over the duration of each withdrawal window, the total amount of assets required
 In case there is not enough liquidity to satisfy all withdrawals within the same window, the available amount of liquidity will be proportionally distributed between all users based on the sizes of their withdrawal requests. For instance, if there is only enough assets in the pool to satisfy 50% of the total amount of assets required for withdrawal, each user will only withdraw 50% of their requested amount. **Withdrawal requests that could not be completely fulfilled due to insufficient liquidity will also be fast forwarded to the next withdrawal cycle without any additional delays**. The formula for this distribution is:
 
 <br/>
+
 $$ \large redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big) $$
 <br/>
 
 where
 
 <br/>
+
 $$ \large totalRequestedLiquidity = totalCycleShares(currentCycle) \times exchangeRate $$
 <br/>
 
 where
 
 <br/>
+
 $$ \large exchangeRate = \frac{totalAssets - unrealizedLosses}{totalSupply} $$
 <br/>
 
@@ -68,18 +71,21 @@ In a partial liquidity situation ( $availableLiquidity \lt totalRequestedLiquidi
 It can be seen in a partial liquidity scenario, using the `exchangeRate` to convert the position to cash, that **the amount of cash that each user gets will remain constant**. The only thing that changes is the amount of shares that must be burned in order to obtain that cash amount. This is assuming constant `availableLiquidity`. Over the course of a withdrawal window, Borrowers can make payments and new LPs can deposit, increasing available cash. This will increase the amount of cash that will be able to be withdrawn by the users that remain. Note that this value can never decrease (except for users withdrawing), due to the fact that the PoolDelegate cannot fund new loans with cash above the `availableLiquidity` amount.
 
 <br/>
+
 $$ \large redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate $$
 <br/>
 
 Cancelling out `exchangeRate` yields:
 
 <br/>
+
 $$ \large redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)} $$
 <br/>
 
 Or, more intuitively:
 
 <br/>
+
 $$ \large redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)} $$
 <br/>
 
