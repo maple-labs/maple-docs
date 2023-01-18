@@ -5,25 +5,25 @@ Total pool value is represented using `totalAssets`.
 This value is calculated using the following equation:
 
 <br/>
-$$ \large totalAssets = cash + \sum{assetsUnderManagement_{loanManager}} $$
+$$ totalAssets = cash + \sum{assetsUnderManagement_{loanManager}} $$
 <br/>
 
 where:
 
 <br/>
-$$ \large assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}) $$
+$$ assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}) $$
 <br/>
 
 where:
 
 <br/>
-$$ \large outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) $$
+$$ outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) $$
 <br/>
 
 where:
 
 <br/>
-$$ \large domainStart \le t \le domainEnd $$
+$$ domainStart \le t \le domainEnd $$
 <br/>
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
