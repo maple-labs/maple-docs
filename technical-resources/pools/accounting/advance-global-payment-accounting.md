@@ -14,9 +14,12 @@ For all of the below examples, $accountedInterest$ starts as the following:
 
 $$
 \large
-\begin{align}
-\nonumber AI_{pre-AGPA} = \Big(IR_1 \times (DE_0 - DS_0)\Big) + \Big(IR_{1+2} \times (DE_1 - DS_1)\Big)
-\end{align}
+\begin{equation*}
+    \begin{align}
+        \nonumber AI_{pre-AGPA} = &\Big(IR_1 \times (DE_0 - DS_0)\Big) + \\
+                                  &\Big(IR_{1+2} \times (DE_1 - DS_1)\Big)
+    \end{align}
+\end{equation*}
 $$
 
 
