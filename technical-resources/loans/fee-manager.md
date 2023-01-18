@@ -1,6 +1,6 @@
 # Overview
 
-`FeeManager` is a singleton contract responsible for holding and executing fee payments for all the loans. It queries the MapleGlobals contract to calculate fees owed to the protocol ([more details here](maple-for-developers/fees.md)), as well register the delegate fees passed as parameters during the loan initialization. This contract exists as a module to allow future Loans to be able to use different fee structures with new smart contract logic.
+`FeeManager` is a singleton contract responsible for holding and executing fee payments for all the loans. It queries the MapleGlobals contract to calculate fees owed to the protocol ([more details here](../protocol-overview/fees.md)), as well register the delegate fees passed as parameters during the loan initialization. This contract exists as a module to allow future Loans to be able to use different fee structures with new smart contract logic.
 
 # Fee Lifecycle
 
