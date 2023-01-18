@@ -14,21 +14,33 @@ where:
 
 <br/>
 
-$$ assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}) $$
+$$
+\begin{align}
+\nonumber assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}})
+\end{align}
+$$
 <br/>
 
 where:
 
 <br/>
 
-$$ outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) $$
+$$
+\begin{align}
+\nonumber outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart)
+\end{align}
+$$
 <br/>
 
 where:
 
 <br/>
 
-$$ domainStart \le t \le domainEnd $$
+$$
+\begin{align}
+\nonumber domainStart \le t \le domainEnd
+\end{align}
+$$
 <br/>
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.

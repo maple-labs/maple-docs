@@ -12,7 +12,12 @@ This exchange rate function helps an LP determine how much of the Pool Asset is 
 
 <br/>
 
-$$ \large exchangeRate = \frac{totalAssets}{totalSupply} $$
+$$
+\large
+\begin{align}
+\nonumber exchangeRate = \frac{totalAssets}{totalSupply}
+\end{align}
+$$
 <br/>
 
 But note that `unrealizedLosses` is not used here.
@@ -23,7 +28,12 @@ This exchange rate function helps an LP determine how much of the Pool Assets an
 
 <br/>
 
-$$ \large exchangeRate = \frac{totalAssets-unrealizedLosses}{totalSupply} $$
+$$
+\large
+\begin{align}
+\nonumber exchangeRate = \frac{totalAssets-unrealizedLosses}{totalSupply}
+\end{align}
+$$
 <br/>
 
 # Example

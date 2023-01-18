@@ -18,7 +18,12 @@ Origination fees are paid during Loan funding and refinance operations. Originat
 
 <br/>
 
-$$ \large platformOriginationFee = platformOriginationFeeRate \times principal \times \frac{loanTermLength}{oneYear} $$
+$$
+\large
+\begin{align}
+\nonumber platformOriginationFee = platformOriginationFeeRate \times principal \times \frac{loanTermLength}{oneYear}
+\end{align}
+$$
 
 <br/>
 
@@ -36,7 +41,12 @@ Service fees are paid during loan payments. Service fees are calculated in the f
 
 <br/>
 
-$$ \large platformServiceFee = platformServiceFeeRate \times principal \times \frac{paymentIntervalLength}{oneYear} $$
+$$
+\large
+\begin{align}
+\nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{paymentIntervalLength}{oneYear}
+\end{align}
+$$
 
 <br/>
 
@@ -50,7 +60,12 @@ In the case of a refinance, three things happen with regards to service fees:
 
 <br/>
 
-$$ \large platformServiceFee = platformServiceFeeRate \times principal \times \frac{paymentIntervalLength}{oneYear} $$
+$$
+\large
+\begin{align}
+\nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{paymentIntervalLength}{oneYear}
+\end{align}
+$$
 
 <br/>
 
@@ -58,7 +73,12 @@ $$ \large platformServiceFee = platformServiceFeeRate \times principal \times \f
 
 <br/>
 
-$$ \large refinanceServiceFee = serviceFee \times \frac{(timestamp - lastPaymentDueDate)}{paymentInterval} $$
+$$
+\large
+\begin{align}
+\nonumber refinanceServiceFee = serviceFee \times \frac{(timestamp - lastPaymentDueDate)}{paymentInterval}
+\end{align}
+$$
 
 <br/>
 
@@ -68,7 +88,12 @@ Management fees are paid during loan payments, after a loan's interest has moved
 
 <br/>
 
-$$ \large managementFee = grossInterest \times managementFeeRate $$
+$$
+\large
+\begin{align}
+\nonumber managementFee = grossInterest \times managementFeeRate
+\end{align}
+$$
 
 <br/>
 
