@@ -49,21 +49,36 @@ In case there is not enough liquidity to satisfy all withdrawals within the same
 
 <br/>
 
-$$ \large redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big) $$
+$$
+\large
+\begin{align}
+\nonumber redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big)
+\end{align}
+$$
 <br/>
 
 where
 
 <br/>
 
-$$ \large totalRequestedLiquidity = totalCycleShares(currentCycle) \times exchangeRate $$
+$$
+\large
+\begin{align}
+\nonumber totalRequestedLiquidity = totalCycleShares(currentCycle) \times exchangeRate
+\end{align}
+$$
 <br/>
 
 where
 
 <br/>
 
-$$ \large exchangeRate = \frac{totalAssets - unrealizedLosses}{totalSupply} $$
+$$
+\large
+\begin{align}
+\nonumber exchangeRate = \frac{totalAssets - unrealizedLosses}{totalSupply}
+\end{align}
+$$
 <br/>
 
 In a partial liquidity situation ( $availableLiquidity \lt totalRequestedLiquidity$ ) the cash will get distributed pro-rata based on how the equity of locked shares is distributed in the WithdrawalManager. The exchange rate will change over time. With no additional incoming cash, this will result in an even distribution of cash, but users that redeem when the exchange rate is higher will have to burn less shares to do so.
@@ -72,21 +87,36 @@ It can be seen in a partial liquidity scenario, using the `exchangeRate` to conv
 
 <br/>
 
-$$ \large redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate $$
+$$
+\large
+\begin{align}
+\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate
+\end{align}
+$$
 <br/>
 
 Cancelling out `exchangeRate` yields:
 
 <br/>
 
-$$ \large redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)} $$
+$$
+\large
+\begin{align}
+\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)}
+\end{align}
+$$
 <br/>
 
 Or, more intuitively:
 
 <br/>
 
-$$ \large redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)} $$
+$$
+\large
+\begin{align}
+\nonumber redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)}
+\end{align}
+$$
 <br/>
 
 For an example of this in practice, please refer to [Example 3](./withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).

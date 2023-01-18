@@ -102,7 +102,12 @@ The collateral in a Loan must always satisfy the equation shown below in order t
 
 <br/>
 
-$$ \large \frac{collateral}{outstandingPrincipal} \ge \frac{collateralRequired}{principalRequired} $$
+$$
+\large
+\begin{align}
+\nonumber \frac{collateral}{outstandingPrincipal} \ge \frac{collateralRequired}{principalRequired}
+\end{align}
+$$
 
 <br/>
 
@@ -114,7 +119,12 @@ Rearranged, this gives us the minimum amount of `collateralAsset` that must be p
 
 <br/>
 
-$$ \large collateral \ge \frac{collateralRequired \times outstandingPrincipal}{principalRequired} $$
+$$
+\large
+\begin{align}
+\nonumber collateral \ge \frac{collateralRequired \times outstandingPrincipal}{principalRequired}
+\end{align}
+$$
 
 <br/>
 
@@ -137,11 +147,36 @@ The amortized payment schedule is calculated using a standard amortization calcu
 
 <br/>
 
-$$ \large periodicRate     = \frac{interestRate \times paymentInterval}{365 \times 24 \times 60 \times 60} $$
-$$ \large raisedRate       = (1 + periodicRate)^{paymentsRemaining} $$
-$$ \large total            = \frac{(principal \times raisedRate - endingPrincipal) \ periodicRate}{raisedRate - 1} $$
-$$ \large interestPortion  = principal \times periodicRate $$
-$$ \large principalPortion = total - interestPortion $$
+$$
+\large
+\begin{align}
+\nonumber periodicRate     = \frac{interestRate \times paymentInterval}{365 \times 24 \times 60 \times 60}
+\end{align}
+$$
+$$
+\large
+\begin{align}
+\nonumber raisedRate       = (1 + periodicRate)^{paymentsRemaining}
+\end{align}
+$$
+$$
+\large
+\begin{align}
+\nonumber total            = \frac{(principal \times raisedRate - endingPrincipal) \ periodicRate}{raisedRate - 1}
+\end{align}
+$$
+$$
+\large
+\begin{align}
+\nonumber interestPortion  = principal \times periodicRate
+\end{align}
+$$
+$$
+\large
+\begin{align}
+\nonumber principalPortion = total - interestPortion
+\end{align}
+$$
 
 <br/>
 
@@ -155,7 +190,12 @@ Below is the calculation for a late payment, where `total` is the amount calcula
 
 <br/>
 
-$$ \large totalLatePayment = total + (principal \times lateFeeRate) + \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400} $$
+$$
+\large
+\begin{align}
+\nonumber totalLatePayment = total + (principal \times lateFeeRate) + \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\end{align}
+$$
 
 <br/>
 
@@ -168,6 +208,11 @@ Below is the calculation for `closeLoan` payment.
 
 <br/>
 
-$$ \large total = principal \times closingRate $$
+$$
+\large
+\begin{align}
+\nonumber total = principal \times closingRate
+\end{align}
+$$
 
 <br/>

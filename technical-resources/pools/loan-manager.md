@@ -4,7 +4,12 @@ The LoanManager interacts with Loans on behalf of the PoolManager and represents
 
 <br/>
 
-$$ \large assetsUnderManagement = outstandingPrincipal + outstandingInterest $$
+$$
+\large
+\begin{align}
+\nonumber assetsUnderManagement = outstandingPrincipal + outstandingInterest
+\end{align}
+$$
 <br/>
 
 # Outstanding Principal
@@ -13,7 +18,12 @@ The outstanding principal component of AUM in the LoanManager is represented by 
 
 <br/>
 
-$$ \large principalOut = \sum{principal_{loan}} $$
+$$
+\large
+\begin{align}
+\nonumber principalOut = \sum{principal_{loan}}
+\end{align}
+$$
 <br/>
 
 # Outstanding Interest
@@ -24,7 +34,12 @@ Outstanding interest in the LoanManager has to represent the current aggregate v
 
 <br/>
 
-$$ \large interest = 1e6 \times 0.12 \times \frac{30}{365} = 9863.01 $$
+$$
+\large
+\begin{align}
+\nonumber interest = 1e6 \times 0.12 \times \frac{30}{365} = 9863.01
+\end{align}
+$$
 <br/>
 
 This amount of $9863.01$ would be due exactly 30 days from when the loan gets funded.
@@ -35,21 +50,36 @@ Using this information, the current value of interest in the MapleLoan at any gi
 
 <br/>
 
-$$ \large interest(t) = interestDue \times \frac{t - paymentIntervalStart}{paymentIntervalLength} $$
+$$
+\large
+\begin{align}
+\nonumber interest(t) = interestDue \times \frac{t - paymentIntervalStart}{paymentIntervalLength}
+\end{align}
+$$
 <br/>
 
 So in an easier example, with a loan that expects $1000 on day 20, the value on day 9 would be:
 
 <br/>
 
-$$ \large interest(9) = 1000 \times \frac{9-0}{20} = 450 $$
+$$
+\large
+\begin{align}
+\nonumber interest(9) = 1000 \times \frac{9-0}{20} = 450
+\end{align}
+$$
 <br/>
 
 Expanding on this concept, the naive calculation of the outstanding interest of all loans would be:
 
 <br/>
 
-$$ \large interest(t) = \sum (interestDue_{loan} \times \frac{t - paymentIntervalStart_{loan}}{paymentInterval_{loan}}) $$
+$$
+\large
+\begin{align}
+\nonumber interest(t) = \sum (interestDue_{loan} \times \frac{t - paymentIntervalStart_{loan}}{paymentInterval_{loan}})
+\end{align}
+$$
 <br/>
 
 ## Optimized Approach (Aggregated Issuance)
@@ -64,12 +94,22 @@ The equation for outstanding interest is shown below:
 
 <br/>
 
-$$ \large outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) $$
+$$
+\large
+\begin{align}
+\nonumber outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart)
+\end{align}
+$$
 <br/>
 
 Where:
 
 <br/>
 
-$$ \large domainStart \le t \le domainEnd $$
+$$
+\large
+\begin{align}
+\nonumber domainStart \le t \le domainEnd
+\end{align}
+$$
 <br/>
