@@ -30,4 +30,4 @@ Each Maple pool is a [smart contract](https://ethereum.org/en/smart-contracts/).
 
 When you lend into a pool you are calling the “Deposit” function on the pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
 
-Each pool contract inherits the [ERC 4626](https://erc4626.info/) standard, also know as the “Tokenized Vault” Standard. This standard informs how the LP Tokens accrue value from borrower repayments of loans.&#x20;
+Each pool contract inherits the [ERC 4626](https://erc4626.info/) standard, also know as the “Tokenized Vault” Standard. This standard informs how the LP Tokens accrue value from borrower repayments of loans.
