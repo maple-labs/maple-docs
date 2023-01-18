@@ -75,4 +75,4 @@ Additionally all smart contracts get programmatically verified on Etherscan via 
 
 # Emergency Pause Function
 
-In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](https://github.com/maple-labs/maple-core-v2/wiki/Emergency-Protocol-Pause-Function).
+In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](../security/emergency-protocol-pause-function.md).

@@ -12,7 +12,7 @@ The following pre-requisites must be met before the creation of a Loan.
 ## Loan Initialization Parameters
 
 * `borrower` - The address of the borrower.
-* `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](https://github.com/maple-labs/maple-core-v2/wiki/FeeManager))
+* `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](./fee-manager.md))
 * `collateralAsset` - The address of the asset used as collateral.
 * `fundsAsset` - The address of asset that the loan is denominated in.
 * `gracePeriod` - The amount of time that the lender needs to wait before triggering a default on a late loan.\

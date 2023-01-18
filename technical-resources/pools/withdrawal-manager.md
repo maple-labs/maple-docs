@@ -95,7 +95,7 @@ $$ \large redeemableCash(user) = availableLiquidity \times \frac{lockedShares(us
 
 <br/>
 
-For an example of this in practice, please refer to [Example 3](https://github.com/maple-labs/maple-core-v2/wiki/Withdrawal-Mechanism#example-3-partial-liquidity-changing-exchange-rate).
+For an example of this in practice, please refer to [Example 3](./withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
 
 ## Configuration Management
 

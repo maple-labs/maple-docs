@@ -22,7 +22,7 @@ $$ \large principalOut = \sum{principal_{loan}} $$
 
 ## Introduction
 
-Outstanding interest in the LoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. [Interest](https://github.com/maple-labs/maple-core-v2/wiki/Loans/_edit#amortization-calculation) in MapleLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
+Outstanding interest in the LoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. [Interest](../loans/loans.md#amortization-calculation) in MapleLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
 
 <br/>
 

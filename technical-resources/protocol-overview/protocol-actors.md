@@ -2,7 +2,7 @@ This page outlines all of the different actors in the Maple protocol and gives a
 
 ## Pool Delegate
 
-Pool Delegates are users that manage Pools on Maple. They earn management fees in return for evaluating potential borrowers and funding Loans with attractive risk-adjusted returns. Pool Delegates earn revenue from [origination, service and management fees](https://github.com/maple-labs/maple-core-v2/wiki/Fees) paid by borrowers and liquidity providers. In order to align incentives between the Pool Delegate and it's respective Liquidity Providers, it is required that they stake a minimum [first-loss capital amount](https://github.com/maple-labs/maple-core-v2/wiki/Pool-Delegate-Cover) (defined by the Governor) which ensures that if a Loan defaults the Pool Delegate will incur a significant loss before the Liquidity Providers.
+Pool Delegates are users that manage Pools on Maple. They earn management fees in return for evaluating potential borrowers and funding Loans with attractive risk-adjusted returns. Pool Delegates earn revenue from [origination, service and management fees](../protocol-overview/fees.md) paid by borrowers and liquidity providers. In order to align incentives between the Pool Delegate and it's respective Liquidity Providers, it is required that they stake a minimum [first-loss capital amount](../pools/pool-delegate-cover.md) (defined by the Governor) which ensures that if a Loan defaults the Pool Delegate will incur a significant loss before the Liquidity Providers.
 
 ## Liquidity Provider
 
@@ -16,12 +16,12 @@ In order to drawdown on a Loan, the Borrower must post the required amount of `c
 
 ## Governor
 
-The [Governor](https://github.com/maple-labs/maple-core-v2/wiki/Governor-Admin-Actions) is a governance multisig wallet that performs actions based on token holder voting. The Governor controls administrative functions in the protocol, such as managing the MapleTreasury, defining global parameters and pausing functionality.
+The [Governor](../admin-functions/governor-admin-actions.md) is a governance multisig wallet that performs actions based on token holder voting. The Governor controls administrative functions in the protocol, such as managing the MapleTreasury, defining global parameters and pausing functionality.
 
 ## Security Admin
 
-A Security Admin is an account that has the ability to call the emergency [pause function](https://github.com/maple-labs/maple-core-v2/wiki/Emergency-Protocol-Pause-Function) that can pause every function in the protocol. This is only to be used in the case of critical incident response, during which action must be taken to prevent and/or stop damage from occurring to the protocol.
+A Security Admin is an account that has the ability to call the emergency [pause function](../security/emergency-protocol-pause-function.md) that can pause every function in the protocol. This is only to be used in the case of critical incident response, during which action must be taken to prevent and/or stop damage from occurring to the protocol.
 
 ## Keepers
 
-Keepers are external actors that are incentivized to perform liquidation when needed. Anyone can be a Keeper if they so wish, but the protocol only accepts actions that are within the constraints defined by the protocol. More details on the Liquidations [page](https://github.com/maple-labs/maple-core-v2/wiki/Liquidations).
+Keepers are external actors that are incentivized to perform liquidation when needed. Anyone can be a Keeper if they so wish, but the protocol only accepts actions that are within the constraints defined by the protocol. More details on the Liquidations [page](../loans/defaults.md).

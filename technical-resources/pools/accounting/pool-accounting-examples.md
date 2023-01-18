@@ -218,7 +218,7 @@ In this example, there are two outstanding Loans. Loan 2 gets funded on day 5. L
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](https://github.com/maple-labs/maple-core-v2/wiki/Pool-Accounting-Examples#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
@@ -300,7 +300,7 @@ In this example, there are two different aggregate issuance rates since the issu
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](https://github.com/maple-labs/maple-core-v2/wiki/Pool-Accounting-Examples#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
@@ -376,11 +376,11 @@ $$
 
 In this example, there are two outstanding Loans. Loan 2 gets funded on day 5. Loan 1 makes a payment late on day 12. Loan 1 makes another payment exactly on time on day 20.
 
-Note that when the second payment is made, it is made after `domainEnd`. This means that the interest from Loan 1 is fully accounted for, the payment is removed from the sorted list, the issuance rate is reduced, and the interest is accrued to the current timestamp before updating the state. More details on how this works [here](https://github.com/maple-labs/maple-core-v2/wiki/Advance-Global-Payment-Accounting), specifically in [this](https://github.com/maple-labs/maple-core-v2/wiki/Advance-Global-Payment-Accounting#example-2-call-after-domainend-before-loan-2-payment-due-date) example.
+Note that when the second payment is made, it is made after `domainEnd`. This means that the interest from Loan 1 is fully accounted for, the payment is removed from the sorted list, the issuance rate is reduced, and the interest is accrued to the current timestamp before updating the state. More details on how this works [here](advance-global-payment-accounting.md), specifically in [this](./advance-global-payment-accounting.md#example-2-call-after-domainend-before-loan-2-payment-due-date) example.
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](https://github.com/maple-labs/maple-core-v2/wiki/Pool-Accounting-Examples#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
