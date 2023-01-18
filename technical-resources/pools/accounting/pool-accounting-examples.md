@@ -20,7 +20,6 @@ In this example, there is a single Loan that makes a payment at the exact timest
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -30,13 +29,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -45,7 +42,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 Since the payment was made at the exact time that it was due, the outstanding interest exactly equaled the actual interest paid, so no discrete change in `totalAssets` is observed.
@@ -61,7 +57,6 @@ In this example, there is a single Loan that makes an early payment, two days be
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -71,13 +66,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -86,7 +79,6 @@ $$
 \nonumber totalAssets         &= totalAssets + 1000 \\
 \end{align}
 $$
-
 <br/>
 
 When a payment is made early, there is a discrete increase in `totalAssets` since the cash balance in the pool increases more than the outstanding interest that was represented when the payment was made.
@@ -104,7 +96,6 @@ Whenever the current timestamp is past the `domainEnd` in the LoanManager, `asse
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -114,13 +105,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -147,7 +136,6 @@ When there is more than one outstanding loan, the `issuanceRate` becomes an aggr
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -157,13 +145,11 @@ $$
 \nonumber domainEnd         &= 10
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -172,7 +158,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 ## Loan 1 Payment
@@ -180,7 +165,6 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -190,13 +174,11 @@ $$
 \nonumber domainEnd         &= 25
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -205,7 +187,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 <p align="center">
@@ -225,7 +206,6 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -235,13 +215,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -250,7 +228,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 ## Loan 1 Payment 2
@@ -258,7 +235,6 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -268,13 +244,11 @@ $$
 \nonumber domainEnd         &= 25
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -283,7 +257,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 <p align="center">
@@ -307,7 +280,6 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -317,13 +289,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -332,7 +302,6 @@ $$
 \nonumber totalAssets         &= totalAssets + 1000 = 5750 \\
 \end{align}
 $$
-
 <br/>
 
 ## Loan 1 Payment 2
@@ -340,7 +309,6 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -350,13 +318,11 @@ $$
 \nonumber domainEnd         &= 25
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -365,7 +331,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 <p align="center">
@@ -387,7 +352,6 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -397,13 +361,11 @@ $$
 \nonumber domainEnd         &= 20
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -412,7 +374,6 @@ $$
 \nonumber totalAssets         &= totalAssets + 250 \times 2 + 500 \times 2 + 3000 = 10750 \\
 \end{align}
 $$
-
 <br/>
 
 ## Loan 1 Payment 2
@@ -420,7 +381,6 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -430,13 +390,11 @@ $$
 \nonumber domainEnd         &= 25
 \end{align}
 $$
-
 <br/>
 
 `totalAssets` accounting gets updated as follows:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -445,7 +403,6 @@ $$
 \nonumber totalAssets         &= totalAssets \\
 \end{align}
 $$
-
 <br/>
 
 <p align="center">
