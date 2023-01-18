@@ -20,6 +20,7 @@ In this example, there is a single Loan that makes a payment at the exact timest
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -34,6 +35,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -57,6 +59,7 @@ In this example, there is a single Loan that makes an early payment, two days be
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -71,6 +74,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -96,6 +100,7 @@ Whenever the current timestamp is past the `domainEnd` in the LoanManager, `asse
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -110,6 +115,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -136,6 +142,7 @@ When there is more than one outstanding loan, the `issuanceRate` becomes an aggr
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -150,6 +157,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -165,6 +173,7 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -179,6 +188,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -206,6 +216,7 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -220,6 +231,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -235,6 +247,7 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -249,6 +262,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -280,6 +294,7 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -294,6 +309,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -309,6 +325,7 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -323,6 +340,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -352,6 +370,7 @@ Accounting gets updated in the same way as [Example 4](https://github.com/maple-
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -366,6 +385,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -381,6 +401,7 @@ $$
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
@@ -395,6 +416,7 @@ $$
 `totalAssets` accounting gets updated as follows:
 
 <br/>
+
 $$
 \large
 \begin{align}
