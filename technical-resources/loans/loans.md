@@ -111,7 +111,7 @@ $$
 
 
 
-Where:
+where:
 - `collateral` is the current `collateralAsset` accounted for in the Loan
 - `outstandingPrincipal` is the current principal remaining (`principal`), minus any `drawableFunds` present in the Loan.
 
