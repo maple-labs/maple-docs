@@ -59,8 +59,10 @@ In this example, the payment is made after the `domainEnd` and Loan 2's payment 
 
 
 $$
+\large
 \begin{align}
-\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \Big(IR_{3} \times (t_{payment} - DS_4)\Big)
+\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \\
+                           &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \Big(IR_{3} \times (t_{payment} - DS_4)\Big)
 \end{align}
 $$
 
@@ -71,18 +73,11 @@ $$
 
 In this example, the payment is made after the `domainEnd`, Loan 2, and Loan 3's payment due dates, so Loans 1, 2 and 3 are removed from the sorted list and `domainEnd` is updated.
 
-
-
 $$
-\large
 \begin{align}
-\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \\
-                           &IR_{1+2+3} \times (DE_2 - DS_2) + \\
-                           &IR_{2+3} \times (DE_3 - DS_3) + \\
-                           &IR_{3} \times (DE_4 - DS_4) + \\
-                           &0 \times (t_{payment} - DS_5)
+\nonumber AI_{post-AGPA} = &AI_{pre-AGPA} + \Big(IR_{1+2+3} \times (DE_2 - DS_2)\Big) + \\
+                           &\Big(IR_{2+3} \times (DE_3 - DS_3)\Big) + \Big(IR_{3} \times (DE_4 - DS_4)\Big) + \Big(0 \times (t_{payment} - DS_5)\Big)
 \end{align}
-$$
 
 
 ![AGPA 4](https://user-images.githubusercontent.com/44272939/196194328-a16a052d-f9b0-4897-a0b4-225b9035d6d7.svg)
