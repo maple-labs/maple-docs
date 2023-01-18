@@ -242,5 +242,5 @@ $$
 During a Withdrawal Window, since users are now eligible to do so, they can remove shares from the `WithdrawalManager`. In this example user 2 removes all their shares from the system, which leaves user 1 with full liquidity.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/44272939/196678912-15ee6425-9618-4240-9941-be80f44b2d2f.svg" height="1000" />
+  <img src="https://user-images.githubusercontent.com/44272939/213311035-932aee9c-80bc-445f-9ad8-9bef5727017f.svg" height="1000" />
 </p>
