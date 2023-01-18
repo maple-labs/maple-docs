@@ -1,7 +1,7 @@
 # Overview
 
 This section is intended to demonstrate multiple scenarios with loans to show how value is represented with `totalAssets`. During each payment, accounting state in the Pool contracts is changed in the following way:
-1. `accountedInterest` is decreased. This is because the $outstandingInterest$ portion of `assetsUnderManagement` must discretely decrease when a payment is made.
+1. `accountedInterest` is decreased. This is because the $$ outstandingInterest $$ portion of `assetsUnderManagement` must discretely decrease when a payment is made.
 2. `domainStart` is updated to the current timestamp.
 3. `issuanceRate` is updated based on the resulting state.
 4. `domainEnd` is set to the next earliest payment due date.
@@ -9,7 +9,7 @@ This section is intended to demonstrate multiple scenarios with loans to show ho
 
 **Note 1**: For all of the below examples, only interest is being paid so outstanding principal (`principalOut`) remains constant.
 
-**Note 2**: For the purpose of simplicity, `issuanceRate` is represented as $units/day$ in the equations below. In reality, it is represented as $$ units \times 1e30 / second $$.
+**Note 2**: For the purpose of simplicity, `issuanceRate` is represented as $$ units/day $$ in the equations below. In reality, it is represented as $$ units \times 1e30 / second $$.
 
 **Note 3**: None of the below diagrams are to scale.
 
