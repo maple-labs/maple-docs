@@ -77,7 +77,7 @@ Expanding on this concept, the naive calculation of the outstanding interest of 
 $$
 \large
 \begin{align}
-\nonumber interest(t) = \sum (interestDue_{loan} \times \frac{t - paymentIntervalStart_{loan}}{paymentInterval_{loan}})
+\nonumber interest(t) = \sum \Big(interestDue_{loan} \times \frac{t - paymentIntervalStart_{loan}}{paymentInterval_{loan}}\Big)
 \end{align}
 $$
 

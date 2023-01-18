@@ -16,7 +16,7 @@ where:
 
 $$
 \begin{align}
-\nonumber assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}})
+\nonumber assetsUnderManagement = \sum\Big({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}\Big)
 \end{align}
 $$
 
