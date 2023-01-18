@@ -193,7 +193,7 @@ Below is the calculation for a late payment, where `total` is the amount calcula
 $$
 \large
 \begin{align}
-\nonumber totalLatePayment &= total + (principal \times lateFeeRate) +
+\nonumber totalLatePayment &= total + (principal \times lateFeeRate) + \\
                            &\frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
 \end{align}
 $$
