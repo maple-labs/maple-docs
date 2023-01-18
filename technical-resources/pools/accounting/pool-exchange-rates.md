@@ -11,9 +11,7 @@ To highlight the difference first let us look at a deposit specific exchange rat
 This exchange rate function helps an LP determine how much of the Pool Asset is required to mint a specific number of shares.
 
 <br/>
-
 $$ \large exchangeRate = \frac{totalAssets}{totalSupply} $$
-
 <br/>
 
 But note that `unrealizedLosses` is not used here.
@@ -23,9 +21,7 @@ But note that `unrealizedLosses` is not used here.
 This exchange rate function helps an LP determine how much of the Pool Assets an LP can withdraw for a specific number of shares.
 
 <br/>
-
 $$ \large exchangeRate = \frac{totalAssets-unrealizedLosses}{totalSupply} $$
-
 <br/>
 
 # Example

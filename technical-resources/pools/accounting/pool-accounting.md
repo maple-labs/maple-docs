@@ -5,33 +5,25 @@ Total pool value is represented using `totalAssets`.
 This value is calculated using the following equation:
 
 <br/>
-
 $$ \large totalAssets = cash + \sum{assetsUnderManagement_{loanManager}} $$
-
 <br/>
 
 where:
 
 <br/>
-
 $$ \large assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}) $$
-
 <br/>
 
 where:
 
 <br/>
-
 $$ \large outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) $$
-
 <br/>
 
 where:
 
 <br/>
-
 $$ \large domainStart \le t \le domainEnd $$
-
 <br/>
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
@@ -47,7 +39,6 @@ The relationship between the Pool, PoolManager, and LoanManagers regarding value
 In the case that $unrealizedLosses \gt 0$, there are two exchange rates that are maintained, one for deposits and one for withdrawals. This is to prevent malicious depositors from taking advantage of a situation where they know they paper loss will be removed. Consider a situation where there is a single loan outstanding for $900k with $10k of outstanding interest, and there is 100k of cash in the pool. The `totalSupply` of LP tokens is 1m. In this situation, the effective exchange rate is:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -56,13 +47,11 @@ $$
 \nonumber exchangeRate &= 1.01
 \end{align}
 $$
-
 <br/>
 
 After impairing the loan, `unrealizedLosses` gets set to 910k. Now, with `unrealizedLosses` considered, the exchange rate becomes:
 
 <br/>
-
 $$
 \large
 \begin{align}
@@ -71,7 +60,6 @@ $$
 \nonumber exchangeRate &= 0.1
 \end{align}
 $$
-
 <br/>
 
 Without the two exchange rate model, a depositor could deposit $1m at a 0.1 exchange rate and get 10m shares. Once `unrealizedLosses` was removed, their shares would be worth $10.1m.
