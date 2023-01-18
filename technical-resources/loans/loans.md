@@ -192,10 +192,17 @@ Below is the calculation for a late payment, where `total` is the amount calcula
 
 $$
 \begin{align}
-\nonumber \small totalLatePayment = total + (principal \times lateFeeRate) + \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\nonumber totalLatePayment = total + (principal \times lateFeeRate) + defaultInterest
 \end{align}
 $$
 
+where:
+
+$$
+\begin{align}
+\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\end{align}
+$$
 
 
 # Closing Loan
