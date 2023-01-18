@@ -100,7 +100,7 @@ The collateralization ratio is `200 WBTC / 10m USDC` or `0.00002 WBTC / USDC`.
 
 The collateral in a Loan must always satisfy the equation shown below in order to meet collateral maintenance requirements.
 
-<br/>
+
 
 $$
 \large
@@ -109,7 +109,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 Where:
 - `collateral` is the current `collateralAsset` accounted for in the Loan
@@ -117,7 +117,7 @@ Where:
 
 Rearranged, this gives us the minimum amount of `collateralAsset` that must be present in the Loan at any given time:
 
-<br/>
+
 
 $$
 \large
@@ -126,7 +126,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 This means that as the `outstandingPrincipal` decreases (which it will over the course of an amortized Loan), more and more `collateralAsset` can be safely withdrawn by the Borrower, increasing capital efficiency.
 
@@ -145,7 +145,7 @@ When a Loan is instantiated, the following parameters are declared and affect th
 
 The amortized payment schedule is calculated using a standard amortization calculation [formula](https://en.wikipedia.org/wiki/Amortization_calculator).
 
-<br/>
+
 
 $$
 \large
@@ -178,7 +178,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 ## Late Payments
 
@@ -188,7 +188,7 @@ When a payment is made after the `nextPaymentDueDate` timestamp in the Loan, it 
 
 Below is the calculation for a late payment, where `total` is the amount calculated in the equations above. All of the extra funds go towards interest.
 
-<br/>
+
 
 $$
 \large
@@ -197,7 +197,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 # Closing Loan
 
@@ -206,7 +206,7 @@ If a Borrower wants to close a Loan prematurely, they can do so by calling `clos
 
 Below is the calculation for `closeLoan` payment.
 
-<br/>
+
 
 $$
 \large
@@ -215,4 +215,4 @@ $$
 \end{align}
 $$
 
-<br/>
+

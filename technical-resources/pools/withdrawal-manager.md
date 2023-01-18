@@ -47,7 +47,7 @@ Over the duration of each withdrawal window, the total amount of assets required
 
 In case there is not enough liquidity to satisfy all withdrawals within the same window, the available amount of liquidity will be proportionally distributed between all users based on the sizes of their withdrawal requests. For instance, if there is only enough assets in the pool to satisfy 50% of the total amount of assets required for withdrawal, each user will only withdraw 50% of their requested amount. **Withdrawal requests that could not be completely fulfilled due to insufficient liquidity will also be fast forwarded to the next withdrawal cycle without any additional delays**. The formula for this distribution is:
 
-<br/>
+
 
 $$
 \large
@@ -55,11 +55,11 @@ $$
 \nonumber redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big)
 \end{align}
 $$
-<br/>
+
 
 where
 
-<br/>
+
 
 $$
 \large
@@ -67,11 +67,11 @@ $$
 \nonumber totalRequestedLiquidity = totalCycleShares(currentCycle) \times exchangeRate
 \end{align}
 $$
-<br/>
+
 
 where
 
-<br/>
+
 
 $$
 \large
@@ -79,13 +79,13 @@ $$
 \nonumber exchangeRate = \frac{totalAssets - unrealizedLosses}{totalSupply}
 \end{align}
 $$
-<br/>
+
 
 In a partial liquidity situation ( $availableLiquidity \lt totalRequestedLiquidity$ ) the cash will get distributed pro-rata based on how the equity of locked shares is distributed in the WithdrawalManager. The exchange rate will change over time. With no additional incoming cash, this will result in an even distribution of cash, but users that redeem when the exchange rate is higher will have to burn less shares to do so.
 
 It can be seen in a partial liquidity scenario, using the `exchangeRate` to convert the position to cash, that **the amount of cash that each user gets will remain constant**. The only thing that changes is the amount of shares that must be burned in order to obtain that cash amount. This is assuming constant `availableLiquidity`. Over the course of a withdrawal window, Borrowers can make payments and new LPs can deposit, increasing available cash. This will increase the amount of cash that will be able to be withdrawn by the users that remain. Note that this value can never decrease (except for users withdrawing), due to the fact that the PoolDelegate cannot fund new loans with cash above the `availableLiquidity` amount.
 
-<br/>
+
 
 $$
 \large
@@ -93,11 +93,11 @@ $$
 \nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate
 \end{align}
 $$
-<br/>
+
 
 Cancelling out `exchangeRate` yields:
 
-<br/>
+
 
 $$
 \large
@@ -105,11 +105,11 @@ $$
 \nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)}
 \end{align}
 $$
-<br/>
+
 
 Or, more intuitively:
 
-<br/>
+
 
 $$
 \large
@@ -117,7 +117,7 @@ $$
 \nonumber redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)}
 \end{align}
 $$
-<br/>
+
 
 For an example of this in practice, please refer to [Example 3](./withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
 
@@ -143,7 +143,7 @@ In the case of partial liquidity, the pro-rata calculation must be performed.
 
 For user 1, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.2, resulting in 48 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. This is important to note as this only occurs when there is partial liquidity.
 
-<br/>
+
 
 $$
 \large
@@ -156,11 +156,11 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 For user 1, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.2, resulting in 192 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. This is important to note as this only occurs when there is partial liquidity.
 
-<br/>
+
 
 $$
 \large
@@ -173,7 +173,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44272939/196678917-e47715db-0436-4d12-886a-0fe8bfb79d26.svg" height="1000" />
@@ -185,7 +185,7 @@ In the case of partial liquidity, the pro-rata calculation must be performed.
 
 For user 1, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.2, resulting in 48 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. This is important to note as this only occurs when there is partial liquidity.
 
-<br/>
+
 
 $$
 \large
@@ -198,11 +198,11 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 For user 1, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.5, resulting in 192 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. Note that this yielded the same amount of cash as in Example 2, but less shares had to be burned to do so.
 
-<br/>
+
 
 $$
 \large
@@ -215,7 +215,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44272939/198855863-fbd0989f-412c-4ce9-b129-3546866193b2.svg" height="1000" />
@@ -225,7 +225,7 @@ $$
 
 During a Withdrawal Window, it is possible for additional liquidity to come into the pool. In this situation, this can positively affect LPs' positions. In this example, user 1 has the same pro-rata distribution as in Example 2, but since additional liquidity was added to the system, user 2 can exit with full liquidity.
 
-<br/>
+
 
 $$
 \large
@@ -237,7 +237,7 @@ $$
 \end{align}
 $$
 
-<br/>
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44272939/196678915-770f092d-a1aa-4bff-9018-539934300984.svg" height="1000" />
