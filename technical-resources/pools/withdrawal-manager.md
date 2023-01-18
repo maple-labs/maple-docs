@@ -50,7 +50,6 @@ In case there is not enough liquidity to satisfy all withdrawals within the same
 
 
 $$
-\large
 \begin{align}
 \nonumber redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big)
 \end{align}
