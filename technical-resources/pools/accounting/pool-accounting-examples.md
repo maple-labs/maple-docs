@@ -9,7 +9,7 @@ This section is intended to demonstrate multiple scenarios with loans to show ho
 
 **Note 1**: For all of the below examples, only interest is being paid so outstanding principal (`principalOut`) remains constant.
 
-**Note 2**: For the purpose of simplicity, `issuanceRate` is represented as $units/day$ in the equations below. In reality, it is represented as $units \times 1e30 / second$.
+**Note 2**: For the purpose of simplicity, `issuanceRate` is represented as $units/day$ in the equations below. In reality, it is represented as $$ units \times 1e30 / second $$.
 
 **Note 3**: None of the below diagrams are to scale.
 
@@ -369,8 +369,6 @@ Accounting gets updated in the same way as [Example 4](./pool-accounting-example
 
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
 
-
-
 $$
 \large
 \begin{align*}
@@ -381,10 +379,7 @@ $$
 \end{align*}
 $$
 
-
 `totalAssets` accounting gets updated as follows:
-
-
 
 $$
 \large
@@ -395,12 +390,9 @@ $$
 \end{align}
 $$
 
-
 ## Loan 1 Payment 2
 
 It can be seen that during this transaction, outstanding interest accounting gets updated as follows:
-
-
 
 $$
 \large
@@ -414,8 +406,6 @@ $$
 
 
 `totalAssets` accounting gets updated as follows:
-
-
 
 $$
 \large
