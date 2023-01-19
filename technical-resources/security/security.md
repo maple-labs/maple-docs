@@ -16,7 +16,7 @@ Maple V2 has an active bug bounty to incentive whitehat hackers to report any is
 
 In order to discuss critical monitoring first its important to be clear on the invariants that are asserted which can be found below.
 
-``
+```
 * Loan
    * Invariant A: collateral balance >= _collateral
    * Invariant B: fundsAsset >= _drawableFunds
