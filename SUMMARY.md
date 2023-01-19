@@ -76,7 +76,7 @@
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
-  * [Liquidity Migration Procedure](technical-resources/operations/liquidity-migration-procedure.md)
+
 * [GraphQL API](technical-resources/graphql-api.md)
 
 ## Troubleshooting & Support
