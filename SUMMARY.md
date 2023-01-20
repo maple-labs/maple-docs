@@ -76,7 +76,18 @@
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
-
+  * [Liquidity Migration Procedure](technical-resources/operations/liquidity-migration-procedure.md)
+* NatSpec
+  * [Liquidator](technical-resources/natspec/liquidator.md)
+  * [LoanManager](technical-resources/natspec/loan-manager.md)
+  * [MapleGlobals](technical-resources/natspec/maple-globals.md)
+  * [MapleLoanFeeManager](technical-resources/natspec/maple-loan-fee-manager.md)
+  * [MapleLoan](technical-resources/natspec/maple-loan.md)
+  * [PoolDelegateCover](technical-resources/natspec/pool-delegate-cover.md)
+  * [PoolManager](technical-resources/natspec/pool-manager.md)
+  * [Pool](technical-resources/natspec/pool.md)
+  * [Refinancer](technical-resources/natspec/refinancer.md)
+  * [WithdrawalManager](technical-resources/natspec/withdrawal-manager.md)
 * [GraphQL API](technical-resources/graphql-api.md)
 
 ## Troubleshooting & Support
