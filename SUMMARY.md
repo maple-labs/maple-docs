@@ -88,6 +88,18 @@
   * [Pool](technical-resources/natspec/pool.md)
   * [Refinancer](technical-resources/natspec/refinancer.md)
   * [WithdrawalManager](technical-resources/natspec/withdrawal-manager.md)
+  * Factories
+    * [LiquidatorFactory](technical-resources/natspec/liquidator-factory.md)
+    * [LoanFactory](technical-resources/natspec/loan-factory.md)
+    * [LoanManagerFactory](technical-resources/natspec/loan-manager-factory.md)
+    * [PoolManagerFactory](technical-resources/natspec/pool-manager-factory.md)
+    * [WithdrawalManagerFactory](technical-resources/natspec/withdrawal-manager-factory.md)
+  * Initializers
+    * [LiquidatorInitializer](technical-resources/natspec/liquidator-initializer.md)
+    * [LoanInitializer](technical-resources/natspec/loan-initializer.md)
+    * [LoanManagerInitializer](technical-resources/natspec/loan-manager-initializer.md)
+    * [PoolManagerInitializer](technical-resources/natspec/pool-manager-initializer.md)
+    * [WithdrawalManagerInitializer](technical-resources/natspec/withdrawal-manager-initializer.md)
 * [GraphQL API](technical-resources/graphql-api.md)
 
 ## Troubleshooting & Support
