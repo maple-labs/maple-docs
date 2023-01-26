@@ -76,7 +76,27 @@
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
-
+* Interfaces
+  * [Liquidator](technical-resources/interfaces/liquidator.md)
+  * [LiquidatorFactory](technical-resources/interfaces/liquidator-factory.md)
+  * [LiquidatorInitializer](technical-resources/interfaces/liquidator-initializer.md)
+  * [LoanManager](technical-resources/interfaces/loan-manager.md)
+  * [LoanManagerFactory](technical-resources/interfaces/loan-manager-factory.md)
+  * [LoanManagerInitializer](technical-resources/interfaces/loan-manager-initializer.md)
+  * [MapleGlobals](technical-resources/interfaces/maple-globals.md)
+  * [MapleLoan](technical-resources/interfaces/maple-loan.md)
+  * [MapleLoanFactory](technical-resources/interfaces/maple-loan-factory.md)
+  * [MapleLoanFeeManager](technical-resources/interfaces/maple-loan-fee-manager.md)
+  * [MapleLoanInitializer](technical-resources/interfaces/maple-loan-initializer.md)
+  * [Pool](technical-resources/interfaces/pool.md)
+  * [PoolDelegateCover](technical-resources/interfaces/pool-delegate-cover.md)
+  * [PoolManager](technical-resources/interfaces/pool-manager.md)
+  * [PoolManagerFactory](technical-resources/interfaces/pool-manager-factory.md)
+  * [PoolManagerInitializer](technical-resources/interfaces/pool-manager-initializer.md)
+  * [Refinancer](technical-resources/interfaces/refinancer.md)
+  * [WithdrawalManager](technical-resources/interfaces/withdrawal-manager.md)
+  * [WithdrawalManagerFactory](technical-resources/interfaces/withdrawal-manager-factory.md)
+  * [WithdrawalManagerInitializer](technical-resources/interfaces/withdrawal-manager-initializer.md)
 * [GraphQL API](technical-resources/graphql-api.md)
 
 ## Troubleshooting & Support
