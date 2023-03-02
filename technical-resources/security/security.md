@@ -78,3 +78,15 @@ Additionally all smart contracts get programmatically verified on Etherscan via 
 # Emergency Pause Function
 
 In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](../security/emergency-protocol-pause-function.md).
+
+# Oracle/Flash Loan Protections
+
+Maple Finance has implemented a number of protections to mitigate the risk of flash loans and front-running attacks. These protections are outlined below.
+
+1. Chainlink Oracles - Maple Finance uses Chainlink oracles to provide price feeds for the protocol. Chainlink oracles are decentralized and provide a high level of security and reliability. In addition, Chainlink oracles are designed to be resistant to flash loan attacks since they provide price data from off-chain sources. More information on Chainlink oracles can be found [here](https://docs.chain.link/).
+2. Oracle Wrappers - Maple Finance uses oracle wrappers to provide additional security and reliability to the Chainlink oracles. Oracle wrappers are designed to prevent oracle outages and oracle manipulation from causing issues in the protocol, specifically during liquidations.
+3. Minimum Liquidation Price - The minimum liquidation price is a parameter that is set by the Pool Delegate. This parameter is used to prevent liquidations from occurring when the price of the collateral is too low. This is done to prevent flash loan attacks from being able to liquidate collateral at unfair prices.
+4. Withdrawal Cooldowns - With withdrawal cooldowns, LPs are required to wait a certain amount of time before they can withdraw their funds. This is done to prevent flash loan attacks from being able to front-run LPs and deposit and withdraw funds to profit unfairly from discrete increases in pool value.
+
+# Front-Running Protections
+Every ERC-20 asset has a `bootstrapMint` amount that is set by the Governor. This is to prevent attackers from front-running the first depositor in a Pool to get an unfair distribution of Pool value. Outlines of this exploit can be found [here](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf) under finding 5.1.1.

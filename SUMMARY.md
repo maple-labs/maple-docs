@@ -36,7 +36,7 @@
   * [Protocol Actors](technical-resources/protocol-overview/protocol-actors.md)
   * [Smart Contract Architecture](technical-resources/protocol-overview/smart-contract-architecture.md)
   * [Glossary](technical-resources/protocol-overview/glossary.md)
-  * [Protocol Registry](technical-resources/protocol-overview/protocol-registry.md)
+  * [Smart Contract Addresses](technical-resources/protocol-overview/smart-contract-addresses.md)
   * [Fees](technical-resources/protocol-overview/fees.md)
   * [Composability](technical-resources/protocol-overview/composability.md)
   * [Proxies and Upgradeability](technical-resources/protocol-overview/proxies-and-upgradeability.md)
