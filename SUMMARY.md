@@ -46,6 +46,7 @@
   * [External Entry Points](technical-resources/security/external-entry-points.md)
   * [Emergency Protocol Pause Function](technical-resources/security/emergency-protocol-pause-function.md)
   * [Protocol Invariants](technical-resources/security/protocol-invariants.md)
+  * [Test Report](technical-resources/security/test-report.md)
 * Loans
   * [Loans](technical-resources/loans/loans.md)
   * [Loan Creation](technical-resources/loans/loan-creation.md)
