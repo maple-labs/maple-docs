@@ -1,6 +1,6 @@
 # Usage Guide
 
-This comprehensive guide will help you understand how to use the Maple SDK for various tasks, such as connecting to contracts and executing transactions.
+This guide will help you understand how to use the Maple SDK for various tasks, such as connecting to contracts and executing transactions.
 
 ## Overview
 
@@ -41,7 +41,7 @@ const contract = mapleGlobals.core.connect(contractAddress, signer);
 ```
 
 ## Interacting with Contracts
-Once you are connected to a contract, you can call any of its available methods using the `contract` instance. The `maple-js` contracts use TypeChain, enabling you to see all available methods using intellisense in your IDE.
+Once you are connected to a contract, you can call any of its available methods using the `contract` instance. The `maple-js` contracts use TypeChain, enabling you to see all available methods using IntelliSense in your IDE.
 
 **Querying Contract Data**
 
