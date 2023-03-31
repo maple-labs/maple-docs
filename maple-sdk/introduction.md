@@ -4,6 +4,8 @@
 
 By utilizing the JavaScript SDK for Maple Protocol, developers can efficiently create robust and secure dApps that leverage the full potential of Maple Protocol's smart contracts, fostering innovation and driving the adoption of decentralized finance solutions.
 
+Wether you are building backend services, frontend applications, or a combination of both, the Maple SDK provides the tools you need to create a seamless user experience.
+
 ## Features
 
 1. **Loan management** with versioned support (v4 and v5) through `loanV4Imports`, and `loanV5Imports`
@@ -18,3 +20,5 @@ By utilizing the JavaScript SDK for Maple Protocol, developers can efficiently c
 10. **Open-term loan manager functionality** using `openTermLoanManagerImports`
 
 These functionalities cover a wide range of aspects related to the management of loans, tokens, pools, and global settings within the Maple Protocol ecosystem. They also provide support for various versions of contracts, allowing for flexibility and adaptability to different requirements.
+
+⚠️ **Important Note:** Maple is using two different proxy patterns for it's contracts. `MapleProxyFactory` is a smart contract factory pattern that allows for the creation of multiple proxies for a single underlying contract, while `NonTransparentProxy` is a pattern that uses a single proxy contract to interact with an underlying contract and keeps the details of the underlying contract hidden from external parties.

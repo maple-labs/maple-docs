@@ -1,6 +1,6 @@
 # Installation
 
-This SDK is provided as a single package that can be installed using your favorite package manager.
+This SDK is provided as a single package that can be installed using package manager of your choice.
 
 ```
 npm install --save @maplelabs/maple-js
