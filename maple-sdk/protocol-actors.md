@@ -1,4 +1,4 @@
-# Protocol actors guide
+# Protocol Actors
 
 There are three actors in the Maple Protocol ecosystem:
 
@@ -6,7 +6,7 @@ There are three actors in the Maple Protocol ecosystem:
 - Lenders
 - Pool Delegates
 
-## Borrowers
+# Borrowers
 
 - Borrowers request loans with specific terms and can provide collateral as required.
 - Borrowers can drawdown loans once approved and funded.
@@ -34,7 +34,7 @@ async function main() {
 main();
 ```
 
-## Lenders
+# Lenders
 
 - Lenders can deposit specific assets to certain pools.
 - Lenders earn interest on their deposits as borrowers repay the loans.
@@ -69,7 +69,7 @@ async function main() {
 main();
 ```
 
-## Delegates
+# Delegates
 
 - Delegates assess and approve/fund loan requests based on a criteria specific to each pool.
 - Delegates can accept/reject refinance proposals.

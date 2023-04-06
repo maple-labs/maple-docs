@@ -6,17 +6,28 @@ Utilizing the JavaScript SDK for Maple Protocol allows developers to efficiently
 
 Whether you are building backend services, frontend applications, or a combination of both, the Maple SDK provides the tools you need to create a seamless user experience.
 
-## Features
+# Exports
 
-1. **Loan management** with versioned support (v4 and v5) through `loanV4Imports`, and `loanV5Imports`
-2. **Global settings and configurations management** in versioned support (v1, v2, and v2v2) through `mapleGlobalsImports`, `mapleGlobalsV2Imports`, and `mapleGlobalsV2V2Imports`
-3. **Maple Protocol token management** with `mapleTokenImports`
-4. **XMPL token management** with `xmplImports`
-5. **Pool management** with versioned support (v1 and v2) through `poolV1Imports` and `poolV2Imports`
-6. **Pool management** using `poolImports`
-7. **Withdrawal management** with `withdrawalManagerImports`
-8. **Fixed-term loan management** with `fixedTermLoanManagerImports`
-9. **Open-term loan management** with `openTermLoanImports`
-10. **Open-term loan manager functionality** using `openTermLoanManagerImports`
-
-These functionalities cover a wide range of aspects related to the management of loans, tokens, pools, and global settings within the Maple Protocol ecosystem. They also provide support for various versions of contracts, allowing for flexibility and adaptability to different requirements.
+| Export                 | Purpose                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| `addresses`            | Contains the contract addresses for different networks (mainnet, testnet)               |
+| `loanV5`               | Implements the latest loan functionality                                                |
+| `openTermLoan`         | Implements open-term loans functionality                                                |
+| `mapleGlobalsV2`       | Manages global settings and configurations for Maple Protocol (version 2)               |
+| `mapleGlobalsV2V2`     | Manages global settings and configurations for Maple Protocol (version 2.2)             |
+| `mapleRewards`         | Manages rewards distribution in the Maple Protocol ecosystem                            |
+| `mapleToken`           | Implements the Maple Protocol token functionality                                       |
+| `xmpl`                 | Implements the XMPL token functionality                                                 |
+| `poolV2`               | Manages liquidity pools in the Maple Protocol ecosystem (version 2)                     |
+| `poolManager`          | Manages pool creation and management functionality                                      |
+| `loanManager`          | Manages loan creation and management functionality                                      |
+| `poolManagerV2`        | Manages pool creation and management functionality (version 2)                          |
+| `openTermLoanManager`  | Manages open-term loan creation and management functionality                            |
+| `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality                           |
+| `withdrawalManager`    | Manages withdrawal functionality in the Maple Protocol ecosystem                        |
+| `bPool`                | Manages Balancer liquidity pool functionality                                           |
+| `chainlink`            | Manages Chainlink oracle functionality                                                  |
+| `erc20`                | Standard ERC20 token contract functionality                                             |
+| `uniswapRouterV2`      | Manages Uniswap V2 router functionality                                                 |
+| `ContractTypes`        | Enumerates different contract types in the Maple Protocol ecosystem                     |
+| `MapleAddressMapping`  | Mapping of contract addresses to their respective types in the Maple Protocol ecosystem |

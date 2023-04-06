@@ -2,19 +2,17 @@
 
 This guide will help you understand how to use the Maple SDK for various tasks, such as connecting to contracts and executing transactions.
 
-## Overview
+# Overview
 
-The Maple SDK simplifies interacting with Maple Finance's smart contracts on Ethereum blockchain. It includes address mappings for each contract to facilitate deploying to different networks: `Ethereum Mainnet` and `Goerli`. The available networks are `mainnet-prod`, `mainnet-dev`, `goerli-prod` and `goerli-dev`.
+The Maple SDK simplifies interacting with Maple Finance's smart contracts on Ethereum blockchain. It includes address mappings for each contract to facilitate deploying to different networks: `mainnet-prod`, `mainnet-dev`, `goerli-prod` and `goerli-dev`.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
 
-## Getting Started
-
-**Accessing Contract Addresses**
+# Getting Started
 
 Access contract addresses using the `addresses` object exported from `maple-js`.
 
-**Code Example:**
+To connect to a contract, you will need a contract address and a signer (usually a wallet instance). For more information on creating a signer, refer to the [ethers documentation](https://docs.ethers.io/v5/) or your preferred web3 library.
 
 ```js
 import { addresses, mapleGlobals } from "@maplelabs/maple-js";
@@ -25,22 +23,7 @@ const signer = new providers.JsonRpcProvider(RPC_ENDPOINT);
 const contract = mapleGlobals.core.connect(contractAddress, signer);
 ```
 
-## Connecting to a Contract
-
-To connect to a contract, you will need a contract address and a signer (usually a wallet instance). For more information on creating a signer, refer to the [ethers documentation](https://docs.ethers.io/v5/) or your preferred web3 library.
-
-**Code Example:**
-
-```js
-import { mapleGlobals } from "@maplelabs/maple-js";
-
-const contractAddress = addresses["mainnet-prod"].MapleToken;
-const signer = new providers.JsonRpcProvider(RPC_ENDPOINT);
-
-const contract = mapleGlobals.core.connect(contractAddress, signer);
-```
-
-## Interacting with Contracts
+# Interacting with Contracts
 
 Once you are connected to a contract, you can call any of its available methods using the `contract` instance. The `maple-js` contracts use TypeChain, enabling you to see all available methods using IntelliSense in your IDE.
 
@@ -63,11 +46,8 @@ const poolContract = poolV2.core.connect(
   poolAddress,
   new providers.JsonRpcProvider(RPC_ENDPOINT)
 );
-const method = await (await poolContract.deposit(depositAmount)).wait();
+
+const receipt = await (
+  await poolContract.deposit(depositAmount, account)
+).wait();
 ```
-
-Remember to replace the example code snippets with the appropriate imports, variables, and contract details relevant to your specific use case.
-
-## Important Note
-
-Maple uses a proxy pattern `MapleProxyFactory` to allow contracts to be upgraded
