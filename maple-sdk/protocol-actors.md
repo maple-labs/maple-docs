@@ -8,9 +8,9 @@ There are three actors in the Maple Protocol ecosystem:
 
 # Borrowers
 
-- Borrowers initiate loan requests, specifying terms and providing collateral if needed.
-- Once approved and funded, borrowers can drawdown loans.
-- Borrowers must repay the principal and interest payments through the associated smart contracts.
+- Borrowers initiate loan requests by specifying terms and providing collateral if required.
+- Borrowers draw down loans after they are approved and funded.
+- Borrowers repay principal and interest through associated smart contracts.
 
 **Code Example:**
 This snippet queries the [`GlobalsV2`](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview/smart-contract-architecture#maple-globals) contract to check if a given address is an authorized borrower
@@ -36,9 +36,9 @@ main();
 
 # Lenders
 
-- Lenders can deposit specific assets to certain pools.
-- Lenders earn interest on their deposits as borrowers repay the loans.
-- Lenders can withdraw their assets from the pool through the `WithdrawalManager` contract.
+- Lenders deposit specific assets into designated pools.
+- Lenders accumulate interest on deposits as borrowers repay loans.
+- Lenders withdraw assets from pools using the `WithdrawalManager` contract.
 
 **Code Example:**
 
@@ -71,9 +71,9 @@ main();
 
 # Delegates
 
-- Delegates assess and approve/fund loan requests based on a criteria specific to each pool.
-- Delegates can accept/reject refinance proposals.
-- Delegates can operate various pool management utilites e.g. adjusting the liquidity cap or authorising certain lenders.
+- Delegates evaluate and approve/fund loan requests based on criteria specific to each pool.
+- Delegates accept or reject refinance proposals.
+- Delegates manage various pool utilities, such as adjusting the liquidity cap or authorizing certain lenders.
 
 **Code Example:**
 This snippet queries the `poolV2` contract to query the on-chain name of a given pool
