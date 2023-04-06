@@ -4,9 +4,26 @@ This guide will help you understand how to use the Maple SDK for various tasks, 
 
 # Overview
 
-The Maple SDK simplifies interacting with Maple Finance's smart contracts on Ethereum blockchain. It includes address mappings for each contract to facilitate deploying to different networks: `mainnet-prod`, `mainnet-dev`, `goerli-prod` and `goerli-dev`.
+The Maple SDK simplifies interacting with Maple Finance's smart contracts on the Ethereum blockchain. It includes address mappings for each contract to facilitate deployment to different networks and environments.
+
+There are two networks:
+
+1. **Mainnet**: The main Ethereum network, where real-world transactions occur.
+2. **Goerli**: A test network (testnet) for Ethereum, where developers can test their dApps and contracts with test tokens.
+
+Each network has two environments:
+
+1. **Prod**: The production environment, where the official, stable versions of the contracts are deployed.
+2. **Dev**: The development environment, where new features or updates are tested before being deployed to the production environment.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
+
+The available combinations are:
+
+- `mainnet-prod`: Production environment on the main Ethereum network
+- `mainnet-dev`: Development environment on the main Ethereum network
+- `goerli-prod`: Production environment on the Goerli test network
+- `goerli-dev`: Development environment on the Goerli test network
 
 # Getting Started
 

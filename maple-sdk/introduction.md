@@ -11,26 +11,26 @@ Whether you are building backend services, frontend applications, or a combinati
 | Export                 | Purpose                                                                                 |
 | ---------------------- | --------------------------------------------------------------------------------------- |
 | `addresses`            | Contains the contract addresses for different networks (mainnet, testnet)               |
+| `bPool`                | Manages Balancer liquidity pool functionality                                           |
+| `chainlink`            | Manages Chainlink oracle functionality                                                  |
+| `ContractTypes`        | Enumerates different contract types in the Maple Protocol ecosystem                     |
+| `erc20`                | Standard ERC20 token contract functionality                                             |
+| `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality                           |
+| `loanManager`          | Manages loan creation and management functionality                                      |
 | `loanV5`               | Implements the latest loan functionality                                                |
-| `openTermLoan`         | Implements open-term loans functionality                                                |
+| `MapleAddressMapping`  | Mapping of contract addresses to their respective types in the Maple Protocol ecosystem |
 | `mapleGlobalsV2`       | Manages global settings and configurations for Maple Protocol (version 2)               |
 | `mapleGlobalsV2V2`     | Manages global settings and configurations for Maple Protocol (version 2.2)             |
 | `mapleRewards`         | Manages rewards distribution in the Maple Protocol ecosystem                            |
 | `mapleToken`           | Implements the Maple Protocol token functionality                                       |
-| `xmpl`                 | Implements the XMPL token functionality                                                 |
-| `poolV2`               | Manages liquidity pools in the Maple Protocol ecosystem (version 2)                     |
-| `poolManager`          | Manages pool creation and management functionality                                      |
-| `loanManager`          | Manages loan creation and management functionality                                      |
-| `poolManagerV2`        | Manages pool creation and management functionality (version 2)                          |
+| `openTermLoan`         | Implements open-term loans functionality                                                |
 | `openTermLoanManager`  | Manages open-term loan creation and management functionality                            |
-| `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality                           |
-| `withdrawalManager`    | Manages withdrawal functionality in the Maple Protocol ecosystem                        |
-| `bPool`                | Manages Balancer liquidity pool functionality                                           |
-| `chainlink`            | Manages Chainlink oracle functionality                                                  |
-| `erc20`                | Standard ERC20 token contract functionality                                             |
+| `poolManager`          | Manages pool creation and management functionality                                      |
+| `poolManagerV2`        | Manages pool creation and management functionality (version 2)                          |
+| `poolV2`               | Manages liquidity pools in the Maple Protocol ecosystem (version 2)                     |
 | `uniswapRouterV2`      | Manages Uniswap V2 router functionality                                                 |
-| `ContractTypes`        | Enumerates different contract types in the Maple Protocol ecosystem                     |
-| `MapleAddressMapping`  | Mapping of contract addresses to their respective types in the Maple Protocol ecosystem |
+| `withdrawalManager`    | Manages withdrawal functionality in the Maple Protocol ecosystem                        |
+| `xmpl`                 | Implements the XMPL token functionality                                                 |
 
 Depending on a Smart contract package structure, the SDK export might include different properties, such as `core`, `factory`, `initializer`, `deployer`, which can be accessible through the export. For example, the `openTermLoan` export includes the following properties:
 
