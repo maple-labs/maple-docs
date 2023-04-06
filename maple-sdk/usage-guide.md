@@ -12,15 +12,15 @@ Access addresses from the `addresses` object exported from `maple-js`. See a lis
 
 **Accessing Contract Addresses**
 
-Access contract addresses using the `addresses` object exported from `maple-js`. You can find the list of available contracts in the `src/addresses/*.ts` files.
+Access contract addresses using the `addresses` object exported from `maple-js`.
 
 **Code Example:**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { addresses, mapleGlobals } from "@maplelabs/maple-js";
 
-const contractAddress = addresses['mainnet-prod'].MapleToken;
-const signer = 'yourSigner';
+const contractAddress = addresses["mainnet-prod"].MapleToken;
+const signer = new providers.JsonRpcProvider(RPC_ENDPOINT);
 
 const contract = mapleGlobals.core.connect(contractAddress, signer);
 ```
@@ -32,33 +32,42 @@ To connect to a contract, you will need a contract address and a signer (usually
 **Code Example:**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { mapleGlobals } from "@maplelabs/maple-js";
 
-const contractAddress = addresses['mainnet-prod'].MapleToken;
-const signer = 'yourSigner';
+const contractAddress = addresses["mainnet-prod"].MapleToken;
+const signer = new providers.JsonRpcProvider(RPC_ENDPOINT);
 
 const contract = mapleGlobals.core.connect(contractAddress, signer);
 ```
 
 ## Interacting with Contracts
+
 Once you are connected to a contract, you can call any of its available methods using the `contract` instance. The `maple-js` contracts use TypeChain, enabling you to see all available methods using IntelliSense in your IDE.
 
 **Querying Contract Data**
 
 For basic queries, such as fetching public variables or calling view functions, you can use the standard `await` pattern:
-    
+
 ```js
 const basicQuery = await contract.lpCooldownPeriod();
 ```
 
 ## Executing Transactions
-When executing a transaction, such as calling a state-modifying function, you should use the `.wait()` method. This will resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
-    
-```js
-import { pool } from '@maplelabs/maple-js';
 
-const poolContract = pool.core.connect(poolAddress, signer);
+When executing a transaction, such as calling a state-modifying function, you should use the `.wait()` method. This will resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
+
+```js
+import { poolV2 } from "@maplelabs/maple-js";
+
+const poolContract = poolV2.core.connect(
+  poolAddress,
+  new providers.JsonRpcProvider(RPC_ENDPOINT)
+);
 const method = await (await poolContract.deposit(depositAmount)).wait();
 ```
 
 Remember to replace the example code snippets with the appropriate imports, variables, and contract details relevant to your specific use case.
+
+## Important Note
+
+Maple uses a proxy pattern `MapleProxyFactory` to allow contracts to be upgraded

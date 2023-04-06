@@ -1,51 +1,98 @@
 # Protocol actors guide
 
-There are three actors in the Maple Protocol ecosystem: borrowers, lenders and pool delegates. This guide will explain how each of these actors can interact with Maple Protocol's smart contracts.
+There are three actors in the Maple Protocol ecosystem:
+
+- Borrowers
+- Lenders
+- Pool Delegates
 
 ## Borrowers
 
-Borrowers are entities that seek to obtain loans from the Maple Protocol ecosystem. They interact with the smart contracts to request loans, specify the loan terms, and provide collateral as required. Once a loan is approved, borrowers can utilize the funds for their specific needs and are responsible for repaying the loan along with any applicable interest.
+- Borrowers request loans with specific terms and can provide collateral as required.
+- Borrowers can drawdown loans once approved and funded.
+- Borrowers are responsible for repaying the principal and interest payments through the same smart contracts.
 
 **Code Example:**
+This snippet queries the `GlobalsV2` contract to check if a given address is an authorised borrower
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { providers } from "ethers";
+import { addresses, mapleGlobalsV2 } from "@maplelabs/maple-js";
 
-const contractAddress = addresses['mainnet-prod'].MapleToken; // some borrowers specific contract
-const signer = 'yourSigner';
+const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
 
-// some borrowers specific action
-const contract = mapleGlobals.core.connect(contractAddress, signer);
+async function main() {
+  const contract = mapleGlobalsV2.core.connect(
+    addresses["mainnet-prod"].MapleGlobalsV2,
+    new providers.JsonRpcProvider(RPC_ENDPOINT)
+  );
+
+  const isBorrower = await contract.isBorrower("YOUR_ADDRESS");
+  console.log({ isBorrower });
+}
+
+main();
 ```
 
 ## Lenders
 
-Lenders are individuals or entities that provide capital to the Maple Protocol ecosystem in the form of digital assets. They interact with the smart contracts to deposit their funds, which are then pooled together and made available for loans. Lenders earn interest on their deposits as borrowers repay the loans.
+- Lenders can deposit specific assets to certain pools.
+- Lenders earn interest on their deposits as borrowers repay the loans.
+- Lenders can withdraw their assets from the pool through the `WithdrawalManager` contract.
 
 **Code Example:**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { BigNumber, providers } from "ethers";
+import { addresses, poolV2, erc20 } from "@maplelabs/maple-js";
 
-const contractAddress = addresses['mainnet-prod'].MapleToken; // some lenders specific contract
-const signer = 'yourSigner';
+const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
+const POOL_ADDRESS = "{POOL_ID}";
 
-// some lenders specific action
-const contract = mapleGlobals.core.connect(contractAddress, signer);
+async function main() {
+  const provider = new providers.JsonRpcProvider(RPC_ENDPOINT);
+
+  const poolContract = poolV2.core.connect(POOL_ADDRESS, provider.getSigner());
+  const usdcContract = erc20.core.connect(
+    addresses["mainnet-prod"].USDC,
+    provider.getSigner()
+  );
+
+  const account = "{YOUR_ACCOUNT}";
+  const one_dollar = BigNumber.from(1000000);
+
+  await (await usdcContract.approve(POOL_ADDRESS, one_dollar)).wait();
+
+  await (await poolContract.deposit(one_dollar, account)).wait();
+}
+
+main();
 ```
 
 ## Delegates
 
-Delegates are entities that play a crucial role in assessing and approving loan requests. They interact with the smart contracts to review borrowers' loan applications, perform risk assessment, and ultimately approve or reject loans based on their evaluation. Delegates may charge fees for their services and help maintain the overall stability and trustworthiness of the Maple Protocol ecosystem.
+- Delegates assess and approve/fund loan requests based on a criteria specific to each pool.
+- Delegates can accept/reject refinance proposals.
+- Delegates can operate various pool management utilites e.g. adjusting the liquidity cap or authorising certain lenders.
 
 **Code Example:**
+This snippet queries the `poolV2` contract to query the on-chain name of a given pool
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { providers } from "ethers";
+import { poolV2 } from "@maplelabs/maple-js";
 
-const contractAddress = addresses['mainnet-prod'].MapleToken; // some delegates specific contract
-const signer = 'yourSigner';
+const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
 
-// some delegates specific action
-const contract = mapleGlobals.core.connect(contractAddress, signer);
+async function main() {
+  const contract = poolV2.core.connect(
+    "{POOL_ID}",
+    new providers.JsonRpcProvider(RPC_ENDPOINT)
+  );
+
+  const name = await contract.name();
+  console.log({ name });
+}
+
+main();
 ```
