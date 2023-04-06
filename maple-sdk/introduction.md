@@ -31,3 +31,13 @@ Whether you are building backend services, frontend applications, or a combinati
 | `uniswapRouterV2`      | Manages Uniswap V2 router functionality                                                 |
 | `ContractTypes`        | Enumerates different contract types in the Maple Protocol ecosystem                     |
 | `MapleAddressMapping`  | Mapping of contract addresses to their respective types in the Maple Protocol ecosystem |
+
+Depending on a Smart contract package structure, the SDK export might include different properties, such as `core`, `factory`, `initializer`, `deployer`, which can be accessible through the export. For example, the `openTermLoan` export includes the following properties:
+
+```js
+const openTermLoan = {
+  core: openTermLoanImports.MapleLoan__factory,
+  factory: openTermLoanImports.MapleLoanFactory__factory,
+  initializer: openTermLoanImports.MapleLoanInitializer__factory,
+};
+```
