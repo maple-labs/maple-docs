@@ -16,18 +16,18 @@ There are three actors in the Maple Protocol ecosystem:
 This snippet queries the [`GlobalsV2`](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview/smart-contract-architecture#maple-globals) contract to check if a given address is an authorized borrower
 
 ```js
-import { providers } from "ethers";
-import { addresses, mapleGlobalsV2 } from "@maplelabs/maple-js";
+import { providers } from 'ethers';
+import { addresses, mapleGlobalsV2 } from '@maplelabs/maple-js';
 
-const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
+const RPC_ENDPOINT = 'https://mainnet.infura.io/v3/{YOUR_KEY}';
 
 async function main() {
   const contract = mapleGlobalsV2.core.connect(
-    addresses["mainnet-prod"].MapleGlobalsV2,
+    addresses['mainnet-prod'].MapleGlobalsV2,
     new providers.JsonRpcProvider(RPC_ENDPOINT)
   );
 
-  const isBorrower = await contract.isBorrower("YOUR_ADDRESS");
+  const isBorrower = await contract.isBorrower('YOUR_ADDRESS');
   console.log({ isBorrower });
 }
 
@@ -43,27 +43,24 @@ main();
 **Code Example:**
 
 ```js
-import { BigNumber, providers } from "ethers";
-import { addresses, poolV2, erc20 } from "@maplelabs/maple-js";
+import { BigNumber, providers } from 'ethers';
+import { addresses, poolV2, erc20 } from '@maplelabs/maple-js';
 
-const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
-const POOL_ADDRESS = "{POOL_ID}";
+const RPC_ENDPOINT = 'https://mainnet.infura.io/v3/{YOUR_KEY}';
+const POOL_ADDRESS = '{POOL_ID}';
 
 async function main() {
   const provider = new providers.JsonRpcProvider(RPC_ENDPOINT);
 
   const poolContract = poolV2.core.connect(POOL_ADDRESS, provider.getSigner());
-  const usdcContract = erc20.core.connect(
-    addresses["mainnet-prod"].USDC,
-    provider.getSigner()
-  );
+  const usdcContract = erc20.core.connect(addresses['mainnet-prod'].USDC, provider.getSigner());
 
-  const account = "{YOUR_ACCOUNT}";
-  const one_dollar = BigNumber.from(1000000);
+  const account = '{YOUR_ACCOUNT}';
+  const oneDollar = BigNumber.from(1000000);
 
-  await (await usdcContract.approve(POOL_ADDRESS, one_dollar)).wait();
+  await (await usdcContract.approve(POOL_ADDRESS, oneDollar)).wait();
 
-  await (await poolContract.deposit(one_dollar, account)).wait();
+  await (await poolContract.deposit(oneDollar, account)).wait();
 }
 
 main();
@@ -79,16 +76,13 @@ main();
 This snippet queries the `poolV2` contract to query the on-chain name of a given pool
 
 ```js
-import { providers } from "ethers";
-import { poolV2 } from "@maplelabs/maple-js";
+import { providers } from 'ethers';
+import { poolV2 } from '@maplelabs/maple-js';
 
-const RPC_ENDPOINT = "https://mainnet.infura.io/v3/{YOUR_KEY}";
+const RPC_ENDPOINT = 'https://mainnet.infura.io/v3/{YOUR_KEY}';
 
 async function main() {
-  const contract = poolV2.core.connect(
-    "{POOL_ID}",
-    new providers.JsonRpcProvider(RPC_ENDPOINT)
-  );
+  const contract = poolV2.core.connect('{POOL_ID}', new providers.JsonRpcProvider(RPC_ENDPOINT));
 
   const name = await contract.name();
   console.log({ name });

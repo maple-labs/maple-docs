@@ -2,7 +2,7 @@
 
 The SDK is available as a single package, installable using your preferred package manager:
 
-```
+```bash
 npm install --save @maplelabs/maple-js
 
 // or if using yarn
@@ -16,9 +16,9 @@ yarn add @maplelabs/maple-js
 
 ## Developer Links
 
-- [Maple SDK](https://github.com/maple-labs/maple-js)
-- [Maple Smart Contracts](https://github.com/maple-labs/maple-core-v2)
+- [Maple SDK GitHub repo](https://github.com/maple-labs/maple-js)
+- [Maple Smart Contracts v2 GitHub repo](https://github.com/maple-labs/maple-core-v2)
 
 ## Requirements
 
-- ethersV5
+- [ethers v5](https://docs.ethers.org/v5/)
