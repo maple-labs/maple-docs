@@ -51,7 +51,7 @@ In case there is not enough liquidity to satisfy all withdrawals within the same
 
 $$
 \begin{align}
-\nonumber redeemableShares(user) = max\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big)
+\nonumber redeemableShares(user) = min\Big(lockedShares(user),~~lockedShares(user) \times \frac{availableLiquidity}{totalRequestedLiquidity}\Big)
 \end{align}
 $$
 
@@ -86,7 +86,7 @@ It can be seen in a partial liquidity scenario, using the `exchangeRate` to conv
 
 $$
 \begin{align}
-\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user) \times exchangeRate} \times exchangeRate
+\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(currentCycle) \times exchangeRate} \times exchangeRate
 \end{align}
 $$
 
@@ -97,7 +97,7 @@ Cancelling out `exchangeRate` yields:
 
 $$
 \begin{align}
-\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(user)}
+\nonumber redeemableCash(user) = lockedShares(user) \times \frac{availableLiquidity}{totalCycleShares(currentCycle)}
 \end{align}
 $$
 
@@ -108,7 +108,7 @@ Or, more intuitively:
 
 $$
 \begin{align}
-\nonumber redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(user)}
+\nonumber redeemableCash(user) = availableLiquidity \times \frac{lockedShares(user)}{totalCycleShares(currentCycle)}
 \end{align}
 $$
 
@@ -194,7 +194,7 @@ $$
 
 
 
-For user 1, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.5, resulting in 192 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. Note that this yielded the same amount of cash as in Example 2, but less shares had to be burned to do so.
+For user 2, their redeemable shares are calculated as follows and redeemed at the current exchange rate of 1.5, resulting in 192 units of `fundsAsset`. The remainder of their shares are moved to `cycle + 1`. Note that this yielded the same amount of cash as in Example 2, but less shares had to be burned to do so.
 
 
 
