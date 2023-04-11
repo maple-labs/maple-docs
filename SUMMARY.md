@@ -99,7 +99,11 @@
   * [WithdrawalManagerFactory](technical-resources/interfaces/withdrawal-manager-factory.md)
   * [WithdrawalManagerInitializer](technical-resources/interfaces/withdrawal-manager-initializer.md)
 * [GraphQL API](technical-resources/graphql-api.md)
-* [SDK](technical-resources/sdk/introduction.md)
+* SDK
+  * [Introduction](technical-resources/sdk/introduction.md)
+  * [Installation](technical-resources/sdk/installation.md)
+  * [Protocol Actors](technical-resources/sdk/protocol-actors.md)
+  * [Usage Guide](technical-resources/sdk/usage-guide.md)
 
 ## Troubleshooting & Support
 
