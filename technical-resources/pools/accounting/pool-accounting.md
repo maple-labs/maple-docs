@@ -51,9 +51,9 @@ The relationship between the Pool, PoolManager, and LoanManagers regarding value
 
 # Unrealized Losses
 
-`unrealizedLosses` is an accounting variable that represents a "paper loss". The Pool Delegate and Governor both have the ability the "impair" a loan, setting the payment due date to the current timestamp (putting the loan into arrears) and representing a paper loss in the pool. `unrealizedLosses` is also incremented during an active collateral liquidation in a Loan. `unrealizedLosses` is used to prevent large liquidity events in situations where it is public knowledge that a Pool with incur a loss in the future.
+`unrealizedLosses` is an accounting variable that represents a "paper loss". The Pool Delegate and Governor both have the ability to "impair" a loan, setting the payment due date to the current timestamp (putting the loan into arrears) and representing a paper loss in the pool. `unrealizedLosses` is also incremented during an active collateral liquidation in a Loan. `unrealizedLosses` is used to prevent large liquidity events in situations where it is public knowledge that a Pool with incur a loss in the future.
 
-In the case that $unrealizedLosses \gt 0$, there are two exchange rates that are maintained, one for deposits and one for withdrawals. This is to prevent malicious depositors from taking advantage of a situation where they know they paper loss will be removed. Consider a situation where there is a single loan outstanding for $900k with $10k of outstanding interest, and there is 100k of cash in the pool. The `totalSupply` of LP tokens is 1m. In this situation, the effective exchange rate is:
+In the case the unrealizedLosses > 0, there are two exchange rates that are maintained, one for deposits and one for withdrawals. This is to prevent malicious depositors from taking advantage of a situation where they know that paper loss will be removed. Consider a situation where there is a single loan outstanding for $900k with $10k of outstanding interest, and there is 100k of cash in the pool. The `totalSupply` of LP tokens is 1m. In this situation, the effective exchange rate is:
 
 
 

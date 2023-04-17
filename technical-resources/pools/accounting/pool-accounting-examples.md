@@ -135,7 +135,7 @@ When a payment is made late, there is a discrete increase in `totalAssets` since
 
 In this example, there are two outstanding Loans. Loan 2 gets funded on day 5. Loan 1 makes a payment exactly on time at day 10.
 
-When there is more than one outstanding loan, the `issuanceRate` becomes an aggregate value, representing the units of `fundsAsset` accruing against both loans simultaneously. This value gets updated from $IR_1$ to $IR_{1,2}$ when Loan 2 gets funded and gets updated to $IR_2$ when Loan 1 is paid.
+When there is more than one outstanding loan, the `issuanceRate` becomes an aggregate value, representing the units of `fundsAsset` accruing against both loans simultaneously. This value gets updated from $$ IR_1 $$ to $$ IR_{1,2} $$ when Loan 2 gets funded and gets updated to $$ IR_2 $$ when Loan 1 is paid.
 
 ## Loan 2 Funding
 
