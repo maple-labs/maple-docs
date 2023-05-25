@@ -44,7 +44,7 @@
   * [Security](technical-resources/security/security.md)
   * [List of Assumptions](technical-resources/security/list-of-assumptions.md)
   * [External Entry Points](technical-resources/security/external-entry-points.md)
-  * [Emergency Protocol Pause Function](technical-resources/security/emergency-protocol-pause-function.md)
+  * [Emergency Protocol Pause](technical-resources/security/emergency-protocol-pause.md)
   * [Protocol Invariants](technical-resources/security/protocol-invariants.md)
   * [Test Report](technical-resources/security/test-report.md)
 * Loans
