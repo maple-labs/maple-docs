@@ -114,6 +114,8 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `finishCollateralLiquidation`
 * `triggerDefault`
 
+### FixedTermLoanManager
+
 **Pool Delegate and Governor Permissioned Functions**
 
 * `updateAccounting`
