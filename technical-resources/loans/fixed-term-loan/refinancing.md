@@ -8,7 +8,7 @@ Loan refinancing is defined as the revision of Loan terms, as per an agreement b
 - Set `gracePeriod`
 - Set `interestRate`
 - Set `lateFeeRate`
-- Set `lateInterestPremium`
+- Set `lateInterestPremiumRate`
 - Set `paymentInterval`
 - Set `paymentsRemaining`
 

@@ -1,4 +1,4 @@
-Loans in the Maple protocol are deployed from a factory and initialized by Borrowers. They facilitate the following:
+Fixe Term Loans in the Maple protocol are deployed from a factory and initialized by Borrowers. They facilitate the following:
 
 1. Perform Loan funding.
 2. Draw down funds.
@@ -13,7 +13,7 @@ Loans in the Maple protocol are deployed from a factory and initialized by Borro
 
 ## Asset Definitions
 
-Loans manage two assets: `collateralAsset` and `fundsAsset`.
+Fixed Term Loans manage two assets: `collateralAsset` and `fundsAsset`.
 
 ### `fundsAsset`
 
@@ -183,7 +183,7 @@ $$
 ## Late Payments
 
 When a payment is made after the `nextPaymentDueDate` timestamp in the Loan, it is considered late. There are two fee parameters that are used to calculate late fees:
-- `lateInterestPremium`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
+- `lateInterestPremiumRate`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
 - `lateFeeRate`: Fee charged as a percentage of the outstanding principal at the time of payment.
 
 Below is the calculation for a late payment, where `total` is the amount calculated in the equations above. All of the extra funds go towards interest.
@@ -202,7 +202,7 @@ where:
 $$
 \large
 \begin{align}
-\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremiumRate) \times daysLate \times 86400}{365 \times 86400}
 \end{align}
 $$
 

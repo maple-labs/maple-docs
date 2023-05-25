@@ -48,12 +48,12 @@
   * [Protocol Invariants](technical-resources/security/protocol-invariants.md)
   * [Test Report](technical-resources/security/test-report.md)
 * Loans
-  * [Loans](technical-resources/loans/loans.md)
-  * [Loan Creation](technical-resources/loans/loan-creation.md)
-  * [FeeManager](technical-resources/loans/fee-manager.md)
-  * [Refinancing](technical-resources/loans/refinancing.md)
-  * [Loan Impairment](technical-resources/loans/loan-impairment.md)
-  * [Defaults](technical-resources/loans/defaults.md)
+  * [Fixed Term Loans](technical-resources/loans/loans.md)
+    * [Loan Creation](technical-resources/loans/loan-creation.md)
+    * [FeeManager](technical-resources/loans/fee-manager.md)
+    * [Refinancing](technical-resources/loans/refinancing.md)
+    * [Loan Impairment](technical-resources/loans/loan-impairment.md)
+    * [Defaults](technical-resources/loans/defaults.md)
 * Pools
   * [Pools](technical-resources/pools/pools.md)
   * [Pool Creation](technical-resources/pools/pool-creation.md)

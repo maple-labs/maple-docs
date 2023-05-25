@@ -140,13 +140,13 @@ Function to set the lateFeeRate during a refinance.
 
 <br />
 
-### `setLateInterestPremium` 
+### `setLateInterestPremiumRate` 
 
-Function to set the lateInterestPremium during a refinance.
+Function to set the lateInterestPremiumRate during a refinance.
 
 ```solidity
-    function setLateInterestPremium(
-        uint256 lateInterestPremium_
+    function setLateInterestPremiumRate(
+        uint256 lateInterestPremiumRate_
     )
         nonpayable;
 ```
@@ -154,7 +154,7 @@ Function to set the lateInterestPremium during a refinance.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` | The new value for lateInterestPremium. |
+| 0 | `lateInterestPremiumRate_` | `uint256` | `uint256` | The new value for lateInterestPremiumRate. |
 
 
 <br />
@@ -323,20 +323,20 @@ A new value for lateFeeRate has been set.
 
 <br />
 
-### `LateInterestPremiumSet`
+### `LateInterestPremiumRateSet`
 
-A new value for lateInterestPremium has been set.
+A new value for lateInterestPremiumRate has been set.
 
 ```solidity
-    event LateInterestPremiumSet(
-        uint256 lateInterestPremium_
+    event LateInterestPremiumRateSet(
+        uint256 lateInterestPremiumRate_
     );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` | The new value for lateInterestPremium. |
+| 0 | `lateInterestPremiumRate_` | `uint256` | `uint256` | The new value for lateInterestPremiumRate. |
 
 <br />
 

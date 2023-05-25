@@ -726,15 +726,15 @@ The rate charged at late payments.
 
 <br />
 
-### `lateInterestPremium` 
+### `lateInterestPremiumRate` 
 
 The premium over the regular interest rate applied when paying late.
 
 ```solidity
-    function lateInterestPremium()
+    function lateInterestPremiumRate()
         view
         returns (
-            uint256 lateInterestPremium_
+            uint256 lateInterestPremiumRate_
         );
 ```
 
@@ -743,7 +743,7 @@ The premium over the regular interest rate applied when paying late.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` |  |
+| 0 | `lateInterestPremiumRate_` | `uint256` | `uint256` |  |
 
 
 <br />
@@ -1491,7 +1491,7 @@ Loan was initialized.
 | 2 | `assets_` | `address[2]` | `address[2]` | Array of asset addresses.                       [0]: collateralAsset,                       [1]: fundsAsset. |
 | 3 | `termDetails_` | `uint256[3]` | `uint256[3]` | Array of loan parameters:                       [0]: gracePeriod,                       [1]: paymentInterval,                       [2]: payments, |
 | 4 | `amounts_` | `uint256[3]` | `uint256[3]` | Requested amounts:                       [0]: collateralRequired,                       [1]: principalRequested,                       [2]: endingPrincipal. |
-| 5 | `rates_` | `uint256[4]` | `uint256[4]` | Fee parameters:                       [0]: interestRate,                       [1]: closingFeeRate,                       [2]: lateFeeRate,                       [3]: lateInterestPremium |
+| 5 | `rates_` | `uint256[4]` | `uint256[4]` | Fee parameters:                       [0]: interestRate,                       [1]: closingFeeRate,                       [2]: lateFeeRate,                       [3]: lateInterestPremiumRate |
 | 6 | `fees_` | `uint256[2]` | `uint256[2]` | Array of fees:                       [0]: delegateOriginationFee,                       [1]: delegateServiceFee |
 
 <br />

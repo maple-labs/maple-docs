@@ -1,6 +1,6 @@
 ## Maple Loan Factory
 
-Loans are proxy contracts that point to a specific implementation. Borrowers that want to create loans on the Maple ecosystem need to do so via the `MapleLoanFactory` contract, which is responsible for holding information on the current version of loans, as well the possible upgradeability paths.
+Loans are proxy contracts that point to a specific implementation. Borrowers that want to create loans on the Maple ecosystem need to do so via the `FixedTermLoanFactory` contract, which is responsible for holding information on the current version of loans, as well the possible upgradeability paths.
 
 ## Loan Creation Pre-Requisites
 
@@ -8,10 +8,13 @@ The following pre-requisites must be met before the creation of a Loan.
 
 1. The Borrower must be set as valid in the MapleGlobals allowlist.
 2. The asset used for the funding of the Loan must be set as valid by the Governor in MapleGlobals.
+3. The asset used as collateral of the Loan must be set as valid by the Governor in MapleGlobals.
+4. The Lender must be a valid version of a [`Fixed Term Loan Manager`](../../loan-managers/fixed-term-loan-manager/fixed-term-loan-manager.md)
 
 ## Loan Initialization Parameters
 
 * `borrower` - The address of the borrower.
+* `lender` - The address of the lender that will fund this loan. 
 * `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](./fee-manager.md))
 * `collateralAsset` - The address of the asset used as collateral.
 * `fundsAsset` - The address of asset that the loan is denominated in.
@@ -24,6 +27,13 @@ The following pre-requisites must be met before the creation of a Loan.
 * `interestRate` - The annualized interest rate.
 * `closingFeeRate` - The rate used to calculate closing a loan early.
 * `lateFeeRate` - A fee rate applied on principal amount on late payments.
-* `lateInterestPremium` - A premium added on top of the interest rate for late payments.
+* `lateInterestPremiumRate` - A premium added on top of the interest rate for late payments.
 * `delegateOriginationFee` - A nominal amount of funds asset payment on the origination to the pool delegate.
 * `delegateServiceFee` - A nominal amount of funds assets that is added on every payment destined to the pool delegate.
+
+## Parameters Constraints
+
+* `delegateOriginationFee` <= 2.5% of principal
+* `gracePeriod` >= 12 hours
+* `paymentInterval` > 0
+* `payments` > 0
