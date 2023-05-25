@@ -23,9 +23,13 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `transfer`
 * `transferFrom`
 
-### Loan
+### FixedTermLoan
 
 * `skim`
+
+### OpenTermLoan
+
+* `makePayment`
 
 ### Globals
 
@@ -37,14 +41,14 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 # Permissioned Functions
 
-### Loan
+### FixedTermLoan
 
 **Borrower Permissioned Functions**
 
 * `AcceptBorrower`
 * `CloseLoan`
 * `DrawdownFunds`
-* `MakePayments`
+* `MakePayment`
 * `PostCollateral`
 * `ProposeNewTerms`
 * `RemoveCollateral`
@@ -110,8 +114,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `finishCollateralLiquidation`
 * `triggerDefault`
 
-### LoanManager
-
 **Pool Delegate and Governor Permissioned Functions**
 
 * `updateAccounting`
@@ -121,3 +123,73 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Pool Delegate only functionality**
 
 * `setExitConfig`
+
+### OpenTermLoan
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `skim`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Borrower Permissioned Functions**
+
+* `acceptBorrower`
+* `acceptNewTerms`
+* `setPendingBorrower`
+* `rejectNewTerms`
+* `skim`
+
+**Lender Permissioned Functions**
+
+* `acceptLender`
+* `callPrincipal`
+* `fund`
+* `impair`
+* `proposeNewTerms`
+* `removeCall`
+* `removeImpairment`
+* `repossess`
+* `setPendingLender`
+* `rejectNewTerms`
+
+### OpenTermLoanManager
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `impairLoan`
+* `removeLoanImpairment`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Pool Delegate Permissioned Functions**
+
+* `fund`
+* `proposeNewTerms`
+* `rejectNewTerms`
+* `callPrincipal`
+* `removeCall`
+* `impairLoan`
+* `removeLoanImpairment`
+
+**Pool Manager Permissioned Functions**
+
+* `triggerDefault`
+
+**Loan Permissioned Functions**
+
+* `claim`
