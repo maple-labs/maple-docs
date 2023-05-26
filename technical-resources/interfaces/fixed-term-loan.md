@@ -1,13 +1,35 @@
-# MapleLoan
+# Maple Fixed Term Loan
 
-MapleLoan implements a primitive loan with additional functionality, and is intended to be proxied.
+
 
 <br />
 
 
 ## Functions
 
-### `acceptBorrower` 
+### `HUNDRED_PERCENT`
+
+The value that represents 100%, to be easily comparable with the loan rates.
+
+```solidity
+    function HUNDRED_PERCENT()
+        view
+        returns (
+            uint256
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
+
+### `acceptBorrower`
 
 Accept the borrower role, must be called by pendingBorrower.
 
@@ -20,7 +42,7 @@ Accept the borrower role, must be called by pendingBorrower.
 
 <br />
 
-### `acceptLender` 
+### `acceptLender`
 
 Accept the lender role, must be called by pendingLender.
 
@@ -33,7 +55,7 @@ Accept the lender role, must be called by pendingLender.
 
 <br />
 
-### `acceptNewTerms` 
+### `acceptNewTerms`
 
 Accept the proposed terms ans trigger refinance execution
 
@@ -65,7 +87,7 @@ Accept the proposed terms ans trigger refinance execution
 
 <br />
 
-### `borrower` 
+### `borrower`
 
 The borrower of the loan, responsible for repayments.
 
@@ -87,7 +109,7 @@ The borrower of the loan, responsible for repayments.
 
 <br />
 
-### `closeLoan` 
+### `closeLoan`
 
 Repay all principal and interest and close a loan.          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NON-ATOMICALLY. IF THEY ARE, THE BALANCE MAY BE STOLEN USING &#x60;skim&#x60;.
 
@@ -119,7 +141,7 @@ Repay all principal and interest and close a loan.          FUNDS SHOULD NOT BE 
 
 <br />
 
-### `closingRate` 
+### `closingRate`
 
 The fee rate (applied to principal) to close the loan.       This value should be configured so that it is less expensive to close a loan with more than one payment remaining, but       more expensive to close it if on the last payment.
 
@@ -141,7 +163,7 @@ The fee rate (applied to principal) to close the loan.       This value should b
 
 <br />
 
-### `collateral` 
+### `collateral`
 
 The amount of collateral posted against outstanding (drawn down) principal.
 
@@ -163,7 +185,7 @@ The amount of collateral posted against outstanding (drawn down) principal.
 
 <br />
 
-### `collateralAsset` 
+### `collateralAsset`
 
 The address of the asset deposited by the borrower as collateral, if needed.
 
@@ -185,7 +207,7 @@ The address of the asset deposited by the borrower as collateral, if needed.
 
 <br />
 
-### `collateralRequired` 
+### `collateralRequired`
 
 The amount of collateral required if all of the principal required is drawn down.
 
@@ -207,7 +229,7 @@ The amount of collateral required if all of the principal required is drawn down
 
 <br />
 
-### `drawableFunds` 
+### `drawableFunds`
 
 The amount of funds that have yet to be drawn down by the borrower.
 
@@ -229,7 +251,7 @@ The amount of funds that have yet to be drawn down by the borrower.
 
 <br />
 
-### `drawdownFunds` 
+### `drawdownFunds`
 
 Draw down funds from the loan.
 
@@ -259,7 +281,7 @@ Draw down funds from the loan.
 
 <br />
 
-### `endingPrincipal` 
+### `endingPrincipal`
 
 The portion of principal to not be paid down as part of payment installments,       which would need to be paid back upon final payment.       If endingPrincipal &#x3D; principal, loan is interest-only.
 
@@ -281,7 +303,7 @@ The portion of principal to not be paid down as part of payment installments,   
 
 <br />
 
-### `excessCollateral` 
+### `excessCollateral`
 
 Returns the excess collateral that can be removed.
 
@@ -303,7 +325,7 @@ Returns the excess collateral that can be removed.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -325,7 +347,7 @@ The address of the proxy factory.
 
 <br />
 
-### `feeManager` 
+### `feeManager`
 
 The address of the contract that handles payments of fees on behalf of the loan.
 
@@ -347,24 +369,18 @@ The address of the contract that handles payments of fees on behalf of the loan.
 
 <br />
 
-### `fundLoan` 
+### `fundLoan`
 
 Lend funds to the loan/borrower.
 
 ```solidity
-    function fundLoan(
-        address lender_
-    )
+    function fundLoan()
         nonpayable
         returns (
             uint256 fundsLent_
         );
 ```
 
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` | The address to be registered as the lender. |
 
 
 #### Return Values:
@@ -375,7 +391,7 @@ Lend funds to the loan/borrower.
 
 <br />
 
-### `fundsAsset` 
+### `fundsAsset`
 
 The asset deposited by the lender to fund the loan.
 
@@ -397,7 +413,7 @@ The asset deposited by the lender to fund the loan.
 
 <br />
 
-### `getAdditionalCollateralRequiredFor` 
+### `getAdditionalCollateralRequiredFor`
 
 Get the additional collateral to be posted to drawdown some amount.
 
@@ -425,7 +441,7 @@ Get the additional collateral to be posted to drawdown some amount.
 
 <br />
 
-### `getClosingPaymentBreakdown` 
+### `getClosingPaymentBreakdown`
 
 Get the breakdown of the total payment needed to satisfy an early repayment to close the loan.
 
@@ -451,7 +467,7 @@ Get the breakdown of the total payment needed to satisfy an early repayment to c
 
 <br />
 
-### `getNextPaymentBreakdown` 
+### `getNextPaymentBreakdown`
 
 Get the breakdown of the total payment needed to satisfy the next payment installment.
 
@@ -477,7 +493,7 @@ Get the breakdown of the total payment needed to satisfy the next payment instal
 
 <br />
 
-### `getNextPaymentDetailedBreakdown` 
+### `getNextPaymentDetailedBreakdown`
 
 Get the detailed breakdown of the total payment needed to satisfy the next payment installment.
 
@@ -503,7 +519,7 @@ Get the detailed breakdown of the total payment needed to satisfy the next payme
 
 <br />
 
-### `getRefinanceInterest` 
+### `getRefinanceInterest`
 
 Get the extra interest that will be charged according to loan terms before refinance, based on a given timestamp.
 
@@ -531,7 +547,7 @@ Get the extra interest that will be charged according to loan terms before refin
 
 <br />
 
-### `getUnaccountedAmount` 
+### `getUnaccountedAmount`
 
 Get the amount on an asset that in not accounted for by the accounting variables (and thus can be skimmed).
 
@@ -559,7 +575,7 @@ Get the amount on an asset that in not accounted for by the accounting variables
 
 <br />
 
-### `globals` 
+### `globals`
 
 The Maple globals address
 
@@ -581,7 +597,7 @@ The Maple globals address
 
 <br />
 
-### `governor` 
+### `governor`
 
 The address of the Maple Governor.
 
@@ -603,7 +619,7 @@ The address of the Maple Governor.
 
 <br />
 
-### `gracePeriod` 
+### `gracePeriod`
 
 The amount of time the borrower has, after a payment is due, to make a payment before being in default.
 
@@ -625,9 +641,9 @@ The amount of time the borrower has, after a payment is due, to make a payment b
 
 <br />
 
-### `impairLoan` 
+### `impairLoan`
 
-Fast forward the next payment due date to the current time.         This enables the pool delegate to force a payment (or default).
+Fast forward the next payment due date to the current time.       This enables the pool delegate to force a payment (or default).
 
 ```solidity
     function impairLoan()
@@ -638,7 +654,7 @@ Fast forward the next payment due date to the current time.         This enables
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -660,7 +676,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `interestRate` 
+### `interestRate`
 
 The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
 
@@ -682,7 +698,7 @@ The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
 
 <br />
 
-### `isImpaired` 
+### `isImpaired`
 
 Return if the loan has been impaired.
 
@@ -704,7 +720,7 @@ Return if the loan has been impaired.
 
 <br />
 
-### `lateFeeRate` 
+### `lateFeeRate`
 
 The rate charged at late payments.
 
@@ -726,15 +742,15 @@ The rate charged at late payments.
 
 <br />
 
-### `lateInterestPremium` 
+### `lateInterestPremiumRate`
 
 The premium over the regular interest rate applied when paying late.
 
 ```solidity
-    function lateInterestPremium()
+    function lateInterestPremiumRate()
         view
         returns (
-            uint256 lateInterestPremium_
+            uint256 lateInterestPremiumRate_
         );
 ```
 
@@ -743,12 +759,12 @@ The premium over the regular interest rate applied when paying late.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremium_` | `uint256` | `uint256` |  |
+| 0 | `lateInterestPremiumRate_` | `uint256` | `uint256` |  |
 
 
 <br />
 
-### `lender` 
+### `lender`
 
 The lender of the Loan.
 
@@ -770,7 +786,7 @@ The lender of the Loan.
 
 <br />
 
-### `makePayment` 
+### `makePayment`
 
 Make a payment to the loan.          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NON-ATOMICALLY. IF THEY ARE, THE BALANCE MAY BE STOLEN USING &#x60;skim&#x60;.
 
@@ -802,7 +818,7 @@ Make a payment to the loan.          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CON
 
 <br />
 
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -823,7 +839,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `nextPaymentDueDate` 
+### `nextPaymentDueDate`
 
 The timestamp due date of the next payment.
 
@@ -845,7 +861,7 @@ The timestamp due date of the next payment.
 
 <br />
 
-### `originalNextPaymentDueDate` 
+### `originalNextPaymentDueDate`
 
 The saved original payment due date from a loan impairment.
 
@@ -867,7 +883,7 @@ The saved original payment due date from a loan impairment.
 
 <br />
 
-### `paymentInterval` 
+### `paymentInterval`
 
 The specified time between loan payments.
 
@@ -889,7 +905,7 @@ The specified time between loan payments.
 
 <br />
 
-### `paymentsRemaining` 
+### `paymentsRemaining`
 
 The number of payment installments remaining for the loan.
 
@@ -911,7 +927,7 @@ The number of payment installments remaining for the loan.
 
 <br />
 
-### `pendingBorrower` 
+### `pendingBorrower`
 
 The address of the pending borrower.
 
@@ -933,7 +949,7 @@ The address of the pending borrower.
 
 <br />
 
-### `pendingLender` 
+### `pendingLender`
 
 The address of the pending lender.
 
@@ -955,7 +971,7 @@ The address of the pending lender.
 
 <br />
 
-### `postCollateral` 
+### `postCollateral`
 
 Post collateral to the loan.          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NON-ATOMICALLY. IF THEY ARE, THE BALANCE MAY BE STOLEN USING &#x60;skim&#x60;.
 
@@ -983,7 +999,7 @@ Post collateral to the loan.          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CO
 
 <br />
 
-### `principal` 
+### `principal`
 
 The amount of principal owed (initially, the requested amount), which needs to be paid back.
 
@@ -1005,7 +1021,7 @@ The amount of principal owed (initially, the requested amount), which needs to b
 
 <br />
 
-### `principalRequested` 
+### `principalRequested`
 
 The initial principal amount requested by the borrower.
 
@@ -1027,7 +1043,7 @@ The initial principal amount requested by the borrower.
 
 <br />
 
-### `proposeNewTerms` 
+### `proposeNewTerms`
 
 Propose new terms for refinance.
 
@@ -1059,7 +1075,7 @@ Propose new terms for refinance.
 
 <br />
 
-### `refinanceCommitment` 
+### `refinanceCommitment`
 
 The hash of the proposed refinance agreement.
 
@@ -1081,7 +1097,7 @@ The hash of the proposed refinance agreement.
 
 <br />
 
-### `refinanceInterest` 
+### `refinanceInterest`
 
 Amount of unpaid interest that has accrued before a refinance was accepted.
 
@@ -1103,7 +1119,7 @@ Amount of unpaid interest that has accrued before a refinance was accepted.
 
 <br />
 
-### `rejectNewTerms` 
+### `rejectNewTerms`
 
 Nullify the current proposed terms.
 
@@ -1135,7 +1151,7 @@ Nullify the current proposed terms.
 
 <br />
 
-### `removeCollateral` 
+### `removeCollateral`
 
 Remove collateral from the loan (opposite of posting collateral).
 
@@ -1156,7 +1172,7 @@ Remove collateral from the loan (opposite of posting collateral).
 
 <br />
 
-### `removeLoanImpairment` 
+### `removeLoanImpairment`
 
 Remove the loan impairment by restoring the original payment due date.
 
@@ -1169,7 +1185,7 @@ Remove the loan impairment by restoring the original payment due date.
 
 <br />
 
-### `repossess` 
+### `repossess`
 
 Repossess collateral, and any funds, for a loan in default.
 
@@ -1199,7 +1215,7 @@ Repossess collateral, and any funds, for a loan in default.
 
 <br />
 
-### `returnFunds` 
+### `returnFunds`
 
 Return funds to the loan (opposite of drawing down).          FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NON-ATOMICALLY. IF THEY ARE, THE BALANCE MAY BE STOLEN USING &#x60;skim&#x60;.
 
@@ -1227,7 +1243,7 @@ Return funds to the loan (opposite of drawing down).          FUNDS SHOULD NOT B
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -1246,7 +1262,7 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `setPendingBorrower` 
+### `setPendingBorrower`
 
 Set the pendingBorrower to a new account.
 
@@ -1265,7 +1281,7 @@ Set the pendingBorrower to a new account.
 
 <br />
 
-### `setPendingLender` 
+### `setPendingLender`
 
 Set the pendingLender to a new account.
 
@@ -1284,7 +1300,7 @@ Set the pendingLender to a new account.
 
 <br />
 
-### `skim` 
+### `skim`
 
 Remove all token that is not accounted for by the loan (i.e. not &#x60;collateral&#x60; or &#x60;drawableFunds&#x60;).
 
@@ -1314,7 +1330,7 @@ Remove all token that is not accounted for by the loan (i.e. not &#x60;collatera
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -1467,6 +1483,23 @@ Funds were returned.
 
 <br />
 
+### `ImpairmentRemoved`
+
+The loan impairment was explicitly removed (i.e. not the result of a payment or new terms acceptance).
+
+```solidity
+    event ImpairmentRemoved(
+        uint256 nextPaymentDueDate_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `nextPaymentDueDate_` | `uint256` | `uint256` | The new next payment due date. |
+
+<br />
+
 ### `Initialized`
 
 Loan was initialized.
@@ -1474,6 +1507,7 @@ Loan was initialized.
 ```solidity
     event Initialized(
         address borrower_,
+        address lender_,
         address feeManager_,
         address[2] assets_,
         uint256[3] termDetails_,
@@ -1487,12 +1521,13 @@ Loan was initialized.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `borrower_` | `address` | `address` | The address of the borrower. |
-| 1 | `feeManager_` | `address` | `address` | The address of the entity responsible for calculating fees |
-| 2 | `assets_` | `address[2]` | `address[2]` | Array of asset addresses.                       [0]: collateralAsset,                       [1]: fundsAsset. |
-| 3 | `termDetails_` | `uint256[3]` | `uint256[3]` | Array of loan parameters:                       [0]: gracePeriod,                       [1]: paymentInterval,                       [2]: payments, |
-| 4 | `amounts_` | `uint256[3]` | `uint256[3]` | Requested amounts:                       [0]: collateralRequired,                       [1]: principalRequested,                       [2]: endingPrincipal. |
-| 5 | `rates_` | `uint256[4]` | `uint256[4]` | Fee parameters:                       [0]: interestRate,                       [1]: closingFeeRate,                       [2]: lateFeeRate,                       [3]: lateInterestPremium |
-| 6 | `fees_` | `uint256[2]` | `uint256[2]` | Array of fees:                       [0]: delegateOriginationFee,                       [1]: delegateServiceFee |
+| 1 | `lender_` | `address` | `address` | The address of the lender. |
+| 2 | `feeManager_` | `address` | `address` | The address of the entity responsible for calculating fees. |
+| 3 | `assets_` | `address[2]` | `address[2]` | Array of asset addresses.                       [0]: collateralAsset,                       [1]: fundsAsset. |
+| 4 | `termDetails_` | `uint256[3]` | `uint256[3]` | Array of loan parameters:                       [0]: gracePeriod,                       [1]: paymentInterval,                       [2]: payments, |
+| 5 | `amounts_` | `uint256[3]` | `uint256[3]` | Requested amounts:                       [0]: collateralRequired,                       [1]: principalRequested,                       [2]: endingPrincipal. |
+| 6 | `rates_` | `uint256[4]` | `uint256[4]` | Fee parameters:                       [0]: interestRate,                       [1]: closingFeeRate,                       [2]: lateFeeRate,                       [3]: lateInterestPremiumRate |
+| 7 | `fees_` | `uint256[2]` | `uint256[2]` | Array of fees:                       [0]: delegateOriginationFee,                       [1]: delegateServiceFee |
 
 <br />
 
@@ -1617,23 +1652,6 @@ The terms of the refinance proposal were rejected.
 | 1 | `refinancer_` | `address` | `address` | The address that will execute the refinance. |
 | 2 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
 | 3 | `calls_` | `bytes[]` | `bytes[]` | The individual calls for the refinancer contract. |
-
-<br />
-
-### `NextPaymentDueDateRestored`
-
-The next payment due date was restored to it&#x27;s original value, reverting the action of loan impairment.
-
-```solidity
-    event NextPaymentDueDateRestored(
-        uint256 nextPaymentDueDate_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `nextPaymentDueDate_` | `uint256` | `uint256` | The new next payment due date. |
 
 <br />
 

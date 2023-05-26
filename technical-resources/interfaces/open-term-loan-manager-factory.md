@@ -1,4 +1,4 @@
-# Maple Withdrawal Manager Factory
+# Maple Open Term Loan Manager Factory
 
 
 

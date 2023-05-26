@@ -1,4 +1,4 @@
-# PoolDelegateCover
+# Maple Pool Delegate Cover
 
 
 
@@ -28,7 +28,7 @@
 
 ## Functions
 
-### `asset` 
+### `asset`
 
 Gets the address of the funds asset.
 
@@ -50,7 +50,7 @@ Gets the address of the funds asset.
 
 <br />
 
-### `moveFunds` 
+### `moveFunds`
 
 Move funds from this address to another.
 
@@ -71,7 +71,7 @@ Move funds from this address to another.
 
 <br />
 
-### `poolManager` 
+### `poolManager`
 
 Gets the address of the pool manager.
 

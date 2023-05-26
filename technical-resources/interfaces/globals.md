@@ -1,4 +1,4 @@
-# MapleGlobals
+# Maple Globals
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `HUNDRED_PERCENT` 
+### `HUNDRED_PERCENT`
 
 
 
@@ -29,9 +29,9 @@
 
 <br />
 
-### `acceptGovernor` 
+### `acceptGovernor`
 
-
+Accepts the governorship if the caller is the &#x60;pendingGovernor&#x60;.
 
 ```solidity
     function acceptGovernor()
@@ -42,7 +42,7 @@
 
 <br />
 
-### `activatePoolManager` 
+### `activatePoolManager`
 
 Activates the pool manager.
 
@@ -61,7 +61,7 @@ Activates the pool manager.
 
 <br />
 
-### `admin` 
+### `admin`
 
 Returns the proxy&#x27;s admin address.
 
@@ -83,7 +83,7 @@ Returns the proxy&#x27;s admin address.
 
 <br />
 
-### `bootstrapMint` 
+### `bootstrapMint`
 
 Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60; for a given pool asset.
 
@@ -111,7 +111,65 @@ Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 
 <br />
 
-### `defaultTimelockParameters` 
+### `canDeploy`
+
+Gets whether a caller account can deploy from the factory calling this function.
+
+```solidity
+    function canDeploy(
+        address caller_
+    )
+        view
+        returns (
+            bool canDeploy_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `caller_` | `address` | `address` | The address of the account calling the factory. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `canDeploy_` | `bool` | `bool` | Whether the account can deploy from the factory. |
+
+
+<br />
+
+### `canDeployFrom`
+
+Gets whether a caller account can deploy from a factory.
+
+```solidity
+    function canDeployFrom(
+        address factory_,
+        address caller_
+    )
+        view
+        returns (
+            bool canDeployFrom_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `factory_` | `address` | `address` | The address of the factory. |
+| 1 | `caller_` | `address` | `address` | The address of the account calling the factory. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy from the factory. |
+
+
+<br />
+
+### `defaultTimelockParameters`
 
 Gets the default timelock parameters.
 
@@ -135,7 +193,7 @@ Gets the default timelock parameters.
 
 <br />
 
-### `getLatestPrice` 
+### `getLatestPrice`
 
 Gets the latest price for an asset.
 
@@ -163,7 +221,7 @@ Gets the latest price for an asset.
 
 <br />
 
-### `governor` 
+### `governor`
 
 Gets governor address.
 
@@ -185,7 +243,7 @@ Gets governor address.
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 Returns the proxy&#x27;s implementation address.
 
@@ -207,7 +265,7 @@ Returns the proxy&#x27;s implementation address.
 
 <br />
 
-### `isBorrower` 
+### `isBorrower`
 
 Gets the validity of a borrower.
 
@@ -235,7 +293,7 @@ Gets the validity of a borrower.
 
 <br />
 
-### `isCollateralAsset` 
+### `isCollateralAsset`
 
 Gets the validity of a collateral asset.
 
@@ -263,12 +321,158 @@ Gets the validity of a collateral asset.
 
 <br />
 
-### `isFactory` 
+### `isContractPaused`
+
+Gets whether a contract is uniquely paused.
+
+```solidity
+    function isContractPaused(
+        address
+    )
+        view
+        returns (
+            bool
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `` | `address` | `address` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` |  |
+
+
+<br />
+
+### `isFactory`
 
 Gets the validity of a factory.
 
 ```solidity
     function isFactory(
+        bytes32 factoryId_,
+        address factory_
+    )
+        view
+        returns (
+            bool isFactory_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `factoryId_` | `bytes32` | `bytes32` | The address of the factory to query. |
+| 1 | `factory_` | `address` | `address` | The address of the factory to query. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `isFactory_` | `bool` | `bool` | A boolean indicating the validity of the factory. |
+
+
+<br />
+
+### `isFunctionPaused`
+
+Gets whether a contract&#x27;s function is paused.
+
+```solidity
+    function isFunctionPaused(
+        bytes4 sig_
+    )
+        view
+        returns (
+            bool functionIsPaused_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `functionIsPaused_` | `bool` | `bool` | Whether the contract&#x27;s function is paused. |
+
+
+<br />
+
+### `isFunctionPaused`
+
+Gets whether a contract&#x27;s function is paused.
+
+```solidity
+    function isFunctionPaused(
+        address contract_,
+        bytes4 sig_
+    )
+        view
+        returns (
+            bool functionIsPaused_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
+| 1 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `functionIsPaused_` | `bool` | `bool` | Whether the contract&#x27;s function is paused. |
+
+
+<br />
+
+### `isFunctionUnpaused`
+
+Gets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
+
+```solidity
+    function isFunctionUnpaused(
+        address,
+        bytes4
+    )
+        view
+        returns (
+            bool
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `` | `address` | `address` |  |
+| 1 | `` | `bytes4` | `bytes4` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` |  |
+
+
+<br />
+
+### `isInstanceOf`
+
+Gets wether an instance is of some instance key.
+
+```solidity
+    function isInstanceOf(
         bytes32,
         address
     )
@@ -293,7 +497,7 @@ Gets the validity of a factory.
 
 <br />
 
-### `isPoolAsset` 
+### `isPoolAsset`
 
 Gets the validity of a pool asset.
 
@@ -321,7 +525,7 @@ Gets the validity of a pool asset.
 
 <br />
 
-### `isPoolDelegate` 
+### `isPoolDelegate`
 
 Gets the validity of a pool delegate.
 
@@ -344,40 +548,40 @@ Gets the validity of a pool delegate.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isPoolDelegate_` | `bool` | `bool` |  A boolean indicating the validity of the pool delegate. |
+| 0 | `isPoolDelegate_` | `bool` | `bool` | A boolean indicating the validity of the pool delegate. |
 
 
 <br />
 
-### `isPoolDeployer` 
+### `isPoolDeployer`
 
 Gets the validity of a pool deployer.
 
 ```solidity
     function isPoolDeployer(
-        address
+        address caller_
     )
         view
         returns (
-            bool
+            bool isPoolDeployer_
         );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
+| 0 | `caller_` | `address` | `address` |  |
 
 
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+| 0 | `isPoolDeployer_` | `bool` | `bool` | A boolean indicating the validity of the pool deployer. |
 
 
 <br />
 
-### `isValidScheduledCall` 
+### `isValidScheduledCall`
 
 Checks if a call is scheduled.
 
@@ -411,7 +615,7 @@ Checks if a call is scheduled.
 
 <br />
 
-### `manualOverridePrice` 
+### `manualOverridePrice`
 
 Gets the manual override price for an asset.
 
@@ -439,7 +643,7 @@ Gets the manual override price for an asset.
 
 <br />
 
-### `mapleTreasury` 
+### `mapleTreasury`
 
 Gets maple treasury address.
 
@@ -461,7 +665,7 @@ Gets maple treasury address.
 
 <br />
 
-### `maxCoverLiquidationPercent` 
+### `maxCoverLiquidationPercent`
 
 Gets the maximum cover liquidation percent for a given pool manager.
 
@@ -489,7 +693,7 @@ Gets the maximum cover liquidation percent for a given pool manager.
 
 <br />
 
-### `migrationAdmin` 
+### `migrationAdmin`
 
 Gets migration admin address.
 
@@ -511,7 +715,7 @@ Gets migration admin address.
 
 <br />
 
-### `minCoverAmount` 
+### `minCoverAmount`
 
 Gets the minimum cover amount for a given pool manager.
 
@@ -539,7 +743,7 @@ Gets the minimum cover amount for a given pool manager.
 
 <br />
 
-### `oracleFor` 
+### `oracleFor`
 
 Gets the address of the oracle for the given asset.
 
@@ -567,7 +771,7 @@ Gets the address of the oracle for the given asset.
 
 <br />
 
-### `ownedPoolManager` 
+### `ownedPoolManager`
 
 Gets the address of the owner pool manager.
 
@@ -595,7 +799,7 @@ Gets the address of the owner pool manager.
 
 <br />
 
-### `pendingGovernor` 
+### `pendingGovernor`
 
 Gets the pending governor address.
 
@@ -617,7 +821,7 @@ Gets the pending governor address.
 
 <br />
 
-### `platformManagementFeeRate` 
+### `platformManagementFeeRate`
 
 Gets the platform management fee rate for a given pool manager.
 
@@ -645,7 +849,7 @@ Gets the platform management fee rate for a given pool manager.
 
 <br />
 
-### `platformOriginationFeeRate` 
+### `platformOriginationFeeRate`
 
 Gets the platform origination fee rate for a given pool manager.
 
@@ -673,7 +877,7 @@ Gets the platform origination fee rate for a given pool manager.
 
 <br />
 
-### `platformServiceFeeRate` 
+### `platformServiceFeeRate`
 
 Gets the platform service fee rate for a given pool manager.
 
@@ -701,7 +905,7 @@ Gets the platform service fee rate for a given pool manager.
 
 <br />
 
-### `poolDelegates` 
+### `poolDelegates`
 
 Gets pool delegate address information.
 
@@ -731,7 +935,7 @@ Gets pool delegate address information.
 
 <br />
 
-### `protocolPaused` 
+### `protocolPaused`
 
 Gets the status of the protocol pause.
 
@@ -753,7 +957,7 @@ Gets the status of the protocol pause.
 
 <br />
 
-### `scheduleCall` 
+### `scheduleCall`
 
 Schedules a call to be executed.
 
@@ -776,7 +980,7 @@ Schedules a call to be executed.
 
 <br />
 
-### `scheduledCalls` 
+### `scheduledCalls`
 
 Gets the schedule calls for the parameters.
 
@@ -810,7 +1014,7 @@ Gets the schedule calls for the parameters.
 
 <br />
 
-### `securityAdmin` 
+### `securityAdmin`
 
 Gets security admin address.
 
@@ -832,7 +1036,7 @@ Gets security admin address.
 
 <br />
 
-### `setBootstrapMint` 
+### `setBootstrapMint`
 
 Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60;         to prevent an MEV-exploit vector against the first pool depositor.
 
@@ -853,7 +1057,51 @@ Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 
 <br />
 
-### `setDefaultTimelockParameters` 
+### `setCanDeployFrom`
+
+Sets whether an account can deploying an instance from a particular factory.
+
+```solidity
+    function setCanDeployFrom(
+        address factory_,
+        address account_,
+        bool canDeployFrom_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `factory_` | `address` | `address` | The address of the factory. |
+| 1 | `account_` | `address` | `address` | The address of the account. |
+| 2 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy or not from the factory. |
+
+
+<br />
+
+### `setContractPause`
+
+Sets whether a contract is uniquely paused.
+
+```solidity
+    function setContractPause(
+        address contract_,
+        bool contractPaused_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
+| 1 | `contractPaused_` | `bool` | `bool` | Whether the contract is uniquely paused. |
+
+
+<br />
+
+### `setDefaultTimelockParameters`
 
 Sets the default time lock parameters.
 
@@ -874,7 +1122,30 @@ Sets the default time lock parameters.
 
 <br />
 
-### `setManualOverridePrice` 
+### `setFunctionUnpause`
+
+Sets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
+
+```solidity
+    function setFunctionUnpause(
+        address contract_,
+        bytes4 sig_,
+        bool functionUnpaused_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
+| 1 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
+| 2 | `functionUnpaused_` | `bool` | `bool` | Whether the contract&#x27;s function is uniquely unpaused. |
+
+
+<br />
+
+### `setManualOverridePrice`
 
 Sets the manual override price of the asset.
 
@@ -895,7 +1166,7 @@ Sets the manual override price of the asset.
 
 <br />
 
-### `setMapleTreasury` 
+### `setMapleTreasury`
 
 Sets the address of the Maple treasury.
 
@@ -914,7 +1185,7 @@ Sets the address of the Maple treasury.
 
 <br />
 
-### `setMaxCoverLiquidationPercent` 
+### `setMaxCoverLiquidationPercent`
 
 Sets the maximum cover liquidation percent for the given pool manager.
 
@@ -935,7 +1206,7 @@ Sets the maximum cover liquidation percent for the given pool manager.
 
 <br />
 
-### `setMigrationAdmin` 
+### `setMigrationAdmin`
 
 Sets the address of the migration admin.
 
@@ -954,7 +1225,7 @@ Sets the address of the migration admin.
 
 <br />
 
-### `setMinCoverAmount` 
+### `setMinCoverAmount`
 
 Sets the minimum cover amount for the given pool manager.
 
@@ -975,9 +1246,9 @@ Sets the minimum cover amount for the given pool manager.
 
 <br />
 
-### `setPendingGovernor` 
+### `setPendingGovernor`
 
-
+Sets the pending governor.
 
 ```solidity
     function setPendingGovernor(
@@ -989,12 +1260,12 @@ Sets the minimum cover amount for the given pool manager.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingGovernor_` | `address` | `address` |  |
+| 0 | `pendingGovernor_` | `address` | `address` | The new pending governor. |
 
 
 <br />
 
-### `setPlatformManagementFeeRate` 
+### `setPlatformManagementFeeRate`
 
 Sets the platform management fee rate for the given pool manager.
 
@@ -1015,7 +1286,7 @@ Sets the platform management fee rate for the given pool manager.
 
 <br />
 
-### `setPlatformOriginationFeeRate` 
+### `setPlatformOriginationFeeRate`
 
 Sets the platform origination fee rate for the given pool manager.
 
@@ -1036,7 +1307,7 @@ Sets the platform origination fee rate for the given pool manager.
 
 <br />
 
-### `setPlatformServiceFeeRate` 
+### `setPlatformServiceFeeRate`
 
 Sets the platform service fee rate for the given pool manager.
 
@@ -1057,7 +1328,7 @@ Sets the platform service fee rate for the given pool manager.
 
 <br />
 
-### `setPriceOracle` 
+### `setPriceOracle`
 
 Sets the price oracle for the given asset.
 
@@ -1078,7 +1349,7 @@ Sets the price oracle for the given asset.
 
 <br />
 
-### `setProtocolPause` 
+### `setProtocolPause`
 
 Sets the protocol pause.
 
@@ -1097,7 +1368,7 @@ Sets the protocol pause.
 
 <br />
 
-### `setSecurityAdmin` 
+### `setSecurityAdmin`
 
 Sets the address of the security admin.
 
@@ -1116,7 +1387,7 @@ Sets the address of the security admin.
 
 <br />
 
-### `setTimelockWindow` 
+### `setTimelockWindow`
 
 Sets the timelock for the given contract.
 
@@ -1141,7 +1412,7 @@ Sets the timelock for the given contract.
 
 <br />
 
-### `setTimelockWindows` 
+### `setTimelockWindows`
 
 Sets the timelock for the many function ids in a contract.
 
@@ -1166,7 +1437,7 @@ Sets the timelock for the many function ids in a contract.
 
 <br />
 
-### `setValidBorrower` 
+### `setValidBorrower`
 
 Sets the validity of the borrower.
 
@@ -1187,7 +1458,7 @@ Sets the validity of the borrower.
 
 <br />
 
-### `setValidCollateralAsset` 
+### `setValidCollateralAsset`
 
 Sets the validity of a collateral asset.
 
@@ -1208,14 +1479,14 @@ Sets the validity of a collateral asset.
 
 <br />
 
-### `setValidFactory` 
+### `setValidInstanceOf`
 
-Sets the validity of the factory.
+Sets the validity of the instance.
 
 ```solidity
-    function setValidFactory(
-        bytes32 factoryKey_,
-        address factory_,
+    function setValidInstanceOf(
+        bytes32 instanceKey_,
+        address instance_,
         bool isValid_
     )
         nonpayable;
@@ -1224,14 +1495,14 @@ Sets the validity of the factory.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factoryKey_` | `bytes32` | `bytes32` | The key of the factory to set the validity for. |
-| 1 | `factory_` | `address` | `address` | The address of the factory to set the validity for. |
-| 2 | `isValid_` | `bool` | `bool` | Boolean indicating the validity of the factory. |
+| 0 | `instanceKey_` | `bytes32` | `bytes32` | The key of the instance to set the validity for. |
+| 1 | `instance_` | `address` | `address` | The address of the instance to set the validity for. |
+| 2 | `isValid_` | `bool` | `bool` | Boolean indicating the validity of the instance. |
 
 
 <br />
 
-### `setValidPoolAsset` 
+### `setValidPoolAsset`
 
 Sets the validity of the pool asset.
 
@@ -1252,7 +1523,7 @@ Sets the validity of the pool asset.
 
 <br />
 
-### `setValidPoolDelegate` 
+### `setValidPoolDelegate`
 
 Sets the validity of the pool delegate.
 
@@ -1273,14 +1544,14 @@ Sets the validity of the pool delegate.
 
 <br />
 
-### `setValidPoolDeployer` 
+### `setValidPoolDeployer`
 
 Sets the validity of the pool deployer.
 
 ```solidity
     function setValidPoolDeployer(
-        address poolDeployer_,
-        bool isValid_
+        address account_,
+        bool isPoolDeployer_
     )
         nonpayable;
 ```
@@ -1288,13 +1559,13 @@ Sets the validity of the pool deployer.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDeployer_` | `address` | `address` | The address of the pool deployer to set the validity for. |
-| 1 | `isValid_` | `bool` | `bool` | A boolean indicating the validity of the pool deployer. |
+| 0 | `account_` | `address` | `address` | The address of the pool deployer to set the validity for. |
+| 1 | `isPoolDeployer_` | `bool` | `bool` | A boolean indicating the validity of the pool deployer. |
 
 
 <br />
 
-### `timelockParametersOf` 
+### `timelockParametersOf`
 
 Gets the time lock parameters for a given contract and function.
 
@@ -1326,7 +1597,7 @@ Gets the time lock parameters for a given contract and function.
 
 <br />
 
-### `transferOwnedPoolManager` 
+### `transferOwnedPoolManager`
 
 Transfer the ownership of the pool manager.
 
@@ -1347,7 +1618,7 @@ Transfer the ownership of the pool manager.
 
 <br />
 
-### `unscheduleCall` 
+### `unscheduleCall`
 
 Unschedules a call to be executed.
 
@@ -1372,7 +1643,7 @@ Unschedules a call to be executed.
 
 <br />
 
-### `unscheduleCall` 
+### `unscheduleCall`
 
 Unschedules a call to be executed.
 
@@ -1467,6 +1738,48 @@ A time locked call has been unscheduled.
 
 <br />
 
+### `CanDeployFromSet`
+
+An account has been allowed/disallowed from deploying an instance from a particular factory.
+
+```solidity
+    event CanDeployFromSet(
+        address factory_,
+        address account_,
+        bool canDeployFrom_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `factory_` | `address` | `address` | The address of the factory. |
+| 1 | `account_` | `address` | `address` | The address of the account. |
+| 2 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy from the factory. |
+
+<br />
+
+### `ContractPauseSet`
+
+The paused state for a given protocol contract was set.
+
+```solidity
+    event ContractPauseSet(
+        address caller_,
+        address contract_,
+        bool contractPaused_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
+| 1 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
+| 2 | `contractPaused_` | `bool` | `bool` | Whether the contract is uniquely paused. |
+
+<br />
+
 ### `DefaultTimelockParametersSet`
 
 The default parameters for the time lock has been set.
@@ -1487,6 +1800,29 @@ The default parameters for the time lock has been set.
 | 1 | `currentDelay_` | `uint256` | `uint256` | The newly set required delay. |
 | 2 | `previousDuration_` | `uint256` | `uint256` | The previous required duration. |
 | 3 | `currentDuration_` | `uint256` | `uint256` | The newly set required duration. |
+
+<br />
+
+### `FunctionUnpauseSet`
+
+The paused state for a function of a given protocol contract was set.
+
+```solidity
+    event FunctionUnpauseSet(
+        address caller_,
+        address contract_,
+        bytes4 sig_,
+        bool functionUnpaused_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
+| 1 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
+| 2 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
+| 3 | `functionUnpaused_` | `bool` | `bool` | Whether the contract&#x27;s function is uniquely unpaused. |
 
 <br />
 
@@ -1743,7 +2079,7 @@ The protocol pause was set to a new state.
 
 ```solidity
     event ProtocolPauseSet(
-        address securityAdmin_,
+        address caller_,
         bool protocolPaused_
     );
 ```
@@ -1751,7 +2087,7 @@ The protocol pause was set to a new state.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `securityAdmin_` | `address` | `address` | The address of the security admin. |
+| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
 | 1 | `protocolPaused_` | `bool` | `bool` | The protocol paused state. |
 
 <br />
@@ -1836,14 +2172,14 @@ A valid asset was set.
 
 <br />
 
-### `ValidFactorySet`
+### `ValidInstanceSet`
 
-A valid factory was set.
+A valid instance was set.
 
 ```solidity
-    event ValidFactorySet(
-        bytes32 factoryKey_,
-        address factory_,
+    event ValidInstanceSet(
+        bytes32 instanceKey_,
+        address instance_,
         bool isValid_
     );
 ```
@@ -1851,9 +2187,9 @@ A valid factory was set.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factoryKey_` | `bytes32` | `bytes32` | The key of the factory. |
-| 1 | `factory_` | `address` | `address` | The address of the factory. |
-| 2 | `isValid_` | `bool` | `bool` | The validity of the factory. |
+| 0 | `instanceKey_` | `bytes32` | `bytes32` | The key of the instance. |
+| 1 | `instance_` | `address` | `address` | The address of the instance. |
+| 2 | `isValid_` | `bool` | `bool` | The validity of the instance. |
 
 <br />
 

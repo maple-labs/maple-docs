@@ -1,4 +1,4 @@
-# Pool
+# Maple Pool
 
 
 
@@ -36,7 +36,7 @@
 
 ## Functions
 
-### `DOMAIN_SEPARATOR` 
+### `DOMAIN_SEPARATOR`
 
 Returns the signature domain separator.
 
@@ -58,7 +58,7 @@ Returns the signature domain separator.
 
 <br />
 
-### `PERMIT_TYPEHASH` 
+### `PERMIT_TYPEHASH`
 
 Returns the permit type hash.
 
@@ -80,7 +80,7 @@ Returns the permit type hash.
 
 <br />
 
-### `allowance` 
+### `allowance`
 
 Returns the allowance that one account has given another over their tokens.
 
@@ -110,7 +110,7 @@ Returns the allowance that one account has given another over their tokens.
 
 <br />
 
-### `approve` 
+### `approve`
 
 Function that allows one account to set the allowance of another account over their tokens.          Emits an {Approval} event.
 
@@ -140,7 +140,7 @@ Function that allows one account to set the allowance of another account over th
 
 <br />
 
-### `asset` 
+### `asset`
 
 The address of the underlying asset used by the Vault.          MUST be a contract that implements the ERC-20 standard.          MUST NOT revert.
 
@@ -162,7 +162,7 @@ The address of the underlying asset used by the Vault.          MUST be a contra
 
 <br />
 
-### `balanceOf` 
+### `balanceOf`
 
 Returns the amount of tokens owned by a given account.
 
@@ -190,7 +190,7 @@ Returns the amount of tokens owned by a given account.
 
 <br />
 
-### `balanceOfAssets` 
+### `balanceOfAssets`
 
 Returns the amount of underlying assets owned by the specified account.
 
@@ -218,7 +218,7 @@ Returns the amount of underlying assets owned by the specified account.
 
 <br />
 
-### `convertToAssets` 
+### `convertToAssets`
 
 The amount of &#x60;assets_&#x60; the &#x60;shares_&#x60; are currently equivalent to.          MUST NOT be inclusive of any fees that are charged against assets in the Vault.          MUST NOT reflect slippage or other on-chain conditions when performing the actual exchange.          MUST NOT show any variations depending on the caller.          MUST NOT revert.
 
@@ -246,7 +246,7 @@ The amount of &#x60;assets_&#x60; the &#x60;shares_&#x60; are currently equivale
 
 <br />
 
-### `convertToExitShares` 
+### `convertToExitShares`
 
 Returns the amount of exit shares for the input amount.
 
@@ -274,7 +274,7 @@ Returns the amount of exit shares for the input amount.
 
 <br />
 
-### `convertToShares` 
+### `convertToShares`
 
 The amount of &#x60;shares_&#x60; the &#x60;assets_&#x60; are currently equivalent to.          MUST NOT be inclusive of any fees that are charged against assets in the Vault.          MUST NOT reflect slippage or other on-chain conditions when performing the actual exchange.          MUST NOT show any variations depending on the caller.          MUST NOT revert.
 
@@ -302,7 +302,7 @@ The amount of &#x60;shares_&#x60; the &#x60;assets_&#x60; are currently equivale
 
 <br />
 
-### `decimals` 
+### `decimals`
 
 Returns the decimal precision used by the token.
 
@@ -324,7 +324,7 @@ Returns the decimal precision used by the token.
 
 <br />
 
-### `decreaseAllowance` 
+### `decreaseAllowance`
 
 Function that allows one account to decrease the allowance of another account over their tokens.          Emits an {Approval} event.
 
@@ -354,7 +354,7 @@ Function that allows one account to decrease the allowance of another account ov
 
 <br />
 
-### `deposit` 
+### `deposit`
 
 Mints &#x60;shares_&#x60; to &#x60;receiver_&#x60; by depositing &#x60;assets_&#x60; into the Vault.          MUST emit the {Deposit} event.          MUST revert if all of the assets cannot be deposited (due to insufficient approval, deposit limits, slippage, etc).
 
@@ -384,7 +384,7 @@ Mints &#x60;shares_&#x60; to &#x60;receiver_&#x60; by depositing &#x60;assets_&#
 
 <br />
 
-### `depositWithPermit` 
+### `depositWithPermit`
 
 Does a ERC4626 &#x60;deposit&#x60; with a ERC-2612 &#x60;permit&#x60;.
 
@@ -422,7 +422,7 @@ Does a ERC4626 &#x60;deposit&#x60; with a ERC-2612 &#x60;permit&#x60;.
 
 <br />
 
-### `increaseAllowance` 
+### `increaseAllowance`
 
 Function that allows one account to increase the allowance of another account over their tokens.          Emits an {Approval} event.
 
@@ -452,7 +452,7 @@ Function that allows one account to increase the allowance of another account ov
 
 <br />
 
-### `manager` 
+### `manager`
 
 The address of the account that is allowed to update the vesting schedule.
 
@@ -474,7 +474,7 @@ The address of the account that is allowed to update the vesting schedule.
 
 <br />
 
-### `maxDeposit` 
+### `maxDeposit`
 
 Maximum amount of &#x60;assets_&#x60; that can be deposited on behalf of the &#x60;receiver_&#x60; through a &#x60;deposit&#x60; call.          MUST return a limited value if the receiver is subject to any limits, or the maximum value otherwise.          MUST NOT revert.
 
@@ -502,7 +502,7 @@ Maximum amount of &#x60;assets_&#x60; that can be deposited on behalf of the &#x
 
 <br />
 
-### `maxMint` 
+### `maxMint`
 
 Maximum amount of &#x60;shares_&#x60; that can be minted on behalf of the &#x60;receiver_&#x60; through a &#x60;mint&#x60; call.          MUST return a limited value if the receiver is subject to any limits, or the maximum value otherwise.          MUST NOT revert.
 
@@ -530,7 +530,7 @@ Maximum amount of &#x60;shares_&#x60; that can be minted on behalf of the &#x60;
 
 <br />
 
-### `maxRedeem` 
+### `maxRedeem`
 
 Maximum amount of &#x60;shares_&#x60; that can be redeemed from the &#x60;owner_&#x60; through a &#x60;redeem&#x60; call.          MUST return a limited value if the owner is subject to any limits, or the total amount of owned shares otherwise.          MUST NOT revert.
 
@@ -558,7 +558,7 @@ Maximum amount of &#x60;shares_&#x60; that can be redeemed from the &#x60;owner
 
 <br />
 
-### `maxWithdraw` 
+### `maxWithdraw`
 
 Maximum amount of &#x60;assets_&#x60; that can be withdrawn from the &#x60;owner_&#x60; through a &#x60;withdraw&#x60; call.          MUST return a limited value if the owner is subject to any limits, or the total amount of owned assets otherwise.          MUST NOT revert.
 
@@ -586,7 +586,7 @@ Maximum amount of &#x60;assets_&#x60; that can be withdrawn from the &#x60;owner
 
 <br />
 
-### `mint` 
+### `mint`
 
 Mints &#x60;shares_&#x60; to &#x60;receiver_&#x60; by depositing &#x60;assets_&#x60; into the Vault.          MUST emit the {Deposit} event.          MUST revert if all of shares cannot be minted (due to insufficient approval, deposit limits, slippage, etc).
 
@@ -616,7 +616,7 @@ Mints &#x60;shares_&#x60; to &#x60;receiver_&#x60; by depositing &#x60;assets_&#
 
 <br />
 
-### `mintWithPermit` 
+### `mintWithPermit`
 
 Does a ERC4626 &#x60;mint&#x60; with a ERC-2612 &#x60;permit&#x60;.
 
@@ -656,7 +656,7 @@ Does a ERC4626 &#x60;mint&#x60; with a ERC-2612 &#x60;permit&#x60;.
 
 <br />
 
-### `name` 
+### `name`
 
 Returns the name of the token.
 
@@ -678,7 +678,7 @@ Returns the name of the token.
 
 <br />
 
-### `nonces` 
+### `nonces`
 
 Returns the nonce for the given owner.
 
@@ -706,7 +706,7 @@ Returns the nonce for the given owner.
 
 <br />
 
-### `permit` 
+### `permit`
 
 Approve by signature.
 
@@ -737,7 +737,7 @@ Approve by signature.
 
 <br />
 
-### `previewDeposit` 
+### `previewDeposit`
 
 Allows an on-chain or off-chain user to simulate the effects of their deposit at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of shares that would be minted in a &#x60;deposit&#x60; call in the same transaction.          MUST NOT account for deposit limits like those returned from &#x60;maxDeposit&#x60; and should always act as though the deposit would be accepted.          MUST NOT revert.
 
@@ -765,7 +765,7 @@ Allows an on-chain or off-chain user to simulate the effects of their deposit at
 
 <br />
 
-### `previewMint` 
+### `previewMint`
 
 Allows an on-chain or off-chain user to simulate the effects of their mint at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of assets that would be deposited in a &#x60;mint&#x60; call in the same transaction.          MUST NOT account for mint limits like those returned from &#x60;maxMint&#x60; and should always act as though the minting would be accepted.          MUST NOT revert.
 
@@ -793,7 +793,7 @@ Allows an on-chain or off-chain user to simulate the effects of their mint at th
 
 <br />
 
-### `previewRedeem` 
+### `previewRedeem`
 
 Allows an on-chain or off-chain user to simulate the effects of their redemption at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of assets that would be withdrawn in a &#x60;redeem&#x60; call in the same transaction.          MUST NOT account for redemption limits like those returned from &#x60;maxRedeem&#x60; and should always act as though the redemption would be accepted.          MUST NOT revert.
 
@@ -821,7 +821,7 @@ Allows an on-chain or off-chain user to simulate the effects of their redemption
 
 <br />
 
-### `previewWithdraw` 
+### `previewWithdraw`
 
 Allows an on-chain or off-chain user to simulate the effects of their withdrawal at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of shares that would be burned in a &#x60;withdraw&#x60; call in the same transaction.          MUST NOT account for withdrawal limits like those returned from &#x60;maxWithdraw&#x60; and should always act as though the withdrawal would be accepted.          MUST NOT revert.
 
@@ -849,7 +849,7 @@ Allows an on-chain or off-chain user to simulate the effects of their withdrawal
 
 <br />
 
-### `redeem` 
+### `redeem`
 
 Burns &#x60;shares_&#x60; from &#x60;owner_&#x60; and sends &#x60;assets_&#x60; to &#x60;receiver_&#x60;.          MUST emit the {Withdraw} event.          MUST revert if all of the shares cannot be redeemed (due to insufficient shares, withdrawal limits, slippage, etc).
 
@@ -881,7 +881,7 @@ Burns &#x60;shares_&#x60; from &#x60;owner_&#x60; and sends &#x60;assets_&#
 
 <br />
 
-### `removeShares` 
+### `removeShares`
 
 Requests a redemption of shares from the pool.
 
@@ -911,7 +911,7 @@ Requests a redemption of shares from the pool.
 
 <br />
 
-### `requestRedeem` 
+### `requestRedeem`
 
 Requests a redemption of shares from the pool.
 
@@ -941,7 +941,7 @@ Requests a redemption of shares from the pool.
 
 <br />
 
-### `requestWithdraw` 
+### `requestWithdraw`
 
 Requests a withdrawal of assets from the pool.
 
@@ -971,7 +971,7 @@ Requests a withdrawal of assets from the pool.
 
 <br />
 
-### `symbol` 
+### `symbol`
 
 Returns the symbol of the token.
 
@@ -993,7 +993,7 @@ Returns the symbol of the token.
 
 <br />
 
-### `totalAssets` 
+### `totalAssets`
 
 Total amount of the underlying asset that is managed by the Vault.          SHOULD include compounding that occurs from any yields.          MUST NOT revert.
 
@@ -1015,7 +1015,7 @@ Total amount of the underlying asset that is managed by the Vault.          SHOU
 
 <br />
 
-### `totalSupply` 
+### `totalSupply`
 
 Returns the total amount of tokens in existence.
 
@@ -1037,7 +1037,7 @@ Returns the total amount of tokens in existence.
 
 <br />
 
-### `transfer` 
+### `transfer`
 
 Moves an amount of tokens from &#x60;msg.sender&#x60; to a specified account.          Emits a {Transfer} event.
 
@@ -1067,7 +1067,7 @@ Moves an amount of tokens from &#x60;msg.sender&#x60; to a specified account.   
 
 <br />
 
-### `transferFrom` 
+### `transferFrom`
 
 Moves a pre-approved amount of tokens from a sender to a specified account.          Emits a {Transfer} event.          Emits an {Approval} event.
 
@@ -1099,7 +1099,7 @@ Moves a pre-approved amount of tokens from a sender to a specified account.     
 
 <br />
 
-### `unrealizedLosses` 
+### `unrealizedLosses`
 
 Returns the amount unrealized losses.
 
@@ -1121,7 +1121,7 @@ Returns the amount unrealized losses.
 
 <br />
 
-### `withdraw` 
+### `withdraw`
 
 Burns &#x60;shares_&#x60; from &#x60;owner_&#x60; and sends &#x60;assets_&#x60; to &#x60;receiver_&#x60;.          MUST emit the {Withdraw} event.          MUST revert if all of the assets cannot be withdrawn (due to insufficient assets, withdrawal limits, slippage, etc).
 

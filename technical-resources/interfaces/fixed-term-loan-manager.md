@@ -1,4 +1,4 @@
-# LoanManager
+# Maple Fixed Term Loan Manager
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `HUNDRED_PERCENT` 
+### `HUNDRED_PERCENT`
 
 Returns the value considered as the hundred percent.
 
@@ -29,7 +29,7 @@ Returns the value considered as the hundred percent.
 
 <br />
 
-### `PRECISION` 
+### `PRECISION`
 
 Returns the precision used for the contract.
 
@@ -51,7 +51,7 @@ Returns the precision used for the contract.
 
 <br />
 
-### `acceptNewTerms` 
+### `acceptNewTerms`
 
 Accepts new loan terms triggering a loan refinance.
 
@@ -60,7 +60,8 @@ Accepts new loan terms triggering a loan refinance.
         address loan_,
         address refinancer_,
         uint256 deadline_,
-        bytes[] calls_
+        bytes[] calls_,
+        uint256 principalIncrease_
     )
         nonpayable;
 ```
@@ -72,11 +73,12 @@ Accepts new loan terms triggering a loan refinance.
 | 1 | `refinancer_` | `address` | `address` | The address of the refinancer. |
 | 2 | `deadline_` | `uint256` | `uint256` | The new deadline to execute the refinance. |
 | 3 | `calls_` | `bytes[]` | `bytes[]` | The encoded calls to set new loan terms. |
+| 4 | `principalIncrease_` | `uint256` | `uint256` | The increase in principal. |
 
 
 <br />
 
-### `accountedInterest` 
+### `accountedInterest`
 
 Gets the amount of accounted interest.
 
@@ -98,7 +100,29 @@ Gets the amount of accounted interest.
 
 <br />
 
-### `allowedSlippageFor` 
+### `accruedInterest`
+
+Gets the amount of accrued interest up until this point in time.
+
+```solidity
+    function accruedInterest()
+        view
+        returns (
+            uint256 accruedInterest_
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `accruedInterest_` | `uint256` | `uint256` | The amount of accrued interest up until this point in time. |
+
+
+<br />
+
+### `allowedSlippageFor`
 
 Gets allowed slippage for a give collateral asset.
 
@@ -126,7 +150,7 @@ Gets allowed slippage for a give collateral asset.
 
 <br />
 
-### `assetsUnderManagement` 
+### `assetsUnderManagement`
 
 Gets the amount of assets under the management of the contract.
 
@@ -148,7 +172,7 @@ Gets the amount of assets under the management of the contract.
 
 <br />
 
-### `claim` 
+### `claim`
 
 Called by loans when payments are made, updating the accounting.
 
@@ -173,7 +197,7 @@ Called by loans when payments are made, updating the accounting.
 
 <br />
 
-### `domainEnd` 
+### `domainEnd`
 
 Gets the timestamp of the domain end.
 
@@ -195,7 +219,7 @@ Gets the timestamp of the domain end.
 
 <br />
 
-### `domainStart` 
+### `domainStart`
 
 Gets the timestamp of the domain start.
 
@@ -217,7 +241,7 @@ Gets the timestamp of the domain start.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -239,7 +263,7 @@ The address of the proxy factory.
 
 <br />
 
-### `finishCollateralLiquidation` 
+### `finishCollateralLiquidation`
 
 Finishes the collateral liquidation.
 
@@ -269,7 +293,7 @@ Finishes the collateral liquidation.
 
 <br />
 
-### `fund` 
+### `fund`
 
 Funds a new loan.
 
@@ -288,7 +312,7 @@ Funds a new loan.
 
 <br />
 
-### `fundsAsset` 
+### `fundsAsset`
 
 Gets the address of the funds asset.
 
@@ -310,29 +334,7 @@ Gets the address of the funds asset.
 
 <br />
 
-### `getAccruedInterest` 
-
-Gets the amount of accrued interest up until this point in time.
-
-```solidity
-    function getAccruedInterest()
-        view
-        returns (
-            uint256 accruedInterest_
-        );
-```
-
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `accruedInterest_` | `uint256` | `uint256` | The amount of accrued interest up until this point in time. |
-
-
-<br />
-
-### `getExpectedAmount` 
+### `getExpectedAmount`
 
 Gets the expected amount of an asset given the input amount.
 
@@ -362,31 +364,9 @@ Gets the expected amount of an asset given the input amount.
 
 <br />
 
-### `globals` 
-
-Gets the address of the Maple globals contract.
-
-```solidity
-    function globals()
-        view
-        returns (
-            address globals_
-        );
-```
+### `governor`
 
 
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `globals_` | `address` | `address` | The address of the Maple globals contract. |
-
-
-<br />
-
-### `governor` 
-
-Gets the address of the governor contract.
 
 ```solidity
     function governor()
@@ -401,19 +381,18 @@ Gets the address of the governor contract.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `governor_` | `address` | `address` | The address of the governor contract. |
+| 0 | `governor_` | `address` | `address` |  |
 
 
 <br />
 
-### `impairLoan` 
+### `impairLoan`
 
 Triggers the loan impairment for a loan.
 
 ```solidity
     function impairLoan(
-        address loan_,
-        bool isGovernor_
+        address loan_
     )
         nonpayable;
 ```
@@ -422,12 +401,11 @@ Triggers the loan impairment for a loan.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `loan_` | `address` | `address` | Loan to trigger the loan impairment. |
-| 1 | `isGovernor_` | `bool` | `bool` | True if called by the governor. |
 
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -449,7 +427,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `isLiquidationActive` 
+### `isLiquidationActive`
 
 Returns whether or not a liquidation is in progress.
 
@@ -477,7 +455,7 @@ Returns whether or not a liquidation is in progress.
 
 <br />
 
-### `issuanceRate` 
+### `issuanceRate`
 
 Gets the current issuance rate.
 
@@ -499,7 +477,7 @@ Gets the current issuance rate.
 
 <br />
 
-### `liquidationInfo` 
+### `liquidationInfo`
 
 Gets the information for a liquidation.
 
@@ -537,29 +515,7 @@ Gets the information for a liquidation.
 
 <br />
 
-### `mapleTreasury` 
-
-Gets the address of the Maple treasury.
-
-```solidity
-    function mapleTreasury()
-        view
-        returns (
-            address treasury_
-        );
-```
-
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `treasury_` | `address` | `address` | The address of the Maple treasury. |
-
-
-<br />
-
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -580,7 +536,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `minRatioFor` 
+### `minRatioFor`
 
 Gets the minimum ratio for a collateral asset.
 
@@ -608,7 +564,7 @@ Gets the minimum ratio for a collateral asset.
 
 <br />
 
-### `paymentCounter` 
+### `paymentCounter`
 
 Gets the payment counter.
 
@@ -630,7 +586,7 @@ Gets the payment counter.
 
 <br />
 
-### `paymentIdOf` 
+### `paymentIdOf`
 
 Gets the payment if for the given loan.
 
@@ -658,7 +614,7 @@ Gets the payment if for the given loan.
 
 <br />
 
-### `payments` 
+### `payments`
 
 Gets the information for a payment.
 
@@ -698,7 +654,7 @@ Gets the information for a payment.
 
 <br />
 
-### `paymentWithEarliestDueDate` 
+### `paymentWithEarliestDueDate`
 
 Gets the payment id with the earliest due date.
 
@@ -720,31 +676,9 @@ Gets the payment id with the earliest due date.
 
 <br />
 
-### `pool` 
-
-Gets the address of the pool.
-
-```solidity
-    function pool()
-        view
-        returns (
-            address
-        );
-```
+### `poolDelegate`
 
 
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
-
-
-<br />
-
-### `poolDelegate` 
-
-Gets the address of the pool delegate.
 
 ```solidity
     function poolDelegate()
@@ -759,12 +693,12 @@ Gets the address of the pool delegate.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate_` | `address` | `address` | The address of the pool delegate. |
+| 0 | `poolDelegate_` | `address` | `address` |  |
 
 
 <br />
 
-### `poolManager` 
+### `poolManager`
 
 Gets the address of the pool manager.
 
@@ -786,7 +720,7 @@ Gets the address of the pool manager.
 
 <br />
 
-### `principalOut` 
+### `principalOut`
 
 Gets the amount of principal out.
 
@@ -808,14 +742,38 @@ Gets the amount of principal out.
 
 <br />
 
-### `removeLoanImpairment` 
+### `rejectNewTerms`
+
+Reject/cancel proposed new terms for a loan.
+
+```solidity
+    function rejectNewTerms(
+        address loan_,
+        address refinancer_,
+        uint256 deadline_,
+        bytes[] calls_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loan_` | `address` | `address` | The loan with the proposed new changes. |
+| 1 | `refinancer_` | `address` | `address` | The refinancer to use in the refinance. |
+| 2 | `deadline_` | `uint256` | `uint256` | The deadline by which the lender must accept the new terms. |
+| 3 | `calls_` | `bytes[]` | `bytes[]` | The array of calls to be made to the refinancer. |
+
+
+<br />
+
+### `removeLoanImpairment`
 
 Removes the loan impairment for a loan.
 
 ```solidity
     function removeLoanImpairment(
-        address loan_,
-        bool isCalledByGovernor_
+        address loan_
     )
         nonpayable;
 ```
@@ -824,12 +782,11 @@ Removes the loan impairment for a loan.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `loan_` | `address` | `address` | Loan to remove the loan impairment. |
-| 1 | `isCalledByGovernor_` | `bool` | `bool` | True if &#x60;impairLoan&#x60; was called by the governor. |
 
 
 <br />
 
-### `setAllowedSlippage` 
+### `setAllowedSlippage`
 
 Sets the allowed slippage for a collateral asset liquidation.
 
@@ -850,7 +807,7 @@ Sets the allowed slippage for a collateral asset liquidation.
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -869,7 +826,7 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `setMinRatio` 
+### `setMinRatio`
 
 Sets the minimum ratio for a collateral asset liquidation.         This ratio is expressed as a decimal representation of units of fundsAsset         per unit collateralAsset in fundsAsset decimal precision.
 
@@ -890,7 +847,7 @@ Sets the minimum ratio for a collateral asset liquidation.         This ratio is
 
 <br />
 
-### `sortedPayments` 
+### `sortedPayments`
 
 Gets the information of the sorted list.
 
@@ -922,7 +879,7 @@ Gets the information of the sorted list.
 
 <br />
 
-### `triggerDefault` 
+### `triggerDefault`
 
 Triggers the default of a loan.
 
@@ -956,7 +913,7 @@ Triggers the default of a loan.
 
 <br />
 
-### `unrealizedLosses` 
+### `unrealizedLosses`
 
 Returns the amount unrealized losses.
 
@@ -978,7 +935,7 @@ Returns the amount unrealized losses.
 
 <br />
 
-### `updateAccounting` 
+### `updateAccounting`
 
 Updates the issuance parameters of the LoanManager, callable by the Governor and the PoolDelegate.       Useful to call when &#x60;block.timestamp&#x60; is greater than &#x60;domainEnd&#x60; and the LoanManager is not accruing interest.
 
@@ -991,7 +948,7 @@ Updates the issuance parameters of the LoanManager, callable by the Governor and
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -1073,6 +1030,23 @@ Emitted when the issuance parameters are changed.
 | 0 | `domainEnd_` | `uint48` | `uint48` | The timestamp of the domain end. |
 | 1 | `issuanceRate_` | `uint256` | `uint256` | New value for the issuance rate. |
 | 2 | `accountedInterest_` | `uint112` | `uint112` | The amount of accounted interest. |
+
+<br />
+
+### `LoanTransferAdminSet`
+
+Emitted when the loanTransferAdmin is set by the PoolDelegate.
+
+```solidity
+    event LoanTransferAdminSet(
+        address loanTransferAdmin_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loanTransferAdmin_` | `address` | `address` | The address of the admin that can transfer loans. |
 
 <br />
 

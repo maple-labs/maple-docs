@@ -1,4 +1,4 @@
-# PoolManagerInitializer
+# Maple Pool Manager Initializer
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `active` 
+### `active`
 
 Returns whether or not a pool is active.
 
@@ -29,7 +29,7 @@ Returns whether or not a pool is active.
 
 <br />
 
-### `asset` 
+### `asset`
 
 Gets the address of the funds asset.
 
@@ -51,7 +51,7 @@ Gets the address of the funds asset.
 
 <br />
 
-### `configured` 
+### `configured`
 
 Returns whether or not a pool is configured.
 
@@ -73,7 +73,7 @@ Returns whether or not a pool is configured.
 
 <br />
 
-### `decodeArguments` 
+### `decodeArguments`
 
 
 
@@ -109,7 +109,7 @@ Returns whether or not a pool is configured.
 
 <br />
 
-### `delegateManagementFeeRate` 
+### `delegateManagementFeeRate`
 
 Gets the delegate management fee rate.
 
@@ -131,7 +131,7 @@ Gets the delegate management fee rate.
 
 <br />
 
-### `encodeArguments` 
+### `encodeArguments`
 
 
 
@@ -167,7 +167,7 @@ Gets the delegate management fee rate.
 
 <br />
 
-### `isLoanManager` 
+### `isLoanManager`
 
 Returns whether or not the given address is a loan manager.
 
@@ -195,7 +195,7 @@ Returns whether or not the given address is a loan manager.
 
 <br />
 
-### `isValidLender` 
+### `isValidLender`
 
 Returns whether or not the given address is a valid lender.
 
@@ -223,7 +223,7 @@ Returns whether or not the given address is a valid lender.
 
 <br />
 
-### `liquidityCap` 
+### `liquidityCap`
 
 Gets the liquidity cap for the pool.
 
@@ -245,7 +245,7 @@ Gets the liquidity cap for the pool.
 
 <br />
 
-### `loanManagerList` 
+### `loanManagerList`
 
 Gets the address of the loan manager in the list.
 
@@ -273,7 +273,7 @@ Gets the address of the loan manager in the list.
 
 <br />
 
-### `openToPublic` 
+### `openToPublic`
 
 Returns whether or not a pool is open to public deposits.
 
@@ -295,7 +295,7 @@ Returns whether or not a pool is open to public deposits.
 
 <br />
 
-### `pendingPoolDelegate` 
+### `pendingPoolDelegate`
 
 Gets the address of the pending pool delegate.
 
@@ -317,7 +317,7 @@ Gets the address of the pending pool delegate.
 
 <br />
 
-### `pool` 
+### `pool`
 
 Gets the address of the pool.
 
@@ -339,7 +339,7 @@ Gets the address of the pool.
 
 <br />
 
-### `poolDelegate` 
+### `poolDelegate`
 
 Gets the address of the pool delegate.
 
@@ -361,7 +361,7 @@ Gets the address of the pool delegate.
 
 <br />
 
-### `poolDelegateCover` 
+### `poolDelegateCover`
 
 Gets the address of the pool delegate cover.
 
@@ -383,7 +383,7 @@ Gets the address of the pool delegate cover.
 
 <br />
 
-### `withdrawalManager` 
+### `withdrawalManager`
 
 Gets the address of the withdrawal manager.
 
