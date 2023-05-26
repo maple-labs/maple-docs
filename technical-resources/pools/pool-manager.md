@@ -2,13 +2,13 @@
 
 Since the Pool contract holds the ERC-20 token logic that tracks the value of all the Liquidity Provider's positions, it was prioritized to be made immutable. In order to balance the benefits of immutability and be able to incorporate the flexibility to build into the future, a modular architecture was introduced. The PoolManager is the true "central" contract of a Pool ecosystem of contracts. The PoolManager holds all administrative functionality, aggregates all accounting information, and allows for a high degree of configuration. The PoolManager manages with the following contracts:
 - Pool
-- LoanManager
 - PoolDelegateCover
 - WithdrawalManager
+- LoanManager (can be multiple)
 
-The relationship between the Pool and PoolManager is currently one-to-one, however due to the architecture a PoolManager could technically manage multiple ERC-4626 Pool contracts and manage their accounting. This allows for more sophisticated LP options to become available in the future if needed. 
+The relationship between the Pool and PoolManager is currently one-to-one, however due to the architecture a PoolManager could technically manage multiple ERC-4626 Pool contracts and manage their accounting. This allows for more sophisticated LP options to become available in the future if needed.
 
-The Pool is not aware of the LoanManager or WithdrawalManager, so these contracts can be changed in the future as seen fit (can only be changeable to contracts that have been vetted by the protocol smart contracts team and the DAO).
+The Pool is not aware of any of the LoanManagers or the WithdrawalManager, so these contracts can be changed in the future as seen fit (can only be changeable to contracts that have been vetted by the protocol smart contracts team and the DAO).
 
 In addition, in future iterations of the protocol, this will allow for newly deployed Pools to be configured in a custom manner. Pool Delegates could choose from a suite of LoanManager, PoolDelegateCover, and WithdrawalManager contracts and initialize a Pool that meets the specific needs they have to run their lending business.
 
