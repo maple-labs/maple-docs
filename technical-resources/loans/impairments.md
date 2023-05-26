@@ -1,6 +1,6 @@
 # Overview
 
-In the situation where a Borrower is discovered to be unable to make an upcoming payment (e.g., they are discovered to be insolvent), impairment allows the Pool to recognize a "paper loss" (`unrealizedLoss`). This is useful to prevent large liquidity events in the Pool when the Borrowers default is far enough in the future that Liquidity Providers are able to exit the Pools before they occur.
+For both types of loans, in the situation where a Borrower is discovered to be unable to make an upcoming payment (e.g., they are discovered to be insolvent), impairment allows the Pool to recognize a "paper loss" (`unrealizedLoss`). This is useful to prevent large liquidity events in the Pool when the Borrowers default is far enough in the future that Liquidity Providers are able to exit the Pools before they occur.
 
 When `impairLoan` is called on the **PoolManager** contract, the principal and any expected interest due up to the `impairLoan` call is made or payment due date (which ever is earlier) is added to the Pool's `unrealizedLosses`. `unrealizedLosses` is factored into the Pool's value for withdrawals, incentivizing current Liquidity Providers to remain in the Pool until the impairment is resolved.
 
