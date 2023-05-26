@@ -7,9 +7,10 @@ Both for Open-Term and Fized-Term refinancing is defined as the revision of Loan
 - Set `closingRate`
 - Set `endingPrincipal`: Must be less than current `principal` on Loan
 - Set `gracePeriod`
+- Set `noticePeriod`
 - Set `interestRate`
 - Set `lateFeeRate`
-- Set `lateInterestPremium`
+- Set `lateInterestPremiumRate`
 - Set `paymentInterval`
 - Set `paymentsRemaining`
 

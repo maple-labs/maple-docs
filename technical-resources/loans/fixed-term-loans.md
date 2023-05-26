@@ -172,7 +172,7 @@ $$
 ## Late Payments
 
 When a payment is made after the `nextPaymentDueDate` timestamp in the Loan, it is considered late. There are two fee parameters that are used to calculate late fees:
-- `lateInterestPremium`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
+- `lateInterestPremiumRate`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
 - `lateFeeRate`: Fee charged as a percentage of the outstanding principal at the time of payment.
 
 Below is the calculation for a late payment, where `total` is the amount calculated in the equations above. All of the extra funds go towards interest.
@@ -191,7 +191,7 @@ where:
 $$
 \large
 \begin{align}
-\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremiumRate) \times daysLate \times 86400}{365 \times 86400}
 \end{align}
 $$
 
@@ -216,6 +216,7 @@ $$
 # Initialization Parameters
 
 * `borrower` - The address of the borrower.
+* `lender` - The address of the lender.
 * `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](./fee-manager.md))
 * `collateralAsset` - The address of the asset used as collateral.
 * `fundsAsset` - The address of asset that the loan is denominated in.
@@ -228,9 +229,16 @@ $$
 * `interestRate` - The annualized interest rate.
 * `closingFeeRate` - The rate used to calculate closing a loan early.
 * `lateFeeRate` - A fee rate applied on principal amount on late payments.
-* `lateInterestPremium` - A premium added on top of the interest rate for late payments.
+* `lateInterestPremiumRate` - A premium added on top of the interest rate for late payments.
 * `delegateOriginationFee` - A nominal amount of funds asset payment on the origination to the pool delegate.
 * `delegateServiceFee` - A nominal amount of funds assets that is added on every payment destined to the pool delegate.
+
+## Parameters Constraints
+
+* `delegateOriginationFee` <= 2.5% of principal
+* `gracePeriod` >= 12 hours
+* `paymentInterval` > 0
+* `payments` > 0
 
 # Fee Manager
 
