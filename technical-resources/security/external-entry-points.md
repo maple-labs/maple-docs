@@ -25,6 +25,10 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 ### FixedTermLoan
 
+* `closeLoan`
+* `makePayment`
+* `postCollateral`
+* `returnFunds`
 * `skim`
 
 ### OpenTermLoan
@@ -34,46 +38,73 @@ There are many actors that can interact with Maple's contracts, so this page ser
 ### Globals
 
 * `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilitiies.
+* `unscheduleCall`
 
 ### Liquidator
 
 * `liquidatePortion` - Used by keepers to perform liquidations.
 
+### PoolManager
+
+* `depositCover`
+
 # Permissioned Functions
 
 ### FixedTermLoan
 
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
 **Borrower Permissioned Functions**
 
-* `AcceptBorrower`
-* `CloseLoan`
-* `DrawdownFunds`
-* `MakePayment`
-* `PostCollateral`
-* `ProposeNewTerms`
-* `RemoveCollateral`
-* `ReturnFunds`
-* `SetPendingBorrower`
+* `acceptBorrower`
+* `drawdownFunds`
+* `proposeNewTerms`
+* `removeCollateral`
+* `setPendingBorrower`
+* `rejectNewTerms`
+
+**Lender Permissioned Functions**
+
+* `acceptLender`
+* `acceptNewTerms`
+* `fundLoan`
+* `impairLoan`
+* `removeLoanImpairment`
+* `repossess`
+* `setPendingLender`
+* `rejectNewTerms`
 
 ### Globals
 
 **Governor Permissioned Functions**
 
+* `acceptGovernor`
+* `setPendingGovernor`
 * `activatePoolManager`
+* `setBootstrapMint`
+* `setDefaultTimelockParameters`
 * `setMapleTreasury`
 * `setMigrationAdmin`
 * `setPriceOracle`
 * `setSecurityAdmin`
-* `setDefaultTimelockParameters`
-* `setMigrationAdmin`
+* `setContractPause`
+* `setCanDeployFrom`
 * `setValidBorrower`
-* `setValidFactory`
+* `setValidCollateralAsset`
+* `setValidInstanceOf`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
 * `setValidPoolDeployer`
 * `setManualOverridePrice`
-* `setMinCoverAmount`
 * `setMaxCoverLiquidationPercent`
+* `setMinCoverAmount`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
@@ -82,43 +113,109 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Security Admin Permissioned Functions**
 
+* `setContractPause`
+* `setFunctionUnpause`
 * `setProtocolPause`
 
-**Pool Delegate Permissioned Functions**
+**Pool Manager Permissioned Functions**
 
 * `transferOwnedPoolManager`
 
 ### PoolManager
 
-**Pool Delegate only functionality**
+**Factory Permissioned Functions**
 
-* `setPendingPoolDelegate`
-* `acceptPendingPoolDelegate`
-* `addLoanManager`
-* `removeLoanManager`
-* `setAllowedLender`
-* `setDelegateManagementFeeRate`
-* `setLiquidityCap`
-* `setOpenToPublic`
-* `setWithdrawalManager`
-* `acceptNewTerms`
-* `fund`
-* `withdrawCover`
+* `migrate`
+* `setImplementation`
 
-**Pool Delegate and Governor Permissioned Functions**
+**Governor Permissioned Functions**
 
-* `setAllowedSlippage`
-* `setMinRatio`
-* `impairLoan`
-* `removeLoanImpairment`
 * `finishCollateralLiquidation`
 * `triggerDefault`
 
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Deployer Permissioned Functions**
+
+* `completeConfiguration`
+* `addLoanManager`
+* `setDelegateManagementFeeRate`
+* `setLiquidityCap`
+* `setWithdrawalManager`
+
+**Pool Delegate Permissioned Functions**
+
+* `acceptPoolDelegate`
+* `setPendingPoolDelegate`
+* `addLoanManager`
+* `setAllowedLender`
+* `setDelegateManagementFeeRate`
+* `setIsLoanManager`
+* `setLiquidityCap`
+* `setOpenToPublic`
+* `finishCollateralLiquidation`
+* `triggerDefault`
+* `withdrawCover`
+
+**Globals Permissioned Functions**
+
+* `setActive`
+
+**Loan Manager Permissioned Functions**
+
+* `requestFunds`
+
+**Pool Permissioned Functions**
+
+* `processRedeem`
+* `removeShares`
+* `requestRedeem`
+
+**Disabled Functions**
+
+* `processWithdraw`
+* `requestWithdraw`
+
 ### FixedTermLoanManager
 
-**Pool Delegate and Governor Permissioned Functions**
+**Factory Permissioned Functions**
 
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `setAllowedSlippage`
+* `setMinRatio`
 * `updateAccounting`
+* `impairLoan`
+* `removeLoanImpairment`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Pool Delegate Permissioned Functions**
+
+* `setAllowedSlippage`
+* `setMinRatio`
+* `updateAccounting`
+* `acceptNewTerms`
+* `fund`
+* `rejectNewTerms`
+* `impairLoan`
+* `removeLoanImpairment`
+
+**Pool Manager Permissioned Functions**
+
+* `finishCollateralLiquidation`
+* `triggerDefault`
+
+**Loan Permissioned Functions**
+
+* `claim`
 
 ### WithdrawalManager
 
