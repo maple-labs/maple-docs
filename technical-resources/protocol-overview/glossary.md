@@ -38,7 +38,7 @@
 | `incomingNetInterest` | The amount of interest expected to be paid by the end of the payment interval for a given Loan, net of management fees. |
 | `issuanceRate` | The amount of interest per second accrued by the LoanManager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled up to 30 decimal places for improved precision. |
 | `lateFeeRate` | A flat rate against principal that is charged when a Loan makes a late payment. |
-| `lateInterestPremium` | The amount to increase the interest rate by for late payments. |
+| `lateInterestPremiumRate` | The rate at which to increase the interest rate by for late payments. |
 | `liquidityCap` | The maximum amount of value that a Pool can manage. It can be less than the current value of the Pool, preventing additional deposits. Deposits are limited by this value, where the maximum deposit amount is the difference between the current `liquidityCap` and the current value of the Pool. |
 | `noticePeriod` | The number of seconds remaining after a loan is called when the borrower is considered to be in default. |
 | `principalOut` | The aggregate amount of outstanding principal across all Loans in a given Pool. |
