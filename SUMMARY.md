@@ -49,10 +49,10 @@
   * [Test Report](technical-resources/security/test-report.md)
 * Loans
   * [Loans](technical-resources/loans/loans.md)
-  * [Loan Creation](technical-resources/loans/loan-creation.md)
-  * [FeeManager](technical-resources/loans/fee-manager.md)
+  * [Fixed Term Loans](technical-resourcers/loans/fixed-term-loans.md)
+  * [Open Term Loans](technical-resourcers/loans/fixed-term-loans.md)
   * [Refinancing](technical-resources/loans/refinancing.md)
-  * [Loan Impairment](technical-resources/loans/loan-impairment.md)
+  * [Impairments](technical-resources/loans/loan-impairment.md)
   * [Defaults](technical-resources/loans/defaults.md)
 * Pools
   * [Pools](technical-resources/pools/pools.md)
