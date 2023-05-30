@@ -8,10 +8,8 @@ In such a situation, the security admin would trigger a pause, which stops all o
 
     1. The security admin calls unpause.
     2. The governor or pool delegate calls setMinRatio.
-    3. The security admin calls pause to enable proper fix evaluation.
-    4. The security admin calls unpause.
 
-Even in this simple scenario, the fix is an operational challenge, as it involves multiple parties and time-sensitive procedures. Therefore, the mechanism has been redesigned to address these issues.
+Even in this simple scenario, the fix is an operational challenge, as there is no native way to ensure the atomicity of operations and it involves multiple parties and time-sensitive procedures. Therefore, the mechanism has been redesigned to address these issues.
 
 ## Granular Pausing
 Addressing the flaws described above, the pausing has 3 separate setters that control the status.
@@ -29,12 +27,12 @@ Additionally, a flag is added to pause specific contract instances. This way, if
 ### Per-Function Unpause
 To help with the recovery, there's a third lever which indicates which function in a paused contract can be manually un-paused. This handles the case of "unknown unknowns", which is hard to know upfront which functions might need to be called as part of the solution.
 
-
 With these three variables, the governor and security admin have a greater flexibility in dealing with emergencies, and also allows for the protocol to return to a functioning state sooner.
 
 Back to the example where the ratio of a collateral asset is misconfigured in a pool, the new way of handling the issue:
 
     1. Pause the whole protocol for investigation.
     2. Turn on the `setMinRatio` function to be callable and adjust the parameter.
-    3. Set the specific contract to be paused and simultaneosly unpause the rest of the system.
-    4. Once the fix is assured to be comprehensible, unpause the affected contract.
+    3. Once the fix is assured to be comprehensible, unpause the protocol.
+
+Using the new pausing mechanism, the operational complexity is reduced and it becomes impossible to exploit the system while the fix is underway.
