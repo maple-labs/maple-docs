@@ -1,6 +1,6 @@
 # Overview
 
-Whenever any interaction is made with a `Fixed Term Loan` from the `LoanManager`, `_advanceGlobalPaymentAccounting` is called. The purpose of this function is to account all Loans' outstanding interest and to represent the current state at the current timestamp.
+Whenever any interaction is made with a `Fixed Term Loan` from the `FixedTermLoanManager`, `_advanceGlobalPaymentAccounting` is called. The purpose of this function is to account all Loans' outstanding interest and to represent the current state at the current timestamp.
 
 For all of the below examples, the following abbreviations are used:
 - $$ AI $$: `accountedInterest`
