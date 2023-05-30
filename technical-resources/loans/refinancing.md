@@ -1,6 +1,6 @@
 # Refinance Actions
 
-Both for Open-Term and Fized-Term refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan, the Borrower and Lender. The following actions can be performed in any permutation desired:
+Both for Open-Term and Fized-Term Loans, refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan: the Borrower and Lender. The following actions can be performed in any permutation desired:
 - Increase principal: Increases `principal`, `principalRequested`, and `drawableFunds` by a given `amount`, requires additional funds to be added by the Lender
 - Decrease `principal`, only for Open Term Loans
 - Set `collateralRequired`
@@ -40,7 +40,7 @@ This function will take the hash of these changes and the Refinancer smart contr
 
 ### `acceptNewTerms()`
 
-This function is called the other party, the Lender, through the `Loan Manager` in Fixed-Term and the Borrower in Open-Term. In the call, the same parameters are passed to agree to the terms, the smart contract address of the Refinancer and the array of ABI-encoded function calls. 
+This function is called the other party, the Lender, through the `Loan Manager`, in Fixed-Term and the Borrower in Open-Term. In the call, the same parameters are passed to agree to the terms, the smart contract address of the Refinancer and the array of ABI-encoded function calls. 
 
 This function calculates the hash again (`keccak256(abi.encode(refinancer_, calls_))`) and compares it with the hash that was added to storage when `proposeNewTerms()` was called.
 

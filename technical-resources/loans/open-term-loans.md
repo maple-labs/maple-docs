@@ -1,40 +1,37 @@
 # Accounting 
 
 ## Asset Definition
-
 Loans manage one asset: `fundsAsset`. 
 
 ### `fundsAsset` 
 This represents the ERC-20 token that is used to facilitate the funding, drawing down, and payments during a loan lifecycle. Typically this would be a stablecoin such as USDC, DAI, or USDT.
 
-
 ## Payments
-
 Borrowers have the flexibility to make payments, including partial principal repayments, against their loans at any given time. All fees, including service fees, along with interest, are pro-rated and calculated based on the exact time of payment or other significant actions such as loan funding or refinancing.
 
-Payments due are comprised of `principalCalled + Interest + lateInterest + delegateServiceFee + platformServiceFee`
+Payments due are comprised of `principalCalled + interest + lateInterest + delegateServiceFee + platformServiceFee`
 
 ## Interest
 Interest is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
+
 $$startDate = \max(datePaid, dateFunded)$$
 
-$$Interval = block.timestamp - startDate$$
+$$interval = block.timestamp - startDate$$
 
-$$Interest = principal * interestRate * \frac{interval}{365*86400}$$
-
+$$interest = principal * interestRate * \frac{interval}{365*86400}$$
 
 ## Late Interest
 Late payments are also prorated and based on the `lateInterestPremiumRate` and `lateFeeRate`
 
 $$lateInterval = block.timestamp - paymentDueDate$$
 
-$$lateInterest = principal * lateInterestPremiumRate * \frac{LateInterval}{365*86400} + (principal * lateFeeRate)$$
+$$lateInterest = principal * lateInterestPremiumRate * \frac{lateInterval}{365*86400} + (principal * lateFeeRate)$$
 
 ## Delegate Service Fee
 Delegate Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
 $$startDate = \max(datePaid, dateFunded)$$
 
-$$Interval = block.timestamp - startDate$$
+$$interval = block.timestamp - startDate$$
 
 $$delegateServiceFee = principal * delegateServiceFeeRate * \frac{interval}{365*86400}$$
 
@@ -42,12 +39,12 @@ $$delegateServiceFee = principal * delegateServiceFeeRate * \frac{interval}{365*
 Platform Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
 $$startDate = \max(datePaid, dateFunded)$$
 
-$$Interval = block.timestamp - startDate$$
+$$interval = block.timestamp - startDate$$
 
 $$platformServiceFee = principal * platformServiceFeeRate * \frac{interval}{365*86400}$$
 
 # Due Dates
-There are two virtual variables `paymentDueDate()` and `defaultDate()` that define the relevant due dates depending on if a payment is late, a loan is called or if a loan is impaired. To compose these virtual variables an internal helper function called `_dueDates()` is used.
+There are two virtual variables `paymentDueDate()` and `defaultDate()` that define the relevant due dates depending on if a payment is late, the loan is called, the loan is impaired, or any combination thereof. To compose these virtual variables, an internal helper function called `_dueDates()` is used.
 
 ## `_dueDates()`
 Returns the due dates for `callDueDate`, `impairedDueDate` and `normalDueDate`
@@ -139,12 +136,7 @@ It's worth noting that refinancing is considered a valid resolution to Loan Call
 Open-Term Loans have `delegateServiceFees` and `platformServiceFees` which are prorated and calculated on each payment.
  
 # Closing Loan
-
-If a Borrower wants to close a Loan prematurely, they can do so by calling `closeLoan`. This will allow them to pay back their entire principal balance in one transaction. There is one fee parameter used to calculate the fees associated with this action:
-- `closingRate`: Fee charged as a percentage of the outstanding principal at the time of payment.
-
-Below is the calculation for `closeLoan` payment.
-
+If a Borrower wants to close a Loan, they can do so by calling `makePayment` with a principalToReturn matching the outstand principal.
 
 # Initialization Parameters
 
