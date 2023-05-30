@@ -57,4 +57,4 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 The Governor can upgrade the following contracts:
 * Liquidator
 * Maple Globals
-* Withrawal Manager
+* Withdrawal Manager
