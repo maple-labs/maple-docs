@@ -1,12 +1,12 @@
 # Protocol Invariants
 
 ```
-* Loan
-   * Invariant A: collateral balance >= _collateral`
-   * Invariant B: fundsAsset >= _drawableFunds`
-   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
+* Fixed Term Loan
+   * Invariant A: collateral balance >= collateral`
+   * Invariant B: fundsAsset >= drawableFunds`
+   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
 
-* Loan Manager (non-liquidating)
+* Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
    * Invariant B: sortedPayments is always sorted
    * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)
@@ -22,6 +22,28 @@
    * Invariant M: paymentDueDate[payment] = loan.paymentDueDate()
    * Invariant N: startDate[payment] <= loan.paymentDueDate() - loan.paymentInterval()
 
+* Open Term Loan
+   * Invariant A: dateFunded <= datePaid, dateCalled, dateImpaired (if not zero)
+   * Invariant B: datePaid <= dateImpaired (if not zero)
+   * Invariant C: datePaid <= dateCalled (if not zero)
+   * Invariant D: calledPrincipal <= principal
+   * Invariant E: dateCalled != 0 -> calledPrincipal != 0
+   * Invariant F: paymentDueDate() <= defaultDate()
+   * Invariant G: getPaymentBreakdown == theoretical calculation
+
+* Open Term Loan Manager
+   * Invariant A: accountedInterest + accruedInterest() == ∑loan.getPaymentBreakdown(block.timestamp) (minus fees)
+   * Invariant B: if no payments exist: accountedInterest == 0
+   * Invariant C: principalOut = ∑loan.principal()
+   * Invariant D: issuanceRate = ∑payment.issuanceRate
+   * Invariant E: unrealizedLosses <= assetsUnderManagement()
+   * Invariant F: if no impairments exist: unrealizedLosses == 0
+   * Invariant G: block.timestamp >= domainStart
+   * Invariant H: payment.startDate == loan.dateFunded() || loan.datePaid()
+   * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
+   * Invariant J: payment.impairedDate >= payment.startDate
+   * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
+
 * Pool (non-liquidating)
    * Invariant A: totalAssets > fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
@@ -33,13 +55,13 @@
    * Invariant H: convertToExitShares == convertToShares
    * Invariant I: totalAssets == poolManager.totalAssets()
    * Invariant J: unrealizedLosses == poolManager.unrealizedLosses()
-   * Invariant K: convertToExitShares == poolManager.converToExitShares()
+   * Invariant K: convertToExitShares == poolManager.convertToExitShares()
 
-PoolManager (non-liquidating)
+* PoolManager (non-liquidating)
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
    * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
 
-Withdrawal Manager
+* Withdrawal Manager
    * Invariant A: WM LP balance == ∑lockedShares(user)
    * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
    * Invariant C: windowStart[currentCycle] <= block.timestamp
@@ -52,6 +74,6 @@ Withdrawal Manager
    * Invariant J: getRedeemableAmounts.assets[owner] <= totalCycleShares[exitCycleId[user]] * exchangeRate
    * Invariant K: getRedeemableAmounts.assets[owner] <= lockedShares[user] * exchangeRate
    * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
-   * Invariant M: lockedLiquidity <= fundsAsset balance of pool
+   * Invariant M: lockedLiquidity <= pool.totalAssets()
    * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
 ```
