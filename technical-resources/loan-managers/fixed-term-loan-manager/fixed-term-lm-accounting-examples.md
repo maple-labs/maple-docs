@@ -1,11 +1,11 @@
 # Overview
 
-This section is intended to demonstrate multiple scenarios with loans to show how value is represented with `totalAssets`. During each payment, accounting state in the Pool contracts is changed in the following way:
+This section is intended to demonstrate multiple scenarios with loans to show how value is represented with `totalAssets`. During each payment, accounting state in the Fixed Term Manager contract is changed in the following way:
 1. `accountedInterest` is decreased. This is because the $$ outstandingInterest $$ portion of `assetsUnderManagement` must discretely decrease when a payment is made.
 2. `domainStart` is updated to the current timestamp.
 3. `issuanceRate` is updated based on the resulting state.
 4. `domainEnd` is set to the next earliest payment due date.
-5. Cash in the pool increases.
+5. Cash is sent to the pool.
 
 **Note 1**: For all of the below examples, only interest is being paid so outstanding principal (`principalOut`) remains constant.
 
@@ -209,7 +209,7 @@ In this example, there are two outstanding Loans. Loan 2 gets funded on day 5. L
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./fixed-term-lm-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
@@ -287,7 +287,7 @@ In this example, there are two different aggregate issuance rates since the issu
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./fixed-term-lm-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
@@ -363,7 +363,7 @@ Note that when the second payment is made, it is made after `domainEnd`. This me
 
 ## Loan 2 Funding
 
-Accounting gets updated in the same way as [Example 4](./pool-accounting-examples.md#loan-2-funding).
+Accounting gets updated in the same way as [Example 4](./fixed-term-lm-accounting-examples.md#loan-2-funding).
 
 ## Loan 1 Payment 1
 
