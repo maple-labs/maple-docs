@@ -67,6 +67,11 @@
     * [Pool Exchange Rates](technical-resources/pools/accounting/pool-exchange-rates.md)
     * [Advance Global Payment Accounting](technical-resources/pools/accounting/advance-global-payment-accounting.md)
     * [LoanManager Claim Function](technical-resources/pools/accounting/loan-manager-claim-function.md)
+* Loan Managers
+  * [Fixed Term Loan Manager](technical-resources/loan-manager/fixed-term-loan-manager/)
+    * [Overview](technical-resources/loan-manager/fixed-term-loan-manager/fixed-term-loan-manager.md)
+    * [Claims](technical-resources/loan-manager/fixed-term-loan-manager/fixed-term-claim-function.md)
+    * [Advance Payment Accounting](technical-resources/loan-manager/fixed-term-loan-manager/advance-global-payment-accounting.md)
 * Singletons
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
