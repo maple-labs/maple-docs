@@ -141,7 +141,7 @@ globals_.setValidPoolDeployer(poolDeployer, false);
 ```
 
 # Post-Upgrade
-## Set `canDeploy` Permissions for all Borrowers for Open Term Loans
+## Set `canDeploy` Permissions for all relevant Borrowers for Open Term Loans
 ```solidity
 globals.setCanDeploy(openTermLoanFactory, borrower, true);
 ```
