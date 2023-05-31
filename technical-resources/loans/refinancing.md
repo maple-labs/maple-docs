@@ -1,6 +1,6 @@
 # Refinance Actions
 
-Both for Open-Term and Fized-Term Loans, refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan: the Borrower and Lender. The following actions can be performed in any permutation desired:
+Both for Open-Term and Fixed-Term Loans, refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan: the Borrower and Lender. The following actions can be performed in any permutation desired:
 - Increase principal: Increases `principal`, `principalRequested`, and `drawableFunds` by a given `amount`, requires additional funds to be added by the Lender
 - Decrease `principal`, only for Open Term Loans
 - Set `collateralRequired`
