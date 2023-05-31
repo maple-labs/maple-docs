@@ -82,6 +82,7 @@
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
+  * [Open Term Loan Deployment](technical-resources/operations/open-term-loan-deployment.md)
 * Interfaces
   * [Liquidator](technical-resources/interfaces/liquidator.md)
   * [LiquidatorFactory](technical-resources/interfaces/liquidator-factory.md)
