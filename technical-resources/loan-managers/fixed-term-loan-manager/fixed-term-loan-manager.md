@@ -112,4 +112,3 @@ $$
 \nonumber domainStart \le t \le domainEnd
 \end{align}
 $$
-
