@@ -42,17 +42,6 @@ Details are outlined below.
 globals.setImplementation(newGlobalsImplementation)
 ```
 
-## Remove Contracts from Old Allowlist
-```solidity
-globals_.setValidInstanceOf("LIQUIDATOR",         liquidatorFactory,           false);
-globals_.setValidInstanceOf("LOAN_MANAGER",       fixedTermLoanManagerFactory, false);
-globals_.setValidInstanceOf("POOL_MANAGER",       poolManagerFactory,          false);
-globals_.setValidInstanceOf("WITHDRAWAL_MANAGER", withdrawalManagerFactory,    false);
-globals_.setValidInstanceOf("LOAN",               fixedTermLoanFactory,        false);
-
-globals_.setValidPoolDeployer(poolDeployer, false);
-```
-
 ## Allowlist All Contracts
 ```solidity
 globals_.setValidInstanceOf("LIQUIDATOR_FACTORY",         liquidatorFactory,        true);
@@ -140,6 +129,16 @@ loan.upgrade(501, "0x")
 
 # Key Deprecation in Globals
 Once the smart contracts team has deemed it safe, all old keys used for allowlisting can be set to false.
+## Remove Contracts from Old Allowlist
+```solidity
+globals_.setValidInstanceOf("LIQUIDATOR",         liquidatorFactory,           false);
+globals_.setValidInstanceOf("LOAN_MANAGER",       fixedTermLoanManagerFactory, false);
+globals_.setValidInstanceOf("POOL_MANAGER",       poolManagerFactory,          false);
+globals_.setValidInstanceOf("WITHDRAWAL_MANAGER", withdrawalManagerFactory,    false);
+globals_.setValidInstanceOf("LOAN",               fixedTermLoanFactory,        false);
+
+globals_.setValidPoolDeployer(poolDeployer, false);
+```
 
 # Post-Upgrade
 ## Set `canDeploy` Permissions for all Borrowers for Open Term Loans
