@@ -1,14 +1,3 @@
-Loans in the Maple protocol are deployed from a factory and initialized by Borrowers. They facilitate the following:
-
-1. Perform Loan funding.
-2. Draw down funds.
-3. Manage collateral.
-4. Calculate payment amounts and schedules (can handle amortized and interest-only payment structures).
-5. Perform repossessions of collateral and remaining funds in a defaulted Loan.
-6. Claim interest and principal from Loans.
-7. Perform refinancing operations when a lender and borrower agree to new terms.
-8. Upgrade Loan logic using upgradeability patterns.
-
 # Accounting
 
 ## Asset Definitions
@@ -183,7 +172,7 @@ $$
 ## Late Payments
 
 When a payment is made after the `nextPaymentDueDate` timestamp in the Loan, it is considered late. There are two fee parameters that are used to calculate late fees:
-- `lateInterestPremium`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
+- `lateInterestPremiumRate`: Premium on regular interest rate when payment is late (E.g., premium is 2% on 10% interest, 12% interest is paid on time that payment is late).
 - `lateFeeRate`: Fee charged as a percentage of the outstanding principal at the time of payment.
 
 Below is the calculation for a late payment, where `total` is the amount calculated in the equations above. All of the extra funds go towards interest.
@@ -202,7 +191,7 @@ where:
 $$
 \large
 \begin{align}
-\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremium) \times daysLate \times 86400}{365 \times 86400}
+\nonumber defaultInterest = \frac{principal \times (interestRate + lateInterestPremiumRate) \times daysLate \times 86400}{365 \times 86400}
 \end{align}
 $$
 
@@ -224,3 +213,49 @@ $$
 $$
 
 
+# Initialization Parameters
+
+* `borrower` - The address of the borrower.
+* `lender` - The address of the lender.
+* `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](./fee-manager.md))
+* `collateralAsset` - The address of the asset used as collateral.
+* `fundsAsset` - The address of asset that the loan is denominated in.
+* `gracePeriod` - The amount of time that the lender needs to wait before triggering a default on a late loan.\
+* `paymentInterval` - The amount of seconds between each loan payment.
+* `payments` - The amount of payments in the loan term.
+* `collateralRequired` - The nominal amount of the collateral asset.
+* `principalRequested` - The nominal amount of principal of the fundsAsset.
+* `endingPrincipal`- The expected amount of principal to be paid at the end term. This defines the amortization rate of the loan.
+* `interestRate` - The annualized interest rate.
+* `closingFeeRate` - The rate used to calculate closing a loan early.
+* `lateFeeRate` - A fee rate applied on principal amount on late payments.
+* `lateInterestPremiumRate` - A premium added on top of the interest rate for late payments.
+* `delegateOriginationFee` - A nominal amount of funds asset payment on the origination to the pool delegate.
+* `delegateServiceFee` - A nominal amount of funds assets that is added on every payment destined to the pool delegate.
+
+## Parameters Constraints
+
+* `delegateOriginationFee` <= 2.5% of principal
+* `gracePeriod` >= 12 hours
+* `paymentInterval` > 0
+* `payments` > 0
+
+# Fee Manager
+
+`FeeManager` is a singleton contract responsible for holding and executing fee payments for all the loans. It queries the MapleGlobals contract to calculate fees owed to the protocol ([more details here](../protocol-overview/fees.md)), as well register the delegate fees passed as parameters during the loan initialization. This contract exists as a module to allow future Loans to be able to use different fee structures with new smart contract logic.
+
+### Loan Initialization
+
+During Loan initialization, Loans save the fees owned to the Pool Delegate and the platform. Pool Delegate fees are specified as part of the Loan terms, and platform fees are queried from Globals and are configured by the Governor on a per-pool basis.
+
+### Funding
+
+When the Loan is funded, the origination fees owed are paid atomically using `payOriginationFees`. At the time of funding, Globals is queried and the platform origination fees are saved using `updatePlatformServiceFee`.
+
+### Refinancing
+
+During funding and refinanced, loans query the FeeManager for the saved values for both treasury and delegate origination fees and then pay them, reducing the drawable amounts. This is done by calling `updatePlatformServiceFee`, and optionally `updateDelegateFeeTerms` if part of the refinance terms. In addition, the service fees accrued between the last payment due date and refinance are saved in the FeeManager to be added to the subsequent payment with `updateRefinanceServiceFees`.
+
+### Making Payments
+
+When payments to the loans are made, they query the FeeManager to fetch service fees owed to all parties and pay them, using the value passed by the Borrower. This is done through `payServiceFees`.

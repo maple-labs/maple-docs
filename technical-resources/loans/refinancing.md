@@ -1,14 +1,16 @@
 # Refinance Actions
 
-Loan refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan, the Borrower and Lender. The following actions can be performed in any permutation desired:
+Both for Open-Term and Fixed-Term Loans, refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan: the Borrower and Lender. The following actions can be performed in any permutation desired:
 - Increase principal: Increases `principal`, `principalRequested`, and `drawableFunds` by a given `amount`, requires additional funds to be added by the Lender
+- Decrease `principal`, only for Open Term Loans
 - Set `collateralRequired`
 - Set `closingRate`
 - Set `endingPrincipal`: Must be less than current `principal` on Loan
 - Set `gracePeriod`
+- Set `noticePeriod`
 - Set `interestRate`
 - Set `lateFeeRate`
-- Set `lateInterestPremium`
+- Set `lateInterestPremiumRate`
 - Set `paymentInterval`
 - Set `paymentsRemaining`
 
@@ -20,7 +22,7 @@ In order to facilitate a refinance, an agreement must be reached on-chain betwee
 
 ### `proposeNewTerms()`
 
-This function is called by the Borrower, passing in the smart contract address of the Refinancer contract, as well as an array of ABI-encoded function calls.
+This function is called by the Borrower for Fixed-Term Loans and by the Lender on Open-Term ones, passing in the smart contract address of the Refinancer contract, as well as an array of ABI-encoded function calls.
 
 For example:
 ```js
@@ -38,7 +40,7 @@ This function will take the hash of these changes and the Refinancer smart contr
 
 ### `acceptNewTerms()`
 
-This function is called by the Pool Delegate routing the call through the PoolManager and the appropriate LoanManager (LoanManager is the Lender in the Loan). In the call, the Pool Delegate passes in the same parameters to agree to the terms, the smart contract address of the Refinancer and the array of ABI-encoded function calls. This call is permissioned in the PoolManager to only be called by the PoolDelegate.
+This function is called the other party, the Lender, through the `Loan Manager`, in Fixed-Term and the Borrower in Open-Term. In the call, the same parameters are passed to agree to the terms, the smart contract address of the Refinancer and the array of ABI-encoded function calls. 
 
 This function calculates the hash again (`keccak256(abi.encode(refinancer_, calls_))`) and compares it with the hash that was added to storage when `proposeNewTerms()` was called.
 
