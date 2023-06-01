@@ -4,39 +4,45 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 
 # Pool Delegate Callable Functions
 
-## Globals
-
-* `transferOwnedPoolManager`
-
 ## PoolManager
 
-* `acceptNewTerms`
-* `acceptPendingPoolDelegate`
-* `addLoanManager`
-* `finishCollateralLiquidation`
-* `fund`
-* `impairLoan`
-* `removeLoanImpairment`
-* `removeLoanManager`
-* `setAllowedLender`
-* `setAllowedSlippage`
-* `setDelegateManagementFeeRate`
-* `setLiquidityCap`
-* `setMinRatio`
-* `setOpenToPublic`
+* `upgrade`
+* `acceptPoolDelegate`
 * `setPendingPoolDelegate`
-* `setWithdrawalManager`
+* `addLoanManager`
+* `setAllowedLender`
+* `setDelegateManagementFeeRate`
+* `setIsLoanManager`
+* `setLiquidityCap`
+* `setOpenToPublic`
+* `finishCollateralLiquidation`
 * `triggerDefault`
 * `withdrawCover`
+
+## FixedTermLoanManager
+
 * `upgrade`
-
-## LoanManager
-
-* `setLoanTransferAdmin`
+* `setAllowedSlippage`
+* `setMinRatio`
 * `updateAccounting`
+* `acceptNewTerms`
+* `fund`
+* `rejectNewTerms`
+* `impairLoan`
+* `removeLoanImpairment`
+
+## OpenTermLoanManager
+
 * `upgrade`
+* `fund`
+* `proposeNewTerms`
+* `rejectNewTerms`
+* `callPrincipal`
+* `removeCall`
+* `impairLoan`
+* `removeLoanImpairment`
 
 ## WithdrawalManager
 
-* `setExitConfig`
 * `upgrade`
+* `setExitConfig`
