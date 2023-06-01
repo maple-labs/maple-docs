@@ -1,4 +1,4 @@
-# PoolManager
+# Maple Pool Manager
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `HUNDRED_PERCENT` 
+### `HUNDRED_PERCENT`
 
 
 
@@ -29,39 +29,12 @@
 
 <br />
 
-### `acceptNewTerms` 
-
-Accepts new loan terms triggering a loan refinance.
-
-```solidity
-    function acceptNewTerms(
-        address loan_,
-        address refinancer_,
-        uint256 deadline_,
-        bytes[] calls_,
-        uint256 principalIncrease_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to be refinanced. |
-| 1 | `refinancer_` | `address` | `address` | The address of the refinancer. |
-| 2 | `deadline_` | `uint256` | `uint256` | The new deadline to execute the refinance. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The encoded calls to set new loan terms. |
-| 4 | `principalIncrease_` | `uint256` | `uint256` | The amount of principal increase. |
-
-
-<br />
-
-### `acceptPendingPoolDelegate` 
+### `acceptPoolDelegate`
 
 Accepts the role of pool delegate.
 
 ```solidity
-    function acceptPendingPoolDelegate()
+    function acceptPoolDelegate()
         nonpayable;
 ```
 
@@ -69,7 +42,7 @@ Accepts the role of pool delegate.
 
 <br />
 
-### `active` 
+### `active`
 
 Returns whether or not a pool is active.
 
@@ -91,26 +64,35 @@ Returns whether or not a pool is active.
 
 <br />
 
-### `addLoanManager` 
+### `addLoanManager`
 
 Adds a new loan manager.
 
 ```solidity
     function addLoanManager(
-        address loanManager_
+        address loanManagerFactory_
     )
-        nonpayable;
+        nonpayable
+        returns (
+            address loanManager_
+        );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
+| 0 | `loanManagerFactory_` | `address` | `address` | The address of the loan manager factory to use. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loanManager_` | `address` | `address` |        The address of the new loan manager. |
 
 
 <br />
 
-### `asset` 
+### `asset`
 
 Gets the address of the funds asset.
 
@@ -132,7 +114,7 @@ Gets the address of the funds asset.
 
 <br />
 
-### `canCall` 
+### `canCall`
 
 Checks if a scheduled call can be executed.
 
@@ -166,32 +148,20 @@ Checks if a scheduled call can be executed.
 
 <br />
 
-### `configure` 
+### `completeConfiguration`
 
-Configures the pool.
+Complete the configuration.
 
 ```solidity
-    function configure(
-        address loanManager_,
-        address withdrawalManager_,
-        uint256 liquidityCap_,
-        uint256 delegateManagementFeeRate_
-    )
+    function completeConfiguration()
         nonpayable;
 ```
 
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
-| 1 | `withdrawalManager_` | `address` | `address` | The address of the withdrawal manager. |
-| 2 | `liquidityCap_` | `uint256` | `uint256` | The new liquidity cap. |
-| 3 | `delegateManagementFeeRate_` | `uint256` | `uint256` |  |
 
 
 <br />
 
-### `configured` 
+### `configured`
 
 Returns whether or not a pool is configured.
 
@@ -213,7 +183,7 @@ Returns whether or not a pool is configured.
 
 <br />
 
-### `convertToExitShares` 
+### `convertToExitShares`
 
 Returns the amount of exit shares for the input amount.
 
@@ -241,7 +211,7 @@ Returns the amount of exit shares for the input amount.
 
 <br />
 
-### `delegateManagementFeeRate` 
+### `delegateManagementFeeRate`
 
 Gets the delegate management fee rate.
 
@@ -263,7 +233,7 @@ Gets the delegate management fee rate.
 
 <br />
 
-### `depositCover` 
+### `depositCover`
 
 Deposits cover into the pool.
 
@@ -282,7 +252,7 @@ Deposits cover into the pool.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -304,7 +274,7 @@ The address of the proxy factory.
 
 <br />
 
-### `finishCollateralLiquidation` 
+### `finishCollateralLiquidation`
 
 Finishes the collateral liquidation
 
@@ -323,30 +293,7 @@ Finishes the collateral liquidation
 
 <br />
 
-### `fund` 
-
-
-
-```solidity
-    function fund(
-        uint256 principal_,
-        address loan_,
-        address loanManager_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principal_` | `uint256` | `uint256` |  |
-| 1 | `loan_` | `address` | `address` |  |
-| 2 | `loanManager_` | `address` | `address` |  |
-
-
-<br />
-
-### `getEscrowParams` 
+### `getEscrowParams`
 
 Gets the information of escrowed shares.
 
@@ -372,13 +319,13 @@ Gets the information of escrowed shares.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `escrowShares_` | `uint256` | `uint256` |  |
+| 0 | `escrowShares_` | `uint256` | `uint256` | The amount of escrowed shares. |
 | 1 | `destination_` | `address` | `address` |  The address of the destination. |
 
 
 <br />
 
-### `globals` 
+### `globals`
 
 Gets the address of the globals.
 
@@ -400,7 +347,7 @@ Gets the address of the globals.
 
 <br />
 
-### `governor` 
+### `governor`
 
 Gets the address of the governor.
 
@@ -422,7 +369,7 @@ Gets the address of the governor.
 
 <br />
 
-### `hasSufficientCover` 
+### `hasSufficientCover`
 
 Returns if pool has sufficient cover.
 
@@ -444,26 +391,7 @@ Returns if pool has sufficient cover.
 
 <br />
 
-### `impairLoan` 
-
-Triggers the loan impairment for a loan.
-
-```solidity
-    function impairLoan(
-        address loan_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to trigger the loan impairment. |
-
-
-<br />
-
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -485,7 +413,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `isLoanManager` 
+### `isLoanManager`
 
 Returns whether or not the given address is a loan manager.
 
@@ -513,7 +441,7 @@ Returns whether or not the given address is a loan manager.
 
 <br />
 
-### `isValidLender` 
+### `isValidLender`
 
 Returns whether or not the given address is a valid lender.
 
@@ -541,7 +469,7 @@ Returns whether or not the given address is a valid lender.
 
 <br />
 
-### `liquidityCap` 
+### `liquidityCap`
 
 Gets the liquidity cap for the pool.
 
@@ -563,7 +491,7 @@ Gets the liquidity cap for the pool.
 
 <br />
 
-### `loanManagerList` 
+### `loanManagerList`
 
 Gets the address of the loan manager in the list.
 
@@ -591,35 +519,29 @@ Gets the address of the loan manager in the list.
 
 <br />
 
-### `loanManagers` 
+### `loanManagerListLength`
 
-Gets the address of the loan manager for a given loan.
+Returns the length of the &#x60;loanManagerList&#x60;.
 
 ```solidity
-    function loanManagers(
-        address
-    )
+    function loanManagerListLength()
         view
         returns (
-            address
+            uint256 loanManagerListLength_
         );
 ```
 
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
 
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+| 0 | `loanManagerListLength_` | `uint256` | `uint256` | The length of the &#x60;loanManagerList&#x60;. |
 
 
 <br />
 
-### `maxDeposit` 
+### `maxDeposit`
 
 Gets the amount of assets that can be deposited.
 
@@ -647,7 +569,7 @@ Gets the amount of assets that can be deposited.
 
 <br />
 
-### `maxMint` 
+### `maxMint`
 
 Gets the amount of shares that can be minted.
 
@@ -675,7 +597,7 @@ Gets the amount of shares that can be minted.
 
 <br />
 
-### `maxRedeem` 
+### `maxRedeem`
 
 Gets the amount of shares that can be redeemed.
 
@@ -703,7 +625,7 @@ Gets the amount of shares that can be redeemed.
 
 <br />
 
-### `maxWithdraw` 
+### `maxWithdraw`
 
 Gets the amount of assets that can be withdrawn.
 
@@ -731,7 +653,7 @@ Gets the amount of assets that can be withdrawn.
 
 <br />
 
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -752,7 +674,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `openToPublic` 
+### `openToPublic`
 
 Returns whether or not a pool is open to public deposits.
 
@@ -774,7 +696,7 @@ Returns whether or not a pool is open to public deposits.
 
 <br />
 
-### `pendingPoolDelegate` 
+### `pendingPoolDelegate`
 
 Gets the address of the pending pool delegate.
 
@@ -796,7 +718,7 @@ Gets the address of the pending pool delegate.
 
 <br />
 
-### `pool` 
+### `pool`
 
 Gets the address of the pool.
 
@@ -818,7 +740,7 @@ Gets the address of the pool.
 
 <br />
 
-### `poolDelegate` 
+### `poolDelegate`
 
 Gets the address of the pool delegate.
 
@@ -840,7 +762,7 @@ Gets the address of the pool delegate.
 
 <br />
 
-### `poolDelegateCover` 
+### `poolDelegateCover`
 
 Gets the address of the pool delegate cover.
 
@@ -862,7 +784,7 @@ Gets the address of the pool delegate cover.
 
 <br />
 
-### `previewRedeem` 
+### `previewRedeem`
 
 Gets the amount of shares that can be redeemed.
 
@@ -892,7 +814,7 @@ Gets the amount of shares that can be redeemed.
 
 <br />
 
-### `previewWithdraw` 
+### `previewWithdraw`
 
 Gets the amount of assets that can be redeemed.
 
@@ -922,14 +844,15 @@ Gets the amount of assets that can be redeemed.
 
 <br />
 
-### `processRedeem` 
+### `processRedeem`
 
-
+Processes a redemptions of shares for assets from the pool.
 
 ```solidity
     function processRedeem(
         uint256 shares_,
-        address owner_
+        address owner_,
+        address sender_
     )
         nonpayable
         returns (
@@ -941,58 +864,55 @@ Gets the amount of assets that can be redeemed.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  |
-| 1 | `owner_` | `address` | `address` |  |
+| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
+| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
+| 2 | `sender_` | `address` | `address` | The address of the sender of the redeem call. |
 
 
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableShares_` | `uint256` | `uint256` |  |
-| 1 | `resultingAssets_` | `uint256` | `uint256` |  |
+| 0 | `redeemableShares_` | `uint256` | `uint256` | The amount of shares redeemed. |
+| 1 | `resultingAssets_` | `uint256` | `uint256` |  The amount of assets withdrawn. |
 
 
 <br />
 
-### `removeLoanImpairment` 
+### `processWithdraw`
 
-Removes the loan impairment for a loan.
+Processes a redemptions of shares for assets from the pool.
 
 ```solidity
-    function removeLoanImpairment(
-        address loan_
+    function processWithdraw(
+        uint256 assets_,
+        address owner_,
+        address sender_
     )
-        nonpayable;
+        nonpayable
+        returns (
+            uint256 redeemableShares_,
+            uint256 resultingAssets_
+        );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to remove the loan impairment. |
+| 0 | `assets_` | `uint256` | `uint256` | The amount of assets to withdraw. |
+| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
+| 2 | `sender_` | `address` | `address` | The address of the sender of the withdraw call. |
 
 
-<br />
-
-### `removeLoanManager` 
-
-Removes a loan manager.
-
-```solidity
-    function removeLoanManager(
-        address loanManager_
-    )
-        nonpayable;
-```
-
-#### Parameters:
+#### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
+| 0 | `redeemableShares_` | `uint256` | `uint256` | The amount of shares redeemed. |
+| 1 | `resultingAssets_` | `uint256` | `uint256` |  The amount of assets withdrawn. |
 
 
 <br />
 
-### `removeShares` 
+### `removeShares`
 
 Requests a redemption of shares from the pool.
 
@@ -1022,14 +942,36 @@ Requests a redemption of shares from the pool.
 
 <br />
 
-### `requestRedeem` 
+### `requestFunds`
+
+LoanManager can request funds from the pool via the poolManager.
+
+```solidity
+    function requestFunds(
+        address destination_,
+        uint256 principal_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `destination_` | `address` | `address` | The address to send the funds to. |
+| 1 | `principal_` | `uint256` | `uint256` | The principal amount to fund the loan with. |
+
+
+<br />
+
+### `requestRedeem`
 
 Requests a redemption of shares from the pool.
 
 ```solidity
     function requestRedeem(
         uint256 shares_,
-        address owner_
+        address owner_,
+        address sender_
     )
         nonpayable;
 ```
@@ -1038,12 +980,38 @@ Requests a redemption of shares from the pool.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
-| 1 | `owner_` | `address` | `address` | The amount of shares sent to escrow. |
+| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
+| 2 | `sender_` | `address` | `address` | The address of the sender of the shares. |
 
 
 <br />
 
-### `setActive` 
+### `requestWithdraw`
+
+Requests a withdrawal of assets from the pool.
+
+```solidity
+    function requestWithdraw(
+        uint256 shares_,
+        uint256 assets_,
+        address owner_,
+        address sender_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
+| 1 | `assets_` | `uint256` | `uint256` | The amount of assets to withdraw. |
+| 2 | `owner_` | `address` | `address` | The address of the owner of the shares. |
+| 3 | `sender_` | `address` | `address` | The address of the sender of the shares. |
+
+
+<br />
+
+### `setActive`
 
 Sets a the pool to be active or inactive.
 
@@ -1062,7 +1030,7 @@ Sets a the pool to be active or inactive.
 
 <br />
 
-### `setAllowedLender` 
+### `setAllowedLender`
 
 Sets a new lender as valid or not.
 
@@ -1083,30 +1051,7 @@ Sets a new lender as valid or not.
 
 <br />
 
-### `setAllowedSlippage` 
-
-Sets the allowed slippage for an asset on a loanManager.
-
-```solidity
-    function setAllowedSlippage(
-        address loanManager_,
-        address collateralAsset_,
-        uint256 allowedSlippage_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the loanManager to set the slippage for. |
-| 1 | `collateralAsset_` | `address` | `address` | The address of the collateral asset. |
-| 2 | `allowedSlippage_` | `uint256` | `uint256` | The new allowed slippage. |
-
-
-<br />
-
-### `setDelegateManagementFeeRate` 
+### `setDelegateManagementFeeRate`
 
 Sets the value for the delegate management fee rate.
 
@@ -1125,7 +1070,7 @@ Sets the value for the delegate management fee rate.
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -1144,7 +1089,28 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `setLiquidityCap` 
+### `setIsLoanManager`
+
+Sets if the loanManager is valid in the isLoanManager mapping.
+
+```solidity
+    function setIsLoanManager(
+        address loanManager_,
+        bool isLoanManager_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loanManager_` | `address` | `address` | The address of the loanManager |
+| 1 | `isLoanManager_` | `bool` | `bool` | Whether the loanManager is valid. |
+
+
+<br />
+
+### `setLiquidityCap`
 
 Sets the value for liquidity cap.
 
@@ -1163,30 +1129,7 @@ Sets the value for liquidity cap.
 
 <br />
 
-### `setMinRatio` 
-
-Sets the minimum ratio for an asset on a loanManager.
-
-```solidity
-    function setMinRatio(
-        address loanManager_,
-        address collateralAsset_,
-        uint256 minRatio_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the loan Manager to set the ratio for. |
-| 1 | `collateralAsset_` | `address` | `address` | The address of the collateral asset. |
-| 2 | `minRatio_` | `uint256` | `uint256` | The new minimum ratio to set. |
-
-
-<br />
-
-### `setOpenToPublic` 
+### `setOpenToPublic`
 
 Sets pool open to public depositors.
 
@@ -1199,7 +1142,7 @@ Sets pool open to public depositors.
 
 <br />
 
-### `setPendingPoolDelegate` 
+### `setPendingPoolDelegate`
 
 Sets an address as the pending pool delegate.
 
@@ -1218,7 +1161,7 @@ Sets an address as the pending pool delegate.
 
 <br />
 
-### `setWithdrawalManager` 
+### `setWithdrawalManager`
 
 Sets the address of the withdrawal manager.
 
@@ -1237,7 +1180,7 @@ Sets the address of the withdrawal manager.
 
 <br />
 
-### `totalAssets` 
+### `totalAssets`
 
 Returns the amount of total assets.
 
@@ -1259,7 +1202,7 @@ Returns the amount of total assets.
 
 <br />
 
-### `triggerDefault` 
+### `triggerDefault`
 
 Triggers the default of a loan.
 
@@ -1280,7 +1223,7 @@ Triggers the default of a loan.
 
 <br />
 
-### `unrealizedLosses` 
+### `unrealizedLosses`
 
 Returns the amount unrealized losses.
 
@@ -1302,7 +1245,7 @@ Returns the amount unrealized losses.
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -1323,7 +1266,7 @@ Upgrades a contract implementation to a specific version.         Access control
 
 <br />
 
-### `withdrawalManager` 
+### `withdrawalManager`
 
 Gets the address of the withdrawal manager.
 
@@ -1345,7 +1288,7 @@ Gets the address of the withdrawal manager.
 
 <br />
 
-### `withdrawCover` 
+### `withdrawCover`
 
 Withdraws cover from the pool.
 
@@ -1441,6 +1384,25 @@ Emitted when cover is deposited.
 
 <br />
 
+### `CoverLiquidated`
+
+Emitted when cover is liquidated in the case of a loan defaulting.
+
+```solidity
+    event CoverLiquidated(
+        uint256 toTreasury_,
+        uint256 toPool_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `toTreasury_` | `uint256` | `uint256` | The amount of cover sent to the Treasury. |
+| 1 | `toPool_` | `uint256` | `uint256` | The amount of cover sent to the Pool. |
+
+<br />
+
 ### `CoverWithdrawn`
 
 Emitted when cover is withdrawn.
@@ -1475,6 +1437,25 @@ Emitted when a new management fee rate is set.
 
 <br />
 
+### `IsLoanManagerSet`
+
+Emitted when a loan manager is set as valid.
+
+```solidity
+    event IsLoanManagerSet(
+        address loanManager_,
+        bool isLoanManager_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `loanManager_` | `address` | `address` | The address of the loan manager. |
+| 1 | `isLoanManager_` | `bool` | `bool` | Whether the loan manager is valid. |
+
+<br />
+
 ### `LiquidityCapSet`
 
 Emitted when a new liquidity cap is set.
@@ -1492,63 +1473,6 @@ Emitted when a new liquidity cap is set.
 
 <br />
 
-### `LoanFunded`
-
-Emitted when a new loan is funded.
-
-```solidity
-    event LoanFunded(
-        address loan_,
-        address loanManager_,
-        uint256 amount_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
-| 1 | `loanManager_` | `address` | `address` | The address of the loan manager. |
-| 2 | `amount_` | `uint256` | `uint256` | The amount funded to the loan. |
-
-<br />
-
-### `LoanImpaired`
-
-Emitted when a loan impairment is triggered.
-
-```solidity
-    event LoanImpaired(
-        address loan_,
-        uint256 newPaymentDueDate_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
-| 1 | `newPaymentDueDate_` | `uint256` | `uint256` | The new payment due date. |
-
-<br />
-
-### `LoanImpairmentRemoved`
-
-Emitted when a loan impairment is removed.
-
-```solidity
-    event LoanImpairmentRemoved(
-        address loan_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
-
-<br />
-
 ### `LoanManagerAdded`
 
 Emitted when a new loan manager is added.
@@ -1563,48 +1487,6 @@ Emitted when a new loan manager is added.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
-
-<br />
-
-### `LoanManagerRemoved`
-
-Emitted when a new loan manager is removed.
-
-```solidity
-    event LoanManagerRemoved(
-        address loanManager_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
-
-<br />
-
-### `LoanRefinanced`
-
-Emitted when a loan is refinanced.
-
-```solidity
-    event LoanRefinanced(
-        address loan_,
-        address refinancer_,
-        uint256 deadline_,
-        bytes[] calls_,
-        uint256 principalIncrease_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to be refinanced. |
-| 1 | `refinancer_` | `address` | `address` | The address of the refinancer. |
-| 2 | `deadline_` | `uint256` | `uint256` | The new deadline to execute the refinance. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The encoded calls to set new loan terms. |
-| 4 | `principalIncrease_` | `uint256` | `uint256` | The amount of principal increase. |
 
 <br />
 
@@ -1657,26 +1539,14 @@ Emitted when the pending pool delegate is set.
 
 <br />
 
-### `PoolConfigured`
+### `PoolConfigurationComplete`
 
-Emitted when the pool is configured the pool.
+Emitted when the pool configuration is marked as complete.
 
 ```solidity
-    event PoolConfigured(
-        address loanManager_,
-        address withdrawalManager_,
-        uint256 liquidityCap_,
-        uint256 delegateManagementFeeRate_
-    );
+    event PoolConfigurationComplete();
 ```
 
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` | The address of the new loan manager. |
-| 1 | `withdrawalManager_` | `address` | `address` | The address of the withdrawal manager. |
-| 2 | `liquidityCap_` | `uint256` | `uint256` | The new liquidity cap. |
-| 3 | `delegateManagementFeeRate_` | `uint256` | `uint256` | The management fee rate. |
 
 <br />
 

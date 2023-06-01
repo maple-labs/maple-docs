@@ -1,6 +1,6 @@
-# MapleLoanFactory
+# Maple Fixed Term Loan Manager Factory
 
-MapleLoanFactory deploys Loan instances.
+
 
 <br />
 
@@ -26,7 +26,7 @@ MapleLoanFactory deploys Loan instances.
 
 ## Functions
 
-### `createInstance` 
+### `createInstance`
 
 Deploys a new instance proxying the default implementation version, with some initialization arguments.          Uses a nonce and &#x60;msg.sender&#x60; as a salt for the CREATE2 opcode during instantiation to produce deterministic addresses.
 
@@ -56,7 +56,7 @@ Deploys a new instance proxying the default implementation version, with some in
 
 <br />
 
-### `defaultImplementation` 
+### `defaultImplementation`
 
 The address of an implementation for proxies.
 
@@ -78,7 +78,7 @@ The address of an implementation for proxies.
 
 <br />
 
-### `defaultVersion` 
+### `defaultVersion`
 
 The default version.
 
@@ -100,7 +100,7 @@ The default version.
 
 <br />
 
-### `disableUpgradePath` 
+### `disableUpgradePath`
 
 Disables upgrading from a version to a version of a implementation.         Only the Governor can call this function.
 
@@ -121,7 +121,7 @@ Disables upgrading from a version to a version of a implementation.         Only
 
 <br />
 
-### `enableUpgradePath` 
+### `enableUpgradePath`
 
 Enables upgrading from a version to a version of an implementation, with an optional migrator.         Only the Governor can call this function.
 
@@ -144,7 +144,7 @@ Enables upgrading from a version to a version of an implementation, with an opti
 
 <br />
 
-### `getInstanceAddress` 
+### `getInstanceAddress`
 
 Returns the deterministic address of a potential proxy, given some arguments and salt.
 
@@ -174,7 +174,7 @@ Returns the deterministic address of a potential proxy, given some arguments and
 
 <br />
 
-### `implementationOf` 
+### `implementationOf`
 
 Returns the address of an implementation version.
 
@@ -202,7 +202,7 @@ Returns the address of an implementation version.
 
 <br />
 
-### `isInstance` 
+### `isInstance`
 
 Returns if a given address has been deployed by this factory/
 
@@ -230,35 +230,7 @@ Returns if a given address has been deployed by this factory/
 
 <br />
 
-### `isLoan` 
-
-
-
-```solidity
-    function isLoan(
-        address
-    )
-        view
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
-### `mapleGlobals` 
+### `mapleGlobals`
 
 The address of the MapleGlobals contract.
 
@@ -280,7 +252,7 @@ The address of the MapleGlobals contract.
 
 <br />
 
-### `migratorForPath` 
+### `migratorForPath`
 
 Returns the address of a migrator contract for a migration path (from version, to version).          If oldVersion_ &#x3D;&#x3D; newVersion_, the migrator is an initializer.
 
@@ -310,7 +282,7 @@ Returns the address of a migrator contract for a migration path (from version, t
 
 <br />
 
-### `registerImplementation` 
+### `registerImplementation`
 
 Registers the address of an implementation contract as a version, with an optional initializer.         Only the Governor can call this function.
 
@@ -333,7 +305,7 @@ Registers the address of an implementation contract as a version, with an option
 
 <br />
 
-### `setDefaultVersion` 
+### `setDefaultVersion`
 
 Sets the default version.         Only the Governor can call this function.
 
@@ -352,7 +324,7 @@ Sets the default version.         Only the Governor can call this function.
 
 <br />
 
-### `setGlobals` 
+### `setGlobals`
 
 Sets the Maple Globals contract.         Only the Governor can call this function.
 
@@ -371,7 +343,7 @@ Sets the Maple Globals contract.         Only the Governor can call this functio
 
 <br />
 
-### `upgradeEnabledForPath` 
+### `upgradeEnabledForPath`
 
 Whether the upgrade is enabled for a path from a version to another version.
 
@@ -401,7 +373,7 @@ Whether the upgrade is enabled for a path from a version to another version.
 
 <br />
 
-### `upgradeInstance` 
+### `upgradeInstance`
 
 Upgrades the calling proxy contract&#x27;s implementation, with some migration arguments.
 
@@ -422,7 +394,7 @@ Upgrades the calling proxy contract&#x27;s implementation, with some migration a
 
 <br />
 
-### `versionOf` 
+### `versionOf`
 
 Returns the version of an implementation contract.
 

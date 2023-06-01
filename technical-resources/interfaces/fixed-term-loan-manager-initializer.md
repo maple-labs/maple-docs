@@ -1,4 +1,4 @@
-# LoanManagerInitializer
+# Maple Fixed Term Loan Manager Initializer
 
 
 
@@ -7,9 +7,9 @@
 
 ## Functions
 
-### `accountedInterest` 
+### `accountedInterest`
 
-Gets the amount of accounted interest.
+
 
 ```solidity
     function accountedInterest()
@@ -29,9 +29,9 @@ Gets the amount of accounted interest.
 
 <br />
 
-### `allowedSlippageFor` 
+### `allowedSlippageFor`
 
-Gets allowed slippage for a give collateral asset.
+
 
 ```solidity
     function allowedSlippageFor(
@@ -57,9 +57,9 @@ Gets allowed slippage for a give collateral asset.
 
 <br />
 
-### `decodeArguments` 
+### `decodeArguments`
 
-
+Decodes the initialization arguments of a loan manager.
 
 ```solidity
     function decodeArguments(
@@ -67,27 +67,27 @@ Gets allowed slippage for a give collateral asset.
     )
         pure
         returns (
-            address pool_
+            address poolManager_
         );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
+| 0 | `calldata_` | `bytes` | `bytes` | ABI encoded address of the pool manager. |
 
 
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
+| 0 | `poolManager_` | `address` | `address` | Address of the pool manager. |
 
 
 <br />
 
-### `domainEnd` 
+### `domainEnd`
 
-Gets the timestamp of the domain end.
+
 
 ```solidity
     function domainEnd()
@@ -107,9 +107,9 @@ Gets the timestamp of the domain end.
 
 <br />
 
-### `domainStart` 
+### `domainStart`
 
-Gets the timestamp of the domain start.
+
 
 ```solidity
     function domainStart()
@@ -129,13 +129,13 @@ Gets the timestamp of the domain start.
 
 <br />
 
-### `encodeArguments` 
+### `encodeArguments`
 
-
+Encodes the initialization arguments of a loan manager.
 
 ```solidity
     function encodeArguments(
-        address pool_
+        address poolManager_
     )
         pure
         returns (
@@ -146,20 +146,20 @@ Gets the timestamp of the domain start.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
+| 0 | `poolManager_` | `address` | `address` | Address of the pool manager. |
 
 
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
+| 0 | `calldata_` | `bytes` | `bytes` |    ABI encoded address of the pool manager. |
 
 
 <br />
 
-### `fundsAsset` 
+### `fundsAsset`
 
-Gets the address of the funds asset.
+
 
 ```solidity
     function fundsAsset()
@@ -179,9 +179,9 @@ Gets the address of the funds asset.
 
 <br />
 
-### `issuanceRate` 
+### `issuanceRate`
 
-Gets the current issuance rate.
+
 
 ```solidity
     function issuanceRate()
@@ -201,9 +201,9 @@ Gets the current issuance rate.
 
 <br />
 
-### `liquidationInfo` 
+### `liquidationInfo`
 
-Gets the information for a liquidation.
+
 
 ```solidity
     function liquidationInfo(
@@ -229,41 +229,19 @@ Gets the information for a liquidation.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `triggeredByGovernor` | `bool` | `bool` | True if the liquidation was triggered by the governor. |
-| 1 | `principal` | `uint128` | `uint128` |           The amount of principal to be recovered. |
-| 2 | `interest` | `uint120` | `uint120` |            The amount of interest to be recovered. |
-| 3 | `lateInterest` | `uint256` | `uint256` |        The amount of late interest to be recovered. |
-| 4 | `platformFees` | `uint96` | `uint96` |        The amount of platform fees owed. |
-| 5 | `liquidator` | `address` | `address` |          The address of the liquidator. |
+| 0 | `triggeredByGovernor` | `bool` | `bool` |  |
+| 1 | `principal` | `uint128` | `uint128` |  |
+| 2 | `interest` | `uint120` | `uint120` |  |
+| 3 | `lateInterest` | `uint256` | `uint256` |  |
+| 4 | `platformFees` | `uint96` | `uint96` |  |
+| 5 | `liquidator` | `address` | `address` |  |
 
 
 <br />
 
-### `loanTransferAdmin` 
-
-Returns the current &#x60;loanTransferAdmin&#x60; address.
-
-```solidity
-    function loanTransferAdmin()
-        view
-        returns (
-            address
-        );
-```
+### `minRatioFor`
 
 
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
-
-
-<br />
-
-### `minRatioFor` 
-
-Gets the minimum ratio for a collateral asset.
 
 ```solidity
     function minRatioFor(
@@ -289,9 +267,9 @@ Gets the minimum ratio for a collateral asset.
 
 <br />
 
-### `paymentCounter` 
+### `paymentCounter`
 
-Gets the payment counter.
+
 
 ```solidity
     function paymentCounter()
@@ -311,9 +289,9 @@ Gets the payment counter.
 
 <br />
 
-### `paymentIdOf` 
+### `paymentIdOf`
 
-Gets the payment if for the given loan.
+
 
 ```solidity
     function paymentIdOf(
@@ -339,9 +317,9 @@ Gets the payment if for the given loan.
 
 <br />
 
-### `payments` 
+### `payments`
 
-Gets the information for a payment.
+
 
 ```solidity
     function payments(
@@ -368,20 +346,20 @@ Gets the information for a payment.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `platformManagementFeeRate` | `uint24` | `uint24` | The value for the platform management fee rate. |
-| 1 | `delegateManagementFeeRate` | `uint24` | `uint24` | The value for the delegate management fee rate. |
-| 2 | `startDate` | `uint48` | `uint48` |                 The start date of the payment. |
-| 3 | `paymentDueDate` | `uint48` | `uint48` |            The timestamp of the payment due date. |
-| 4 | `incomingNetInterest` | `uint128` | `uint128` |       The amount of incoming net interest. |
-| 5 | `refinanceInterest` | `uint128` | `uint128` |         The amount of refinance interest. |
-| 6 | `issuanceRate` | `uint256` | `uint256` |              The issuance rate for the loan. |
+| 0 | `platformManagementFeeRate` | `uint24` | `uint24` |  |
+| 1 | `delegateManagementFeeRate` | `uint24` | `uint24` |  |
+| 2 | `startDate` | `uint48` | `uint48` |  |
+| 3 | `paymentDueDate` | `uint48` | `uint48` |  |
+| 4 | `incomingNetInterest` | `uint128` | `uint128` |  |
+| 5 | `refinanceInterest` | `uint128` | `uint128` |  |
+| 6 | `issuanceRate` | `uint256` | `uint256` |  |
 
 
 <br />
 
-### `paymentWithEarliestDueDate` 
+### `paymentWithEarliestDueDate`
 
-Gets the payment id with the earliest due date.
+
 
 ```solidity
     function paymentWithEarliestDueDate()
@@ -401,31 +379,9 @@ Gets the payment id with the earliest due date.
 
 <br />
 
-### `pool` 
-
-Gets the address of the pool.
-
-```solidity
-    function pool()
-        view
-        returns (
-            address
-        );
-```
+### `poolManager`
 
 
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
-
-
-<br />
-
-### `poolManager` 
-
-Gets the address of the pool manager.
 
 ```solidity
     function poolManager()
@@ -445,9 +401,9 @@ Gets the address of the pool manager.
 
 <br />
 
-### `principalOut` 
+### `principalOut`
 
-Gets the amount of principal out.
+
 
 ```solidity
     function principalOut()
@@ -467,9 +423,9 @@ Gets the amount of principal out.
 
 <br />
 
-### `sortedPayments` 
+### `sortedPayments`
 
-Gets the information of the sorted list.
+
 
 ```solidity
     function sortedPayments(
@@ -499,9 +455,9 @@ Gets the information of the sorted list.
 
 <br />
 
-### `unrealizedLosses` 
+### `unrealizedLosses`
 
-Returns the amount unrealized losses.
+
 
 ```solidity
     function unrealizedLosses()
@@ -526,18 +482,18 @@ Returns the amount unrealized losses.
 
 ### `Initialized`
 
-
+Emitted when the loan manager is initialized.
 
 ```solidity
     event Initialized(
-        address pool_
+        address poolManager_
     );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
+| 0 | `poolManager_` | `address` | `address` | Address of the associated pool manager. |
 
 <br />
 

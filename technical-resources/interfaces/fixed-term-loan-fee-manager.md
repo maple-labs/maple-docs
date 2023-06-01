@@ -1,4 +1,4 @@
-# MapleLoanFeeManager
+# Maple Fixed Term Loan Fee Manager
 
 
 
@@ -26,7 +26,7 @@
 
 ## Functions
 
-### `delegateOriginationFee` 
+### `delegateOriginationFee`
 
 Gets the delegate origination fee for the given loan.
 
@@ -54,7 +54,7 @@ Gets the delegate origination fee for the given loan.
 
 <br />
 
-### `delegateRefinanceServiceFee` 
+### `delegateRefinanceServiceFee`
 
 Gets the delegate service fee rate for the given loan.
 
@@ -82,7 +82,7 @@ Gets the delegate service fee rate for the given loan.
 
 <br />
 
-### `delegateServiceFee` 
+### `delegateServiceFee`
 
 Gets the delegate service fee rate for the given loan.
 
@@ -110,7 +110,7 @@ Gets the delegate service fee rate for the given loan.
 
 <br />
 
-### `getDelegateServiceFeesForPeriod` 
+### `getDelegateServiceFeesForPeriod`
 
 Gets the delegate service fee for the given loan.
 
@@ -140,7 +140,7 @@ Gets the delegate service fee for the given loan.
 
 <br />
 
-### `getOriginationFees` 
+### `getOriginationFees`
 
 Gets the sum of all origination fees for the given loan.
 
@@ -170,7 +170,7 @@ Gets the sum of all origination fees for the given loan.
 
 <br />
 
-### `getPlatformOriginationFee` 
+### `getPlatformOriginationFee`
 
 Gets the platform origination fee value for the given loan.
 
@@ -200,7 +200,7 @@ Gets the platform origination fee value for the given loan.
 
 <br />
 
-### `getPlatformServiceFeeForPeriod` 
+### `getPlatformServiceFeeForPeriod`
 
 Gets the delegate service fee for the given loan.
 
@@ -232,7 +232,7 @@ Gets the delegate service fee for the given loan.
 
 <br />
 
-### `getServiceFeeBreakdown` 
+### `getServiceFeeBreakdown`
 
 Gets the service fees for the given interval.
 
@@ -268,7 +268,7 @@ Gets the service fees for the given interval.
 
 <br />
 
-### `getServiceFees` 
+### `getServiceFees`
 
 Gets the service fees for the given interval.
 
@@ -298,7 +298,7 @@ Gets the service fees for the given interval.
 
 <br />
 
-### `getServiceFeesForPeriod` 
+### `getServiceFeesForPeriod`
 
 Gets the service fees for the given interval.
 
@@ -328,7 +328,7 @@ Gets the service fees for the given interval.
 
 <br />
 
-### `globals` 
+### `globals`
 
 Gets the global contract address.
 
@@ -350,7 +350,7 @@ Gets the global contract address.
 
 <br />
 
-### `payOriginationFees` 
+### `payOriginationFees`
 
 Called during &#x60;fundLoan&#x60;, performs fee payments to poolDelegate and treasury.
 
@@ -380,7 +380,7 @@ Called during &#x60;fundLoan&#x60;, performs fee payments to poolDelegate and tr
 
 <br />
 
-### `payServiceFees` 
+### `payServiceFees`
 
 Called during &#x60;makePayment&#x60;, performs fee payments to the pool delegate and treasury.
 
@@ -410,7 +410,7 @@ Called during &#x60;makePayment&#x60;, performs fee payments to the pool delegat
 
 <br />
 
-### `platformRefinanceServiceFee` 
+### `platformRefinanceServiceFee`
 
 Gets the platform fee rate for the given loan.
 
@@ -438,7 +438,7 @@ Gets the platform fee rate for the given loan.
 
 <br />
 
-### `platformServiceFee` 
+### `platformServiceFee`
 
 Gets the platform fee rate for the given loan.
 
@@ -466,7 +466,7 @@ Gets the platform fee rate for the given loan.
 
 <br />
 
-### `updateDelegateFeeTerms` 
+### `updateDelegateFeeTerms`
 
 Called during loan creation or refinance, sets the fee terms.
 
@@ -487,7 +487,7 @@ Called during loan creation or refinance, sets the fee terms.
 
 <br />
 
-### `updatePlatformServiceFee` 
+### `updatePlatformServiceFee`
 
 Function called by loans to update the saved platform service fee rate.
 
@@ -508,7 +508,7 @@ Function called by loans to update the saved platform service fee rate.
 
 <br />
 
-### `updateRefinanceServiceFees` 
+### `updateRefinanceServiceFees`
 
 Called during loan refinance to save the partial service fees accrued.
 

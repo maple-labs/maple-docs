@@ -1,4 +1,4 @@
-# WithdrawalManagerInitializer
+# Maple Withdrawal Manager Initializer
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `cycleConfigs` 
+### `cycleConfigs`
 
 Gets the configuration for a given config id.
 
@@ -41,7 +41,7 @@ Gets the configuration for a given config id.
 
 <br />
 
-### `decodeArguments` 
+### `decodeArguments`
 
 
 
@@ -73,7 +73,7 @@ Gets the configuration for a given config id.
 
 <br />
 
-### `encodeArguments` 
+### `encodeArguments`
 
 
 
@@ -105,7 +105,7 @@ Gets the configuration for a given config id.
 
 <br />
 
-### `exitCycleId` 
+### `exitCycleId`
 
 Gets the id of the cycle that account can exit on.
 
@@ -133,7 +133,7 @@ Gets the id of the cycle that account can exit on.
 
 <br />
 
-### `latestConfigId` 
+### `latestConfigId`
 
 Gets the most recent configuration id.
 
@@ -155,7 +155,7 @@ Gets the most recent configuration id.
 
 <br />
 
-### `lockedShares` 
+### `lockedShares`
 
 Gets the amount of locked shares for an account.
 
@@ -183,7 +183,7 @@ Gets the amount of locked shares for an account.
 
 <br />
 
-### `pool` 
+### `pool`
 
 Gets the address of the pool associated with this withdrawal manager.
 
@@ -205,7 +205,7 @@ Gets the address of the pool associated with this withdrawal manager.
 
 <br />
 
-### `poolManager` 
+### `poolManager`
 
 Gets the address of the pool manager associated with this withdrawal manager.
 
@@ -227,7 +227,7 @@ Gets the address of the pool manager associated with this withdrawal manager.
 
 <br />
 
-### `totalCycleShares` 
+### `totalCycleShares`
 
 Gets the amount of shares for a cycle.
 
