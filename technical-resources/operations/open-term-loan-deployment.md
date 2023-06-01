@@ -16,16 +16,16 @@ Deploy and verify the following contracts using a single forge script:
 
 ## Open Term Loan Manager Contracts
 1. LoanManagerFactory
-2. LoanManagerImplementation
-3. LoanManagerInitializer
+2. LoanManagerImplementation v1.0.0 implementation
+3. LoanManagerInitializer for v1.0.0 deployments
 
 ## Open Term Loan Contracts
 1. MapleLoanFactory
-2. MapleLoanInitializer
-3. MapleLoanImplementation
-4. MapleRefinancer
+2. MapleLoanInitializer for v1.0.1 deployments
+3. MapleLoanImplementation v1.0.1 implementation
+4. MapleRefinancer for v1.0.1 deployments
 
-# Phase 2 - Atomic Configuration of Protocol by Governor
+# Phase 2 - Configuration of Protocol by Governor
 This phase will be set up by the smart contracts team with JSONs and Gnosis Safe. This set of transactions will be simulated on Tenderly and validated.
 This will include three main actions:
 1. Upgrade Globals
@@ -59,47 +59,52 @@ globals_.setValidInstanceOf("LOAN_MANAGER_FACTORY",    fixedTermLoanManagerFacto
 globals_.setValidInstanceOf("OT_LOAN_MANAGER_FACTORY", openTermLoanManagerFactory, true);
 globals_.setValidInstanceOf("LOAN_MANAGER_FACTORY",    openTermLoanManagerFactory, true);
 
-globals_.setValidInstanceOf("FT_REFINANCER", address(fixedTermRefinancer), true);
-globals_.setValidInstanceOf("REFINANCER",    address(fixedTermRefinancer), true);
+globals_.setValidInstanceOf("FT_REFINANCER", fixedTermRefinancerV2, true);
+globals_.setValidInstanceOf("REFINANCER",    fixedTermRefinancerV2, true);
 
-globals_.setValidInstanceOf("OT_REFINANCER", openTermLoanRefinancer, true);
-globals_.setValidInstanceOf("REFINANCER",    openTermLoanRefinancer, true);
+globals_.setValidInstanceOf("OT_REFINANCER", openTermRefinancerV1, true);
+globals_.setValidInstanceOf("REFINANCER",    openTermRefinancerV1, true);
 
 globals_.setValidInstanceOf("FEE_MANAGER", fixedTermFeeManagerV1, true);
 
-globals_.setCanDeploy(poolManagerFactory,       newPoolDeployer, true);
-globals_.setCanDeploy(withdrawalManagerFactory, newPoolDeployer, true);
+globals_.setCanDeployFrom(poolManagerFactory,       poolDeployerV2, true);
+globals_.setCanDeployFrom(withdrawalManagerFactory, poolDeployerV2, true);
+
+// setCanDeploy for all valid borrowers for OTL Factory
+for (uint256 i; i < validBorrowers.length; ++i) {
+    globals_.setCanDeployFrom(openTermLoanFactory, validBorrowers[i], true);
+}
 ```
 
 ## Configure Factories
-### Register PoolManager Version 200 and 100 -> 200 Upgrade
+### Register PoolManager Version v2.0.0 and v1.0.0 -> v2.0.0 Upgrade
 ```solidity
 poolManagerFactory.registerImplementation(200, poolManagerImplementationV200, poolManagerInitializer);
 poolManagerFactory.setDefaultVersion(200);
 poolManagerFactory.enableUpgradePath(100, 200, address(0));
 ```
 
-### Register FixedTermLoan Version 501 and 400 -> 500 Upgrade
+### Register FixedTermLoan Version v5.0.1 and v4.0.0 -> v5.0.1 Upgrade
 ```solidity
 fixedTermLoanFactory.registerImplementation(501, fixedTermLoanImplementationV501, fixedTermLoanInitializerV500);
 fixedTermLoanFactory.setDefaultVersion(501);
 fixedTermLoanFactory.enableUpgradePath(400, 501, fixedTermLoanMigratorV500);
 ```
 
-### Register FixedTermLoanManager Version 301 and 200 -> 300 Upgrade
+### Register FixedTermLoanManager Version v3.0.1 and v2.0.0 -> v3.0.1 Upgrade
 ```solidity
 fixedTermLoanManagerFactory.registerImplementation(301, fixedTermLoanManagerImplementationV301, fixedTermLoanManagerInitializerV300);
 fixedTermLoanManagerFactory.setDefaultVersion(301);
 fixedTermLoanManagerFactory.enableUpgradePath(200, 301, address(0));
 ```
 
-### Register OpenTermLoan Version 100
+### Register OpenTermLoan Version v1.0.1
 ```solidity
 openTermLoanFactory.registerImplementation(101, openTermLoanImplementationV101, openTermLoanInitializerV100);
 openTermLoanFactory.setDefaultVersion(101);
 ```
 
-### Register OpenTermLoanManager Version 100
+### Register OpenTermLoanManager Version v1.0.0
 ```solidity
 openTermLoanManagerFactory.registerImplementation(100, openTermLoanManagerImplementationV100, openTermLoanManagerInitializerV100);
 openTermLoanManagerFactory.setDefaultVersion(100);
