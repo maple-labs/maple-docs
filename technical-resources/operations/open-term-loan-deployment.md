@@ -29,11 +29,10 @@ Deploy and verify the following contracts using a single forge script:
 This phase will be set up by the smart contracts team with JSONs and Gnosis Safe. This set of transactions will be simulated on Tenderly and validated.
 This will include three main actions:
 1. Upgrade Globals
-2. Deprecate old allowlist
-3. Allowlist all relevant contracts in Globals
-4. Configure factories with newest contract versions
-5. Upgrade all PoolManager and LoanManager contracts
-6. Set canDeploy for all existing borrowers
+2. Allowlist all relevant contracts in Globals
+3. Configure factories with newest contract versions
+4. Upgrade all PoolManager and LoanManager contracts
+5. Set canDeploy for all existing borrowers
 
 Details are outlined below.
 
@@ -80,14 +79,14 @@ poolManagerFactory.setDefaultVersion(200);
 poolManagerFactory.enableUpgradePath(100, 200, address(0));
 ```
 
-### Register FixedTermLoan Version 500 and 400 -> 500 Upgrade
+### Register FixedTermLoan Version 501 and 400 -> 500 Upgrade
 ```solidity
 fixedTermLoanFactory.registerImplementation(501, fixedTermLoanImplementationV501, fixedTermLoanInitializerV500);
 fixedTermLoanFactory.setDefaultVersion(501);
 fixedTermLoanFactory.enableUpgradePath(400, 501, fixedTermLoanMigratorV500);
 ```
 
-### Register FixedTermLoanManager Version 300 and 200 -> 300 Upgrade
+### Register FixedTermLoanManager Version 301 and 200 -> 300 Upgrade
 ```solidity
 fixedTermLoanManagerFactory.registerImplementation(301, fixedTermLoanManagerImplementationV301, fixedTermLoanManagerInitializerV300);
 fixedTermLoanManagerFactory.setDefaultVersion(301);
@@ -107,13 +106,13 @@ openTermLoanManagerFactory.setDefaultVersion(100);
 ```
 
 ## Upgrade all PoolManagers
-Upgrade all (currently 7) outstanding PoolManager contracts.
+Upgrade all (currently 8) outstanding PoolManager contracts.
 ```solidity
 poolManager.upgrade(200, "0x");
 ```
 
 ## Upgrade all Fixed Term LoanManagers
-Upgrade all (currently 7) outstanding LoanManager contracts.
+Upgrade all (currently 8) outstanding LoanManager contracts.
 ```solidity
 loanManager.upgrade(301, "0x");
 ```
@@ -141,10 +140,6 @@ globals_.setValidPoolDeployer(poolDeployer, false);
 ```
 
 # Post-Upgrade
-## Set `canDeploy` Permissions for all relevant Borrowers for Open Term Loans
-```solidity
-globals.setCanDeploy(openTermLoanFactory, borrower, true);
-```
 ## Adding Open Term Loan Managers
 After the protocol has been deployed, the PoolDelegates can call:
 ```solidity
