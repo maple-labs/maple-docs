@@ -12,10 +12,10 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `Mint`
 * `MintWithPermit`
 * `Redeem`
-* `Withdraw`
+* `Remove Shares`
 * `RequestRedeem`
 * `RequestWithdraw`
-* `Remove Shares`
+* `Withdraw`
 
 **ERC20 functions**
 
@@ -37,7 +37,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 ### Globals
 
-* `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilitiies.
+* `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilities.
 * `unscheduleCall`
 
 ### Liquidator
@@ -66,9 +66,9 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `acceptBorrower`
 * `drawdownFunds`
 * `proposeNewTerms`
+* `rejectNewTerms`
 * `removeCollateral`
 * `setPendingBorrower`
-* `rejectNewTerms`
 
 **Lender Permissioned Functions**
 
@@ -76,40 +76,43 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `acceptNewTerms`
 * `fundLoan`
 * `impairLoan`
+* `rejectNewTerms`
 * `removeLoanImpairment`
 * `repossess`
 * `setPendingLender`
-* `rejectNewTerms`
 
 ### Globals
 
 **Governor Permissioned Functions**
 
 * `acceptGovernor`
-* `setPendingGovernor`
 * `activatePoolManager`
 * `setBootstrapMint`
-* `setDefaultTimelockParameters`
-* `setMapleTreasury`
-* `setMigrationAdmin`
-* `setPriceOracle`
-* `setSecurityAdmin`
-* `setContractPause`
 * `setCanDeployFrom`
+* `setContractPause`
+* `setDefaultTimelockParameters`
+* `setFunctionUnpause`
+* `setManualOverridePrice`
+* `setMapleTreasury`
+* `setMaxCoverLiquidationPercent`
+* `setMigrationAdmin`
+* `setMinCoverAmount`
+* `setPendingGovernor`
+* `setPlatformManagementFeeRate`
+* `setPlatformOriginationFeeRate`
+* `setPlatformServiceFeeRate`
+* `setPriceOracle`
+* `setProtocolPause`
+* `setSecurityAdmin`
+* `setTimelockWindow`
+* `setTimelockWindows`
 * `setValidBorrower`
 * `setValidCollateralAsset`
 * `setValidInstanceOf`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
 * `setValidPoolDeployer`
-* `setManualOverridePrice`
-* `setMaxCoverLiquidationPercent`
-* `setMinCoverAmount`
-* `setPlatformManagementFeeRate`
-* `setPlatformOriginationFeeRate`
-* `setPlatformServiceFeeRate`
-* `setTimelockWindow`
-* `setTimelockWindows`
+* `unscheduleCall`
 
 **Security Admin Permissioned Functions**
 
@@ -139,8 +142,8 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Deployer Permissioned Functions**
 
-* `completeConfiguration`
 * `addLoanManager`
+* `completeConfiguration`
 * `setDelegateManagementFeeRate`
 * `setLiquidityCap`
 * `setWithdrawalManager`
@@ -148,14 +151,14 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Pool Delegate Permissioned Functions**
 
 * `acceptPoolDelegate`
-* `setPendingPoolDelegate`
 * `addLoanManager`
+* `finishCollateralLiquidation`
 * `setAllowedLender`
 * `setDelegateManagementFeeRate`
 * `setIsLoanManager`
 * `setLiquidityCap`
 * `setOpenToPublic`
-* `finishCollateralLiquidation`
+* `setPendingPoolDelegate`
 * `triggerDefault`
 * `withdrawCover`
 
@@ -187,11 +190,11 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Governor Permissioned Functions**
 
+* `impairLoan`
+* `removeLoanImpairment`
 * `setAllowedSlippage`
 * `setMinRatio`
 * `updateAccounting`
-* `impairLoan`
-* `removeLoanImpairment`
 
 **Security Admin Permissioned Functions**
 
@@ -199,14 +202,14 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Pool Delegate Permissioned Functions**
 
+* `acceptNewTerms`
+* `fund`
+* `impairLoan`
+* `rejectNewTerms`
+* `removeLoanImpairment`
 * `setAllowedSlippage`
 * `setMinRatio`
 * `updateAccounting`
-* `acceptNewTerms`
-* `fund`
-* `rejectNewTerms`
-* `impairLoan`
-* `removeLoanImpairment`
 
 **Pool Manager Permissioned Functions**
 
@@ -242,8 +245,8 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `acceptBorrower`
 * `acceptNewTerms`
-* `setPendingBorrower`
 * `rejectNewTerms`
+* `setPendingBorrower`
 * `skim`
 
 **Lender Permissioned Functions**
@@ -253,11 +256,11 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `fund`
 * `impair`
 * `proposeNewTerms`
+* `rejectNewTerms`
 * `removeCall`
 * `removeImpairment`
 * `repossess`
 * `setPendingLender`
-* `rejectNewTerms`
 
 ### OpenTermLoanManager
 
@@ -277,12 +280,12 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Pool Delegate Permissioned Functions**
 
+* `callPrincipal`
 * `fund`
+* `impairLoan`
 * `proposeNewTerms`
 * `rejectNewTerms`
-* `callPrincipal`
 * `removeCall`
-* `impairLoan`
 * `removeLoanImpairment`
 
 **Pool Manager Permissioned Functions**

@@ -4,7 +4,7 @@ MapleGlobals is a singleton contract used to save system-wide parameters that al
 
 # Permissioning
 
-The governor multisig is the only entity allowed to change the parameters stored in MapleGlobals, the only exception is scheduling upgrade calls which can also be done by Pool Delegates.
+The governor multisig is the only entity allowed to change the parameters stored in MapleGlobals, the only exception is pause-related parameters which can also be done by the Security Admin.
 
 # Pausing
 
@@ -15,6 +15,10 @@ A more granular approach is planned to be developed in the future, that allows p
 # Timelock Scheduling
 
 To perform upgrades in vital pool contracts, pool delegates need to first schedule upgrade calls in the globals contract and only after the pre-determined period has elapsed, that the actions can be triggered. More information on [timelocks](../admin-functions/timelocks.md).
+
+# Whitelisting Instance Deployment from Factories
+
+The governor multisig can whitelist individual addresses that can use the `createInstance` functions at each factory respectively, which is then stored in the `_canDeployFrom` storage mapping. Factories can call `globals.canDeploy(addressOfCaller)` to determine if the caller is allowed to deploy one of its instances, and the mapping itself can be queried via `globals.canDeployFrom(addressOfFactory, addressOfCaller)`.
 
 # System Parameters
 
@@ -28,8 +32,14 @@ In this section, the parameters stored in the globals contract are outlined.
 * `MigrationAdmin` - Special account used during the liquidity migration.
 * Factories, such as:
   * `LiquidatorFactory`
-  * `LoanFactory`
-  * `LoanManagerFactory`
+  * `FixedTermLoanFactory`
+  * `OpenTermLoanFactory`
+  * `FixedTermLoanManagerFactory`
+  * `OpenTermLoanManagerFactory`
+  * `FixedTermRefinancer`
+  * `OpenTermRefinancer`
+  * `FeeManager`
+  * `LiquidatorFactory`
   * `PoolManagerFactory`
   * `WithdrawalManagerFactory`
 * Borrowers

@@ -4,9 +4,11 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 
 # Governor-Permissioned Functions
 
-## Maple Globals
+## Globals
 
+* `acceptGovernor`
 * `activatePoolManager`
+* `setBootstrapMint`
 * `setCanDeployFrom`
 * `setContractPause`
 * `setDefaultTimelockParameters`
@@ -15,20 +17,23 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `setMapleTreasury`
 * `setMaxCoverLiquidationPercent`
 * `setMigrationAdmin`
-* `setMigrationAdmin`
 * `setMinCoverAmount`
+* `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
 * `setPriceOracle`
+* `setProtocolPause`
 * `setSecurityAdmin`
 * `setTimelockWindow`
 * `setTimelockWindows`
 * `setValidBorrower`
+* `setValidCollateralAsset`
+* `setValidInstanceOf`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
 * `setValidPoolDeployer`
-* `setProtocolPause`
+* `unscheduleCall`
 
 ## PoolManager
 
@@ -37,11 +42,11 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 
 ## Fixed Term LoanManager
 
+* `impairLoan`
+* `removeLoanImpairment`
 * `setAllowedSlippage`
 * `setMinRatio`
 * `updateAccounting`
-* `impairLoan`
-* `removeLoanImpairment`
 
 ## Open Term Loan
 
@@ -55,6 +60,6 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 ## Upgrading Contracts
 
 The Governor can upgrade the following contracts:
+* Globals
 * Liquidator
-* Maple Globals
 * Withdrawal Manager
