@@ -1,33 +1,31 @@
 # Overview
 
 The PoolDeployer contract facilitates the atomic deployment, initialization and configuration of the all contracts necessary to run a Pool:
-1. `Pool`
-2. `PoolManager`
-3. `LoanManager`
-4. `WithdrawalManager`
+* `PoolManager`, which itself deploys:
+  * `Pool`
+  * some number of `LoanManager`s
+* `WithdrawalManager`
 
 # Pre-Requisite Transactions
 
 The following pre-requisite configurations are necessary in order to deploy a Pool in the Maple protocol.
 
 1. Deploying address is a valid Pool Delegate in `MapleGlobals`.
-2. `PoolManagerFactory` is a valid factory in `MapleGlobals`.
-3. `LoanManagerFactory` is a valid factory in `MapleGlobals`.
-4. `WithdrawalManagerFactory` is a valid factory in `MapleGlobals`.
-5. `PoolManagerInitializer` is a valid initializer in `PoolManagerFactory`.
-6. `LoanManagerInitializer` is a valid initializer in `LoanManagerFactory`.
-7. `WithdrawalManagerInitializer` is a valid initializer in `WithdrawalManagerFactory`.
-8. The Pool Delegate does not own a `Pool` already.
-9. The Pool Asset is a valid asset in `MapleGlobals`.
-10. The `WithdrawalManager` withdrawal window is shorter than the cycle duration.
+2. The provided `PoolManagerFactory` is a valid factory in `MapleGlobals`.
+3. The provided `WithdrawalManagerFactory` is a valid factory in `MapleGlobals`.
+4. Each provided `LoanManagerFactory` is a valid factory in `MapleGlobals`.
+5. The Pool Delegate does not own a `Pool` already.
+6. The Pool Asset is a valid asset in `MapleGlobals`.
+7. The `WithdrawalManager` withdrawal window is shorter than the cycle duration.
+8. The required pool cover can be transferred from the Pool Delegate to the `PoolDelegateCover`.
 
 # Pool Deployment
 
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
-* `poolManagerFactory` and `poolManagerInitializer`.
-* `loanManagerFactory` and `loanManagerInitializer`.
-* `withdrawalManagerFactory` and `WithdrawalManagerInitializer`.
+* `poolManagerFactory`.
+* `withdrawalManagerFactory`.
+* `loanManagerFactories`.
 * `asset` - The main asset that the pool denominates in.
 * `name` and `symbol` for identification of the pool shares token.
 * Configuration params:
