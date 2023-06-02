@@ -82,6 +82,7 @@
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
+  * [Open Term Loan Deployment](technical-resources/operations/open-term-loan-deployment.md)
 * Interfaces
   * [FixedTermLoan](technical-resources/interfaces/fixed-term-loan.md)
   * [FixedTermLoanFactory](technical-resources/interfaces/fixed-term-loan-factory.md)
