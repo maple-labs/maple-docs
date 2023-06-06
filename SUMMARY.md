@@ -69,7 +69,7 @@
     * [Claims](technical-resources/loan-managers/fixed-term-loan-manager/fixed-term-claim-function.md)
     * [Advance Payment Accounting](technical-resources/loan-managers/fixed-term-loan-manager/advance-global-payment-accounting.md)
     * [Accounting Examples](technical-resources/loan-managers/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
-  * [FOpen Term Loan Manager](technical-resources/loan-managers/open-term-loan-manager/open-term-loan-manager.md)
+  * [Open Term Loan Manager](technical-resources/loan-managers/open-term-loan-manager/open-term-loan-manager.md)
 * Singletons
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
