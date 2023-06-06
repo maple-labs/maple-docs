@@ -13,11 +13,11 @@ Pools and PoolManagers currently have a one-to-one relationship (architecturally
 
 The main actors that interact with the PoolManager are the Pool Delegate, Governor and other Maple contracts. No external facing actor is expected to use the Pool Manager directly. The Pool Delegate uses the PoolManager to administrate loans, performing actions such as funding and refinancing, and setting Pool parameters, such as liquidity cap and fees. Other contracts use the PoolManager to route calls to the Pool to perform operation such as withdrawals.
 
-# [LoanManagers](../loan-managers)
+# LoanManagers
 
 The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrue mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. There are two types of LoanManagers in the Maple protocol: fixed-term LoanManagers and open-term LoanManagers.
 
-# [Loans](../loans)
+# Loans
 
 A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. There are two types of Loans in the Maple protocol: fixed-term Loans and open-term Loans.
 

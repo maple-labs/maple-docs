@@ -12,7 +12,7 @@ Maple Finance V2 went through 3 audits during its development for the December 2
 <br>
 
 ## June 2023 Release
-Maple Finance V2 went through 2 audits during its development for the June 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
+Maple Finance V2 went through 2 audits during its development for the June 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to release.
 
 | Auditor | Report Link |
 |---|---|

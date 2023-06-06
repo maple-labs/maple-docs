@@ -8,9 +8,11 @@ The governor multisig is the only entity allowed to change the parameters stored
 
 # Pausing
 
-A system-wide pause flag is stored in the MapleGlobals and, in case of an emergency, the SecurityAdmin multisig can can call `setProtocolPause()`, which immediately takes effect in all protocol contracts. This doesn't necessarily mean that all functions are disallowed, here is a [list of the unaffected functions.](../security/emergency-protocol-pause-function.md)
+A more granular approach was introduced in the June 2023 release with details found [here.](../security/emergency-protocol-pause.md).
 
-A more granular approach is planned to be developed in the future, that allows pausing specific parts or functionalities.
+1. Global pause
+2. Per contract pause
+3. Per function un-pause.
 
 # Timelock Scheduling
 
