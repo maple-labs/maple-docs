@@ -1,12 +1,23 @@
 # Audits
 
-Maple Finance V2 went through 3 audits during its development details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
+## December 2022 Release
+Maple Finance V2 went through 3 audits during its development for the December 2022 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
 
 | Auditor | Report Link |
 |---|---|
 | Trail of Bits | [`2022-08-24 - Trail of Bits Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10246688/Maple.Finance.v2.-.Final.Report.-.Fixed.-.2022.pdf) |
 | Spearbit | [`2022-10-17 - Spearbit Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf) |
 | Three Sigma | [`2022-10-24 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223541/three-sigma_maple-finance_code-audit_v1.1.1.pdf) |
+
+<br>
+
+## June 2023 Release
+Maple Finance V2 went through 2 audits during its development for the June 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
+
+| Auditor | Report Link |
+|---|---|
+| Spearbit | `2023-xx-xx - Spearbit Report Pending` |
+| Three Sigma | [`2023-04-10 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11663546/maple-v2-audit_three-sigma_2023.pdf) |
 
 # Bug Bounty
 
@@ -17,32 +28,61 @@ Maple V2 has an active bug bounty to incentive whitehat hackers to report any is
 In order to discuss critical monitoring first its important to be clear on the invariants that are asserted which can be found below.
 
 ```
-* Loan
-   * Invariant A: collateral balance >= _collateral
-   * Invariant B: fundsAsset >= _drawableFunds
+* Fixed Term Loan
+   * Invariant A: collateral balance >= collateral`
+   * Invariant B: fundsAsset >= drawableFunds`
+   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
 
-* Loan Manager (non-liquidating)
+* Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
    * Invariant B: sortedPayments is always sorted
    * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)
-   * Invariant D: totalPrincipal = ∑loan.principal()
+   * Invariant D: totalPrincipal = ∑loan.principal
    * Invariant E: issuanceRate = ∑issuanceRate(payment)
-   * Invariant F: unrealizedLosses <= assetsUnderManagement()
-   * Invariant H: assetsUnderManagement == ∑loan.principal() + ∑outstandingInterest(loan)
+   * Invariant F: unrealizedLosses <= assetsUnderManagement
+   * Invariant G: unrealizedLosses == 0
+   * Invariant H: assetsUnderManagement == ∑loan.principal + ∑outstandingInterest(loan)
    * Invariant I: domainStart <= block.timestamp
    * Invariant J: if (loanManager.paymentWithEarliestDueDate != 0) then issuanceRate > 0
    * Invariant K: if (loanManager.paymentWithEarliestDueDate != 0) then domainEnd == paymentWithEarliestDueDate
-   * Invariant L: refinanceInterest[payment] = loan.refinanceInterest()
+   * Invariant L: refinanceInterest[payment] = loan.refinanceInterest
+   * Invariant M: paymentDueDate[payment] = loan.paymentDueDate
+   * Invariant N: startDate[payment] <= loan.paymentDueDate - loan.paymentInterval
+
+* Open Term Loan
+   * Invariant A: dateFunded <= datePaid, dateCalled, dateImpaired (if not zero)
+   * Invariant B: datePaid <= dateImpaired (if not zero)
+   * Invariant C: datePaid <= dateCalled (if not zero)
+   * Invariant D: calledPrincipal <= principal
+   * Invariant E: dateCalled != 0 -> calledPrincipal != 0
+   * Invariant F: paymentDueDate <= defaultDate
+   * Invariant G: getPaymentBreakdown == theoretical calculation
+
+* Open Term Loan Manager
+   * Invariant A: accountedInterest + accruedInterest == ∑loan.getPaymentBreakdown(block.timestamp) (minus fees)
+   * Invariant B: if no payments exist: accountedInterest == 0
+   * Invariant C: principalOut = ∑loan.principal
+   * Invariant D: issuanceRate = ∑payment.issuanceRate
+   * Invariant E: unrealizedLosses <= assetsUnderManagement
+   * Invariant F: if no impairments exist: unrealizedLosses == 0
+   * Invariant G: block.timestamp >= domainStart
+   * Invariant H: payment.startDate == loan.dateFunded || loan.datePaid
+   * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
+   * Invariant J: payment.impairedDate >= payment.startDate
+   * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
 
 * Pool (non-liquidating)
    * Invariant A: totalAssets > fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
+   * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
    * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
    * Invariant E: convertToShares(totalAssets) == totalSupply (with rounding)
+   * Invariant F: balanceOfAssets[user] >= balanceOf[user]
    * Invariant G: ∑balanceOf[user] == totalSupply
-   * Invariant I: totalAssets == poolManager.totalAssets()
-   * Invariant J: unrealizedLosses == poolManager.unrealizedLosses()
-   * Invariant K: convertToExitShares == poolManager.convertToExitShares()
+   * Invariant H: convertToExitShares == convertToShares
+   * Invariant I: totalAssets == poolManager.totalAssets
+   * Invariant J: unrealizedLosses == poolManager.unrealizedLosses
+   * Invariant K: convertToExitShares == poolManager.convertToExitShares
 
 * PoolManager (non-liquidating)
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
@@ -61,7 +101,7 @@ In order to discuss critical monitoring first its important to be clear on the i
    * Invariant J: getRedeemableAmounts.assets[owner] <= totalCycleShares[exitCycleId[user]] * exchangeRate
    * Invariant K: getRedeemableAmounts.assets[owner] <= lockedShares[user] * exchangeRate
    * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
-   * Invariant M: lockedLiquidity <= pool.totalAssets()
+   * Invariant M: lockedLiquidity <= pool.totalAssets
    * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
 ```
 
