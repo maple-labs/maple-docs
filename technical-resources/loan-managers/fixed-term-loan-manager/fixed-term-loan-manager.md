@@ -1,6 +1,6 @@
 # Assets Under Management (AUM)
 
-The LoanManager interacts with Loans on behalf of the PoolManager and represents all the outstanding these Loans' outstanding value with the `assetsUnderManagement` function. This function returns the outstanding principal of all loans plus the outstanding interest.
+The FixedTermLoanManager interacts with FixedTermLoans on behalf of the PoolManager and represents these Loans' outstanding value with the `assetsUnderManagement` function. This function returns the outstanding principal of all loans plus the outstanding interest.
 
 
 
@@ -14,7 +14,7 @@ $$
 
 # Outstanding Principal
 
-The outstanding principal component of AUM in the LoanManager is represented by the `principalOut` state variable. This variable is incremented and decremented based on the actions of individual Loans and is equal to the sum of principal balance on all outstanding Loans.
+The outstanding principal component of AUM in the FixedTermLoanManager is represented by the `principalOut` state variable. This variable is incremented and decremented based on the actions of individual Loans and is equal to the sum of principal balance on all outstanding Loans.
 
 
 
@@ -30,7 +30,7 @@ $$
 
 ## Introduction
 
-Outstanding interest in the LoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. [Interest](../loans/loans.md#amortization-calculation) in MapleLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
+Outstanding interest in the FixedTermLoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. [Interest](../loans/loans.md#amortization-calculation) in FixedTermLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
 
 
 
@@ -46,7 +46,7 @@ This amount of $9863.01$ would be due exactly 30 days from when the loan gets fu
 
 ## Naive Approach
 
-Using this information, the current value of interest in the MapleLoan at any given time can be represented with the following equation:
+Using this information, the current value of interest in the FixedTermLoan at any given time can be represented with the following equation:
 
 
 
@@ -112,4 +112,3 @@ $$
 \nonumber domainStart \le t \le domainEnd
 \end{align}
 $$
-

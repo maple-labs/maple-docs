@@ -1,4 +1,4 @@
-# LiquidatorInitializer
+# Maple Liquidator Initializer
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `collateralAsset` 
+### `collateralAsset`
 
 Returns the address of the collateral asset.
 
@@ -29,7 +29,7 @@ Returns the address of the collateral asset.
 
 <br />
 
-### `collateralRemaining` 
+### `collateralRemaining`
 
 Returns the amount of collateral yet to be liquidated.
 
@@ -51,7 +51,7 @@ Returns the amount of collateral yet to be liquidated.
 
 <br />
 
-### `decodeArguments` 
+### `decodeArguments`
 
 
 
@@ -83,7 +83,7 @@ Returns the amount of collateral yet to be liquidated.
 
 <br />
 
-### `encodeArguments` 
+### `encodeArguments`
 
 
 
@@ -115,7 +115,7 @@ Returns the amount of collateral yet to be liquidated.
 
 <br />
 
-### `fundsAsset` 
+### `fundsAsset`
 
 Returns the address of the funding asset.
 
@@ -137,7 +137,7 @@ Returns the address of the funding asset.
 
 <br />
 
-### `loanManager` 
+### `loanManager`
 
 Returns the address of the loan manager contract.
 

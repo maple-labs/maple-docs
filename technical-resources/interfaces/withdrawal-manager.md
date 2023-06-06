@@ -1,4 +1,4 @@
-# WithdrawalManager
+# Maple Withdrawal Manager
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `addShares` 
+### `addShares`
 
 Add shares to the withdrawal manager.
 
@@ -28,7 +28,7 @@ Add shares to the withdrawal manager.
 
 <br />
 
-### `asset` 
+### `asset`
 
 Gets the asset address used in this withdrawal manager.
 
@@ -50,7 +50,7 @@ Gets the asset address used in this withdrawal manager.
 
 <br />
 
-### `cycleConfigs` 
+### `cycleConfigs`
 
 Gets the configuration for a given config id.
 
@@ -84,7 +84,7 @@ Gets the configuration for a given config id.
 
 <br />
 
-### `exitCycleId` 
+### `exitCycleId`
 
 Gets the id of the cycle that account can exit on.
 
@@ -112,7 +112,7 @@ Gets the id of the cycle that account can exit on.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -134,7 +134,7 @@ The address of the proxy factory.
 
 <br />
 
-### `getConfigAtId` 
+### `getConfigAtId`
 
 Gets the configuration of a given cycle id.
 
@@ -162,7 +162,7 @@ Gets the configuration of a given cycle id.
 
 <br />
 
-### `getCurrentConfig` 
+### `getCurrentConfig`
 
 Gets the configuration of the current cycle id.
 
@@ -184,7 +184,7 @@ Gets the configuration of the current cycle id.
 
 <br />
 
-### `getCurrentCycleId` 
+### `getCurrentCycleId`
 
 Gets the id of the current cycle.
 
@@ -206,7 +206,7 @@ Gets the id of the current cycle.
 
 <br />
 
-### `getRedeemableAmounts` 
+### `getRedeemableAmounts`
 
 Gets the shares and assets that are redeemable for a given user.
 
@@ -240,7 +240,7 @@ Gets the shares and assets that are redeemable for a given user.
 
 <br />
 
-### `getWindowAtId` 
+### `getWindowAtId`
 
 Gets the timestamps of the beginning and end of the withdrawal window for a given cycle.
 
@@ -270,7 +270,7 @@ Gets the timestamps of the beginning and end of the withdrawal window for a give
 
 <br />
 
-### `getWindowStart` 
+### `getWindowStart`
 
 Gets the timestamp of the beginning of the withdrawal window for a given cycle.
 
@@ -298,7 +298,7 @@ Gets the timestamp of the beginning of the withdrawal window for a given cycle.
 
 <br />
 
-### `globals` 
+### `globals`
 
 Gets the address of globals.
 
@@ -320,7 +320,7 @@ Gets the address of globals.
 
 <br />
 
-### `governor` 
+### `governor`
 
 Gets the address of the governor.
 
@@ -342,7 +342,7 @@ Gets the address of the governor.
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -364,7 +364,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `isInExitWindow` 
+### `isInExitWindow`
 
 Checks if an account is included in an exit window.
 
@@ -392,7 +392,7 @@ Checks if an account is included in an exit window.
 
 <br />
 
-### `latestConfigId` 
+### `latestConfigId`
 
 Gets the most recent configuration id.
 
@@ -414,7 +414,7 @@ Gets the most recent configuration id.
 
 <br />
 
-### `lockedLiquidity` 
+### `lockedLiquidity`
 
 Gets the total amount of funds that need to be locked to fulfill exits.
 
@@ -436,7 +436,7 @@ Gets the total amount of funds that need to be locked to fulfill exits.
 
 <br />
 
-### `lockedShares` 
+### `lockedShares`
 
 Gets the amount of locked shares for an account.
 
@@ -464,7 +464,7 @@ Gets the amount of locked shares for an account.
 
 <br />
 
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -485,7 +485,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `pool` 
+### `pool`
 
 Gets the address of the pool associated with this withdrawal manager.
 
@@ -507,7 +507,7 @@ Gets the address of the pool associated with this withdrawal manager.
 
 <br />
 
-### `poolDelegate` 
+### `poolDelegate`
 
 Gets the pool delegate address.
 
@@ -529,7 +529,7 @@ Gets the pool delegate address.
 
 <br />
 
-### `poolManager` 
+### `poolManager`
 
 Gets the address of the pool manager associated with this withdrawal manager.
 
@@ -551,7 +551,7 @@ Gets the address of the pool manager associated with this withdrawal manager.
 
 <br />
 
-### `previewRedeem` 
+### `previewRedeem`
 
 Gets the amount of shares that can be redeemed.
 
@@ -583,7 +583,7 @@ Gets the amount of shares that can be redeemed.
 
 <br />
 
-### `previewWithdraw` 
+### `previewWithdraw`
 
 Gets the amount of shares that can be withdrawn.
 
@@ -615,7 +615,7 @@ Gets the amount of shares that can be withdrawn.
 
 <br />
 
-### `processExit` 
+### `processExit`
 
 Process the exit of an account.
 
@@ -647,7 +647,7 @@ Process the exit of an account.
 
 <br />
 
-### `removeShares` 
+### `removeShares`
 
 Remove shares to the withdrawal manager.
 
@@ -677,7 +677,7 @@ Remove shares to the withdrawal manager.
 
 <br />
 
-### `setExitConfig` 
+### `setExitConfig`
 
 Sets up a new exit configuration.
 
@@ -698,7 +698,7 @@ Sets up a new exit configuration.
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -717,7 +717,7 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `totalCycleShares` 
+### `totalCycleShares`
 
 Gets the amount of shares for a cycle.
 
@@ -745,7 +745,7 @@ Gets the amount of shares for a cycle.
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 

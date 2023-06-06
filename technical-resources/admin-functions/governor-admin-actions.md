@@ -4,42 +4,62 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 
 # Governor-Permissioned Functions
 
-## Maple Globals
+## Globals
 
+* `acceptGovernor`
 * `activatePoolManager`
+* `setBootstrapMint`
+* `setCanDeployFrom`
+* `setContractPause`
 * `setDefaultTimelockParameters`
+* `setFunctionUnpause`
 * `setManualOverridePrice`
 * `setMapleTreasury`
 * `setMaxCoverLiquidationPercent`
 * `setMigrationAdmin`
-* `setMigrationAdmin`
 * `setMinCoverAmount`
+* `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
 * `setPriceOracle`
+* `setProtocolPause`
 * `setSecurityAdmin`
 * `setTimelockWindow`
 * `setTimelockWindows`
 * `setValidBorrower`
-* `setValidFactory`
+* `setValidCollateralAsset`
+* `setValidInstanceOf`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
 * `setValidPoolDeployer`
+* `unscheduleCall`
 
 ## PoolManager
 
 * `finishCollateralLiquidation`
+* `triggerDefault`
+
+## Fixed Term LoanManager
+
 * `impairLoan`
 * `removeLoanImpairment`
 * `setAllowedSlippage`
 * `setMinRatio`
-* `triggerDefault`
-
-## LoanManager
-
 * `updateAccounting`
+
+## Open Term Loan
+
+* `skim`
+
+## Open Term Loan Manager
+
+* `impairLoan`
+* `removeLoanImpairment`
 
 ## Upgrading Contracts
 
-The Governor is able to upgrade all upgradeable contracts in the protocol except for the Loan as the borrower is expected to upgrade the Loan implementation.
+The Governor can upgrade the following contracts:
+* Globals
+* Liquidator
+* Withdrawal Manager

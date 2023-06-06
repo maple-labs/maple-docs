@@ -5,7 +5,7 @@ Across the protocol, many proxy contracts are used, incorporating upgradeability
 Since proxies are being deployed instead of full contracts, the gas cost of contract deployment goes down significantly. This is because the bytecode size of the proxy smart contracts is much smaller than its corresponding implementation.
 
 ### Single factory contract can manage many versions
-Since the proxies are deployed from a central factory contract, this contract can be allowlisted in MapleGlobals once by the Governor, and then can be used for many versions afterwards. The Governor manages all versions that are to be used by contracts deployed by a given factory, so upgrades can only happen to implementation contracts that have been vetted by both the protocol smart contracts team and the Maple DAO.
+Since the proxies are deployed from a central factory contract, this contract can be allowlisted in `MapleGlobals` once by the Governor, and then can be used for many versions afterwards. The Governor manages all versions that are to be used by contracts deployed by a given factory, so upgrades can only happen to implementation contracts that have been vetted by both the protocol smart contracts team and the Maple DAO.
 
 It is also beneficial from an events perspective to use a single contract for the factory, as all creation events will come from the same address. For a new version of a contract to be used a new implementation must be deployed, and the implementation must be registered and tied to a version by the Governor. Once that is done, all subsequent contracts deployed from the factory will use that version.
 

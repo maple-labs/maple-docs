@@ -1,4 +1,4 @@
-# Maple Withdrawal Manager Factory
+# Maple Fixed Term Loan Factory
 
 
 
@@ -11,14 +11,14 @@
 
 ```solidity
     constructor(
-        address globals_
+        address mapleGlobals_
     );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `globals_` | `address` | `address` |  |
+| 0 | `mapleGlobals_` | `address` | `address` | The address of a Maple Globals contract. |
 
 
 <br />
@@ -208,6 +208,34 @@ Returns if a given address has been deployed by this factory/
 
 ```solidity
     function isInstance(
+        address
+    )
+        view
+        returns (
+            bool
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `` | `address` | `address` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `bool` | `bool` |  |
+
+
+<br />
+
+### `isLoan`
+
+
+
+```solidity
+    function isLoan(
         address
     )
         view

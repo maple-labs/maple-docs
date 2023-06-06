@@ -12,10 +12,10 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `Mint`
 * `MintWithPermit`
 * `Redeem`
-* `Withdraw`
+* `Remove Shares`
 * `RequestRedeem`
 * `RequestWithdraw`
-* `Remove Shares`
+* `Withdraw`
 
 **ERC20 functions**
 
@@ -23,101 +23,275 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `transfer`
 * `transferFrom`
 
-### Loan
+### FixedTermLoan
 
+* `closeLoan`
+* `makePayment`
+* `postCollateral`
+* `returnFunds`
 * `skim`
+
+### OpenTermLoan
+
+* `makePayment`
 
 ### Globals
 
-* `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilitiies.
+* `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilities.
+* `unscheduleCall`
 
 ### Liquidator
 
 * `liquidatePortion` - Used by keepers to perform liquidations.
 
+### PoolManager
+
+* `depositCover`
+
 # Permissioned Functions
 
-### Loan
+### FixedTermLoan
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
 
 **Borrower Permissioned Functions**
 
-* `AcceptBorrower`
-* `CloseLoan`
-* `DrawdownFunds`
-* `MakePayments`
-* `PostCollateral`
-* `ProposeNewTerms`
-* `RemoveCollateral`
-* `ReturnFunds`
-* `SetPendingBorrower`
+* `acceptBorrower`
+* `drawdownFunds`
+* `proposeNewTerms`
+* `rejectNewTerms`
+* `removeCollateral`
+* `setPendingBorrower`
+
+**Lender Permissioned Functions**
+
+* `acceptLender`
+* `acceptNewTerms`
+* `fundLoan`
+* `impairLoan`
+* `rejectNewTerms`
+* `removeLoanImpairment`
+* `repossess`
+* `setPendingLender`
 
 ### Globals
 
 **Governor Permissioned Functions**
 
+* `acceptGovernor`
 * `activatePoolManager`
-* `setMapleTreasury`
-* `setMigrationAdmin`
-* `setPriceOracle`
-* `setSecurityAdmin`
+* `setBootstrapMint`
+* `setCanDeployFrom`
+* `setContractPause`
 * `setDefaultTimelockParameters`
-* `setMigrationAdmin`
-* `setValidBorrower`
-* `setValidFactory`
-* `setValidPoolAsset`
-* `setValidPoolDelegate`
-* `setValidPoolDeployer`
+* `setFunctionUnpause`
 * `setManualOverridePrice`
-* `setMinCoverAmount`
+* `setMapleTreasury`
 * `setMaxCoverLiquidationPercent`
+* `setMigrationAdmin`
+* `setMinCoverAmount`
+* `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
+* `setPriceOracle`
+* `setProtocolPause`
+* `setSecurityAdmin`
 * `setTimelockWindow`
 * `setTimelockWindows`
+* `setValidBorrower`
+* `setValidCollateralAsset`
+* `setValidInstanceOf`
+* `setValidPoolAsset`
+* `setValidPoolDelegate`
+* `setValidPoolDeployer`
+* `unscheduleCall`
 
 **Security Admin Permissioned Functions**
 
+* `setContractPause`
+* `setFunctionUnpause`
 * `setProtocolPause`
 
-**Pool Delegate Permissioned Functions**
+**Pool Manager Permissioned Functions**
 
 * `transferOwnedPoolManager`
 
 ### PoolManager
 
-**Pool Delegate only functionality**
+**Factory Permissioned Functions**
 
-* `setPendingPoolDelegate`
-* `acceptPendingPoolDelegate`
-* `addLoanManager`
-* `removeLoanManager`
-* `setAllowedLender`
-* `setDelegateManagementFeeRate`
-* `setLiquidityCap`
-* `setOpenToPublic`
-* `setWithdrawalManager`
-* `acceptNewTerms`
-* `fund`
-* `withdrawCover`
+* `migrate`
+* `setImplementation`
 
-**Pool Delegate and Governor Permissioned Functions**
+**Governor Permissioned Functions**
 
-* `setAllowedSlippage`
-* `setMinRatio`
-* `impairLoan`
-* `removeLoanImpairment`
 * `finishCollateralLiquidation`
 * `triggerDefault`
 
-### LoanManager
+**Security Admin Permissioned Functions**
 
-**Pool Delegate and Governor Permissioned Functions**
+* `upgrade`
 
+**Deployer Permissioned Functions**
+
+* `addLoanManager`
+* `completeConfiguration`
+* `setDelegateManagementFeeRate`
+* `setLiquidityCap`
+* `setWithdrawalManager`
+
+**Pool Delegate Permissioned Functions**
+
+* `acceptPoolDelegate`
+* `addLoanManager`
+* `finishCollateralLiquidation`
+* `setAllowedLender`
+* `setDelegateManagementFeeRate`
+* `setIsLoanManager`
+* `setLiquidityCap`
+* `setOpenToPublic`
+* `setPendingPoolDelegate`
+* `triggerDefault`
+* `withdrawCover`
+
+**Globals Permissioned Functions**
+
+* `setActive`
+
+**Loan Manager Permissioned Functions**
+
+* `requestFunds`
+
+**Pool Permissioned Functions**
+
+* `processRedeem`
+* `removeShares`
+* `requestRedeem`
+
+**Disabled Functions**
+
+* `processWithdraw`
+* `requestWithdraw`
+
+### FixedTermLoanManager
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `impairLoan`
+* `removeLoanImpairment`
+* `setAllowedSlippage`
+* `setMinRatio`
 * `updateAccounting`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Pool Delegate Permissioned Functions**
+
+* `acceptNewTerms`
+* `fund`
+* `impairLoan`
+* `rejectNewTerms`
+* `removeLoanImpairment`
+* `setAllowedSlippage`
+* `setMinRatio`
+* `updateAccounting`
+
+**Pool Manager Permissioned Functions**
+
+* `finishCollateralLiquidation`
+* `triggerDefault`
+
+**Loan Permissioned Functions**
+
+* `claim`
 
 ### WithdrawalManager
 
 **Pool Delegate only functionality**
 
 * `setExitConfig`
+
+### OpenTermLoan
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `skim`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Borrower Permissioned Functions**
+
+* `acceptBorrower`
+* `acceptNewTerms`
+* `rejectNewTerms`
+* `setPendingBorrower`
+* `skim`
+
+**Lender Permissioned Functions**
+
+* `acceptLender`
+* `callPrincipal`
+* `fund`
+* `impair`
+* `proposeNewTerms`
+* `rejectNewTerms`
+* `removeCall`
+* `removeImpairment`
+* `repossess`
+* `setPendingLender`
+
+### OpenTermLoanManager
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `impairLoan`
+* `removeLoanImpairment`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Pool Delegate Permissioned Functions**
+
+* `callPrincipal`
+* `fund`
+* `impairLoan`
+* `proposeNewTerms`
+* `rejectNewTerms`
+* `removeCall`
+* `removeLoanImpairment`
+
+**Pool Manager Permissioned Functions**
+
+* `triggerDefault`
+
+**Loan Permissioned Functions**
+
+* `claim`

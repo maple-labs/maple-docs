@@ -1,6 +1,6 @@
 # Overview
 
-Whenever a Borrower is no longer able to meet their obligations, the Pool Delegate and Governor have the option to trigger a default. This process realizes the Loan's losses and adjust the Pool accounting accordingly.
+For both Loan types, whenever a Borrower is no longer able to meet their obligations, the Pool Delegate and Governor have the option to trigger a default. This process realizes the Loan's losses and adjust the Pool accounting accordingly.
 
 Every Loan has a defined payment interval which determines when payments are expected to be made by the Borrower. If the Borrower does not make a payment before the expected due date, there is a grace period during which they can make a late payment. After the grace period passes the loan is considered to be in default, and the Pool Delegate has the *option* to repossess the Loan and begin the liquidation process by calling `triggerDefault()`.
 

@@ -1,4 +1,4 @@
-# Liquidator
+# Maple Liquidator
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `collateralAsset` 
+### `collateralAsset`
 
 Returns the address of the collateral asset.
 
@@ -29,7 +29,7 @@ Returns the address of the collateral asset.
 
 <br />
 
-### `collateralRemaining` 
+### `collateralRemaining`
 
 Returns the amount of collateral yet to be liquidated.
 
@@ -51,7 +51,7 @@ Returns the amount of collateral yet to be liquidated.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -73,7 +73,7 @@ The address of the proxy factory.
 
 <br />
 
-### `fundsAsset` 
+### `fundsAsset`
 
 Returns the address of the funding asset.
 
@@ -95,7 +95,7 @@ Returns the address of the funding asset.
 
 <br />
 
-### `getExpectedAmount` 
+### `getExpectedAmount`
 
 Returns the expected amount to be returned from a flash loan given a certain amount of &#x60;collateralAsset&#x60;.
 
@@ -123,7 +123,7 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 
 <br />
 
-### `globals` 
+### `globals`
 
 
 
@@ -145,7 +145,7 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 
 <br />
 
-### `governor` 
+### `governor`
 
 
 
@@ -167,7 +167,7 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -189,7 +189,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `liquidatePortion` 
+### `liquidatePortion`
 
 Flash loan function that:        1. Transfers a specified amount of &#x60;collateralAsset&#x60; to &#x60;msg.sender&#x60;.        2. Performs an arbitrary call to &#x60;msg.sender&#x60;, to trigger logic necessary to get &#x60;fundsAsset&#x60; (e.g., AMM swap).        3. Performs a &#x60;transferFrom&#x60;, taking the corresponding amount of &#x60;fundsAsset&#x60; from the user.        If the required amount of &#x60;fundsAsset&#x60; is not returned in step 3, the entire transaction reverts.
 
@@ -212,7 +212,7 @@ Flash loan function that:        1. Transfers a specified amount of &#x60;collat
 
 <br />
 
-### `loanManager` 
+### `loanManager`
 
 Returns the address of the loan manager contract.
 
@@ -234,7 +234,7 @@ Returns the address of the loan manager contract.
 
 <br />
 
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -255,7 +255,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `poolDelegate` 
+### `poolDelegate`
 
 
 
@@ -277,7 +277,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `pullFunds` 
+### `pullFunds`
 
 Pulls a specified amount of ERC-20 tokens from the contract.        Can only be called by &#x60;owner&#x60;.
 
@@ -300,7 +300,7 @@ Pulls a specified amount of ERC-20 tokens from the contract.        Can only be 
 
 <br />
 
-### `setCollateralRemaining` 
+### `setCollateralRemaining`
 
 Sets the initial amount of collateral to be liquidated.
 
@@ -319,7 +319,7 @@ Sets the initial amount of collateral to be liquidated.
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -338,7 +338,7 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 

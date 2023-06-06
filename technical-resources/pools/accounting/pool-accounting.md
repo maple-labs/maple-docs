@@ -32,15 +32,6 @@ $$
 $$
 
 
-where:
-
-
-
-$$
-\begin{align}
-\nonumber domainStart \le t \le domainEnd
-\end{align}
-$$
 
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
