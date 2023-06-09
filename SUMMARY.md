@@ -12,6 +12,13 @@
 * [Risk](maple-for-lenders/risk.md)
 * [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
 
+## Cash Management Pool
+
+* [Overview](cash-management-pool\overview)
+* [Lending](cash-management-pool\lending)
+* [Withdrawals](cash-management-pool\withdrawals)
+* [Risks](cash-management-pool\risks)
+
 ## Maple for Borrowers
 
 * [Introduction](maple-for-borrowers/introduction.md)
