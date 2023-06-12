@@ -1,0 +1,41 @@
+# Overview
+
+Specifically designed as an onchain Cash Management solution - [Maple's Cash Management Pool](https://app.maple.finance/#/v2/lend/pool/0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92) provides simple and fast access to yield sourced from US Treasury bills and government-backed instruments and meets the liquidity, risk and accounting requirements of customers.You will find everything needed to begin Lending here in Gitbook, including:
+* **Cash Management Pool Overview**: Scroll down for the key benefits of the Cash Management Pool and how it works.
+​* **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
+​* **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
+​* **[Risks](https://maplefinance.gitbook.io/maple/cash-management-pool/risks)**: Here we share some of the risks of lending into the Pool and the steps taken to mitigate them.
+
+**If you’d rather speak to the team, [drop your details here and we’ll be in touch](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).**
+
+**Key Features of the Cash Management Solution:**
+
+**Simple and fast access to yield sourced from US Treasury bills**: The pool passes yield sourced from US Treasury bills and reverse repurchase agreements, less fees, to Lenders. It takes between 10-15 minutes for non-US Accredited Investors or Entities to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
+
+**Manage withdrawals and accounting from the Lender Dashboard**: So Lenders can confidently manage cash flows, withdrawals will be serviced every day the US banking system is open. Monthly Interest Statements can be downloaded at any time and used for record keeping and accounting. Large Lenders and Treasury Managers will be assigned an Account Manager, [speak to the team](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).
+
+**Monitor and measure performance 24/7**: The Lender Dashboard provides a real-time view into the borrower’s portfolio of Treasury bills held with a regulated broker, alongside returns to date so Lenders can see compounded interest update in real-time.
+
+**Designed by Maple, in partnership with leading 3rd parties**: The team at Room40 are experts in trading treasuries and will trade, custody and clear from an account with a regulated broker. Maple has a track record in providing secure and scalable products on top of best in class smart contract infrastructure and was recently awarded a 92% Safety Score by DeFi Safety [full report](https://www.defisafety.com/app/pqrs/533).
+
+**Risks managed on behalf of Lenders**: The sole use of proceeds is to purchase US Treasury bills and reverse repurchase agreements. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around. Lenders have full recourse over all assets held with a regulated broker.
+
+**How it works**
+
+Room40, a top-tier crypto fund, has established a standalone single purpose vehicle to be the sole borrower from the pool.
+
+The borrower will use proceeds to purchase and hold short-dated US Treasury bills through a SEC and FINRA regulated broker dealer. The weighted average maturity of the portfolio will always be less than 30 days.
+
+Using its broker dealer account, the borrower executes trades, clears, and custodies the Pool’s assets. The Lender Dashboard displays the portfolio of assets held in the brokerage account in real-time
+
+The Cash Management Pool accepts deposits of USDC from non-US Accredited Investors and Entities. Interest automatically compounds and there is no maximum deposit size or lock-up period.
+
+Withdrawals are processed on US banking days between 15:00 - 06:00 Eastern Time the next day. 
+
+Lenders have full recourse via an Account Control Deed to all assets held with regulated broker, enforced by the Security Agent, Maple Foundation.
+
+**About Room40**
+
+Room40 is an institutional investment firm focused on crypto. The firm manages dedicated strategies for private and public crypto markets, allowing Room40 to deploy capital across the lifecycle of digital assets. Room40 Capital is the firm’s multi-strategy hedge fund and the team has over 50 years of combined experience across global macro, long-short equities, and digital assets. Room40’s mission is to partner with builders developing tomorrow’s user experience through new economic design and financial operating systems.
+
+**View the Cash Management Pool Terms & Conditions [here](https://downloads.eth.maple.finance/docs/legal/abe08ded-5d07-42cf-b435-a0d8d8156ca5/Cash_Mngt_T&C.pdf)**.
