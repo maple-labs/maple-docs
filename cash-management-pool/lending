@@ -38,7 +38,7 @@ No. The yield is the same regardless of deposit size. The minimum deposit size i
 
 Once onboarding is complete a Lenders wallet address will be approved. Lenders should return to the Pool, select **'Lend Funds'**, input USDC amount and follow the transaction steps on screen.
 
-**What token do I receive to recognise my position in the pool?**
+**What token do I receive to recognize my position in the pool?**
 
 The token for this pool is called **MPLcashUSDC**. When you lend into a Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
 
