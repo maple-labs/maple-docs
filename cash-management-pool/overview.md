@@ -1,14 +1,15 @@
 # Overview
 
 Specifically designed as an onchain Cash Management solution - [Maple's Cash Management Pool](https://app.maple.finance/#/v2/lend/pool/0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92) provides simple and fast access to yield sourced from US Treasury bills and government-backed instruments and meets the liquidity, risk and accounting requirements of customers.You will find everything needed to begin Lending here in Gitbook, including:
+
 * **Cash Management Pool Overview**: Scroll down for the key benefits of the Cash Management Pool and how it works.
-​* **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
-​* **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
-​* **[Risks](https://maplefinance.gitbook.io/maple/cash-management-pool/risks)**: Here we share some of the risks of lending into the Pool and the steps taken to mitigate them.
+* **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
+* **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
+* **[Risks](https://maplefinance.gitbook.io/maple/cash-management-pool/risks)**: Here we share some of the risks of lending into the Pool and the steps taken to mitigate them.
 
 **If you’d rather speak to the team, [drop your details here and we’ll be in touch](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).**
 
-**Key Features of the Cash Management Solution:**
+# Key Features of the Cash Management Solution:
 
 **Simple and fast access to yield sourced from US Treasury bills**: The pool passes yield sourced from US Treasury bills and reverse repurchase agreements, less fees, to Lenders. It takes between 10-15 minutes for non-US Accredited Investors or Entities to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
 
@@ -20,7 +21,7 @@ Specifically designed as an onchain Cash Management solution - [Maple's Cash Man
 
 **Risks managed on behalf of Lenders**: The sole use of proceeds is to purchase US Treasury bills and reverse repurchase agreements. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around. Lenders have full recourse over all assets held with a regulated broker.
 
-**How it works**
+# How it works
 
 Room40, a top-tier crypto fund, has established a standalone single purpose vehicle to be the sole borrower from the pool.
 
