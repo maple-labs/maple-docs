@@ -9,6 +9,7 @@ The borrower is only permitted to hold short-dated US Treasury bills reverse rep
 The pool will pass yield sourced from US Treasury bills and government-backed instruments, less fees of 0.5%, to Lenders. The APY will fluctuate with the Federal Reserve Rate and as Treasury bills mature and roll into new issuances.
 
 **Are the fees fixed?**
+
 Fees are capped at 0.5%, or 50 bps of interest. There are no additional "hidden fees" being charged by the Pool. The borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
 
 | Party | Fees | Source |
