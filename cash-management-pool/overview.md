@@ -1,6 +1,6 @@
 # Overview
 
-Specifically designed as an onchain Cash Management solution - [Maple's Cash Management Pool](https://app.maple.finance/#/v2/lend/pool/0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92) provides simple and fast access to yield sourced from US Treasury bills and government-backed instruments and meets the liquidity, risk and accounting requirements of customers.You will find everything needed to begin Lending here in Gitbook, including:
+Specifically designed as an onchain Cash Management solution - **Maple's Cash Management Pool**, now supported in both USDC and USDT, provides simple and fast access to yield sourced from US Treasury bills and meets the liquidity, risk and accounting requirements of Lenders. You will find everything needed to begin Lending here in Gitbook, including:
 * **Cash Management Pool Overview**: Scroll down for the key benefits of the Cash Management Pool and how it works.
 ​* **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
 ​* **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
@@ -8,9 +8,9 @@ Specifically designed as an onchain Cash Management solution - [Maple's Cash Man
 
 **If you’d rather speak to the team, [drop your details here and we’ll be in touch](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).**
 
-**Key Features of the Cash Management Solution:**
+**Key Features of the Cash Management Pool:**
 
-**Simple and fast access to yield sourced from US Treasury bills**: The pool passes yield sourced from US Treasury bills and reverse repurchase agreements, less fees, to Lenders. It takes between 10-15 minutes for non-US Accredited Investors or Entities to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
+**Simple and fast access to yield sourced from U.S. Treasury bills**: Backed by U.S. Treasury bills and reverse repurchase agreements, the Pool targets a net APY of the current 1-month U.S. Treasury bill rate, less fees and expenses. It takes between 10-15 minutes for non-US Accredited Investors or Entities to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
 
 **Manage withdrawals and accounting from the Lender Dashboard**: So Lenders can confidently manage cash flows, withdrawals will be serviced every day the US banking system is open. Monthly Interest Statements can be downloaded at any time and used for record keeping and accounting. Large Lenders and Treasury Managers will be assigned an Account Manager, [speak to the team](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).
 
@@ -18,21 +18,15 @@ Specifically designed as an onchain Cash Management solution - [Maple's Cash Man
 
 **Designed by Maple, in partnership with leading 3rd parties**: The team at Room40 are experts in trading treasuries and will trade, custody and clear from an account with a regulated broker. Maple has a track record in providing secure and scalable products on top of best in class smart contract infrastructure and was recently awarded a 92% Safety Score by DeFi Safety [full report](https://www.defisafety.com/app/pqrs/533).
 
-**Risks managed on behalf of Lenders**: The sole use of proceeds is to purchase US Treasury bills and reverse repurchase agreements. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around. Lenders have full recourse over all assets held with a regulated broker.
+**Risks managed on behalf of Lenders**: The sole Borrower from the Pool is only permitted to invest in U.S. Treasury bills and reverse repurchase agreements fully collateralized by U.S. Treasury bills. U.S. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around.
 
 **How it works**
 
-Room40, a top-tier crypto fund, has established a standalone single purpose vehicle to be the sole borrower from the pool.
+Room40, a top-tier crypto fund, has established a standalone single purpose vehicle to be the sole Borrower from the Pool.
 
-The borrower will use proceeds to purchase and hold short-dated US Treasury bills through a SEC and FINRA regulated broker dealer. The weighted average maturity of the portfolio will always be less than 30 days.
+The Borrower converts the USDC or USDT loan proceeds to USD proceeds  and sends the funds to a prime brokerage account. Using its prime brokerage account, the Borrower invests in U.S. Treasury bills and reverse repurchase agreements. The weighted average maturity of the Borrower's portfolio, transparently displayed on the Lender Dashboard, is capped at 30 days under the Master Loan Agreement.
 
-Using its broker dealer account, the borrower executes trades, clears, and custodies the Pool’s assets. The Lender Dashboard displays the portfolio of assets held in the brokerage account in real-time
-
-The Cash Management Pool accepts deposits of USDC from non-US Accredited Investors and Entities. Interest automatically compounds and there is no maximum deposit size or lock-up period.
-
-Withdrawals are processed on US banking days between 15:00 - 06:00 Eastern Time the next day. 
-
-Lenders have full recourse via an Account Control Deed to all assets held with regulated broker, enforced by the Security Agent, Maple Foundation.
+The Cash Management Pool accepts deposits of USDC and USDT from non-US Accredited Investors and Entities. Interest automatically compounds and there is no maximum deposit size or lock-up period. Withdrawals are processed on US banking days between 15:00 - 06:00 Eastern Time. 
 
 **About Room40**
 

@@ -1,25 +1,29 @@
 # Lending
 
-**What assets does the borrower invest in?**
+**What assets does the Borrower invest in?**
 
-The borrower is only permitted to hold short-dated US Treasury bills reverse repurchase agreements, fully collateralized by US Treasury bills, and cash. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around. For the avoidance of doubt, there are no other permitted uses of proceeds.
+Pursuant to the Master Loan Agreement, the Borrower is only permitted to invest proceeds in U.S. Treasury bills and reverse repurchase agreements fully collateralized by U.S. Treasury bills. U.S. Treasury bills are backed by the full faith of the US Government, and are considered one of the safest forms of debt around. For the avoidance of doubt, there are no other permitted uses of proceeds.
 
-**Is the APY fixed?**
+**Is the APY fixed or variable?**
 
-The pool will pass yield sourced from US Treasury bills and government-backed instruments, less fees of 0.5%, to Lenders. The APY will fluctuate with the Federal Reserve Rate and as Treasury bills mature and roll into new issuances.
+The APY is variable and based on the current 1-month U.S. Treasury bill rate, less Maple Protocol Fees and Borrower Fees. To capture the 1-month U.S. Treasury bill rate, the Cash Management Pool benchmarks to the current ‘coupon equivalent’ rate for a 4-week U.S. Treasury bill as reported by the [U.S. Department of Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value_month=202307).
 
-**Are the fees fixed?**
-Fees are capped at 0.5%, or 50 bps of interest. There are no additional "hidden fees" being charged by the Pool. The borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
+**Are the fees fixed or variable?**
+Fees are fixed  at 50bps annualized for USDC Lenders and 100bps annualized for USDT Lenders. Higher fees are charged to USDT Lenders to cover incremental mint and redeem costs for USDT. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
 
 | Party | Fees | Source |
 |-|-|-|
-| Maple Protocol Fees | 0.25% or 25bps | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
-| Borrower Fees | 0.25% or 25bps | Charged as a fixed spread between the Interest Rate on borrowings, and spot yields on underlying Treasury bills. |
+| Maple Protocol Fees | 25bps for USDC and USDT Lenders | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
+| Borrower Fees | 25bps for USDC Lenders, 75bps for USDT Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark 1-month U.S. Treasury bill rate. |
 
-**Who is eligible to lend into the pool?**
-The pool welcomes lenders that can verify non-US Person Accredited Investor or Entity status and pass AML checks.
+**Who is eligible to lend into the Pool?**
+The Pool is permissioned and welcomes USDC and USDT Lenders who can verify non-US Person Accredited Investor or Entity status and pass AML checks.
 
-Lenders can [begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC), it should take about 10-15 minutes to complete the forms. To pass AML checks, lender wallet addresses will be scanned for risk factors using TRM Labs.
+Lenders can [begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC), it should take about 10-15 minutes to complete the forms. To pass AML checks, Lender wallet addresses will be scanned for risk factors using TRM Labs.
+
+**Are the USDT Pool's deposits or assets commingled with the USDC Pool?**
+
+No. Each Maple pool (including the USDC and USDT Cash Management Pools) represents a distinct smart contract, and Lenders remain ringfenced from credit risk in other pools on the Maple platform. The Borrower uses separate accounts with StoneX and BNP Paribas for the USDT Pool, which has its own collateral assets that live separate from the USDC Pool. This means that both the USDT loans and associated collateral assets for the USDT Pool are fully ringfenced from the USDC Pool.
 
 **What’s the process to onboard?**
 
@@ -32,15 +36,19 @@ Existing Lenders on Maple will only need to sign the Lender Attestation. Please 
 
 **Is there a maximum deposit?**
 
-No. The yield is the same regardless of deposit size. The minimum deposit size is $100,000 USDC.
+No. The minimum deposit size is $100,000 USDC or USDT.
 
-**How do I lend to the pool?**
+**How does APY vary by deposit amount or term length?**
 
-Once onboarding is complete a Lenders wallet address will be approved. Lenders should return to the Pool, select **'Lend Funds'**, input USDC amount and follow the transaction steps on screen.
+All Lenders receive the same APY regardless of deposit size. Fees are annualized and charged on an ongoing basis, so a Lender's net APY is not impacted by the length of its deposit.
+
+**How do I lend into the Pool?**
+
+Once onboarding is complete a Lenders wallet address will be approved. Lenders should return to the Pool, select **'Lend Funds'**, input the USDC or USDT amount and follow the transaction steps on screen.
 
 **What token do I receive to recognize my position in the pool?**
 
-The token for this pool is called **MPLcashUSDC**. When you lend into a Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
+The tokens for this Pool are called **MPLcashUSDC** and **MPLcashUSDT**. When you lend into a Maple Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
 
 **How long does it take for deposits to start earning yield?**
 
