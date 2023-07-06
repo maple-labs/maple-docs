@@ -12,7 +12,7 @@ The Borrower has constructed a portfolio of assets which can be redeemed or liqu
 
 Withdrawals are subject to proper market functioning, and the proper functioning of USDC. If there is not sufficient liquidity in the Pool to service all withdrawal requests, those Lenders in that cycle will be eligible to withdraw their pro rata share of the available liquidity and have the remaining funds requested for withdrawal moved to the very next withdrawal window.
 
-**What are the steps to withdraw?**
+# What are the steps to withdraw?
 
 Withdrawing is a two-step process:
 
