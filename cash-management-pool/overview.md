@@ -1,6 +1,6 @@
-# Overview
+# Cash Management Pool
 
-Specifically designed as an onchain Cash Management solution - **Maple's Cash Management Pool**, now supported in both USDC and USDT, provides simple and fast access to yield sourced from US Treasury bills and meets the liquidity, risk and accounting requirements of Lenders. You will find everything needed to begin Lending here in Gitbook, including:
+Specifically designed as an onchain Cash Management solution - **Maple's Cash Management Pool**, now supported in both [USDC](https://app.maple.finance/#/v2/lend/pool/0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92) and [USDT](https://app.maple.finance/#/v2/lend/pool/0xf05681a33a9adf14076990789a89ab3da3f6b536), provides simple and fast access to yield sourced from US Treasury bills and meets the liquidity, risk and accounting requirements of Lenders. You will find everything needed to begin Lending here in Gitbook, including:
 * **Cash Management Pool Overview**: Scroll down for the key benefits of the Cash Management Pool and how it works.
 * **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
 * **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
