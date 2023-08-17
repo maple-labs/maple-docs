@@ -17,7 +17,7 @@ Fees are fixed  at 50bps annualized for USDC Lenders and 100bps annualized for U
 | Borrower Fees | 25bps for USDC Lenders, 75bps for USDT Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark 1-month U.S. Treasury bill rate. |
 
 **Who is eligible to lend into the Pool?**
-The Pool is permissioned and welcomes USDC and USDT Lenders who can verify non-US Person Accredited Investor or Entity status and pass AML checks.
+The Pool is permissioned and welcomes USDC and USDT Lenders who can verify Accredited Investor status and pass AML checks.
 
 Lenders can [begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC), it should take about 10-15 minutes to complete the forms. To pass AML checks, Lender wallet addresses will be scanned for risk factors using TRM Labs.
 
@@ -56,7 +56,7 @@ Interest on LP tokens starts accruing from the time of deposit.
 
 **Is the pool suitable for DAOs?**
 
-Yes. The pool welcomes DAOs that can verify non-US Person Accredited Investor or Entity status and pass AML checks. In simple terms, a DAO will need to have a legal entity to pass KYC.
+Yes. The pool welcomes DAOs that can verify Accredited Investor status and pass AML checks. In simple terms, a DAO will need to have a legal entity to pass KYC.
 
 Maple and Room40 will support the development of DAO proposals and are committed to being active participants in the community approval process.
 
