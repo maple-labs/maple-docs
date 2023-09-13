@@ -34,6 +34,7 @@
 
 * [MPL](maple-for-token-holders/mpl-token.md)
   * [What fees are shared with MPL holders?](maple-for-token-holders/what-fees-are-shared-with-mpl-holders.md)
+* [MPL Migration](maple-for-token-holders/mpl-token-migration.md)
 * [xMPL](maple-for-token-holders/xmpl-token.md)
   * [Governance with MPL and xMPL](maple-for-token-holders/governance-with-mpl-and-xmpl.md)
 
