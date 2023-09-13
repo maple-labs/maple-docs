@@ -37,7 +37,7 @@ All MPLv1 in the xMPL contract will be converted to MPLv2 automatically by the 2
 
 xMPL holders will only need to add the new MPLv2 token to their wallet. To show MPLv2 in a wallet add token address: 0x1915A8dE08A92b846dF7C845e140E4b0714820bd.
 
-**Hold MPLv1 on an exchange?**
+# Hold MPLv1 on an exchange?
 
 Maple has made arrangements with major exchanges so that MPLv1 tokens on the exchange will automatically be converted into MPLv2. We will share details relevant to each exchange ahead of the 25th September.  
 
