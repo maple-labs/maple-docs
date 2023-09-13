@@ -119,6 +119,15 @@
   * [WithdrawalManager](technical-resources/interfaces/withdrawal-manager.md)
   * [WithdrawalManagerFactory](technical-resources/interfaces/withdrawal-manager-factory.md)
   * [WithdrawalManagerInitializer](technical-resources/interfaces/withdrawal-manager-initializer.md)
+* [MPLv2]
+  * [Architectural Overview](technical-resources/mplv2/architectural-overview.md)
+  * [Base ERC20 Structure](technical-resources/mplv2/base-erc20-structure.md)
+  * [Upgradability](technical-resources/mplv2/upgradability.md)
+  * [Modules](technical-resources/mplv2/modules.md)
+  * [Time Locks](technical-resources/mplv2/time-locks.md)
+  * [Recapitalization Module](technical-resources/mplv2/recapitalization-module.md)
+  * [Emergency Module](technical-resources/mplv2/emergency-module.md)
+  * [Deployment and Migration Procedure](technical-resources/mplv2/deployment-and-migration-procedure.md)
 * [GraphQL API](technical-resources/graphql-api.md)
 * SDK
   * [Introduction](technical-resources/sdk/introduction.md)
