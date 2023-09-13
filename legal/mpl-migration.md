@@ -1,18 +1,18 @@
 # MPL Token Migration
 
-**1. Introduction**
+# 1. Introduction
 
 This document sets forth the terms and conditions ("Terms") issued by Maple DAO (BVI) Limited (together with Maple Labs Pty Ltd, "Maple") governing the token migration from MPLv1 tokens ("MPLv1 Tokens") to MPLv2 tokens ("MPLv2 Tokens") (such token migration being the "Token Migration"). 
 
 By participating in the Token Migration, you ("Tokenholder," "you," or "your") confirm that you have read and agree to be bound by these Terms. Please read these Terms carefully before participating in the Token Migration.
 
-**2. Scope of Terms**
+# 2. Scope of Terms
 
 2.1 Unless otherwise stated in these Terms, these Terms govern only your exchange of MPLv1 Tokens for MPLv2 Tokens during the Migration Period (defined below).
 
 2.2 These Terms have been prepared in connection with the opportunity for persons that are eligible to take part in the Token Migration (collectively, the “Eligible Tokenholders”). You may be required to prove your status as an Eligible Tokenholder.
 
-**3. Eligibility**
+# 3. Eligibility
 
 To be eligible to participate in the Token Migration, you must:
 * Be a holder of MPLv1 Tokens when executing the Token Migration.
@@ -20,7 +20,7 @@ To be eligible to participate in the Token Migration, you must:
 * Anyone that holds MPLv1 Tokens prior or after the beginning of the Migration Period will be able to perform the migration.
 * Submit your MPLv1 Tokens to the smart contract during the migration period.
 
-**4. Representations and Warranties of the Tokenholder:**
+# 4. Representations and Warranties of the Tokenholder:
 
 By participating in the MPL Token Migration, the Tokenholder hereby represents and warrants to Maple DAO (BVI) Ltd. as follows:
 
@@ -36,7 +36,7 @@ By participating in the MPL Token Migration, the Tokenholder hereby represents a
 
 **4.6 No Expectation of Profit**: The Tokenholder represents and warrants that they are not participating in the Token Migration with the expectation of realising a profit. Furthermore, the Tokenholder acknowledges and agrees that they have not relied on any actual or implied representations or promises by Maple regarding the potential for profit, appreciation, or any other form of financial return associated with the MPLv2 Tokens.
 
-**5. Migration Process**
+# 5. Migration Process
 
 5.1 The migration involves a one-to-one migration of MPLv1 Tokens to MPLv2 Tokens. For every MPLv1 Token submitted to the smart contract, the Tokenholder will receive one MPLv2 Token in return.
 
@@ -56,7 +56,7 @@ By participating in the MPL Token Migration, the Tokenholder hereby represents a
 
 5.7 These Terms do not constitute a prospectus of any sort, is not a solicitation for investment or any kind, and does not pertain in any way to an initial public offering or a share/equity offering, and does not pertain in any way to an offering of securities in any jurisdiction. The Terms are a description of the Token Migration process and the terms governing the Token Migration.
 
-**6. Risks and Disclaimers**
+# 6. Risks and Disclaimers
 
 There are certain risks associated with participating in the Token Migration, including:
 
@@ -74,13 +74,13 @@ There are certain risks associated with participating in the Token Migration, in
 
 6.7 The Token Migration and the MPLv2 Token could be adversely impacted by one or more regulatory or legal inquiries, actions, suits, investigations, claims, fines or judgments, which could impede or limit your ability to participate in the Token Migration or continue use of the MPLv2 Token.
 
-**7. Termination or Modification:**
+# 7. Termination or Modification:
 
 7.1 Maple reserves the right to terminate, modify, or extend the migration process at our sole discretion, with or without prior notice to Tokenholders.
 
 7.2 Any significant changes to the migration process will be communicated to you through official communication channels, being Maple Finance Website (maple.finance), Maple Finance Forum (community.maple.finance).
 
-**8. Limitation of Liability**
+# 8. Limitation of Liability
 
 8.1 Maple and the directors, officers, secretary and supervisor of any entity affiliated with Maple shall not be liable to any person, whether in contract, tort (including pursuant to any cause of action alleging negligence), warranty or otherwise, for any economic or other damages to you or any other person, including any special, incidental, consequential, indirect, punitive or exemplary damages (including but not limited to lost data, lost profits or savings, loss of business or other economic loss) arising out of or related to the Website or the Token Migration, whether or not Maple has been advised or knew of the possibility of such damages, and regardless of the nature of the cause of action or theory asserted.
 
@@ -94,20 +94,24 @@ There are certain risks associated with participating in the Token Migration, in
 
 8.6 All provisions of these Terms which disclaim or limit obligations or liabilities of Maple shall also apply, mutatis mutandis, to the officers, directors, secretary, supervisors, members, employees, independent contractors, agents, stockholders, debtholders and affiliates of Maple.
 
-**9. Taxes:**
+# 9. Taxes:
 
 9.1 While Maple does not view the MPL Token Migration as a sale of tokens, it is important to note that tax jurisdictions around the world have varying interpretations of digital asset transactions. Maple bears no responsibility for any jurisdiction's interpretation or classification of the MPL Token Migration. You may not rely on any statements made herein as tax advice or a definitive interpretation of any law.
 
 9.2 You are responsible for determining what, if any, taxes apply to your exchange of MPLv1 Tokens for MPLv2 Tokens, including, for example, sales, use, value added, and similar taxes. It is also your responsibility to withhold, collect, report, and remit the correct taxes to the appropriate tax authorities. Maple is not responsible for withholding, collecting, reporting, or remitting any sales, use, value added, or other tax arising from your exchange of MPLv1 Tokens for MPLv2 Tokens. You agree not to hold Maple liable for any tax consequences you may incur associated with or arising from the creation, ownership, use, or liquidation of MPLv1 Tokens or MPLv2 Tokens, or any other action or transaction related to the Token Migration.
 
-**10. Governing Law and Jurisdiction:**
+# 10. Governing Law and Jurisdiction:
 
 These Terms and any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with them or their subject matter or formation shall be governed by and construed in accordance with the laws of the British Virgin Islands. The courts of the British Virgin Islands shall have exclusive jurisdiction to settle any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with these Terms or their subject matter or formation.
 
 
 
+
 Last updated: Sept. 7, 2023
 
+
 Maple DAO (BVI) Limited
+
 support@maple.finance
+
 maple.finance
