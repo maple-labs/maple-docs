@@ -20,6 +20,10 @@ In terms of custodial risk, Lender deposits in the Pool are held in a non-custod
 
 The Borrower's custodial risks are minimized by partnering with established and regulated counterparties. The Borrower's prime broker is StoneX, a SEC and FINRA regulated broker dealer. BNP Paribas, the fifth-largest global custodian with over $10 trillion in assets under custody, is the underlying custodian for the Borrower's StoneX account.
 
+**Contagion Risk**
+
+As with all pools on Maple, the Cash Management Pool represents a distinct smart contract and Lenders are ringfenced from credit risk in other pools on the Maple platform. Although certain borrowers on the Maple platform experienced credit events in the aftermath of 2022, Maple's infrastructure consistently performed as designed and any losses were confined to their respective pools.
+
 **Smart Contract Risk**
 
 Maple's smart contracts are expected to hold minimal USDC - the commercial intent is to lend the USDC to borrowers - thereby reducing the attractiveness of the Maple smart contract to a potential bad actor.
