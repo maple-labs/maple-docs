@@ -105,9 +105,9 @@ There are certain risks associated with participating in the Token Migration, in
 These Terms and any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with them or their subject matter or formation shall be governed by and construed in accordance with the laws of the British Virgin Islands. The courts of the British Virgin Islands shall have exclusive jurisdiction to settle any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with these Terms or their subject matter or formation.
 
 
-
-
-Last updated: Sept. 7, 2023
+&#x20;
+&#x20;
+Last updated: Sept. 7, 2023 &#x20;
 
 
 Maple DAO (BVI) Limited
