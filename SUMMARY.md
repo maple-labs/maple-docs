@@ -119,8 +119,8 @@
   * [WithdrawalManager](technical-resources/interfaces/withdrawal-manager.md)
   * [WithdrawalManagerFactory](technical-resources/interfaces/withdrawal-manager-factory.md)
   * [WithdrawalManagerInitializer](technical-resources/interfaces/withdrawal-manager-initializer.md)
-* [MPLv2]
-  * [Architectural Overview](technical-resources/mplv2/architectural-overview.md)
+* MPLv2
+  * [Architectural Overview](technical-resources/mplv2/architecture-overview.md)
   * [Base ERC20 Structure](technical-resources/mplv2/base-ERC20-structure.md)
   * [Upgradability](technical-resources/mplv2/upgradability.md)
   * [Modules](technical-resources/mplv2/modules.md)
