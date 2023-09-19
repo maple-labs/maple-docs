@@ -1,3 +1,5 @@
+# Overview
+
 The core of the MPL V2 token is based on the audited and battle-tested [ERC20](https://github.com/maple-labs/erc20) contract. The existing ERC20 contract used for xMPL and all existing pools will serve as the foundation for MPL V2. The ERC20 contract provides the following functions:
 
 ### Public Functions

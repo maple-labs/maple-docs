@@ -1,3 +1,5 @@
+# Overview
+
 The EmergencyModule contract is designed to handle emergency situations within a protocol. It provides functionalities for burning and minting tokens under the control of the governor, as defined in the associated Globals contract.
 
 It is not intended to be deployed, but rather just have it ready in case of any future emergency.

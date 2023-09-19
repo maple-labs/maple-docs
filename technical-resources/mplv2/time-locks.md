@@ -1,3 +1,5 @@
+# Time locks
+
 To ensure that all stakeholders can take action in case of unwanted events, administrative functions should be time-locked before execution. The following functions will have a time lock:
 
 - Add Module
