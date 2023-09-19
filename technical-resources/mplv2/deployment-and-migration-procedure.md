@@ -6,7 +6,7 @@ The following contracts will need to be deployed, in this specific order:
 | 2 | MapleTokenInitializer  | - |
 | 3 | MapleTokenProxy (Non-Transparent-Proxy)  | globals address, implementation address(1), initializer address(2), migrator* |
 | 4 | RecapitalizationModule | token address(3) |
-| 5 | Migrator | mplv1 address, mplv2 address(3)* | 
+| 5 | Migrator | mplv1 address, mplv2 address(3)* |
 
 *There is a circular dependency between steps 3 and 5, as both depend on a contract deployed by the other. The solution to this is to rely on the deterministic addresses, which allows for computing the address that a contract will be deployed to before it actually happens. Therefore, for stage 3, using the sender key, we pre-compute the address that the Migrator will be deployed to, and pass that as a parameter.
 
@@ -24,10 +24,10 @@ To add any module to the MPLv2 contract, the following transactions need to be m
 
 3. The module is now able to mint tokens according to its specific business rule. However, to kickstart the issuance, an issuance window needs to be scheduled. Refer to [this documentation](technical-resources/mplv2/recapitalization-module.md#scheduling) for how to do that.
 
-4. The `Governor` needs to set an actor as `RECAPITALIZATION_CLAIMER` in Globals, using the function `setInstanceOf("RECAPITALIZATION_CLAIMER", claimer address, true)`. 
+4. The `Governor` needs to set an actor as `RECAPITALIZATION_CLAIMER` in Globals, using the function `setInstanceOf("RECAPITALIZATION_CLAIMER", claimer address, true)`.
 
 # Phase 3 - Migration
-<img src="../.gitbook/assets/migration-diagrams.png" alt="">
+![migration-diagrams](https://github.com/maple-labs/maple-docs/assets/59924029/8f81761a-1d97-4bb9-95b0-c853aea3b6ba)
 
 The migration process leverages the [migration contract](https://github.com/maple-labs/mpl-migration), which allows for a 1:1 exchange from the old token to MPL V2. To perform the migration, the migrator token must hold 10 million units of MPL V2. The migration contract can be used for both the xMPL contract and other entities.
 
