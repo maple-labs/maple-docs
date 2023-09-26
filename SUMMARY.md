@@ -145,8 +145,8 @@
 
 ## Legal
 
-* [Borrower MLA](legal/borrower-MLA.md)
-* [KYC](legal/KYC.md)
+* [Borrower MLA](legal/borrower-mla.md)
+* [KYC](legal/kyc.md)
 * [Interface Terms of Use](legal/interface-terms-of-use.md)
 * [Privacy Policy](legal/privacy-policy.md)
 * [MPL Token Migration T&Cs](legal/mpl-migration.md)
