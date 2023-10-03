@@ -16,7 +16,7 @@ By participating in the Token Migration, you ("Tokenholder," "you," or "your") c
 
 To be eligible to participate in the Token Migration, you must:
 * Be a holder of MPLv1 Tokens when executing the Token Migration.
-* MPLv1 Tokens can be submitted in exchange for MPLv2 Tokens, on a 1-for-1 ratio, beginning on October 4th and ending on the three-year anniversary of such date or such later date as Maple may determine in its sole and absolute discretion (such period being the "Migration Period").
+* MPLv1 Tokens can be submitted in exchange for MPLv2 Tokens, on a 1-for-1 ratio, beginning on (TBD) and ending on the three-year anniversary of such date or such later date as Maple may determine in its sole and absolute discretion (such period being the "Migration Period").
 * Anyone that holds MPLv1 Tokens prior or after the beginning of the Migration Period will be able to perform the migration.
 * Submit your MPLv1 Tokens to the smart contract during the migration period.
 
