@@ -6,7 +6,7 @@ Pursuant to the Master Loan Agreement, the Borrower is only permitted to invest 
 
 **Is the APY fixed or variable?**
 
-The APY is variable and based on the current 1-month U.S. Treasury bill rate, less Maple Protocol Fees and Borrower Fees. To capture the 1-month U.S. Treasury bill rate, the Cash Management Pool benchmarks to the current ‘coupon equivalent’ rate for a 4-week U.S. Treasury bill as reported by the [U.S. Department of Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value_month=202307).
+The APY is variable and based on the current Secured Overnight Financing Rate (SOFR), less Maple Protocol Fees and Borrower Fees. To capture the Secured Overnight Financing Rate (SOFR), the Cash Management Pool benchmarks to the current ‘coupon equivalent’ rate for a 4-week U.S. Treasury bill as reported by the [U.S. Department of Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value_month=202307).
 
 **Are the fees fixed or variable?**
 Fees are fixed  at 50bps annualized for USDC Lenders and 100bps annualized for USDT Lenders. Higher fees are charged to USDT Lenders to cover incremental mint and redeem costs for USDT. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
@@ -14,7 +14,7 @@ Fees are fixed  at 50bps annualized for USDC Lenders and 100bps annualized for U
 | Party | Fees | Source |
 |-|-|-|
 | Maple Protocol Fees | 25bps for USDC and USDT Lenders | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
-| Borrower Fees | 25bps for USDC Lenders, 75bps for USDT Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark 1-month U.S. Treasury bill rate. |
+| Borrower Fees | 25bps for USDC Lenders, 75bps for USDT Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark Secured Overnight Financing Rate (SOFR). |
 
 **Who is eligible to lend into the Pool?**
 The Pool is permissioned and welcomes USDC and USDT Lenders who can verify Accredited Investor status and pass AML checks.
