@@ -10,7 +10,7 @@ Specifically designed as an onchain Cash Management solution - **Maple's Cash Ma
 
 # Key Features of the Cash Management Solution:
 
-**Simple and fast access to yield sourced from U.S. Treasury bills**: Backed by U.S. Treasury bills and reverse repurchase agreements, the Pool targets a net APY of the current 1-month U.S. Treasury bill rate, less fees and expenses. It takes between 10-15 minutes for Accredited Investors to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
+**Simple and fast access to yield sourced from U.S. Treasury bills**: Backed by U.S. Treasury bills and reverse repurchase agreements, the Pool targets a net APY of the current Secured Overnight Financing Rate (SOFR), less fees and expenses. It takes between 10-15 minutes for Accredited Investors to onboard. [Begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC).
 
 **Manage withdrawals and accounting from the Lender Dashboard**: So Lenders can confidently manage cash flows, withdrawals will be serviced every day the US banking system is open. Monthly Interest Statements can be downloaded at any time and used for record keeping and accounting. Large Lenders and Treasury Managers will be assigned an Account Manager, [speak to the team](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).
 
