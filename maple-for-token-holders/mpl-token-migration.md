@@ -5,12 +5,12 @@
 * MIP009 approved the issuance of new tokens to the Maple Treasury via a one-time mint and a three-year emission. In order to do so the MPL token needs upgrading to MPLv2. [Read More](https://snapshot.org/#/maple.eth/proposal/0x29fccc3bac63744a55f9671399c079594e6b8369a21502cbce52e7dce9301094).
 
 **Summary**:
-* The technical migration will complete on the 25th of September 2023, and from the 25th of September holders will be able to convert MPLv1 to MPLv2.
+* The date of the technical migration has not been determined yet.
 * The terms MPLv1 and MPLv2 are used only for purposes of explaining the migration. The name of the token will continue to be MPL.
 * Maple is coordinating the transition of MPLv1 to MPLv2 in a few ways.
     * So holders can convert their tokens easily a conversion page will be made available at [app.maple.finance/#/mpl](app.maple.finance/#/mpl). This will be the only destination for conversion.
-    * Maple will automatically convert all MPLv1 held in the xMPL contract to MPLv2. This will complete on the 25th September.
-    * Maple is making arrangements with major exchanges so that MPLv1 tokens on the exchange will automatically be converted into MPLv2, with no action required from holders. We will share details relevant to each exchange ahead of the 25th September.
+    * Maple will automatically convert all MPLv1 held in the xMPL contract to MPLv2.
+    * Maple is making arrangements with major exchanges so that MPLv1 tokens on the exchange will automatically be converted into MPLv2, with no action required from holders. We will share details relevant to each exchange ahead of the migration.
 * Conversion will be possible for 3 years, but encouraged as soon as possible so holders can access the value and utility of MPL.
 
 # How to Guide
