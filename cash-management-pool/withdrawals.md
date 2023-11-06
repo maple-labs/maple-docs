@@ -29,7 +29,7 @@ To plan when to schedule your withdrawal, reference the following table.
 | Monday at 2:00pm ET - Tuesday at 1:59pm ET | Wednesday at 2:00pm ET | Thursday at 6:00am ET |
 | Tuesday at 2:00pm ET - Wednesday at 1:59pm ET | Thursday at 2:00pm ET | Friday at 6:00am ET |
 | Wednesday at 2:00pm ET - Thursday at 1:59pm ET | Friday at 2:00pm ET | Saturday at 6:00am ET |
-| Withdrawals will only be serviced on US banking days. Please schedule your withdrawal after Saturday at 2:59 PM ET. | - | - |
+| Withdrawals will only be serviced on US banking days. Please schedule your withdrawal after Saturday at 1:59 PM ET. | - | - |
 
 
 2. **Process withdrawal**
