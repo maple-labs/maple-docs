@@ -1,10 +1,10 @@
 # Withdrawals
 
-The Cash Management Pool offers daily liquidity, with withdrawals serviced every day the U.S. banking system is open. Withdrawals must be requested 24 hours ahead of time, and no later than 14:59 Eastern Time in order for funds to be available to withdraw the next business day.
+The Cash Management Pool offers daily liquidity, with withdrawals serviced every day the U.S. banking system is open. Withdrawals must be requested 24 hours ahead of time, and no later than 13:59 Eastern Time in order for funds to be available to withdraw the next business day.
 
 **How long does it take for withdrawals to process?**
 
-Withdrawals are honoured every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). Withdrawals are processed between 15:00 - 06:00 Eastern Time. If a withdrawal request is initiated before 14:59 Eastern Time, funds will be available to withdraw the next business day between 15:00 and 6:00 Eastern Time. Otherwise, funds will be available to withdraw the following business day.
+Withdrawals are honoured every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). Withdrawals are processed between 14:00 - 05:00 Eastern Time. If a withdrawal request is initiated before 13:59 Eastern Time, funds will be available to withdraw the next business day between 15:00 and 6:00 Eastern Time. Otherwise, funds will be available to withdraw the following business day.
 
 **How are next day withdrawals possible?**
 
@@ -24,11 +24,11 @@ To plan when to schedule your withdrawal, reference the following table.
 
 | Schedule Withdrawal | Withdrawal Window Open | Withdrawal Window Close |
 |-|-|-|
-| Saturday at 3:00pm ET - Sunday at 2:59pm ET | Monday at 3:00pm ET | Tuesday at 6:00am ET |
-| Sunday at 3:00pm ET - Monday at 2:59pm ET | Tuesday at 3:00pm ET | Wednesday at 6:00am ET |
-| Monday at 3:00pm ET - Tuesday at 2:59pm ET | Wednesday at 3:00pm ET | Thursday at 6:00am ET |
-| Tuesday at 3:00pm ET - Wednesday at 2:59pm ET | Thursday at 3:00pm ET | Friday at 6:00am ET |
-| Wednesday at 3:00pm ET - Thursday at 2:59pm ET | Friday at 3:00pm ET | Saturday at 6:00am ET |
+| Saturday at 2:00pm ET - Sunday at 1:59pm ET | Monday at 2:00pm ET | Tuesday at 6:00am ET |
+| Sunday at 2:00pm ET - Monday at 1:59pm ET | Tuesday at 2:00pm ET | Wednesday at 6:00am ET |
+| Monday at 2:00pm ET - Tuesday at 1:59pm ET | Wednesday at 2:00pm ET | Thursday at 6:00am ET |
+| Tuesday at 2:00pm ET - Wednesday at 1:59pm ET | Thursday at 2:00pm ET | Friday at 6:00am ET |
+| Wednesday at 2:00pm ET - Thursday at 1:59pm ET | Friday at 2:00pm ET | Saturday at 6:00am ET |
 | Withdrawals will only be serviced on US banking days. Please schedule your withdrawal after Saturday at 2:59 PM ET. | - | - |
 
 
