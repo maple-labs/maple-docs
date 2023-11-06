@@ -4,7 +4,7 @@ The Cash Management Pool offers daily liquidity, with withdrawals serviced every
 
 **How long does it take for withdrawals to process?**
 
-Withdrawals are honoured every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). Withdrawals are processed between 14:00 - 05:00 Eastern Time. If a withdrawal request is initiated before 13:59 Eastern Time, funds will be available to withdraw the next business day between 15:00 and 6:00 Eastern Time. Otherwise, funds will be available to withdraw the following business day.
+Withdrawals are honoured every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). Withdrawals are processed between 14:00 - 05:00 Eastern Time. If a withdrawal request is initiated before 13:59 Eastern Time, funds will be available to withdraw the next business day between 14:00 and 5:00 Eastern Time. Otherwise, funds will be available to withdraw the following business day.
 
 **How are next day withdrawals possible?**
 
