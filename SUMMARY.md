@@ -128,6 +128,7 @@
   * [Recapitalization Module](technical-resources/mplv2/recapitalization-module.md)
   * [Emergency Module](technical-resources/mplv2/emergency-module.md)
   * [Deployment and Migration Procedure](technical-resources/mplv2/deployment-and-migration-procedure.md)
+* [Solana Contracts](technical-resources/solana.md)
 * [GraphQL API](technical-resources/graphql-api.md)
 * SDK
   * [Introduction](technical-resources/sdk/introduction.md)
