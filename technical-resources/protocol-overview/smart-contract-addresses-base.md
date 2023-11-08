@@ -98,14 +98,6 @@
 | OpenTermRefinancer | [`0xb3138B273884696befc074b48923614fb77c2e10`](https://basescan.org/address/0xb3138B273884696befc074b48923614fb77c2e10) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | PoolDeployer | [`0x02A609c8Cbb387E7882836C534bcd738E0E48FbF`](https://basescan.org/address/0x02A609c8Cbb387E7882836C534bcd738E0E48FbF) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v2.0.0) |
 
-## Oracle Contracts
-
-| Contract | Address |
-| -------- | ------- |
-| PriceOracleUSDC | [`0x5DC5E14be1280E747cD036c089C96744EBF064E7`](https://etherscan.io/address/0x5DC5E14be1280E747cD036c089C96744EBF064E7) |
-| ChainLinkAggregatorWBTC | [`0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c`](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) |
-| ChainLinkAggregatorWETH | [`0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419`](https://etherscan.io/address/0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419) |
-
 ## ERC-20 Contracts
 
 | Contract | Address |
