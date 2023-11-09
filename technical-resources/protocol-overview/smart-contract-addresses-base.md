@@ -5,7 +5,6 @@
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
 | Globals (Proxy) | [`0x7f3C3636208A18c7941BF051807db56864061465`](https://basescan.org/address/0x7f3C3636208A18c7941BF051807db56864061465) | [`globals-v2 @ v2.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v2.0.0) |
-| MapleTreasury | [`0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19`](https://basescan.org/address/0x3A5ab01B4E142F41f54a861c984D19C866Ec1736) | [`maple-core @ v1.0.0`](https://github.com/maple-labs/maple-core/releases/tag/v1.0.0) |
 
 ## Protocol Actor Addresses
 
@@ -13,6 +12,7 @@
 | -------- | ------- |
 | Governor | [`0xD9481a47DFe8E5C35Eb809df25cdB5Bc2E24A3bE`](https://basescan.org/address/0xD9481a47DFe8E5C35Eb809df25cdB5Bc2E24A3bE) |
 | SecurityAdmin | [`0x6150371231f783e97906af4861Bc1eD11cE1c9Ea`](https://basescan.org/address/0x6150371231f783e97906af4861Bc1eD11cE1c9Ea) |
+| MapleTreasury | [`0x3A5ab01B4E142F41f54a861c984D19C866Ec1736`](https://basescan.org/address/0x3A5ab01B4E142F41f54a861c984D19C866Ec1736) |
 
 ## Latest Proxy Implementation & Initializer Contracts
 
