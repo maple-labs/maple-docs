@@ -69,8 +69,8 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| FixedTermLoanFactory | [`0x1915A8dE08A92b846dF7C845e140E4b0714820bd`](https://basescan.org/address/0x1915A8dE08A92b846dF7C845e140E4b0714820bd) | [`fixed-term-loan @ v2.0.0`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v2.0.0) |
-| FixedTermLoanManagerFactory | [`0x7D75cF9Aab6cB9598bB6d9Bd81BaAA288cecA9Bf`](https://basescan.org/address/0x7D75cF9Aab6cB9598bB6d9Bd81BaAA288cecA9Bf) | [`fixed-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/fixed-term-loan-manager/releases/tag/v1.0.0) |
+| FixedTermLoanFactory | [`0x1915A8dE08A92b846dF7C845e140E4b0714820bd`](https://basescan.org/address/0x1915A8dE08A92b846dF7C845e140E4b0714820bd) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v2.0.0) |
+| FixedTermLoanManagerFactory | [`0x7D75cF9Aab6cB9598bB6d9Bd81BaAA288cecA9Bf`](https://basescan.org/address/0x7D75cF9Aab6cB9598bB6d9Bd81BaAA288cecA9Bf) | [`fixed-term-loan-manager @ v3.0.1`](https://github.com/maple-labs/fixed-term-loan-manager/releases/tag/v1.0.0) |
 | LiquidatorFactory | [`0x7b0267C13B994cdb58b8ED3a65b7A09a07432A76`](https://basescan.org/address/0x7b0267C13B994cdb58b8ED3a65b7A09a07432A76) | [`liquidations @ v2.0.0`](https://github.com/maple-labs/liquidations/releases/tag/v2.0.0) |
 | OpenTermLoanFactory | [`0x8B487386E432F0f82Ca611F59dBE973761FBb1Ad`](https://basescan.org/address/0x8B487386E432F0f82Ca611F59dBE973761FBb1Ad) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | OpenTermLoanManagerFactory | [`0xD14D0b4720bDBE03aB88A8Fd53be28c6d46426F5`](https://basescan.org/address/0xD14D0b4720bDBE03aB88A8Fd53be28c6d46426F5) | [`open-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/open-term-loan-manager/releases/tag/v1.0.0) |
@@ -83,9 +83,9 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| Pool | [`0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d`](https://basescan.org/address/0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d) | [`pool-v2 @ v1.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
+| Pool | [`0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d`](https://basescan.org/address/0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
 | PoolManager (Proxy) | [`0x7aa13f647691a709dc3360acad7eb758179790ee`](https://basescan.org/address/0x7aa13f647691a709dc3360acad7eb758179790ee) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
-| FixedTermLoanManager (Proxy) | [`0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491`](https://basescan.org/address/0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| FixedTermLoanManager (Proxy) | [`0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491`](https://basescan.org/address/0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491) | [`fixed-term-loan-manager @ v3.0.1`](https://github.com/maple-labs/fixed-term-loan-manager/commits/v3.0.1) |
 | WithdrawalManager (Proxy) | [`0x6495f96b89904f574817a3b191c7817d91fe96eb`](https://basescan.org/address/0x6495f96b89904f574817a3b191c7817d91fe96eb) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0x28378DFC7bAe84C668d960c6E8CD862Fda43ba70`](https://basescan.org/address/0x28378DFC7bAe84C668d960c6E8CD862Fda43ba70) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
@@ -93,7 +93,7 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| FeeManager | [`0xc4D7807a5571887F7b50182d072f4fF4654099b0`](https://basescan.org/address/0xc4D7807a5571887F7b50182d072f4fF4654099b0) | [`fixed-term-loan @ v4.0.0`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v4.0.0) |
+| FeeManager | [`0xc4D7807a5571887F7b50182d072f4fF4654099b0`](https://basescan.org/address/0xc4D7807a5571887F7b50182d072f4fF4654099b0) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v4.0.0) |
 | FixedTermRefinancer | [`0x510276F01C993De918fa04AFFCd64782FE495846`](https://basescan.org/address/0x510276F01C993De918fa04AFFCd64782FE495846) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.1) |
 | OpenTermRefinancer | [`0xb3138B273884696befc074b48923614fb77c2e10`](https://basescan.org/address/0xb3138B273884696befc074b48923614fb77c2e10) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | PoolDeployer | [`0x02A609c8Cbb387E7882836C534bcd738E0E48FbF`](https://basescan.org/address/0x02A609c8Cbb387E7882836C534bcd738E0E48FbF) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v2.0.0) |
