@@ -85,7 +85,7 @@
 | -------- | ------- | ----------- |
 | Pool | [`0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d`](https://basescan.org/address/0xdd5bb9acf5e02089735a33344c6e3a8bb0d4075d) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
 | PoolManager (Proxy) | [`0x7aa13f647691a709dc3360acad7eb758179790ee`](https://basescan.org/address/0x7aa13f647691a709dc3360acad7eb758179790ee) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
-| FixedTermLoanManager (Proxy) | [`0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491`](https://basescan.org/address/0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491) | [`fixed-term-loan-manager @ v3.0.1`](https://github.com/maple-labs/fixed-term-loan-manager/commits/v3.0.1) |
+| FixedTermLoanManager (Proxy) | [`0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491`](https://basescan.org/address/0xc3e5eec47cccdfae4bca7bf40ca2711c4cb60491) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | WithdrawalManager (Proxy) | [`0x6495f96b89904f574817a3b191c7817d91fe96eb`](https://basescan.org/address/0x6495f96b89904f574817a3b191c7817d91fe96eb) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0x28378DFC7bAe84C668d960c6E8CD862Fda43ba70`](https://basescan.org/address/0x28378DFC7bAe84C668d960c6E8CD862Fda43ba70) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
