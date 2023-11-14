@@ -24,11 +24,11 @@ To plan when to schedule your withdrawal, reference the following table.
 
 | Schedule Withdrawal | Withdrawal Window Open | Withdrawal Window Close |
 |-|-|-|
-| Saturday at 2:00pm ET - Sunday at 1:59pm ET | Monday at 2:00pm ET | Tuesday at 6:00am ET |
-| Sunday at 2:00pm ET - Monday at 1:59pm ET | Tuesday at 2:00pm ET | Wednesday at 6:00am ET |
-| Monday at 2:00pm ET - Tuesday at 1:59pm ET | Wednesday at 2:00pm ET | Thursday at 6:00am ET |
-| Tuesday at 2:00pm ET - Wednesday at 1:59pm ET | Thursday at 2:00pm ET | Friday at 6:00am ET |
-| Wednesday at 2:00pm ET - Thursday at 1:59pm ET | Friday at 2:00pm ET | Saturday at 6:00am ET |
+| Saturday at 2:00pm ET - Sunday at 1:59pm ET | Monday at 2:00pm ET | Tuesday at 5:00am ET |
+| Sunday at 2:00pm ET - Monday at 1:59pm ET | Tuesday at 2:00pm ET | Wednesday at 5:00am ET |
+| Monday at 2:00pm ET - Tuesday at 1:59pm ET | Wednesday at 2:00pm ET | Thursday at 5:00am ET |
+| Tuesday at 2:00pm ET - Wednesday at 1:59pm ET | Thursday at 2:00pm ET | Friday at 5:00am ET |
+| Wednesday at 2:00pm ET - Thursday at 1:59pm ET | Friday at 2:00pm ET | Saturday at 5:00am ET |
 | Withdrawals will only be serviced on US banking days. Please schedule your withdrawal after Saturday at 1:59 PM ET. | - | - |
 
 
