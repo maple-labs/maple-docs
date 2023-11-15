@@ -34,6 +34,6 @@ To plan when to schedule your withdrawal, reference the following table.
 
 2. **Process withdrawal**
 
-To withdraw, Lenders need to return to the Lender Dashboard during the 'withdrawal window' which is open between 15:00 - 06:00 Eastern Time the next business day. To process a withdrawal, Lenders should select **'Withdraw USDC'** on the Pool Details page and follow the transaction steps on screen.
+To withdraw, Lenders need to return to the Lender Dashboard during the 'withdrawal window' which is open between 14:00 - 05:00 Eastern Time the next business day. To process a withdrawal, Lenders should select **'Withdraw USDC'** on the Pool Details page and follow the transaction steps on screen.
 
 In the instance that a Lender does not return to the Lender Dashboard to complete the withdrawal during the withdrawal window, the withdrawal request will be cancelled and the funds will be lent back out to the Borrower.
