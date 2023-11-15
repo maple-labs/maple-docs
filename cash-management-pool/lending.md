@@ -44,7 +44,7 @@ Once onboarding is complete a Lenders wallet address will be approved. Lenders s
 
 **What token do I receive to recognize my position in the pool?**
 
-The token for this Pool are called **MPLcashUSDC**. When you lend into a Maple Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
+The token for this Pool is called **MPLcashUSDC**. When you lend into a Maple Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
 
 **How long does it take for deposits to start earning yield?**
 
