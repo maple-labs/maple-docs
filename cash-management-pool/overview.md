@@ -1,6 +1,6 @@
 # Cash Management Pool
 
-Specifically designed as an onchain Cash Management solution - **Maple's Cash Management Pool**, now supported in both [USDC](https://app.maple.finance/#/v2/lend/pool/0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92) and [USDT](https://app.maple.finance/#/v2/lend/pool/0xf05681a33a9adf14076990789a89ab3da3f6b536), provides simple and fast access to yield sourced from US Treasury bills and meets the liquidity, risk and accounting requirements of Lenders. You will find everything needed to begin Lending here in Gitbook, including:
+Specifically designed as an onchain Cash Management solution - **Maple's Cash Management Pool** provides simple and fast access to yield sourced from US Treasury bills and meets the liquidity, risk and accounting requirements of Lenders. You will find everything needed to begin Lending here in Gitbook, including:
 * **Cash Management Pool Overview**: Scroll down for the key benefits of the Cash Management Pool and how it works.
 * **[Lending in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/lending)**: Jump here for information on lender eligibility, APYs, fees and step by step instructions.
 * **[Withdrawing in detail](https://maplefinance.gitbook.io/maple/cash-management-pool/withdrawals)**: Jump here for information on withdrawal windows, timings and step by step instructions.
@@ -24,9 +24,9 @@ Specifically designed as an onchain Cash Management solution - **Maple's Cash Ma
 
 Room40, a top-tier crypto fund, has established a standalone single purpose vehicle to be the sole Borrower from the Pool.
 
-The Borrower converts the USDC or USDT loan proceeds to USD proceeds  and sends the funds to a prime brokerage account. Using its prime brokerage account, the Borrower invests in U.S. Treasury bills and reverse repurchase agreements. The weighted average maturity of the Borrower's portfolio, transparently displayed on the Lender Dashboard, is capped at 30 days under the Master Loan Agreement.
+The Borrower converts the USDC loan proceeds to USD proceeds and sends the funds to a prime brokerage account. Using its prime brokerage account, the Borrower invests in U.S. Treasury bills and reverse repurchase agreements. The weighted average maturity of the Borrower's portfolio, transparently displayed on the Lender Dashboard, is capped at 30 days under the Master Loan Agreement.
 
-The Cash Management Pool accepts deposits of USDC and USDT from Accredited Investors. Interest automatically compounds and there is no maximum deposit size or lock-up period. Withdrawals are processed on US banking days between 15:00 - 06:00 Eastern Time. 
+The Cash Management Pool accepts deposits of USDC from Accredited Investors. Interest automatically compounds and there is no maximum deposit size or lock-up period. Withdrawals are processed on US banking days between 14:00 - 05:00 Eastern Time. 
 
 **About Room40**
 
