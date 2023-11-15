@@ -9,21 +9,17 @@ Pursuant to the Master Loan Agreement, the Borrower is only permitted to invest 
 The APY is variable and based on the current Secured Overnight Financing Rate (SOFR), less Maple Protocol Fees and Borrower Fees. To capture the Secured Overnight Financing Rate (SOFR), the Cash Management Pool benchmarks to the current ‘coupon equivalent’ rate for a 4-week U.S. Treasury bill as reported by the [U.S. Department of Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value_month=202307).
 
 **Are the fees fixed or variable?**
-Fees are fixed  at 50bps annualized for USDC Lenders and 100bps annualized for USDT Lenders. Higher fees are charged to USDT Lenders to cover incremental mint and redeem costs for USDT. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
+Fees are fixed  at 50bps annualized. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
 
 | Party | Fees | Source |
 |-|-|-|
-| Maple Protocol Fees | 25bps for USDC and USDT Lenders | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
-| Borrower Fees | 25bps for USDC Lenders, 75bps for USDT Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark Secured Overnight Financing Rate (SOFR). |
+| Maple Protocol Fees | 25bps for USDC Lenders | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
+| Borrower Fees | 25bps for USDC Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark Secured Overnight Financing Rate (SOFR). |
 
 **Who is eligible to lend into the Pool?**
-The Pool is permissioned and welcomes USDC and USDT Lenders who can verify Accredited Investor status and pass AML checks.
+The Pool is permissioned and welcomes USDC Lenders who can verify Accredited Investor status and pass AML checks.
 
 Lenders can [begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC), it should take about 10-15 minutes to complete the forms. To pass AML checks, Lender wallet addresses will be scanned for risk factors using TRM Labs.
-
-**Are the USDT Pool's deposits or assets commingled with the USDC Pool?**
-
-No. Each Maple pool (including the USDC and USDT Cash Management Pools) represents a distinct smart contract, and Lenders remain ringfenced from credit risk in other pools on the Maple platform. The Borrower uses separate accounts with StoneX and BNP Paribas for the USDT Pool, which has its own collateral assets that live separate from the USDC Pool. This means that both the USDT loans and associated collateral assets for the USDT Pool are fully ringfenced from the USDC Pool.
 
 **What’s the process to onboard?**
 
@@ -36,7 +32,7 @@ Existing Lenders on Maple will only need to sign the Lender Attestation. Please 
 
 **Is there a maximum deposit?**
 
-No. The minimum deposit size is $100,000 USDC or USDT.
+No. The minimum deposit size is $100,000 USDC.
 
 **How does APY vary by deposit amount or term length?**
 
@@ -44,11 +40,11 @@ All Lenders receive the same APY regardless of deposit size. Fees are annualized
 
 **How do I lend into the Pool?**
 
-Once onboarding is complete a Lenders wallet address will be approved. Lenders should return to the Pool, select **'Lend Funds'**, input the USDC or USDT amount and follow the transaction steps on screen.
+Once onboarding is complete a Lenders wallet address will be approved. Lenders should return to the Pool, select **'Lend Funds'**, input the USDC amount and follow the transaction steps on screen.
 
 **What token do I receive to recognize my position in the pool?**
 
-The tokens for this Pool are called **MPLcashUSDC** and **MPLcashUSDT**. When you lend into a Maple Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
+The token for this Pool are called **MPLcashUSDC**. When you lend into a Maple Pool you are calling the **"Deposit"** function on the Pool smart contract. The function, when confirmed in your wallet, will accept the amount of pool assets you indicated in the UI to lend and in exchange assign to your wallet Pool LP (Liquidity Provider) Tokens.
 
 **How long does it take for deposits to start earning yield?**
 
