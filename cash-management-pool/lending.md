@@ -6,7 +6,7 @@ Pursuant to the Master Loan Agreement, the Borrower is only permitted to invest 
 
 **Is the APY fixed or variable?**
 
-The APY is variable and based on the current Secured Overnight Financing Rate (SOFR), less Maple Protocol Fees and Borrower Fees. To capture the Secured Overnight Financing Rate (SOFR), the Cash Management Pool benchmarks to the current ‘coupon equivalent’ rate for a 4-week U.S. Treasury bill as reported by the [U.S. Department of Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value_month=202307).
+The APY is variable and based on the current Secured Overnight Financing Rate (SOFR), less Maple Protocol Fees and Borrower Fees.
 
 **Are the fees fixed or variable?**
 Fees are fixed at 50bps annualized. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
