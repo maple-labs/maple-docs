@@ -4,7 +4,7 @@ MapleGlobals is a singleton contract used to save system-wide parameters that al
 
 # Permissioning
 
-The governor multisig is the only entity allowed to change the parameters stored in MapleGlobals, the only exception is pause-related parameters which can also be done by the Security Admin.
+The governor multisig is the primary entity allowed to change the parameters stored in MapleGlobals. The operational admin, authorized by the Governor, can modify specific parameters and Security Admin can modify pause-related parameters.
 
 # Pausing
 
