@@ -58,12 +58,19 @@
 | PoolManager | [`0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE`](https://basescan.org/address/0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 | PoolManagerInitializer | [`0x252C44A1630095504E3D3972b9b296f5ED494911`](https://basescan.org/address/0x252C44A1630095504E3D3972b9b296f5ED494911) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 
-### WithdrawalManager Contracts
+### WithdrawalManagerCyclical Contracts
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| WithdrawalManager | [`0x5B8387aDa310352198EBFF14a297FAb44428C8CD`](https://basescan.org/address/0x5B8387aDa310352198EBFF14a297FAb44428C8CD) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
-| WithdrawalManagerInitializer | [`0x899b7d637e35B2C57E845dB1064a4e58639D3A8D`](https://basescan.org/address/0x899b7d637e35B2C57E845dB1064a4e58639D3A8D) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerCyclical (Implementation) | [`0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b`](https://basescan.org/address/0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+| WithdrawalManagerCyclical (Initializer) | [`0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd`](https://basescan.org/address/0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+
+### WithdrawalManagerQueue Contracts
+
+| Contract | Address | Commit Hash |
+| -------- | ------- | ----------- |
+| WithdrawalManagerQueue (Implementation) | [`0x899B57Bbd8597aa2d1898476504f479c982c5c2c`](https://basescan.org/address/0x899B57Bbd8597aa2d1898476504f479c982c5c2c) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
+| WithdrawalManagerQueue (Initializer) | [`0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96`](https://basescan.org/address/0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
 
 ## Factory Contracts
 
@@ -75,7 +82,8 @@
 | OpenTermLoanFactory | [`0x8B487386E432F0f82Ca611F59dBE973761FBb1Ad`](https://basescan.org/address/0x8B487386E432F0f82Ca611F59dBE973761FBb1Ad) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | OpenTermLoanManagerFactory | [`0xD14D0b4720bDBE03aB88A8Fd53be28c6d46426F5`](https://basescan.org/address/0xD14D0b4720bDBE03aB88A8Fd53be28c6d46426F5) | [`open-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/open-term-loan-manager/releases/tag/v1.0.0) |
 | PoolManagerFactory | [`0xD4f0e224222e3F767AC389B2b1b7663990DFa6E9`](https://basescan.org/address/0xD4f0e224222e3F767AC389B2b1b7663990DFa6E9) | [`pool-v2 @ v1.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
-| WithdrawalManagerFactory | [`0x0434FC9e7D88294dAac40dDF316754B2053D613b`](https://basescan.org/address/0x0434FC9e7D88294dAac40dDF316754B2053D613b) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerCyclicalFactory | [`0x0434FC9e7D88294dAac40dDF316754B2053D613b`](https://basescan.org/address/0x0434FC9e7D88294dAac40dDF316754B2053D613b) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.0.0) |
+| WithdrawalManagerQueueFactory | [`0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5`](https://basescan.org/address/0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
 
 ## Active Pool Contracts
 
@@ -103,3 +111,11 @@
 | Contract | Address |
 | -------- | ------- |
 | USDC | [`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`](https://basescan.org/address/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913) |
+
+## Access Control Contracts
+
+| Contract | Address | Commit Hash |
+| -------- | ------- | ----------- |
+| PoolPermissionManager (Proxy) | [`0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3`](https://basescan.org/address/0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |
+| PoolPermissionManager (Implementation) | [`0xC3530358e54bC81EfCe4A2e12A898E996B091753`](https://basescan.org/address/0xC3530358e54bC81EfCe4A2e12A898E996B091753) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |
+| PoolPermissionManager (Initializer) | [`0x73A53fcECE63D4C0098535f6f62Df0F5d12A5175`](https://basescan.org/address/0x73A53fcECE63D4C0098535f6f62Df0F5d12A5175) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |

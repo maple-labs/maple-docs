@@ -65,8 +65,8 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| WithdrawalManagerCyclical | [`0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b`](https://etherscan.io/address/0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
-| WithdrawalManagerCyclicalInitializer | [`0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd`](https://etherscan.io/address/0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+| WithdrawalManagerCyclical (Implementation) | [`0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b`](https://etherscan.io/address/0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+| WithdrawalManagerCyclical (Initializer) | [`0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd`](https://etherscan.io/address/0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
 
 ### WithdrawalManagerQueue Contracts
 
@@ -85,7 +85,7 @@
 | OpenTermLoanFactory | [`0x6Fad515Fc046DD17166453A79725f50b917b7cF6`](https://etherscan.io/address/0x6Fad515Fc046DD17166453A79725f50b917b7cF6) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | OpenTermLoanManagerFactory | [`0x90b14505221a24039A2D11Ad5862339db97Cc160`](https://etherscan.io/address/0x90b14505221a24039A2D11Ad5862339db97Cc160) | [`open-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/open-term-loan-manager/releases/tag/v1.0.0) |
 | PoolManagerFactory | [`0xE463cD473EcC1d1A4ecF20b62624D84DD20a8339`](https://etherscan.io/address/0xE463cD473EcC1d1A4ecF20b62624D84DD20a8339) | [`pool-v2 @ v1.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
-| WithdrawalManagerCyclicalFactory | [`0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B`](https://etherscan.io/address/0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B) | [`withdrawal-manager-cyclical @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerCyclicalFactory | [`0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B`](https://etherscan.io/address/0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B) | [`withdrawal-manager-cyclical @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.0.0) |
 | WithdrawalManagerQueueFactory | [`0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5`](https://etherscan.io/address/0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
 
 ## Active Pool Contracts
