@@ -1,6 +1,6 @@
 # Overview
 
-The process of withdrawing assets that have been deposited into a Maple pool is managed by the `WithdrawalManager`. The `WithdrawalManager` holds custody of user's LP tokens and allows them to withdraw at specified time intervals ("**Withdrawal Window**") after waiting a minimum of a full **Withdrawal Cycle**. The purpose of this mechanism is to allow for users to get a fair distribution of cash in the event of partial liquidity in the system. This is done by grouping users into cycles so that pro-rata distributions of available cash can be performed.
+The `WithdrawalManager` holds custody of user's LP tokens and allows them to withdraw at specified time intervals ("**Withdrawal Window**") after waiting a minimum of a full **Withdrawal Cycle**. The purpose of this mechanism is to allow for users to get a fair distribution of cash in the event of partial liquidity in the system. This is done by grouping users into cycles so that pro-rata distributions of available cash can be performed.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44272939/196679371-65d27dc2-5c89-40fc-88d6-55985b888221.svg" height="1000" />
@@ -113,7 +113,7 @@ $$
 $$
 
 
-For an example of this in practice, please refer to [Example 3](./withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
+For an example of this in practice, please refer to [Example 3](./cyclical-withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
 
 ## Configuration Management
 
