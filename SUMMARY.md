@@ -85,6 +85,7 @@
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
   * [Oracles](technical-resources/singletons/oracles.md)
+  * [Pool Permission Manager](technical-resources/singletons/pool-permission-manager.md)
 * Admin Functions
   * [Governor Admin Actions](technical-resources/admin-functions/governor-admin-actions.md)
   * [Pool Delegate Admin Actions](technical-resources/admin-functions/pool-delegate-admin-actions.md)
