@@ -20,7 +20,7 @@ Exiting the pool by **calling `withdraw` is NOT encouraged**, as the recommended
 
 Due to the fact that the Maple protocol functions on partial liquidity (a capital efficient Pool will have outstanding loans and partial liquidity to fulfill withdrawals), withdrawal "cooldowns" are used to effectively and fairly manage liquidity. In order to exit from a Pool, an LP must first call `requestRedeem` before they can call `redeem`. This function moves the LP's shares to another contract and subjects them to the specific withdrawal mechanic. More details on the existing withdrawal mechanisms are included [here](../withdrawal-managers).
 
-Once the conditions contained in the WithdrawalManager are met, the users can call `redeem` and burn their LP shares for cash.
+Once the conditions contained in the WithdrawalManager are met, the users can call `redeem` and burn their LP shares for cash. Depending on the withdrawal mechanism the funds asset may be sent directly to the user.
 
 **NOTE:** View functions, like `maxRedeem`, `maxWithdraw`, `previewRedeem` and `previewWithdraw`, returns values compliant to the withdrawal mechanism, meaning if that a given user is not allowed to redeem at the current time, it'll return `0`. If the user is able to redeem, it'll return the redeemable amount.
 
