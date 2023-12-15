@@ -70,7 +70,8 @@
   * [Pool Creation](technical-resources/pools/pool-creation.md)
   * [PoolManager](technical-resources/pools/pool-manager.md)
   * [PoolDelegateCover](technical-resources/pools/pool-delegate-cover.md)
-  * [WithdrawalManager](technical-resources/pools/withdrawal-manager.md)
+  * [WithdrawalManager (Cyclical)](technical-resources/pools/withdrawal-manager-cyclical.md)
+  * [WithdrawalManager (Queue)](technical-resources/pools/withdrawal-manager-queue.md)
   * Accounting
     * [Pool Accounting](technical-resources/pools/accounting/pool-accounting.md)
     * [Pool Exchange Rates](technical-resources/pools/accounting/pool-exchange-rates.md)
