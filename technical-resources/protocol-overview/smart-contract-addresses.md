@@ -5,7 +5,7 @@
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
 | Globals (Proxy) | [`0x804a6F5F667170F545Bf14e5DDB48C70B788390C`](https://etherscan.io/address/0x804a6F5F667170F545Bf14e5DDB48C70B788390C) | [`non-transparent-proxy @ v1.0.0`](https://github.com/maple-labs/non-transparent-proxy/releases/tag/v1.0.0) |
-| Globals (Implementation) | [`0x562374079a8A07417ec4A69d5d52F9CBa796d364`](https://etherscan.io/address/0x562374079a8A07417ec4A69d5d52F9CBa796d364) | [`globals-v2 @ v2.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v2.0.0) |
+| Globals (Implementation) | [`0x5A64417823E8382a7e8957E4411873FE758E73a8`](https://etherscan.io/address/0x5A64417823E8382a7e8957E4411873FE758E73a8) | [`globals-v2 @ v3.0.0`](https://github.com/maple-labs/globals-v2-private/releases/tag/v3.0.0) |
 | Treasury | [`0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19`](https://etherscan.io/address/0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19) | [`maple-core @ v1.0.0`](https://github.com/maple-labs/maple-core/releases/tag/v1.0.0) |
 
 ## Protocol Actor Addresses
@@ -21,9 +21,9 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| FixedTermLoan | [`0x98b7893C5717aF41d3e351c6e3445Be02a062A90`](https://etherscan.io/address/0x98b7893C5717aF41d3e351c6e3445Be02a062A90) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.1) |
+| FixedTermLoan | [`0x7a6F2C7B4F6aD1cB00AB23ECc5b41D25dA439005`](https://etherscan.io/address/0x7a6F2C7B4F6aD1cB00AB23ECc5b41D25dA439005) | [`fixed-term-loan @ v5.0.2`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.2) |
 | FixedTermLoanInitializer | [`0x8F596D2f57C26FB1CD22F25c9a686e38A62Ce137`](https://etherscan.io/address/0x8F596D2f57C26FB1CD22F25c9a686e38A62Ce137) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.1) |
-| FixedTermLoanMigrator | [`0xAf19511EA6Ad222695A762Ce01b33fd2d777992c`](https://etherscan.io/address/0xAf19511EA6Ad222695A762Ce01b33fd2d777992c) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.1) |
+| FixedTermLoanMigrator | [`0x6D4416E6C0536fD33127d38Af21bc912475584E3`](https://etherscan.io/address/0x6D4416E6C0536fD33127d38Af21bc912475584E3) | [`fixed-term-loan @ v5.0.2`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.2) |
 
 ### FixedTermLoanManager Contracts
 
@@ -57,27 +57,36 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| PoolManager | [`0xb918c805B33B02895F6F06c2EfA31d178678c947`](https://etherscan.io/address/0xb918c805B33B02895F6F06c2EfA31d178678c947) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v2.0.0) |
-| PoolManagerInitializer | [`0x0B240bf499773905802eE4DE43f96407C436d549`](https://etherscan.io/address/0x0B240bf499773905802eE4DE43f96407C436d549) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v2.0.0) |
+| PoolManager | [`0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE`](https://etherscan.io/address/0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
+| PoolManagerInitializer | [`0x252C44A1630095504E3D3972b9b296f5ED494911`](https://etherscan.io/address/0x252C44A1630095504E3D3972b9b296f5ED494911) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
+| PoolManagerMigrator | [`0x9450d0D19802Ae0aDD44565752CDAB70E0A1C6ed`](https://etherscan.io/address/0x9450d0D19802Ae0aDD44565752CDAB70E0A1C6ed) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 
-### WithdrawalManager Contracts
+### WithdrawalManagerCyclical Contracts
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| WithdrawalManager | [`0xB12EC38e3508b0919fa989A0e60fde489b46F430`](https://etherscan.io/address/0xB12EC38e3508b0919fa989A0e60fde489b46F430) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
-| WithdrawalManagerInitializer | [`0x1063dCa836894b12f29003CA2899ff806A2B0B31`](https://etherscan.io/address/0x1063dCa836894b12f29003CA2899ff806A2B0B31) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerCyclical | [`0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b`](https://etherscan.io/address/0xCc4e684916aA7Fa0E4fAEF2359B49A755f89C75b) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+| WithdrawalManagerCyclicalInitializer | [`0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd`](https://etherscan.io/address/0x485bA3F5235F150bF8e4Afbd3a25c266cDAdD9Dd) | [`withdrawal-manager-cyclical @ v1.1.0`](https://github.com/maple-labs/withdrawal-manager-cyclical/releases/tag/v1.1.0) |
+
+### WithdrawalManagerQueue Contracts
+
+| Contract | Address | Commit Hash |
+| -------- | ------- | ----------- |
+| WithdrawalManagerQueue (Implementation) | [`0x899B57Bbd8597aa2d1898476504f479c982c5c2c`](https://etherscan.io/address/0x899B57Bbd8597aa2d1898476504f479c982c5c2c) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
+| WithdrawalManagerQueue (Initializer) | [`0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96`](https://etherscan.io/address/0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
 
 ## Factory Contracts
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| FixedTermLoanFactory | [`0x36a7350309B2Eb30F3B908aB0154851B5ED81db0`](https://etherscan.io/address/0x36a7350309B2Eb30F3B908aB0154851B5ED81db0) | [`fixed-term-loan @ v2.0.0`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v2.0.0) |
+| FixedTermLoanFactory | [`0xeA067DB5B32CE036Ee5D8607DBB02f544768dBC6`](https://etherscan.io/address/0xeA067DB5B32CE036Ee5D8607DBB02f544768dBC6) | [`fixed-term-loan @ v5.0.2`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.2) |
 | FixedTermLoanManagerFactory | [`0x1551717AE4FdCB65ed028F7fB7abA39908f6A7A6`](https://etherscan.io/address/0x1551717AE4FdCB65ed028F7fB7abA39908f6A7A6) | [`fixed-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/fixed-term-loan-manager/releases/tag/v1.0.0) |
 | LiquidatorFactory | [`0xa2091116649b070D2a27Fc5C85c9820302114c63`](https://etherscan.io/address/0xa2091116649b070D2a27Fc5C85c9820302114c63) | [`liquidations @ v2.0.0`](https://github.com/maple-labs/liquidations/releases/tag/v2.0.0) |
 | OpenTermLoanFactory | [`0x6Fad515Fc046DD17166453A79725f50b917b7cF6`](https://etherscan.io/address/0x6Fad515Fc046DD17166453A79725f50b917b7cF6) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
 | OpenTermLoanManagerFactory | [`0x90b14505221a24039A2D11Ad5862339db97Cc160`](https://etherscan.io/address/0x90b14505221a24039A2D11Ad5862339db97Cc160) | [`open-term-loan-manager @ v1.0.0`](https://github.com/maple-labs/open-term-loan-manager/releases/tag/v1.0.0) |
 | PoolManagerFactory | [`0xE463cD473EcC1d1A4ecF20b62624D84DD20a8339`](https://etherscan.io/address/0xE463cD473EcC1d1A4ecF20b62624D84DD20a8339) | [`pool-v2 @ v1.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
-| WithdrawalManagerFactory | [`0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B`](https://etherscan.io/address/0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B) | [`withdrawal-manager @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerCyclicalFactory | [`0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B`](https://etherscan.io/address/0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B) | [`withdrawal-manager-cyclical @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager/releases/tag/v1.0.0) |
+| WithdrawalManagerQueueFactory | [`0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5`](https://etherscan.io/address/0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5) | [`withdrawal-manager-queue @ v1.0.0`](https://github.com/maple-labs/withdrawal-manager-queue/releases/tag/v1.0.0) |
 
 ## Active Pool Contracts
 
@@ -154,7 +163,6 @@
 | WithdrawalManager (Proxy) | [`0x7f0d63e2250bc99f48985b183af0c9a66bbc8ac3`](https://etherscan.io/address/0x7f0d63e2250bc99f48985b183af0c9a66bbc8ac3) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0x4Ab7F6F8DE3FE2575806a21F9Cac630DD51a84Af`](https://etherscan.io/address/0x4Ab7F6F8DE3FE2575806a21F9Cac630DD51a84Af) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
-
 ### Maven11 WETH Pool Contracts
 
 | Contract | Address | Commit Hash |
@@ -193,7 +201,7 @@
 | FeeManager | [`0xFeACa6A5703E6F9DE0ebE0975C93AE34c00523F2`](https://etherscan.io/address/0xFeACa6A5703E6F9DE0ebE0975C93AE34c00523F2) | [`fixed-term-loan @ v4.0.0`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v4.0.0) |
 | FixedTermRefinancer | [`0x27ea6e67FB62AB2A603d4ACBc9377D7a9A0fd5e3`](https://etherscan.io/address/0x27ea6e67FB62AB2A603d4ACBc9377D7a9A0fd5e3) | [`fixed-term-loan @ v5.0.1`](https://github.com/maple-labs/fixed-term-loan/releases/tag/v5.0.1) |
 | OpenTermRefinancer | [`0x653D4947620B73a433cAbBc9DFb068c3e9c18984`](https://etherscan.io/address/0x653D4947620B73a433cAbBc9DFb068c3e9c18984) | [`open-term-loan @ v1.0.1`](https://github.com/maple-labs/open-term-loan/releases/tag/v1.0.1) |
-| PoolDeployer | [`0x87826F821AF105802064785A3905C794eF259D5C`](https://etherscan.io/address/0x87826F821AF105802064785A3905C794eF259D5C) | [`pool-v2 @ v2.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v2.0.0) |
+| PoolDeployer | [`0x12fB5dbBDB06ab973f047cC46D6bB33ba4d03b96`](https://etherscan.io/address/0x12fB5dbBDB06ab973f047cC46D6bB33ba4d03b96) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 
 ## Oracle Contracts
 
@@ -212,3 +220,11 @@
 | WETH9 | [`0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) |
 | MPL | [`0x33349B282065b0284d756F0577FB39c158F935e6`](https://etherscan.io/address/0x33349B282065b0284d756F0577FB39c158F935e6) |
 | xMPL | [`0x4937a209d4cdbd3ecd48857277cfd4da4d82914c`](https://etherscan.io/address/0x4937a209d4cdbd3ecd48857277cfd4da4d82914c) |
+
+## Access Control Contracts
+
+| Contract | Address | Commit Hash |
+| -------- | ------- | ----------- |
+| PoolPermissionManager (Proxy) | [`0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3`](https://etherscan.io/address/0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |
+| PoolPermissionManager (Implementation) | [`0xC3530358e54bC81EfCe4A2e12A898E996B091753`](https://etherscan.io/address/0xC3530358e54bC81EfCe4A2e12A898E996B091753) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |
+| PoolPermissionManager (Initializer) | [`0x73A53fcECE63D4C0098535f6f62Df0F5d12A5175`](https://etherscan.io/address/0x73A53fcECE63D4C0098535f6f62Df0F5d12A5175) | [`pool-permission-manager @ v1.0.0`](https://github.com/maple-labs/pool-permission-manager/releases/tag/v1.0.0) |
