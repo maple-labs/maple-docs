@@ -32,6 +32,7 @@ In this section, the parameters stored in the globals contract are outlined.
 * `Governor`
 * `SecurityAdmin` - Special account allowed to trigger protocol-wide pause.
 * `MigrationAdmin` - Special account used during the liquidity migration.
+* `OperationalAdmin` - Special account given the authority by Governor to perform a subset of operational functions.
 * Factories, such as:
   * `LiquidatorFactory`
   * `FixedTermLoanFactory`
