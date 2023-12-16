@@ -4,7 +4,7 @@ MapleGlobals is a singleton contract used to save system-wide parameters that al
 
 # Permissioning
 
-The governor multisig is the primary entity allowed to change the parameters stored in MapleGlobals. The operational admin, authorized by the Governor, can modify specific parameters and Security Admin can modify pause-related parameters.
+The governor multisig holds the primary authority to change parameters stored in MapleGlobals. Additionally, the operational admin, authorized by the Governor, can change specific operational parameters and Security Admin can change pause-related parameters.
 
 # Pausing
 
@@ -20,7 +20,7 @@ To perform upgrades in vital pool contracts, pool delegates need to first schedu
 
 # Whitelisting Instance Deployment from Factories
 
-The governor multisig can whitelist individual addresses that can use the `createInstance` functions at each factory respectively, which is then stored in the `_canDeployFrom` storage mapping. Factories can call `globals.canDeploy(addressOfCaller)` to determine if the caller is allowed to deploy one of its instances, and the mapping itself can be queried via `globals.canDeployFrom(addressOfFactory, addressOfCaller)`.
+The governor multisig or operational admin can whitelist individual addresses that can use the `createInstance` functions at each factory respectively, which is then stored in the `_canDeployFrom` storage mapping. Factories can call `globals.canDeploy(addressOfCaller)` to determine if the caller is allowed to deploy one of its instances, and the mapping itself can be queried via `globals.canDeployFrom(addressOfFactory, addressOfCaller)`.
 
 # System Parameters
 
