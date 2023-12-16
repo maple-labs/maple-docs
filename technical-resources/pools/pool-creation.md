@@ -27,7 +27,7 @@ The following pre-requisite configurations are necessary in order to deploy a Po
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 * `poolManagerFactory`.
-* `withdrawalManagerFactory`.
+* `withdrawalManagerFactory` - The address of cyclical based withdrawal manager factory.
 * `loanManagerFactories`.
 * `asset` - The main asset that the pool denominates in.
 * `poolPermissionManager`.
@@ -46,7 +46,7 @@ To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 * `poolManagerFactory`.
-* `withdrawalManagerFactory`.
+* `withdrawalManagerFactory` - The address of queue based withdrawal manager factory.
 * `loanManagerFactories`.
 * `asset` - The main asset that the pool denominates in.
 * `poolPermissionManager`.
@@ -59,4 +59,4 @@ To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 # Pool Activation
 
-Before the Pool can start accepting deposits and operating, the Governor needs to call `activatePoolManager` in Globals. This will activate the Pool. This allows the Governor to set up fee parameters, default parameters, and ensure that the requisite cover has been posted by the Pool Delegate before running the Pool.
+Before the Pool can start accepting deposits and operating, the Governor or Operational Admin needs to call `activatePoolManager` in Globals. This will activate the Pool. This allows the Governor or Operational Admin to set up fee parameters, default parameters, and ensure that the requisite cover has been posted by the Pool Delegate before running the Pool.
