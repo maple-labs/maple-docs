@@ -1,6 +1,6 @@
 # Overview
 
-The operationalAdmin complements the Governor's capabilities by having the authority to execute essential operational functions for routine protocol management. The role holds limited powers compared to the Governor, ensuring a balance between operational efficiency and security.
+The `operationalAdmin` complements the Governor's capabilities by having the authority to execute essential operational functions for routine protocol management. The role holds limited powers compared to the Governor, ensuring a balance between operational efficiency and security.
 
 The Governor retains the exclusive authority to appoint or replace the operationalAdmin at any time.
 
@@ -26,6 +26,20 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `setPendingPoolDelegate`
 * `triggerDefault`
 
-## Withdrawal Manager
+## Pool Permission Manager
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setLenderBitmaps`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
+## Withdrawal Manager (Cyclical)
 
 * `setExitConfig`
+
+## Withdrawal Manager (Queue)
+
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
