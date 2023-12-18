@@ -19,6 +19,16 @@ Maple Finance V2 went through 2 audits during its development for the June 2023 
 | Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11667848/cantina-maple.pdf) |
 | Three Sigma | [`2023-04-10 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11663546/maple-v2-audit_three-sigma_2023.pdf) |
 
+<br>
+
+## December 2023 Release
+Maple Finance V2 went through 2 audits during its development for the December 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to release.
+
+| Auditor | Report Link |
+|---|---|
+| Three Sigma | [`2023-11-06 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/13707288/Maple-Q4-Three-Sigma-Audit.pdf) |
+| 0xMacro | [`2023-11-27 - 0xMacro Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/13707291/Maple-Q4-0xMacro-Audit.pdf) |
+
 # Bug Bounty
 
 Maple V2 has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
@@ -88,7 +98,13 @@ In order to discuss critical monitoring first its important to be clear on the i
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
    * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
 
-* Withdrawal Manager
+* Pool Permission Manager
+   * Invariant A: pool.permissionLevel ∈ [0, 3]
+   * Invariant B: pool.bitmap ∈ [0, MAX]
+   * Invariant C: lender.bitmap ∈ [0, MAX]
+   * Invariant D: pool.permissionLevel == public -> permanently public
+
+* Withdrawal Manager (Cyclical)
    * Invariant A: WM LP balance == ∑lockedShares(user)
    * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
    * Invariant C: windowStart[currentCycle] <= block.timestamp
@@ -103,6 +119,17 @@ In order to discuss critical monitoring first its important to be clear on the i
    * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
    * Invariant M: lockedLiquidity <= pool.totalAssets
    * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
+
+* Withdrawal Manager (Queue)
+   * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
+   * Invariant B: balanceOf(this) >= totalShares
+   * Invariant C: ∀ requestId(owner) != 0 -> request.shares > 0 && request.owner == owner
+   * Invariant D: nextRequestId <= lastRequestId + 1
+   * Invariant E: nextRequestId != 0
+   * Invariant F: requests(0) == (0, 0)
+   * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
+   * Invariant H: requestId is unique
+   * Invariant I: lender is unique
 ```
 
 # Critical Monitoring
