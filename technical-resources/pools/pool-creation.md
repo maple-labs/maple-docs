@@ -6,7 +6,7 @@ The PoolDeployer contract facilitates the atomic deployment, initialization and 
   * some number of `LoanManager`s
 * `WithdrawalManager` (Cyclical or Queue)
 
-The `deployPool` function in the PoolDeployer contract is designed to handle the deployment of either cyclical or queue-based withdrawal managers, with the difference lying in passing the configuration parameters.
+The `deployPool` function in the PoolDeployer contract is designed to handle the deployment of either cyclical or queue-based withdrawal managers, with the difference being in the configuration parameters used.
 
 # Pre-Requisite Transactions
 
@@ -27,7 +27,7 @@ The following pre-requisite configurations are necessary in order to deploy a Po
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 * `poolManagerFactory`.
-* `withdrawalManagerFactory` - The address of cyclical based withdrawal manager factory.
+* `withdrawalManagerFactory` - Address of the cycle-based withdrawal manager factory.
 * `loanManagerFactories`.
 * `asset` - The main asset that the pool denominates in.
 * `poolPermissionManager`.
@@ -46,7 +46,7 @@ To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 * `poolManagerFactory`.
-* `withdrawalManagerFactory` - The address of queue based withdrawal manager factory.
+* `withdrawalManagerFactory` - Address of the queue-based withdrawal manager factory.
 * `loanManagerFactories`.
 * `asset` - The main asset that the pool denominates in.
 * `poolPermissionManager`.
