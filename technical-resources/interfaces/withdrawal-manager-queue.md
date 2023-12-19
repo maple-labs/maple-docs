@@ -1,4 +1,4 @@
-# MapleWithdrawalManager
+# Maple Withdrawal Manager
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `addShares` 
+### `addShares`
 
 Add shares to the withdrawal manager.
 
@@ -28,7 +28,7 @@ Add shares to the withdrawal manager.
 
 <br />
 
-### `asset` 
+### `asset`
 
 Returns the address of the underlying pool asset.
 
@@ -50,7 +50,7 @@ Returns the address of the underlying pool asset.
 
 <br />
 
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -72,7 +72,7 @@ The address of the proxy factory.
 
 <br />
 
-### `globals` 
+### `globals`
 
 Returns the address of the globals contract.
 
@@ -94,7 +94,7 @@ Returns the address of the globals contract.
 
 <br />
 
-### `governor` 
+### `governor`
 
 Return the address of the governor.
 
@@ -116,7 +116,7 @@ Return the address of the governor.
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -138,7 +138,7 @@ The address of the implementation contract being proxied.
 
 <br />
 
-### `isInExitWindow` 
+### `isInExitWindow`
 
 Returns if a user is able to withdraw. Required for compatibility with pool managers.          NOTE: Always returns true to fulfil interface requirements.
 
@@ -166,7 +166,7 @@ Returns if a user is able to withdraw. Required for compatibility with pool mana
 
 <br />
 
-### `isManualWithdrawal` 
+### `isManualWithdrawal`
 
 Checks if an account is set to perform withdrawals manually.
 
@@ -194,7 +194,7 @@ Checks if an account is set to perform withdrawals manually.
 
 <br />
 
-### `lockedLiquidity` 
+### `lockedLiquidity`
 
 Gets the total amount of funds that need to be locked to fulfill exits.          NOTE: Always zero for this implementation.
 
@@ -216,7 +216,7 @@ Gets the total amount of funds that need to be locked to fulfill exits.         
 
 <br />
 
-### `lockedShares` 
+### `lockedShares`
 
 Gets the amount of locked shares for an account.
 
@@ -244,7 +244,7 @@ Gets the amount of locked shares for an account.
 
 <br />
 
-### `manualSharesAvailable` 
+### `manualSharesAvailable`
 
 Returns the amount of shares available for manual withdrawal.
 
@@ -272,7 +272,7 @@ Returns the amount of shares available for manual withdrawal.
 
 <br />
 
-### `migrate` 
+### `migrate`
 
 Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 
@@ -293,7 +293,7 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `pool` 
+### `pool`
 
 Returns the address of the pool contract.
 
@@ -315,7 +315,7 @@ Returns the address of the pool contract.
 
 <br />
 
-### `poolDelegate` 
+### `poolDelegate`
 
 Returns the address of the pool delegate.
 
@@ -337,7 +337,7 @@ Returns the address of the pool delegate.
 
 <br />
 
-### `poolManager` 
+### `poolManager`
 
 Returns the address of the pool manager contract.
 
@@ -359,7 +359,7 @@ Returns the address of the pool manager contract.
 
 <br />
 
-### `previewRedeem` 
+### `previewRedeem`
 
 Returns the amount of shares that can be redeemed.          NOTE: The &#x60;shares&#x60; value is ignored.
 
@@ -391,7 +391,7 @@ Returns the amount of shares that can be redeemed.          NOTE: The &#x60;shar
 
 <br />
 
-### `previewWithdraw` 
+### `previewWithdraw`
 
 Gets the amount of shares that can be withdrawn.          NOTE: Values just passed through as withdraw is not implemented.
 
@@ -423,7 +423,7 @@ Gets the amount of shares that can be withdrawn.          NOTE: Values just pass
 
 <br />
 
-### `processExit` 
+### `processExit`
 
 Processes a withdrawal request.          Uses the current exchange rate to calculate the amount of assets withdrawn.
 
@@ -455,7 +455,7 @@ Processes a withdrawal request.          Uses the current exchange rate to calcu
 
 <br />
 
-### `processRedemptions` 
+### `processRedemptions`
 
 Processes pending redemption requests.         Requests are processed in the order they were submitted.         Automatic withdrawal requests will be fulfilled atomically.
 
@@ -474,7 +474,7 @@ Processes pending redemption requests.         Requests are processed in the ord
 
 <br />
 
-### `queue` 
+### `queue`
 
 Returns the first and last withdrawal requests pending redemption.
 
@@ -498,7 +498,7 @@ Returns the first and last withdrawal requests pending redemption.
 
 <br />
 
-### `removeRequest` 
+### `removeRequest`
 
 Removes a withdrawal request from the queue.         Can only be called by the pool delegate.
 
@@ -517,7 +517,7 @@ Removes a withdrawal request from the queue.         Can only be called by the p
 
 <br />
 
-### `removeShares` 
+### `removeShares`
 
 Removes shares from the withdrawal manager.
 
@@ -547,7 +547,7 @@ Removes shares from the withdrawal manager.
 
 <br />
 
-### `requestIds` 
+### `requestIds`
 
 Returns the request identifier of an account.          Returns zero if the account does not have a withdrawal request.
 
@@ -575,7 +575,7 @@ Returns the request identifier of an account.          Returns zero if the accou
 
 <br />
 
-### `requests` 
+### `requests`
 
 Returns the owner and amount of shares associated with a withdrawal request.
 
@@ -605,7 +605,7 @@ Returns the owner and amount of shares associated with a withdrawal request.
 
 <br />
 
-### `securityAdmin` 
+### `securityAdmin`
 
 Returns the address of the security admin.
 
@@ -627,7 +627,7 @@ Returns the address of the security admin.
 
 <br />
 
-### `setImplementation` 
+### `setImplementation`
 
 Modifies the proxy&#x27;s implementation address.
 
@@ -646,7 +646,7 @@ Modifies the proxy&#x27;s implementation address.
 
 <br />
 
-### `setManualWithdrawal` 
+### `setManualWithdrawal`
 
 Defines if an account will withdraw shares manually or automatically.
 
@@ -667,7 +667,7 @@ Defines if an account will withdraw shares manually or automatically.
 
 <br />
 
-### `totalShares` 
+### `totalShares`
 
 Returns the total amount of shares pending redemption.
 
@@ -689,7 +689,7 @@ Returns the total amount of shares pending redemption.
 
 <br />
 
-### `upgrade` 
+### `upgrade`
 
 Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
 

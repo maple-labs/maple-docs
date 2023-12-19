@@ -121,7 +121,7 @@ Checks if a scheduled call can be executed.
 ```solidity
     function canCall(
         bytes32 functionId_,
-        address,
+        address caller_,
         bytes data_
     )
         view
@@ -135,7 +135,7 @@ Checks if a scheduled call can be executed.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `functionId_` | `bytes32` | `bytes32` | The function to check. |
-| 1 | `` | `address` | `address` |  |
+| 1 | `caller_` | `address` | `address` | The address of the caller. |
 | 2 | `data_` | `bytes` | `bytes` | The data of the call. |
 
 
@@ -441,34 +441,6 @@ Returns whether or not the given address is a loan manager.
 
 <br />
 
-### `isValidLender`
-
-Returns whether or not the given address is a valid lender.
-
-```solidity
-    function isValidLender(
-        address
-    )
-        view
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
 ### `liquidityCap`
 
 Gets the liquidity cap for the pool.
@@ -674,28 +646,6 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 
 <br />
 
-### `openToPublic`
-
-Returns whether or not a pool is open to public deposits.
-
-```solidity
-    function openToPublic()
-        view
-        returns (
-            bool
-        );
-```
-
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
 ### `pendingPoolDelegate`
 
 Gets the address of the pending pool delegate.
@@ -768,6 +718,28 @@ Gets the address of the pool delegate cover.
 
 ```solidity
     function poolDelegateCover()
+        view
+        returns (
+            address
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `address` | `address` |  |
+
+
+<br />
+
+### `poolPermissionManager`
+
+Gets the address of the pool delegate cover.
+
+```solidity
+    function poolPermissionManager()
         view
         returns (
             address
@@ -1030,27 +1002,6 @@ Sets a the pool to be active or inactive.
 
 <br />
 
-### `setAllowedLender`
-
-Sets a new lender as valid or not.
-
-```solidity
-    function setAllowedLender(
-        address lender_,
-        bool isValid_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` | The address of the new lender. |
-| 1 | `isValid_` | `bool` | `bool` | Whether the new lender is valid. |
-
-
-<br />
-
 ### `setDelegateManagementFeeRate`
 
 Sets the value for the delegate management fee rate.
@@ -1129,19 +1080,6 @@ Sets the value for liquidity cap.
 
 <br />
 
-### `setOpenToPublic`
-
-Sets pool open to public depositors.
-
-```solidity
-    function setOpenToPublic()
-        nonpayable;
-```
-
-
-
-<br />
-
 ### `setPendingPoolDelegate`
 
 Sets an address as the pending pool delegate.
@@ -1157,6 +1095,25 @@ Sets an address as the pending pool delegate.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `pendingPoolDelegate_` | `address` | `address` | The address of the new pool delegate. |
+
+
+<br />
+
+### `setPoolPermissionManager`
+
+Sets the address of the pool permission manager.
+
+```solidity
+    function setPoolPermissionManager(
+        address poolPermissionManager_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `poolPermissionManager_` | `address` | `address` |  |
 
 
 <br />
@@ -1311,25 +1268,6 @@ Withdraws cover from the pool.
 
 
 ## Events
-
-### `AllowedLenderSet`
-
-Emitted when a new allowed lender is called.
-
-```solidity
-    event AllowedLenderSet(
-        address lender_,
-        bool isValid_
-    );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` | The address of the new lender. |
-| 1 | `isValid_` | `bool` | `bool` | Whether the new lender is valid. |
-
-<br />
 
 ### `CollateralLiquidationFinished`
 
@@ -1490,17 +1428,6 @@ Emitted when a new loan manager is added.
 
 <br />
 
-### `OpenToPublic`
-
-Emitted when a pool is open to public.
-
-```solidity
-    event OpenToPublic();
-```
-
-
-<br />
-
 ### `PendingDelegateAccepted`
 
 Emitted when the pending pool delegate accepts the ownership transfer.
@@ -1547,6 +1474,23 @@ Emitted when the pool configuration is marked as complete.
     event PoolConfigurationComplete();
 ```
 
+
+<br />
+
+### `PoolPermissionManagerSet`
+
+Emitted when the pool permission manager is set.
+
+```solidity
+    event PoolPermissionManagerSet(
+        address poolPermissionManager_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `poolPermissionManager_` | `address` | `address` | The address of the pool permission manager. |
 
 <br />
 

@@ -1,6 +1,6 @@
-# Maple Loan Factory
+# Maple Withdrawal Manager Factory
 
-MapleLoanFactory deploys Loan instances.
+
 
 <br />
 
@@ -11,16 +11,14 @@ MapleLoanFactory deploys Loan instances.
 
 ```solidity
     constructor(
-        address mapleGlobals_,
-        address oldFactory_
+        address globals_
     );
 ```
 
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleGlobals_` | `address` | `address` |  |
-| 1 | `oldFactory_` | `address` | `address` |  |
+| 0 | `globals_` | `address` | `address` |  |
 
 
 <br />
@@ -232,34 +230,6 @@ Returns if a given address has been deployed by this factory/
 
 <br />
 
-### `isLoan`
-
-Whether the proxy is a MapleLoan deployed by this factory or the old factory.
-
-```solidity
-    function isLoan(
-        address instance_
-    )
-        view
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instance_` | `address` | `address` |  |
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
-
-
-<br />
-
 ### `mapleGlobals`
 
 The address of the MapleGlobals contract.
@@ -308,28 +278,6 @@ Returns the address of a migrator contract for a migration path (from version, t
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `migrator_` | `address` | `address` |   The address of a migrator contract. |
-
-
-<br />
-
-### `oldFactory`
-
-Returns the address of the old factory.
-
-```solidity
-    function oldFactory()
-        view
-        returns (
-            address
-        );
-```
-
-
-
-#### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
 
 <br />
