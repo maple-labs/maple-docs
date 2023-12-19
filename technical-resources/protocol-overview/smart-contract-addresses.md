@@ -195,6 +195,17 @@
 | WithdrawalManager (Proxy) | [`0x4a5f63D9425070785EB10f5a0C33E42F16BB8639`](https://etherscan.io/address/0x4a5f63D9425070785EB10f5a0C33E42F16BB8639) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0xd1a42064B7EE5525FdBb779170462abF24395D6F`](https://etherscan.io/address/0xd1a42064B7EE5525FdBb779170462abF24395D6F) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
+### Opportunistic High Yield (Maple Direct) USDC Contracts
+
+| Contract | Address | Commit Hash |
+| -------- | ------- | ----------- |
+| Pool | [`0x6174A27160f4D7885Db4FFeD1C0b5fbD66c87F3a`](https://etherscan.io/address/0x6174A27160f4D7885Db4FFeD1C0b5fbD66c87F3a) | [`pool-v2 @ v1.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v1.0.0) |
+| PoolManager (Proxy) | [`0x81525e55ccfec06f11f1Fdeaf446652c4eC2064F`](https://etherscan.io/address/0x81525e55ccfec06f11f1Fdeaf446652c4eC2064F) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| FixedTermLoanManager (Proxy) | [`0xEca9d2C5f81DD50DCe7493104467dC33362a436F`](https://etherscan.io/address/0xEca9d2C5f81DD50DCe7493104467dC33362a436F) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| OpenTermLoanManager (Proxy) | [`0x2638802a78D6a97d0041CC7B52fb9A80994424cd`](https://etherscan.io/address/0x2638802a78D6a97d0041CC7B52fb9A80994424cd) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| WithdrawalManager (Proxy) | [`0x8761404E5b2F02fA87d62d20c39E38fD848F72Ce`](https://etherscan.io/address/0x8761404E5b2F02fA87d62d20c39E38fD848F72Ce) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| PoolDelegateCover (Proxy) | [`0xc6cfB7C88d1F072B92984adfcA19D3711C97B416`](https://etherscan.io/address/0xc6cfB7C88d1F072B92984adfcA19D3711C97B416) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+
 ## Auxiliary Contracts
 
 | Contract | Address | Commit Hash |
