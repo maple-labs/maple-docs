@@ -70,8 +70,8 @@
   * [Pool Creation](technical-resources/pools/pool-creation.md)
   * [PoolManager](technical-resources/pools/pool-manager.md)
   * [PoolDelegateCover](technical-resources/pools/pool-delegate-cover.md)
-  * [WithdrawalManager (Cyclical)](technical-resources/pools/withdrawal-manager-cyclical.md)
-  * [WithdrawalManager (Queue)](technical-resources/pools/withdrawal-manager-queue.md)
+  * [WithdrawalManager (Cyclical)](technical-resources/withdrawal-managers/withdrawal-manager-cyclical.md)
+  * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
   * Accounting
     * [Pool Accounting](technical-resources/pools/accounting/pool-accounting.md)
     * [Pool Exchange Rates](technical-resources/pools/accounting/pool-exchange-rates.md)
@@ -82,6 +82,8 @@
     * [Advance Payment Accounting](technical-resources/loan-managers/fixed-term-loan-manager/advance-global-payment-accounting.md)
     * [Accounting Examples](technical-resources/loan-managers/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
   * [Open Term Loan Manager](technical-resources/loan-managers/open-term-loan-manager/open-term-loan-manager.md)
+* Withdrawal Managers
+  * [Cyclical Withdrawal Manager](technical-resources/withdrawal-managers/cyclical-withdrawal-manager.md)
 * Singletons
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
