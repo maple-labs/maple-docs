@@ -6,7 +6,7 @@ The PoolDeployer contract facilitates the atomic deployment, initialization and 
   * some number of `LoanManager`s
 * `WithdrawalManager` (Cyclical or Queue)
 
-The `deployPool` function in the PoolDeployer contract is designed to handle the deployment of either cyclical or queue-based withdrawal managers, with the difference being in the configuration parameters used.
+The `deployPool` function in the PoolDeployer contract is designed to handle the deployment of either cyclical or queue-based withdrawal managers, with the difference being in the configuration parameters used (the functions are overloaded).
 
 # Pre-Requisite Transactions
 
@@ -20,9 +20,10 @@ The following pre-requisite configurations are necessary in order to deploy a Po
 6. The Pool Delegate does not own a `Pool` already.
 7. The Pool Asset is a valid asset in `MapleGlobals`.
 8. The `WithdrawalManager` withdrawal window is shorter than the cycle duration for cyclical based withdrawal manager.
-9. The required pool cover can be transferred from the Pool Delegate to the `PoolDelegateCover`.
+9. The start time for the first cycle for the cyclical based withdrawal manager is in the future.
+10. The required pool cover can be transferred from the Pool Delegate to the `PoolDelegateCover`.
 
-# Pool Deployment with cyclical based Withdrawal Manager
+# Pool Deployment with cycle based Withdrawal Manager
 
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
