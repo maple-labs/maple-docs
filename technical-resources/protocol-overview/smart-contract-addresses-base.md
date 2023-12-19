@@ -4,7 +4,8 @@
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
-| Globals (Proxy) | [`0x5A64417823E8382a7e8957E4411873FE758E73a8`](https://basescan.org/address/0x5A64417823E8382a7e8957E4411873FE758E73a8) | [`globals-v2 @ v3.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v3.0.0) |
+| Globals (Proxy) | [`0x7f3C3636208A18c7941BF051807db56864061465`](https://basescan.org/address/0x7f3C3636208A18c7941BF051807db56864061465) | [`globals-v2 @ v2.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v2.0.0)
+| Globals (Implementation) | [`0x5A64417823E8382a7e8957E4411873FE758E73a8`](https://basescan.org/address/0x5A64417823E8382a7e8957E4411873FE758E73a8) | [`globals-v3 @ v3.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v3.0.0) |
 
 ## Protocol Actor Addresses
 
