@@ -23,7 +23,7 @@ The following pre-requisite configurations are necessary in order to deploy a Po
 9. The start time for the first cycle for the cyclical based withdrawal manager is in the future.
 10. The required pool cover can be transferred from the Pool Delegate to the `PoolDelegateCover`.
 
-# Pool Deployment with cycle based Withdrawal Manager
+# Pool Deployment with the cycle based Withdrawal Manager
 
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
@@ -42,7 +42,7 @@ To deploy a Pool, `PoolDeployer` can be called with the following parameters:
   * `initialSupply` - The initial supply of pool tokens.
   * `startTime` - The current block's timestamp, in seconds, to denote start of the withdrawal cycle.
 
-# Pool Deployment with queue based Withdrawal Manager
+# Pool Deployment with the queue based Withdrawal Manager
 
 To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
