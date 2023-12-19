@@ -113,7 +113,7 @@ $$
 $$
 
 
-For an example of this in practice, please refer to [Example 3](./cyclical-withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
+For an example of this in practice, please refer to [Example 3](./withdrawal-manager-cyclical.md#example-3-partial-liquidity-changing-exchange-rate).
 
 ## Configuration Management
 

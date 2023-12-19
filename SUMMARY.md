@@ -81,7 +81,8 @@
     * [Accounting Examples](technical-resources/loan-managers/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
   * [Open Term Loan Manager](technical-resources/loan-managers/open-term-loan-manager/open-term-loan-manager.md)
 * Withdrawal Managers
-  * [Cyclical Withdrawal Manager](technical-resources/withdrawal-managers/cyclical-withdrawal-manager.md)
+  * [WithdrawalManager (Cyclical)](technical-resources/withdrawal-managers/withdrawal-manager-cyclical.md)
+  * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
 * Singletons
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
