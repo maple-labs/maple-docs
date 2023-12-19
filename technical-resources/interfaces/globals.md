@@ -1,4 +1,4 @@
-# MapleGlobals
+# Maple Globals
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `HUNDRED_PERCENT` 
+### `HUNDRED_PERCENT`
 
 
 
@@ -29,7 +29,7 @@
 
 <br />
 
-### `acceptGovernor` 
+### `acceptGovernor`
 
 Accepts the governorship if the caller is the &#x60;pendingGovernor&#x60;.
 
@@ -42,7 +42,7 @@ Accepts the governorship if the caller is the &#x60;pendingGovernor&#x60;.
 
 <br />
 
-### `activatePoolManager` 
+### `activatePoolManager`
 
 Activates the pool manager.
 
@@ -61,7 +61,7 @@ Activates the pool manager.
 
 <br />
 
-### `admin` 
+### `admin`
 
 Returns the proxy&#x27;s admin address.
 
@@ -83,7 +83,7 @@ Returns the proxy&#x27;s admin address.
 
 <br />
 
-### `bootstrapMint` 
+### `bootstrapMint`
 
 Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60; for a given pool asset.
 
@@ -111,7 +111,7 @@ Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 
 <br />
 
-### `canDeploy` 
+### `canDeploy`
 
 Gets whether a caller account can deploy from the factory calling this function.
 
@@ -139,7 +139,7 @@ Gets whether a caller account can deploy from the factory calling this function.
 
 <br />
 
-### `canDeployFrom` 
+### `canDeployFrom`
 
 Gets whether a caller account can deploy from a factory.
 
@@ -169,7 +169,7 @@ Gets whether a caller account can deploy from a factory.
 
 <br />
 
-### `defaultTimelockParameters` 
+### `defaultTimelockParameters`
 
 Gets the default timelock parameters.
 
@@ -193,7 +193,7 @@ Gets the default timelock parameters.
 
 <br />
 
-### `getLatestPrice` 
+### `getLatestPrice`
 
 Gets the latest price for an asset.
 
@@ -221,7 +221,7 @@ Gets the latest price for an asset.
 
 <br />
 
-### `governor` 
+### `governor`
 
 Gets governor address.
 
@@ -243,7 +243,7 @@ Gets governor address.
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 Returns the proxy&#x27;s implementation address.
 
@@ -265,7 +265,7 @@ Returns the proxy&#x27;s implementation address.
 
 <br />
 
-### `isBorrower` 
+### `isBorrower`
 
 Gets the validity of a borrower.
 
@@ -293,7 +293,7 @@ Gets the validity of a borrower.
 
 <br />
 
-### `isCollateralAsset` 
+### `isCollateralAsset`
 
 Gets the validity of a collateral asset.
 
@@ -321,7 +321,7 @@ Gets the validity of a collateral asset.
 
 <br />
 
-### `isContractPaused` 
+### `isContractPaused`
 
 Gets whether a contract is uniquely paused.
 
@@ -349,7 +349,7 @@ Gets whether a contract is uniquely paused.
 
 <br />
 
-### `isFactory` 
+### `isFactory`
 
 Gets the validity of a factory.
 
@@ -379,7 +379,7 @@ Gets the validity of a factory.
 
 <br />
 
-### `isFunctionPaused` 
+### `isFunctionPaused`
 
 Gets whether a contract&#x27;s function is paused.
 
@@ -407,7 +407,7 @@ Gets whether a contract&#x27;s function is paused.
 
 <br />
 
-### `isFunctionPaused` 
+### `isFunctionPaused`
 
 Gets whether a contract&#x27;s function is paused.
 
@@ -437,7 +437,7 @@ Gets whether a contract&#x27;s function is paused.
 
 <br />
 
-### `isFunctionUnpaused` 
+### `isFunctionUnpaused`
 
 Gets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
 
@@ -467,7 +467,7 @@ Gets whether a contract&#x27;s function is uniquely unpaused. A false does not i
 
 <br />
 
-### `isInstanceOf` 
+### `isInstanceOf`
 
 Gets wether an instance is of some instance key.
 
@@ -497,7 +497,7 @@ Gets wether an instance is of some instance key.
 
 <br />
 
-### `isPoolAsset` 
+### `isPoolAsset`
 
 Gets the validity of a pool asset.
 
@@ -525,7 +525,7 @@ Gets the validity of a pool asset.
 
 <br />
 
-### `isPoolDelegate` 
+### `isPoolDelegate`
 
 Gets the validity of a pool delegate.
 
@@ -553,7 +553,7 @@ Gets the validity of a pool delegate.
 
 <br />
 
-### `isPoolDeployer` 
+### `isPoolDeployer`
 
 Gets the validity of a pool deployer.
 
@@ -581,7 +581,7 @@ Gets the validity of a pool deployer.
 
 <br />
 
-### `isValidScheduledCall` 
+### `isValidScheduledCall`
 
 Checks if a call is scheduled.
 
@@ -615,7 +615,7 @@ Checks if a call is scheduled.
 
 <br />
 
-### `manualOverridePrice` 
+### `manualOverridePrice`
 
 Gets the manual override price for an asset.
 
@@ -643,7 +643,7 @@ Gets the manual override price for an asset.
 
 <br />
 
-### `mapleTreasury` 
+### `mapleTreasury`
 
 Gets maple treasury address.
 
@@ -665,7 +665,7 @@ Gets maple treasury address.
 
 <br />
 
-### `maxCoverLiquidationPercent` 
+### `maxCoverLiquidationPercent`
 
 Gets the maximum cover liquidation percent for a given pool manager.
 
@@ -693,7 +693,7 @@ Gets the maximum cover liquidation percent for a given pool manager.
 
 <br />
 
-### `migrationAdmin` 
+### `migrationAdmin`
 
 Gets the migration admin address.
 
@@ -715,7 +715,7 @@ Gets the migration admin address.
 
 <br />
 
-### `minCoverAmount` 
+### `minCoverAmount`
 
 Gets the minimum cover amount for a given pool manager.
 
@@ -743,7 +743,7 @@ Gets the minimum cover amount for a given pool manager.
 
 <br />
 
-### `operationalAdmin` 
+### `operationalAdmin`
 
 Gets the operational admin address.
 
@@ -765,7 +765,7 @@ Gets the operational admin address.
 
 <br />
 
-### `ownedPoolManager` 
+### `ownedPoolManager`
 
 Gets the address of the owner pool manager.
 
@@ -793,7 +793,7 @@ Gets the address of the owner pool manager.
 
 <br />
 
-### `pendingGovernor` 
+### `pendingGovernor`
 
 Gets the pending governor address.
 
@@ -815,7 +815,7 @@ Gets the pending governor address.
 
 <br />
 
-### `platformManagementFeeRate` 
+### `platformManagementFeeRate`
 
 Gets the platform management fee rate for a given pool manager.
 
@@ -843,7 +843,7 @@ Gets the platform management fee rate for a given pool manager.
 
 <br />
 
-### `platformOriginationFeeRate` 
+### `platformOriginationFeeRate`
 
 Gets the platform origination fee rate for a given pool manager.
 
@@ -871,7 +871,7 @@ Gets the platform origination fee rate for a given pool manager.
 
 <br />
 
-### `platformServiceFeeRate` 
+### `platformServiceFeeRate`
 
 Gets the platform service fee rate for a given pool manager.
 
@@ -899,7 +899,7 @@ Gets the platform service fee rate for a given pool manager.
 
 <br />
 
-### `poolDelegates` 
+### `poolDelegates`
 
 Gets pool delegate address information.
 
@@ -929,7 +929,7 @@ Gets pool delegate address information.
 
 <br />
 
-### `priceOracleOf` 
+### `priceOracleOf`
 
 Gets the address and maximum delay of the oracle for the given asset.
 
@@ -959,7 +959,7 @@ Gets the address and maximum delay of the oracle for the given asset.
 
 <br />
 
-### `protocolPaused` 
+### `protocolPaused`
 
 Gets the status of the protocol pause.
 
@@ -981,7 +981,7 @@ Gets the status of the protocol pause.
 
 <br />
 
-### `scheduleCall` 
+### `scheduleCall`
 
 Schedules a call to be executed.
 
@@ -1004,7 +1004,7 @@ Schedules a call to be executed.
 
 <br />
 
-### `scheduledCalls` 
+### `scheduledCalls`
 
 Gets the schedule calls for the parameters.
 
@@ -1038,7 +1038,7 @@ Gets the schedule calls for the parameters.
 
 <br />
 
-### `securityAdmin` 
+### `securityAdmin`
 
 Gets security admin address.
 
@@ -1060,7 +1060,7 @@ Gets security admin address.
 
 <br />
 
-### `setBootstrapMint` 
+### `setBootstrapMint`
 
 Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60;         to prevent an MEV-exploit vector against the first pool depositor.
 
@@ -1081,7 +1081,7 @@ Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 
 <br />
 
-### `setCanDeployFrom` 
+### `setCanDeployFrom`
 
 Sets whether an account can deploying an instance from a particular factory.
 
@@ -1104,7 +1104,7 @@ Sets whether an account can deploying an instance from a particular factory.
 
 <br />
 
-### `setContractPause` 
+### `setContractPause`
 
 Sets whether a contract is uniquely paused.
 
@@ -1125,7 +1125,7 @@ Sets whether a contract is uniquely paused.
 
 <br />
 
-### `setDefaultTimelockParameters` 
+### `setDefaultTimelockParameters`
 
 Sets the default time lock parameters.
 
@@ -1146,7 +1146,7 @@ Sets the default time lock parameters.
 
 <br />
 
-### `setFunctionUnpause` 
+### `setFunctionUnpause`
 
 Sets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
 
@@ -1169,7 +1169,7 @@ Sets whether a contract&#x27;s function is uniquely unpaused. A false does not i
 
 <br />
 
-### `setManualOverridePrice` 
+### `setManualOverridePrice`
 
 Sets the manual override price of the asset.
 
@@ -1190,7 +1190,7 @@ Sets the manual override price of the asset.
 
 <br />
 
-### `setMapleTreasury` 
+### `setMapleTreasury`
 
 Sets the address of the Maple treasury.
 
@@ -1209,7 +1209,7 @@ Sets the address of the Maple treasury.
 
 <br />
 
-### `setMaxCoverLiquidationPercent` 
+### `setMaxCoverLiquidationPercent`
 
 Sets the maximum cover liquidation percent for the given pool manager.
 
@@ -1230,7 +1230,7 @@ Sets the maximum cover liquidation percent for the given pool manager.
 
 <br />
 
-### `setMigrationAdmin` 
+### `setMigrationAdmin`
 
 Sets the address of the migration admin.
 
@@ -1249,7 +1249,7 @@ Sets the address of the migration admin.
 
 <br />
 
-### `setMinCoverAmount` 
+### `setMinCoverAmount`
 
 Sets the minimum cover amount for the given pool manager.
 
@@ -1270,7 +1270,7 @@ Sets the minimum cover amount for the given pool manager.
 
 <br />
 
-### `setOperationalAdmin` 
+### `setOperationalAdmin`
 
 Sets the address of the operational admin.
 
@@ -1289,7 +1289,7 @@ Sets the address of the operational admin.
 
 <br />
 
-### `setPendingGovernor` 
+### `setPendingGovernor`
 
 Sets the pending governor.
 
@@ -1308,7 +1308,7 @@ Sets the pending governor.
 
 <br />
 
-### `setPlatformManagementFeeRate` 
+### `setPlatformManagementFeeRate`
 
 Sets the platform management fee rate for the given pool manager.
 
@@ -1329,7 +1329,7 @@ Sets the platform management fee rate for the given pool manager.
 
 <br />
 
-### `setPlatformOriginationFeeRate` 
+### `setPlatformOriginationFeeRate`
 
 Sets the platform origination fee rate for the given pool manager.
 
@@ -1350,7 +1350,7 @@ Sets the platform origination fee rate for the given pool manager.
 
 <br />
 
-### `setPlatformServiceFeeRate` 
+### `setPlatformServiceFeeRate`
 
 Sets the platform service fee rate for the given pool manager.
 
@@ -1371,7 +1371,7 @@ Sets the platform service fee rate for the given pool manager.
 
 <br />
 
-### `setPriceOracle` 
+### `setPriceOracle`
 
 Sets the price oracle for the given asset.
 
@@ -1394,7 +1394,7 @@ Sets the price oracle for the given asset.
 
 <br />
 
-### `setProtocolPause` 
+### `setProtocolPause`
 
 Sets the protocol pause.
 
@@ -1413,7 +1413,7 @@ Sets the protocol pause.
 
 <br />
 
-### `setSecurityAdmin` 
+### `setSecurityAdmin`
 
 Sets the address of the security admin.
 
@@ -1432,7 +1432,7 @@ Sets the address of the security admin.
 
 <br />
 
-### `setTimelockWindow` 
+### `setTimelockWindow`
 
 Sets the timelock for the given contract.
 
@@ -1457,7 +1457,7 @@ Sets the timelock for the given contract.
 
 <br />
 
-### `setTimelockWindows` 
+### `setTimelockWindows`
 
 Sets the timelock for the many function ids in a contract.
 
@@ -1482,7 +1482,7 @@ Sets the timelock for the many function ids in a contract.
 
 <br />
 
-### `setValidBorrower` 
+### `setValidBorrower`
 
 Sets the validity of the borrower.
 
@@ -1503,7 +1503,7 @@ Sets the validity of the borrower.
 
 <br />
 
-### `setValidCollateralAsset` 
+### `setValidCollateralAsset`
 
 Sets the validity of a collateral asset.
 
@@ -1524,7 +1524,7 @@ Sets the validity of a collateral asset.
 
 <br />
 
-### `setValidInstanceOf` 
+### `setValidInstanceOf`
 
 Sets the validity of the instance.
 
@@ -1547,7 +1547,7 @@ Sets the validity of the instance.
 
 <br />
 
-### `setValidPoolAsset` 
+### `setValidPoolAsset`
 
 Sets the validity of the pool asset.
 
@@ -1568,7 +1568,7 @@ Sets the validity of the pool asset.
 
 <br />
 
-### `setValidPoolDelegate` 
+### `setValidPoolDelegate`
 
 Sets the validity of the pool delegate.
 
@@ -1589,7 +1589,7 @@ Sets the validity of the pool delegate.
 
 <br />
 
-### `setValidPoolDeployer` 
+### `setValidPoolDeployer`
 
 Sets the validity of the pool deployer.
 
@@ -1610,7 +1610,7 @@ Sets the validity of the pool deployer.
 
 <br />
 
-### `timelockParametersOf` 
+### `timelockParametersOf`
 
 Gets the time lock parameters for a given contract and function.
 
@@ -1642,7 +1642,7 @@ Gets the time lock parameters for a given contract and function.
 
 <br />
 
-### `transferOwnedPoolManager` 
+### `transferOwnedPoolManager`
 
 Transfer the ownership of the pool manager.
 
@@ -1663,7 +1663,7 @@ Transfer the ownership of the pool manager.
 
 <br />
 
-### `unscheduleCall` 
+### `unscheduleCall`
 
 Unschedules a call to be executed.
 
@@ -1688,7 +1688,7 @@ Unschedules a call to be executed.
 
 <br />
 
-### `unscheduleCall` 
+### `unscheduleCall`
 
 Unschedules a call to be executed.
 
