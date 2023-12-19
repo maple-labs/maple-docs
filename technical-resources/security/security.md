@@ -1,7 +1,7 @@
 # Audits
 
 ## December 2022 Release
-Maple Finance V2 went through 3 audits during its development for the December 2022 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
+The Maple protocol contracts went through 3 audits during its development for the December 2022 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to the launch of V2.
 
 | Auditor | Report Link |
 |---|---|
@@ -12,7 +12,7 @@ Maple Finance V2 went through 3 audits during its development for the December 2
 <br>
 
 ## June 2023 Release
-Maple Finance V2 went through 2 audits during its development for the June 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to release.
+The Maple protocol contracts went through 2 audits during its development for the June 2023 release, details of which you can find below. All relevant issues identified by auditors were addressed prior to release.
 
 | Auditor | Report Link |
 |---|---|
@@ -22,7 +22,7 @@ Maple Finance V2 went through 2 audits during its development for the June 2023 
 <br>
 
 ## December 2023 Release
-Maple protocol contracts went through 2 audits during its development for the December 2023 release. Details of these audits can be found below, and all relevant issues identified by auditors were addressed prior to release.
+The Maple protocol contracts went through 2 audits during its development for the December 2023 release. Details of these audits can be found below, and all relevant issues identified by auditors were addressed prior to release.
 
 | Auditor | Report Link |
 |---|---|
@@ -31,7 +31,7 @@ Maple protocol contracts went through 2 audits during its development for the De
 
 # Bug Bounty
 
-Maple V2 has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
+The Maple protocol has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
 
 # Invariants
 
