@@ -1,4 +1,4 @@
-# Maple Loan Factory
+# Maple Fixed Term Loan Factory
 
 MapleLoanFactory deploys Loan instances.
 

@@ -1,4 +1,4 @@
-# Maple Loan
+# Maple Fixed Term Loan
 
 MapleLoan implements a primitive loan with additional functionality, and is intended to be proxied.
 
