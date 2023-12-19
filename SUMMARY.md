@@ -95,6 +95,7 @@
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
   * [Open Term Loan Deployment](technical-resources/operations/open-term-loan-deployment.md)
+  * [December 2023 Deployment & Upgrade Procedure](technical-resources/operations/december-2023-release-deployment-and-upgrade.md)
 * Interfaces
   * [FixedTermLoan](technical-resources/interfaces/fixed-term-loan.md)
   * [FixedTermLoanFactory](technical-resources/interfaces/fixed-term-loan-factory.md)

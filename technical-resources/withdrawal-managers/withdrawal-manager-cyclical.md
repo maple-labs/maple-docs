@@ -121,6 +121,20 @@ The Pool Delegate can update the duration of the withdrawal cycle and/or window 
 
 Another capability that the PD has is to change the WithdrawalManager contract. Since this contract holds custody of users' LP tokens, it is crucial that no tokes are in the contract when this occurs.
 
+## Feature Updates
+
+### Configurable Start Time for Withdrawal Cycle
+
+This enhancement introduces the capability to predefine a future start time for the withdrawal cycle, updating the previous design where the cycle would commence concurrently with the pool deployment. This new feature empowers `poolDelegates` by eliminating the necessity to align their pool deployments with a specific time window.
+
+### Key points
+
+**Behavioural Adjustment in `getCurrentCycleId`**: The getter function `getCurrentCycleId` has been modified to return the identifier of the first cycle in scenarios where the current time precedes the predefined start time of the withdrawal cycle.
+
+**Redemption Requests prior to the start of the first cycle**: Redemptions requested before the start of the first cycle are added to the withdrawal manager as if they were requested in the first cycle.
+
+**Restriction on Past Start Times**: The system is designed to reject any attempts to set a start time that falls in the past.
+
 # Examples
 
 ## Example 1: Full Liquidity
