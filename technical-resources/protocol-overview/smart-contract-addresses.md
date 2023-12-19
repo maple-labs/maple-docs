@@ -195,7 +195,7 @@
 | WithdrawalManager (Proxy) | [`0x4a5f63D9425070785EB10f5a0C33E42F16BB8639`](https://etherscan.io/address/0x4a5f63D9425070785EB10f5a0C33E42F16BB8639) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0xd1a42064B7EE5525FdBb779170462abF24395D6F`](https://etherscan.io/address/0xd1a42064B7EE5525FdBb779170462abF24395D6F) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
-### Opportunistic High Yield (Maple Direct) USDC Contracts
+### Maple Direct Opportunistic USDC Contracts
 
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
