@@ -49,6 +49,10 @@ The `hasPermission` function evaluates whether access should be granted based on
 
 - Bitmap Matching Result: If the bitmaps match, access is granted. However, if there is no matching access is denied.
 
+## Important Considerations
+
+For `FUNCTION_LEVEL` and `POOL_LEVEL` permissions it's important that the bitmaps are set prior to the pool being set to the relevant permission level. This is because the `hasPermission` function will always return true if the bitmaps are not set. This is by design to allow certain functions to be permissionless such as transfers if required. 
+
 ## Invariants
 
 ```
