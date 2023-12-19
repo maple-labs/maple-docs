@@ -1,4 +1,4 @@
-# MaplePoolPermissionManager
+# Maple Pool Permission Manager
 
 
 
@@ -7,7 +7,7 @@
 
 ## Functions
 
-### `admin` 
+### `admin`
 
 Returns the proxy&#x27;s admin address.
 
@@ -29,7 +29,7 @@ Returns the proxy&#x27;s admin address.
 
 <br />
 
-### `configurePool` 
+### `configurePool`
 
 Configures the permissions of a pool.
 
@@ -54,7 +54,7 @@ Configures the permissions of a pool.
 
 <br />
 
-### `globals` 
+### `globals`
 
 Returns the address of the &#x60;MapleGlobals&#x60; contract.
 
@@ -76,7 +76,7 @@ Returns the address of the &#x60;MapleGlobals&#x60; contract.
 
 <br />
 
-### `hasPermission` 
+### `hasPermission`
 
 Checks if the lender has permission to interact with a pool.          The function identifier defines the function to check the permission for.
 
@@ -108,7 +108,7 @@ Checks if the lender has permission to interact with a pool.          The functi
 
 <br />
 
-### `hasPermission` 
+### `hasPermission`
 
 Checks if the lender has permission to interact with a pool.          The function identifier defines the function to check the permission for.
 
@@ -140,7 +140,7 @@ Checks if the lender has permission to interact with a pool.          The functi
 
 <br />
 
-### `implementation` 
+### `implementation`
 
 Returns the proxy&#x27;s implementation address.
 
@@ -162,7 +162,7 @@ Returns the proxy&#x27;s implementation address.
 
 <br />
 
-### `lenderAllowlist` 
+### `lenderAllowlist`
 
 Checks if a pool has allowlisted a lender.
 
@@ -192,7 +192,7 @@ Checks if a pool has allowlisted a lender.
 
 <br />
 
-### `lenderBitmaps` 
+### `lenderBitmaps`
 
 Returns the permission bitmap of a lender.
 
@@ -220,7 +220,7 @@ Returns the permission bitmap of a lender.
 
 <br />
 
-### `permissionAdmins` 
+### `permissionAdmins`
 
 Checks if the account is a permission admin.
 
@@ -248,7 +248,7 @@ Checks if the account is a permission admin.
 
 <br />
 
-### `permissionLevels` 
+### `permissionLevels`
 
 Returns the permission level of a pool.          Permission levels: private (0), function-level (1), pool-level (2), public (3)
 
@@ -276,7 +276,7 @@ Returns the permission level of a pool.          Permission levels: private (0),
 
 <br />
 
-### `poolBitmaps` 
+### `poolBitmaps`
 
 Returns a function-specific pool permission bitmap. Return the pool-level permission bitmap if the function identifier is zero.
 
@@ -306,7 +306,7 @@ Returns a function-specific pool permission bitmap. Return the pool-level permis
 
 <br />
 
-### `setLenderAllowlist` 
+### `setLenderAllowlist`
 
 Sets the allowlist status of one or more lenders.
 
@@ -329,7 +329,7 @@ Sets the allowlist status of one or more lenders.
 
 <br />
 
-### `setLenderBitmaps` 
+### `setLenderBitmaps`
 
 Sets the permission bitmaps of one or more lenders.
 
@@ -350,7 +350,7 @@ Sets the permission bitmaps of one or more lenders.
 
 <br />
 
-### `setPermissionAdmin` 
+### `setPermissionAdmin`
 
 Sets the permission admin status of an account.
 
@@ -371,7 +371,7 @@ Sets the permission admin status of an account.
 
 <br />
 
-### `setPoolBitmaps` 
+### `setPoolBitmaps`
 
 Sets the permission bitmaps of a pool.
 
@@ -394,7 +394,7 @@ Sets the permission bitmaps of a pool.
 
 <br />
 
-### `setPoolPermissionLevel` 
+### `setPoolPermissionLevel`
 
 Sets the permission level of a pool.          Permission levels: private (0), function-level (1), pool-level (2), public (3)          NOTE: Bitmaps must be set before setting the permission level to function-level (1) or pool-level (2).                Otherwise, the pool will be permissionless by default to un-set lenders.
 
