@@ -22,6 +22,10 @@ The [Governor](../admin-functions/governor-admin-actions.md) is a governance mul
 
 A Security Admin is an account that has the ability to call the emergency [pause function](../security/emergency-protocol-pause-function.md) that can pause every function in the protocol. This is only to be used in the case of critical incident response, during which action must be taken to prevent and/or stop damage from occurring to the protocol.
 
+## Operational Admin
+
+The Operational Admin is endowed with the authority to execute a subset of operational functions essential for the routine management of the protocol. It possesses limited powers compared to the Governor, ensuring a balance between operational efficiency and security.
+
 ## Keepers
 
 Keepers are external actors that are incentivized to perform liquidation when needed. Anyone can be a Keeper if they so wish, but the protocol only accepts actions that are within the constraints defined by the protocol. More details on the Liquidations [page](../loans/defaults.md).
