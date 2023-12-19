@@ -60,6 +60,7 @@
 | PoolManager | [`0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE`](https://etherscan.io/address/0x0055c00ba4Dec5ed545A5419C4d430daDa8cb1CE) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 | PoolManagerInitializer | [`0x252C44A1630095504E3D3972b9b296f5ED494911`](https://etherscan.io/address/0x252C44A1630095504E3D3972b9b296f5ED494911) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 | PoolManagerMigrator | [`0x9450d0D19802Ae0aDD44565752CDAB70E0A1C6ed`](https://etherscan.io/address/0x9450d0D19802Ae0aDD44565752CDAB70E0A1C6ed) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
+| PoolManagerMigrator (WM)| [`0x9d07A8373E9ABE5A430cCD161d6373e248D7778F`](https://etherscan.io/address/0x9d07A8373E9ABE5A430cCD161d6373e248D7778F) | [`pool-v2 @ v3.0.0`](https://github.com/maple-labs/pool-v2/releases/tag/v3.0.0) |
 
 ### WithdrawalManagerCyclical Contracts
 
