@@ -157,7 +157,7 @@ Gets the configuration of a given cycle id.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `config_` | `tuple` | `struct IWithdrawalManagerStorage.CycleConfig` | The configuration info corresponding to the cycle. |
+| 0 | `config_` | `tuple` | `struct IMapleWithdrawalManagerStorage.CycleConfig` | The configuration info corresponding to the cycle. |
 
 
 <br />
@@ -179,7 +179,7 @@ Gets the configuration of the current cycle id.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `config_` | `tuple` | `struct IWithdrawalManagerStorage.CycleConfig` | The configuration info corresponding to the cycle. |
+| 0 | `config_` | `tuple` | `struct IMapleWithdrawalManagerStorage.CycleConfig` | The configuration info corresponding to the cycle. |
 
 
 <br />
@@ -771,7 +771,7 @@ Upgrades a contract implementation to a specific version.         Access control
 
 ### `ConfigurationUpdated`
 
-Emitted when the withdrawal configuration is updated.
+
 
 ```solidity
     event ConfigurationUpdated(
@@ -786,11 +786,11 @@ Emitted when the withdrawal configuration is updated.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `configId_` | `uint256` | `uint256` | The identifier of the configuration. |
-| 1 | `initialCycleId_` | `uint64` | `uint64` | The identifier of the withdrawal cycle when the configuration takes effect. |
-| 2 | `initialCycleTime_` | `uint64` | `uint64` | The timestamp of the beginning of the withdrawal cycle when the configuration takes effect. |
-| 3 | `cycleDuration_` | `uint64` | `uint64` | The new duration of the withdrawal cycle. |
-| 4 | `windowDuration_` | `uint64` | `uint64` | The new duration of the withdrawal window. |
+| 0 | `configId_` | `uint256` | `uint256` |  |
+| 1 | `initialCycleId_` | `uint64` | `uint64` |  |
+| 2 | `initialCycleTime_` | `uint64` | `uint64` |  |
+| 3 | `cycleDuration_` | `uint64` | `uint64` |  |
+| 4 | `windowDuration_` | `uint64` | `uint64` |  |
 
 <br />
 
@@ -815,7 +815,7 @@ The instance was upgraded.
 
 ### `WithdrawalCancelled`
 
-Emitted when a withdrawal request is cancelled.
+
 
 ```solidity
     event WithdrawalCancelled(
@@ -826,13 +826,13 @@ Emitted when a withdrawal request is cancelled.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account whose withdrawal request has been cancelled. |
+| 0 | `account_` | `address` | `address` |  |
 
 <br />
 
 ### `WithdrawalProcessed`
 
-Emitted when a withdrawal request is processed.
+
 
 ```solidity
     event WithdrawalProcessed(
@@ -845,15 +845,15 @@ Emitted when a withdrawal request is processed.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account processing their withdrawal request. |
-| 1 | `sharesToRedeem_` | `uint256` | `uint256` | Amount of shares that the account will redeem. |
-| 2 | `assetsToWithdraw_` | `uint256` | `uint256` | Amount of assets that will be withdrawn from the pool. |
+| 0 | `account_` | `address` | `address` |  |
+| 1 | `sharesToRedeem_` | `uint256` | `uint256` |  |
+| 2 | `assetsToWithdraw_` | `uint256` | `uint256` |  |
 
 <br />
 
 ### `WithdrawalUpdated`
 
-Emitted when a withdrawal request is updated.
+
 
 ```solidity
     event WithdrawalUpdated(
@@ -867,10 +867,10 @@ Emitted when a withdrawal request is updated.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account whose request has been updated. |
-| 1 | `lockedShares_` | `uint256` | `uint256` | Total amount of shares the account has locked. |
-| 2 | `windowStart_` | `uint64` | `uint64` | Time when the withdrawal window for the withdrawal request will begin. |
-| 3 | `windowEnd_` | `uint64` | `uint64` | Time when the withdrawal window for the withdrawal request will end. |
+| 0 | `account_` | `address` | `address` |  |
+| 1 | `lockedShares_` | `uint256` | `uint256` |  |
+| 2 | `windowStart_` | `uint64` | `uint64` |  |
+| 3 | `windowEnd_` | `uint64` | `uint64` |  |
 
 <br />
 

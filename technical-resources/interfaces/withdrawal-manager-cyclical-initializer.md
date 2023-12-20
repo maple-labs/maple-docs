@@ -52,6 +52,7 @@ Gets the configuration for a given config id.
         pure
         returns (
             address pool_,
+            uint256 startTime_,
             uint256 cycleDuration_,
             uint256 windowDuration_
         );
@@ -67,8 +68,9 @@ Gets the configuration for a given config id.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `pool_` | `address` | `address` |  |
-| 1 | `cycleDuration_` | `uint256` | `uint256` |  |
-| 2 | `windowDuration_` | `uint256` | `uint256` |  |
+| 1 | `startTime_` | `uint256` | `uint256` |  |
+| 2 | `cycleDuration_` | `uint256` | `uint256` |  |
+| 3 | `windowDuration_` | `uint256` | `uint256` |  |
 
 
 <br />
@@ -80,6 +82,7 @@ Gets the configuration for a given config id.
 ```solidity
     function encodeArguments(
         address pool_,
+        uint256 startTime_,
         uint256 cycleDuration_,
         uint256 windowDuration_
     )
@@ -93,8 +96,9 @@ Gets the configuration for a given config id.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `pool_` | `address` | `address` |  |
-| 1 | `cycleDuration_` | `uint256` | `uint256` |  |
-| 2 | `windowDuration_` | `uint256` | `uint256` |  |
+| 1 | `startTime_` | `uint256` | `uint256` |  |
+| 2 | `cycleDuration_` | `uint256` | `uint256` |  |
+| 3 | `windowDuration_` | `uint256` | `uint256` |  |
 
 
 #### Return Values:

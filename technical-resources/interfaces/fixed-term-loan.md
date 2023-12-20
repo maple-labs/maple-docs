@@ -1,6 +1,6 @@
 # Maple Fixed Term Loan
 
-
+MapleLoan implements a primitive loan with additional functionality, and is intended to be proxied.
 
 <br />
 
@@ -436,7 +436,7 @@ Get the additional collateral to be posted to drawdown some amount.
 #### Return Values:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateral_` | `uint256` | `uint256` | The additional collateral that must be posted, if any. |
+| 0 | `collateral_` | `uint256` | `uint256` |  |
 
 
 <br />

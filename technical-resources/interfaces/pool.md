@@ -14,6 +14,7 @@
         address manager_,
         address asset_,
         address destination_,
+        uint256 bootstrapMint_,
         uint256 initialSupply_,
         string name_,
         string symbol_
@@ -26,15 +27,38 @@
 | 0 | `manager_` | `address` | `address` |  |
 | 1 | `asset_` | `address` | `address` |  |
 | 2 | `destination_` | `address` | `address` |  |
-| 3 | `initialSupply_` | `uint256` | `uint256` |  |
-| 4 | `name_` | `string` | `string` | The name of the token. |
-| 5 | `symbol_` | `string` | `string` | The symbol of the token. |
+| 3 | `bootstrapMint_` | `uint256` | `uint256` |  |
+| 4 | `initialSupply_` | `uint256` | `uint256` |  |
+| 5 | `name_` | `string` | `string` | The name of the token. |
+| 6 | `symbol_` | `string` | `string` | The symbol of the token. |
 
 
 <br />
 
 
 ## Functions
+
+### `BOOTSTRAP_MINT`
+
+The amount of shares that will be burned during the first deposit/mint.
+
+```solidity
+    function BOOTSTRAP_MINT()
+        view
+        returns (
+            uint256
+        );
+```
+
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 |  | `uint256` | `uint256` |  |
+
+
+<br />
 
 ### `DOMAIN_SEPARATOR`
 
@@ -246,6 +270,34 @@ The amount of &#x60;assets_&#x60; the &#x60;shares_&#x60; are currently equivale
 
 <br />
 
+### `convertToExitAssets`
+
+Returns the amount of exit assets for the input amount.
+
+```solidity
+    function convertToExitAssets(
+        uint256 shares_
+    )
+        view
+        returns (
+            uint256 assets_
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to convert to assets. |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `assets_` | `uint256` | `uint256` | Amount of assets able to be exited. |
+
+
+<br />
+
 ### `convertToExitShares`
 
 Returns the amount of exit shares for the input amount.
@@ -263,7 +315,7 @@ Returns the amount of exit shares for the input amount.
 #### Parameters:
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | Address of the account. |
+| 0 | `amount_` | `uint256` | `uint256` |  |
 
 
 #### Return Values:
@@ -739,7 +791,7 @@ Approve by signature.
 
 ### `previewDeposit`
 
-Allows an on-chain or off-chain user to simulate the effects of their deposit at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of shares that would be minted in a &#x60;deposit&#x60; call in the same transaction.          MUST NOT account for deposit limits like those returned from &#x60;maxDeposit&#x60; and should always act as though the deposit would be accepted.          MUST NOT revert.
+Allows an on-chain or off-chain user to simulate the effects of their deposit at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of shares that would be minted in a &#x60;deposit&#x60; call in the same transaction.          MUST NOT account for deposit limits like those returned from &#x60;maxDeposit&#x60; and should always act as though the deposit would be accepted.
 
 ```solidity
     function previewDeposit(
@@ -767,7 +819,7 @@ Allows an on-chain or off-chain user to simulate the effects of their deposit at
 
 ### `previewMint`
 
-Allows an on-chain or off-chain user to simulate the effects of their mint at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of assets that would be deposited in a &#x60;mint&#x60; call in the same transaction.          MUST NOT account for mint limits like those returned from &#x60;maxMint&#x60; and should always act as though the minting would be accepted.          MUST NOT revert.
+Allows an on-chain or off-chain user to simulate the effects of their mint at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of assets that would be deposited in a &#x60;mint&#x60; call in the same transaction.          MUST NOT account for mint limits like those returned from &#x60;maxMint&#x60; and should always act as though the minting would be accepted.
 
 ```solidity
     function previewMint(
@@ -795,7 +847,7 @@ Allows an on-chain or off-chain user to simulate the effects of their mint at th
 
 ### `previewRedeem`
 
-Allows an on-chain or off-chain user to simulate the effects of their redemption at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of assets that would be withdrawn in a &#x60;redeem&#x60; call in the same transaction.          MUST NOT account for redemption limits like those returned from &#x60;maxRedeem&#x60; and should always act as though the redemption would be accepted.          MUST NOT revert.
+Allows an on-chain or off-chain user to simulate the effects of their redemption at the current block, given current on-chain conditions.          MUST return as close to and no more than the exact amount of assets that would be withdrawn in a &#x60;redeem&#x60; call in the same transaction.          MUST NOT account for redemption limits like those returned from &#x60;maxRedeem&#x60; and should always act as though the redemption would be accepted.
 
 ```solidity
     function previewRedeem(
@@ -823,7 +875,7 @@ Allows an on-chain or off-chain user to simulate the effects of their redemption
 
 ### `previewWithdraw`
 
-Allows an on-chain or off-chain user to simulate the effects of their withdrawal at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of shares that would be burned in a &#x60;withdraw&#x60; call in the same transaction.          MUST NOT account for withdrawal limits like those returned from &#x60;maxWithdraw&#x60; and should always act as though the withdrawal would be accepted.          MUST NOT revert.
+Allows an on-chain or off-chain user to simulate the effects of their withdrawal at the current block, given current on-chain conditions.          MUST return as close to and no fewer than the exact amount of shares that would be burned in a &#x60;withdraw&#x60; call in the same transaction.          MUST NOT account for withdrawal limits like those returned from &#x60;maxWithdraw&#x60; and should always act as though the withdrawal would be accepted.
 
 ```solidity
     function previewWithdraw(
@@ -883,7 +935,7 @@ Burns &#x60;shares_&#x60; from &#x60;owner_&#x60; and sends &#x60;assets_&#
 
 ### `removeShares`
 
-Requests a redemption of shares from the pool.
+Removes shares from the withdrawal mechanism, can only be called after the beginning of the withdrawal window has passed.
 
 ```solidity
     function removeShares(
@@ -1174,6 +1226,31 @@ Emitted when one account has set the allowance of another account over their tok
 | 0 | `owner_` | `address` | `address` | Account that tokens are approved from. |
 | 1 | `spender_` | `address` | `address` | Account that tokens are approved for. |
 | 2 | `amount_` | `uint256` | `uint256` | Amount of tokens that have been approved. |
+
+<br />
+
+### `BootstrapMintPerformed`
+
+Initial shares amount was minted to the zero address to prevent the first depositor frontrunning exploit.
+
+```solidity
+    event BootstrapMintPerformed(
+        address caller_,
+        address receiver_,
+        uint256 assets_,
+        uint256 shares_,
+        uint256 bootStrapMintAmount_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `caller_` | `address` | `address` | The caller of the function that emitted the &#x60;BootstrapMintPerformed&#x60; event. |
+| 1 | `receiver_` | `address` | `address` | The user that was minted the shares. |
+| 2 | `assets_` | `uint256` | `uint256` | The amount of assets deposited. |
+| 3 | `shares_` | `uint256` | `uint256` | The amount of shares that would have been minted to the user if it was not the first deposit. |
+| 4 | `bootStrapMintAmount_` | `uint256` | `uint256` | The amount of shares that was minted to the zero address to protect the first depositor. |
 
 <br />
 
