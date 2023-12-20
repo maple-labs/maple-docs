@@ -14,6 +14,8 @@
 | -------- | ------- |
 | Governor | [`0x0D8b2C1F11c5f9cD51de6dB3b256C1e3b0800200`](https://etherscan.io/address/0x0D8b2C1F11c5f9cD51de6dB3b256C1e3b0800200) |
 | SecurityAdmin | [`0x6b1A78C1943b03086F7Ee53360f9b0672bD60818`](https://etherscan.io/address/0x6b1A78C1943b03086F7Ee53360f9b0672bD60818) |
+| Operational Admin | [`0xCe1cE7c7F436DCc4E28Bc8bf86115514d3DC34E8`](https://etherscan.io/address/0xCe1cE7c7F436DCc4E28Bc8bf86115514d3DC34E8) |
+
 
 ## Latest Proxy Implementation & Initializer Contracts
 
