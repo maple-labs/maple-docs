@@ -5,7 +5,7 @@
 | Contract | Address | Commit Hash |
 | -------- | ------- | ----------- |
 | Globals (Proxy) | [`0x804a6F5F667170F545Bf14e5DDB48C70B788390C`](https://etherscan.io/address/0x804a6F5F667170F545Bf14e5DDB48C70B788390C) | [`non-transparent-proxy @ v1.0.0`](https://github.com/maple-labs/non-transparent-proxy/releases/tag/v1.0.0) |
-| Globals (Implementation) | [`0x5A64417823E8382a7e8957E4411873FE758E73a8`](https://etherscan.io/address/0x5A64417823E8382a7e8957E4411873FE758E73a8) | [`globals-v2 @ v3.0.0`](https://github.com/maple-labs/globals-v2-private/releases/tag/v3.0.0) |
+| Globals (Implementation) | [`0x5A64417823E8382a7e8957E4411873FE758E73a8`](https://etherscan.io/address/0x5A64417823E8382a7e8957E4411873FE758E73a8) | [`globals-v2 @ v3.0.0`](https://github.com/maple-labs/globals-v2/releases/tag/v3.0.0) |
 | Treasury | [`0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19`](https://etherscan.io/address/0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19) | [`maple-core @ v1.0.0`](https://github.com/maple-labs/maple-core/releases/tag/v1.0.0) |
 
 ## Protocol Actor Addresses
@@ -14,6 +14,8 @@
 | -------- | ------- |
 | Governor | [`0x0D8b2C1F11c5f9cD51de6dB3b256C1e3b0800200`](https://etherscan.io/address/0x0D8b2C1F11c5f9cD51de6dB3b256C1e3b0800200) |
 | SecurityAdmin | [`0x6b1A78C1943b03086F7Ee53360f9b0672bD60818`](https://etherscan.io/address/0x6b1A78C1943b03086F7Ee53360f9b0672bD60818) |
+| Operational Admin | [`0xCe1cE7c7F436DCc4E28Bc8bf86115514d3DC34E8`](https://etherscan.io/address/0xCe1cE7c7F436DCc4E28Bc8bf86115514d3DC34E8) |
+
 
 ## Latest Proxy Implementation & Initializer Contracts
 
