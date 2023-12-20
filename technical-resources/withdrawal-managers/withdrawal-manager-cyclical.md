@@ -1,6 +1,6 @@
 # Overview
 
-The process of withdrawing assets that have been deposited into a Maple pool is managed by the `WithdrawalManager`. The `WithdrawalManager` holds custody of user's LP tokens and allows them to withdraw at specified time intervals ("**Withdrawal Window**") after waiting a minimum of a full **Withdrawal Cycle**. The purpose of this mechanism is to allow for users to get a fair distribution of cash in the event of partial liquidity in the system. This is done by grouping users into cycles so that pro-rata distributions of available cash can be performed.
+The `WithdrawalManager` holds custody of user's LP tokens and allows them to withdraw at specified time intervals ("**Withdrawal Window**") after waiting a minimum of a full **Withdrawal Cycle**. The purpose of this mechanism is to allow for users to get a fair distribution of cash in the event of partial liquidity in the system. This is done by grouping users into cycles so that pro-rata distributions of available cash can be performed.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44272939/196679371-65d27dc2-5c89-40fc-88d6-55985b888221.svg" height="1000" />
@@ -113,13 +113,27 @@ $$
 $$
 
 
-For an example of this in practice, please refer to [Example 3](./withdrawal-manager.md#example-3-partial-liquidity-changing-exchange-rate).
+For an example of this in practice, please refer to [Example 3](./withdrawal-manager-cyclical.md#example-3-partial-liquidity-changing-exchange-rate).
 
 ## Configuration Management
 
 The Pool Delegate can update the duration of the withdrawal cycle and/or window by calling `setExitConfig()` and passing in the new parameters. This change will only take effect after the current and two following withdrawal cycles have elapsed, in order to prevent conflicts between pending and future withdrawals.
 
 Another capability that the PD has is to change the WithdrawalManager contract. Since this contract holds custody of users' LP tokens, it is crucial that no tokes are in the contract when this occurs.
+
+## Feature Updates
+
+### Configurable Start Time for Withdrawal Cycle
+
+This enhancement introduces the capability to predefine a future start time for the withdrawal cycle, updating the previous design where the cycle would commence concurrently with the pool deployment. This new feature empowers `poolDelegates` by eliminating the necessity to align their pool deployments with a specific time window.
+
+### Key points
+
+**Behavioural Adjustment in `getCurrentCycleId`**: The getter function `getCurrentCycleId` has been modified to return the identifier of the first cycle in scenarios where the current time precedes the predefined start time of the withdrawal cycle.
+
+**Redemption Requests prior to the start of the first cycle**: Redemptions requested before the start of the first cycle are added to the withdrawal manager as if they were requested in the first cycle.
+
+**Restriction on Past Start Times**: The system is designed to reject any attempts to set a start time that falls in the past.
 
 # Examples
 

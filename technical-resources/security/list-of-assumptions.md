@@ -16,9 +16,10 @@ Pool Delegates have to go through a KYC process and have to get onboarded to the
 
 Since the oracle price is used in the liquidation module, it is assumed that these prices are accurate and cannot be exploited (e.g., flash loan oracle manipulation is impossible with an offchain oracle source).
 
-### 5. The Governor is a trusted actor.
+### 5. The Governor & Operational Admin are trusted actors.
 
-The Governor multisig is held by founders and partners of the protocol, that are heavily incentivized to act in the protocol's best interest.
+The Governor multisig is held by founders and partners of the protocol, that are heavily incentivized to act in the protocol's best interest. Likewise
+the Operational Admin is held by the Maple team, which is also heavily incentivized to act in the protocol's best interest.
 
 ### 6. Loans are expected to be instantiated with reasonable terms.
 

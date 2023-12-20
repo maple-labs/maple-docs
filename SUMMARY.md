@@ -70,7 +70,6 @@
   * [Pool Creation](technical-resources/pools/pool-creation.md)
   * [PoolManager](technical-resources/pools/pool-manager.md)
   * [PoolDelegateCover](technical-resources/pools/pool-delegate-cover.md)
-  * [WithdrawalManager](technical-resources/pools/withdrawal-manager.md)
   * Accounting
     * [Pool Accounting](technical-resources/pools/accounting/pool-accounting.md)
     * [Pool Exchange Rates](technical-resources/pools/accounting/pool-exchange-rates.md)
@@ -81,10 +80,14 @@
     * [Advance Payment Accounting](technical-resources/loan-managers/fixed-term-loan-manager/advance-global-payment-accounting.md)
     * [Accounting Examples](technical-resources/loan-managers/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
   * [Open Term Loan Manager](technical-resources/loan-managers/open-term-loan-manager/open-term-loan-manager.md)
+* Withdrawal Managers
+  * [WithdrawalManager (Cyclical)](technical-resources/withdrawal-managers/withdrawal-manager-cyclical.md)
+  * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
 * Singletons
   * [Globals](technical-resources/singletons/globals.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
   * [Oracles](technical-resources/singletons/oracles.md)
+  * [Pool Permission Manager](technical-resources/singletons/pool-permission-manager.md)
 * Admin Functions
   * [Governor Admin Actions](technical-resources/admin-functions/governor-admin-actions.md)
   * [Pool Delegate Admin Actions](technical-resources/admin-functions/pool-delegate-admin-actions.md)
@@ -92,6 +95,7 @@
 * Operations
   * [Protocol Deployment](technical-resources/operations/protocol-deployment.md)
   * [Open Term Loan Deployment](technical-resources/operations/open-term-loan-deployment.md)
+  * [December 2023 Deployment & Upgrade Procedure](technical-resources/operations/december-2023-release-deployment-and-upgrade.md)
 * Interfaces
   * [FixedTermLoan](technical-resources/interfaces/fixed-term-loan.md)
   * [FixedTermLoanFactory](technical-resources/interfaces/fixed-term-loan-factory.md)
@@ -118,9 +122,13 @@
   * [PoolManager](technical-resources/interfaces/pool-manager.md)
   * [PoolManagerFactory](technical-resources/interfaces/pool-manager-factory.md)
   * [PoolManagerInitializer](technical-resources/interfaces/pool-manager-initializer.md)
-  * [WithdrawalManager](technical-resources/interfaces/withdrawal-manager.md)
-  * [WithdrawalManagerFactory](technical-resources/interfaces/withdrawal-manager-factory.md)
-  * [WithdrawalManagerInitializer](technical-resources/interfaces/withdrawal-manager-initializer.md)
+  * [PoolPermissionManager](technical-resources/interfaces/pool-permission-manager.md)
+  * [WithdrawalManager (Cyclical)](technical-resources/interfaces/withdrawal-manager-cyclical.md)
+  * [WithdrawalManagerFactory (Cyclical)](technical-resources/interfaces/withdrawal-manager-cylical-factory.md)
+  * [WithdrawalManagerInitializer (Cyclical)](technical-resources/interfaces/withdrawal-manager-cyclical-initializer.md)
+  * [WithdrawalManager (Queue)](technical-resources/interfaces/withdrawal-manager-queue.md)
+  * [WithdrawalManagerFactory (Queue)](technical-resources/interfaces/withdrawal-manager-queue-factory.md)
+  * [WithdrawalManagerInitializer (Queue)](technical-resources/interfaces/withdrawal-manager-queue-initializer.md)
 * MPLv2
   * [Architectural Overview](technical-resources/mplv2/architecture-overview.md)
   * [Base ERC20 Structure](technical-resources/mplv2/base-ERC20-structure.md)

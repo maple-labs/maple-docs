@@ -42,7 +42,22 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `impairLoan`
 * `removeLoanImpairment`
 
-## WithdrawalManager
+## Pool Permission Manager
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setLenderBitmaps`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
+## Withdrawal Manager (Cyclical)
 
 * `upgrade`
 * `setExitConfig`
+
+## Withdrawal Manager (Queue)
+
+* `upgrade`
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`

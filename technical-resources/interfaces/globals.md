@@ -695,7 +695,7 @@ Gets the maximum cover liquidation percent for a given pool manager.
 
 ### `migrationAdmin`
 
-Gets migration admin address.
+Gets the migration admin address.
 
 ```solidity
     function migrationAdmin()
@@ -743,24 +743,18 @@ Gets the minimum cover amount for a given pool manager.
 
 <br />
 
-### `oracleFor`
+### `operationalAdmin`
 
-Gets the address of the oracle for the given asset.
+Gets the operational admin address.
 
 ```solidity
-    function oracleFor(
-        address
-    )
+    function operationalAdmin()
         view
         returns (
             address
         );
 ```
 
-#### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
 
 #### Return Values:
@@ -931,6 +925,36 @@ Gets pool delegate address information.
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `ownedPoolManager` | `address` | `address` | The address of the pool manager owned by the pool delegate. |
 | 1 | `isPoolDelegate` | `bool` | `bool` |   A boolean indication weather or not the address passed is a current pool delegate. |
+
+
+<br />
+
+### `priceOracleOf`
+
+Gets the address and maximum delay of the oracle for the given asset.
+
+```solidity
+    function priceOracleOf(
+        address
+    )
+        view
+        returns (
+            address oracle,
+            uint96 maxDelay
+        );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `` | `address` | `address` |  |
+
+
+#### Return Values:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `oracle` | `address` | `address` |   The address of the oracle. |
+| 1 | `maxDelay` | `uint96` | `uint96` | The maximum delay of the oracle. |
 
 
 <br />
@@ -1246,6 +1270,25 @@ Sets the minimum cover amount for the given pool manager.
 
 <br />
 
+### `setOperationalAdmin`
+
+Sets the address of the operational admin.
+
+```solidity
+    function setOperationalAdmin(
+        address operationalAdmin_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `operationalAdmin_` | `address` | `address` | The address of the operational admin. |
+
+
+<br />
+
 ### `setPendingGovernor`
 
 Sets the pending governor.
@@ -1335,7 +1378,8 @@ Sets the price oracle for the given asset.
 ```solidity
     function setPriceOracle(
         address asset_,
-        address oracle_
+        address oracle_,
+        uint96 maxDelay_
     )
         nonpayable;
 ```
@@ -1344,7 +1388,8 @@ Sets the price oracle for the given asset.
 | Index | Name | Type | Internal Type | Description |
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `asset_` | `address` | `address` | The address of the asset to set the oracle for. |
-| 1 | `oracle_` | `address` | `address` |  |
+| 1 | `oracle_` | `address` | `address` | The address of the oracle to set for the asset. |
+| 2 | `maxDelay_` | `uint96` | `uint96` | Maximum delay set to check for stale price. |
 
 
 <br />
@@ -1940,6 +1985,25 @@ The minimum cover amount for the given pool manager has been set.
 
 <br />
 
+### `OperationalAdminSet`
+
+The operational admin was set.
+
+```solidity
+    event OperationalAdminSet(
+        address previousOperationalAdmin_,
+        address currentOperationalAdmin_
+    );
+```
+
+#### Parameters:
+| Index | Name | Type | Internal Type | Description |
+| :---: | :--: | :--: | :-----------: | :---------- |
+| 0 | `previousOperationalAdmin_` | `address` | `address` | The address of the previous operational admin. |
+| 1 | `currentOperationalAdmin_` | `address` | `address` | The address of the new operational admin. |
+
+<br />
+
 ### `PendingGovernorSet`
 
 The pending governor has been set.
@@ -2061,7 +2125,8 @@ The oracle for an asset has been set.
 ```solidity
     event PriceOracleSet(
         address asset_,
-        address oracle_
+        address oracle_,
+        uint96 maxDelay_
     );
 ```
 
@@ -2070,6 +2135,7 @@ The oracle for an asset has been set.
 | :---: | :--: | :--: | :-----------: | :---------- |
 | 0 | `asset_` | `address` | `address` | The address of the asset. |
 | 1 | `oracle_` | `address` | `address` | The address of the oracle. |
+| 2 | `maxDelay_` | `uint96` | `uint96` | The maximum delay of the oracle. |
 
 <br />
 
