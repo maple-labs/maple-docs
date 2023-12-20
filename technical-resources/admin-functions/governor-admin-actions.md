@@ -18,6 +18,7 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `setMaxCoverLiquidationPercent`
 * `setMigrationAdmin`
 * `setMinCoverAmount`
+* `setOperationalAdmin`
 * `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
@@ -56,6 +57,24 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 
 * `impairLoan`
 * `removeLoanImpairment`
+
+## Pool Permission Manager
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setLenderBitmaps`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
+## Withdrawal Manager (Cyclical)
+
+* `setExitConfig`
+
+## Withdrawal Manager (Queue)
+
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
 
 ## Upgrading Contracts
 
