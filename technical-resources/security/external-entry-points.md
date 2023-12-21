@@ -124,6 +124,37 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `transferOwnedPoolManager`
 
+### PoolPermissionManager
+
+**Governor Permissioned Functions**
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setLenderBitmaps`
+* `setPermissionAdmin`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
+**Operational Admin Permissioned Functions**
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setLenderBitmaps`
+* `setPermissionAdmin`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
+**Permission Admin Permissioned Functions**
+
+* `setLenderBitmaps`
+
+**Pool Delegate Permissioned Functions**
+
+* `configurePool`
+* `setLenderAllowlist`
+* `setPoolBitmaps`
+* `setPoolPermissionLevel`
+
 ### PoolManager
 
 **Factory Permissioned Functions**
@@ -220,11 +251,60 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `claim`
 
-### WithdrawalManager
+### WithdrawalManager (Cyclical)
+
+**Governor only functionality**
+
+* `setExitConfig`
+
+**Operational Admin only functionality**
+
+* `setExitConfig`
 
 **Pool Delegate only functionality**
 
 * `setExitConfig`
+
+### WithdrawalManager (Queue)
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Governor Permissioned Functions**
+
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
+
+**Operational Admin Permission Functions**
+
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
+
+**Pool Delegate Permissioned Functions**
+
+* `upgrade`
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
+
+**Pool Manager Permissioned Functions**
+
+* `addShares`
+* `processExit`
+* `removeShares`
+
+**Redeemer Permissioned Functions**
+
+* `processRedemptions`
+* `removeShares`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
 
 ### OpenTermLoan
 
