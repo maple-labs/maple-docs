@@ -185,7 +185,7 @@ The User may not use the Interface if the User is a citizen, resident, or member
 
 If the Interface may contain links to other sites and resources provided by third parties, these links are provided for convenience only. This includes links contained in advertisements, including banner advertisements and sponsored links. We have no control over the contents of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from the User’s use of them. If the User decides to access any of the third-party websites linked to this Interface, the User does so entirely at its own risk and subject to the terms and conditions of use for such websites.
 
-**Pool specific Terms & Conditions.**
+**20. Pool specific Terms & Conditions.**
 
 The User agrees that
 * That the User is in full control of the Wallet Addresses provided in the Maple web interface.
