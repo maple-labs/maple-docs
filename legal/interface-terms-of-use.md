@@ -4,7 +4,7 @@ description: Maple Labs Pty Ltd
 
 # Interface Terms of Use
 
-Last Modified: December 8, 2022
+Last Modified: January 5, 2024
 
 Welcome to the Maple website and Maple Interface. The Following Terms of Use govern user access to and use of [https://www.maple.finance/](https://www.maple.finance/) and app.maple.finance (collectively, the “Interface”). &#x20;
 
@@ -29,7 +29,6 @@ Notwithstanding the above, we will seek your consent to future modifications to 
 **3. Electronic Communication**
 
 We may be required or choose to provide certain communications to User in written form. By agreeing to the Terms of Use, User consents to the delivery of those communications in electronic form, including e-mail or other electronic message.
-
 User agrees that all terms and conditions, disclosures, or agreements provided by Company electronically satisfy any legal requirement such communications would satisfy if they were provided in non-electronic writing. User waives any rights to require an original, wet, non-electronic signature, to the extent that such waiver is not prohibited under applicable law.
 
 **4. Accessing the Interface and User Security.**
@@ -138,15 +137,11 @@ All information or content provided or displayed by the Interface is for informa
 
 The User understands that we cannot and do not guarantee or warrant that files available for downloading from the internet or the Interface will be free of viruses or other destructive code. The User is responsible for implementing sufficient procedures and checkpoints to satisfy the User’s particular requirements for (1) an appropriate Web3 Utility; (2) anti-virus protection and accuracy of data input and output; and (3) maintaining a means external to our site for any reconstruction of any lost data. TO THE FULLEST EXTENT PROVIDED BY LAW, WE WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY A DISTRIBUTED DENIAL-OF-SERVICE ATTACK, VIRUSES, OR OTHER TECHNOLOGICALLY HARMFUL MATERIAL THAT MAY INFECT THE USER’S COMPUTER EQUIPMENT, COMPUTER PROGRAMS, DATA, OR OTHER PROPRIETARY MATERIAL DUE TO THE USER’S USE OF THE INTERFACE OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE INTERFACE OR TO THE USER'S DOWNLOADING OF ANY MATERIAL POSTED ON IT, OR ON ANY WEBSITE LINKED TO IT.
 
-THE USER’S USE OF THE INTERFACE, ITS CONTENT, AND ANY OF ITS SERVICES IS AT THE USER’S SOLE RISK. THE INTERFACE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. TO THE FULLEST EXTENT LEGALLY PERMISSIBLE, WE, NOR ANY PERSON ASSOCIATED WITH THE COMPANY, MAKES, AND WE EXPLICITLY DISCLAIM, ANY AND ALL REPRESENTATIONS OR WARRANTIES OF ANY KIND RELATED TO THE INTERFACE (AND THE PROTOCOL), WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING (WITHOUT LIMITATION) THE WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE. NEITHER THE COMPANY NOR ANY PERSON ASSOCIATED WITH THE COMPANY MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE INTERFACE. THE COMPANY AND ANY PERSON ASSOCIATED WITH THE COMPANY DOES NOT REPRESENT OR WARRANT THAT: (1) ACCESS TO THE INTERFACE WILL BE CONTINUOUS, UNINTERRUPTED, TIMELY, WITHOUT DELAY, ERROR-FREE, SECURE, OR FREE FROM DEFECTS; (2) THAT THE INFORMATION CONTAINED OR PRESENTED ON THE INTERFACE IS ACCURATE, RELIABLE, COMPLETE, CONCISE, CURRENT, OR RELEVANT; (3) THAT THE INTERFACE WILL BE FREE FROM DEFECTS, MALICIOUS SOFTWARE, ERRORS, PRIVATE, OR ANY OTHER HARMFUL ELEMENTS, OR THAT ANY OF SUCH WILL BE CORRECTED; OR THAT THE INTERFACE WILL MEET THE USER’S EXPECTATIONS. NO INFORMATION OR STATEMENT THAT WE MAKE, INCLUDING DOCUMENTATION OR OUR PRIVATE COMMUNICATIONS, SHOULD BE TREATED AS OFFERING ANY WARRANTY CONCERNING THE INTERFACE (OR AS A REPRESENTATION REGARDING THE PROTOCOL). WE DO NOT ENDORSE, GUARANTEE, OR ASSUME ANY LIABILITY OR RESPONSIBILITY FOR ANY CONTENT, ADVERTISEMENTS, OFFERS, STATEMENTS, OR ACTIONS BY ANY THIRD PARTY EITHER REGARDING OR THROUGH THE INTERFACE.&#x20;
-
-THE FOREGOING DOES NOT AFFECT ANY WARRANTIES THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
+THE USER’S USE OF THE INTERFACE, ITS CONTENT, AND ANY OF ITS SERVICES IS AT THE USER’S SOLE RISK. THE INTERFACE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. TO THE FULLEST EXTENT LEGALLY PERMISSIBLE, WE, NOR ANY PERSON ASSOCIATED WITH THE COMPANY, MAKES, AND WE EXPLICITLY DISCLAIM, ANY AND ALL REPRESENTATIONS OR WARRANTIES OF ANY KIND RELATED TO THE INTERFACE (AND THE PROTOCOL), WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING (WITHOUT LIMITATION) THE WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE. NEITHER THE COMPANY NOR ANY PERSON ASSOCIATED WITH THE COMPANY MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE INTERFACE. THE COMPANY AND ANY PERSON ASSOCIATED WITH THE COMPANY DOES NOT REPRESENT OR WARRANT THAT: (1) ACCESS TO THE INTERFACE WILL BE CONTINUOUS, UNINTERRUPTED, TIMELY, WITHOUT DELAY, ERROR-FREE, SECURE, OR FREE FROM DEFECTS; (2) THAT THE INFORMATION CONTAINED OR PRESENTED ON THE INTERFACE IS ACCURATE, RELIABLE, COMPLETE, CONCISE, CURRENT, OR RELEVANT; (3) THAT THE INTERFACE WILL BE FREE FROM DEFECTS, MALICIOUS SOFTWARE, ERRORS, PRIVATE, OR ANY OTHER HARMFUL ELEMENTS, OR THAT ANY OF SUCH WILL BE CORRECTED; OR THAT THE INTERFACE WILL MEET THE USER’S EXPECTATIONS. NO INFORMATION OR STATEMENT THAT WE MAKE, INCLUDING DOCUMENTATION OR OUR PRIVATE COMMUNICATIONS, SHOULD BE TREATED AS OFFERING ANY WARRANTY CONCERNING THE INTERFACE (OR AS A REPRESENTATION REGARDING THE PROTOCOL). WE DO NOT ENDORSE, GUARANTEE, OR ASSUME ANY LIABILITY OR RESPONSIBILITY FOR ANY CONTENT, ADVERTISEMENTS, OFFERS, STATEMENTS, OR ACTIONS BY ANY THIRD PARTY EITHER REGARDING OR THROUGH THE INTERFACE. THE FOREGOING DOES NOT AFFECT ANY WARRANTIES THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
 
 **14. LIMITATION OF LIABILITY.**
 
-TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT WILL THE COMPANY, ITS AFFILIATES, AGENTS, LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN CONNECTION WITH THE USER'S USE, OR INABILITY TO USE, THE INTERFACE, THE PROTOCOL, ANY WEBSITES LINKED TO IT, ANY CONTENT ON THE INTERFACE OR SUCH OTHER WEBSITES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO, PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA, AND WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT, OR OTHERWISE, EVEN IF FORESEEABLE. THIS DISCLAIMER OF LIABILITY EXTENDS TO ANY AND ALL DAMAGES CAUSED BY ANY THIRD PARTY OR ANY FAILURE OF THE PROTOCOL OR THE UNDERLYING BLOCKCHAINS.
-
-THE FOREGOING DOES NOT AFFECT ANY LIABILITY THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
+TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT WILL THE COMPANY, ITS AFFILIATES, AGENTS, LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN CONNECTION WITH THE USER'S USE, OR INABILITY TO USE, THE INTERFACE, THE PROTOCOL, ANY WEBSITES LINKED TO IT, ANY CONTENT ON THE INTERFACE OR SUCH OTHER WEBSITES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO, PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA, AND WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT, OR OTHERWISE, EVEN IF FORESEEABLE. THIS DISCLAIMER OF LIABILITY EXTENDS TO ANY AND ALL DAMAGES CAUSED BY ANY THIRD PARTY OR ANY FAILURE OF THE PROTOCOL OR THE UNDERLYING BLOCKCHAINS. THE FOREGOING DOES NOT AFFECT ANY LIABILITY THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
 
 **15. Nature of Blockchain; Assumption of Risk; Waiver of Claims.**
 
@@ -190,46 +185,59 @@ The User may not use the Interface if the User is a citizen, resident, or member
 
 If the Interface may contain links to other sites and resources provided by third parties, these links are provided for convenience only. This includes links contained in advertisements, including banner advertisements and sponsored links. We have no control over the contents of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from the User’s use of them. If the User decides to access any of the third-party websites linked to this Interface, the User does so entirely at its own risk and subject to the terms and conditions of use for such websites.
 
-**20. Indemnification.**
+**20. Pool specific Terms & Conditions.**
+
+The User agrees that
+* That the User is in full control of the Wallet Addresses provided in the Maple web interface.
+* That all virtual currency deposits made by the User into Maple Pools will be transferred from Wallet Addresses that are fully controlled by the User.
+* That the User undertakes not to transfer any portion of the ERC-20 Tokens representing their deposit (the ‘LP Tokens’) into the Maple Pools to any Wallet Address which it does not control in full.
+* That the User is an Accredited Investor, as defined by Rule 501 of Regulation D under the Securities Act of 1933, as amended (the “Securities Act”).
+* That if the User is not a US person, that the User:
+    * Understands and agrees that the offering of LP Tokens in the Maple Pools is being made in reliance on Regulation S under the Securities Act and, accordingly, the LP Tokens may not be offered, sold, pledged, or otherwise transferred to any US person (as defined by Rule 902(k) of Regulation S); 
+    * and is not lending on behalf or for the benefit of any US persons.
+* That if the User is a US person, that the User:
+    * Understands and agrees that the offering of LP Tokens in the Maple Pools are being made in reliance on Regulation D under the Securities Act and, accordingly, the LP Tokens may not be offered, sold, pledged, or otherwise transferred except as permitted under the Act, pursuant to registration or exemption therefrom.
+    * That the User understands and agrees that the offering of LP Tokens in the Maple Pools are being made in reliance on an exemption from registration provided by Section 3(c)(1) of the Investment Company Act of 1940, as amended (the “1940 Act”), which exempts the Pool from registration under the 1940 Act, provided that the Pool does not have more than one hundred (100) Accredited Investors participating.
+
+
+**21. Indemnification.**
 
 The User agrees to defend, indemnify, and hold harmless the Company, its affiliates, licensors, agents, and service providers, and its respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims (including claims by any government agency or body), liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys’ fees) arising out of or relating to: (1) the User’s violation of these Terms of Use; (2) the User’s use of the Interface, including, but not limited to, the User’s interactions with the Protocol, use of or reliance on the Interface's content, services, and products other than as expressly authorized in these Terms of Use; (3) the User’s use or reliance on of any information obtained from the Interface; or (4) any other party’s access and use of the Interface or Protocol with the User’s assistance or by using any device or account that the User owns or control.
 
-**21. Governing Law and Jurisdiction.**
+**22. Governing Law and Jurisdiction.**
 
 All matters relating to the Interface and these Terms of Use, and any dispute or claim arising therefrom or related thereto (in each case, including non-contractual disputes or claims), shall be governed by and construed in accordance with the internal laws of the State of Florida without giving effect to any choice or conflict of law provision or rule (whether of the State of Florida or any other jurisdiction).
 
-**22. Arbitration; Class Arbitration Waiver.**&#x20;
+**23. Arbitration; Class Arbitration Waiver.**&#x20;
 
 Any dispute, controversy or claim arising out of, relating to or in connection with the User’s use of the Interface or the Protocol, or in connection with this Agreement, including disputes arising from or concerning their interpretation, violation, invalidity, non-performance, or termination, shall be finally resolved by binding arbitration by the American Arbitration Association under its Rules of Arbitration. The tribunal shall have the power to rule on any challenge to its own jurisdiction or to the validity or enforceability of any portion of the agreement to arbitrate. The parties agree to arbitrate solely on an individual basis, and that these Terms of Use do not permit class arbitration or any claims brought as a plaintiff or class member in any class or representative arbitration proceeding. The arbitral tribunal may not consolidate more than one person's claims and may not otherwise preside over any form of a representative or class proceeding. In the event the prohibition on class arbitration is deemed invalid or unenforceable, then the remaining portions of the arbitration agreement will remain in force.
 
-**23. Class Action and Jury Trial Waiver.**
+**24. Class Action and Jury Trial Waiver.**
 
 Without limiting Section 22, any disputes related to User’s use of the Interface or the Protocol must be brought in an individual capacity and not as a plaintiff in or member of any purported class action, collective action, private attorney general action, or other representative proceeding. This provision applies to any court action, action in front of a mediator, or class arbitration. The Parties agree to waive the right to demand a trial by jury.
 
 ALL USERS ACKNOWLEDGE AND AGREE THAT THE USER AND COMPANY ACKNOWLEDGE AND AGREE THAT BOTH PARTIES ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION OR REPRESENTATIVE PROCEEDING. To opt-out of arbitration, within 30 days of your use of the Interface, you must notify us in writing of your intent to opt-out of the Arbitration provisions by providing your first and last name and clear statement of your intent to opt out.  The written intent to opt-out should be sent to [contact@maple.finance](mailto:contact@maple.finance).
 
-**24. Injunctive Relief Waiver.**
+**25. Injunctive Relief Waiver.**
 
 To the maximum extent permitted by law, the User agrees that the User will not be permitted to obtain an injunction or other equitable relief of any kind, such as any court action that may prevent the development or operation of the Interface.
 
-**25. Limitation on Time to File Claims.**
+**26. Limitation on Time to File Claims.**
 
 ANY CAUSE OF ACTION OR CLAIM THE USER MAY HAVE ARISING OUT OF OR RELATING TO THESE TERMS OF USE OR ITS USE OF THE INTERFACE MUST BE COMMENCED WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES; OTHERWISE, SUCH CAUSE OF ACTION OR CLAIM IS PERMANENTLY BARRED.
 
-**26. Waiver and Severability.**
+**27. Waiver and Severability.**
 
 No waiver by the Company of any term or condition set out in these Terms of Use shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure of the Company to assert a right or provision under these Terms of Use shall not constitute a waiver of such right or provision.
 
 If any provision of these Terms of Use is held by a court or other tribunal of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent such that the remaining provisions of the Terms of Use will continue in full force and effect.&#x20;
 
-**27. Entire Agreement.**
+**28. Entire Agreement.**
 
 The Terms of Use and any documented incorporated by reference herein constitute the sole and entire agreement between the User and the Company regarding the Interface and supersede all prior and contemporaneous understandings, agreements, representations, and warranties, both written and oral, regarding the Interface.&#x20;
 
-**28. Comments and Concerns**
+**29. Comments and Concerns**
 
 This Interface is operated by Maple Labs Pty Ltd.&#x20;
 
 All other feedback, comments, requests for technical support, and other communications relating to the Interface should be directed to: info@maple.finance.
-
-\
