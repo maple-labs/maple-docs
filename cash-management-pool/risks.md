@@ -18,7 +18,7 @@ Maple Foundation, a third party Cayman domiciled entity, acts as Security Agent 
 
 In terms of custodial risk, Lender deposits in the Pool are held in a non-custodial smart contract and Maple does not take custody of Lender deposits at any point. The deposits in the Pool are locked and only available to fund loans to the Borrower's whitelisted Fireblocks wallet and service Lender withdrawals from the Pool.
 
-The Borrower's custodial risks are minimized by partnering with established and regulated counterparties. The Borrower's prime broker is StoneX, a SEC and FINRA regulated broker dealer. BNP Paribas, the fifth-largest global custodian with over $10 trillion in assets under custody, is the underlying custodian for the Borrower's StoneX account.
+The Borrower's custodial risks are minimized by partnering with established and regulated counterparties. The pool's banking provider, prime broker and custodian is J.P. Morgan, a leading U.S. based global financial institution, considered systematically important by regulators. J.P. Morgan has more than $30 trillion in assets under custody as of 2023, and is one of the largest custodians in the world.
 
 **Contagion Risk**
 
