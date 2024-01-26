@@ -4,36 +4,16 @@ The Cash Management Pool offers daily liquidity, with withdrawals serviced every
 
 **How long does it take for withdrawals to process?**
 
-Withdrawals are honoured every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). Withdrawals are processed between 14:00 - 05:00 Eastern Time. If a withdrawal request is initiated before 13:59 Eastern Time, funds will be available to withdraw the next business day between 14:00 and 5:00 Eastern Time. Otherwise, funds will be available to withdraw the following business day.
+Withdrawals are serviced in chronological order within 24 hours every day the U.S. banking system is open, which excludes weekends and [bank holidays](https://www.federalreserve.gov/aboutthefed/k8.htm). If a request is made intra-day on a U.S. banking day, the withdrawal will be serviced in as little as 3 hours. If a request is made on a non-banking day, the withdrawal may still be serviced within 24 hours where liquidity is available (e.g. unutilized funds, new USDC deposits), but in any case will be satisfied at the latest when banks re-open on the next business day.
 
-**How are next day withdrawals possible?**
+**How are intra-day withdrawals possible?**
 
-The Borrower has constructed a portfolio of assets which can be redeemed or liquidated within 24-hours notice to process Lender withdrawals. The borrower will actively manage pool liquidity – this includes monitoring upcoming withdrawal requests, ongoing deposits, and near-term loan maturities, and making repayments as necessary to satisfy Lender withdrawals.
-
-Withdrawals are subject to proper market functioning, and the proper functioning of USDC. If there is not sufficient liquidity in the Pool to service all withdrawal requests, those Lenders in that cycle will be eligible to withdraw their pro rata share of the available liquidity and have the remaining funds requested for withdrawal moved to the very next withdrawal window.
+The Borrower has constructed a portfolio of assets which can be redeemed or liquidated in less than 24-hours, and put operational rails in place to wire fiat quickly, in order to process Lender withdrawals. The borrower will actively manage pool liquidity – this includes monitoring upcoming withdrawal requests, ongoing deposits, and near-term loan maturities, and making repayments as necessary to satisfy Lender withdrawals. Withdrawals are subject to proper market functioning, and the proper functioning of USDC.
 
 # What are the steps to withdraw?
 
-Withdrawing is a two-step process:
+Withdrawing is a one step process - simply place a withdrawal request and the requested USDC will be returned directly to your wallet when liquidity is available. The Maple team will contact you to inform you of the expected time to service and keep you updated on progress. 
 
-1. **Request to withdraw**
+**Request to Withdraw**
 
-From the Lender Dashboard, Lenders should select 'Withdraw Funds', input USDC amount, and follow the transaction steps on screen.
-
-To plan when to schedule your withdrawal, reference the following table.
-
-| Schedule Withdrawal | Withdrawal Window Open | Withdrawal Window Close |
-|-|-|-|
-| Saturday at 2:00pm ET - Sunday at 1:59pm ET | Monday at 2:00pm ET | Tuesday at 5:00am ET |
-| Sunday at 2:00pm ET - Monday at 1:59pm ET | Tuesday at 2:00pm ET | Wednesday at 5:00am ET |
-| Monday at 2:00pm ET - Tuesday at 1:59pm ET | Wednesday at 2:00pm ET | Thursday at 5:00am ET |
-| Tuesday at 2:00pm ET - Wednesday at 1:59pm ET | Thursday at 2:00pm ET | Friday at 5:00am ET |
-| Wednesday at 2:00pm ET - Thursday at 1:59pm ET | Friday at 2:00pm ET | Saturday at 5:00am ET |
-| Withdrawals will only be serviced on US banking days. Please schedule your withdrawal after Saturday at 1:59 PM ET. | - | - |
-
-
-2. **Process withdrawal**
-
-To withdraw, Lenders need to return to the Lender Dashboard during the 'withdrawal window' which is open between 14:00 - 05:00 Eastern Time the next business day. To process a withdrawal, Lenders should select **'Withdraw USDC'** on the Pool Details page and follow the transaction steps on screen.
-
-In the instance that a Lender does not return to the Lender Dashboard to complete the withdrawal during the withdrawal window, the withdrawal request will be cancelled and the funds will be lent back out to the Borrower.
+Lenders should select 'Request Withdrawal' from the pool page, input USDC amount, and follow the transaction steps on screen.
