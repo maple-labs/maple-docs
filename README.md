@@ -10,7 +10,6 @@ Founded in 2019 and led by a team of former bankers and credit investment profes
 * Telegram: [https://t.me/maplefinance](https://t.me/maplefinance)
 * Twitter: [https://twitter.com/maplefinance](https://twitter.com/maplefinance)
 * LinkedIn: [https://www.linkedin.com/company/maplefinance/](https://www.linkedin.com/company/maplefinance/)
-* Discord: [https://discord.gg/fgWRMHCd7d](https://discord.gg/fgWRMHCd7d)
 * Dune Dashboard: [https://dune.com/scottincrypto/Maple-Deposits](https://dune.com/scottincrypto/Maple-Deposits)
 * Token Terminal Dashboard: [https://tokenterminal.com/terminal/projects/maple-finance](https://tokenterminal.com/terminal/projects/maple-finance)
 * Messari: [https://messari.io/asset/maple-finance](https://messari.io/asset/maple-finance)
