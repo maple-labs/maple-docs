@@ -133,7 +133,7 @@
 | PoolManager (Proxy) | [`0x5eE9587Bf5f4ccceEEd87B0216a31EBb513fAC25`](https://etherscan.io/address/0x5eE9587Bf5f4ccceEEd87B0216a31EBb513fAC25) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | FixedTermLoanManager (Proxy) | [`0x91582bDFEF0Bf36Fc326A4aB9b59aAcD61c105fF`](https://etherscan.io/address/0x91582bDFEF0Bf36Fc326A4aB9b59aAcD61c105fF) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | OpenTermLoanManager (Proxy) | [`0xdC9b93A8A336fe5dc9DB97616eA2118000d70fc0`](https://etherscan.io/address/0xdC9b93A8A336fe5dc9DB97616eA2118000d70fc0) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
-| WithdrawalManager (Proxy) | [`0xB7ae6358ABA6E7a60C7B921B8Cbb3fddB3EE9060`](https://etherscan.io/address/0xB7ae6358ABA6E7a60C7B921B8Cbb3fddB3EE9060) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
+| WithdrawalManager (Proxy) | [`0xf18066Db3A9590C401e1841598ad90663B4C6d23`](https://etherscan.io/address/0xf18066Db3A9590C401e1841598ad90663B4C6d23) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 | PoolDelegateCover (Proxy) | [`0x773C634B1c12A4A7036eeeA21586dAeD1Df313C5`](https://etherscan.io/address/0x773C634B1c12A4A7036eeeA21586dAeD1Df313C5) | [`proxy-factory @ v1.0.0`](https://github.com/maple-labs/proxy-factory/releases/tag/v1.0.0) |
 
 ### Maven11 Permissioned Pool Contracts
