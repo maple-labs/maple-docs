@@ -46,7 +46,6 @@
   * [Smart Contract Architecture](technical-resources/protocol-overview/smart-contract-architecture.md)
   * [Glossary](technical-resources/protocol-overview/glossary.md)
   * [Smart Contract Addresses - Ethereum](technical-resources/protocol-overview/smart-contract-addresses.md)
-  * [Smart Contract Addresses - Base](technical-resources/protocol-overview/smart-contract-addresses-base.md)
   * [Smart Contract Addresses - Solana](technical-resources/solana.md)
   * [Fees](technical-resources/protocol-overview/fees.md)
   * [Composability](technical-resources/protocol-overview/composability.md)
