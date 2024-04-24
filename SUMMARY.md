@@ -45,7 +45,7 @@
   * [Protocol Actors](technical-resources/protocol-overview/protocol-actors.md)
   * [Smart Contract Architecture](technical-resources/protocol-overview/smart-contract-architecture.md)
   * [Glossary](technical-resources/protocol-overview/glossary.md)
-  * [Smart Contract Addresses - Ethereum](technical-resources/protocol-overview/smart-contract-addresses.md)
+  * [Smart Contract Addresses - EVM Chains](technical-resources/protocol-overview/smart-contract-addresses.md)
   * [Smart Contract Addresses - Solana](technical-resources/solana.md)
   * [Fees](technical-resources/protocol-overview/fees.md)
   * [Composability](technical-resources/protocol-overview/composability.md)
