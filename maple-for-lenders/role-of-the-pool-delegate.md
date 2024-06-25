@@ -10,13 +10,9 @@ Each Lending Pool is managed by a single Pool Delegate. The Pool Delegate is res
 
 When establishing a Lending Pool, Pool Delegates will be asked to provide Lenders with information on their investment strategy. Pool Delegates can be explicit in defining an investment strategy based on region, target Borrower industry, credit quality, and more.
 
-After Borrowers submit their Request for Quote (RFQ) for a loan on Maple, Pool Delegates will be able to review the RFQs and engage with Borrowers that are in-line with their Lending Pool's strategy. Pool Delegates will assess Borrower reputation and request Borrowers submit financials for confidential review. This information will be used to calibrate interest and collateral ratios appropriate to each Borrower.
-
 **What incentives do the Pool Delegates have to issue performing loans?**
 
-Pool Delegates are the sole providers of First-Loss Capital. This directly aligns incentives between Lenders and Delegates. The amount of first loss Capital is determined through negotiations with the Maple team and will be re-assessed as the pool grows in size. Delegates will have a liquidation maximum per default. This rate is a percentage of the total first loss capital provided.
-
-If a Pool Delegate has less First-Loss Capital than required, they will be unable to fund loans and all due to the delegate will be routed to Lenders.
+Delegates earn a portion of all interest paid on an ongoing basis and therefore incentives are directly aligned with Lenders.
 
 **How to become a Pool Delegate**
 
