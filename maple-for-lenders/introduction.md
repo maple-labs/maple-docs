@@ -23,5 +23,3 @@ Before lending, lenders will need to prepare the pool denominated asset (e.g. US
 <figure><img src="../.gitbook/assets/lend-confirmed.png" alt=""><figcaption></figcaption></figure>
 
 5\. Lenders will then receive Pool LP (Liquidity Provider) Tokens in their wallet representing their share of the Lending Pool.
-
-Note: in Maple V2, there is no longer a lock-up period. Lenders can submit withdrawal requests at any time, which are processed in cycles. For more information, see the [Withdrawals](../withdrawals/withdrawal-process.md) section.
