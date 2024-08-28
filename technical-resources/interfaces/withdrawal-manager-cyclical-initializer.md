@@ -1,8 +1,6 @@
-# Maple Withdrawal Manager Initializer
+# WithdrawalManagerInitializer (Cyclical)
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -25,25 +23,24 @@ Gets the configuration for a given config id.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `initialCycleId` | `uint64` | `uint64` |   Identifier of the first withdrawal cycle using this configuration. |
-| 1 | `initialCycleTime` | `uint64` | `uint64` | Timestamp of the first withdrawal cycle using this configuration. |
-| 2 | `cycleDuration` | `uint64` | `uint64` |    Duration of the withdrawal cycle. |
-| 3 | `windowDuration` | `uint64` | `uint64` |   Duration of the withdrawal window. |
 
+| Index |        Name        |   Type   | Internal Type | Description                                                        |
+| :---: | :----------------: | :------: | :-----------: | ------------------------------------------------------------------ |
+|   0   |  `initialCycleId`  | `uint64` |    `uint64`   | Identifier of the first withdrawal cycle using this configuration. |
+|   1   | `initialCycleTime` | `uint64` |    `uint64`   | Timestamp of the first withdrawal cycle using this configuration.  |
+|   2   |   `cycleDuration`  | `uint64` |    `uint64`   | Duration of the withdrawal cycle.                                  |
+|   3   |  `windowDuration`  | `uint64` |    `uint64`   | Duration of the withdrawal window.                                 |
 
-<br />
+\
+
 
 ### `decodeArguments`
-
-
 
 ```solidity
     function decodeArguments(
@@ -59,25 +56,24 @@ Gets the configuration for a given config id.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
-| 1 | `startTime_` | `uint256` | `uint256` |  |
-| 2 | `cycleDuration_` | `uint256` | `uint256` |  |
-| 3 | `windowDuration_` | `uint256` | `uint256` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   |      `pool_`      | `address` |   `address`   |             |
+|   1   |    `startTime_`   | `uint256` |   `uint256`   |             |
+|   2   |  `cycleDuration_` | `uint256` |   `uint256`   |             |
+|   3   | `windowDuration_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
-
-
 
 ```solidity
     function encodeArguments(
@@ -93,21 +89,22 @@ Gets the configuration for a given config id.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
-| 1 | `startTime_` | `uint256` | `uint256` |  |
-| 2 | `cycleDuration_` | `uint256` | `uint256` |  |
-| 3 | `windowDuration_` | `uint256` | `uint256` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   |      `pool_`      | `address` |   `address`   |             |
+|   1   |    `startTime_`   | `uint256` |   `uint256`   |             |
+|   2   |  `cycleDuration_` | `uint256` |   `uint256`   |             |
+|   3   | `windowDuration_` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-<br />
+\
+
 
 ### `exitCycleId`
 
@@ -124,18 +121,19 @@ Gets the id of the cycle that account can exit on.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `latestConfigId`
 
@@ -149,15 +147,14 @@ Gets the most recent configuration id.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `lockedShares`
 
@@ -174,18 +171,19 @@ Gets the amount of locked shares for an account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `pool`
 
@@ -199,15 +197,14 @@ Gets the address of the pool associated with this withdrawal manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolManager`
 
@@ -221,15 +218,14 @@ Gets the address of the pool manager associated with this withdrawal manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `totalCycleShares`
 
@@ -246,18 +242,18 @@ Gets the amount of shares for a cycle.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
 
 
 ## Events
@@ -277,19 +273,19 @@ Emitted when the withdrawal configuration is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `configId_` | `uint256` | `uint256` | The identifier of the configuration. |
-| 1 | `initialCycleId_` | `uint64` | `uint64` | The identifier of the withdrawal cycle when the configuration takes effect. |
-| 2 | `initialCycleTime_` | `uint64` | `uint64` | The timestamp of the beginning of the withdrawal cycle when the configuration takes effect. |
-| 3 | `cycleDuration_` | `uint64` | `uint64` | The new duration of the withdrawal cycle. |
-| 4 | `windowDuration_` | `uint64` | `uint64` | The new duration of the withdrawal window. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                                                                                 |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------------------------------------------------------- |
+|   0   |     `configId_`     | `uint256` |   `uint256`   | The identifier of the configuration.                                                        |
+|   1   |  `initialCycleId_`  |  `uint64` |    `uint64`   | The identifier of the withdrawal cycle when the configuration takes effect.                 |
+|   2   | `initialCycleTime_` |  `uint64` |    `uint64`   | The timestamp of the beginning of the withdrawal cycle when the configuration takes effect. |
+|   3   |   `cycleDuration_`  |  `uint64` |    `uint64`   | The new duration of the withdrawal cycle.                                                   |
+|   4   |  `windowDuration_`  |  `uint64` |    `uint64`   | The new duration of the withdrawal window.                                                  |
+
+\
+
 
 ### `Initialized`
-
-
 
 ```solidity
     event Initialized(
@@ -300,13 +296,15 @@ Emitted when the withdrawal configuration is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool_` | `address` | `address` |  |
-| 1 | `cycleDuration_` | `uint256` | `uint256` |  |
-| 2 | `windowDuration_` | `uint256` | `uint256` |  |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   |      `pool_`      | `address` |   `address`   |             |
+|   1   |  `cycleDuration_` | `uint256` |   `uint256`   |             |
+|   2   | `windowDuration_` | `uint256` |   `uint256`   |             |
+
+\
+
 
 ### `WithdrawalCancelled`
 
@@ -319,11 +317,13 @@ Emitted when a withdrawal request is cancelled.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account whose withdrawal request has been cancelled. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                                                         |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------------------------------- |
+|   0   | `account_` | `address` |   `address`   | Address of the account whose withdrawal request has been cancelled. |
+
+\
+
 
 ### `WithdrawalProcessed`
 
@@ -338,13 +338,15 @@ Emitted when a withdrawal request is processed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account processing their withdrawal request. |
-| 1 | `sharesToRedeem_` | `uint256` | `uint256` | Amount of shares that the account will redeem. |
-| 2 | `assetsToWithdraw_` | `uint256` | `uint256` | Amount of assets that will be withdrawn from the pool. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                                                 |
+| :---: | :-----------------: | :-------: | :-----------: | ----------------------------------------------------------- |
+|   0   |      `account_`     | `address` |   `address`   | Address of the account processing their withdrawal request. |
+|   1   |  `sharesToRedeem_`  | `uint256` |   `uint256`   | Amount of shares that the account will redeem.              |
+|   2   | `assetsToWithdraw_` | `uint256` |   `uint256`   | Amount of assets that will be withdrawn from the pool.      |
+
+\
+
 
 ### `WithdrawalUpdated`
 
@@ -360,12 +362,12 @@ Emitted when a withdrawal request is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | Address of the account whose request has been updated. |
-| 1 | `lockedShares_` | `uint256` | `uint256` | Total amount of shares the account has locked. |
-| 2 | `windowStart_` | `uint64` | `uint64` | Time when the withdrawal window for the withdrawal request will begin. |
-| 3 | `windowEnd_` | `uint64` | `uint64` | Time when the withdrawal window for the withdrawal request will end. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                                                            |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------------------------------------------------- |
+|   0   |    `account_`   | `address` |   `address`   | Address of the account whose request has been updated.                 |
+|   1   | `lockedShares_` | `uint256` |   `uint256`   | Total amount of shares the account has locked.                         |
+|   2   |  `windowStart_` |  `uint64` |    `uint64`   | Time when the withdrawal window for the withdrawal request will begin. |
+|   3   |   `windowEnd_`  |  `uint64` |    `uint64`   | Time when the withdrawal window for the withdrawal request will end.   |
 
+\

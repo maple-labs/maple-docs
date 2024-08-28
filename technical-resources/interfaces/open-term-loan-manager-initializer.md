@@ -1,15 +1,11 @@
-# Maple Open Term Loan Manager Initializer
+# OpenTermLoanManagerInitializer
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `accountedInterest`
-
-
 
 ```solidity
     function accountedInterest()
@@ -19,19 +15,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint112` | `uint112` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint112` |   `uint112`   |             |
 
-<br />
+\
+
 
 ### `decodeArguments`
-
-
 
 ```solidity
     function decodeArguments(
@@ -44,22 +37,21 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
 
+| Index |     Name    |   Type  | Internal Type | Description |
+| :---: | :---------: | :-----: | :-----------: | ----------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` |  |
 
+| Index |      Name      |    Type   | Internal Type | Description |
+| :---: | :------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolManager_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `domainStart`
-
-
 
 ```solidity
     function domainStart()
@@ -69,19 +61,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
-
-
 
 ```solidity
     function encodeArguments(
@@ -94,22 +83,21 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` |  |
 
+| Index |      Name      |    Type   | Internal Type | Description |
+| :---: | :------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolManager_` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
 
+| Index |     Name    |   Type  | Internal Type | Description |
+| :---: | :---------: | :-----: | :-----------: | ----------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    |             |
 
-<br />
+\
+
 
 ### `fundsAsset`
-
-
 
 ```solidity
     function fundsAsset()
@@ -119,19 +107,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `impairmentFor`
-
-
 
 ```solidity
     function impairmentFor(
@@ -145,23 +130,22 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `impairedDate` | `uint40` | `uint40` |  |
-| 1 | `impairedByGovernor` | `bool` | `bool` |  |
 
+| Index |         Name         |   Type   | Internal Type | Description |
+| :---: | :------------------: | :------: | :-----------: | ----------- |
+|   0   |    `impairedDate`    | `uint40` |    `uint40`   |             |
+|   1   | `impairedByGovernor` |  `bool`  |     `bool`    |             |
 
-<br />
+\
+
 
 ### `issuanceRate`
-
-
 
 ```solidity
     function issuanceRate()
@@ -171,19 +155,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `paymentFor`
-
-
 
 ```solidity
     function paymentFor(
@@ -199,25 +180,24 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `platformManagementFeeRate` | `uint24` | `uint24` |  |
-| 1 | `delegateManagementFeeRate` | `uint24` | `uint24` |  |
-| 2 | `startDate` | `uint40` | `uint40` |  |
-| 3 | `issuanceRate` | `uint168` | `uint168` |  |
 
+| Index |             Name            |    Type   | Internal Type | Description |
+| :---: | :-------------------------: | :-------: | :-----------: | ----------- |
+|   0   | `platformManagementFeeRate` |  `uint24` |    `uint24`   |             |
+|   1   | `delegateManagementFeeRate` |  `uint24` |    `uint24`   |             |
+|   2   |         `startDate`         |  `uint40` |    `uint40`   |             |
+|   3   |        `issuanceRate`       | `uint168` |   `uint168`   |             |
 
-<br />
+\
+
 
 ### `poolManager`
-
-
 
 ```solidity
     function poolManager()
@@ -227,19 +207,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `principalOut`
-
-
 
 ```solidity
     function principalOut()
@@ -249,19 +226,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `unrealizedLosses`
-
-
 
 ```solidity
     function unrealizedLosses()
@@ -271,22 +245,18 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
 
 
 ## Events
 
 ### `Initialized`
-
-
 
 ```solidity
     event Initialized(
@@ -295,9 +265,9 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` |  |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description |
+| :---: | :------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolManager_` | `address` |   `address`   |             |
 
+\

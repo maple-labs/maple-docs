@@ -1,8 +1,6 @@
-# Maple Withdrawal Manager
+# WithdrawalManager (Queue)
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -20,13 +18,14 @@ Add shares to the withdrawal manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  |
-| 1 | `owner_` | `address` | `address` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `shares_` | `uint256` |   `uint256`   |             |
+|   1   |  `owner_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `asset`
 
@@ -40,15 +39,14 @@ Returns the address of the underlying pool asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` |  |
 
+| Index |   Name   |    Type   | Internal Type | Description |
+| :---: | :------: | :-------: | :-----------: | ----------- |
+|   0   | `asset_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `factory`
 
@@ -62,15 +60,14 @@ The address of the proxy factory.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `factory_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `globals`
 
@@ -84,15 +81,14 @@ Returns the address of the globals contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `globals_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `globals_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `governor`
 
@@ -106,15 +102,14 @@ Return the address of the governor.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `governor_` | `address` | `address` |  |
 
+| Index |     Name    |    Type   | Internal Type | Description |
+| :---: | :---------: | :-------: | :-----------: | ----------- |
+|   0   | `governor_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `implementation`
 
@@ -128,19 +123,18 @@ The address of the implementation contract being proxied.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `isInExitWindow`
 
-Returns if a user is able to withdraw. Required for compatibility with pool managers.          NOTE: Always returns true to fulfil interface requirements.
+Returns if a user is able to withdraw. Required for compatibility with pool managers. NOTE: Always returns true to fulfil interface requirements.
 
 ```solidity
     function isInExitWindow(
@@ -153,18 +147,19 @@ Returns if a user is able to withdraw. Required for compatibility with pool mana
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The account to check if it&#x27;s in withdraw window. |
 
+| Index |   Name   |    Type   | Internal Type | Description                                      |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `owner_` | `address` |   `address`   | The account to check if it's in withdraw window. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isInExitWindow_` | `bool` | `bool` | True if the account is in the withdraw window. |
 
+| Index |        Name       |  Type  | Internal Type | Description                                    |
+| :---: | :---------------: | :----: | :-----------: | ---------------------------------------------- |
+|   0   | `isInExitWindow_` | `bool` |     `bool`    | True if the account is in the withdraw window. |
 
-<br />
+\
+
 
 ### `isManualWithdrawal`
 
@@ -181,22 +176,23 @@ Checks if an account is set to perform withdrawals manually.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `lockedLiquidity`
 
-Gets the total amount of funds that need to be locked to fulfill exits.          NOTE: Always zero for this implementation.
+Gets the total amount of funds that need to be locked to fulfill exits. NOTE: Always zero for this implementation.
 
 ```solidity
     function lockedLiquidity()
@@ -206,15 +202,14 @@ Gets the total amount of funds that need to be locked to fulfill exits.         
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lockedLiquidity_` | `uint256` | `uint256` | The amount of locked liquidity. |
 
+| Index |        Name        |    Type   | Internal Type | Description                     |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `lockedLiquidity_` | `uint256` |   `uint256`   | The amount of locked liquidity. |
 
-<br />
+\
+
 
 ### `lockedShares`
 
@@ -231,18 +226,19 @@ Gets the amount of locked shares for an account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the exit for. |
 
+| Index |   Name   |    Type   | Internal Type | Description                        |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `owner_` | `address` |   `address`   | The address to check the exit for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lockedShares_` | `uint256` | `uint256` | The amount of manual shares available. |
 
+| Index |       Name      |    Type   | Internal Type | Description                            |
+| :---: | :-------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `lockedShares_` | `uint256` |   `uint256`   | The amount of manual shares available. |
 
-<br />
+\
+
 
 ### `manualSharesAvailable`
 
@@ -259,22 +255,23 @@ Returns the amount of shares available for manual withdrawal.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `migrate`
 
-Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Modifies the proxy's storage by delegate-calling a migrator contract with some arguments. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function migrate(
@@ -285,13 +282,14 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` | The address of a migrator contract. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the migration. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                      |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-<br />
+\
+
 
 ### `pool`
 
@@ -305,15 +303,14 @@ Returns the address of the pool contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolDelegate`
 
@@ -327,15 +324,14 @@ Returns the address of the pool delegate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate_` | `address` | `address` |  |
 
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolDelegate_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolManager`
 
@@ -349,19 +345,18 @@ Returns the address of the pool manager contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `previewRedeem`
 
-Returns the amount of shares that can be redeemed.          NOTE: The &#x60;shares&#x60; value is ignored.
+Returns the amount of shares that can be redeemed. NOTE: The \`shares\` value is ignored.
 
 ```solidity
     function previewRedeem(
@@ -376,24 +371,25 @@ Returns the amount of shares that can be redeemed.          NOTE: The &#x60;shar
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` |  |
-| 1 | `shares_` | `uint256` | `uint256` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   |  `owner_` | `address` |   `address`   |             |
+|   1   | `shares_` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableShares_` | `uint256` | `uint256` |  |
-| 1 | `resultingAssets_` | `uint256` | `uint256` |  |
 
+| Index |         Name        |    Type   | Internal Type | Description |
+| :---: | :-----------------: | :-------: | :-----------: | ----------- |
+|   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
+|   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `previewWithdraw`
 
-Gets the amount of shares that can be withdrawn.          NOTE: Values just passed through as withdraw is not implemented.
+Gets the amount of shares that can be withdrawn. NOTE: Values just passed through as withdraw is not implemented.
 
 ```solidity
     function previewWithdraw(
@@ -408,24 +404,25 @@ Gets the amount of shares that can be withdrawn.          NOTE: Values just pass
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the withdrawal for. |
-| 1 | `assets_` | `uint256` | `uint256` | The amount of requested shares to withdraw. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                 |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |  `owner_` | `address` |   `address`   | The address to check the withdrawal for.    |
+|   1   | `assets_` | `uint256` |   `uint256`   | The amount of requested shares to withdraw. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableAssets_` | `uint256` | `uint256` | The amount of assets that can be withdrawn. |
-| 1 | `resultingShares_` | `uint256` | `uint256` |  The amount of shares that will be burned. |
 
+| Index |         Name        |    Type   | Internal Type | Description                                 |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `redeemableAssets_` | `uint256` |   `uint256`   | The amount of assets that can be withdrawn. |
+|   1   |  `resultingShares_` | `uint256` |   `uint256`   | The amount of shares that will be burned.   |
 
-<br />
+\
+
 
 ### `processExit`
 
-Processes a withdrawal request.          Uses the current exchange rate to calculate the amount of assets withdrawn.
+Processes a withdrawal request. Uses the current exchange rate to calculate the amount of assets withdrawn.
 
 ```solidity
     function processExit(
@@ -440,24 +437,25 @@ Processes a withdrawal request.          Uses the current exchange rate to calcu
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  |
-| 1 | `owner_` | `address` | `address` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `shares_` | `uint256` |   `uint256`   |             |
+|   1   |  `owner_` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableShares_` | `uint256` | `uint256` |  |
-| 1 | `resultingAssets_` | `uint256` | `uint256` |  |
 
+| Index |         Name        |    Type   | Internal Type | Description |
+| :---: | :-----------------: | :-------: | :-----------: | ----------- |
+|   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
+|   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `processRedemptions`
 
-Processes pending redemption requests.         Requests are processed in the order they were submitted.         Automatic withdrawal requests will be fulfilled atomically.
+Processes pending redemption requests. Requests are processed in the order they were submitted. Automatic withdrawal requests will be fulfilled atomically.
 
 ```solidity
     function processRedemptions(
@@ -467,12 +465,13 @@ Processes pending redemption requests.         Requests are processed in the ord
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `maxSharesToProcess_` | `uint256` | `uint256` |  |
 
+| Index |          Name         |    Type   | Internal Type | Description |
+| :---: | :-------------------: | :-------: | :-----------: | ----------- |
+|   0   | `maxSharesToProcess_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `queue`
 
@@ -487,20 +486,19 @@ Returns the first and last withdrawal requests pending redemption.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `nextRequestId` | `uint128` | `uint128` | Identifier of the next withdrawal request that will be processed. |
-| 1 | `lastRequestId` | `uint128` | `uint128` | Identifier of the last created withdrawal request. |
 
+| Index |       Name      |    Type   | Internal Type | Description                                                       |
+| :---: | :-------------: | :-------: | :-----------: | ----------------------------------------------------------------- |
+|   0   | `nextRequestId` | `uint128` |   `uint128`   | Identifier of the next withdrawal request that will be processed. |
+|   1   | `lastRequestId` | `uint128` |   `uint128`   | Identifier of the last created withdrawal request.                |
 
-<br />
+\
+
 
 ### `removeRequest`
 
-Removes a withdrawal request from the queue.         Can only be called by the pool delegate.
+Removes a withdrawal request from the queue. Can only be called by the pool delegate.
 
 ```solidity
     function removeRequest(
@@ -510,12 +508,13 @@ Removes a withdrawal request from the queue.         Can only be called by the p
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` |  |
 
+| Index |   Name   |    Type   | Internal Type | Description |
+| :---: | :------: | :-------: | :-----------: | ----------- |
+|   0   | `owner_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `removeShares`
 
@@ -533,23 +532,24 @@ Removes shares from the withdrawal manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  |
-| 1 | `owner_` | `address` | `address` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `shares_` | `uint256` |   `uint256`   |             |
+|   1   |  `owner_` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `sharesReturned_` | `uint256` | `uint256` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `sharesReturned_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `requestIds`
 
-Returns the request identifier of an account.          Returns zero if the account does not have a withdrawal request.
+Returns the request identifier of an account. Returns zero if the account does not have a withdrawal request.
 
 ```solidity
     function requestIds(
@@ -562,18 +562,19 @@ Returns the request identifier of an account.          Returns zero if the accou
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `requests`
 
@@ -591,19 +592,20 @@ Returns the owner and amount of shares associated with a withdrawal request.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `requestId_` | `uint128` | `uint128` |  |
 
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `requestId_` | `uint128` |   `uint128`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` |  |
-| 1 | `shares_` | `uint256` | `uint256` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   |  `owner_` | `address` |   `address`   |             |
+|   1   | `shares_` | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `securityAdmin`
 
@@ -617,19 +619,18 @@ Returns the address of the security admin.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `securityAdmin_` | `address` | `address` |  |
 
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   | `securityAdmin_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `setImplementation`
 
-Modifies the proxy&#x27;s implementation address.
+Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
@@ -639,12 +640,13 @@ Modifies the proxy&#x27;s implementation address.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `setManualWithdrawal`
 
@@ -659,13 +661,14 @@ Defines if an account will withdraw shares manually or automatically.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` |  |
-| 1 | `isManual_` | `bool` | `bool` |  |
 
+| Index |     Name    |    Type   | Internal Type | Description |
+| :---: | :---------: | :-------: | :-----------: | ----------- |
+|   0   |   `owner_`  | `address` |   `address`   |             |
+|   1   | `isManual_` |   `bool`  |     `bool`    |             |
 
-<br />
+\
+
 
 ### `totalShares`
 
@@ -679,19 +682,18 @@ Returns the total amount of shares pending redemption.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `upgrade`
 
-Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Upgrades a contract implementation to a specific version. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function upgrade(
@@ -702,13 +704,13 @@ Upgrades a contract implementation to a specific version.         Access control
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` |  |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the upgrade. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                    |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-<br />
+\
 
 
 ## Events
@@ -725,12 +727,14 @@ Emitted when a manual redemption takes place.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | Address of the account. |
-| 1 | `sharesDecreased` | `uint256` | `uint256` | Amount of shares redeemed. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                |
+| :---: | :---------------: | :-------: | :-----------: | -------------------------- |
+|   0   |      `owner`      | `address` |   `address`   | Address of the account.    |
+|   1   | `sharesDecreased` | `uint256` |   `uint256`   | Amount of shares redeemed. |
+
+\
+
 
 ### `ManualSharesIncreased`
 
@@ -744,12 +748,14 @@ Emitted when a manual redemption is processed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | Address of the account. |
-| 1 | `sharesAdded` | `uint256` | `uint256` | Amount of shares added to the redeemable amount. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                                      |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |    `owner`    | `address` |   `address`   | Address of the account.                          |
+|   1   | `sharesAdded` | `uint256` |   `uint256`   | Amount of shares added to the redeemable amount. |
+
+\
+
 
 ### `ManualWithdrawalSet`
 
@@ -763,12 +769,14 @@ Emitted when the withdrawal type of an account is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner` | `address` | `address` | Address of the account. |
-| 1 | `isManual` | `bool` | `bool` | &#x60;true&#x60; if the withdrawal is manual, &#x60;false&#x60; if it is automatic. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                                                         |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------------------------------- |
+|   0   |   `owner`  | `address` |   `address`   | Address of the account.                                             |
+|   1   | `isManual` |   `bool`  |     `bool`    | \`true\` if the withdrawal is manual, \`false\` if it is automatic. |
+
+\
+
 
 ### `RequestCreated`
 
@@ -783,13 +791,15 @@ Emitted when a withdrawal request is created.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `requestId` | `uint128` | `uint128` | Identifier of the withdrawal request. |
-| 1 | `owner` | `address` | `address` | Address of the owner of the shares. |
-| 2 | `shares` | `uint256` | `uint256` | Amount of shares requested for redemption. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                                |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request.      |
+|   1   |   `owner`   | `address` |   `address`   | Address of the owner of the shares.        |
+|   2   |   `shares`  | `uint256` |   `uint256`   | Amount of shares requested for redemption. |
+
+\
+
 
 ### `RequestDecreased`
 
@@ -803,12 +813,14 @@ Emitted when a withdrawal request is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `requestId` | `uint128` | `uint128` | Identifier of the withdrawal request. |
-| 1 | `shares` | `uint256` | `uint256` | Amount of shares reduced during a redemption request. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                                           |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------------------------------- |
+|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request.                 |
+|   1   |   `shares`  | `uint256` |   `uint256`   | Amount of shares reduced during a redemption request. |
+
+\
+
 
 ### `RequestProcessed`
 
@@ -824,14 +836,16 @@ Emitted when a withdrawal request is processed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `requestId` | `uint128` | `uint128` | Identifier of the withdrawal request. |
-| 1 | `owner` | `address` | `address` | The owner of the shares. |
-| 2 | `shares` | `uint256` | `uint256` | Amount of redeemable shares. |
-| 3 | `assets` | `uint256` | `uint256` | Amount of withdrawable assets. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request. |
+|   1   |   `owner`   | `address` |   `address`   | The owner of the shares.              |
+|   2   |   `shares`  | `uint256` |   `uint256`   | Amount of redeemable shares.          |
+|   3   |   `assets`  | `uint256` |   `uint256`   | Amount of withdrawable assets.        |
+
+\
+
 
 ### `RequestRemoved`
 
@@ -844,11 +858,13 @@ Emitted when a withdrawal request is removed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `requestId` | `uint128` | `uint128` | Identifier of the withdrawal request. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request. |
+
+\
+
 
 ### `Upgraded`
 
@@ -862,10 +878,10 @@ The instance was upgraded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The new version of the loan. |
-| 1 | `arguments_` | `bytes` | `bytes` | The upgrade arguments, if any. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                    |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
+\

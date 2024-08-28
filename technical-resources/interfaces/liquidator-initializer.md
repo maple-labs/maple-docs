@@ -1,8 +1,6 @@
-# Maple Liquidator Initializer
+# LiquidatorInitializer
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -19,15 +17,14 @@ Returns the address of the collateral asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `collateralRemaining`
 
@@ -41,19 +38,16 @@ Returns the amount of collateral yet to be liquidated.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `decodeArguments`
-
-
 
 ```solidity
     function decodeArguments(
@@ -68,24 +62,23 @@ Returns the amount of collateral yet to be liquidated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
 
+| Index |     Name    |   Type  | Internal Type | Description |
+| :---: | :---------: | :-----: | :-----------: | ----------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` |  |
-| 1 | `collateralAsset_` | `address` | `address` |  |
-| 2 | `fundsAsset_` | `address` | `address` |  |
 
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   |   `loanManager_`   | `address` |   `address`   |             |
+|   1   | `collateralAsset_` | `address` |   `address`   |             |
+|   2   |    `fundsAsset_`   | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
-
-
 
 ```solidity
     function encodeArguments(
@@ -100,20 +93,21 @@ Returns the amount of collateral yet to be liquidated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loanManager_` | `address` | `address` |  |
-| 1 | `collateralAsset_` | `address` | `address` |  |
-| 2 | `fundsAsset_` | `address` | `address` |  |
 
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   |   `loanManager_`   | `address` |   `address`   |             |
+|   1   | `collateralAsset_` | `address` |   `address`   |             |
+|   2   |    `fundsAsset_`   | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |  |
 
+| Index |     Name    |   Type  | Internal Type | Description |
+| :---: | :---------: | :-----: | :-----------: | ----------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    |             |
 
-<br />
+\
+
 
 ### `fundsAsset`
 
@@ -127,15 +121,14 @@ Returns the address of the funding asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `loanManager`
 
@@ -149,15 +142,10 @@ Returns the address of the loan manager contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
-
-
-
+\

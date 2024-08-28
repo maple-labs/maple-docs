@@ -1,15 +1,11 @@
-# Maple Open Term Loan Refinancer
+# OpenTermLoanRefinancer
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `borrower`
-
-
 
 ```solidity
     function borrower()
@@ -19,19 +15,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `calledPrincipal`
-
-
 
 ```solidity
     function calledPrincipal()
@@ -41,19 +34,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `dateCalled`
-
-
 
 ```solidity
     function dateCalled()
@@ -63,19 +53,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateFunded`
-
-
 
 ```solidity
     function dateFunded()
@@ -85,19 +72,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateImpaired`
-
-
 
 ```solidity
     function dateImpaired()
@@ -107,19 +91,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `datePaid`
-
-
 
 ```solidity
     function datePaid()
@@ -129,15 +110,14 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `decreasePrincipal`
 
@@ -151,16 +131,15 @@ Function to decrease the principal during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of which the value will decrease by. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of which the value will decrease by. |
 
-<br />
+\
+
 
 ### `delegateServiceFeeRate`
-
-
 
 ```solidity
     function delegateServiceFeeRate()
@@ -170,19 +149,16 @@ Function to decrease the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `fundsAsset`
-
-
 
 ```solidity
     function fundsAsset()
@@ -192,19 +168,16 @@ Function to decrease the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `gracePeriod`
-
-
 
 ```solidity
     function gracePeriod()
@@ -214,15 +187,14 @@ Function to decrease the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `increasePrincipal`
 
@@ -236,16 +208,15 @@ Function to increase the principal during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of which the value will increase by. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of which the value will increase by. |
 
-<br />
+\
+
 
 ### `interestRate`
-
-
 
 ```solidity
     function interestRate()
@@ -255,19 +226,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lateFeeRate`
-
-
 
 ```solidity
     function lateFeeRate()
@@ -277,19 +245,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lateInterestPremiumRate`
-
-
 
 ```solidity
     function lateInterestPremiumRate()
@@ -299,19 +264,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lender`
-
-
 
 ```solidity
     function lender()
@@ -321,19 +283,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `noticePeriod`
-
-
 
 ```solidity
     function noticePeriod()
@@ -343,19 +302,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `paymentInterval`
-
-
 
 ```solidity
     function paymentInterval()
@@ -365,19 +321,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `pendingBorrower`
-
-
 
 ```solidity
     function pendingBorrower()
@@ -387,19 +340,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `pendingLender`
-
-
 
 ```solidity
     function pendingLender()
@@ -409,19 +359,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `platformServiceFeeRate`
-
-
 
 ```solidity
     function platformServiceFeeRate()
@@ -431,19 +378,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `principal`
-
-
 
 ```solidity
     function principal()
@@ -453,19 +397,16 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `refinanceCommitment`
-
-
 
 ```solidity
     function refinanceCommitment()
@@ -475,19 +416,18 @@ Function to increase the principal during a refinance.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
 
-<br />
+\
+
 
 ### `setDelegateServiceFeeRate`
 
-Function to set the delegateServiceFeeRate during a refinance.         The rate is denominated in 1e18 units.
+Function to set the delegateServiceFeeRate during a refinance. The rate is denominated in 1e18 units.
 
 ```solidity
     function setDelegateServiceFeeRate(
@@ -497,12 +437,13 @@ Function to set the delegateServiceFeeRate during a refinance.         The rate 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `delegateServiceFeeRate_` | `uint64` | `uint64` | The new value for delegateServiceFeeRate. |
 
+| Index |            Name           |   Type   | Internal Type | Description                               |
+| :---: | :-----------------------: | :------: | :-----------: | ----------------------------------------- |
+|   0   | `delegateServiceFeeRate_` | `uint64` |    `uint64`   | The new value for delegateServiceFeeRate. |
 
-<br />
+\
+
 
 ### `setGracePeriod`
 
@@ -516,12 +457,13 @@ Function to set the gracePeriod during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `gracePeriod_` | `uint32` | `uint32` | The new value for gracePeriod. |
 
+| Index |      Name      |   Type   | Internal Type | Description                    |
+| :---: | :------------: | :------: | :-----------: | ------------------------------ |
+|   0   | `gracePeriod_` | `uint32` |    `uint32`   | The new value for gracePeriod. |
 
-<br />
+\
+
 
 ### `setInterestRate`
 
@@ -535,12 +477,13 @@ Function to set the interestRate during a refinance. The interest rate is measur
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interestRate_` | `uint64` | `uint64` | The new value for interestRate. |
 
+| Index |       Name      |   Type   | Internal Type | Description                     |
+| :---: | :-------------: | :------: | :-----------: | ------------------------------- |
+|   0   | `interestRate_` | `uint64` |    `uint64`   | The new value for interestRate. |
 
-<br />
+\
+
 
 ### `setLateFeeRate`
 
@@ -554,12 +497,13 @@ Function to set the lateFeeRate during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateFeeRate_` | `uint64` | `uint64` | The new value for lateFeeRate. |
 
+| Index |      Name      |   Type   | Internal Type | Description                    |
+| :---: | :------------: | :------: | :-----------: | ------------------------------ |
+|   0   | `lateFeeRate_` | `uint64` |    `uint64`   | The new value for lateFeeRate. |
 
-<br />
+\
+
 
 ### `setLateInterestPremiumRate`
 
@@ -573,12 +517,13 @@ Function to set the lateInterestPremiumRate during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremiumRate_` | `uint64` | `uint64` | The new value for lateInterestPremiumRate. |
 
+| Index |            Name            |   Type   | Internal Type | Description                                |
+| :---: | :------------------------: | :------: | :-----------: | ------------------------------------------ |
+|   0   | `lateInterestPremiumRate_` | `uint64` |    `uint64`   | The new value for lateInterestPremiumRate. |
 
-<br />
+\
+
 
 ### `setNoticePeriod`
 
@@ -592,16 +537,17 @@ Function to set the noticePeriod during a refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `noticePeriod_` | `uint32` | `uint32` | The new value for noticePeriod. |
 
+| Index |       Name      |   Type   | Internal Type | Description                     |
+| :---: | :-------------: | :------: | :-----------: | ------------------------------- |
+|   0   | `noticePeriod_` | `uint32` |    `uint32`   | The new value for noticePeriod. |
 
-<br />
+\
+
 
 ### `setPaymentInterval`
 
-Function to set the paymentInterval during a refinance.         The interval is denominated in seconds.
+Function to set the paymentInterval during a refinance. The interval is denominated in seconds.
 
 ```solidity
     function setPaymentInterval(
@@ -611,12 +557,12 @@ Function to set the paymentInterval during a refinance.         The interval is 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentInterval_` | `uint32` | `uint32` | The new value for paymentInterval. |
 
+| Index |        Name        |   Type   | Internal Type | Description                        |
+| :---: | :----------------: | :------: | :-----------: | ---------------------------------- |
+|   0   | `paymentInterval_` | `uint32` |    `uint32`   | The new value for paymentInterval. |
 
-<br />
+\
 
 
 ## Events
@@ -632,11 +578,13 @@ The value for the service fee rate for the PoolDelegate (1e18 units).
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `delegateServiceFeeRate_` | `uint64` | `uint64` | The new value for delegateServiceFeeRate. |
 
-<br />
+| Index |            Name           |   Type   | Internal Type | Description                               |
+| :---: | :-----------------------: | :------: | :-----------: | ----------------------------------------- |
+|   0   | `delegateServiceFeeRate_` | `uint64` |    `uint64`   | The new value for delegateServiceFeeRate. |
+
+\
+
 
 ### `GracePeriodSet`
 
@@ -649,11 +597,13 @@ A new value for gracePeriod has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `gracePeriod_` | `uint256` | `uint256` | The new value for gracePeriod. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `gracePeriod_` | `uint256` |   `uint256`   | The new value for gracePeriod. |
+
+\
+
 
 ### `InterestRateSet`
 
@@ -666,11 +616,13 @@ A new value for interestRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interestRate_` | `uint64` | `uint64` | The new value for interestRate. |
 
-<br />
+| Index |       Name      |   Type   | Internal Type | Description                     |
+| :---: | :-------------: | :------: | :-----------: | ------------------------------- |
+|   0   | `interestRate_` | `uint64` |    `uint64`   | The new value for interestRate. |
+
+\
+
 
 ### `LateFeeRateSet`
 
@@ -683,11 +635,13 @@ A new value for lateFeeRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateFeeRate_` | `uint64` | `uint64` | The new value for lateFeeRate. |
 
-<br />
+| Index |      Name      |   Type   | Internal Type | Description                    |
+| :---: | :------------: | :------: | :-----------: | ------------------------------ |
+|   0   | `lateFeeRate_` | `uint64` |    `uint64`   | The new value for lateFeeRate. |
+
+\
+
 
 ### `LateInterestPremiumRateSet`
 
@@ -700,11 +654,13 @@ A new value for lateInterestPremiumRate has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lateInterestPremiumRate_` | `uint64` | `uint64` | The new value for lateInterestPremiumRate. |
 
-<br />
+| Index |            Name            |   Type   | Internal Type | Description                                |
+| :---: | :------------------------: | :------: | :-----------: | ------------------------------------------ |
+|   0   | `lateInterestPremiumRate_` | `uint64` |    `uint64`   | The new value for lateInterestPremiumRate. |
+
+\
+
 
 ### `NoticePeriodSet`
 
@@ -717,11 +673,13 @@ A new value for noticePeriod has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `noticePeriod_` | `uint256` | `uint256` | The new value for noticedPeriod. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                      |
+| :---: | :-------------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `noticePeriod_` | `uint256` |   `uint256`   | The new value for noticedPeriod. |
+
+\
+
 
 ### `PaymentIntervalSet`
 
@@ -734,11 +692,13 @@ A new value for paymentInterval has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentInterval_` | `uint256` | `uint256` | The new value for paymentInterval. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `paymentInterval_` | `uint256` |   `uint256`   | The new value for paymentInterval. |
+
+\
+
 
 ### `PrincipalDecreased`
 
@@ -751,11 +711,13 @@ The value of the principal has been decreased.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `decreasedBy_` | `uint256` | `uint256` | The amount of which the value was decreased by. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                     |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `decreasedBy_` | `uint256` |   `uint256`   | The amount of which the value was decreased by. |
+
+\
+
 
 ### `PrincipalIncreased`
 
@@ -768,9 +730,9 @@ The value of the principal has been increased.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `increasedBy_` | `uint256` | `uint256` | The amount of which the value was increased by. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                                     |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `increasedBy_` | `uint256` |   `uint256`   | The amount of which the value was increased by. |
 
+\

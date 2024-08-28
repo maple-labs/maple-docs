@@ -1,15 +1,11 @@
-# Maple Open Term Loan Initializer
+# OpenTermLoanInitializer
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `borrower`
-
-
 
 ```solidity
     function borrower()
@@ -19,19 +15,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `calledPrincipal`
-
-
 
 ```solidity
     function calledPrincipal()
@@ -41,19 +34,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `dateCalled`
-
-
 
 ```solidity
     function dateCalled()
@@ -63,19 +53,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateFunded`
-
-
 
 ```solidity
     function dateFunded()
@@ -85,19 +72,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateImpaired`
-
-
 
 ```solidity
     function dateImpaired()
@@ -107,19 +91,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `datePaid`
-
-
 
 ```solidity
     function datePaid()
@@ -129,15 +110,14 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `decodeArguments`
 
@@ -159,27 +139,26 @@ Decodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` | The encoded arguments for initializing a loan. |
 
+| Index |         Name        |   Type  | Internal Type | Description                                    |
+| :---: | :-----------------: | :-----: | :-----------: | ---------------------------------------------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    | The encoded arguments for initializing a loan. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` |           The address of the borrower. |
-| 1 | `lender_` | `address` | `address` |             The address of the lender. |
-| 2 | `fundsAsset_` | `address` | `address` |         The address of the lent asset. |
-| 3 | `principalRequested_` | `uint256` | `uint256` | The amount of principal requested. |
-| 4 | `termDetails_` | `uint32[3]` | `uint32[3]` |        Array of loan parameters:                                  [0]: gracePeriod,                                  [1]: noticePeriod,                                  [2]: paymentInterval |
-| 5 | `rates_` | `uint64[4]` | `uint64[4]` |              Array of rate parameters:                                  [0]: delegateServiceFeeRate,                                  [1]: interestRate,                                  [2]: lateFeeRate,                                  [3]: lateInterestPremiumRate |
 
+| Index |          Name         |     Type    | Internal Type | Description                                                                                                                  |
+| :---: | :-------------------: | :---------: | :-----------: | ---------------------------------------------------------------------------------------------------------------------------- |
+|   0   |      `borrower_`      |  `address`  |   `address`   | The address of the borrower.                                                                                                 |
+|   1   |       `lender_`       |  `address`  |   `address`   | The address of the lender.                                                                                                   |
+|   2   |     `fundsAsset_`     |  `address`  |   `address`   | The address of the lent asset.                                                                                               |
+|   3   | `principalRequested_` |  `uint256`  |   `uint256`   | The amount of principal requested.                                                                                           |
+|   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  | Array of loan parameters: \[0]: gracePeriod, \[1]: noticePeriod, \[2]: paymentInterval                                       |
+|   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  | Array of rate parameters: \[0]: delegateServiceFeeRate, \[1]: interestRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
 
-<br />
+\
+
 
 ### `delegateServiceFeeRate`
-
-
 
 ```solidity
     function delegateServiceFeeRate()
@@ -189,15 +168,14 @@ Decodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
 
@@ -219,27 +197,26 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` | The address of the borrower. |
-| 1 | `lender_` | `address` | `address` | The address of the lender. |
-| 2 | `fundsAsset_` | `address` | `address` | The address of the lent asset. |
-| 3 | `principalRequested_` | `uint256` | `uint256` | The amount of principal requested. |
-| 4 | `termDetails_` | `uint32[3]` | `uint32[3]` | Array of loan parameters:                                  [0]: gracePeriod,                                  [1]: noticePeriod,                                  [2]: paymentInterval |
-| 5 | `rates_` | `uint64[4]` | `uint64[4]` | Array of rate parameters:                                  [0]: delegateServiceFeeRate,                                  [1]: interestRate,                                  [2]: lateFeeRate,                                  [3]: lateInterestPremiumRate |
 
+| Index |          Name         |     Type    | Internal Type | Description                                                                                                                  |
+| :---: | :-------------------: | :---------: | :-----------: | ---------------------------------------------------------------------------------------------------------------------------- |
+|   0   |      `borrower_`      |  `address`  |   `address`   | The address of the borrower.                                                                                                 |
+|   1   |       `lender_`       |  `address`  |   `address`   | The address of the lender.                                                                                                   |
+|   2   |     `fundsAsset_`     |  `address`  |   `address`   | The address of the lent asset.                                                                                               |
+|   3   | `principalRequested_` |  `uint256`  |   `uint256`   | The amount of principal requested.                                                                                           |
+|   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  | Array of loan parameters: \[0]: gracePeriod, \[1]: noticePeriod, \[2]: paymentInterval                                       |
+|   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  | Array of rate parameters: \[0]: delegateServiceFeeRate, \[1]: interestRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  The encoded arguments for initializing a loan. |
 
+| Index |         Name        |   Type  | Internal Type | Description                                    |
+| :---: | :-----------------: | :-----: | :-----------: | ---------------------------------------------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    | The encoded arguments for initializing a loan. |
 
-<br />
+\
+
 
 ### `fundsAsset`
-
-
 
 ```solidity
     function fundsAsset()
@@ -249,19 +226,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `gracePeriod`
-
-
 
 ```solidity
     function gracePeriod()
@@ -271,19 +245,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `interestRate`
-
-
 
 ```solidity
     function interestRate()
@@ -293,19 +264,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lateFeeRate`
-
-
 
 ```solidity
     function lateFeeRate()
@@ -315,19 +283,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lateInterestPremiumRate`
-
-
 
 ```solidity
     function lateInterestPremiumRate()
@@ -337,19 +302,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lender`
-
-
 
 ```solidity
     function lender()
@@ -359,19 +321,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `noticePeriod`
-
-
 
 ```solidity
     function noticePeriod()
@@ -381,19 +340,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `paymentInterval`
-
-
 
 ```solidity
     function paymentInterval()
@@ -403,19 +359,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `pendingBorrower`
-
-
 
 ```solidity
     function pendingBorrower()
@@ -425,19 +378,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `pendingLender`
-
-
 
 ```solidity
     function pendingLender()
@@ -447,19 +397,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `platformServiceFeeRate`
-
-
 
 ```solidity
     function platformServiceFeeRate()
@@ -469,19 +416,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `principal`
-
-
 
 ```solidity
     function principal()
@@ -491,19 +435,16 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `refinanceCommitment`
-
-
 
 ```solidity
     function refinanceCommitment()
@@ -513,22 +454,18 @@ Encodes the initialization arguments for a MapleLoan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
 
-<br />
+\
 
 
 ## Events
 
 ### `BorrowerAccepted`
-
-
 
 ```solidity
     event BorrowerAccepted(
@@ -537,15 +474,15 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` |  |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description |
+| :---: | :---------: | :-------: | :-----------: | ----------- |
+|   0   | `borrower_` | `address` |   `address`   |             |
+
+\
+
 
 ### `CallRemoved`
-
-
 
 ```solidity
     event CallRemoved(
@@ -555,16 +492,16 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 1 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description |
+| :---: | :---------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `Funded`
-
-
 
 ```solidity
     event Funded(
@@ -575,17 +512,17 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` |  |
-| 1 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 2 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   |     `amount_`     | `uint256` |   `uint256`   |             |
+|   1   | `paymentDueDate_` |  `uint40` |    `uint40`   |             |
+|   2   |   `defaultDate_`  |  `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `Impaired`
-
-
 
 ```solidity
     event Impaired(
@@ -595,16 +532,16 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 1 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description |
+| :---: | :---------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `ImpairmentRemoved`
-
-
 
 ```solidity
     event ImpairmentRemoved(
@@ -614,16 +551,16 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 1 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description |
+| :---: | :---------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `Initialized`
-
-
 
 ```solidity
     event Initialized(
@@ -637,20 +574,20 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` |  |
-| 1 | `lender_` | `address` | `address` |  |
-| 2 | `fundsAsset_` | `address` | `address` |  |
-| 3 | `principalRequested_` | `uint256` | `uint256` |  |
-| 4 | `termDetails_` | `uint32[3]` | `uint32[3]` |  |
-| 5 | `rates_` | `uint64[4]` | `uint64[4]` |  |
 
-<br />
+| Index |          Name         |     Type    | Internal Type | Description |
+| :---: | :-------------------: | :---------: | :-----------: | ----------- |
+|   0   |      `borrower_`      |  `address`  |   `address`   |             |
+|   1   |       `lender_`       |  `address`  |   `address`   |             |
+|   2   |     `fundsAsset_`     |  `address`  |   `address`   |             |
+|   3   | `principalRequested_` |  `uint256`  |   `uint256`   |             |
+|   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  |             |
+|   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  |             |
+
+\
+
 
 ### `LenderAccepted`
-
-
 
 ```solidity
     event LenderAccepted(
@@ -659,15 +596,15 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` |  |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `lender_` | `address` |   `address`   |             |
+
+\
+
 
 ### `NewTermsAccepted`
-
-
 
 ```solidity
     event NewTermsAccepted(
@@ -679,18 +616,18 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` |  |
-| 1 | `refinancer_` | `address` | `address` |  |
-| 2 | `deadline_` | `uint256` | `uint256` |  |
-| 3 | `calls_` | `bytes[]` | `bytes[]` |  |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description |
+| :---: | :--------------------: | :-------: | :-----------: | ----------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   |             |
+|   1   |      `refinancer_`     | `address` |   `address`   |             |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
+
+\
+
 
 ### `NewTermsProposed`
-
-
 
 ```solidity
     event NewTermsProposed(
@@ -702,18 +639,18 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` |  |
-| 1 | `refinancer_` | `address` | `address` |  |
-| 2 | `deadline_` | `uint256` | `uint256` |  |
-| 3 | `calls_` | `bytes[]` | `bytes[]` |  |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description |
+| :---: | :--------------------: | :-------: | :-----------: | ----------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   |             |
+|   1   |      `refinancer_`     | `address` |   `address`   |             |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
+
+\
+
 
 ### `NewTermsRejected`
-
-
 
 ```solidity
     event NewTermsRejected(
@@ -725,18 +662,18 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` |  |
-| 1 | `refinancer_` | `address` | `address` |  |
-| 2 | `deadline_` | `uint256` | `uint256` |  |
-| 3 | `calls_` | `bytes[]` | `bytes[]` |  |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description |
+| :---: | :--------------------: | :-------: | :-----------: | ----------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   |             |
+|   1   |      `refinancer_`     | `address` |   `address`   |             |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
+
+\
+
 
 ### `PaymentMade`
-
-
 
 ```solidity
     event PaymentMade(
@@ -752,22 +689,22 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` |  |
-| 1 | `principalPaid_` | `uint256` | `uint256` |  |
-| 2 | `interestPaid_` | `uint256` | `uint256` |  |
-| 3 | `lateInterestPaid_` | `uint256` | `uint256` |  |
-| 4 | `delegateServiceFee_` | `uint256` | `uint256` |  |
-| 5 | `platformServiceFee_` | `uint256` | `uint256` |  |
-| 6 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 7 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description |
+| :---: | :-------------------: | :-------: | :-----------: | ----------- |
+|   0   |       `lender_`       | `address` |   `address`   |             |
+|   1   |    `principalPaid_`   | `uint256` |   `uint256`   |             |
+|   2   |    `interestPaid_`    | `uint256` |   `uint256`   |             |
+|   3   |  `lateInterestPaid_`  | `uint256` |   `uint256`   |             |
+|   4   | `delegateServiceFee_` | `uint256` |   `uint256`   |             |
+|   5   | `platformServiceFee_` | `uint256` |   `uint256`   |             |
+|   6   |   `paymentDueDate_`   |  `uint40` |    `uint40`   |             |
+|   7   |     `defaultDate_`    |  `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `PendingBorrowerSet`
-
-
 
 ```solidity
     event PendingBorrowerSet(
@@ -776,15 +713,15 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingBorrower_` | `address` | `address` |  |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   | `pendingBorrower_` | `address` |   `address`   |             |
+
+\
+
 
 ### `PendingLenderSet`
-
-
 
 ```solidity
     event PendingLenderSet(
@@ -793,15 +730,15 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingLender_` | `address` | `address` |  |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   | `pendingLender_` | `address` |   `address`   |             |
+
+\
+
 
 ### `PrincipalCalled`
-
-
 
 ```solidity
     event PrincipalCalled(
@@ -812,17 +749,17 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalToReturn_` | `uint256` | `uint256` |  |
-| 1 | `paymentDueDate_` | `uint40` | `uint40` |  |
-| 2 | `defaultDate_` | `uint40` | `uint40` |  |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description |
+| :---: | :------------------: | :-------: | :-----------: | ----------- |
+|   0   | `principalToReturn_` | `uint256` |   `uint256`   |             |
+|   1   |   `paymentDueDate_`  |  `uint40` |    `uint40`   |             |
+|   2   |    `defaultDate_`    |  `uint40` |    `uint40`   |             |
+
+\
+
 
 ### `PrincipalReturned`
-
-
 
 ```solidity
     event PrincipalReturned(
@@ -832,16 +769,16 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalReturned_` | `uint256` | `uint256` |  |
-| 1 | `principalRemaining_` | `uint256` | `uint256` |  |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description |
+| :---: | :-------------------: | :-------: | :-----------: | ----------- |
+|   0   |  `principalReturned_` | `uint256` |   `uint256`   |             |
+|   1   | `principalRemaining_` | `uint256` |   `uint256`   |             |
+
+\
+
 
 ### `Repossessed`
-
-
 
 ```solidity
     event Repossessed(
@@ -851,16 +788,16 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundsRepossessed_` | `uint256` | `uint256` |  |
-| 1 | `destination_` | `address` | `address` |  |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description |
+| :---: | :-----------------: | :-------: | :-----------: | ----------- |
+|   0   | `fundsRepossessed_` | `uint256` |   `uint256`   |             |
+|   1   |    `destination_`   | `address` |   `address`   |             |
+
+\
+
 
 ### `Skimmed`
-
-
 
 ```solidity
     event Skimmed(
@@ -871,11 +808,11 @@ Encodes the initialization arguments for a MapleLoan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `token_` | `address` | `address` |  |
-| 1 | `amount_` | `uint256` | `uint256` |  |
-| 2 | `destination_` | `address` | `address` |  |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description |
+| :---: | :------------: | :-------: | :-----------: | ----------- |
+|   0   |    `token_`    | `address` |   `address`   |             |
+|   1   |    `amount_`   | `uint256` |   `uint256`   |             |
+|   2   | `destination_` | `address` |   `address`   |             |
 
+\

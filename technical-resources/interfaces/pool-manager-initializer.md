@@ -1,8 +1,6 @@
-# Maple Pool Manager Initializer
+# PoolManagerInitializer
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -19,15 +17,14 @@ Returns whether or not a pool is active.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `asset`
 
@@ -41,15 +38,14 @@ Gets the address of the funds asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `configured`
 
@@ -63,19 +59,16 @@ Returns whether or not a pool is configured.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `decodeArguments`
-
-
 
 ```solidity
     function decodeArguments(
@@ -92,22 +85,23 @@ Returns whether or not a pool is configured.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate_` | `address` | `address` |  |
-| 1 | `asset_` | `address` | `address` |  |
-| 2 | `initialSupply_` | `uint256` | `uint256` |  |
-| 3 | `name_` | `string` | `string` |  |
-| 4 | `symbol_` | `string` | `string` |  |
 
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   |  `poolDelegate_` | `address` |   `address`   |             |
+|   1   |     `asset_`     | `address` |   `address`   |             |
+|   2   | `initialSupply_` | `uint256` |   `uint256`   |             |
+|   3   |      `name_`     |  `string` |    `string`   |             |
+|   4   |     `symbol_`    |  `string` |    `string`   |             |
 
-<br />
+\
+
 
 ### `delegateManagementFeeRate`
 
@@ -121,19 +115,16 @@ Gets the delegate management fee rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
-
-
 
 ```solidity
     function encodeArguments(
@@ -150,22 +141,23 @@ Gets the delegate management fee rate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDelegate_` | `address` | `address` |  |
-| 1 | `asset_` | `address` | `address` |  |
-| 2 | `initialSupply_` | `uint256` | `uint256` |  |
-| 3 | `name_` | `string` | `string` |  |
-| 4 | `symbol_` | `string` | `string` |  |
 
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   |  `poolDelegate_` | `address` |   `address`   |             |
+|   1   |     `asset_`     | `address` |   `address`   |             |
+|   2   | `initialSupply_` | `uint256` |   `uint256`   |             |
+|   3   |      `name_`     |  `string` |    `string`   |             |
+|   4   |     `symbol_`    |  `string` |    `string`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `encodedArguments_` | `bytes` | `bytes` |  |
 
+| Index |         Name        |   Type  | Internal Type | Description |
+| :---: | :-----------------: | :-----: | :-----------: | ----------- |
+|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-<br />
+\
+
 
 ### `isLoanManager`
 
@@ -182,18 +174,19 @@ Returns whether or not the given address is a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isValidLender`
 
@@ -210,18 +203,19 @@ Returns whether or not the given address is a valid lender.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `liquidityCap`
 
@@ -235,15 +229,14 @@ Gets the liquidity cap for the pool.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `loanManagerList`
 
@@ -260,18 +253,19 @@ Gets the address of the loan manager in the list.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `openToPublic`
 
@@ -285,15 +279,14 @@ Returns whether or not a pool is open to public deposits.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `pendingPoolDelegate`
 
@@ -307,15 +300,14 @@ Gets the address of the pending pool delegate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `pool`
 
@@ -329,15 +321,14 @@ Gets the address of the pool.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolDelegate`
 
@@ -351,15 +342,14 @@ Gets the address of the pool delegate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolDelegateCover`
 
@@ -373,15 +363,14 @@ Gets the address of the pool delegate cover.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `withdrawalManager`
 
@@ -395,22 +384,18 @@ Gets the address of the withdrawal manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Events
 
 ### `Initialized`
-
-
 
 ```solidity
     event Initialized(
@@ -421,11 +406,11 @@ Gets the address of the withdrawal manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` |  |
-| 1 | `asset_` | `address` | `address` |  |
-| 2 | `pool_` | `address` | `address` |  |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description |
+| :---: | :------: | :-------: | :-----------: | ----------- |
+|   0   | `owner_` | `address` |   `address`   |             |
+|   1   | `asset_` | `address` |   `address`   |             |
+|   2   |  `pool_` | `address` |   `address`   |             |
 
+\

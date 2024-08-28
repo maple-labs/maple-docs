@@ -10,7 +10,7 @@ Maple offers borrowers a capital efficient option in decentralized lending. Thos
 
 2\. Borrowers can view their full loan history including matured, active and unfunded loans on the dashboard.
 
-<figure><img src="../.gitbook/assets/loan-history.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/loan-history (1).png" alt=""><figcaption></figcaption></figure>
 
 3\. Once a borrower is approved on the platform, they are able to submit loan requests in pools. Before doing so, Delegates conduct financial due diligence on the borrower and agree to terms with the borrower off-chain. Borrowers then submit a new loan request on-chain that is viewable by Pool Delegates. Once the new loan request is submitted on chain it cannot be altered in any way. If there is an error a new loan request would need to be created.
 

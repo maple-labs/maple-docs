@@ -1,8 +1,6 @@
-# Maple Open Term Loan Manager
+# OpenTermLoanManager
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -19,15 +17,14 @@ Returns the value considered as the hundred percent.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `PRECISION`
 
@@ -41,15 +38,14 @@ Returns the precision used for the contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `accountedInterest`
 
@@ -63,15 +59,14 @@ Gets the amount of accounted interest.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint112` | `uint112` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint112` |   `uint112`   |             |
 
-<br />
+\
+
 
 ### `accruedInterest`
 
@@ -85,15 +80,14 @@ Gets the amount of accrued interest up until this point in time.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `accruedInterest_` | `uint256` | `uint256` | The amount of accrued interest up until this point in time. |
 
+| Index |        Name        |    Type   | Internal Type | Description                                                 |
+| :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------------------- |
+|   0   | `accruedInterest_` | `uint256` |   `uint256`   | The amount of accrued interest up until this point in time. |
 
-<br />
+\
+
 
 ### `assetsUnderManagement`
 
@@ -107,15 +101,14 @@ Gets the amount of assets under the management of the contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `assetsUnderManagement_` | `uint256` | `uint256` | The amount of assets under the management of the contract. |
 
+| Index |           Name           |    Type   | Internal Type | Description                                                |
+| :---: | :----------------------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   | `assetsUnderManagement_` | `uint256` |   `uint256`   | The amount of assets under the management of the contract. |
 
-<br />
+\
+
 
 ### `callPrincipal`
 
@@ -130,13 +123,14 @@ Calls a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to be called. |
-| 1 | `principal_` | `uint256` | `uint256` | Amount of principal to call the Loan with. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   |    `loan_`   | `address` |   `address`   | Loan to be called.                         |
+|   1   | `principal_` | `uint256` |   `uint256`   | Amount of principal to call the Loan with. |
 
-<br />
+\
+
 
 ### `claim`
 
@@ -154,16 +148,17 @@ Called by loans when payments are made, updating the accounting.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principal_` | `int256` | `int256` | The difference in principal. Positive if net principal change moves funds into pool, negative if it moves                             funds out of pool. |
-| 1 | `interest_` | `uint256` | `uint256` | The amount of interest paid. |
-| 2 | `delegateServiceFee_` | `uint256` | `uint256` | The amount of delegate service fee paid. |
-| 3 | `platformServiceFee_` | `uint256` | `uint256` | The amount of platform service fee paid. |
-| 4 | `nextPaymentDueDate_` | `uint40` | `uint40` |  |
 
+| Index |          Name         |    Type   | Internal Type | Description                                                                                                                  |
+| :---: | :-------------------: | :-------: | :-----------: | ---------------------------------------------------------------------------------------------------------------------------- |
+|   0   |      `principal_`     |  `int256` |    `int256`   | The difference in principal. Positive if net principal change moves funds into pool, negative if it moves funds out of pool. |
+|   1   |      `interest_`      | `uint256` |   `uint256`   | The amount of interest paid.                                                                                                 |
+|   2   | `delegateServiceFee_` | `uint256` |   `uint256`   | The amount of delegate service fee paid.                                                                                     |
+|   3   | `platformServiceFee_` | `uint256` |   `uint256`   | The amount of platform service fee paid.                                                                                     |
+|   4   | `nextPaymentDueDate_` |  `uint40` |    `uint40`   |                                                                                                                              |
 
-<br />
+\
+
 
 ### `domainStart`
 
@@ -177,15 +172,14 @@ Gets the timestamp of the domain start.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `factory`
 
@@ -199,15 +193,14 @@ The address of the proxy factory.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `factory_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `fund`
 
@@ -221,12 +214,13 @@ Funds a new loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to be funded. |
 
+| Index |   Name  |    Type   | Internal Type | Description        |
+| :---: | :-----: | :-------: | :-----------: | ------------------ |
+|   0   | `loan_` | `address` |   `address`   | Loan to be funded. |
 
-<br />
+\
+
 
 ### `fundsAsset`
 
@@ -240,15 +234,14 @@ Gets the address of the funds asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `impairLoan`
 
@@ -262,12 +255,13 @@ Triggers the impairment of a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to trigger the loan impairment. |
 
+| Index |   Name  |    Type   | Internal Type | Description                          |
+| :---: | :-----: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `loan_` | `address` |   `address`   | Loan to trigger the loan impairment. |
 
-<br />
+\
+
 
 ### `impairmentFor`
 
@@ -285,19 +279,20 @@ Gets the information for an impairment.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `impairedDate` | `uint40` | `uint40` |       The date the impairment was triggered. |
-| 1 | `impairedByGovernor` | `bool` | `bool` | True if the impairment was triggered by the governor. |
 
+| Index |         Name         |   Type   | Internal Type | Description                                           |
+| :---: | :------------------: | :------: | :-----------: | ----------------------------------------------------- |
+|   0   |    `impairedDate`    | `uint40` |    `uint40`   | The date the impairment was triggered.                |
+|   1   | `impairedByGovernor` |  `bool`  |     `bool`    | True if the impairment was triggered by the governor. |
 
-<br />
+\
+
 
 ### `implementation`
 
@@ -311,15 +306,14 @@ The address of the implementation contract being proxied.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `issuanceRate`
 
@@ -333,19 +327,18 @@ Gets the current issuance rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `migrate`
 
-Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Modifies the proxy's storage by delegate-calling a migrator contract with some arguments. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function migrate(
@@ -356,13 +349,14 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` | The address of a migrator contract. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the migration. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                      |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-<br />
+\
+
 
 ### `paymentFor`
 
@@ -382,21 +376,22 @@ Gets the information for a payment.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `platformManagementFeeRate` | `uint24` | `uint24` | The value for the platform management fee rate. |
-| 1 | `delegateManagementFeeRate` | `uint24` | `uint24` | The value for the delegate management fee rate. |
-| 2 | `startDate` | `uint40` | `uint40` |                 The start date of the payment. |
-| 3 | `issuanceRate` | `uint168` | `uint168` |              The issuance rate for the loan. |
 
+| Index |             Name            |    Type   | Internal Type | Description                                     |
+| :---: | :-------------------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `platformManagementFeeRate` |  `uint24` |    `uint24`   | The value for the platform management fee rate. |
+|   1   | `delegateManagementFeeRate` |  `uint24` |    `uint24`   | The value for the delegate management fee rate. |
+|   2   |         `startDate`         |  `uint40` |    `uint40`   | The start date of the payment.                  |
+|   3   |        `issuanceRate`       | `uint168` |   `uint168`   | The issuance rate for the loan.                 |
 
-<br />
+\
+
 
 ### `poolManager`
 
@@ -410,15 +405,14 @@ Gets the address of the pool manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `principalOut`
 
@@ -432,15 +426,14 @@ Gets the amount of principal out.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `proposeNewTerms`
 
@@ -457,15 +450,16 @@ Proposes new terms for a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The loan to propose new changes to. |
-| 1 | `refinancer_` | `address` | `address` | The refinancer to use in the refinance. |
-| 2 | `deadline_` | `uint256` | `uint256` | The deadline by which the borrower must accept the new terms. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The array of calls to be made to the refinancer. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                                   |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------------------- |
+|   0   |    `loan_`    | `address` |   `address`   | The loan to propose new changes to.                           |
+|   1   | `refinancer_` | `address` |   `address`   | The refinancer to use in the refinance.                       |
+|   2   |  `deadline_`  | `uint256` |   `uint256`   | The deadline by which the borrower must accept the new terms. |
+|   3   |    `calls_`   | `bytes[]` |   `bytes[]`   | The array of calls to be made to the refinancer.              |
 
-<br />
+\
+
 
 ### `rejectNewTerms`
 
@@ -482,15 +476,16 @@ Reject/cancel proposed new terms for a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The loan with the proposed new changes. |
-| 1 | `refinancer_` | `address` | `address` | The refinancer to use in the refinance. |
-| 2 | `deadline_` | `uint256` | `uint256` | The deadline by which the borrower must accept the new terms. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The array of calls to be made to the refinancer. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                                   |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------------------- |
+|   0   |    `loan_`    | `address` |   `address`   | The loan with the proposed new changes.                       |
+|   1   | `refinancer_` | `address` |   `address`   | The refinancer to use in the refinance.                       |
+|   2   |  `deadline_`  | `uint256` |   `uint256`   | The deadline by which the borrower must accept the new terms. |
+|   3   |    `calls_`   | `bytes[]` |   `bytes[]`   | The array of calls to be made to the refinancer.              |
 
-<br />
+\
+
 
 ### `removeCall`
 
@@ -504,12 +499,13 @@ Removes a loan call.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to remove call for. |
 
+| Index |   Name  |    Type   | Internal Type | Description              |
+| :---: | :-----: | :-------: | :-----------: | ------------------------ |
+|   0   | `loan_` | `address` |   `address`   | Loan to remove call for. |
 
-<br />
+\
+
 
 ### `removeLoanImpairment`
 
@@ -523,16 +519,17 @@ Removes the loan impairment for a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to remove the loan impairment. |
 
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `loan_` | `address` |   `address`   | Loan to remove the loan impairment. |
 
-<br />
+\
+
 
 ### `setImplementation`
 
-Modifies the proxy&#x27;s implementation address.
+Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
@@ -542,12 +539,13 @@ Modifies the proxy&#x27;s implementation address.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `triggerDefault`
 
@@ -567,21 +565,22 @@ Triggers the default of a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to trigger the default. |
-| 1 | `liquidatorFactory_` | `address` | `address` |  |
 
+| Index |         Name         |    Type   | Internal Type | Description                  |
+| :---: | :------------------: | :-------: | :-----------: | ---------------------------- |
+|   0   |        `loan_`       | `address` |   `address`   | Loan to trigger the default. |
+|   1   | `liquidatorFactory_` | `address` |   `address`   |                              |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidationComplete_` | `bool` | `bool` |  |
-| 1 | `remainingLosses_` | `uint256` | `uint256` |         The amount of un-recovered principal and interest (net of management fees). |
-| 2 | `unrecoveredPlatformFees_` | `uint256` | `uint256` | The amount of un-recovered platform fees. |
 
+| Index |            Name            |    Type   | Internal Type | Description                                                                 |
+| :---: | :------------------------: | :-------: | :-----------: | --------------------------------------------------------------------------- |
+|   0   |   `liquidationComplete_`   |   `bool`  |     `bool`    |                                                                             |
+|   1   |     `remainingLosses_`     | `uint256` |   `uint256`   | The amount of un-recovered principal and interest (net of management fees). |
+|   2   | `unrecoveredPlatformFees_` | `uint256` |   `uint256`   | The amount of un-recovered platform fees.                                   |
 
-<br />
+\
+
 
 ### `triggerDefault`
 
@@ -599,19 +598,20 @@ Triggers the default of a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to trigger the default. |
 
+| Index |   Name  |    Type   | Internal Type | Description                  |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------- |
+|   0   | `loan_` | `address` |   `address`   | Loan to trigger the default. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `remainingLosses_` | `uint256` | `uint256` |         The amount of un-recovered principal and interest (net of management fees). |
-| 1 | `unrecoveredPlatformFees_` | `uint256` | `uint256` | The amount of un-recovered platform fees. |
 
+| Index |            Name            |    Type   | Internal Type | Description                                                                 |
+| :---: | :------------------------: | :-------: | :-----------: | --------------------------------------------------------------------------- |
+|   0   |     `remainingLosses_`     | `uint256` |   `uint256`   | The amount of un-recovered principal and interest (net of management fees). |
+|   1   | `unrecoveredPlatformFees_` | `uint256` |   `uint256`   | The amount of un-recovered platform fees.                                   |
 
-<br />
+\
+
 
 ### `unrealizedLosses`
 
@@ -625,19 +625,18 @@ Returns the amount unrealized losses.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `upgrade`
 
-Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Upgrades a contract implementation to a specific version. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function upgrade(
@@ -648,13 +647,13 @@ Upgrades a contract implementation to a specific version.         Access control
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` |  |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the upgrade. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                    |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-<br />
+\
 
 
 ## Events
@@ -671,12 +670,14 @@ Emitted when the accounting state of the loan manager is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `issuanceRate_` | `uint256` | `uint256` | New value for the issuance rate. |
-| 1 | `accountedInterest_` | `uint112` | `uint112` | The amount of accounted interest. |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description                       |
+| :---: | :------------------: | :-------: | :-----------: | --------------------------------- |
+|   0   |    `issuanceRate_`   | `uint256` |   `uint256`   | New value for the issuance rate.  |
+|   1   | `accountedInterest_` | `uint112` |   `uint112`   | The amount of accounted interest. |
+
+\
+
 
 ### `ClaimedFundsDistributed`
 
@@ -695,17 +696,19 @@ Funds have been claimed and distributed to the Pool, Pool Delegate, and Maple Tr
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan contract. |
-| 1 | `principal_` | `uint256` | `uint256` | The amount of principal paid. |
-| 2 | `netInterest_` | `uint256` | `uint256` | The amount of net interest paid. |
-| 3 | `delegateManagementFee_` | `uint256` | `uint256` | The amount of delegate management fees paid. |
-| 4 | `delegateServiceFee_` | `uint256` | `uint256` | The amount of delegate service fees paid. |
-| 5 | `platformManagementFee_` | `uint256` | `uint256` | The amount of platform management fees paid. |
-| 6 | `platformServiceFee_` | `uint256` | `uint256` | The amount of platform service fees paid. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description                                  |
+| :---: | :----------------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   |          `loan_`         | `address` |   `address`   | The address of the loan contract.            |
+|   1   |       `principal_`       | `uint256` |   `uint256`   | The amount of principal paid.                |
+|   2   |      `netInterest_`      | `uint256` |   `uint256`   | The amount of net interest paid.             |
+|   3   | `delegateManagementFee_` | `uint256` |   `uint256`   | The amount of delegate management fees paid. |
+|   4   |   `delegateServiceFee_`  | `uint256` |   `uint256`   | The amount of delegate service fees paid.    |
+|   5   | `platformManagementFee_` | `uint256` |   `uint256`   | The amount of platform management fees paid. |
+|   6   |   `platformServiceFee_`  | `uint256` |   `uint256`   | The amount of platform service fees paid.    |
+
+\
+
 
 ### `ExpectedClaim`
 
@@ -722,15 +725,17 @@ Funds that were expected to be claimed and distributed to the Pool and Maple Tre
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan contract. |
-| 1 | `principal_` | `uint256` | `uint256` | The amount of principal that was expected to be paid. |
-| 2 | `netInterest_` | `uint256` | `uint256` | The amount of net interest that was expected to be paid. |
-| 3 | `platformManagementFee_` | `uint256` | `uint256` | The amount of platform management fees that were expected to be paid. |
-| 4 | `platformServiceFee_` | `uint256` | `uint256` | The amount of platform service fees that were expected to paid. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description                                                           |
+| :---: | :----------------------: | :-------: | :-----------: | --------------------------------------------------------------------- |
+|   0   |          `loan_`         | `address` |   `address`   | The address of the loan contract.                                     |
+|   1   |       `principal_`       | `uint256` |   `uint256`   | The amount of principal that was expected to be paid.                 |
+|   2   |      `netInterest_`      | `uint256` |   `uint256`   | The amount of net interest that was expected to be paid.              |
+|   3   | `platformManagementFee_` | `uint256` |   `uint256`   | The amount of platform management fees that were expected to be paid. |
+|   4   |   `platformServiceFee_`  | `uint256` |   `uint256`   | The amount of platform service fees that were expected to paid.       |
+
+\
+
 
 ### `LiquidatedFundsDistributed`
 
@@ -746,14 +751,16 @@ Funds that were liquidated and distributed to the Pool, Maple Treasury, and Borr
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan contract that defaulted and was liquidated. |
-| 1 | `toBorrower_` | `uint256` | `uint256` | The amount of recovered funds transferred to the Borrower. |
-| 2 | `toPool_` | `uint256` | `uint256` | The amount of recovered funds transferred to the Pool. |
-| 3 | `toTreasury_` | `uint256` | `uint256` | The amount of recovered funds transferred to the Treasury. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                                                         |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------------------------- |
+|   0   |    `loan_`    | `address` |   `address`   | The address of the loan contract that defaulted and was liquidated. |
+|   1   | `toBorrower_` | `uint256` |   `uint256`   | The amount of recovered funds transferred to the Borrower.          |
+|   2   |   `toPool_`   | `uint256` |   `uint256`   | The amount of recovered funds transferred to the Pool.              |
+|   3   | `toTreasury_` | `uint256` |   `uint256`   | The amount of recovered funds transferred to the Treasury.          |
+
+\
+
 
 ### `PaymentAdded`
 
@@ -770,15 +777,17 @@ Emitted when a payment is added to the LoanManager payments mapping.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
-| 1 | `platformManagementFeeRate_` | `uint256` | `uint256` | The amount of platform management rate that will be used for the payment distribution. |
-| 2 | `delegateManagementFeeRate_` | `uint256` | `uint256` | The amount of delegate management rate that will be used for the payment distribution. |
-| 3 | `paymentDueDate_` | `uint256` | `uint256` | The due date of the payment. |
-| 4 | `issuanceRate_` | `uint256` | `uint256` | The issuance of the payment, 1e27 precision. |
 
-<br />
+| Index |             Name             |    Type   | Internal Type | Description                                                                            |
+| :---: | :--------------------------: | :-------: | :-----------: | -------------------------------------------------------------------------------------- |
+|   0   |            `loan_`           | `address` |   `address`   | The address of the loan.                                                               |
+|   1   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The amount of platform management rate that will be used for the payment distribution. |
+|   2   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The amount of delegate management rate that will be used for the payment distribution. |
+|   3   |       `paymentDueDate_`      | `uint256` |   `uint256`   | The due date of the payment.                                                           |
+|   4   |        `issuanceRate_`       | `uint256` |   `uint256`   | The issuance of the payment, 1e27 precision.                                           |
+
+\
+
 
 ### `PaymentRemoved`
 
@@ -791,11 +800,13 @@ Emitted when a payment is removed from the LoanManager payments mapping.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
 
-<br />
+| Index |   Name  |    Type   | Internal Type | Description              |
+| :---: | :-----: | :-------: | :-----------: | ------------------------ |
+|   0   | `loan_` | `address` |   `address`   | The address of the loan. |
+
+\
+
 
 ### `PrincipalOutUpdated`
 
@@ -808,11 +819,13 @@ Emitted when principal out is updated
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalOut_` | `uint128` | `uint128` | The new value for principal out. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                      |
+| :---: | :-------------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `principalOut_` | `uint128` |   `uint128`   | The new value for principal out. |
+
+\
+
 
 ### `UnrealizedLossesUpdated`
 
@@ -825,11 +838,13 @@ Emitted when unrealized losses is updated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `unrealizedLosses_` | `uint128` | `uint128` | The new value for unrealized losses. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                          |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `unrealizedLosses_` | `uint128` |   `uint128`   | The new value for unrealized losses. |
+
+\
+
 
 ### `Upgraded`
 
@@ -843,10 +858,10 @@ The instance was upgraded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The new version of the loan. |
-| 1 | `arguments_` | `bytes` | `bytes` | The upgrade arguments, if any. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                    |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
+\

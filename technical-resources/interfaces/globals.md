@@ -1,15 +1,11 @@
-# Maple Globals
+# Globals
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `HUNDRED_PERCENT`
-
-
 
 ```solidity
     function HUNDRED_PERCENT()
@@ -19,28 +15,26 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `acceptGovernor`
 
-Accepts the governorship if the caller is the &#x60;pendingGovernor&#x60;.
+Accepts the governorship if the caller is the \`pendingGovernor\`.
 
 ```solidity
     function acceptGovernor()
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `activatePoolManager`
 
@@ -54,16 +48,17 @@ Activates the pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to activate. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                  |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to activate. |
 
-<br />
+\
+
 
 ### `admin`
 
-Returns the proxy&#x27;s admin address.
+Returns the proxy's admin address.
 
 ```solidity
     function admin()
@@ -73,19 +68,18 @@ Returns the proxy&#x27;s admin address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `admin_` | `address` | `address` | The address of the admin. |
 
+| Index |   Name   |    Type   | Internal Type | Description               |
+| :---: | :------: | :-------: | :-----------: | ------------------------- |
+|   0   | `admin_` | `address` |   `address`   | The address of the admin. |
 
-<br />
+\
+
 
 ### `bootstrapMint`
 
-Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60; for a given pool asset.
+Gets the virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSupply\` for a given pool asset.
 
 ```solidity
     function bootstrapMint(
@@ -98,18 +92,19 @@ Gets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `canDeploy`
 
@@ -126,18 +121,19 @@ Gets whether a caller account can deploy from the factory calling this function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the account calling the factory. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `caller_` | `address` |   `address`   | The address of the account calling the factory. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `canDeploy_` | `bool` | `bool` | Whether the account can deploy from the factory. |
 
+| Index |     Name     |  Type  | Internal Type | Description                                      |
+| :---: | :----------: | :----: | :-----------: | ------------------------------------------------ |
+|   0   | `canDeploy_` | `bool` |     `bool`    | Whether the account can deploy from the factory. |
 
-<br />
+\
+
 
 ### `canDeployFrom`
 
@@ -155,19 +151,20 @@ Gets whether a caller account can deploy from a factory.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` | The address of the factory. |
-| 1 | `caller_` | `address` | `address` | The address of the account calling the factory. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                     |
+| :---: | :--------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `factory_` | `address` |   `address`   | The address of the factory.                     |
+|   1   |  `caller_` | `address` |   `address`   | The address of the account calling the factory. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy from the factory. |
 
+| Index |       Name       |  Type  | Internal Type | Description                                      |
+| :---: | :--------------: | :----: | :-----------: | ------------------------------------------------ |
+|   0   | `canDeployFrom_` | `bool` |     `bool`    | Whether the account can deploy from the factory. |
 
-<br />
+\
+
 
 ### `defaultTimelockParameters`
 
@@ -182,16 +179,15 @@ Gets the default timelock parameters.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `delay` | `uint128` | `uint128` |    The default timelock delay. |
-| 1 | `duration` | `uint128` | `uint128` | The default timelock duration. |
 
+| Index |    Name    |    Type   | Internal Type | Description                    |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------ |
+|   0   |   `delay`  | `uint128` |   `uint128`   | The default timelock delay.    |
+|   1   | `duration` | `uint128` |   `uint128`   | The default timelock duration. |
 
-<br />
+\
+
 
 ### `getLatestPrice`
 
@@ -208,18 +204,19 @@ Gets the latest price for an asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the asset to query. |
 
+| Index |   Name   |    Type   | Internal Type | Description                        |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the asset to query. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `latestPrice_` | `uint256` | `uint256` | The latest price for the asset. |
 
+| Index |      Name      |    Type   | Internal Type | Description                     |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `latestPrice_` | `uint256` |   `uint256`   | The latest price for the asset. |
 
-<br />
+\
+
 
 ### `governor`
 
@@ -233,19 +230,18 @@ Gets governor address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `governor_` | `address` | `address` | The address of the governor. |
 
+| Index |     Name    |    Type   | Internal Type | Description                  |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `governor_` | `address` |   `address`   | The address of the governor. |
 
-<br />
+\
+
 
 ### `implementation`
 
-Returns the proxy&#x27;s implementation address.
+Returns the proxy's implementation address.
 
 ```solidity
     function implementation()
@@ -255,15 +251,14 @@ Returns the proxy&#x27;s implementation address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` | The address of the implementation. |
 
+| Index |        Name       |    Type   | Internal Type | Description                        |
+| :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `implementation_` | `address` |   `address`   | The address of the implementation. |
 
-<br />
+\
+
 
 ### `isBorrower`
 
@@ -280,18 +275,19 @@ Gets the validity of a borrower.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isCollateralAsset`
 
@@ -308,18 +304,19 @@ Gets the validity of a collateral asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isContractPaused`
 
@@ -336,18 +333,19 @@ Gets whether a contract is uniquely paused.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isFactory`
 
@@ -365,23 +363,24 @@ Gets the validity of a factory.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factoryId_` | `bytes32` | `bytes32` | The address of the factory to query. |
-| 1 | `factory_` | `address` | `address` | The address of the factory to query. |
 
+| Index |     Name     |    Type   | Internal Type | Description                          |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `factoryId_` | `bytes32` |   `bytes32`   | The address of the factory to query. |
+|   1   |  `factory_`  | `address` |   `address`   | The address of the factory to query. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isFactory_` | `bool` | `bool` | A boolean indicating the validity of the factory. |
 
+| Index |     Name     |  Type  | Internal Type | Description                                       |
+| :---: | :----------: | :----: | :-----------: | ------------------------------------------------- |
+|   0   | `isFactory_` | `bool` |     `bool`    | A boolean indicating the validity of the factory. |
 
-<br />
+\
+
 
 ### `isFunctionPaused`
 
-Gets whether a contract&#x27;s function is paused.
+Gets whether a contract's function is paused.
 
 ```solidity
     function isFunctionPaused(
@@ -394,22 +393,23 @@ Gets whether a contract&#x27;s function is paused.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
 
+| Index |  Name  |   Type   | Internal Type | Description                                 |
+| :---: | :----: | :------: | :-----------: | ------------------------------------------- |
+|   0   | `sig_` | `bytes4` |    `bytes4`   | The function signature within the contract. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `functionIsPaused_` | `bool` | `bool` | Whether the contract&#x27;s function is paused. |
 
+| Index |         Name        |  Type  | Internal Type | Description                                |
+| :---: | :-----------------: | :----: | :-----------: | ------------------------------------------ |
+|   0   | `functionIsPaused_` | `bool` |     `bool`    | Whether the contract's function is paused. |
 
-<br />
+\
+
 
 ### `isFunctionPaused`
 
-Gets whether a contract&#x27;s function is paused.
+Gets whether a contract's function is paused.
 
 ```solidity
     function isFunctionPaused(
@@ -423,23 +423,24 @@ Gets whether a contract&#x27;s function is paused.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
-| 1 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
 
+| Index |     Name    |    Type   | Internal Type | Description                                 |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `contract_` | `address` |   `address`   | The address of a contract in the protocol.  |
+|   1   |    `sig_`   |  `bytes4` |    `bytes4`   | The function signature within the contract. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `functionIsPaused_` | `bool` | `bool` | Whether the contract&#x27;s function is paused. |
 
+| Index |         Name        |  Type  | Internal Type | Description                                |
+| :---: | :-----------------: | :----: | :-----------: | ------------------------------------------ |
+|   0   | `functionIsPaused_` | `bool` |     `bool`    | Whether the contract's function is paused. |
 
-<br />
+\
+
 
 ### `isFunctionUnpaused`
 
-Gets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
+Gets whether a contract's function is uniquely unpaused. A false does not imply it is paused.
 
 ```solidity
     function isFunctionUnpaused(
@@ -453,19 +454,20 @@ Gets whether a contract&#x27;s function is uniquely unpaused. A false does not i
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-| 1 | `` | `bytes4` | `bytes4` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
+|   1   | \`\` |  `bytes4` |    `bytes4`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isInstanceOf`
 
@@ -483,19 +485,20 @@ Gets wether an instance is of some instance key.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `bytes32` | `bytes32` |  |
-| 1 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `bytes32` |   `bytes32`   |             |
+|   1   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isPoolAsset`
 
@@ -512,18 +515,19 @@ Gets the validity of a pool asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isPoolDelegate`
 
@@ -540,18 +544,19 @@ Gets the validity of a pool delegate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | The address of the account to query. |
 
+| Index |    Name    |    Type   | Internal Type | Description                          |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account_` | `address` |   `address`   | The address of the account to query. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isPoolDelegate_` | `bool` | `bool` | A boolean indicating the validity of the pool delegate. |
 
+| Index |        Name       |  Type  | Internal Type | Description                                             |
+| :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------- |
+|   0   | `isPoolDelegate_` | `bool` |     `bool`    | A boolean indicating the validity of the pool delegate. |
 
-<br />
+\
+
 
 ### `isPoolDeployer`
 
@@ -568,18 +573,19 @@ Gets the validity of a pool deployer.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `caller_` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isPoolDeployer_` | `bool` | `bool` | A boolean indicating the validity of the pool deployer. |
 
+| Index |        Name       |  Type  | Internal Type | Description                                             |
+| :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------- |
+|   0   | `isPoolDeployer_` | `bool` |     `bool`    | A boolean indicating the validity of the pool deployer. |
 
-<br />
+\
+
 
 ### `isValidScheduledCall`
 
@@ -599,21 +605,22 @@ Checks if a call is scheduled.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The contract to execute the call on. |
-| 1 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 2 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 3 | `callData_` | `bytes` | `bytes` | The of the parameters to pass to the function. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                    |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
+|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.           |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
+|   3   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isValid_` | `bool` | `bool` |    True if the call is scheduled, false otherwise. |
 
+| Index |    Name    |  Type  | Internal Type | Description                                     |
+| :---: | :--------: | :----: | :-----------: | ----------------------------------------------- |
+|   0   | `isValid_` | `bool` |     `bool`    | True if the call is scheduled, false otherwise. |
 
-<br />
+\
+
 
 ### `manualOverridePrice`
 
@@ -630,18 +637,19 @@ Gets the manual override price for an asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `mapleTreasury`
 
@@ -655,15 +663,14 @@ Gets maple treasury address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `maxCoverLiquidationPercent`
 
@@ -680,18 +687,19 @@ Gets the maximum cover liquidation percent for a given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `migrationAdmin`
 
@@ -705,15 +713,14 @@ Gets the migration admin address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `minCoverAmount`
 
@@ -730,18 +737,19 @@ Gets the minimum cover amount for a given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `operationalAdmin`
 
@@ -755,15 +763,14 @@ Gets the operational admin address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `ownedPoolManager`
 
@@ -780,18 +787,19 @@ Gets the address of the owner pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | The address of the account to query. |
 
+| Index |    Name    |    Type   | Internal Type | Description                          |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account_` | `address` |   `address`   | The address of the account to query. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
 
+| Index |      Name      |    Type   | Internal Type | Description                      |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager. |
 
-<br />
+\
+
 
 ### `pendingGovernor`
 
@@ -805,15 +813,14 @@ Gets the pending governor address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `platformManagementFeeRate`
 
@@ -830,18 +837,19 @@ Gets the platform management fee rate for a given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `platformOriginationFeeRate`
 
@@ -858,18 +866,19 @@ Gets the platform origination fee rate for a given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `platformServiceFeeRate`
 
@@ -886,18 +895,19 @@ Gets the platform service fee rate for a given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `poolDelegates`
 
@@ -915,19 +925,20 @@ Gets pool delegate address information.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `ownedPoolManager` | `address` | `address` | The address of the pool manager owned by the pool delegate. |
-| 1 | `isPoolDelegate` | `bool` | `bool` |   A boolean indication weather or not the address passed is a current pool delegate. |
 
+| Index |        Name        |    Type   | Internal Type | Description                                                                        |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------------------------------------------------------- |
+|   0   | `ownedPoolManager` | `address` |   `address`   | The address of the pool manager owned by the pool delegate.                        |
+|   1   |  `isPoolDelegate`  |   `bool`  |     `bool`    | A boolean indication weather or not the address passed is a current pool delegate. |
 
-<br />
+\
+
 
 ### `priceOracleOf`
 
@@ -945,19 +956,20 @@ Gets the address and maximum delay of the oracle for the given asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `oracle` | `address` | `address` |   The address of the oracle. |
-| 1 | `maxDelay` | `uint96` | `uint96` | The maximum delay of the oracle. |
 
+| Index |    Name    |    Type   | Internal Type | Description                      |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------- |
+|   0   |  `oracle`  | `address` |   `address`   | The address of the oracle.       |
+|   1   | `maxDelay` |  `uint96` |    `uint96`   | The maximum delay of the oracle. |
 
-<br />
+\
+
 
 ### `protocolPaused`
 
@@ -971,15 +983,14 @@ Gets the status of the protocol pause.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `scheduleCall`
 
@@ -995,14 +1006,15 @@ Schedules a call to be executed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 1 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 2 | `callData_` | `bytes` | `bytes` | The of the parameters to pass to the function. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                    |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.           |
+|   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
+|   2   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-<br />
+\
+
 
 ### `scheduledCalls`
 
@@ -1022,21 +1034,22 @@ Gets the schedule calls for the parameters.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-| 1 | `` | `address` | `address` |  |
-| 2 | `` | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
+|   1   | \`\` | `address` |   `address`   |             |
+|   2   | \`\` | `bytes32` |   `bytes32`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `timestamp` | `uint256` | `uint256` |   The timestamp of the next scheduled call. |
-| 1 | `dataHash` | `bytes32` | `bytes32` |    The hash of data fot the scheduled call. |
 
+| Index |     Name    |    Type   | Internal Type | Description                               |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `timestamp` | `uint256` |   `uint256`   | The timestamp of the next scheduled call. |
+|   1   |  `dataHash` | `bytes32` |   `bytes32`   | The hash of data fot the scheduled call.  |
 
-<br />
+\
+
 
 ### `securityAdmin`
 
@@ -1050,19 +1063,18 @@ Gets security admin address.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `setBootstrapMint`
 
-Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60;         to prevent an MEV-exploit vector against the first pool depositor.
+Sets the virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSupply\` to prevent an MEV-exploit vector against the first pool depositor.
 
 ```solidity
     function setBootstrapMint(
@@ -1073,13 +1085,14 @@ Sets the virtualized first mint that acts as as offset to &#x60;totalAssets&#x60
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the pool asset. |
-| 1 | `amount_` | `uint256` | `uint256` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description                    |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
+|   0   |  `asset_` | `address` |   `address`   | The address of the pool asset. |
+|   1   | `amount_` | `uint256` |   `uint256`   |                                |
 
-<br />
+\
+
 
 ### `setCanDeployFrom`
 
@@ -1095,14 +1108,15 @@ Sets whether an account can deploying an instance from a particular factory.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` | The address of the factory. |
-| 1 | `account_` | `address` | `address` | The address of the account. |
-| 2 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy or not from the factory. |
 
+| Index |       Name       |    Type   | Internal Type | Description                                             |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------------------- |
+|   0   |    `factory_`    | `address` |   `address`   | The address of the factory.                             |
+|   1   |    `account_`    | `address` |   `address`   | The address of the account.                             |
+|   2   | `canDeployFrom_` |   `bool`  |     `bool`    | Whether the account can deploy or not from the factory. |
 
-<br />
+\
+
 
 ### `setContractPause`
 
@@ -1117,13 +1131,14 @@ Sets whether a contract is uniquely paused.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
-| 1 | `contractPaused_` | `bool` | `bool` | Whether the contract is uniquely paused. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   |    `contract_`    | `address` |   `address`   | The address of a contract in the protocol. |
+|   1   | `contractPaused_` |   `bool`  |     `bool`    | Whether the contract is uniquely paused.   |
 
-<br />
+\
+
 
 ### `setDefaultTimelockParameters`
 
@@ -1138,17 +1153,18 @@ Sets the default time lock parameters.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `defaultTimelockDelay_` | `uint128` | `uint128` | The default time lock delay. |
-| 1 | `defaultTimelockDuration_` | `uint128` | `uint128` | The default time lock duration. |
 
+| Index |            Name            |    Type   | Internal Type | Description                     |
+| :---: | :------------------------: | :-------: | :-----------: | ------------------------------- |
+|   0   |   `defaultTimelockDelay_`  | `uint128` |   `uint128`   | The default time lock delay.    |
+|   1   | `defaultTimelockDuration_` | `uint128` |   `uint128`   | The default time lock duration. |
 
-<br />
+\
+
 
 ### `setFunctionUnpause`
 
-Sets whether a contract&#x27;s function is uniquely unpaused. A false does not imply it is paused.
+Sets whether a contract's function is uniquely unpaused. A false does not imply it is paused.
 
 ```solidity
     function setFunctionUnpause(
@@ -1160,14 +1176,15 @@ Sets whether a contract&#x27;s function is uniquely unpaused. A false does not i
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
-| 1 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
-| 2 | `functionUnpaused_` | `bool` | `bool` | Whether the contract&#x27;s function is uniquely unpaused. |
 
+| Index |         Name        |    Type   | Internal Type | Description                                           |
+| :---: | :-----------------: | :-------: | :-----------: | ----------------------------------------------------- |
+|   0   |     `contract_`     | `address` |   `address`   | The address of a contract in the protocol.            |
+|   1   |        `sig_`       |  `bytes4` |    `bytes4`   | The function signature within the contract.           |
+|   2   | `functionUnpaused_` |   `bool`  |     `bool`    | Whether the contract's function is uniquely unpaused. |
 
-<br />
+\
+
 
 ### `setManualOverridePrice`
 
@@ -1182,13 +1199,14 @@ Sets the manual override price of the asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the asset to set the price for. |
-| 1 | `price_` | `uint256` | `uint256` | The price of the asset. |
 
+| Index |   Name   |    Type   | Internal Type | Description                                    |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the asset to set the price for. |
+|   1   | `price_` | `uint256` |   `uint256`   | The price of the asset.                        |
 
-<br />
+\
+
 
 ### `setMapleTreasury`
 
@@ -1202,12 +1220,13 @@ Sets the address of the Maple treasury.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `mapleTreasury_` | `address` | `address` | The address of the Maple treasury. |
 
+| Index |       Name       |    Type   | Internal Type | Description                        |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `mapleTreasury_` | `address` |   `address`   | The address of the Maple treasury. |
 
-<br />
+\
+
 
 ### `setMaxCoverLiquidationPercent`
 
@@ -1222,13 +1241,14 @@ Sets the maximum cover liquidation percent for the given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to set the maximum cover liquidation percent for. |
-| 1 | `maxCoverLiquidationPercent_` | `uint256` | `uint256` | The maximum cover liquidation percent. |
 
+| Index |              Name             |    Type   | Internal Type | Description                                                                       |
+| :---: | :---------------------------: | :-------: | :-----------: | --------------------------------------------------------------------------------- |
+|   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the maximum cover liquidation percent for. |
+|   1   | `maxCoverLiquidationPercent_` | `uint256` |   `uint256`   | The maximum cover liquidation percent.                                            |
 
-<br />
+\
+
 
 ### `setMigrationAdmin`
 
@@ -1242,12 +1262,13 @@ Sets the address of the migration admin.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrationAdmin_` | `address` | `address` | The address of the migration admin. |
 
+| Index |        Name       |    Type   | Internal Type | Description                         |
+| :---: | :---------------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `migrationAdmin_` | `address` |   `address`   | The address of the migration admin. |
 
-<br />
+\
+
 
 ### `setMinCoverAmount`
 
@@ -1262,13 +1283,14 @@ Sets the minimum cover amount for the given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to set the minimum cover amount  for. |
-| 1 | `minCoverAmount_` | `uint256` | `uint256` | The minimum cover amount. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                                          |
+| :---: | :---------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
+|   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager to set the minimum cover amount for. |
+|   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The minimum cover amount.                                            |
 
-<br />
+\
+
 
 ### `setOperationalAdmin`
 
@@ -1282,12 +1304,13 @@ Sets the address of the operational admin.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `operationalAdmin_` | `address` | `address` | The address of the operational admin. |
 
+| Index |         Name        |    Type   | Internal Type | Description                           |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `operationalAdmin_` | `address` |   `address`   | The address of the operational admin. |
 
-<br />
+\
+
 
 ### `setPendingGovernor`
 
@@ -1301,12 +1324,13 @@ Sets the pending governor.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingGovernor_` | `address` | `address` | The new pending governor. |
 
+| Index |        Name        |    Type   | Internal Type | Description               |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------- |
+|   0   | `pendingGovernor_` | `address` |   `address`   | The new pending governor. |
 
-<br />
+\
+
 
 ### `setPlatformManagementFeeRate`
 
@@ -1321,13 +1345,14 @@ Sets the platform management fee rate for the given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to set the fee for. |
-| 1 | `platformManagementFeeRate_` | `uint256` | `uint256` | The platform management fee rate. |
 
+| Index |             Name             |    Type   | Internal Type | Description                                         |
+| :---: | :--------------------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |        `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the fee for. |
+|   1   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The platform management fee rate.                   |
 
-<br />
+\
+
 
 ### `setPlatformOriginationFeeRate`
 
@@ -1342,13 +1367,14 @@ Sets the platform origination fee rate for the given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to set the fee for. |
-| 1 | `platformOriginationFeeRate_` | `uint256` | `uint256` | The platform origination fee rate. |
 
+| Index |              Name             |    Type   | Internal Type | Description                                         |
+| :---: | :---------------------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the fee for. |
+|   1   | `platformOriginationFeeRate_` | `uint256` |   `uint256`   | The platform origination fee rate.                  |
 
-<br />
+\
+
 
 ### `setPlatformServiceFeeRate`
 
@@ -1363,13 +1389,14 @@ Sets the platform service fee rate for the given pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager to set the fee for. |
-| 1 | `platformServiceFeeRate_` | `uint256` | `uint256` | The platform service fee rate. |
 
+| Index |            Name           |    Type   | Internal Type | Description                                         |
+| :---: | :-----------------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |       `poolManager_`      | `address` |   `address`   | The address of the pool manager to set the fee for. |
+|   1   | `platformServiceFeeRate_` | `uint256` |   `uint256`   | The platform service fee rate.                      |
 
-<br />
+\
+
 
 ### `setPriceOracle`
 
@@ -1385,14 +1412,15 @@ Sets the price oracle for the given asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the asset to set the oracle for. |
-| 1 | `oracle_` | `address` | `address` | The address of the oracle to set for the asset. |
-| 2 | `maxDelay_` | `uint96` | `uint96` | Maximum delay set to check for stale price. |
 
+| Index |     Name    |    Type   | Internal Type | Description                                     |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   |   `asset_`  | `address` |   `address`   | The address of the asset to set the oracle for. |
+|   1   |  `oracle_`  | `address` |   `address`   | The address of the oracle to set for the asset. |
+|   2   | `maxDelay_` |  `uint96` |    `uint96`   | Maximum delay set to check for stale price.     |
 
-<br />
+\
+
 
 ### `setProtocolPause`
 
@@ -1406,12 +1434,13 @@ Sets the protocol pause.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `protocolPaused_` | `bool` | `bool` | A boolean indicating the status of the protocol pause. |
 
+| Index |        Name       |  Type  | Internal Type | Description                                            |
+| :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------ |
+|   0   | `protocolPaused_` | `bool` |     `bool`    | A boolean indicating the status of the protocol pause. |
 
-<br />
+\
+
 
 ### `setSecurityAdmin`
 
@@ -1425,12 +1454,13 @@ Sets the address of the security admin.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `securityAdmin_` | `address` | `address` | The address of the security admin. |
 
+| Index |       Name       |    Type   | Internal Type | Description                        |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `securityAdmin_` | `address` |   `address`   | The address of the security admin. |
 
-<br />
+\
+
 
 ### `setTimelockWindow`
 
@@ -1447,15 +1477,16 @@ Sets the timelock for the given contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The address of the contract to add. |
-| 1 | `functionId_` | `bytes32` | `bytes32` | The id of the function. |
-| 2 | `delay_` | `uint128` | `uint128` | The delay for the timelock window. |
-| 3 | `duration_` | `uint128` | `uint128` | The duration for the timelock window. |
 
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |  `contract_`  | `address` |   `address`   | The address of the contract to add.   |
+|   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function.               |
+|   2   |    `delay_`   | `uint128` |   `uint128`   | The delay for the timelock window.    |
+|   3   |  `duration_`  | `uint128` |   `uint128`   | The duration for the timelock window. |
 
-<br />
+\
+
 
 ### `setTimelockWindows`
 
@@ -1472,15 +1503,16 @@ Sets the timelock for the many function ids in a contract.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The address of the contract to add. |
-| 1 | `functionIds_` | `bytes32[]` | `bytes32[]` | The ids of the functions. |
-| 2 | `delays_` | `uint128[]` | `uint128[]` | The delays for the timelock window. |
-| 3 | `durations_` | `uint128[]` | `uint128[]` | The durations for the timelock window. |
 
+| Index |      Name      |     Type    | Internal Type | Description                            |
+| :---: | :------------: | :---------: | :-----------: | -------------------------------------- |
+|   0   |   `contract_`  |  `address`  |   `address`   | The address of the contract to add.    |
+|   1   | `functionIds_` | `bytes32[]` |  `bytes32[]`  | The ids of the functions.              |
+|   2   |    `delays_`   | `uint128[]` |  `uint128[]`  | The delays for the timelock window.    |
+|   3   |  `durations_`  | `uint128[]` |  `uint128[]`  | The durations for the timelock window. |
 
-<br />
+\
+
 
 ### `setValidBorrower`
 
@@ -1495,13 +1527,14 @@ Sets the validity of the borrower.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` | The address of the borrower to set the validity for. |
-| 1 | `isValid_` | `bool` | `bool` | A boolean indicating the validity of the borrower. |
 
+| Index |     Name    |    Type   | Internal Type | Description                                          |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------------------------------- |
+|   0   | `borrower_` | `address` |   `address`   | The address of the borrower to set the validity for. |
+|   1   |  `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the borrower.   |
 
-<br />
+\
+
 
 ### `setValidCollateralAsset`
 
@@ -1516,13 +1549,14 @@ Sets the validity of a collateral asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralAsset_` | `address` | `address` | The address of the collateral asset to set the validity for. |
-| 1 | `isValid_` | `bool` | `bool` | A boolean indicating the validity of the collateral asset. |
 
+| Index |        Name        |    Type   | Internal Type | Description                                                  |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `collateralAsset_` | `address` |   `address`   | The address of the collateral asset to set the validity for. |
+|   1   |     `isValid_`     |   `bool`  |     `bool`    | A boolean indicating the validity of the collateral asset.   |
 
-<br />
+\
+
 
 ### `setValidInstanceOf`
 
@@ -1538,14 +1572,15 @@ Sets the validity of the instance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instanceKey_` | `bytes32` | `bytes32` | The key of the instance to set the validity for. |
-| 1 | `instance_` | `address` | `address` | The address of the instance to set the validity for. |
-| 2 | `isValid_` | `bool` | `bool` | Boolean indicating the validity of the instance. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                          |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------------------------------- |
+|   0   | `instanceKey_` | `bytes32` |   `bytes32`   | The key of the instance to set the validity for.     |
+|   1   |   `instance_`  | `address` |   `address`   | The address of the instance to set the validity for. |
+|   2   |   `isValid_`   |   `bool`  |     `bool`    | Boolean indicating the validity of the instance.     |
 
-<br />
+\
+
 
 ### `setValidPoolAsset`
 
@@ -1560,13 +1595,14 @@ Sets the validity of the pool asset.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolAsset_` | `address` | `address` | The address of the pool asset to set the validity for. |
-| 1 | `isValid_` | `bool` | `bool` | A boolean indicating the validity of the pool asset. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                            |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------------ |
+|   0   | `poolAsset_` | `address` |   `address`   | The address of the pool asset to set the validity for. |
+|   1   |  `isValid_`  |   `bool`  |     `bool`    | A boolean indicating the validity of the pool asset.   |
 
-<br />
+\
+
 
 ### `setValidPoolDelegate`
 
@@ -1581,13 +1617,14 @@ Sets the validity of the pool delegate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` |  |
-| 1 | `isValid_` | `bool` | `bool` | A boolean indicating the validity of the pool delegate. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                             |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------------------- |
+|   0   | `account_` | `address` |   `address`   |                                                         |
+|   1   | `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the pool delegate. |
 
-<br />
+\
+
 
 ### `setValidPoolDeployer`
 
@@ -1602,13 +1639,14 @@ Sets the validity of the pool deployer.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | The address of the pool deployer to set the validity for. |
-| 1 | `isPoolDeployer_` | `bool` | `bool` | A boolean indicating the validity of the pool deployer. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                               |
+| :---: | :---------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   |     `account_`    | `address` |   `address`   | The address of the pool deployer to set the validity for. |
+|   1   | `isPoolDeployer_` |   `bool`  |     `bool`    | A boolean indicating the validity of the pool deployer.   |
 
-<br />
+\
+
 
 ### `timelockParametersOf`
 
@@ -1627,20 +1665,21 @@ Gets the time lock parameters for a given contract and function.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-| 1 | `` | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
+|   1   | \`\` | `bytes32` |   `bytes32`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `delay` | `uint128` | `uint128` |       The time lock delay. |
-| 1 | `duration` | `uint128` | `uint128` |    The time lock duration. |
 
+| Index |    Name    |    Type   | Internal Type | Description             |
+| :---: | :--------: | :-------: | :-----------: | ----------------------- |
+|   0   |   `delay`  | `uint128` |   `uint128`   | The time lock delay.    |
+|   1   | `duration` | `uint128` |   `uint128`   | The time lock duration. |
 
-<br />
+\
+
 
 ### `transferOwnedPoolManager`
 
@@ -1655,13 +1694,14 @@ Transfer the ownership of the pool manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromPoolDelegate_` | `address` | `address` | The address of the pool delegate to transfer ownership from. |
-| 1 | `toPoolDelegate_` | `address` | `address` | The address of the pool delegate to transfer ownership to. |
 
+| Index |         Name        |    Type   | Internal Type | Description                                                  |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `fromPoolDelegate_` | `address` |   `address`   | The address of the pool delegate to transfer ownership from. |
+|   1   |  `toPoolDelegate_`  | `address` |   `address`   | The address of the pool delegate to transfer ownership to.   |
 
-<br />
+\
+
 
 ### `unscheduleCall`
 
@@ -1678,15 +1718,16 @@ Unschedules a call to be executed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The contract to execute the call on. |
-| 1 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 2 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 3 | `callData_` | `bytes` | `bytes` | The of the parameters to pass to the function. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                    |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
+|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.           |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
+|   3   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-<br />
+\
+
 
 ### `unscheduleCall`
 
@@ -1702,21 +1743,21 @@ Unschedules a call to be executed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The contract to execute the call on. |
-| 1 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 2 | `callData_` | `bytes` | `bytes` | The of the parameters to pass to the function. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                    |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
+|   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
+|   2   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-<br />
+\
 
 
 ## Events
 
 ### `BootstrapMintSet`
 
-A virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60;.
+A virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSupply\`.
 
 ```solidity
     event BootstrapMintSet(
@@ -1726,12 +1767,14 @@ A virtualized first mint that acts as as offset to &#x60;totalAssets&#x60; and &
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the pool asset. |
-| 1 | `bootstrapMint_` | `uint256` | `uint256` | The amount of shares that will offset &#x60;totalAssets&#x60; and &#x60;totalSupply&#x60;. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                                                                |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------------------------------------- |
+|   0   |     `asset_`     | `address` |   `address`   | The address of the pool asset.                                             |
+|   1   | `bootstrapMint_` | `uint256` |   `uint256`   | The amount of shares that will offset \`totalAssets\` and \`totalSupply\`. |
+
+\
+
 
 ### `CallScheduled`
 
@@ -1748,15 +1791,17 @@ A time locked call has been scheduled.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the function caller. |
-| 1 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 2 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 3 | `dataHash_` | `bytes32` | `bytes32` | The hash of the parameters to pass to the function. |
-| 4 | `timestamp_` | `uint256` | `uint256` | The timestamp of the schedule. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                                         |
+| :---: | :-----------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The address of the function caller.                 |
+|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.                |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.                  |
+|   3   |  `dataHash_`  | `bytes32` |   `bytes32`   | The hash of the parameters to pass to the function. |
+|   4   |  `timestamp_` | `uint256` |   `uint256`   | The timestamp of the schedule.                      |
+
+\
+
 
 ### `CallUnscheduled`
 
@@ -1773,15 +1818,17 @@ A time locked call has been unscheduled.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the function caller. |
-| 1 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 2 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 3 | `dataHash_` | `bytes32` | `bytes32` | The hash of the parameters to pass to the function. |
-| 4 | `timestamp_` | `uint256` | `uint256` | The timestamp of the schedule. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                                         |
+| :---: | :-----------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The address of the function caller.                 |
+|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.                |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.                  |
+|   3   |  `dataHash_`  | `bytes32` |   `bytes32`   | The hash of the parameters to pass to the function. |
+|   4   |  `timestamp_` | `uint256` |   `uint256`   | The timestamp of the schedule.                      |
+
+\
+
 
 ### `CanDeployFromSet`
 
@@ -1796,13 +1843,15 @@ An account has been allowed/disallowed from deploying an instance from a particu
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` | The address of the factory. |
-| 1 | `account_` | `address` | `address` | The address of the account. |
-| 2 | `canDeployFrom_` | `bool` | `bool` | Whether the account can deploy from the factory. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                                      |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |    `factory_`    | `address` |   `address`   | The address of the factory.                      |
+|   1   |    `account_`    | `address` |   `address`   | The address of the account.                      |
+|   2   | `canDeployFrom_` |   `bool`  |     `bool`    | Whether the account can deploy from the factory. |
+
+\
+
 
 ### `ContractPauseSet`
 
@@ -1817,13 +1866,15 @@ The paused state for a given protocol contract was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
-| 1 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
-| 2 | `contractPaused_` | `bool` | `bool` | Whether the contract is uniquely paused. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                                                              |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   |     `caller_`     | `address` |   `address`   | The address of the security admin or governor that performed the action. |
+|   1   |    `contract_`    | `address` |   `address`   | The address of a contract in the protocol.                               |
+|   2   | `contractPaused_` |   `bool`  |     `bool`    | Whether the contract is uniquely paused.                                 |
+
+\
+
 
 ### `DefaultTimelockParametersSet`
 
@@ -1839,14 +1890,16 @@ The default parameters for the time lock has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousDelay_` | `uint256` | `uint256` | The previous required delay. |
-| 1 | `currentDelay_` | `uint256` | `uint256` | The newly set required delay. |
-| 2 | `previousDuration_` | `uint256` | `uint256` | The previous required duration. |
-| 3 | `currentDuration_` | `uint256` | `uint256` | The newly set required duration. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                      |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
+|   0   |   `previousDelay_`  | `uint256` |   `uint256`   | The previous required delay.     |
+|   1   |   `currentDelay_`   | `uint256` |   `uint256`   | The newly set required delay.    |
+|   2   | `previousDuration_` | `uint256` |   `uint256`   | The previous required duration.  |
+|   3   |  `currentDuration_` | `uint256` |   `uint256`   | The newly set required duration. |
+
+\
+
 
 ### `FunctionUnpauseSet`
 
@@ -1862,14 +1915,16 @@ The paused state for a function of a given protocol contract was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
-| 1 | `contract_` | `address` | `address` | The address of a contract in the protocol. |
-| 2 | `sig_` | `bytes4` | `bytes4` | The function signature within the contract. |
-| 3 | `functionUnpaused_` | `bool` | `bool` | Whether the contract&#x27;s function is uniquely unpaused. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                                                              |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   |      `caller_`      | `address` |   `address`   | The address of the security admin or governor that performed the action. |
+|   1   |     `contract_`     | `address` |   `address`   | The address of a contract in the protocol.                               |
+|   2   |        `sig_`       |  `bytes4` |    `bytes4`   | The function signature within the contract.                              |
+|   3   | `functionUnpaused_` |   `bool`  |     `bool`    | Whether the contract's function is uniquely unpaused.                    |
+
+\
+
 
 ### `GovernorshipAccepted`
 
@@ -1883,12 +1938,14 @@ The governorship has been accepted.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousGovernor_` | `address` | `address` | The previous governor. |
-| 1 | `currentGovernor_` | `address` | `address` | The new governor. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description            |
+| :---: | :-----------------: | :-------: | :-----------: | ---------------------- |
+|   0   | `previousGovernor_` | `address` |   `address`   | The previous governor. |
+|   1   |  `currentGovernor_` | `address` |   `address`   | The new governor.      |
+
+\
+
 
 ### `ManualOverridePriceSet`
 
@@ -1902,12 +1959,14 @@ The price for an asset has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the asset. |
-| 1 | `price_` | `uint256` | `uint256` | The manually set price of the asset. |
 
-<br />
+| Index |   Name   |    Type   | Internal Type | Description                          |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `asset_` | `address` |   `address`   | The address of the asset.            |
+|   1   | `price_` | `uint256` |   `uint256`   | The manually set price of the asset. |
+
+\
+
 
 ### `MapleTreasurySet`
 
@@ -1921,12 +1980,14 @@ The address for the Maple treasury has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousMapleTreasury_` | `address` | `address` | The previous treasury. |
-| 1 | `currentMapleTreasury_` | `address` | `address` | The new treasury. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description            |
+| :---: | :----------------------: | :-------: | :-----------: | ---------------------- |
+|   0   | `previousMapleTreasury_` | `address` |   `address`   | The previous treasury. |
+|   1   |  `currentMapleTreasury_` | `address` |   `address`   | The new treasury.      |
+
+\
+
 
 ### `MaxCoverLiquidationPercentSet`
 
@@ -1940,12 +2001,14 @@ The max liquidation percent for the given pool manager has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `maxCoverLiquidationPercent_` | `uint256` | `uint256` | The new value for the cover liquidation percent. |
 
-<br />
+| Index |              Name             |    Type   | Internal Type | Description                                      |
+| :---: | :---------------------------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager.                 |
+|   1   | `maxCoverLiquidationPercent_` | `uint256` |   `uint256`   | The new value for the cover liquidation percent. |
+
+\
+
 
 ### `MigrationAdminSet`
 
@@ -1959,12 +2022,14 @@ The migration admin has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousMigrationAdmin_` | `address` | `address` | The previous migration admin. |
-| 1 | `nextMigrationAdmin_` | `address` | `address` | The new migration admin. |
 
-<br />
+| Index |            Name           |    Type   | Internal Type | Description                   |
+| :---: | :-----------------------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `previousMigrationAdmin_` | `address` |   `address`   | The previous migration admin. |
+|   1   |   `nextMigrationAdmin_`   | `address` |   `address`   | The new migration admin.      |
+
+\
+
 
 ### `MinCoverAmountSet`
 
@@ -1978,12 +2043,14 @@ The minimum cover amount for the given pool manager has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `minCoverAmount_` | `uint256` | `uint256` | The new value for the minimum cover amount. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                                 |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager.            |
+|   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The new value for the minimum cover amount. |
+
+\
+
 
 ### `OperationalAdminSet`
 
@@ -1997,12 +2064,14 @@ The operational admin was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousOperationalAdmin_` | `address` | `address` | The address of the previous operational admin. |
-| 1 | `currentOperationalAdmin_` | `address` | `address` | The address of the new operational admin. |
 
-<br />
+| Index |             Name            |    Type   | Internal Type | Description                                    |
+| :---: | :-------------------------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `previousOperationalAdmin_` | `address` |   `address`   | The address of the previous operational admin. |
+|   1   |  `currentOperationalAdmin_` | `address` |   `address`   | The address of the new operational admin.      |
+
+\
+
 
 ### `PendingGovernorSet`
 
@@ -2015,11 +2084,13 @@ The pending governor has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingGovernor_` | `address` | `address` | The new pending governor. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description               |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------- |
+|   0   | `pendingGovernor_` | `address` |   `address`   | The new pending governor. |
+
+\
+
 
 ### `PlatformManagementFeeRateSet`
 
@@ -2033,12 +2104,14 @@ The platform management fee rate for the given pool manager has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `platformManagementFeeRate_` | `uint256` | `uint256` | The new value for the platform management fee rate. |
 
-<br />
+| Index |             Name             |    Type   | Internal Type | Description                                         |
+| :---: | :--------------------------: | :-------: | :-----------: | --------------------------------------------------- |
+|   0   |        `poolManager_`        | `address` |   `address`   | The address of the pool manager.                    |
+|   1   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The new value for the platform management fee rate. |
+
+\
+
 
 ### `PlatformOriginationFeeRateSet`
 
@@ -2052,12 +2125,14 @@ The platform origination fee rate for the given pool manager has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `platformOriginationFeeRate_` | `uint256` | `uint256` | The new value for the origination fee rate. |
 
-<br />
+| Index |              Name             |    Type   | Internal Type | Description                                 |
+| :---: | :---------------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager.            |
+|   1   | `platformOriginationFeeRate_` | `uint256` |   `uint256`   | The new value for the origination fee rate. |
+
+\
+
 
 ### `PlatformServiceFeeRateSet`
 
@@ -2071,12 +2146,14 @@ The platform service fee rate for the given pool manager has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `platformServiceFeeRate_` | `uint256` | `uint256` | The new value for the platform service fee rate. |
 
-<br />
+| Index |            Name           |    Type   | Internal Type | Description                                      |
+| :---: | :-----------------------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |       `poolManager_`      | `address` |   `address`   | The address of the pool manager.                 |
+|   1   | `platformServiceFeeRate_` | `uint256` |   `uint256`   | The new value for the platform service fee rate. |
+
+\
+
 
 ### `PoolManagerActivated`
 
@@ -2090,12 +2167,14 @@ The pool manager was activated.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | The address of the pool manager. |
-| 1 | `poolDelegate_` | `address` | `address` | The address of the pool delegate. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                       |
+| :---: | :-------------: | :-------: | :-----------: | --------------------------------- |
+|   0   |  `poolManager_` | `address` |   `address`   | The address of the pool manager.  |
+|   1   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate. |
+
+\
+
 
 ### `PoolManagerOwnershipTransferred`
 
@@ -2110,13 +2189,15 @@ The ownership of the pool manager was transferred.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fromPoolDelegate_` | `address` | `address` | The address of the previous pool delegate. |
-| 1 | `toPoolDelegate_` | `address` | `address` | The address of the new pool delegate. |
-| 2 | `poolManager_` | `address` | `address` | The address of the pool manager. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                                |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `fromPoolDelegate_` | `address` |   `address`   | The address of the previous pool delegate. |
+|   1   |  `toPoolDelegate_`  | `address` |   `address`   | The address of the new pool delegate.      |
+|   2   |    `poolManager_`   | `address` |   `address`   | The address of the pool manager.           |
+
+\
+
 
 ### `PriceOracleSet`
 
@@ -2131,13 +2212,15 @@ The oracle for an asset has been set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `asset_` | `address` | `address` | The address of the asset. |
-| 1 | `oracle_` | `address` | `address` | The address of the oracle. |
-| 2 | `maxDelay_` | `uint96` | `uint96` | The maximum delay of the oracle. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                      |
+| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
+|   0   |   `asset_`  | `address` |   `address`   | The address of the asset.        |
+|   1   |  `oracle_`  | `address` |   `address`   | The address of the oracle.       |
+|   2   | `maxDelay_` |  `uint96` |    `uint96`   | The maximum delay of the oracle. |
+
+\
+
 
 ### `ProtocolPauseSet`
 
@@ -2151,12 +2234,14 @@ The protocol pause was set to a new state.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `caller_` | `address` | `address` | The address of the security admin or governor that performed the action. |
-| 1 | `protocolPaused_` | `bool` | `bool` | The protocol paused state. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                                                              |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   |     `caller_`     | `address` |   `address`   | The address of the security admin or governor that performed the action. |
+|   1   | `protocolPaused_` |   `bool`  |     `bool`    | The protocol paused state.                                               |
+
+\
+
 
 ### `SecurityAdminSet`
 
@@ -2170,12 +2255,14 @@ The security admin was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousSecurityAdmin_` | `address` | `address` | The address of the previous security admin. |
-| 1 | `currentSecurityAdmin_` | `address` | `address` | The address of the new security admin. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description                                 |
+| :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `previousSecurityAdmin_` | `address` |   `address`   | The address of the previous security admin. |
+|   1   |  `currentSecurityAdmin_` | `address` |   `address`   | The address of the new security admin.      |
+
+\
+
 
 ### `TimelockWindowSet`
 
@@ -2191,14 +2278,16 @@ A new timelock window was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `contract_` | `address` | `address` | The contract to execute the call on. |
-| 1 | `functionId_` | `bytes32` | `bytes32` | The id of the function to execute. |
-| 2 | `delay_` | `uint128` | `uint128` | The delay of the timelock window. |
-| 3 | `duration_` | `uint128` | `uint128` | The duration of the timelock window. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                          |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------ |
+|   0   |  `contract_`  | `address` |   `address`   | The contract to execute the call on. |
+|   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.   |
+|   2   |    `delay_`   | `uint128` |   `uint128`   | The delay of the timelock window.    |
+|   3   |  `duration_`  | `uint128` |   `uint128`   | The duration of the timelock window. |
+
+\
+
 
 ### `ValidBorrowerSet`
 
@@ -2212,12 +2301,14 @@ A valid borrower was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` | The address of the borrower. |
-| 1 | `isValid_` | `bool` | `bool` | The validity of the borrower. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                   |
+| :---: | :---------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `borrower_` | `address` |   `address`   | The address of the borrower.  |
+|   1   |  `isValid_` |   `bool`  |     `bool`    | The validity of the borrower. |
+
+\
+
 
 ### `ValidCollateralAssetSet`
 
@@ -2231,12 +2322,14 @@ A valid asset was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `collateralAsset_` | `address` | `address` | The address of the collateral asset. |
-| 1 | `isValid_` | `bool` | `bool` | The validity of the collateral asset. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                           |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `collateralAsset_` | `address` |   `address`   | The address of the collateral asset.  |
+|   1   |     `isValid_`     |   `bool`  |     `bool`    | The validity of the collateral asset. |
+
+\
+
 
 ### `ValidInstanceSet`
 
@@ -2251,13 +2344,15 @@ A valid instance was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `instanceKey_` | `bytes32` | `bytes32` | The key of the instance. |
-| 1 | `instance_` | `address` | `address` | The address of the instance. |
-| 2 | `isValid_` | `bool` | `bool` | The validity of the instance. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                   |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `instanceKey_` | `bytes32` |   `bytes32`   | The key of the instance.      |
+|   1   |   `instance_`  | `address` |   `address`   | The address of the instance.  |
+|   2   |   `isValid_`   |   `bool`  |     `bool`    | The validity of the instance. |
+
+\
+
 
 ### `ValidPoolAssetSet`
 
@@ -2271,12 +2366,14 @@ A valid asset was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolAsset_` | `address` | `address` | The address of the asset. |
-| 1 | `isValid_` | `bool` | `bool` | The validity of the asset. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                |
+| :---: | :----------: | :-------: | :-----------: | -------------------------- |
+|   0   | `poolAsset_` | `address` |   `address`   | The address of the asset.  |
+|   1   |  `isValid_`  |   `bool`  |     `bool`    | The validity of the asset. |
+
+\
+
 
 ### `ValidPoolDelegateSet`
 
@@ -2290,12 +2387,14 @@ A valid pool delegate was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `account_` | `address` | `address` | The address the account. |
-| 1 | `isValid_` | `bool` | `bool` | The validity of the asset. |
 
-<br />
+| Index |    Name    |    Type   | Internal Type | Description                |
+| :---: | :--------: | :-------: | :-----------: | -------------------------- |
+|   0   | `account_` | `address` |   `address`   | The address the account.   |
+|   1   | `isValid_` |   `bool`  |     `bool`    | The validity of the asset. |
+
+\
+
 
 ### `ValidPoolDeployerSet`
 
@@ -2309,10 +2408,10 @@ A valid pool deployer was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolDeployer_` | `address` | `address` | The address the account. |
-| 1 | `isValid_` | `bool` | `bool` | The validity of the asset. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                |
+| :---: | :-------------: | :-------: | :-----------: | -------------------------- |
+|   0   | `poolDeployer_` | `address` |   `address`   | The address the account.   |
+|   1   |    `isValid_`   |   `bool`  |     `bool`    | The validity of the asset. |
 
+\

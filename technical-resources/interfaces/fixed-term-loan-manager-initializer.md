@@ -1,15 +1,11 @@
-# Maple Fixed Term Loan Manager Initializer
+# FixedTermLoanManagerInitializer
 
-
-
-<br />
+\
 
 
 ## Functions
 
 ### `accountedInterest`
-
-
 
 ```solidity
     function accountedInterest()
@@ -19,19 +15,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint112` | `uint112` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint112` |   `uint112`   |             |
 
-<br />
+\
+
 
 ### `allowedSlippageFor`
-
-
 
 ```solidity
     function allowedSlippageFor(
@@ -44,18 +37,19 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `decodeArguments`
 
@@ -72,22 +66,21 @@ Decodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` | ABI encoded address of the pool manager. |
 
+| Index |     Name    |   Type  | Internal Type | Description                              |
+| :---: | :---------: | :-----: | :-----------: | ---------------------------------------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    | ABI encoded address of the pool manager. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | Address of the pool manager. |
 
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | Address of the pool manager. |
 
-<br />
+\
+
 
 ### `domainEnd`
-
-
 
 ```solidity
     function domainEnd()
@@ -97,19 +90,16 @@ Decodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint48` | `uint48` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint48` |    `uint48`   |             |
 
-<br />
+\
+
 
 ### `domainStart`
-
-
 
 ```solidity
     function domainStart()
@@ -119,15 +109,14 @@ Decodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint48` | `uint48` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint48` |    `uint48`   |             |
 
-<br />
+\
+
 
 ### `encodeArguments`
 
@@ -144,22 +133,21 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | Address of the pool manager. |
 
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | Address of the pool manager. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `calldata_` | `bytes` | `bytes` |    ABI encoded address of the pool manager. |
 
+| Index |     Name    |   Type  | Internal Type | Description                              |
+| :---: | :---------: | :-----: | :-----------: | ---------------------------------------- |
+|   0   | `calldata_` | `bytes` |    `bytes`    | ABI encoded address of the pool manager. |
 
-<br />
+\
+
 
 ### `fundsAsset`
-
-
 
 ```solidity
     function fundsAsset()
@@ -169,19 +157,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `issuanceRate`
-
-
 
 ```solidity
     function issuanceRate()
@@ -191,19 +176,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `liquidationInfo`
-
-
 
 ```solidity
     function liquidationInfo(
@@ -221,27 +203,26 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `triggeredByGovernor` | `bool` | `bool` |  |
-| 1 | `principal` | `uint128` | `uint128` |  |
-| 2 | `interest` | `uint120` | `uint120` |  |
-| 3 | `lateInterest` | `uint256` | `uint256` |  |
-| 4 | `platformFees` | `uint96` | `uint96` |  |
-| 5 | `liquidator` | `address` | `address` |  |
 
+| Index |          Name         |    Type   | Internal Type | Description |
+| :---: | :-------------------: | :-------: | :-----------: | ----------- |
+|   0   | `triggeredByGovernor` |   `bool`  |     `bool`    |             |
+|   1   |      `principal`      | `uint128` |   `uint128`   |             |
+|   2   |       `interest`      | `uint120` |   `uint120`   |             |
+|   3   |     `lateInterest`    | `uint256` |   `uint256`   |             |
+|   4   |     `platformFees`    |  `uint96` |    `uint96`   |             |
+|   5   |      `liquidator`     | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `minRatioFor`
-
-
 
 ```solidity
     function minRatioFor(
@@ -254,22 +235,21 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `paymentCounter`
-
-
 
 ```solidity
     function paymentCounter()
@@ -279,19 +259,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint24` | `uint24` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint24` |    `uint24`   |             |
 
-<br />
+\
+
 
 ### `paymentIdOf`
-
-
 
 ```solidity
     function paymentIdOf(
@@ -304,22 +281,21 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint24` | `uint24` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint24` |    `uint24`   |             |
 
-<br />
+\
+
 
 ### `payments`
-
-
 
 ```solidity
     function payments(
@@ -338,28 +314,27 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `platformManagementFeeRate` | `uint24` | `uint24` |  |
-| 1 | `delegateManagementFeeRate` | `uint24` | `uint24` |  |
-| 2 | `startDate` | `uint48` | `uint48` |  |
-| 3 | `paymentDueDate` | `uint48` | `uint48` |  |
-| 4 | `incomingNetInterest` | `uint128` | `uint128` |  |
-| 5 | `refinanceInterest` | `uint128` | `uint128` |  |
-| 6 | `issuanceRate` | `uint256` | `uint256` |  |
 
+| Index |             Name            |    Type   | Internal Type | Description |
+| :---: | :-------------------------: | :-------: | :-----------: | ----------- |
+|   0   | `platformManagementFeeRate` |  `uint24` |    `uint24`   |             |
+|   1   | `delegateManagementFeeRate` |  `uint24` |    `uint24`   |             |
+|   2   |         `startDate`         |  `uint48` |    `uint48`   |             |
+|   3   |       `paymentDueDate`      |  `uint48` |    `uint48`   |             |
+|   4   |    `incomingNetInterest`    | `uint128` |   `uint128`   |             |
+|   5   |     `refinanceInterest`     | `uint128` |   `uint128`   |             |
+|   6   |        `issuanceRate`       | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `paymentWithEarliestDueDate`
-
-
 
 ```solidity
     function paymentWithEarliestDueDate()
@@ -369,19 +344,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint24` | `uint24` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint24` |    `uint24`   |             |
 
-<br />
+\
+
 
 ### `poolManager`
-
-
 
 ```solidity
     function poolManager()
@@ -391,19 +363,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `principalOut`
-
-
 
 ```solidity
     function principalOut()
@@ -413,19 +382,16 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `sortedPayments`
-
-
 
 ```solidity
     function sortedPayments(
@@ -440,24 +406,23 @@ Encodes the initialization arguments of a loan manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previous` | `uint24` | `uint24` |  |
-| 1 | `next` | `uint24` | `uint24` |  |
-| 2 | `paymentDueDate` | `uint48` | `uint48` |  |
 
+| Index |       Name       |   Type   | Internal Type | Description |
+| :---: | :--------------: | :------: | :-----------: | ----------- |
+|   0   |    `previous`    | `uint24` |    `uint24`   |             |
+|   1   |      `next`      | `uint24` |    `uint24`   |             |
+|   2   | `paymentDueDate` | `uint48` |    `uint48`   |             |
 
-<br />
+\
+
 
 ### `unrealizedLosses`
-
-
 
 ```solidity
     function unrealizedLosses()
@@ -467,15 +432,13 @@ Encodes the initialization arguments of a loan manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
 
 
 ## Events
@@ -491,9 +454,9 @@ Emitted when the loan manager is initialized.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` | Address of the associated pool manager. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                             |
+| :---: | :------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | Address of the associated pool manager. |
 
+\

@@ -1,8 +1,6 @@
-# Maple Open Term Loan
+# OpenTermLoan
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -19,15 +17,14 @@ The value that represents 100%, to be easily comparable with the loan rates.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `acceptBorrower`
 
@@ -38,9 +35,8 @@ Accept the borrower role, must be called by pendingBorrower.
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `acceptLender`
 
@@ -51,9 +47,8 @@ Accept the lender role, must be called by pendingLender.
         nonpayable;
 ```
 
+\
 
-
-<br />
 
 ### `acceptNewTerms`
 
@@ -72,20 +67,21 @@ Accept the proposed terms and trigger refinance execution.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinancer_` | `address` | `address` | The address of the refinancer contract. |
-| 1 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 2 | `calls_` | `bytes[]` | `bytes[]` | The encoded arguments to be passed to refinancer. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                       |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `refinancer_` | `address` |   `address`   | The address of the refinancer contract.           |
+|   1   |  `deadline_`  | `uint256` |   `uint256`   | The deadline for accepting the new terms.         |
+|   2   |    `calls_`   | `bytes[]` |   `bytes[]`   | The encoded arguments to be passed to refinancer. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the accepted refinance agreement. |
 
+| Index |          Name          |    Type   | Internal Type | Description                                   |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the accepted refinance agreement. |
 
-<br />
+\
+
 
 ### `borrower`
 
@@ -99,15 +95,14 @@ The borrower of the loan, responsible for repayments.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `calledPrincipal`
 
@@ -121,15 +116,14 @@ The amount of principal yet to be returned to satisfy the loan call.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `callPrincipal`
 
@@ -147,19 +141,20 @@ The lender called the loan, giving the borrower a notice period within which to 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalToReturn_` | `uint256` | `uint256` | The minimum amount of principal the borrower must return. |
 
+| Index |         Name         |    Type   | Internal Type | Description                                               |
+| :---: | :------------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `principalToReturn_` | `uint256` |   `uint256`   | The minimum amount of principal the borrower must return. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` |    The new payment due date for returning the principal and pro-rate interest to the lender. |
-| 1 | `defaultDate_` | `uint40` | `uint40` |       The date the loan will be in default. |
 
+| Index |        Name       |   Type   | Internal Type | Description                                                                               |
+| :---: | :---------------: | :------: | :-----------: | ----------------------------------------------------------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date for returning the principal and pro-rate interest to the lender. |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default.                                                     |
 
-<br />
+\
+
 
 ### `dateCalled`
 
@@ -173,15 +168,14 @@ The timestamp of the date the loan was called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateFunded`
 
@@ -195,15 +189,14 @@ The timestamp of the date the loan was funded.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `dateImpaired`
 
@@ -217,15 +210,14 @@ The timestamp of the date the loan was impaired.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `datePaid`
 
@@ -239,15 +231,14 @@ The timestamp of the date the loan was last paid.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint40` | `uint40` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `defaultDate`
 
@@ -261,15 +252,14 @@ The timestamp of the date the loan will be in default.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDefaultDate_` | `uint40` | `uint40` |  |
 
+| Index |          Name         |   Type   | Internal Type | Description |
+| :---: | :-------------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentDefaultDate_` | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `delegateServiceFeeRate`
 
@@ -283,15 +273,14 @@ The annualized delegate service fee rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `factory`
 
@@ -305,15 +294,14 @@ The address of the proxy factory.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `factory_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `fund`
 
@@ -329,17 +317,16 @@ Lend funds to the loan/borrower.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundsLent_` | `uint256` | `uint256` |      The amount funded. |
-| 1 | `paymentDueDate_` | `uint40` | `uint40` | The due date of the first payment. |
-| 2 | `defaultDate_` | `uint40` | `uint40` |    The timestamp of the date the loan will be in default. |
 
+| Index |        Name       |    Type   | Internal Type | Description                                            |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------------ |
+|   0   |    `fundsLent_`   | `uint256` |   `uint256`   | The amount funded.                                     |
+|   1   | `paymentDueDate_` |  `uint40` |    `uint40`   | The due date of the first payment.                     |
+|   2   |   `defaultDate_`  |  `uint40` |    `uint40`   | The timestamp of the date the loan will be in default. |
 
-<br />
+\
+
 
 ### `fundsAsset`
 
@@ -353,15 +340,14 @@ The address of the fundsAsset funding the loan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `getPaymentBreakdown`
 
@@ -382,22 +368,23 @@ Get the breakdown of the total payment needed to satisfy the next payment instal
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `timestamp_` | `uint256` | `uint256` | The timestamp that corresponds to when the payment is to be made. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                                       |
+| :---: | :----------: | :-------: | :-----------: | ----------------------------------------------------------------- |
+|   0   | `timestamp_` | `uint256` |   `uint256`   | The timestamp that corresponds to when the payment is to be made. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principal_` | `uint256` | `uint256` |          The portion of the total amount that will go towards principal. |
-| 1 | `interest_` | `uint256` | `uint256` |           The portion of the total amount that will go towards interest fees. |
-| 2 | `lateInterest_` | `uint256` | `uint256` |       The portion of the total amount that will go towards late interest fees. |
-| 3 | `delegateServiceFee_` | `uint256` | `uint256` | The portion of the total amount that will go towards delegate service fees. |
-| 4 | `platformServiceFee_` | `uint256` | `uint256` | The portion of the total amount that will go towards platform service fees. |
 
+| Index |          Name         |    Type   | Internal Type | Description                                                                 |
+| :---: | :-------------------: | :-------: | :-----------: | --------------------------------------------------------------------------- |
+|   0   |      `principal_`     | `uint256` |   `uint256`   | The portion of the total amount that will go towards principal.             |
+|   1   |      `interest_`      | `uint256` |   `uint256`   | The portion of the total amount that will go towards interest fees.         |
+|   2   |    `lateInterest_`    | `uint256` |   `uint256`   | The portion of the total amount that will go towards late interest fees.    |
+|   3   | `delegateServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards delegate service fees. |
+|   4   | `platformServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards platform service fees. |
 
-<br />
+\
+
 
 ### `globals`
 
@@ -411,15 +398,14 @@ The Maple globals address
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `globals_` | `address` | `address` |  |
 
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `globals_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `gracePeriod`
 
@@ -433,19 +419,18 @@ The amount of time the borrower has, after a payment is due, to make a payment b
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `impair`
 
-Fast forward the payment due date to the current time.          This enables the pool delegate to force a payment (or default).
+Fast forward the payment due date to the current time. This enables the pool delegate to force a payment (or default).
 
 ```solidity
     function impair()
@@ -456,16 +441,15 @@ Fast forward the payment due date to the current time.          This enables the
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The new payment due date to result in the removal of the loan&#x27;s impairment status. |
-| 1 | `defaultDate_` | `uint40` | `uint40` |    The timestamp of the date the loan will be in default. |
 
+| Index |        Name       |   Type   | Internal Type | Description                                                                        |
+| :---: | :---------------: | :------: | :-----------: | ---------------------------------------------------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date to result in the removal of the loan's impairment status. |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The timestamp of the date the loan will be in default.                             |
 
-<br />
+\
+
 
 ### `implementation`
 
@@ -479,15 +463,14 @@ The address of the implementation contract being proxied.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
 
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `interestRate`
 
@@ -501,15 +484,14 @@ The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `isCalled`
 
@@ -523,15 +505,14 @@ Whether the loan is called.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isCalled_` | `bool` | `bool` |  |
 
+| Index |     Name    |  Type  | Internal Type | Description |
+| :---: | :---------: | :----: | :-----------: | ----------- |
+|   0   | `isCalled_` | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isImpaired`
 
@@ -545,15 +526,14 @@ Whether the loan is impaired.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isImpaired_` | `bool` | `bool` |  |
 
+| Index |      Name     |  Type  | Internal Type | Description |
+| :---: | :-----------: | :----: | :-----------: | ----------- |
+|   0   | `isImpaired_` | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `isInDefault`
 
@@ -567,15 +547,14 @@ Whether the loan is in default.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `isInDefault_` | `bool` | `bool` |  |
 
+| Index |      Name      |  Type  | Internal Type | Description |
+| :---: | :------------: | :----: | :-----------: | ----------- |
+|   0   | `isInDefault_` | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `lateFeeRate`
 
@@ -589,15 +568,14 @@ The rate charged at late payments.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lateInterestPremiumRate`
 
@@ -611,15 +589,14 @@ The premium over the regular interest rate applied when paying late.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `lender`
 
@@ -633,15 +610,14 @@ The lender of the Loan.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `makePayment`
 
@@ -661,25 +637,26 @@ Make a payment to the loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalToReturn_` | `uint256` | `uint256` | The amount of principal to return, to the lender to reduce future interest payments. |
 
+| Index |         Name         |    Type   | Internal Type | Description                                                                          |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------------------------------------------------------ |
+|   0   | `principalToReturn_` | `uint256` |   `uint256`   | The amount of principal to return, to the lender to reduce future interest payments. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `interest_` | `uint256` | `uint256` |           The portion of the amount paying interest. |
-| 1 | `lateInterest_` | `uint256` | `uint256` |       The portion of the amount paying late interest. |
-| 2 | `delegateServiceFee_` | `uint256` | `uint256` | The portion of the amount paying delegate service fees. |
-| 3 | `platformServiceFee_` | `uint256` | `uint256` | The portion of the amount paying platform service fees. |
 
+| Index |          Name         |    Type   | Internal Type | Description                                             |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------------------------- |
+|   0   |      `interest_`      | `uint256` |   `uint256`   | The portion of the amount paying interest.              |
+|   1   |    `lateInterest_`    | `uint256` |   `uint256`   | The portion of the amount paying late interest.         |
+|   2   | `delegateServiceFee_` | `uint256` |   `uint256`   | The portion of the amount paying delegate service fees. |
+|   3   | `platformServiceFee_` | `uint256` |   `uint256`   | The portion of the amount paying platform service fees. |
 
-<br />
+\
+
 
 ### `migrate`
 
-Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Modifies the proxy's storage by delegate-calling a migrator contract with some arguments. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function migrate(
@@ -690,13 +667,14 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` | The address of a migrator contract. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the migration. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                      |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-<br />
+\
+
 
 ### `noticePeriod`
 
@@ -710,15 +688,14 @@ The amount of time the borrower has, after the loan is called, to make a payment
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `paymentDueDate`
 
@@ -732,15 +709,14 @@ The timestamp of the due date of the next payment.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` |  |
 
+| Index |        Name       |   Type   | Internal Type | Description |
+| :---: | :---------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
 
-<br />
+\
+
 
 ### `paymentInterval`
 
@@ -754,15 +730,14 @@ The specified time between loan payments.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint32` | `uint32` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint32` |    `uint32`   |             |
 
-<br />
+\
+
 
 ### `pendingBorrower`
 
@@ -776,15 +751,14 @@ The address of the pending borrower.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `pendingLender`
 
@@ -798,15 +772,14 @@ The address of the pending lender.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `platformServiceFeeRate`
 
@@ -820,15 +793,14 @@ The annualized platform service fee rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint64` | `uint64` |  |
 
+| Index | Name |   Type   | Internal Type | Description |
+| :---: | :--: | :------: | :-----------: | ----------- |
+|   0   |      | `uint64` |    `uint64`   |             |
 
-<br />
+\
+
 
 ### `principal`
 
@@ -842,15 +814,14 @@ The amount of principal owed (initially, the requested amount), which needs to b
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `proposeNewTerms`
 
@@ -869,20 +840,21 @@ Propose new terms for refinance.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinancer_` | `address` | `address` | The address of the refinancer contract. |
-| 1 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 2 | `calls_` | `bytes[]` | `bytes[]` | The encoded arguments to be passed to refinancer. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                       |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `refinancer_` | `address` |   `address`   | The address of the refinancer contract.           |
+|   1   |  `deadline_`  | `uint256` |   `uint256`   | The deadline for accepting the new terms.         |
+|   2   |    `calls_`   | `bytes[]` |   `bytes[]`   | The encoded arguments to be passed to refinancer. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the proposed refinance agreement. |
 
+| Index |          Name          |    Type   | Internal Type | Description                                   |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the proposed refinance agreement. |
 
-<br />
+\
+
 
 ### `refinanceCommitment`
 
@@ -896,15 +868,14 @@ The hash of the proposed refinance agreement.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bytes32` | `bytes32` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `bytes32` |   `bytes32`   |             |
 
-<br />
+\
+
 
 ### `rejectNewTerms`
 
@@ -923,24 +894,25 @@ Nullify the current proposed terms.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinancer_` | `address` | `address` | The address of the refinancer contract. |
-| 1 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 2 | `calls_` | `bytes[]` | `bytes[]` | The encoded arguments to be passed to refinancer. |
 
+| Index |      Name     |    Type   | Internal Type | Description                                       |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `refinancer_` | `address` |   `address`   | The address of the refinancer contract.           |
+|   1   |  `deadline_`  | `uint256` |   `uint256`   | The deadline for accepting the new terms.         |
+|   2   |    `calls_`   | `bytes[]` |   `bytes[]`   | The encoded arguments to be passed to refinancer. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the rejected refinance agreement. |
 
+| Index |          Name          |    Type   | Internal Type | Description                                   |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the rejected refinance agreement. |
 
-<br />
+\
+
 
 ### `removeCall`
 
-Remove the loan&#x27;s called status.
+Remove the loan's called status.
 
 ```solidity
     function removeCall()
@@ -951,16 +923,15 @@ Remove the loan&#x27;s called status.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The restored payment due date. |
-| 1 | `defaultDate_` | `uint40` | `uint40` |    The date the loan will be in default. |
 
+| Index |        Name       |   Type   | Internal Type | Description                           |
+| :---: | :---------------: | :------: | :-----------: | ------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
 
-<br />
+\
+
 
 ### `removeImpairment`
 
@@ -975,16 +946,15 @@ Remove the loan impairment by restoring the original payment due date.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The restored payment due date. |
-| 1 | `defaultDate_` | `uint40` | `uint40` |    The timestamp of the date the loan will be in default. |
 
+| Index |        Name       |   Type   | Internal Type | Description                                            |
+| :---: | :---------------: | :------: | :-----------: | ------------------------------------------------------ |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.                         |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The timestamp of the date the loan will be in default. |
 
-<br />
+\
+
 
 ### `repossess`
 
@@ -1001,22 +971,23 @@ Repossess collateral, and any funds, for a loan in default.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `destination_` | `address` | `address` | The address where the collateral and funds asset is to be sent, if any. |
 
+| Index |      Name      |    Type   | Internal Type | Description                                                             |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------------------------------- |
+|   0   | `destination_` | `address` |   `address`   | The address where the collateral and funds asset is to be sent, if any. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundsRepossessed_` | `uint256` | `uint256` | The amount of funds asset repossessed. |
 
+| Index |         Name        |    Type   | Internal Type | Description                            |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `fundsRepossessed_` | `uint256` |   `uint256`   | The amount of funds asset repossessed. |
 
-<br />
+\
+
 
 ### `setImplementation`
 
-Modifies the proxy&#x27;s implementation address.
+Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
@@ -1026,16 +997,17 @@ Modifies the proxy&#x27;s implementation address.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `newImplementation_` | `address` | `address` | The address of an implementation contract. |
 
+| Index |         Name         |    Type   | Internal Type | Description                                |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
-<br />
+\
+
 
 ### `setPendingBorrower`
 
-Set the &#x60;pendingBorrower&#x60; to a new account.
+Set the \`pendingBorrower\` to a new account.
 
 ```solidity
     function setPendingBorrower(
@@ -1045,16 +1017,17 @@ Set the &#x60;pendingBorrower&#x60; to a new account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingBorrower_` | `address` | `address` | The address of the new pendingBorrower. |
 
+| Index |        Name        |    Type   | Internal Type | Description                             |
+| :---: | :----------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `pendingBorrower_` | `address` |   `address`   | The address of the new pendingBorrower. |
 
-<br />
+\
+
 
 ### `setPendingLender`
 
-Set the &#x60;pendingLender&#x60; to a new account.
+Set the \`pendingLender\` to a new account.
 
 ```solidity
     function setPendingLender(
@@ -1064,16 +1037,17 @@ Set the &#x60;pendingLender&#x60; to a new account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingLender_` | `address` | `address` | The address of the new pendingLender. |
 
+| Index |       Name       |    Type   | Internal Type | Description                           |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `pendingLender_` | `address` |   `address`   | The address of the new pendingLender. |
 
-<br />
+\
+
 
 ### `skim`
 
-Remove all available balance of a specified token.          NOTE: Open Term Loans are not designed to hold custody of tokens, so this is designed as a safety feature.
+Remove all available balance of a specified token. NOTE: Open Term Loans are not designed to hold custody of tokens, so this is designed as a safety feature.
 
 ```solidity
     function skim(
@@ -1087,23 +1061,24 @@ Remove all available balance of a specified token.          NOTE: Open Term Loan
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `token_` | `address` | `address` | The address of the token contract. |
-| 1 | `destination_` | `address` | `address` | The recipient of the token. |
 
+| Index |      Name      |    Type   | Internal Type | Description                        |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   |    `token_`    | `address` |   `address`   | The address of the token contract. |
+|   1   | `destination_` | `address` |   `address`   | The recipient of the token.        |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `skimmed_` | `uint256` | `uint256` |     The amount of token removed from the loan. |
 
+| Index |    Name    |    Type   | Internal Type | Description                                |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `skimmed_` | `uint256` |   `uint256`   | The amount of token removed from the loan. |
 
-<br />
+\
+
 
 ### `upgrade`
 
-Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Upgrades a contract implementation to a specific version. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function upgrade(
@@ -1114,13 +1089,13 @@ Upgrades a contract implementation to a specific version.         Access control
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The version to upgrade to. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the upgrade. |
 
+| Index |     Name     |    Type   | Internal Type | Description                                    |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-<br />
+\
 
 
 ## Events
@@ -1136,15 +1111,17 @@ Borrower was accepted, and set to a new account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` | The address of the new borrower. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                      |
+| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `borrower_` | `address` |   `address`   | The address of the new borrower. |
+
+\
+
 
 ### `CallRemoved`
 
-The lender reverted the action of the loan being called and the payment due date was restored to it&#x27;s original value.
+The lender reverted the action of the loan being called and the payment due date was restored to it's original value.
 
 ```solidity
     event CallRemoved(
@@ -1154,12 +1131,14 @@ The lender reverted the action of the loan being called and the payment due date
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The restored payment due date. |
-| 1 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description                           |
+| :---: | :---------------: | :------: | :-----------: | ------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
+
+\
+
 
 ### `Funded`
 
@@ -1174,17 +1153,19 @@ The loan was funded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount funded. |
-| 1 | `paymentDueDate_` | `uint40` | `uint40` | The due date of the first payment. |
-| 2 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |        Name       |    Type   | Internal Type | Description                           |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |     `amount_`     | `uint256` |   `uint256`   | The amount funded.                    |
+|   1   | `paymentDueDate_` |  `uint40` |    `uint40`   | The due date of the first payment.    |
+|   2   |   `defaultDate_`  |  `uint40` |    `uint40`   | The date the loan will be in default. |
+
+\
+
 
 ### `Impaired`
 
-The payment due date was fast forwarded to the current time, activating the grace period.         This is emitted when the pool delegate wants to force a payment (or default).
+The payment due date was fast forwarded to the current time, activating the grace period. This is emitted when the pool delegate wants to force a payment (or default).
 
 ```solidity
     event Impaired(
@@ -1194,16 +1175,18 @@ The payment due date was fast forwarded to the current time, activating the grac
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The new payment due date. |
-| 1 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description                           |
+| :---: | :---------------: | :------: | :-----------: | ------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date.             |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
+
+\
+
 
 ### `ImpairmentRemoved`
 
-The payment due date was restored to it&#x27;s original value, reverting the action of loan impairment.
+The payment due date was restored to it's original value, reverting the action of loan impairment.
 
 ```solidity
     event ImpairmentRemoved(
@@ -1213,12 +1196,14 @@ The payment due date was restored to it&#x27;s original value, reverting the act
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `paymentDueDate_` | `uint40` | `uint40` | The restored payment due date. |
-| 1 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |        Name       |   Type   | Internal Type | Description                           |
+| :---: | :---------------: | :------: | :-----------: | ------------------------------------- |
+|   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
+|   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
+
+\
+
 
 ### `Initialized`
 
@@ -1236,16 +1221,18 @@ Loan was initialized.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `borrower_` | `address` | `address` | The address of the borrower. |
-| 1 | `lender_` | `address` | `address` | The address of the lender. |
-| 2 | `fundsAsset_` | `address` | `address` | The address of the lent asset. |
-| 3 | `principalRequested_` | `uint256` | `uint256` | The amount of principal requested. |
-| 4 | `termDetails_` | `uint32[3]` | `uint32[3]` | Array of loan parameters:                                 [0]: gracePeriod,                                 [1]: noticePeriod,                                 [2]: paymentInterval |
-| 5 | `rates_` | `uint64[4]` | `uint64[4]` | Array of rate parameters:                                 [0]: delegateServiceFeeRate,                                 [1]: interestRate,                                 [2]: lateFeeRate,                                 [3]: lateInterestPremiumRate |
 
-<br />
+| Index |          Name         |     Type    | Internal Type | Description                                                                                                                  |
+| :---: | :-------------------: | :---------: | :-----------: | ---------------------------------------------------------------------------------------------------------------------------- |
+|   0   |      `borrower_`      |  `address`  |   `address`   | The address of the borrower.                                                                                                 |
+|   1   |       `lender_`       |  `address`  |   `address`   | The address of the lender.                                                                                                   |
+|   2   |     `fundsAsset_`     |  `address`  |   `address`   | The address of the lent asset.                                                                                               |
+|   3   | `principalRequested_` |  `uint256`  |   `uint256`   | The amount of principal requested.                                                                                           |
+|   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  | Array of loan parameters: \[0]: gracePeriod, \[1]: noticePeriod, \[2]: paymentInterval                                       |
+|   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  | Array of rate parameters: \[0]: delegateServiceFeeRate, \[1]: interestRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
+
+\
+
 
 ### `LenderAccepted`
 
@@ -1258,11 +1245,13 @@ Lender was accepted, and set to a new account.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` | The address of the new lender. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                    |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `lender_` | `address` |   `address`   | The address of the new lender. |
+
+\
+
 
 ### `NewTermsAccepted`
 
@@ -1278,14 +1267,16 @@ The terms of the refinance proposal were accepted.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the refinancer, deadline, and calls proposed. |
-| 1 | `refinancer_` | `address` | `address` | The address that will execute the refinance. |
-| 2 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The individual calls for the refinancer contract. |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description                                               |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the refinancer, deadline, and calls proposed. |
+|   1   |      `refinancer_`     | `address` |   `address`   | The address that will execute the refinance.              |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
+
+\
+
 
 ### `NewTermsProposed`
 
@@ -1301,14 +1292,16 @@ A refinance was proposed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the refinancer, deadline, and calls proposed. |
-| 1 | `refinancer_` | `address` | `address` | The address that will execute the refinance. |
-| 2 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The individual calls for the refinancer contract. |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description                                               |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the refinancer, deadline, and calls proposed. |
+|   1   |      `refinancer_`     | `address` |   `address`   | The address that will execute the refinance.              |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
+
+\
+
 
 ### `NewTermsRejected`
 
@@ -1324,14 +1317,16 @@ The terms of the refinance proposal were rejected.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `refinanceCommitment_` | `bytes32` | `bytes32` | The hash of the refinancer, deadline, and calls proposed. |
-| 1 | `refinancer_` | `address` | `address` | The address that will execute the refinance. |
-| 2 | `deadline_` | `uint256` | `uint256` | The deadline for accepting the new terms. |
-| 3 | `calls_` | `bytes[]` | `bytes[]` | The individual calls for the refinancer contract. |
 
-<br />
+| Index |          Name          |    Type   | Internal Type | Description                                               |
+| :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the refinancer, deadline, and calls proposed. |
+|   1   |      `refinancer_`     | `address` |   `address`   | The address that will execute the refinance.              |
+|   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
+|   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
+
+\
+
 
 ### `PaymentMade`
 
@@ -1351,18 +1346,20 @@ Payments were made.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `lender_` | `address` | `address` | The address of the lender the payment was made to. |
-| 1 | `principalPaid_` | `uint256` | `uint256` | The portion of the total amount that went towards paying down principal. |
-| 2 | `interestPaid_` | `uint256` | `uint256` | The portion of the total amount that went towards interest. |
-| 3 | `lateInterestPaid_` | `uint256` | `uint256` | The portion of the total amount that went towards late interest. |
-| 4 | `delegateServiceFee_` | `uint256` | `uint256` | The portion of the total amount that went towards delegate service fees. |
-| 5 | `platformServiceFee_` | `uint256` | `uint256` | The portion of the total amount that went towards platform service fee. |
-| 6 | `paymentDueDate_` | `uint40` | `uint40` | The new payment due date. |
-| 7 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description                                                              |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   |       `lender_`       | `address` |   `address`   | The address of the lender the payment was made to.                       |
+|   1   |    `principalPaid_`   | `uint256` |   `uint256`   | The portion of the total amount that went towards paying down principal. |
+|   2   |    `interestPaid_`    | `uint256` |   `uint256`   | The portion of the total amount that went towards interest.              |
+|   3   |  `lateInterestPaid_`  | `uint256` |   `uint256`   | The portion of the total amount that went towards late interest.         |
+|   4   | `delegateServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that went towards delegate service fees. |
+|   5   | `platformServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that went towards platform service fee.  |
+|   6   |   `paymentDueDate_`   |  `uint40` |    `uint40`   | The new payment due date.                                                |
+|   7   |     `defaultDate_`    |  `uint40` |    `uint40`   | The date the loan will be in default.                                    |
+
+\
+
 
 ### `PendingBorrowerSet`
 
@@ -1375,11 +1372,13 @@ Pending borrower was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingBorrower_` | `address` | `address` | Address that can accept the borrower role. |
 
-<br />
+| Index |        Name        |    Type   | Internal Type | Description                                |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `pendingBorrower_` | `address` |   `address`   | Address that can accept the borrower role. |
+
+\
+
 
 ### `PendingLenderSet`
 
@@ -1392,11 +1391,13 @@ Pending lender was set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingLender_` | `address` | `address` | The address that can accept the lender role. |
 
-<br />
+| Index |       Name       |    Type   | Internal Type | Description                                  |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `pendingLender_` | `address` |   `address`   | The address that can accept the lender role. |
+
+\
+
 
 ### `PrincipalCalled`
 
@@ -1411,13 +1412,15 @@ The lender called the loan, giving the borrower a notice period within which to 
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalToReturn_` | `uint256` | `uint256` | The minimum amount of principal the borrower must return. |
-| 1 | `paymentDueDate_` | `uint40` | `uint40` | The new payment due date. |
-| 2 | `defaultDate_` | `uint40` | `uint40` | The date the loan will be in default. |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description                                               |
+| :---: | :------------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `principalToReturn_` | `uint256` |   `uint256`   | The minimum amount of principal the borrower must return. |
+|   1   |   `paymentDueDate_`  |  `uint40` |    `uint40`   | The new payment due date.                                 |
+|   2   |    `defaultDate_`    |  `uint40` |    `uint40`   | The date the loan will be in default.                     |
+
+\
+
 
 ### `PrincipalReturned`
 
@@ -1431,12 +1434,14 @@ Principal was returned to lender, to close the loan or return future interest pa
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `principalReturned_` | `uint256` | `uint256` | The amount of principal returned. |
-| 1 | `principalRemaining_` | `uint256` | `uint256` | The amount of principal remaining on the loan. |
 
-<br />
+| Index |          Name         |    Type   | Internal Type | Description                                    |
+| :---: | :-------------------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |  `principalReturned_` | `uint256` |   `uint256`   | The amount of principal returned.              |
+|   1   | `principalRemaining_` | `uint256` |   `uint256`   | The amount of principal remaining on the loan. |
+
+\
+
 
 ### `Repossessed`
 
@@ -1450,12 +1455,14 @@ The loan was in default and funds and collateral was repossessed by the lender.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `fundsRepossessed_` | `uint256` | `uint256` | The amount of funds asset repossessed. |
-| 1 | `destination_` | `address` | `address` | The address of the recipient of the funds, if any. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                                        |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------------------------- |
+|   0   | `fundsRepossessed_` | `uint256` |   `uint256`   | The amount of funds asset repossessed.             |
+|   1   |    `destination_`   | `address` |   `address`   | The address of the recipient of the funds, if any. |
+
+\
+
 
 ### `Skimmed`
 
@@ -1470,13 +1477,15 @@ Some token was removed from the loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `token_` | `address` | `address` | The address of the token contract. |
-| 1 | `amount_` | `uint256` | `uint256` | The amount of token remove from the loan. |
-| 2 | `destination_` | `address` | `address` | The recipient of the token. |
 
-<br />
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |    `token_`    | `address` |   `address`   | The address of the token contract.        |
+|   1   |    `amount_`   | `uint256` |   `uint256`   | The amount of token remove from the loan. |
+|   2   | `destination_` | `address` |   `address`   | The recipient of the token.               |
+
+\
+
 
 ### `Upgraded`
 
@@ -1490,10 +1499,10 @@ The instance was upgraded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The new version of the loan. |
-| 1 | `arguments_` | `bytes` | `bytes` | The upgrade arguments, if any. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                    |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
+\

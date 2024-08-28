@@ -1,8 +1,6 @@
-# Maple Withdrawal Manager Initializer
+# WithdrawalManagerInitializer (Queue)
 
-
-
-<br />
+\
 
 
 ## Functions
@@ -22,18 +20,19 @@ Checks if an account is set to perform withdrawals manually.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
 
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
 
-<br />
+\
+
 
 ### `manualSharesAvailable`
 
@@ -50,18 +49,19 @@ Returns the amount of shares available for manual withdrawal.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
+
 
 ### `pool`
 
@@ -75,15 +75,14 @@ Returns the address of the pool contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `poolManager`
 
@@ -97,15 +96,14 @@ Returns the address of the pool manager contract.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `queue`
 
@@ -120,20 +118,19 @@ Returns the first and last withdrawal requests pending redemption.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `nextRequestId` | `uint128` | `uint128` | Identifier of the next withdrawal request that will be processed. |
-| 1 | `lastRequestId` | `uint128` | `uint128` | Identifier of the last created withdrawal request. |
 
+| Index |       Name      |    Type   | Internal Type | Description                                                       |
+| :---: | :-------------: | :-------: | :-----------: | ----------------------------------------------------------------- |
+|   0   | `nextRequestId` | `uint128` |   `uint128`   | Identifier of the next withdrawal request that will be processed. |
+|   1   | `lastRequestId` | `uint128` |   `uint128`   | Identifier of the last created withdrawal request.                |
 
-<br />
+\
+
 
 ### `requestIds`
 
-Returns the request identifier of an account.          Returns zero if the account does not have a withdrawal request.
+Returns the request identifier of an account. Returns zero if the account does not have a withdrawal request.
 
 ```solidity
     function requestIds(
@@ -146,18 +143,19 @@ Returns the request identifier of an account.          Returns zero if the accou
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint128` | `uint128` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint128` |   `uint128`   |             |
 
-<br />
+\
+
 
 ### `totalShares`
 
@@ -171,15 +169,13 @@ Returns the total amount of shares pending redemption.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
 
-<br />
+\
 
 
 ## Events
@@ -196,10 +192,10 @@ Emitted when the withdrawal manager proxy contract is initialized.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pool` | `address` | `address` | Address of the pool contract. |
-| 1 | `poolManager` | `address` | `address` | Address of the pool manager contract. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |     `pool`    | `address` |   `address`   | Address of the pool contract.         |
+|   1   | `poolManager` | `address` |   `address`   | Address of the pool manager contract. |
 
+\

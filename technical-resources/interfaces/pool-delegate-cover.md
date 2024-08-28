@@ -1,13 +1,9 @@
-# Maple Pool Delegate Cover
+# PoolDelegateCover
 
+\
 
-
-<br />
 
 ## Constructor
-
-
-
 
 ```solidity
     constructor(
@@ -17,13 +13,13 @@
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolManager_` | `address` | `address` |  |
-| 1 | `asset_` | `address` | `address` |  |
 
+| Index |      Name      |    Type   | Internal Type | Description |
+| :---: | :------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolManager_` | `address` |   `address`   |             |
+|   1   |    `asset_`    | `address` |   `address`   |             |
 
-<br />
+\
 
 
 ## Functions
@@ -40,15 +36,14 @@ Gets the address of the funds asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
+\
+
 
 ### `moveFunds`
 
@@ -63,13 +58,14 @@ Move funds from this address to another.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount to move. |
-| 1 | `recipient_` | `address` | `address` | The address of the recipient. |
 
+| Index |     Name     |    Type   | Internal Type | Description                   |
+| :---: | :----------: | :-------: | :-----------: | ----------------------------- |
+|   0   |   `amount_`  | `uint256` |   `uint256`   | The amount to move.           |
+|   1   | `recipient_` | `address` |   `address`   | The address of the recipient. |
 
-<br />
+\
+
 
 ### `poolManager`
 
@@ -83,15 +79,10 @@ Gets the address of the pool manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
 
-<br />
-
-
-
+\
