@@ -5,7 +5,6 @@
 ## Maple for Lenders
 
 * [Introduction](maple-for-lenders/introduction.md)
-* [Role of the Pool Delegate](maple-for-lenders/role-of-the-pool-delegate.md)
 * [Lending](maple-for-lenders/lending.md)
 * [Loan Types](maple-for-lenders/loan-types.md)
 * [Defaults and Impairments](maple-for-lenders/defaults-and-impairments.md)
