@@ -6,7 +6,6 @@
 
 * [Introduction](maple-for-lenders/introduction.md)
 * [Lending](maple-for-lenders/lending.md)
-* [Loan Types](maple-for-lenders/loan-types.md)
 * [Defaults and Impairments](maple-for-lenders/defaults-and-impairments.md)
 * [Risk](maple-for-lenders/risk.md)
 * [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
