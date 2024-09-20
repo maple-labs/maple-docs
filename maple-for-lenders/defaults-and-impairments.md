@@ -1,17 +1,19 @@
-# Defaults and Impairments
+# Margin Calls & Liquidations
 
-**What is a default?**
+**Margin Calls**
 
-Defaults can be executed by a Pool Delegate when a borrower has not made a payment (including non-payment or insufficient payment of principal, interest, or late fees as applicable) past the grace period on a loan. A default will:
+The Maple Operations team has a proprietary alert system in place with three separate sources for price feeds, and a 24/7/365 live monitoring process.
 
-1. Reduce the pool’s value by the amount of outstanding principle on the loan and any interest accrued.
-2. Sell any collateral on the loan and increase the value of the pool to the value of the liquidated collateral.
-3. Move Delegate first loss capital (if applicable) to the value of the liquidation max per default into the pool.
+If collateral value falls to the Margin Call Level, the borrower is automatically notified and has 24 hours to top up and restore collateralization to the Initial Collateral Level.
 
-**What is an Impairment?**
+If they fail to do so in time, Maple liquidates their collateral as part of the legal agreement with the borrower.
 
-The Maple platform gives Pool Delegates the ability to impair loans in the event of a potential non-payment or insufficient payment scenario, or in a scenario where a borrower has met another condition of default as articulated in the loan agreement. Impairments are designed to be used in a scenario where the Borrower is not yet in a technical default period but Maple has been made aware that the Borrower may not be able to pay their loan in full. The impairment can be put in place to better distribute potential losses to all current lenders. Impairment prevents a situation where a loan is known to be compromised (by borrower distress or otherwise) and some lenders withdraw their capital prior to the loss, leading to the remaining lenders shouldering more of the burden of the lost capital. This may be done in a situation where the Pool Delegate believes they will be able to quickly recover a part or all of the loan’s value from the Borrower through collaborative efforts or restructuring. The Pool Delegate will maintain an active dialog with the Borrower to recover funds through the legal process.
+#### **Liquidation Levels**
 
-**How do Impairments affect Withdrawals?**
+At any point, if collateralization reaches the Liquidation level, even if a margin call is in process, Maple has full rights to liquidate collateral to protect lender principal.
 
-When a loan is impaired, its value is temporarily reduced. This allows lenders who want to withdraw to access their capital with a penalty, while not fully defaulting the loan until the grace period has expired. If the Borrower is able to make the payment or repay, it will be changed to unimpaired, and the value of the pool will be restored based on the repayment. If a lender decides to proceed with withdrawing their funds while the impairment is active, they will have a permanent impairment loss of the difference in value and will be unable to claim any returned capital in the event that there is restitution.
+#### **How Liquidation Works**
+
+Maple has partnered with a number of leading OTC desks to enable swift execution in a falling market environment, and this is the preferred method of execution. By using OTC desks, price can be agreed immediately and the trade settled subsequently whilst assets are moved onchain. If needed, the team also has the ability to withdraw to CEXs or DEXs to liquidate instead.
+
+Liquidations have been rare because of the quality of the underwrite - the borrower’s ability to meet margin calls quickly is checked pre-issuance as mentioned above, and monitored on an ongoing basis. Historically, margin calls issued over the past year have been met in a matter of hours by borrowers, and in many cases they elect to top up in advance of a call being issued.&#x20;

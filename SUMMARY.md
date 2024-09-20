@@ -6,7 +6,7 @@
 
 * [Introduction](maple-for-lenders/introduction.md)
 * [Lending](maple-for-lenders/lending.md)
-* [Defaults and Impairments](maple-for-lenders/defaults-and-impairments.md)
+* [Margin Calls & Liquidations](maple-for-lenders/defaults-and-impairments.md)
 * [Risk](maple-for-lenders/risk.md)
 * [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
 
