@@ -23,11 +23,6 @@
 * [Introduction](maple-for-borrowers/introduction.md)
 * [Loan Management](maple-for-borrowers/loan-management.md)
 
-## Maple for Pool Delegates
-
-* [Introduction](maple-for-pool-delegates/introduction.md)
-* [Fees](maple-for-pool-delegates/fees.md)
-
 ## Maple for Token Holders
 
 * [MPL](maple-for-token-holders/mpl-token.md)
