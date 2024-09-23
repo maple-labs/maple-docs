@@ -14,15 +14,9 @@
 * Maple is making arrangements with major exchanges so that MPL tokens on the exchange will automatically be converted into SYRUP with no action required from holders. We will share details relevant to each exchange ahead of the migration.
 * Conversion from MPL to SYRUP is encouraged, and will enable SYRUP token holders to support the SYRUP ecosystem and accumulate more tokens through staking.
 
-## How to Guide
+## Converting MPL to SYRUP
 
-_In this guide the existing version of MPL (legacy MPL) will be referred to as MPLv1 and the updated version of MPL as MPLv2. xMPL will be referred to as xMPL._
-
-This guide walks through how all MPL and xMPL holders can convert MPLv1 to MPLv2.
-
-## Converting MPLv1 to MPLv2
-
-All MPLv1 will need to be converted to MPLv2 within 3 years. This includes all MPL held in wallets decentralized exchanges, smart contracts (except xMPL) or on centralized exchanges not covered in the summary.
+All MPL is eligible to convert to SYRUP in Q4 after SYRUP token launch. This includes all MPL held in wallets decentralized exchanges, smart contracts (except xMPL), and centralized exchanges not covered in the summary.&#x20;
 
 **Hold MPLv1 in a smart contract, wallet, multisig or with a custodian? Follow these steps to convert**
 
