@@ -5,18 +5,14 @@
 ## Background:
 
 * MIP-009 was voted into place by the community on 12th September 2023.
-* MIP-009 approved the issuance of new tokens to the Maple Treasury via a one-time mint and a three-year emission. In order to do so the MPL token needs upgrading to MPLv2. [Read More](https://snapshot.org/#/maple.eth/proposal/0x29fccc3bac63744a55f9671399c079594e6b8369a21502cbce52e7dce9301094).
+* MIP-009 approved the issuance of new tokens to the Maple Treasury via a one-time mint and a three-year emission. [Read More](https://snapshot.org/#/maple.eth/proposal/0x29fccc3bac63744a55f9671399c079594e6b8369a21502cbce52e7dce9301094).
 * Subsequently, on 2nd September 2024, MIP-010 was approved.&#x20;
-* MIP-010 will initiate the launch of SYRUP token, a 1 MPL to 100 SYRUP token conversion, and staking rewards.&#x20;
+* MIP-010 will initiate the launch of SYRUP token, a 1 MPL to 100 SYRUP token conversion, and staking rewards. [Read More](https://snapshot.org/#/maple.eth/proposal/0x6f2a2a4fb2e80bfc2f134cd79a0ebb2a0a6c2e2d11e6a5a49db2fc7b4588a5ec).&#x20;
 
 **Summary**:
 
-* The terms MPLv1 and MPLv2 are used only for purposes of explaining the migration. The name of the token will continue to be MPL.
-* Maple is coordinating the transition of MPLv1 to MPLv2 in a few ways.
-  * So holders can convert their tokens easily a conversion page will be made available at [app.maple.finance/#/mpl](app.maple.finance#/mpl). This will be the only destination for conversion.
-  * Maple will automatically convert all MPLv1 held in the xMPL contract to MPLv2.
-  * Maple is making arrangements with major exchanges so that MPLv1 tokens on the exchange will automatically be converted into MPLv2, with no action required from holders. We will share details relevant to each exchange ahead of the migration.
-* Conversion will be possible for 3 years, but encouraged as soon as possible so holders can access the value and utility of MPL.
+* Maple is making arrangements with major exchanges so that MPL tokens on the exchange will automatically be converted into SYRUP with no action required from holders. We will share details relevant to each exchange ahead of the migration.
+* Conversion from MPL to SYRUP is encouraged, and will enable SYRUP token holders to support the SYRUP ecosystem and accumulate more tokens through staking.
 
 ## How to Guide
 
