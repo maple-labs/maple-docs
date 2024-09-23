@@ -14,9 +14,7 @@ Smart contracts increase their risk profile with the amount of value they hold. 
 
 **Default Risk**
 
-Maple is not a lender, but the Maple Protocol facilitates undercollateralized lending, and undercollateralized lending by nature carries a risk of defaults. Traditionally, lenders take borrowers through an underwriting process to mitigate this risk. Lending protocols available in DeFi today, such as Aave and Compound, require overcollateralization in order to prevent defaults from occurring.
-
-The Maple Protocol enables more capital efficient, undercollateralized lending to occur by allowing Pool Delegates to use their own rigorous underwriting system in determining the creditworthiness of borrowers. If a borrower defaults, however, there may be a significant or complete loss of assets.
+Maple is not a lender, but the Maple Protocol facilitates overcollateralized lending, and its own rigorous underwriting system, in order to reduce defaults. If a borrower defaults, collateral assets are liquidated to protect lender principal.&#x20;
 
 **Risk of Loss**
 
