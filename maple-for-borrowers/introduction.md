@@ -1,6 +1,8 @@
 # Introduction
 
-Maple offers borrowers a capital efficient option in decentralized lending. Those accepted by Pool Delegates must go through a pool-specific underwriting process prior to receiving their loan.
+Maple is a leading digital asset lending platform, offering secure and innovative lending solutions. Lending opportunities are tailored to meet diverse liquidity needs, risk appetites, and return expectations and facilitated through Maple’s technology to provide real time monitoring and transparency.
+
+Those accepted by Maple Direct Pool Delegates must go through a pool-specific underwriting process prior to receiving their loan.
 
 **How to Borrow**
 
