@@ -26,7 +26,7 @@
 ## Maple for Token Holders
 
 * [MPL](maple-for-token-holders/mpl-token.md)
-* [MPL Migration](maple-for-token-holders/mpl-token-migration.md)
+* [MPL <> SYRUP Conversion](maple-for-token-holders/mpl-token-migration.md)
 * [xMPL](maple-for-token-holders/xmpl-token.md)
   * [Governance with MPL and xMPL](maple-for-token-holders/xmpl-token/governance-with-mpl-and-xmpl.md)
 
