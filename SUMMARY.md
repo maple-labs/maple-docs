@@ -29,6 +29,7 @@
 * [MPL <> SYRUP Conversion](maple-for-token-holders/mpl-token-migration.md)
 * [xMPL](maple-for-token-holders/xmpl-token.md)
   * [Governance with MPL and xMPL](maple-for-token-holders/xmpl-token/governance-with-mpl-and-xmpl.md)
+* [FAQs](maple-for-token-holders/faqs.md)
 
 ## Technical Resources
 

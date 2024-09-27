@@ -1,4 +1,4 @@
-# MPL Migration
+# MPL <> SYRUP Conversion
 
 ## Converting MPL to SYRUP: A Guide for MPL Holders
 
@@ -34,29 +34,7 @@ For token holders, the migration is simple:
 
 ### Converting MPL to SYRUP
 
-All MPL is eligible to convert to SYRUP in Q4 after SYRUP token launch. This includes all MPL held in wallets decentralized exchanges, smart contracts (except xMPL), and centralized exchanges not covered in the summary.
+All MPL is eligible to convert to SYRUP in Q4 after SYRUP token launch. This includes all MPL held in wallets, decentralized exchanges, smart contracts (except xMPL), and centralized exchanges not covered in the summary.
 
 More details around the conversion will be released in the weeks leading up to SYRUP token launch.&#x20;
-
-## FAQs
-
-**Why should I migrate my MPL tokens?**
-
-To take part in Maple governance and accumulate SYRUP tokens through staking.&#x20;
-
-**Is it safe to convert MPL to SYRUP?**
-
-Maple has taken every step to ensure that it is safe to convert MPL to SYRUP at a smart contract level. Firstly, the SYRUP contract has been audited by Spearbit via Cantina and 3Sigma. The auditors assessed the SYRUP smart contracts and the migration process. Secondly, the new token contract has undergone formal verification, the highest standard in smart contract security, which determines that the logic and desired behaviour of the smart contract is satisfactory. The audit reports are available for review here: [https://github.com/maple-labs/mplv2/tree/main/audits](https://github.com/maple-labs/mplv2/tree/main/audits).
-
-**What if my MPL is on an exchange?**
-
-Maple is in liaison with centralized exchanges to ensure smooth transition to SYRUP and will advise on the specific processes for different venues closer to the time. The aim is that MPL tokens on exchanges will automatically be converted into SYRUP requiring no action from holders.
-
-**What if I hold MPL and xMPL?**
-
-xMPL will be migrated automatically to staked SYRUP (stSYRUP), no action is required there. For MPL, follow the steps outlined in the 'How to guide'.
-
-**How do I vote with SYRUP after the conversion?**
-
-The same voting process applies for SYRUP as for MPL.
 

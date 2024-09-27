@@ -13,3 +13,8 @@ RDT audits: [https://github.com/maple-labs/revenue-distribution-token#audit-repo
 xMPL audits: [https://github.com/maple-labs/xmpl#audit-reports…](https://github.com/maple-labs/xmpl#audit-reports%E2%80%A6)
 
 Bug bounty: [https://immunefi.com/bounty/maple/](https://immunefi.com/bounty/maple/)
+
+
+
+View the MPL governance page here: [https://community.maple.finance/](https://community.maple.finance/)
+
