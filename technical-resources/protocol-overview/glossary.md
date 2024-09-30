@@ -1,46 +1,47 @@
-## General Concepts
+# Glossary
 
-| Term | Definition |
-|-|-|
-| `Asset` | An external ERC-20 token that is used to transfer value through the protocol (e.g., USDC, WETH, WBTC). |
-| `Collateral Asset` | An asset that is posted as collateral for a loan. |
-| `Cover` | The first-loss capital that Pool Delegates need to provide as a prerequisite of launching a pool. |
-| `Default` | Occurs when a Borrower fails to make a payment on a loan. Recognizes the full value of the outstanding unpaid Loan as a loss to the Pool. |
-| `Funds Asset` | An asset that is added as liquidity by LPs and used to facilitate Loans to Borrowers. |
-| `Governor` | The entity responsible for managing Global protocol parameters. |
-| `Impairment` | Allows a Pool Delegate to set the due date of a payment to the current date, putting the Borrower immediately in arrears. It also represents an unrealized loss in the Pool. |
-| `Liquidation` | The process to convert a collateral asset into the funds asset after a default is triggered. |
-| `Liquidity Provider (LP)` | An entity that deposits assets into a pool. |
-| `Loan` | A contract between Pools and Borrowers, where the Pool provides capital and the Borrower is committed to repaying on an agreed schedule with agreed terms. |
-| `Loan Term` | The conditions, such as number of payments and interest rate, that are specified in a loan agreement between a Borrower and a Pool Delegate. |
-| `Oracle` | A smart contract that provides an input of off-chain information to the blockchain such as current asset price. |
-| `Pool` | The contract in which a collection of LPs' deposited assets to be managed by a given Pool Delegate. |
-| `Pool Delegate` | The entity responsible for managing Pool assets and parameters, as well as perform all Loan underwriting and due-diligence, risk management, and liquidity management on behalf of LPs in exchange for management fees. |
-| `Proxy` | An intermediary smart contract that allows upgrading contracts to newer versions. |
-| `Refinance` | The process to renegotiate the terms associated with a Loan. |
+### General Concepts
 
-## Technical Terms
+| Term                      | Definition                                                                                                                                                                   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Asset`                   | An external ERC-20 token that is used to transfer value through the protocol (e.g., USDC, WETH, WBTC).                                                                       |
+| `Collateral Asset`        | An asset that is posted as collateral for a loan.                                                                                                                            |
+| `Cover`                   | The first-loss capital that Pool Delegates need to provide as a prerequisite of launching a pool.                                                                            |
+| `Default`                 | Occurs when a Borrower fails to make a payment on a loan. Recognizes the full value of the outstanding unpaid Loan as a loss to the Pool.                                    |
+| `Funds Asset`             | An asset that is added as liquidity by LPs and used to facilitate Loans to Borrowers.                                                                                        |
+| `Governor`                | The entity responsible for managing Global protocol parameters.                                                                                                              |
+| `Impairment`              | Allows a Pool Delegate to set the due date of a payment to the current date, putting the Borrower immediately in arrears. It also represents an unrealized loss in the Pool. |
+| `Liquidation`             | The process to convert a collateral asset into the funds asset after a default is triggered.                                                                                 |
+| `Liquidity Provider (LP)` | An entity that deposits assets into a pool.                                                                                                                                  |
+| `Loan`                    | A contract between Pools and Borrowers, where the Pool provides capital and the Borrower is committed to repaying on an agreed schedule with agreed terms.                   |
+| `Loan Term`               | The conditions, such as number of payments and interest rate, that are specified in a loan agreement between a Borrower and a Pool Delegate.                                 |
+| `Oracle`                  | A smart contract that provides an input of off-chain information to the blockchain such as current asset price.                                                              |
+| `Pool`                    | The contract in which a collection of LPs' deposited assets to be managed by a given Pool Delegate.                                                                          |
+| `Proxy`                   | An intermediary smart contract that allows upgrading contracts to newer versions.                                                                                            |
+| `Refinance`               | The process to renegotiate the terms associated with a Loan.                                                                                                                 |
 
-| Term | Definition |
-|-|-|
-| `accountedInterest` | The amount of outstanding interest that has been accounted by the LoanManager, but not yet received. |
-| `accruedInterest` | The time-dependent amount of interest represented in the LoanManager since `domainStart`. Accrues over time according to the `issuanceRate`. |
-| `calledPrincipal` | The amount of principal that has been called and must be returned on the next loan payment. |
-| `closingRate` | The fee rate (applied to principal) to close the Loan. |
-| `dateCalled` | The date on which the loan was called. |
-| `dateFunded` | The date on which the loan was funded. |
-| `dateImpaired` | The date on which the loan was impaired. |
-| `datePaid` | The date on which the loan was last paid. |
-| `domainEnd` | The timestamp after which the `issuanceRate` is no longer valid and interest stops accruing. |
-| `domainStart` | Defines the timestamp from which the `issuanceRate` is valid. |
-| `drawableFunds` | The amount of funds in a given Loan that can be drawn down by its Borrower. |
-| `gracePeriod` | An amount of seconds that a payment can be late before a default can be triggered on a Loan. |
-| `incomingNetInterest` | The amount of interest expected to be paid by the end of the payment interval for a given Loan, net of management fees. |
-| `issuanceRate` | The amount of interest per second accrued by the LoanManager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled up to 30 decimal places for improved precision. |
-| `lateFeeRate` | A flat rate against principal that is charged when a Loan makes a late payment. |
-| `lateInterestPremiumRate` | The rate at which to increase the interest rate by for late payments. |
-| `liquidityCap` | The maximum amount of value that a Pool can manage. It can be less than the current value of the Pool, preventing additional deposits. Deposits are limited by this value, where the maximum deposit amount is the difference between the current `liquidityCap` and the current value of the Pool. |
-| `noticePeriod` | The number of seconds remaining after a loan is called when the borrower is considered to be in default. |
-| `principalOut` | The aggregate amount of outstanding principal across all Loans in a given Pool. |
-| `refinanceInterest` | An amount of interest that was accrued during the payment interval prior to a refinance. This amount is added to the first payment post-refinance. |
-| `unrealizedLosses` | An amount of losses that is accounted and represented in the Pool's value, but it still can be recovered, either through repayments or liquidations. |
+### Technical Terms
+
+| Term                      | Definition                                                                                                                                                                                                                                                                                          |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accountedInterest`       | The amount of outstanding interest that has been accounted by the LoanManager, but not yet received.                                                                                                                                                                                                |
+| `accruedInterest`         | The time-dependent amount of interest represented in the LoanManager since `domainStart`. Accrues over time according to the `issuanceRate`.                                                                                                                                                        |
+| `calledPrincipal`         | The amount of principal that has been called and must be returned on the next loan payment.                                                                                                                                                                                                         |
+| `closingRate`             | The fee rate (applied to principal) to close the Loan.                                                                                                                                                                                                                                              |
+| `dateCalled`              | The date on which the loan was called.                                                                                                                                                                                                                                                              |
+| `dateFunded`              | The date on which the loan was funded.                                                                                                                                                                                                                                                              |
+| `dateImpaired`            | The date on which the loan was impaired.                                                                                                                                                                                                                                                            |
+| `datePaid`                | The date on which the loan was last paid.                                                                                                                                                                                                                                                           |
+| `domainEnd`               | The timestamp after which the `issuanceRate` is no longer valid and interest stops accruing.                                                                                                                                                                                                        |
+| `domainStart`             | Defines the timestamp from which the `issuanceRate` is valid.                                                                                                                                                                                                                                       |
+| `drawableFunds`           | The amount of funds in a given Loan that can be drawn down by its Borrower.                                                                                                                                                                                                                         |
+| `gracePeriod`             | An amount of seconds that a payment can be late before a default can be triggered on a Loan.                                                                                                                                                                                                        |
+| `incomingNetInterest`     | The amount of interest expected to be paid by the end of the payment interval for a given Loan, net of management fees.                                                                                                                                                                             |
+| `issuanceRate`            | The amount of interest per second accrued by the LoanManager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled up to 30 decimal places for improved precision.                                                                     |
+| `lateFeeRate`             | A flat rate against principal that is charged when a Loan makes a late payment.                                                                                                                                                                                                                     |
+| `lateInterestPremiumRate` | The rate at which to increase the interest rate by for late payments.                                                                                                                                                                                                                               |
+| `liquidityCap`            | The maximum amount of value that a Pool can manage. It can be less than the current value of the Pool, preventing additional deposits. Deposits are limited by this value, where the maximum deposit amount is the difference between the current `liquidityCap` and the current value of the Pool. |
+| `noticePeriod`            | The number of seconds remaining after a loan is called when the borrower is considered to be in default.                                                                                                                                                                                            |
+| `principalOut`            | The aggregate amount of outstanding principal across all Loans in a given Pool.                                                                                                                                                                                                                     |
+| `refinanceInterest`       | An amount of interest that was accrued during the payment interval prior to a refinance. This amount is added to the first payment post-refinance.                                                                                                                                                  |
+| `unrealizedLosses`        | An amount of losses that is accounted and represented in the Pool's value, but it still can be recovered, either through repayments or liquidations.                                                                                                                                                |
