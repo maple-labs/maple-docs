@@ -1,5 +1,7 @@
 # Introduction
 
+Lending is the easiest way to earn with Maple Finance. Lenders deposit into a pool to earn interest denominated in the pool's liquidity asset. This interest is determined by the loan terms set by Maple's in-house credit underwriting and risk management. the pool delegate and borrowers.
+
 Maple’s digital asset lending platform sources yield from secured loans to institutions. All loans from Maple pools are fully backed by select digital assets, which undergo rigorous risk assessment, and the permissioned nature of the yield source ensures both security and quality.&#x20;
 
 Maple Blue Chip Secured pool provides the security of only accepting BTC and ETH collateral, held in qualified custody.&#x20;
