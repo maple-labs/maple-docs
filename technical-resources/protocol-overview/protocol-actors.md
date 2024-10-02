@@ -8,7 +8,7 @@ The roles previously occupied by Pool Delegates - to evaluate potential borrower
 
 ### Liquidity Provider
 
-Liquidity Providers (LPs) add capital to the Pools to be used to fund Loans. LPs are passive investors that want to earn yield on their capital by allowing Maple Direct to underwrite Borrowers and earn interest. LPs earn interest by holding ERC-4626 compliant LP tokens representing their share in the pool, which appreciates in value over time as interest is earned. LPs can choose which Pool they want to deposit their capital in based on multiple factors, such as the historical performance and underlying collateral.&#x20;
+Liquidity Providers (LPs) add capital to the Pools to be used to fund Loans. LPs are lenders that want to earn yield on their capital by allowing Maple Direct to underwrite Borrowers and earn interest. LPs earn interest by holding ERC-4626 compliant LP tokens representing their share in the pool, which appreciates in value over time as interest is earned. LPs can choose which Pool they want to deposit their capital in based on multiple factors, such as the historical performance and underlying collateral.&#x20;
 
 ### Borrower
 
