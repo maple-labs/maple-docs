@@ -2,9 +2,9 @@
 
 This page outlines all of the different actors in the Maple protocol and gives a short description of each of their roles.
 
-### Pool Delegate
+### Maple Direct
 
-The roles previously occupied by Pool Delegates - to evaluate potential borrowers and fund loans - are now fulfilled by the Maple Direct team.&#x20;
+The roles previously occupied by Pool Delegates - to evaluate potential borrowers and fund loans - are now fulfilled by the Maple Direct team. During 2023, Maple brought all origination, borrower due diligence and risk management in-house with the introduction of Maple Direct as the sole delegate (external pool delegates are no longer allowed on the platform).&#x20;
 
 ### Liquidity Provider
 
