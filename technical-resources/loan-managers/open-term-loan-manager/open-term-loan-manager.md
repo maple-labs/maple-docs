@@ -28,20 +28,20 @@ $$outstandingInterest = accountedInterest + issuanceRate \times (block.timestamp
 
 ## Refinance
 
-* The PoolDelegate can call `proposeNewTerms()` to the Loan which will call the Loan's `proposeNewTerms()` and store the `refinanceCommitment`.
-* The PoolDelegate can call `rejectNewTerms()` to the Loan which will call the Loan's `rejectNewTerms()` which will delete the `refinanceCommitment` not allowing the borrower to accept the new terms via the Loan.
+* The Maple team can call `proposeNewTerms()` to the Loan which will call the Loan's `proposeNewTerms()` and store the `refinanceCommitment`.
+* The Maple team can call `rejectNewTerms()` to the Loan which will call the Loan's `rejectNewTerms()` which will delete the `refinanceCommitment` not allowing the borrower to accept the new terms via the Loan.
 * When the borrower accepts new terms as part of the refinance flow the LoanManager's `claim()` is called as the borrower pays any interest and fees due. Importantly this flow also accounts for a change in `principal` where the principal can both increase in which case funds are requested from the Pool and sent to the borrower via the Loan, or if the principal is decreased the funds are sent back to the Pool.
 * In the `claim()` function, a positive principal argument indicates that amount of principal is being repaid, otherwise, if negative, it indicates that amount of principal is being requested from the Pool as part of a Refinance to increase the `principal`.
 
 ## Call / Remove Call
 
-* The PoolDelegate directly calls `callPrincipal()` with the principal amount, this then calls the Loan's `callPrincipal()`. No state changes occur in the LoanManager.
+* The Maple team directly calls `callPrincipal()` with the principal amount, this then calls the Loan's `callPrincipal()`. No state changes occur in the LoanManager.
 * The same is true for `removeCall()`, which just calls the Loan's `removeCall()`. No state changes occur in the LoanManager.
 
 ## Impairment / Remove Impairment
 
-* Both the PoolDelegate and Governor can call `impairLoan()`, which calls the Loan's `impair()` and updates the LoanManager accounting by reducing the `issuanceRate`, updates the `unrealizedLosses` with the principal and accrued interest, and stores the impairment information in the `Impairment` struct for future use.
-* Both the PoolDelegate and Governor can call `removeLoanImpairment()`, but if the Loan was Impaired by the Governor only the Governor can call `removeLoanImpairment()`. This is to safeguard against a PoolDelegate canceling an Impairment the Governor has deemed necessary. In the case `removeLoanImpairment()` is called, the LoanManager accounting is updated to include the `issuanceRate` for the Loan payment and add back any interest that was expected to be accrued during this period between the impairment date and the current timestamp. Finally `removeImpairment()` is called on the Loan.
+* The Maple team can call `impairLoan()`, which calls the Loan's `impair()` and updates the LoanManager accounting by reducing the `issuanceRate`, updates the `unrealizedLosses` with the principal and accrued interest, and stores the impairment information in the `Impairment` struct for future use.
+* The Maple team can call `removeLoanImpairment()`, but if the Loan was Impaired by the Governor only the Governor can call `removeLoanImpairment()`. This is to safeguard against a PoolDelegate canceling an Impairment the Governor has deemed necessary. In the case `removeLoanImpairment()` is called, the LoanManager accounting is updated to include the `issuanceRate` for the Loan payment and add back any interest that was expected to be accrued during this period between the impairment date and the current timestamp. Finally `removeImpairment()` is called on the Loan.
 
 ## Default
 
