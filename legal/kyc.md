@@ -1,6 +1,7 @@
 # KYC
 
-Maple performs Know-Your-Customer checks on all Lenders, Borrowers, and Pool Delegates across the platform. These checks include:
+Maple performs Know-Your-Customer checks on all Lenders and Borrowers across the platform. These checks include:
+
 * The collection of documentation and information to identify the user. In case of an Entity, the Ultimate Beneficial Owners and Directors are identified as well.
 * Accreditation checks on Lenders.
 * PEP and Sanction scans for all users.
