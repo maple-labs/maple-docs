@@ -1,65 +1,77 @@
 # Usage Guide
 
-This guide will help you understand how to use the Maple SDK for various tasks, such as connecting to contracts and executing transactions.
+## Overview
 
-# Overview
+The Maple SDK simplifies interaction with Maple Protocol smart contracts on Ethereum. It supports Mainnet, Base, and Sepolia networks, with production and development environments.
 
-The Maple SDK simplifies interacting with the Maple Protocol's smart contracts on the Ethereum blockchain. It includes address mappings for each contract to facilitate deployment to different networks and environments.
+There are three networks:
 
-There are two networks:
+1. **Mainnet**: main Ethereum network.
+2. **Base Mainnet**: Ethereum L2 network.
+3. **Sepolia**: Ethereum test network (testnet).
 
-1. **Mainnet**: The main Ethereum network, where real-world transactions occur.
-2. **Goerli**: A test network (testnet) for Ethereum, where developers can test their dApps and contracts with test tokens.
+Each network may have two environments:
 
-Each network has two environments:
-
-1. **Prod**: The production environment, where the official, stable versions of the contracts and subgraph, API and web application are deployed.
-2. **Dev**: The development environment, where new features or updates are tested before being deployed to the production environment.
+1. **Prod**: production environment, where the official, stable versions of the contracts and subgraph, API and web applications are deployed.
+2. **Dev**: development or staging environment, where new features or updates are tested before being deployed to the production environment.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
 
 The available combinations are:
 
 - `mainnet-prod`: Production environment on the main Ethereum network
-- `mainnet-dev`: Development environment on the main Ethereum network
-- `goerli-prod`: Production environment on the Goerli test network
-- `goerli-dev`: Development environment on the Goerli test network
+- `mainnet-dev`: Staging environment on the main Ethereum network
+- `base-mainnet-prod`: Production environment on the Base L2 network
+- `sepolia-prod`: Production environment on the Sepolia test network
+- `sepolia-dev`: Development environment on the Sepolia test network
 
-# Getting Started
+## Getting started
 
-Access contract addresses using the `addresses` object exported from `maple-js`.
+### Addresses
 
-To connect to a contract, you will need a contract address and a signer (usually a wallet instance). For more information on creating a signer, refer to the [ethers documentation](https://docs.ethers.io/v5/).
+Access contract addresses using the `addresses` object:
 
 ```js
-import { addresses, mapleGlobals } from '@maplelabs/maple-js';
+import { addresses } from '@maplelabs/maple-js';
 
-const contractAddress = addresses['mainnet-prod'].MapleToken;
-const signer = new providers.JsonRpcProvider(RPC_ENDPOINT);
+// Returns the contract address for MapleToken on Ethereum Mainnet
+const contractAddress = addresses.mainnet.MapleToken;
+```
+
+### Connecting to a Contract
+
+To connect to a contract, you'll need its address and a signer. The `signer` should be an instance of a wallet that can sign transactions. Refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) for further assistance.
+
+**Connecting to a Contract Usage**
+
+```js
+import { mapleGlobals } from '@maplelabs/maple-js';
+
+const contractAddress = addresses.mainnet.MapleToken;
+const signer = 'yourSigner';
 
 const contract = mapleGlobals.core.connect(contractAddress, signer);
 ```
 
-# Interacting with Contracts
+### Interacting with a Contract
 
-Once you are connected to a contract, you can call any of its available methods using the `contract` instance. The `maple-js` contracts use TypeChain, enabling you to see all available methods using IntelliSense in your IDE.
+Once connected to a contract, you can call any available methods using the `contract` instance. `maple-js` contracts use typechain, so you can see all available methods using intellisense in your IDE.
 
-**Querying Contract Data**
+**Usage for Queries**
 
-For basic queries, such as fetching public variables or calling view functions, you can use the standard `await` pattern:
+Basic queries can be called using the standard `await` pattern:
 
 ```js
 const basicQuery = await contract.lpCooldownPeriod();
 ```
 
-## Executing Transactions
+**Usage for Transactions**
 
-When executing a transaction, such as calling a state-modifying function, you should use the `.wait()` method. This will resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
+When executing a transaction, use the `.wait()` method to resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
 
 ```js
-import { poolV2 } from '@maplelabs/maple-js';
+import { pool } from '@maplelabs/maple-js';
 
-const poolContract = poolV2.core.connect(poolAddress, new providers.JsonRpcProvider(RPC_ENDPOINT));
-
-const receipt = await (await poolContract.deposit(depositAmount, account)).wait();
+const poolContract = pool.core.connect(poolAddress, signer);
+const method = await (await poolContract.deposit(depositAmount)).wait();
 ```

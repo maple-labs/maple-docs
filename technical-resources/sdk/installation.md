@@ -3,7 +3,7 @@
 The SDK is available as a single package, installable using your preferred package manager:
 
 ```bash
-npm install --save @maplelabs/maple-js
+npm install @maplelabs/maple-js
 
 // or if using yarn
 
