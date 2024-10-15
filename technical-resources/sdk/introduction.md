@@ -10,9 +10,9 @@ Whether you're developing backend services, frontend applications, or a combinat
 
 ## Addresses
 
-| Export      | Purpose                                                                                                 |
-| ----------- | ------------------------------------------------------------------------------------------------------- |
-| `addresses` | Contains the contract addresses for the Maple Protocol on different networks (mainnet & Goerli testnet) |
+| Export      | Purpose                                                                                                  |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| `addresses` | Contains the contract addresses for the Maple Protocol on different networks (mainnet & Sepolia testnet) |
 
 ## TypeChain
 
@@ -26,7 +26,6 @@ TypeChain exports are automatically generated TypeScript bindings for Ethereum s
 | `erc20`                | Standard ERC20 token contract functionality                                 |
 | `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality               |
 | `loanManager`          | Manages loan creation and management functionality                          |
-| `loanV4`               | Implements loan v4 functionality                                            |
 | `loanV5`               | Implements loan v5 functionality                                            |
 | `mapleGlobalsV2`       | Manages global settings and configurations for Maple Protocol (version 2)   |
 | `mapleGlobalsV2V2`     | Manages global settings and configurations for Maple Protocol (version 2.2) |
