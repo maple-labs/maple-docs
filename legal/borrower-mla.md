@@ -1,7 +1,17 @@
 # Borrower MLA
 
-All borrowers sign a legal agreement prior to receipt of funds. This agreement ensures the legal right to pursue borrowers in the case of default.
+Prior to the disbursement of any funds, all prospective borrowers sign a legal agreement (the “Agreement”) prior to receipt of funds. This agreement is legally binding, ensures the rights and obligations of the parties involved, including, but not limited to, the unequivocal right of the lender to pursue all available legal remedies against the borrower in the event of default.
 
-The legal agreements have a venue for arbitration and/or litigation, and borrowers must waive objections to forum. When funds are recouped, participants are reimbursed in the following order, until funds are depleted: enforcement costs to Maple pursuant to the terms of the legal agreements; principal balance owed to Lenders, on a pro-rata basis as of the date of default; accrued interest owed to Lenders, on a pro-rata basis as of the date of default; fees owed to Maple.
+The Agreement incorporates a forum selection clause and arbitration provision.  Further, as a condition precedent to receiving funds, borrowers are required to execute an irrevocable waiver of all and any obligations to forum.
 
-For questions about KYC or legal agreements, please contact contact@maple.finance.
+In the event of default, the distribution of such recovered amounts is allocated as follows:
+
+i) All reasonable and documented costs incurred by Maple, as explicitly defined in the Agreement.
+
+ii) The outstanding principal balance owed to Lenders, to be distributed on a pro-rata basis calculated as of the date of default;
+
+iii) Any and all accrued interest owed to Lenders, similarly to be distributed on a pro-rata basis calculated as of the date of default;
+
+iv) Any fees owed to Maple, as expressly stipulated in the Agreement.
+
+For questions about KYC or legal agreements, please contact contact@maple.finance.&#x20;
