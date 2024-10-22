@@ -1,2 +1,0 @@
-# Fixed Term Loan Manager
-
