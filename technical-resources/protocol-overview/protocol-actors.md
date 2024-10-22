@@ -18,7 +18,7 @@ In order to drawdown on a Loan, the Borrower must post the required amount of `c
 
 ### Governor
 
-The [Governor](../admin-functions/governor-admin-actions.md) is a governance multisig wallet that performs actions based on token holder voting. The Governor controls administrative functions in the protocol, such as managing the Maple Treasury, defining global parameters and pausing functionality.
+The [Governor](broken-reference) is a governance multisig wallet that performs actions based on token holder voting. The Governor controls administrative functions in the protocol, such as managing the Maple Treasury, defining global parameters and pausing functionality.
 
 ### Security Admin
 

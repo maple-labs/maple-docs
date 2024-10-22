@@ -30,11 +30,11 @@ In order to maximize capital efficiency, at any given time, the majority of the 
 
 WithdrawalManagers are developed to cater for a specific pool's needs with regards to liquidity management, giving Pool Delegates the flexibility to configure the best withdrawal mechanic for their needs.
 
-## [Maple Globals](../singletons/globals.md)
+## [Maple Globals](broken-reference)
 
 MapleGlobals is a singleton contract responsible for holding protocol-wide parameters. The administrative actor of MapleGlobals is the `Governor` which can configure all the needed parameters in a central place. The `Governor` acts on behalf of the Maple DAO.
 
-The MapleGlobals contract is also used to perform and control [time-locked](../admin-functions/timelocks.md) actions, such as smart contract upgrades, which can directly affect depositors.
+The MapleGlobals contract is also used to perform and control [time-locked](broken-reference) actions, such as smart contract upgrades, which can directly affect depositors.
 
 ## Factories
 
