@@ -53,6 +53,7 @@
   * [Fixed Term Loans](technical-resources/loans/fixed-term-loans.md)
   * [Open Term Loans](technical-resources/loans/open-term-loans.md)
   * [Refinancing](technical-resources/loans/refinancing.md)
+  * [Impairments](technical-resources/loans/impairments.md)
   * [Defaults](technical-resources/loans/defaults.md)
 * [Pools](technical-resources/pools/README.md)
   * [Pools](technical-resources/pools/pools.md)
