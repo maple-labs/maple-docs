@@ -20,7 +20,7 @@ Exiting the pool by **calling `withdraw` is NOT encouraged**, as the recommended
 
 ## Redeem
 
-In order to exit from a Pool, an LP must first call `requestRedeem` before they can call `redeem`. This function moves the LP's shares to another contract and subjects them to the specific withdrawal mechanism. More details on the current WithdrawalManager mechanisms are included [here](broken-reference) and [here](broken-reference).
+In order to exit from a Pool, an LP must first call `requestRedeem` before they can call `redeem`. This function moves the LP's shares to another contract and subjects them to the specific withdrawal mechanism. More details on the current WithdrawalManager mechanisms are included [here](../withdrawal-managers/withdrawal-manager-cyclical.md) and [here](../withdrawal-managers/withdrawal-manager-queue.md).
 
 Once the conditions contained in the WithdrawalManager are met, the users can call `redeem` and burn their LP shares for cash. Depending on the withdrawal mechanism the funds asset may be sent directly to the user.
 
