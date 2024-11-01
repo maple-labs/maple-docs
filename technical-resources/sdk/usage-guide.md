@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Maple SDK simplifies interaction with Maple Protocol smart contracts on Ethereum. It supports Mainnet, Base, and Sepolia networks, with production and development environments.
+The Maple SDK simplifies interaction with Maple Protocol smart contracts on Ethereum. It supports Mainnet, Base, and Sepolia networks, with production and development environments.This guide provides both conceptual understanding and practical examples, including a full integration with a React application.
 
 There are three networks:
 
@@ -75,3 +75,170 @@ import { pool } from '@maplelabs/maple-js';
 const poolContract = pool.core.connect(poolAddress, signer);
 const method = await (await poolContract.deposit(depositAmount)).wait();
 ```
+
+## Example Integration with React
+
+This section provides a practical example of how to integrate the Maple SDK into a React application. This example demonstrates connecting to a wallet, approving a token transfer, depositing into a pool, and requesting a withdrawal.
+
+### Prerequisites
+
+Ensure you have the following installed and set up:
+
+- Node.js and npm
+- A React application (created using `create-react-app` or similar)
+- ethers v5 installed in your project
+- MetaMask extension installed in your browser
+
+### Step-by-Step Guide
+
+1. **Install the Maple SDK**
+
+   First, ensure you have the Maple SDK installed in your project:
+
+   ```bash
+   npm install @maplelabs/maple-js
+   ```
+
+2. **Set Up Your React Component**
+
+   Below is a complete example of a React component that interacts with the Maple Protocol:
+
+   ```typescript
+   import React, { useEffect, useState } from 'react';
+   import { BigNumber, ethers } from 'ethers';
+   import { addresses, poolV2, environmentMocks } from '@maplelabs/maple-js';
+
+   const PROJECT = 'mainnet-prod';
+   const POOL_ADDRESS = '0xpoolAddress';
+   const ONE_HUNDRED_USDC = BigNumber.from(100).mul(10 ** 6);
+
+   async function getPoolContract(poolAddress: string) {
+     const provider = new ethers.providers.Web3Provider(
+       (window as any).ethereum
+     );
+     const signer = provider.getSigner();
+     return poolV2.core.connect(poolAddress, signer);
+   }
+
+   async function getERC20Contract(erc20Address: string) {
+     const provider = new ethers.providers.Web3Provider(
+       (window as any).ethereum
+     );
+     const signer = provider.getSigner();
+
+     return environmentMocks.erc20.connect(erc20Address, signer);
+   }
+
+   function App() {
+     const [account, setAccount] = useState<string | null>(null);
+
+     useEffect(() => {
+       const connectWallet = async () => {
+         if (typeof (window as any).ethereum !== 'undefined') {
+           try {
+             // Request account access
+             const provider = new ethers.providers.Web3Provider(
+               (window as any).ethereum
+             );
+             await provider.send('eth_requestAccounts', []);
+
+             // Get the signer
+             const signer = provider.getSigner();
+
+             // Get the connected account
+             const address = await signer.getAddress();
+             setAccount(address);
+
+             console.log('Connected account:', address);
+           } catch (error) {
+             console.error('Error connecting to wallet:', error);
+           }
+         } else {
+           console.error('MetaMask is not installed!');
+         }
+       };
+
+       connectWallet();
+     }, []);
+
+     const handleApprove = async () => {
+       if (!account) {
+         console.error('No account connected');
+         return;
+       }
+
+       const erc20Contract = await getERC20Contract(addresses[PROJECT].USDC);
+       const transactionResponse = await erc20Contract.approve(
+         POOL_ADDRESS,
+         ONE_HUNDRED_USDC
+       );
+       const receipt = await transactionResponse.wait();
+
+       console.log('Transaction confirmed:', receipt);
+     };
+
+     const handleDeposit = async () => {
+       if (!account) {
+         console.error('No account connected');
+         return;
+       }
+
+       // Connect to the pool contract
+       const poolContract = await getPoolContract(POOL_ADDRESS);
+
+       // Execute the deposit method and wait for the transaction to be mined
+       const transactionResponse = await poolContract.deposit(
+         ONE_HUNDRED_USDC,
+         account
+       );
+       const receipt = await transactionResponse.wait();
+
+       console.log('Transaction confirmed:', receipt);
+     };
+
+     const handleRequestWithdrawal = async () => {
+       if (!account) {
+         console.error('No account connected');
+         return;
+       }
+
+       const sharesAmount = BigNumber.from(10).mul(10 ** 6);
+
+       // Connect to the pool contract
+       const poolContract = await getPoolContract(POOL_ADDRESS);
+
+       // Execute the requestRedeem method and wait for the transaction to be mined
+       const receipt = await (
+         await poolContract.requestRedeem(sharesAmount, account)
+       ).wait();
+
+       console.log('Transaction confirmed:', receipt);
+     };
+
+     return (
+       <div
+         style={{
+           display: 'flex',
+           justifyContent: 'center',
+           alignItems: 'center',
+           height: '100vh',
+         }}
+       >
+         <div>
+           <p>Interact with Maple Protocol</p>
+           <button onClick={handleApprove}>Approve</button>
+           <br />
+           <button onClick={handleDeposit}>Deposit</button>
+           <br />
+           <button onClick={handleRequestWithdrawal}>Request withdrawal</button>
+         </div>
+       </div>
+     );
+   }
+
+   export default App;
+   ```
+
+3. **Run Your Application**
+
+   Ensure your application is running and MetaMask or any other wallet of your choice is connected to the desired network. You can now interact with the Maple Protocol using the buttons provided in the UI.
