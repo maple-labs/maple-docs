@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Maple SDK simplifies interaction with Maple Protocol smart contracts on Ethereum. It supports Mainnet, Base, and Sepolia networks, with production and development environments.This guide provides both conceptual understanding and practical examples, including a full integration with a React application.
+The Maple SDK simplifies interaction with Maple Protocol smart contracts on Ethereum. It supports Mainnet, Base, and Sepolia networks, with production and development environments. This guide provides both conceptual understanding and practical examples, including a full integration with a React application.
 
 There are three networks:
 
