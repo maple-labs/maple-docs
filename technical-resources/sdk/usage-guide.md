@@ -104,7 +104,7 @@ The following GraphQL query can be used to retrieve the necessary permission inf
 
 Use the following endpoint to execute the query:
 
-`https://api.maple-dev.finance/v2/graphql`
+`https://api.maple.finance/v2/graphql`
 
 ### Explanation
 
