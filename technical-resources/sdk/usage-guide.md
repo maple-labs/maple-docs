@@ -76,6 +76,45 @@ const poolContract = pool.core.connect(poolAddress, signer);
 const method = await (await poolContract.deposit(depositAmount)).wait();
 ```
 
+## Checking Permissions with Subgraph
+
+Before a wallet can deposit into a Maple pool, it must have a sufficient `permissionsBitmap` set. This bitmap must meet or exceed the requirements specified by the pool's configuration. You can query the subgraph to check this information.
+
+### Example Query
+
+The following GraphQL query can be used to retrieve the necessary permission information for a specific pool and account:
+
+```graphql
+{
+  poolV2(id: "0xc1dd3f011290f212227170f0d02f511ebf57e433") {
+    permissionLevel
+    poolLevelBitmap
+    functionLevelBitmaps {
+      id
+      bitmap
+    }
+  }
+  account(id: "0xAccountId") {
+    permissionsBitmap
+  }
+}
+```
+
+### API Endpoint
+
+Use the following endpoint to execute the query:
+
+`https://api.maple-dev.finance/v2/graphql`
+
+### Explanation
+
+- **poolV2**: This section of the query retrieves information about the pool, including its permission level, and bitmaps for pool-level and function-level permissions if applicable.
+- **account**: This section retrieves the `permissionsBitmap` for a specific account, which indicates the permissions granted to that account.
+
+Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit.
+
+For more details on how permissions are managed, refer to the [Pool Permission Manager documentation](technical-resources/singletons/pool-permission-manager.md).
+
 ## Example Integration with React
 
 This section provides a practical example of how to integrate the Maple SDK into a React application. This example demonstrates connecting to a wallet, approving a token transfer, depositing into a pool, and requesting a withdrawal.
@@ -87,7 +126,8 @@ Ensure you have the following installed and set up:
 - Node.js and npm
 - A React application (created using `create-react-app` or similar)
 - ethers v5 installed in your project
-- MetaMask extension installed in your browser
+- MetaMask/Rabby extension installed in your browser
+- A wallet with sufficient permissions to interact with the pool (see [Checking Permissions with Subgraph](#checking-permissions-with-subgraph))
 
 ### Step-by-Step Guide
 
@@ -109,7 +149,7 @@ Ensure you have the following installed and set up:
    import { addresses, poolV2, environmentMocks } from '@maplelabs/maple-js';
 
    const PROJECT = 'mainnet-prod';
-   const POOL_ADDRESS = '0xpoolAddress';
+   const POOL_ADDRESS = '0xc1dd3f011290f212227170f0d02f511ebf57e433'; // Blue Chip Secured Pool
    const ONE_HUNDRED_USDC = BigNumber.from(100).mul(10 ** 6);
 
    async function getPoolContract(poolAddress: string) {
