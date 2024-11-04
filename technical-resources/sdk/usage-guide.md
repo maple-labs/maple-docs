@@ -76,11 +76,22 @@ const poolContract = pool.core.connect(poolAddress, signer);
 const method = await (await poolContract.deposit(depositAmount)).wait();
 ```
 
-## Checking Permissions with Subgraph
+## Checking Permissions and Onboarding
 
-Before a wallet can deposit into a Maple pool, it must have a sufficient `permissionsBitmap` set. This bitmap must meet or exceed the requirements specified by the pool's configuration. You can query the subgraph to check this information.
+Before a wallet can deposit into a Maple pool, it must have a sufficient `permissionsBitmap` set. This is automatically managed when users onboard and verify their accounts on the Maple Webapp. Once verified, all wallets added to the account will receive the necessary permissions. For Syrup pools, permissions are granted after an initial deposit through the UI.
 
-### Example Query
+### Onboarding and Verification
+
+To ensure your wallet has the necessary permissions:
+
+1. **Maple Webapp**: Onboard and verify your account at [Maple Webapp](https://app.maple.finance/). Add your wallets to the account to automatically receive the required permissions.
+2. **Syrup Pools**: Make an initial deposit through the [Syrup UI](https://syrup.fi/) to set permissions.
+
+### Querying Permissions with Subgraph
+
+For those interested in the technical details, you can query the subgraph to check permission information. This is useful for verifying the current state of permissions.
+
+**Example Query**
 
 The following GraphQL query can be used to retrieve the necessary permission information for a specific pool and account:
 
@@ -100,20 +111,16 @@ The following GraphQL query can be used to retrieve the necessary permission inf
 }
 ```
 
-### API Endpoint
+**API Endpoint**
 
-Use the following endpoint to execute the query:
+Use the following endpoint to execute the query: `https://api.maple.finance/v2/graphql`
 
-`https://api.maple.finance/v2/graphql`
+**Explanation**
 
-### Explanation
+- **poolV2**: Retrieves pool permission details.
+- **account**: Retrieves the `permissionsBitmap` for the account.
 
-- **poolV2**: This section of the query retrieves information about the pool, including its permission level, and bitmaps for pool-level and function-level permissions if applicable.
-- **account**: This section retrieves the `permissionsBitmap` for a specific account, which indicates the permissions granted to that account.
-
-Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit.
-
-For more details on how permissions are managed, refer to the [Pool Permission Manager documentation](technical-resources/singletons/pool-permission-manager.md).
+Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit. For more details on permissions, refer to the [Pool Permission Manager documentation](technical-resources/singletons/pool-permission-manager.md).
 
 ## Example Integration with React
 
