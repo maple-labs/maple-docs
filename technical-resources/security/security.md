@@ -12,7 +12,7 @@ The Maple protocol contracts went through 3 audits during its development for th
 | Spearbit      | [`2022-10-17 - Spearbit Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf)                         |
 | Three Sigma   | [`2022-10-24 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223541/three-sigma\_maple-finance\_code-audit\_v1.1.1.pdf)   |
 
-\
+
 
 
 ### June 2023 Release
@@ -23,8 +23,6 @@ The Maple protocol contracts went through 2 audits during its development for th
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11667848/cantina-maple.pdf)                         |
 | Three Sigma                   | [`2023-04-10 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11663546/maple-v2-audit\_three-sigma\_2023.pdf) |
-
-\
 
 
 ### December 2023 Release
