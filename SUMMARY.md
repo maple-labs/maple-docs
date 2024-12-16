@@ -25,8 +25,15 @@
 
 ## Maple for Token Holders
 
-* [MPL](maple-for-token-holders/mpl-token.md)
-* [MPL <> SYRUP Conversion](maple-for-token-holders/mpl-token-migration.md)
+* [Introduction to SYRUP](maple-for-token-holders/mpl-token.md)
+* [MPL to SYRUP Conversion](maple-for-token-holders/mpl-token-migration.md)
+* [Launch & Conversion Overview](maple-for-token-holders/launch-and-conversion-overview.md)
+* [Staking](maple-for-token-holders/staking.md)
+* [Staking Smart Contract Details](maple-for-token-holders/staking-smart-contract-details.md)
+* [Drips Rewards](maple-for-token-holders/drips-rewards.md)
+* [Governance and Voting](maple-for-token-holders/governance-and-voting.md)
+* [SYRUP Tokenomics](maple-for-token-holders/syrup-tokenomics.md)
+* [Additional Resources](maple-for-token-holders/additional-resources.md)
 * [FAQs](maple-for-token-holders/faqs.md)
 
 ## Technical Resources

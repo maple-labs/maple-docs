@@ -1,45 +1,41 @@
 # FAQs
 
-**Why should I migrate my MPL tokens?**
+**Why should I convert my MPL tokens? What will happen to MPL after the SYRUP launch and conversion?**
 
-One of the incentives of migrating from MPL to SYRUP is to accumulate SYRUP tokens through staking. Additionally, SYRUP token holders will be able to take part in governance related to both the Maple and Syrup protocols.&#x20;
-
-
-
-**Is it safe to convert MPL to SYRUP?**
-
-Maple has taken every step to ensure that it is safe to convert MPL to SYRUP at a smart contract level. Firstly, the SYRUP contract has been audited by Spearbit via Cantina and 3Sigma. The auditors assessed the SYRUP smart contracts and the migration process.&#x20;
-
-Secondly, the new token contract has undergone formal verification, the highest standard in smart contract security, which determines that the logic and desired behaviour of the smart contract is satisfactory. The audit reports are available for review here: [https://github.com/maple-labs/mplv2/tree/main/audits](https://github.com/maple-labs/mplv2/tree/main/audits).
-
-
+* [Converting your MPL to SYRUP](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide) allows you to earn staking rewards and vote in Maple and Syrup ecosystem governance. MPL will be delisted on exchanges and replaced with SYRUP trading pairs.
+* MPL will no longer hold any governance rights or utility after November 13th; SYRUP will govern both protocols and will enable holders to participate in staking.
 
 **What if my MPL is on an exchange?**
 
-Maple is in liaison with centralized exchanges to ensure smooth transition to SYRUP and will advise on the specific processes for different venues closer to the time. The aim is that MPL tokens on exchanges will automatically be converted into SYRUP requiring no action from holders.
+* Users converting their MPL to SYRUP on an exchange must comply with each exchange’s unique MPL to SYRUP [conversion processes](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide/supported-exchanges). While some exchanges will enable automatic conversion of MPL to SYRUP, others will require a user to transfer their MPL balance into a self-custody wallet in order to participate in the conversion.
+* Users should monitor official communications from their relevant exchanges and confirm if their specific exchange is participating in the automatic conversion.
 
+**Is staking available in the US and Australia? How do MPL holders that are geoblocked from using Syrup access the conversion?**
 
+* All MPL holders can convert to SYRUP and [access staking](https://syrup.gitbook.io/syrup/syrup-token/staking). Simply convert your MPL to SYRUP in the Syrup Webapp.
+* Geoblocking remains applied to [select jurisdictions](https://syrup.gitbook.io/syrup/legal/available-jurisdictions) for earning yield from institutional lending.
+
+**What is the expected APY for SYRUP staking?**
+
+* Initially, APY for SYRUP [staking](https://syrup.gitbook.io/syrup/syrup-token/staking) is dependent on the percentage of SYRUP staked, with a fixed amount of SYRUP distributed linearly over a three month period.
+* While no target APY is specified for SYRUP stakers, the protocol aims to distribute as much value to token holders as possible, subject to governance vote.
+
+**Will the MPL and SYRUP tokens exist simultaneously?**
+
+* To provide ample time for MPL token holders to convert to SYRUP, MPL will remain trading on select exchanges, scuh as Coinbase.
+* MPL will have no utility after November 13 and will eventually be delisted from all exchanges.
+
+**What is the APY for SYRUP staking?**
+
+* APY for SYRUP staking is dependent on the percentage of circulating supply of SYRUP staked.
+* In the first 90 days of SYRUP token, 5,000,000 SYRUP will be distributed to stakers. As an example, if 1/4 of the circulating supply is staked, staking APY will be \~9%.
+* Staking does not carry a contractual future return. Future distributions of SYRUP token are subject to token holder vote.
+
+**How is the value of Drips calculated?**
+
+* At the end of each Season, the conversion of Drips to SYRUP is announced. Lifetime Drips rewards reflect the amount of Drips earned for the duration of a user’s participation, with the conversion from Drips to SYRUP locked in at the end of each season.
+* Users will be able to begin claiming their [Drips rewards](https://syrup.gitbook.io/syrup/syrup-token/drips-rewards) through the Syrup webapp starting 15 December. Drips will be convertible to SYRUP in phases, starting with Season 1, with subsequent Seasons’ Drips made available in subsequent months.
 
 **What if I hold MPL and xMPL?**
 
-The MPL staking programme was established in May 2022 so MPL holders could share in Maple’s growth. Staked MPL in a Maple owned and audited smart contract is represented as xMPL, an ERC-20 token accruing distributed protocol revenues, second-by-second. xMPL continues to be used to vote on key decisions, and depositors can access their balance and unstake from the [xMPL page](https://app.maple.finance/#/xmpl) at anytime. For more information on how revenues accrued to Maple, see [this section](maple-token-holders/what-fees-are-shared-with-mpl-holders.md).
-
-MPL staked into the xMPL contract is not used as a form of first-loss Pool Cover, lent out or used by other contracts to earn yields. See smart contract audits below:&#x20;
-
-_Audits_
-
-RDT audits: [https://github.com/maple-labs/revenue-distribution-token#audit-reports…](https://github.com/maple-labs/revenue-distribution-token#audit-reports%E2%80%A6)
-
-xMPL audits: [https://github.com/maple-labs/xmpl#audit-reports…](https://github.com/maple-labs/xmpl#audit-reports%E2%80%A6)
-
-Bug bounty: [https://immunefi.com/bounty/maple/](https://immunefi.com/bounty/maple/)
-
-View the MPL governance page here: [https://community.maple.finance/](https://community.maple.finance/)
-
-xMPL will be migrated automatically to staked SYRUP (stSYRUP), no action is required there.&#x20;
-
-
-
-**How do I vote with SYRUP after the conversion?**
-
-The same voting process applies for SYRUP as for MPL.
+* Users will be able to migrate both their MPL and xMPL to SYRUP via the Convert page. They will be asked to convert their MPL first, and then can convert their xMPL afterward in a separate transaction.
