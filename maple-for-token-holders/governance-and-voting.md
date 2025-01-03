@@ -2,7 +2,7 @@
 
 #### **Introduction to Governance** <a href="#introduction-to-governance" id="introduction-to-governance"></a>
 
-The SYRUP token is the governance token for the Maple DAO and governs both the Maple and Syrup ecosystems. Only staked SYRUP tokens will be eligible for use in the governance process, as proposed in [MIP-012](https://community.maple.finance/t/mip-012-stsyrup-as-the-sole-governance-token-of-the-maple-finance-ecosystem/348) and voted on by the DAO.&#x20;
+The SYRUP token is the governance token for the Maple DAO and governs both the Maple and Syrup ecosystems. Only staked SYRUP tokens will be eligible for use in the governance process and can participate in voting, as proposed in [MIP-012](https://community.maple.finance/t/mip-012-stsyrup-as-the-sole-governance-token-of-the-maple-finance-ecosystem/348) and voted on by the DAO.&#x20;
 
 Governance voting include decisions on token distribution, recapitalising the Maple Treasury, launching new products, and upgrading the smart contract infrastructure. SYRUP holders can simply stake their SYRUP on syrup.fi/stake to participate.&#x20;
 
