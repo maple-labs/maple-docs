@@ -14,7 +14,7 @@ In addition to these incentives and enhancements, depositors can also boost thei
 
 #### Drips Claiming <a href="#drips-claiming" id="drips-claiming"></a>
 
-**The Drips claiming schedule is released!** SyrupFi users can now see exactly when they will be able to claim their $SYRUP tokens, earned with the Drips they collected.
+**The Drips claiming schedule is released!** SyrupFi users can now see exactly when they will be able to claim their $SYRUP tokens, earned with the Drips they collected. [Drips](https://syrup.gitbook.io/syrup/about-syrup/drips-program) recipients will be eligible to convert their Drips to SYRUP and staked SYRUP (stSYRUP).
 
 The Drips campaign was launched as a way to incentivize early users to join and participate in the overall growth of Maple and SyrupFi. It has been a massive success with more than 250M+ in TVL within a couple of months and integrations with the largest DeFi players including OKX, Pendle and [Ether.fi](http://ether.fi/).
 
