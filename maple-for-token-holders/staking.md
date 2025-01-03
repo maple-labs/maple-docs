@@ -2,7 +2,7 @@
 
 **What is SYRUP Staking?**
 
-The launch of SYRUP token will also mark the launch of SYRUP staking. On 13 November, when users enter the Syrup webapp and connect their wallets to convert MPL to SYRUP, they will have the option to one-click convert their MPL to staked SYRUP (stSYRUP).
+The launch of SYRUP token also marks the launch of SYRUP staking. On 13 November, when users enter the Syrup webapp and connect their wallets to convert MPL to SYRUP, they will have the option to one-click convert their MPL to staked SYRUP (stSYRUP).
 
 Staking rewards represent token distributions to reward stakers for securing the economic activity of the network. The Maple protocol will distribute SYRUP rewards as a combination of scheduled increase in the SYRUP token supply (5% annualized) and SYRUP token buybacks. Token buybacks consist of SYRUP tokens that are redeemed using revenue generated from the protocol’s lending activities.
 
@@ -24,7 +24,7 @@ The fees collected by the treasury can then be used to buyback SYRUP, which can 
 
 The staking smart contract is decentralized and non-custodial, meaning no third party takes possession of, actively manages, or controls staked tokens. Further, no party holds the private keys for the staking contract; it is decentralized.
 
-When token holders stake their tokens to share in protocol rewards, they are free to un-stake and withdraw their SYRUP tokens at any time. Further, staking is not tied to governance - SYRUP holders, whether staking or not, are able to participate in governance.
+When token holders stake their tokens to share in protocol rewards, they are free to un-stake and withdraw their SYRUP tokens at any time. Staking is also tied to governance - only stSYRUP holders are able to participate in governance.
 
 Stakers retain ownership of their tokens for the duration of the staking period, and all staked SYRUP (stSYRUP) remains idle in the smart contract - it is not deployed for any commercial use. A user’s SYRUP balance can be viewed in the Syrup webapp and can be withdrawn at any time.
 
@@ -36,6 +36,6 @@ When unstaking, users keep all staking rewards earned and can instantly withdraw
 
 When staked, SYRUP rewards begin to accumulate immediately and are reflected in an increasing balance of SYRUP tokens in the staking dashboard.
 
-Future distributions of SYRUP token are subject to voting from SYRUP token holders. The voting process takes place transparently on [Snapshot](https://snapshot.org/#/maple.eth), with proposals submitted to the Maple [governance forum](https://community.maple.finance/) weeks prior.
+Future distributions of SYRUP token are subject to voting from stSYRUP token holders. The voting process takes place transparently on [Snapshot](https://snapshot.org/#/maple.eth), with proposals submitted to the Maple [governance forum](https://community.maple.finance/) weeks prior.
 
 When considering the decision to stake SYRUP, it is important to note that staking does not carry a contractual future return, and future distributions are subject to the vote of the SYRUP token holders.
