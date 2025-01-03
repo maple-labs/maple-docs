@@ -1,42 +1,32 @@
-# Overview
+# Pool Exchange Rates
+
+## Overview
 
 Each Maple Pool has two exchange rates, one for deposits and one for withdrawals which can be seen in `convertToAssets`, `convertToExitAssets`, `convertToShares` and `convertToExitShares` functions.
 
-The difference is because when withdrawing assets from a pool the protocol takes into account `unrealizedLosses` ([more info here](./pool-accounting.md)) which can be thought of as a paper loss due to a Loan impairment. As a result the withdrawal exchange rate needs to take any `unrealizedLosses` into account to stop LPs front running any losses, this design makes any losses more equitable across all LPs. The reason that two exchange rates must be maintained in the case of an unrealized loss is that a new LP can take advantage of an impairment being removed by depositing right before the unrealizedLoss is reduced. This reduction results in a significant discrete increase in the exchange rate, which can be exploited by a savvy depositor. For this reason, the deposit exchange rate does not recognize the unrealized loss while the withdrawal rate does.
+The difference is because when withdrawing assets from a pool the protocol takes into account `unrealizedLosses` ([more info here](pool-accounting.md)) which can be thought of as a paper loss due to a Loan impairment. As a result the withdrawal exchange rate needs to take any `unrealizedLosses` into account to stop LPs front running any losses, this design makes any losses more equitable across all LPs. The reason that two exchange rates must be maintained in the case of an unrealized loss is that a new LP can take advantage of an impairment being removed by depositing right before the unrealizedLoss is reduced. This reduction results in a significant discrete increase in the exchange rate, which can be exploited by a savvy depositor. For this reason, the deposit exchange rate does not recognize the unrealized loss while the withdrawal rate does.
 
 To highlight the difference first let us look at a deposit specific exchange rate functions `convertToShares`.
 
-### `convertToAssets`
+#### `convertToAssets`
 
 This exchange rate function helps an LP determine how much of the Pool Asset is required to mint a specific number of shares.
 
-
-
 $$
-\large
-\begin{align}
-\nonumber exchangeRate = \frac{totalAssets}{totalSupply}
-\end{align}
+\large \begin{align} \nonumber exchangeRate = \frac{totalAssets}{totalSupply} \end{align}
 $$
-
 
 But note that `unrealizedLosses` is not used here.
 
-### `convertToExitAssets`
+#### `convertToExitAssets`
 
 This exchange rate function helps an LP determine how much of the Pool Assets an LP can withdraw for a specific number of shares.
 
-
-
 $$
-\large
-\begin{align}
-\nonumber exchangeRate = \frac{totalAssets-unrealizedLosses}{totalSupply}
-\end{align}
+\large \begin{align} \nonumber exchangeRate = \frac{totalAssets-unrealizedLosses}{totalSupply} \end{align}
 $$
 
-
-# Example
+## Example
 
 Below is an example of how the exchange rates work in an impair + default scenario. If one exchange rate was used during this process, a depositor could have deposited at a 0.6 exchange rate and withdrawn at a 0.8 exchange rate soon after. This would be an unfair distribution of funds as that depositor would earn a portion of the proceeds from cover and collateral liquidation as profit, rather than experiencing it as a reduction in loss.
 

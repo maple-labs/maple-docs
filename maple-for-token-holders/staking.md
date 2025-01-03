@@ -2,19 +2,17 @@
 
 **What is SYRUP Staking?**
 
-The launch of SYRUP token also marks the launch of SYRUP staking. On 13 November, when users enter the Syrup webapp and connect their wallets to convert MPL to SYRUP, they will have the option to one-click convert their MPL to staked SYRUP (stSYRUP).
-
 Staking rewards represent token distributions to reward stakers for securing the economic activity of the network. The Maple protocol will distribute SYRUP rewards as a combination of scheduled increase in the SYRUP token supply (5% annualized) and SYRUP token buybacks. Token buybacks consist of SYRUP tokens that are redeemed using revenue generated from the protocol’s lending activities.
 
 Technically, stSYRUP is a smart contract that represents a token that distributes rewards to its holders. Users that hold SYRUP can stake it in order to receive stSYRUP, and receive their portion of rewards that are distributed in SYRUP tokens.
 
-In the first 90 days after token launch, 5,000,000 SYRUP will be distributed to stakers. Assuming a stake rate of approximately 25%, for example, this would coincide with a staking APY of approximately 9%.
+In the first 90 days post token launch November 13th 2024, 5,000,000 SYRUP is being distributed to stakers. The current staking rate is visible on [syrup.fi/stake](https://syrup.fi/stake)&#x20;
 
-SYRUP tokens will also be distributed linearly throughout the 90-day period, incentivizing token holders to stake immediately and for the duration of the program.
+SYRUP tokens are distributed linearly throughout the 90-day period, incentivizing token holders to stake as soon as they can and for the duration of the program.
 
 #### **Where do Staking Rewards come from?** <a href="#where-do-staking-rewards-come-from" id="where-do-staking-rewards-come-from"></a>
 
-SYRUP represents the governance token for the Maple and Syrup protocols, and all value from institutional loans facilitated through Maple and Syrup accrues to the SYRUP token. By staking, SYRUP holders are able to grow their SYRUP balance as they participate in the growth of the Maple & Syrup ecosystem.
+SYRUP is the governance token for the Maple ecosystem, and all value from institutional loans facilitated through Maple and Syrup accrues to the SYRUP token. By staking, SYRUP holders are able to grow their SYRUP balance as they participate in the growth of the Maple ecosystem.
 
 The main source of revenue for the protocol comes from the collection of management, and service fees as a portion of interest on institutional loans. Management fees are the portion of lender interest that is taken by protocol for facilitating loan origination, and service fees are paid by the borrowers as part of their overall cost of borrowing, which includes interest.
 

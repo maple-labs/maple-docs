@@ -1,5 +1,17 @@
 # FAQs
 
+## SYRUP Conversion <a href="#what-are-the-syrup-token-addresses" id="what-are-the-syrup-token-addresses"></a>
+
+#### What are the SYRUP token addresses? <a href="#what-are-the-syrup-token-addresses" id="what-are-the-syrup-token-addresses"></a>
+
+* The addresses for SYRUP and Staked SYRUP are below:
+  * SYRUP: [0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66](https://etherscan.io/address/0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66)
+  * stSYRUP: [0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45](https://etherscan.io/address/0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45)
+
+#### How do I see my SYRUP in my wallet? <a href="#how-do-i-see-my-syrup-in-my-wallet" id="how-do-i-see-my-syrup-in-my-wallet"></a>
+
+* If you have converted to SYRUP or stSYRUP and your tokens are not immediately visible in your wallet, you may need to import the tokens as a supported asset. You can do so by adding a custom asset in your wallet and inputting the SYRUP or stSYRUP contract address (shown above).
+
 **Why should I convert my MPL tokens? What will happen to MPL after the SYRUP launch and conversion?**
 
 * [Converting your MPL to SYRUP](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide) allows you to earn staking rewards and vote in Maple and Syrup ecosystem governance by staking your SYRUP into stSYRUP.&#x20;
@@ -14,6 +26,12 @@
 **What is the deadline for converting MPL to SYRUP?**
 
 * The latest date to convert MPL or xMPL into SYRUP is April 30th 2025. This has been proposed in [MIP-011](https://community.maple.finance/t/mip-011-mpl-conversion-to-end-30th-of-april-2025/347/4) and approved through governance vote.&#x20;
+
+**What if I hold MPL and xMPL?**
+
+* Users will be able to migrate both their MPL and xMPL to SYRUP via the Convert page. They will be asked to convert their MPL first, and then can convert their xMPL afterward in a separate transaction.
+
+## SYRUP Staking and Drips
 
 **Is staking available in the US and Australia? How do MPL holders that are geoblocked from using Syrup access the conversion?**
 
@@ -40,7 +58,3 @@
 
 * At the end of each Season, the conversion of Drips to SYRUP is announced. Lifetime Drips rewards reflect the amount of Drips earned for the duration of a user’s participation, with the conversion from Drips to SYRUP locked in at the end of each season.
 * Users will be able to begin claiming their [Drips rewards](https://syrup.gitbook.io/syrup/syrup-token/drips-rewards) through the Syrup webapp starting 15 December. Drips will be convertible to SYRUP in phases, starting with Season 1, with subsequent Seasons’ Drips made available in subsequent months.
-
-**What if I hold MPL and xMPL?**
-
-* Users will be able to migrate both their MPL and xMPL to SYRUP via the Convert page. They will be asked to convert their MPL first, and then can convert their xMPL afterward in a separate transaction.

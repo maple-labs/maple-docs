@@ -14,3 +14,15 @@ SYRUP empowers participants to shape Maple’s future while directly benefiting 
 By staking SYRUP, participants can actively contribute to decision-making through governance while earning rewards, creating a dynamic and engaged community. This virtuous cycle of growth strengthens alignment, accelerates progress, and scales Maple’s influence.
 
 Together, Maple Institutional and Syrup.fi create a unified financial product offering that bridges the gap between institutional-grade lending and decentralized access.
+
+
+
+For more information, explore official Maple resources and trusted third-party data dashboards.
+
+[maple.finance](http://maple.finance/)
+
+[syrup.fi](http://syrup.fi/)
+
+[CoinMarketCap](https://coinmarketcap.com/currencies/maple-finance/)
+
+[CoinGecko](https://www.coingecko.com/en/coins/syrup)

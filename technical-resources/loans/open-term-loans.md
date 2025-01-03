@@ -1,17 +1,23 @@
-# Accounting 
+# Open Term Loans
 
-## Asset Definition
-Loans manage one asset: `fundsAsset`. 
+## Accounting
 
-### `fundsAsset` 
+### Asset Definition
+
+Loans manage one asset: `fundsAsset`.
+
+#### `fundsAsset`
+
 This represents the ERC-20 token that is used to facilitate the funding, drawing down, and payments during a loan lifecycle. Typically this would be a stablecoin such as USDC, DAI, or USDT.
 
-## Payments
+### Payments
+
 Borrowers have the flexibility to make payments, including partial principal repayments, against their loans at any given time. All fees, including service fees, along with interest, are pro-rated and calculated based on the exact time of payment or other significant actions such as loan funding or refinancing.
 
 Payments due are comprised of `principalCalled + interest + lateInterest + delegateServiceFee + platformServiceFee`
 
-## Interest
+### Interest
+
 Interest is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
 
 $$startDate = \max(datePaid, dateFunded)$$
@@ -20,111 +26,87 @@ $$interval = block.timestamp - startDate$$
 
 $$interest = principal * interestRate * \frac{interval}{365*86400}$$
 
-## Late Interest
+### Late Interest
+
 Late payments are also prorated and based on the `lateInterestPremiumRate` and `lateFeeRate`
 
 $$lateInterval = block.timestamp - paymentDueDate$$
 
 $$lateInterest = principal * lateInterestPremiumRate * \frac{lateInterval}{365*86400} + (principal * lateFeeRate)$$
 
-## Delegate Service Fee
-Delegate Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
-$$startDate = \max(datePaid, dateFunded)$$
+### Delegate Service Fee
+
+Delegate Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp` $$startDate = \max(datePaid, dateFunded)$$
 
 $$interval = block.timestamp - startDate$$
 
 $$delegateServiceFee = principal * delegateServiceFeeRate * \frac{interval}{365*86400}$$
 
-## Platform Service Fee
-Platform Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp`
-$$startDate = \max(datePaid, dateFunded)$$
+### Platform Service Fee
+
+Platform Service Fee is prorated and calculated from the relevant `startDate` till the current `block.timestamp` $$startDate = \max(datePaid, dateFunded)$$
 
 $$interval = block.timestamp - startDate$$
 
 $$platformServiceFee = principal * platformServiceFeeRate * \frac{interval}{365*86400}$$
 
-# Due Dates
+## Due Dates
+
 There are two virtual variables `paymentDueDate()` and `defaultDate()` that define the relevant due dates depending on if a payment is late, the loan is called, the loan is impaired, or any combination thereof. To compose these virtual variables, an internal helper function called `_dueDates()` is used.
 
-## `_dueDates()`
+### `_dueDates()`
+
 Returns the due dates for `callDueDate`, `impairedDueDate` and `normalDueDate`
 
-### `callDueDate`
+#### `callDueDate`
 
 $$
-\
-\text{callDueDate} =
-\begin{cases}
-\text{dateCalled + noticePeriod} & \text{if } \text{dateCalled} > 0 \\
-0 & \text{if } \text{dateCalled} = 0
-\end{cases}
-\
+\ \text{callDueDate} = \begin{cases} \text{dateCalled + noticePeriod} & \text{if } \text{dateCalled} > 0 \\ 0 & \text{if } \text{dateCalled} = 0 \end{cases} \
 $$
 
-### `impairedDueDate`
+#### `impairedDueDate`
 
 $$
-\
-\text{impairedDueDate} =
-\begin{cases}
-\text{dateImpaired} & \text{if } \text{dateImpaired} > 0 \\
-0 & \text{if } \text{dateImpaired} = 0
-\end{cases}
-\
+\ \text{impairedDueDate} = \begin{cases} \text{dateImpaired} & \text{if } \text{dateImpaired} > 0 \\ 0 & \text{if } \text{dateImpaired} = 0 \end{cases} \
 $$
 
-### `normalDueDate`
+#### `normalDueDate`
+
 $$paidOrFundedDate = \max(datePaid, dateFunded)$$
 
 $$
-\
-\text{normalDueDate} =
-\begin{cases}
-\text{paidOrFundedDate + paymentInterval} & \text{if } \text{paidOrFundedDate} > 0 \\
-0 & \text{if } \text{paidOrFundedDate} = 0
-\end{cases}
-\
+\ \text{normalDueDate} = \begin{cases} \text{paidOrFundedDate + paymentInterval} & \text{if } \text{paidOrFundedDate} > 0 \\ 0 & \text{if } \text{paidOrFundedDate} = 0 \end{cases} \
 $$
 
-## `paymentDueDate()`
+### `paymentDueDate()`
 
 $$paymentDueDate = \min(callDueDate, impairedDueDate, normalDueDate)$$
 
-## `_defaultDates()`
+### `_defaultDates()`
+
 Returns the due dates for `callDefaultDate`, `impairedDefaultDate` and `normalDefaultDate`
 
-### `callDefaultDate`
+#### `callDefaultDate`
 
 $$callDefaultDate = callDueDate$$
 
-### `impairedDefaultDate`
+#### `impairedDefaultDate`
 
 $$
-\
-\text{impairedDefaultDate} =
-\begin{cases}
-\text{impairedDueDate + gracePeriod} & \text{if } \text{impairedDueDate} > 0 \\
-0 & \text{if } \text{impairedDueDate} = 0
-\end{cases}
-\
+\ \text{impairedDefaultDate} = \begin{cases} \text{impairedDueDate + gracePeriod} & \text{if } \text{impairedDueDate} > 0 \\ 0 & \text{if } \text{impairedDueDate} = 0 \end{cases} \
 $$
 
-### `normalDefaultDate`
+#### `normalDefaultDate`
+
 $$
-\
-\text{normalDefaultDate} =
-\begin{cases}
-\text{normalDueDate + gracePeriod} & \text{if } \text{normalDueDate} > 0 \\
-0 & \text{if } \text{normalDueDate} = 0
-\end{cases}
-\
+\ \text{normalDefaultDate} = \begin{cases} \text{normalDueDate + gracePeriod} & \text{if } \text{normalDueDate} > 0 \\ 0 & \text{if } \text{normalDueDate} = 0 \end{cases} \
 $$
 
-## `defaultDate()`
+### `defaultDate()`
 
 $$defaultDate = \min(callDefaultDate, impairedDefaultDate, normalDefaultDate)$$
 
-# Loan Calls
+## Loan Calls
 
 The Pool Delegate (PD) exclusively possesses the ability to commence a Loan Call, specifying the principal amount that must not exceed the current principal balance. In the event of partial Loan Calls, the loan continues with a reduced balance but the same terms. Conversely, a complete Loan Call leads to the loan maturing once the borrower repays. Upon a Loan Call by the PD, the borrower is obligated to settle the demanded amount within the Notice Period or risk the loan defaulting.
 
@@ -132,13 +114,15 @@ The PD also has the power to withdraw a Loan Call, which reverts the payment sch
 
 It's worth noting that refinancing is considered a valid resolution to Loan Calls, with such calls being settled once the parties agree to new terms.
 
-# Fees
+## Fees
+
 Open-Term Loans have `delegateServiceFees` and `platformServiceFees` which are prorated and calculated on each payment.
- 
-# Closing Loan
+
+## Closing Loan
+
 If a Borrower wants to close a Loan, they can do so by calling `makePayment` with a principalToReturn matching the outstand principal.
 
-# Initialization Parameters
+## Initialization Parameters
 
 * `borrower` - The address of the borrower.
 * `lender` - The address of the lender.
