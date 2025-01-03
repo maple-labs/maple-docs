@@ -13,7 +13,7 @@ Details on the conversion can be found in[ MIP-010](https://community.maple.fina
 Maple is coordinating the transition of MPL to SYRUP in a few ways.
 
 1. MPL and xMPL holders can convert their tokens easily via a conversion page which will be made available at syrup.fi/convert. This will be the only destination for conversion.
-2. Maple is making arrangements with major exchanges so that MPL tokens on the exchange will automatically be converted into SYRUP, with no action required from holders.
+2. Maple is making arrangements with major exchanges so that MPL tokens on the exchange will automatically be converted into SYRUP, with no action required from holders. The exception was Coinbase, which this was not possible for.&#x20;
 
 Conversion will be possible until the 30th of April 2025 (following [the approval of MIP-011](https://snapshot.box/#/s:maple.eth/proposal/0xa40eddf52876e5239d9ffcb2fa861d04c4fce146c050aa3580da72d21bcbc13e)), but encouraged as soon as possible so holders can access the value and utility of SYRUP. After the 30th of April, SYRUP and stSYRUP will be the sole tokens within the Maple ecosystem that accrue all of the value and it will be impossible for MPL or xMPL holders to convert over.
 
