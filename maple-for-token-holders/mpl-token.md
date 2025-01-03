@@ -4,7 +4,7 @@
 
 #### SYRUP Token <a href="#syrup-token" id="syrup-token"></a>
 
-In conjunction with the launch of the Syrup protocol, the SYRUP token will be launched in Q4 2024. SYRUP will govern the broader Maple ecosystem, and with staking, users can contribute to the Protocol and earn more SYRUP.
+In conjunction with the launch of the Syrup protocol, the SYRUP token is launched in Q4 2024. SYRUP can be staked into stSYRUP to govern the broader Maple ecosystem, and users can contribute to the Protocol and earn more SYRUP.
 
 **MPL to SYRUP Conversion**
 
