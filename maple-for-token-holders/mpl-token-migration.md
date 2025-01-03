@@ -28,6 +28,10 @@ stSYRUP: [0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45](https://etherscan.io/addre
 
 Converting your MPL to SYRUP allows you to earn staking rewards and vote in Maple and Syrup ecosystem governance. MPL will be delisted on exchanges and replaced with SYRUP trading pairs.
 
+**What is the deadline for converting MPL to SYRUP?**
+
+The latest date to convert MPL or xMPL into SYRUP is April 30th 2025. This has been proposed in [MIP-011](https://community.maple.finance/t/mip-011-mpl-conversion-to-end-30th-of-april-2025/347/4) and approved through governance vote.&#x20;
+
 #### What if my MPL is on an exchange? <a href="#what-if-my-mpl-is-on-an-exchange" id="what-if-my-mpl-is-on-an-exchange"></a>
 
 Maple is in liaison with centralized exchanges to ensure smooth transition to SYRUP and will advise on the specific processes for different venues closer to the time. The aim is that MPL tokens on exchanges will automatically be converted into SYRUP requiring no action from holders.

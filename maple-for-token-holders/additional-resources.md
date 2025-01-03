@@ -2,7 +2,7 @@
 
 **Legal and Compliance**
 
-SYRUP stakers are still eligible to participate in governance. The staker retains ownership of their tokens for the duration of the staking period and remains free to un-stake and withdraw their SYRUP tokens at any time.
+Solely SYRUP stakers are eligible to participate in governance. The staker retains ownership of their tokens for the duration of the staking period and remains free to un-stake and withdraw their SYRUP tokens at any time.
 
 All staked SYRUP tokens are not deployed to any commercial purpose while staked, they remain idle in the smart contract and serve to secure the network.
 

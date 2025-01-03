@@ -2,13 +2,18 @@
 
 **Why should I convert my MPL tokens? What will happen to MPL after the SYRUP launch and conversion?**
 
-* [Converting your MPL to SYRUP](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide) allows you to earn staking rewards and vote in Maple and Syrup ecosystem governance. MPL will be delisted on exchanges and replaced with SYRUP trading pairs.
-* MPL will no longer hold any governance rights or utility after November 13th; SYRUP will govern both protocols and will enable holders to participate in staking.
+* [Converting your MPL to SYRUP](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide) allows you to earn staking rewards and vote in Maple and Syrup ecosystem governance by staking your SYRUP into stSYRUP.&#x20;
+* MPL will be delisted on exchanges and replaced with SYRUP trading pairs.
+* MPL will no longer hold any governance rights or utility after November 13th; SYRUP will govern both protocols through stSYRUP and will enable holders to participate in staking.
 
 **What if my MPL is on an exchange?**
 
 * Users converting their MPL to SYRUP on an exchange must comply with each exchange’s unique MPL to SYRUP [conversion processes](https://syrup.gitbook.io/syrup/syrup-token/conversion-guide/supported-exchanges). While some exchanges will enable automatic conversion of MPL to SYRUP, others will require a user to transfer their MPL balance into a self-custody wallet in order to participate in the conversion.
 * Users should monitor official communications from their relevant exchanges and confirm if their specific exchange is participating in the automatic conversion.
+
+**What is the deadline for converting MPL to SYRUP?**
+
+* The latest date to convert MPL or xMPL into SYRUP is April 30th 2025. This has been proposed in [MIP-011](https://community.maple.finance/t/mip-011-mpl-conversion-to-end-30th-of-april-2025/347/4) and approved through governance vote.&#x20;
 
 **Is staking available in the US and Australia? How do MPL holders that are geoblocked from using Syrup access the conversion?**
 
@@ -22,7 +27,7 @@
 
 **Will the MPL and SYRUP tokens exist simultaneously?**
 
-* To provide ample time for MPL token holders to convert to SYRUP, MPL will remain trading on select exchanges, scuh as Coinbase.
+* To provide ample time for MPL token holders to convert to SYRUP, MPL will remain trading on select exchanges, such as Coinbase.
 * MPL will have no utility after November 13 and will eventually be delisted from all exchanges.
 
 **What is the APY for SYRUP staking?**
