@@ -7,7 +7,7 @@ Total pool value is represented using `totalAssets`.
 This value is calculated using the following equation:
 
 $$
-\begin{align} \nonumber totalAssets = cash + \sum{assetsUnderManagement_{loanManager}} \end{align}
+\begin{align} \nonumber totalAssets = cash + \sum{assetsUnderManagement_{strategies}} \end{align}
 $$
 
 where:
@@ -24,11 +24,11 @@ $$
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
 
-<div align="center"><img src="https://user-images.githubusercontent.com/44272939/196053069-88046d8c-7489-4a02-9a83-27406eac1b93.svg" alt="" height="500"></div>
+<div align="center"><img src="https://private-user-images.githubusercontent.com/16119563/403095826-36e0abb8-dcc0-4948-b03d-6ecbcfae1899.png" alt="" height="500"></div>
 
 ## Unrealized Losses
 
-`unrealizedLosses` is an accounting variable that represents a "paper loss". The Pool Delegate and Governor both have the ability to "impair" a loan, setting the payment due date to the current timestamp (putting the loan into arrears) and representing a paper loss in the pool. `unrealizedLosses` is also incremented during an active collateral liquidation in a Loan. `unrealizedLosses` is used to prevent large liquidity events in situations where it is public knowledge that a Pool with incur a loss in the future.
+`unrealizedLosses` is an accounting variable that represents a "paper loss". The Pool Delegate and Governor both have the ability to "impair" a strategy and represent a paper loss in the pool. `unrealizedLosses` is also incremented during an active collateral liquidation in a Loan. `unrealizedLosses` is used to prevent large liquidity events in situations where it is public knowledge that a Pool will incur a loss in the future.
 
 In the case the unrealizedLosses > 0, there are two exchange rates that are maintained, one for deposits and one for withdrawals. This is to prevent malicious depositors from taking advantage of a situation where they know that paper loss will be removed. Consider a situation where there is a single loan outstanding for $900k with $10k of outstanding interest, and there is 100k of cash in the pool. The `totalSupply` of LP tokens is 1m. In this situation, the effective exchange rate is:
 
@@ -46,7 +46,7 @@ Without the two exchange rate model, a depositor could deposit $1m at a 0.1 exch
 
 For this reason, two exchange rates are maintained during an unrealizedLosses scenario. This accomplishes two things:
 
-1. Discourages withdrawals - LPs are incentivized to wait until the loan either:
+1. Discourages withdrawals - LPs are incentivized to wait until the strategy either:
 2. Defaults - Cover and collateral will increase exchange rate
 3. Pays back - The original exchange rate is restored.
 4. Discourages deposits - During a scenario where a default is imminent, it is in future LPs' best interest to wait until the borrower either defaults or pays back their loan before entering the pool.

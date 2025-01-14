@@ -1,6 +1,10 @@
 # Fees
 
-## Fee Summary
+## Defi Strategies fees
+// TODO
+
+
+## Loan Fees
 
 Fees in the Maple protocol can be separated into three categories:
 

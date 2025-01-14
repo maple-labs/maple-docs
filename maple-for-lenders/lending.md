@@ -16,7 +16,7 @@ Each Maple pool is a [smart contract](https://ethereum.org/en/smart-contracts/).
 
 When you lend into a pool you are calling the “Deposit” function on the pool smart contract. The function, when confirmed in your wallet, will accept your lending tokens and you will receive Pool LP (Liquidity Provider) Tokens.
 
-Each pool contract inherits the [ERC 4626](https://erc4626.info/) standard, also know as the “Tokenized Vault” Standard. This standard informs how the LP Tokens accrue value from borrower repayments of loans.
+Each pool contract inherits the [ERC 4626](https://erc4626.info/) standard, also know as the “Tokenized Vault” Standard. This standard informs how the LP Tokens accrue value from borrower repayments of strategies.
 
 The Global Allowlist uses a collective list of the valid Maple wallets which the Pool Contracts access to determine access to each pool. If an address which is not on the Global Allowlist attempts to lend to a permissioned pool, the transaction will revert.
 

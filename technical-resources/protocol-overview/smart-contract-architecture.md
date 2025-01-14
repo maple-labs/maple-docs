@@ -11,7 +11,11 @@ The pool implements the vault standard ([ERC4626](https://erc4626.info/)) and it
 
 Pools and PoolManagers currently have a one-to-one relationship (architecturally this is allowed to change), meaning that a single Pool contract is associated with a single PoolManager and vice versa. Its main responsibility is to hold almost all of the administrative functions, as well serve as the interface between the Pool and the other parts of the protocol architecture.
 
-The main actors that interact with the PoolManager are the Pool Delegate, Governor and other Maple contracts. No external facing actor is expected to use the Pool Manager directly. The Pool Delegate uses the PoolManager to administrate loans, performing actions such as funding and refinancing, and setting Pool parameters, such as liquidity cap and fees. Other contracts use the PoolManager to route calls to the Pool to perform operation such as withdrawals.
+The main actors that interact with the PoolManager are the Pool Delegate, Governor and other Maple contracts. No external facing actor is expected to use the Pool Manager directly. The Pool Delegate uses the PoolManager to administrate strategies, performing actions such as funding and refinancing, and setting Pool parameters, such as liquidity cap and fees. Other contracts use the PoolManager to route calls to the Pool to perform operation such as withdrawals.
+
+# External Strategies
+// TODO
+
 
 # LoanManagers
 
@@ -35,4 +39,4 @@ The MapleGlobals contract is also used to perform and control [time-locked](../a
 
 # Factories
 
-Within the Maple protocol there will be multiple instances of each contract described above, so for efficiency of deployment, a factory pattern is employed. Factories are contracts that are responsible to create new instances of specific contracts and to manage and perform upgrades. Factories are managed in an allowlist in MapleGlobals, maintained by the Governor. This allows protocol contracts to verify on-chain that contracts have been vetted by the Maple DAO. For example, a Pool can check if it is funding a Loan that is part of the Maple protocol, as to avoid funding a Loan with malicious smart contract logic. Further, some (and eventually more/all) factories rely on MapleGlobals to determine if their caller is allowed to deploy an instance.
+Within the Maple protocol there will be multiple instances of each contract described above, so for efficiency of deployment, a factory pattern is employed. Factories are contracts that are responsible to create new instances of specific contracts and to manage and perform upgrades. Factories are managed in an allowlist in MapleGlobals, maintained by the Governor. This allows protocol contracts to verify on-chain that contracts have been vetted by the Maple DAO. For example, a Loan Manager can check if it is funding a Loan that is part of the Maple protocol, as to avoid funding a Loan with malicious smart contract logic. Further, some (and eventually more/all) factories rely on MapleGlobals to determine if their caller is allowed to deploy an instance.
