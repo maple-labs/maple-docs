@@ -2,9 +2,9 @@
 
 ```
 * Fixed Term Loan
-   * Invariant A: collateral balance >= _collateral`
-   * Invariant B: fundsAsset >= _drawableFunds`
-   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
+   * Invariant A: collateral balance >= collateral`
+   * Invariant B: fundsAsset >= drawableFunds`
+   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
 
 * Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
