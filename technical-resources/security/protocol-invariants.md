@@ -61,6 +61,12 @@
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
    * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
 
+* Pool Permission Manager
+   * Invariant A: pool.permissionLevel ∈ [0, 3]
+   * Invariant B: pool.bitmap ∈ [0, MAX]
+   * Invariant C: lender.bitmap ∈ [0, MAX]
+   * Invariant D: pool.permissionLevel == public -> permanently public
+
 * Withdrawal Manager (Cyclical)
    * Invariant A: WM LP balance == ∑lockedShares(user)
    * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
@@ -76,12 +82,6 @@
    * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
    * Invariant M: lockedLiquidity <= pool.totalAssets()
    * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
-
-* Pool Permission Manager
-   * Invariant A: pool.permissionLevel ∈ [0, 3]
-   * Invariant B: pool.bitmap ∈ [0, MAX]
-   * Invariant C: lender.bitmap ∈ [0, MAX]
-   * Invariant D: pool.permissionLevel == public -> permanently public
 
 * Withdrawal Manager (Queue)
    * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
