@@ -2,9 +2,9 @@
 
 ```
 * Fixed Term Loan
-   * Invariant A: collateral balance >= collateral`
-   * Invariant B: fundsAsset >= drawableFunds`
-   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
+   * Invariant A: collateral balance >= _collateral`
+   * Invariant B: fundsAsset >= _drawableFunds`
+   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
 
 * Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
@@ -61,12 +61,6 @@
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
    * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
 
-* Pool Permission Manager
-   * Invariant A: pool.permissionLevel ∈ [0, 3]
-   * Invariant B: pool.bitmap ∈ [0, MAX]
-   * Invariant C: lender.bitmap ∈ [0, MAX]
-   * Invariant D: pool.permissionLevel == public -> permanently public
-
 * Withdrawal Manager (Cyclical)
    * Invariant A: WM LP balance == ∑lockedShares(user)
    * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
@@ -83,6 +77,12 @@
    * Invariant M: lockedLiquidity <= pool.totalAssets()
    * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
 
+* Pool Permission Manager
+   * Invariant A: pool.permissionLevel ∈ [0, 3]
+   * Invariant B: pool.bitmap ∈ [0, MAX]
+   * Invariant C: lender.bitmap ∈ [0, MAX]
+   * Invariant D: pool.permissionLevel == public -> permanently public
+
 * Withdrawal Manager (Queue)
    * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
    * Invariant B: balanceOf(this) >= totalShares
@@ -93,4 +93,13 @@
    * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
    * Invariant H: requestId is unique
    * Invariant I: lender is unique
+
+* Strategy
+   * Invariant A: assetsUnderManagement == currentTotalAssets - accruedFees
+   * Invariant B: currentAccruedFees <= currentTotalAssets
+   * Invariant C: strategyState == ACTIVE -> unrealizedLosses == 0
+   * Invariant D: strategyState == IMPAIRED -> assetsUnderManagement == unrealizedLosses
+   * Invariant E: strategyState == INACTIVE -> assetsUnderManagement == unrealizedLosses == 0
+   * Invariant F: strategyState ∈ [0, 2]
+   * Invariant G: strategyFeeRate <= 1e6
 ```
