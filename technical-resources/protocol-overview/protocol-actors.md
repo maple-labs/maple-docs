@@ -10,7 +10,7 @@ Liquidity Providers (LPs) add capital to the Pools to be used to fund strategies
 
 ## Borrowers
 
-Many of the Maple strategies are loans for institutions (borrowers) that want to borrow capital from the Maple protocol. They do so by negotiating with Pool Delegates and deploying a Loan on-chain. After agreeing on terms, a Pool Delegate can fund the Loan with funds available in their Pool.
+The primary Maple strategies are loans for institutions (borrowers) that want to borrow capital from the Maple protocol. They do so by negotiating with Pool Delegates and deploying a Loan on-chain. After agreeing on terms, a Pool Delegate can fund the Loan with funds available in their Pool.
 
 
 ## Governor

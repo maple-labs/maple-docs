@@ -24,7 +24,7 @@ $$
 
 The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
 
-<div align="center"><img src="https://private-user-images.githubusercontent.com/16119563/403095826-36e0abb8-dcc0-4948-b03d-6ecbcfae1899.png" alt="" height="500"></div>
+<div align="center"><img src="https://github.com/user-attachments/assets/4b64a334-57c5-4746-bbbc-f9d6c41e7940" alt="" height="500"></div>
 
 ## Unrealized Losses
 
