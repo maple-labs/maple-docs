@@ -76,6 +76,15 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `removeRequest`
 * `setManualWithdrawal`
 
+## Strategies Contracts
+
+* `claimRewards` (Aave Strategy only)
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+* `setPsm` (Sky Strategy only)
+
 ## Upgrading Contracts
 
 The Governor can upgrade the following contracts:

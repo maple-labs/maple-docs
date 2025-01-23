@@ -50,6 +50,15 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 
+## Strategies Contracts
+
+* `claimRewards` (Aave Strategy only)
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+* `setPsm` (Sky Strategy only)
+
 ## Withdrawal Manager (Cyclical)
 
 * `upgrade`
