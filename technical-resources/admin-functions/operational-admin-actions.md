@@ -34,6 +34,15 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 
+## Strategies Contracts
+
+* `claimRewards` (Aave Strategy only)
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+* `setPsm` (Sky Strategy only)
+
 ## Withdrawal Manager (Cyclical)
 
 * `setExitConfig`
