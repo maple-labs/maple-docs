@@ -6,4 +6,4 @@ To ensure that all stakeholders can take action in case of unwanted events, admi
 - Remove Module
 - Upgrade
 
-Note that since the modules themselves call the mint function, it does not need to be time-locked. The current protocol already has a similar time-locking mechanism in place, which can be leveraged for MPL V2.
+Note that since the modules themselves call the mint function, it does not need to be time-locked. The current protocol already has a similar time-locking mechanism in place, which can be leveraged for SYRUP.
