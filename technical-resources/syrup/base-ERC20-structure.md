@@ -1,6 +1,6 @@
 # Overview
 
-The core of the MPL V2 token is based on the audited and battle-tested [ERC20](https://github.com/maple-labs/erc20) contract. The existing ERC20 contract used for xMPL and all existing pools will serve as the foundation for MPL V2. The ERC20 contract provides the following functions:
+The core of the SYRUP token is based on the audited and battle-tested [ERC20](https://github.com/maple-labs/erc20) contract. The existing ERC20 contract used for xSYRUP and all existing pools will serve as the foundation for MPL V2. The ERC20 contract provides the following functions:
 
 ### Public Functions
 
@@ -17,4 +17,4 @@ The core of the MPL V2 token is based on the audited and battle-tested [ERC20](h
 - `_burn()`: Removes tokens from an account and decreases the total supply.
 
 ### Additional Rules
-At construction time, the MPLv2 should do a one time mint of 10% of the supply directly to the treasury. Additionally 10 Million MPLv2 will be minted to the migrator contract to facilitate a 1-1 swap from MPL V1 to MPL v2.
+At construction time, the SYRUP should do a one time mint of 10% of the supply directly to the treasury. Additionally 10 Million SYRUP will be minted to the migrator contract to facilitate a 1-1 swap from MPL V1 to SYRUP.
