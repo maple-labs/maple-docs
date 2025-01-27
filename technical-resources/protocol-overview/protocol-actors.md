@@ -2,7 +2,7 @@ This page outlines all of the different actors in the Maple protocol and gives a
 
 ## Pool Delegate
 
-Pool Delegates are users that manage Pools on Maple. They earn management fees in return for deploying capital with attractive risk-adjusted returns. Pool Delegates earn revenue from management fees.
+Pool Delegates are users that manage Pools on Maple. They earn management fees in return for deploying capital with attractive risk-adjusted returns. Pool Delegates earn revenue from management fees. Pool are mostly managed by Pool Delegates from Maple Direct.
 
 ## Liquidity Provider
 

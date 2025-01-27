@@ -36,4 +36,3 @@ The following pre-requisites must be met before the creation of a Loan.
 
 ## General Business Rules
 - It is not possible to convert an Open Term Loan into a Fixed Term Loan, or vice versa, by any means
-- If Pool Delegate doesn't post minimum required Cover, service and management fees are routed to the Pool and the Treasury.

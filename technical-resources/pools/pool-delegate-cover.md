@@ -1,4 +1,6 @@
-# Overview
+# Overview (Unused)
+
+*Note this aspect of the protocol isn't used as the Pool Delegate Cover is unused due to most pool's being managed by Maple Direct.*
 
 `PoolDelegateCover` is responsible of holding custody of all first-loss capital posted by the Pool Delegate for a given Pool. First-loss capital exists to protect Liquidity Providers in the case of a Loan default. It is required to be posted by the Pool Delegate to ensure that they are directly financially incentivized to protect Liquidity Providers from losses.
 
