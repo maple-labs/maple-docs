@@ -43,6 +43,17 @@ The Maple & Syrup protocol contracts went through 2 audits during its developmen
 | Three Sigma | [`2024-08-23 - Three Sigma Report`](https://github.com/maple-labs/syrup-utils/blob/main/audits/ThreeSigma-Maple-Finance-Aug-2024.pdf) |
 | 0xMacro     | [`2024-08-14 - 0xMacro Report`](https://github.com/maple-labs/syrup-utils/blob/main/audits/0xMacro-Maple-Finance-Aug-2024.pdf)         |
 
+### December 2024 Release
+
+The Maple & Syrup protocol contracts went through 2 audits during its development for the December 2024 release. Details of these audits can be found below, and all relevant issues identified by auditors were addressed prior to release.
+
+| Auditor     | Report Link                                                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Three Sigma | [`2024-12-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-december/ThreeSigma-Maple.pdf) |
+| 0xMacro     | [`2024-12-20 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-december/%200xMacro-Maple.pdf)         |
+
+
+
 ## Bug Bounty
 
 The Maple protocol has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
