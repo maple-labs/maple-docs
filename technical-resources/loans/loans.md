@@ -20,7 +20,7 @@ The following pre-requisites must be met before the creation of a Loan.
 2. The Borrower must be set as a valid instance deployer of the relevant factory (i.e. `globals.setCanDeployFrom`). (Only applies to Open Term Loans)
 3. The asset used for the funding of the Loan must be set as valid by the Governor in MapleGlobals.
 4. The asset used as collateral of the Loan must be set as valid by the Governor in MapleGlobals.
-5. The Lender must be a valid instance of the respective type of [`Loan Manager`](../../loan-managers)
+5. The Lender must be a valid instance of the respective type of [`Loan Manager`](../../strategies)
 
 ## Key Differences Between Open-Term/Fixed-Term Loans
 - Open-Term Loans do not have an implied date for which the principal and outstanding interest need to be paid back by.
