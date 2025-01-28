@@ -76,6 +76,7 @@
     * [Advance Payment Accounting](technical-resources/strategies/fixed-term-loan-manager/advance-global-payment-accounting.md)
     * [Accounting Examples](technical-resources/strategies/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
   * [Open Term Loan Manager](technical-resources/strategies/open-term-loan-manager/open-term-loan-manager.md)
+  * [DeFi Strategies](technical-resources/strategies/defi-strategies/defi-strategies.md)
 * [Withdrawal Managers](technical-resources/withdrawal-managers/README.md)
   * [WithdrawalManager (Cyclical)](technical-resources/withdrawal-managers/withdrawal-manager-cyclical.md)
   * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
