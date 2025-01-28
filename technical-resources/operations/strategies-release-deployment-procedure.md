@@ -1,4 +1,4 @@
-# Smart Contract Deployments
+# Smart Contract Deployments & Upgrade Procedure for Strategies Release
 
 The following contracts will be deployed with the relevant release tags.
 
