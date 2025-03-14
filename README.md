@@ -12,14 +12,14 @@ Syrup makes Maple's institutional lending marketplace available to all through D
 **Links:**
 
 * Website: [www.maple.finance](http://www.maple.finance/)
-* YouTube: [https://www.youtube.com/channel/UCXJPzNcN\_kSXj82EfRrV1pQ](https://www.youtube.com/channel/UCXJPzNcN\_kSXj82EfRrV1pQ)
 * Telegram: [https://t.me/maplefinance](https://t.me/maplefinance)
 * Twitter: [https://twitter.com/maplefinance](https://twitter.com/maplefinance)
 * LinkedIn: [https://www.linkedin.com/company/maplefinance/](https://www.linkedin.com/company/maplefinance/)
-* Dune Dashboard: [https://dune.com/scottincrypto/Maple-Deposits](https://dune.com/scottincrypto/Maple-Deposits)
+* Dune Dashboard: [https://dune.com/maple-finance/maple-finance](https://dune.com/maple-finance/maple-finance)&#x20;
 * Token Terminal Dashboard: [https://tokenterminal.com/terminal/projects/maple-finance](https://tokenterminal.com/terminal/projects/maple-finance)
-* Messari: [https://messari.io/asset/maple-finance](https://messari.io/asset/maple-finance)
-* Coin Market Cap: [https://coinmarketcap.com/currencies/maple/](https://coinmarketcap.com/currencies/maple/)
-* Coin Gecko: [https://www.coingecko.com/en/coins/maple](https://www.coingecko.com/en/coins/maple)
+* Messari: [https://messari.io/project/syrup](https://messari.io/project/syrup)&#x20;
+* Coin Market Cap: [https://coinmarketcap.com/currencies/maple-finance/](https://coinmarketcap.com/currencies/maple-finance/)&#x20;
+* Coin Gecko: [https://www.coingecko.com/en/coins/maple-finance](https://www.coingecko.com/en/coins/maple-finance)&#x20;
 * DeFi Llama: [https://defillama.com/protocol/maple](https://defillama.com/protocol/maple)
+* YouTube: [https://www.youtube.com/channel/UCXJPzNcN\_kSXj82EfRrV1pQ](https://www.youtube.com/channel/UCXJPzNcN_kSXj82EfRrV1pQ)
 {% endhint %}
