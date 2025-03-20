@@ -93,4 +93,13 @@
    * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
    * Invariant H: requestId is unique
    * Invariant I: lender is unique
+
+* Strategy
+   * Invariant A: assetsUnderManagement == currentTotalAssets - accruedFees
+   * Invariant B: currentAccruedFees <= currentTotalAssets
+   * Invariant C: strategyState == ACTIVE -> unrealizedLosses == 0
+   * Invariant D: strategyState == IMPAIRED -> assetsUnderManagement == unrealizedLosses
+   * Invariant E: strategyState == INACTIVE -> assetsUnderManagement == unrealizedLosses == 0
+   * Invariant F: strategyState ∈ [0, 2]
+   * Invariant G: strategyFeeRate <= 1e6
 ```

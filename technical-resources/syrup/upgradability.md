@@ -1,6 +1,6 @@
 # Overview
 
-The MPL V2 contract includes a simple upgradability mechanism to provide a safeguard for unknown future use cases. The chosen pattern for upgradability is the [NonTransparentProxy](https://github.com/maple-labs/non-transparent-proxy) pattern, which has already been audited and used by the existing Globals contract. Due to the contained nature of MPL V2 a decision was made to not import the NTP directly, but rather just copy the functions over, most of them without functionality changes.
+The SYRUP contract includes a simple upgradability mechanism to provide a safeguard for unknown future use cases. The chosen pattern for upgradability is the [NonTransparentProxy](https://github.com/maple-labs/non-transparent-proxy) pattern, which has already been audited and used by the existing Globals contract. Due to the contained nature of SYRUP a decision was made to not import the NTP directly, but rather just copy the functions over, most of them without functionality changes.
 
 Notable changes from the NTP for the `MapleTokenProxy` are:
 - The updated constructor logic.

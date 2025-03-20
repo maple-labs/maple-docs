@@ -8,9 +8,9 @@ The Maple protocol contracts went through 3 audits during its development for th
 
 | Auditor       | Report Link                                                                                                                                                                               |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Trail of Bits | [`2022-08-24 - Trail of Bits Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10246688/Maple.Finance.v2.-.Final.Report.-.Fixed.-.2022.pdf) |
-| Spearbit      | [`2022-10-17 - Spearbit Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf)                         |
-| Three Sigma   | [`2022-10-24 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223541/three-sigma\_maple-finance\_code-audit\_v1.1.1.pdf)   |
+| Trail of Bits | [`2022-08-24 - Trail of Bits Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2022-december/TrailOfBits-Maple.pdf) |
+| Spearbit      | [`2022-10-17 - Spearbit Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2022-december/Spearbit-maple.pdf)                   |
+| Three Sigma   | [`2022-10-24 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2022-december/ThreeSigma-Maple.pdf)   |
 
 
 
@@ -21,8 +21,8 @@ The Maple protocol contracts went through 2 audits during its development for th
 
 | Auditor                       | Report Link                                                                                                                                                                |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11667848/cantina-maple.pdf)                         |
-| Three Sigma                   | [`2023-04-10 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/11663546/maple-v2-audit\_three-sigma\_2023.pdf) |
+| Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2023-june/cantina-Maple.pdf)                         |
+| Three Sigma                   | [`2023-04-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2023-june/ThreeSigma-Maple.pdf) |
 
 
 ### December 2023 Release
@@ -31,8 +31,8 @@ The Maple protocol contracts went through 2 audits during its development for th
 
 | Auditor     | Report Link                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three Sigma | [`2023-11-06 - Three Sigma Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/13707288/Maple-Q4-Three-Sigma-Audit.pdf) |
-| 0xMacro     | [`2023-11-27 - 0xMacro Report`](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/13707291/Maple-Q4-0xMacro-Audit.pdf)         |
+| Three Sigma | [`2023-11-06 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2023-december/ThreeSigma-Maple.pdf) |
+| 0xMacro     | [`2023-11-27 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2023-december/0xMacro-Maple.pdf)         |
 
 ### August 2024 Release
 
@@ -40,111 +40,25 @@ The Maple & Syrup protocol contracts went through 2 audits during its developmen
 
 | Auditor     | Report Link                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three Sigma | [`2024-08-23 - Three Sigma Report`](https://github.com/maple-labs/syrup-utils/blob/main/audits/ThreeSigma-Maple-Finance-Aug-2024.pdf) |
-| 0xMacro     | [`2024-08-14 - 0xMacro Report`](https://github.com/maple-labs/syrup-utils/blob/main/audits/0xMacro-Maple-Finance-Aug-2024.pdf)         |
+| Three Sigma | [`2024-08-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-august/ThreeSigma-Maple-Finance-Aug-2024.pdf) |
+| 0xMacro     | [`2024-08-14 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-august/0xMacro-Maple-Finance-Aug-2024.pdf)         |
+| ThreeSigma (Router) | [`2024-05-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-august/ThreeSigma-MapleSyrupRouter.pdf) |
+
+### December 2024 Release
+
+The Maple & Syrup protocol contracts went through 2 audits during its development for the December 2024 release. Details of these audits can be found below, and all relevant issues identified by auditors were addressed prior to release.
+
+| Auditor     | Report Link                                                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Three Sigma | [`2024-12-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-december/ThreeSigma-Maple.pdf) |
+| 0xMacro     | [`2024-12-20 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/audits/audits/2024-december/%200xMacro-Maple.pdf)         |
+
+
 
 ## Bug Bounty
 
 The Maple protocol has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
 
-## Invariants
-
-In order to discuss critical monitoring first its important to be clear on the invariants that are asserted which can be found below.
-
-```
-* Fixed Term Loan
-   * Invariant A: collateral balance >= collateral`
-   * Invariant B: fundsAsset >= drawableFunds`
-   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
-
-* Fixed Term Loan Manager (non-liquidating)
-   * Invariant A: domainStart <= domainEnd
-   * Invariant B: sortedPayments is always sorted
-   * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)
-   * Invariant D: totalPrincipal = ∑loan.principal
-   * Invariant E: issuanceRate = ∑issuanceRate(payment)
-   * Invariant F: unrealizedLosses <= assetsUnderManagement
-   * Invariant G: unrealizedLosses == 0
-   * Invariant H: assetsUnderManagement == ∑loan.principal + ∑outstandingInterest(loan)
-   * Invariant I: domainStart <= block.timestamp
-   * Invariant J: if (loanManager.paymentWithEarliestDueDate != 0) then issuanceRate > 0
-   * Invariant K: if (loanManager.paymentWithEarliestDueDate != 0) then domainEnd == paymentWithEarliestDueDate
-   * Invariant L: refinanceInterest[payment] = loan.refinanceInterest
-   * Invariant M: paymentDueDate[payment] = loan.paymentDueDate
-   * Invariant N: startDate[payment] <= loan.paymentDueDate - loan.paymentInterval
-
-* Open Term Loan
-   * Invariant A: dateFunded <= datePaid, dateCalled, dateImpaired (if not zero)
-   * Invariant B: datePaid <= dateImpaired (if not zero)
-   * Invariant C: datePaid <= dateCalled (if not zero)
-   * Invariant D: calledPrincipal <= principal
-   * Invariant E: dateCalled != 0 -> calledPrincipal != 0
-   * Invariant F: paymentDueDate <= defaultDate
-   * Invariant G: getPaymentBreakdown == theoretical calculation
-
-* Open Term Loan Manager
-   * Invariant A: accountedInterest + accruedInterest == ∑loan.getPaymentBreakdown(block.timestamp) (minus fees)
-   * Invariant B: if no payments exist: accountedInterest == 0
-   * Invariant C: principalOut = ∑loan.principal
-   * Invariant D: issuanceRate = ∑payment.issuanceRate
-   * Invariant E: unrealizedLosses <= assetsUnderManagement
-   * Invariant F: if no impairments exist: unrealizedLosses == 0
-   * Invariant G: block.timestamp >= domainStart
-   * Invariant H: payment.startDate == loan.dateFunded || loan.datePaid
-   * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
-   * Invariant J: payment.impairedDate >= payment.startDate
-   * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
-
-* Pool (non-liquidating)
-   * Invariant A: totalAssets > fundsAsset balance of pool
-   * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
-   * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
-   * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
-   * Invariant E: convertToShares(totalAssets) == totalSupply (with rounding)
-   * Invariant F: balanceOfAssets[user] >= balanceOf[user]
-   * Invariant G: ∑balanceOf[user] == totalSupply
-   * Invariant H: convertToExitShares == convertToShares
-   * Invariant I: totalAssets == poolManager.totalAssets
-   * Invariant J: unrealizedLosses == poolManager.unrealizedLosses
-   * Invariant K: convertToExitShares == poolManager.convertToExitShares
-
-* PoolManager (non-liquidating)
-   * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
-   * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
-
-* Pool Permission Manager
-   * Invariant A: pool.permissionLevel ∈ [0, 3]
-   * Invariant B: pool.bitmap ∈ [0, MAX]
-   * Invariant C: lender.bitmap ∈ [0, MAX]
-   * Invariant D: pool.permissionLevel == public -> permanently public
-
-* Withdrawal Manager (Cyclical)
-   * Invariant A: WM LP balance == ∑lockedShares(user)
-   * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
-   * Invariant C: windowStart[currentCycle] <= block.timestamp
-   * Invariant D: initialCycleTime[currentConfig] <= block.timestamp
-   * Invariant E: initialCycleId[currentConfig] <= currentCycle
-   * Invariant F: getRedeemableAmounts.shares[owner] <= WM LP balance
-   * Invariant G: getRedeemableAmounts.shares[owner] <= lockedShares[user]
-   * Invariant H: getRedeemableAmounts.shares[owner] <= totalCycleShares[exitCycleId[user]]
-   * Invariant I: getRedeemableAmounts.assets[owner] <= fundsAsset balance of pool
-   * Invariant J: getRedeemableAmounts.assets[owner] <= totalCycleShares[exitCycleId[user]] * exchangeRate
-   * Invariant K: getRedeemableAmounts.assets[owner] <= lockedShares[user] * exchangeRate
-   * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
-   * Invariant M: lockedLiquidity <= pool.totalAssets
-   * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
-
-* Withdrawal Manager (Queue)
-   * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
-   * Invariant B: balanceOf(this) >= totalShares
-   * Invariant C: ∀ requestId(owner) != 0 -> request.shares > 0 && request.owner == owner
-   * Invariant D: nextRequestId <= lastRequestId + 1
-   * Invariant E: nextRequestId != 0
-   * Invariant F: requests(0) == (0, 0)
-   * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
-   * Invariant H: requestId is unique
-   * Invariant I: lender is unique
-```
 
 ## Critical Monitoring
 

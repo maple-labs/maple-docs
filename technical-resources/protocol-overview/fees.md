@@ -1,6 +1,33 @@
 # Fees
 
-## Fee Summary
+## Defi Strategies fees
+
+A performance fee is charged on the yield generated from each strategy. A snapshot is taken of the strategy's total assets during `deposit()`, `withdraw()`, and `setStrategyFeeRate()` function calls as `lastRecordedTotalAssets`. This snapshot is then compared at the next interaction, and if yield has been generated, the fee is charged and sent to the Maple Treasury.
+
+The strategy fee is calculated using the formula:
+
+$$
+\huge
+\text{strategyFee} = \dfrac{\text{yieldAccrued} \times \text{strategyFeeRate}}{1 \times 10^6}
+$$
+
+**Where:**
+- $\text{yieldAccrued}$ is the total yield accrued since the last `deposit()`, `withdraw()`, or `setStrategyFeeRate()` function call.
+- $\text{strategyFeeRate}$ is the fee rate for the strategy, which can be no greater than $1 \times 10^6$.
+- $1 \times 10^6$ represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
+
+The fee rate is set by the protocol admins on a per-strategy basis and can be changed at any time.
+
+### Reactivation of Strategies
+
+Protocol admins can impair and deactivate strategies, with the ability to reactivate them at any time. During reactivation, a boolean flag indicates whether the accounting should be updated, which directly affects fee calculations.
+
+If admins choose to update the accounting, a new snapshot of total assets will be taken and fees won't be charged for the deactivated period. However, if they opt not to update the accounting, fees will be charged retroactively for the entire period.
+
+This flexibility is valuable because strategies are implemented as external contracts, making it impossible to predict potential future issues and determine the optimal accounting approach in advance.
+
+
+## Loan Fees
 
 Fees in the Maple protocol can be separated into three categories:
 

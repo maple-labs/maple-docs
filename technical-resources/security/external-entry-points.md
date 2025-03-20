@@ -173,7 +173,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Deployer Permissioned Functions**
 
-* `addLoanManager`
+* `addStrategy`
 * `completeConfiguration`
 * `setDelegateManagementFeeRate`
 * `setLiquidityCap`
@@ -182,11 +182,11 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Pool Delegate Permissioned Functions**
 
 * `acceptPoolDelegate`
-* `addLoanManager`
+* `addStrategy`
 * `finishCollateralLiquidation`
 * `setAllowedLender`
 * `setDelegateManagementFeeRate`
-* `setIsLoanManager`
+* `setIsStrategy`
 * `setLiquidityCap`
 * `setOpenToPublic`
 * `setPendingPoolDelegate`
@@ -375,3 +375,105 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Loan Permissioned Functions**
 
 * `claim`
+
+### Aave Strategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Governor Permissioned Functions**
+
+* `claimRewards`
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+**Operational Admin Permissioned Functions**
+
+* `claimRewards`
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+**Pool Delegate Permissioned Functions**
+
+* `claimRewards`
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+### Basic Strategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Governor Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+**Operational Admin Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+**Pool Delegate Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setStrategyFeeRate`
+
+### Sky Strategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Governor Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setPsm`
+* `setStrategyFeeRate`
+
+**Operational Admin Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setPsm`
+* `setStrategyFeeRate`
+
+**Pool Delegate Permissioned Functions**
+
+* `deactivateStrategy`
+* `impairStrategy`
+* `reactivateStrategy`
+* `setPsm`
+* `setStrategyFeeRate`

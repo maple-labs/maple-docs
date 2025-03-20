@@ -72,7 +72,9 @@ loan collateral =   400
 
 When a loan is defaulted, some amount of capital can be recovered through the mechanics of cover and liquidation. When that happens, the protocol enforces an order to which the funds will be directed. All liquidated collateral and cover first goes towards recovering fees owed to the protocol, after which all funds are returned to the Pool. The Pool Delegate does not recover any fees owed during a Loan default.
 
-# First-Loss Capital
+# First-Loss Capital (Unused)
+
+*Note this aspect of the protocol isn't used as the Pool Delegate Cover is unused due to most pool's being managed by Maple Direct.*
 
 Each Pool maintains a reserved amount of liquidity whose main purpose is to serve as first-loss capital in case defaults occur. This liquidity is provided by the Pool Delegate and is used to make up for the losses still remaining after the Loan collateral is liquidated. This mechanism is in place to align incentives between the Pool Delegate and LPs. An additional setting (`maxCoverLiquidationPercent`) can also be set on a per-pool basis by the Governor, which defines the maximum percentage of pool cover used when covering for losses.
 
@@ -86,7 +88,9 @@ In the case of a collateralized Loan default, a two-step procedure must be condu
 1. The collateral must be repossessed and put up for liquidation.
 2. The liquidation must be finalized, taking the resulting funds, calculating the remaining losses and liquidating cover liquidated up to the `maxCoverLiquidationPercent`. Remaining losses are represented to LPs as a decrease in `totalAssets`.
 
-## Collateral Liquidation Mechanism
+## Collateral Liquidation Mechanism (Unused)
+
+*Note this aspect of the protocol isn't used as collateral is held with custodians.*
 
 The `Liquidator` is a smart contract that performs the liquidation of any ERC-20 compatible assets using flash loans. Performing liquidations is not a permissioned action, so any user can perform these steps:
 
