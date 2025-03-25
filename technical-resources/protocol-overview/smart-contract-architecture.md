@@ -2,7 +2,7 @@
 
 In this section, the architecture of the Maple V2 protocol is outlined, including the rationale behind each decision.
 
-![V2 Protocol Architecture](https://github-production-user-asset-6210df.s3.amazonaws.com/59924029/426110292-18568bbe-28d7-4aa8-9407-5fe92f8795f9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250324T142626Z&X-Amz-Expires=300&X-Amz-Signature=a6993d08979b123bdecdf4266ae72b258d34a8c8b87827419a13ef6e69e720db&X-Amz-SignedHeaders=host)
+![V2 Protocol Architecture](https://i.imgur.com/rULDnQc.png)
 
 # [Pool](../pools/pools.md)
 The pool implements the vault standard ([ERC4626](https://erc4626.info/)) and its intentionally kept as simple as possible, containing mostly token and deposit/withdrawal functionality. It's the only contract that LPs need to interact with to participate in the protocol. Due to immutability, some of the logic is delegated to the contract called `PoolManager`, which is the only external facing contract that the Pool interacts with.
