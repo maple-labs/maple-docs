@@ -8,25 +8,24 @@ Pursuant to the Master Loan Agreement, the Borrower is only permitted to invest 
 
 The APY is variable and based on the current Secured Overnight Financing Rate (SOFR), less Maple Protocol Fees and Borrower Fees.
 
-**Are the fees fixed or variable?**
-Fees are fixed at 50bps annualized. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
+**Are the fees fixed or variable?** Fees are fixed at 50bps annualized. There are no upfront subscription fees, redemption fees, or any other additional "hidden fees" charged by the Pool. The Borrower bears its own expenses, including organizational expenses, custodial expenses, brokerage commissions, and any administrative, legal, accounting, tax, and auditing fees.
 
-| Party | Fees | Source |
-|-|-|-|
+| Party               | Fees                   | Source                                                                                                                                                             |
+| ------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Maple Protocol Fees | 25bps for USDC Lenders | Charged as a portion of gross interest received by the Pool and collected on each payment date, in exchange for providing critical smart contracts infrastructure. |
-| Borrower Fees | 25bps for USDC Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark Secured Overnight Financing Rate (SOFR). |
+| Borrower Fees       | 25bps for USDC Lenders | Charged as a fixed spread between the Interest Rate on borrowingsand the benchmark Secured Overnight Financing Rate (SOFR).                                        |
 
-**Who is eligible to lend into the Pool?**
-The Pool is permissioned and welcomes USDC Lenders who can verify Accredited Investor status and pass AML checks.
+**Who is eligible to lend into the Pool?** The Pool is permissioned and welcomes USDC Lenders who can verify Accredited Investor status and pass AML checks.
 
 Lenders can [begin onboarding here](https://form.typeform.com/to/u3n8Q8ga?#pool=CASHMNGTUSDC), it should take about 10-15 minutes to complete the forms. To pass AML checks, Lender wallet addresses will be scanned for risk factors using TRM Labs.
 
 **What’s the process to onboard?**
 
 Onboarding should take 10 minutes for an Accredited Investor to complete the forms and 15 minutes for an Accredited Entity. It’s a 3 step process that includes:
+
 1. **Completion of the 'Lender Onboarding Form'** - This is Maple's standard onboarding form and takes on average 2 minutes to complete. Begin onboarding here.
 2. **Submitting KYC documentation** - Standard documentation including proof of identity, address, income and entity. On average this takes 3 minutes for an Individual to complete and 9 minutes for an Entity.
-3. **Signing the 'Lender Attestation'** - Whilst T&Cs need to be signed we have digitized and simplified the process and copy to be easily understood by all applicants.
+3. **Signing the 'Lender Attestation'** - Whilst T\&Cs need to be signed we have digitized and simplified the process and copy to be easily understood by all applicants.
 
 Existing Lenders on Maple will only need to sign the Lender Attestation. Please contact your Account Manager to do so.
 
@@ -56,5 +55,4 @@ Yes. The pool welcomes DAOs that can verify Accredited Investor status and pass 
 
 Maple and Room40 will support the development of DAO proposals and are committed to being active participants in the community approval process.
 
-
-**If this sounds like the cash management solution you’ve been looking for, [begin onboarding or speak to the team](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC).**
+**If this sounds like the cash management solution you’ve been looking for,** [**begin onboarding or speak to the team**](https://form.typeform.com/to/KhVOWR5W#pool_name=Cash%20Management%20USDC)**.**

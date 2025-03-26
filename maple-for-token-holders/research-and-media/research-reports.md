@@ -29,3 +29,9 @@
 **Parsec**
 
 [Guest Article w/ Maple Finance](https://parsec.substack.com/p/guest-article-wmaple-finance)
+
+
+
+**GL Capital**
+
+[Maple Finance Relative Valuation ](https://x.com/GL_Capital_/status/1891842410071851114)

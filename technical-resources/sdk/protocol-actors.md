@@ -1,19 +1,20 @@
 # Protocol Actors
 
+## Protocol Actors
+
 There are three actors in the Maple Protocol ecosystem:
 
-- Borrowers
-- Lenders
-- Pool Delegates
+* Borrowers
+* Lenders
+* Pool Delegates
 
-# Borrowers
+## Borrowers
 
-- Borrowers initiate loan requests by specifying terms and providing collateral if required.
-- Borrowers draw down loans after they are approved and funded.
-- Borrowers repay principal and interest through associated smart contracts.
+* Borrowers initiate loan requests by specifying terms and providing collateral if required.
+* Borrowers draw down loans after they are approved and funded.
+* Borrowers repay principal and interest through associated smart contracts.
 
-**Code Example:**
-This snippet queries the [`GlobalsV2`](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview/smart-contract-architecture#maple-globals) contract to check if a given address is an authorized borrower
+**Code Example:** This snippet queries the [`GlobalsV2`](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview/smart-contract-architecture#maple-globals) contract to check if a given address is an authorized borrower
 
 ```js
 import { providers } from 'ethers';
@@ -34,11 +35,11 @@ async function main() {
 main();
 ```
 
-# Lenders
+## Lenders
 
-- Lenders deposit specific assets into designated pools.
-- Lenders accumulate interest on deposits as borrowers repay loans.
-- Lenders withdraw assets from pools using the `WithdrawalManager` contract.
+* Lenders deposit specific assets into designated pools.
+* Lenders accumulate interest on deposits as borrowers repay loans.
+* Lenders withdraw assets from pools using the `WithdrawalManager` contract.
 
 **Code Example:**
 
@@ -66,14 +67,13 @@ async function main() {
 main();
 ```
 
-# Delegates
+## Delegates
 
-- Delegates evaluate and approve/fund loan requests based on criteria specific to each pool.
-- Delegates accept or reject refinance proposals.
-- Delegates manage various pool utilities, such as adjusting the liquidity cap or authorizing certain lenders.
+* Delegates evaluate and approve/fund loan requests based on criteria specific to each pool.
+* Delegates accept or reject refinance proposals.
+* Delegates manage various pool utilities, such as adjusting the liquidity cap or authorizing certain lenders.
 
-**Code Example:**
-This snippet queries the `poolV2` contract to query the on-chain name of a given pool
+**Code Example:** This snippet queries the `poolV2` contract to query the on-chain name of a given pool
 
 ```js
 import { providers } from 'ethers';

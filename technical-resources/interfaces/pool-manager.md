@@ -1,15 +1,11 @@
-# MaplePoolManager
+# PoolManager
 
-
-
-<br />
+\
 
 
 ## Functions
 
-### `HUNDRED_PERCENT` 
-
-
+### `HUNDRED_PERCENT`
 
 ```solidity
     function HUNDRED_PERCENT()
@@ -19,17 +15,16 @@
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `acceptPoolDelegate` 
+### `acceptPoolDelegate`
 
 Accepts the role of pool delegate.
 
@@ -38,11 +33,10 @@ Accepts the role of pool delegate.
         nonpayable;
 ```
 
+\
 
 
-<br />
-
-### `active` 
+### `active`
 
 Returns whether or not a pool is active.
 
@@ -54,19 +48,18 @@ Returns whether or not a pool is active.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
+### `addStrategy`
 
-### `addStrategy` 
-
-Adds a new strategy.          NOTE: The PoolManager address is encoded and prepended to the extraDeploymentData.
+Adds a new strategy. NOTE: The PoolManager address is encoded and prepended to the extraDeploymentData.
 
 ```solidity
     function addStrategy(
@@ -80,21 +73,22 @@ Adds a new strategy.          NOTE: The PoolManager address is encoded and prepe
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategyFactory_` | `address` | `address` | The address of the strategy factory to use. |
-| 1 | `extraDeploymentData_` | `bytes` | `bytes` | The data to construct the strategy. |
 
+| Index |          Name          |    Type   | Internal Type | Description                                 |
+| :---: | :--------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |   `strategyFactory_`   | `address` |   `address`   | The address of the strategy factory to use. |
+|   1   | `extraDeploymentData_` |  `bytes`  |    `bytes`    | The data to construct the strategy.         |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategy_` | `address` | `address` |            The address of the new strategy. |
+
+| Index |     Name    |    Type   | Internal Type | Description                      |
+| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
+
+\
 
 
-<br />
-
-### `asset` 
+### `asset`
 
 Gets the address of the funds asset.
 
@@ -106,17 +100,16 @@ Gets the address of the funds asset.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `canCall` 
+### `canCall`
 
 Checks if a scheduled call can be executed.
 
@@ -134,23 +127,24 @@ Checks if a scheduled call can be executed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `functionId_` | `bytes32` | `bytes32` | The function to check. |
-| 1 | `caller_` | `address` | `address` | The address of the caller. |
-| 2 | `data_` | `bytes` | `bytes` | The data of the call. |
 
+| Index |      Name     |    Type   | Internal Type | Description                |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------- |
+|   0   | `functionId_` | `bytes32` |   `bytes32`   | The function to check.     |
+|   1   |   `caller_`   | `address` |   `address`   | The address of the caller. |
+|   2   |    `data_`    |  `bytes`  |    `bytes`    | The data of the call.      |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `canCall_` | `bool` | `bool` |      True if the call can be executed, false otherwise. |
-| 1 | `errorMessage_` | `string` | `string` | The error message if the call cannot be executed. |
+
+| Index |       Name      |   Type   | Internal Type | Description                                        |
+| :---: | :-------------: | :------: | :-----------: | -------------------------------------------------- |
+|   0   |    `canCall_`   |  `bool`  |     `bool`    | True if the call can be executed, false otherwise. |
+|   1   | `errorMessage_` | `string` |    `string`   | The error message if the call cannot be executed.  |
+
+\
 
 
-<br />
-
-### `completeConfiguration` 
+### `completeConfiguration`
 
 Complete the configuration.
 
@@ -159,11 +153,10 @@ Complete the configuration.
         nonpayable;
 ```
 
+\
 
 
-<br />
-
-### `configured` 
+### `configured`
 
 Returns whether or not a pool is configured.
 
@@ -175,17 +168,16 @@ Returns whether or not a pool is configured.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `convertToExitShares` 
+### `convertToExitShares`
 
 Returns the amount of exit shares for the input amount.
 
@@ -200,20 +192,21 @@ Returns the amount of exit shares for the input amount.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `assets_` | `uint256` | `uint256` |  |
 
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `assets_` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  Amount of shares able to be exited. |
+
+| Index |    Name   |    Type   | Internal Type | Description                         |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | Amount of shares able to be exited. |
+
+\
 
 
-<br />
-
-### `delegateManagementFeeRate` 
+### `delegateManagementFeeRate`
 
 Gets the delegate management fee rate.
 
@@ -225,17 +218,16 @@ Gets the delegate management fee rate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `depositCover` 
+### `depositCover`
 
 Deposits cover into the pool.
 
@@ -247,14 +239,15 @@ Deposits cover into the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of cover to deposit. |
+
+| Index |    Name   |    Type   | Internal Type | Description                     |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover to deposit. |
+
+\
 
 
-<br />
-
-### `factory` 
+### `factory`
 
 The address of the proxy factory.
 
@@ -266,17 +259,16 @@ The address of the proxy factory.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `factory_` | `address` | `address` |  |
+
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `factory_` | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `finishCollateralLiquidation` 
+### `finishCollateralLiquidation`
 
 Finishes the collateral liquidation
 
@@ -288,14 +280,15 @@ Finishes the collateral liquidation
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan that had its collateral liquidated. |
+
+| Index |   Name  |    Type   | Internal Type | Description                              |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `loan_` | `address` |   `address`   | Loan that had its collateral liquidated. |
+
+\
 
 
-<br />
-
-### `getEscrowParams` 
+### `getEscrowParams`
 
 Gets the information of escrowed shares.
 
@@ -312,22 +305,23 @@ Gets the information of escrowed shares.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
-| 1 | `shares_` | `uint256` | `uint256` | The amount of shares to get the information of. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   |    \`\`   | `address` |   `address`   |                                                 |
+|   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares to get the information of. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `escrowShares_` | `uint256` | `uint256` | The amount of escrowed shares. |
-| 1 | `destination_` | `address` | `address` |  The address of the destination. |
+
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `escrowShares_` | `uint256` |   `uint256`   | The amount of escrowed shares.  |
+|   1   |  `destination_` | `address` |   `address`   | The address of the destination. |
+
+\
 
 
-<br />
-
-### `globals` 
+### `globals`
 
 Gets the address of the globals.
 
@@ -339,17 +333,16 @@ Gets the address of the globals.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `globals_` | `address` | `address` | The address of the globals. |
+
+| Index |    Name    |    Type   | Internal Type | Description                 |
+| :---: | :--------: | :-------: | :-----------: | --------------------------- |
+|   0   | `globals_` | `address` |   `address`   | The address of the globals. |
+
+\
 
 
-<br />
-
-### `governor` 
+### `governor`
 
 Gets the address of the governor.
 
@@ -361,17 +354,16 @@ Gets the address of the governor.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `governor_` | `address` | `address` | The address of the governor. |
+
+| Index |     Name    |    Type   | Internal Type | Description                  |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `governor_` | `address` |   `address`   | The address of the governor. |
+
+\
 
 
-<br />
-
-### `hasSufficientCover` 
+### `hasSufficientCover`
 
 Returns if pool has sufficient cover.
 
@@ -383,17 +375,16 @@ Returns if pool has sufficient cover.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `hasSufficientCover_` | `bool` | `bool` | True if pool has sufficient cover. |
+
+| Index |          Name         |  Type  | Internal Type | Description                        |
+| :---: | :-------------------: | :----: | :-----------: | ---------------------------------- |
+|   0   | `hasSufficientCover_` | `bool` |     `bool`    | True if pool has sufficient cover. |
+
+\
 
 
-<br />
-
-### `implementation` 
+### `implementation`
 
 The address of the implementation contract being proxied.
 
@@ -405,17 +396,16 @@ The address of the implementation contract being proxied.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
+
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `isStrategy` 
+### `isStrategy`
 
 Returns whether or not the given address is a strategy.
 
@@ -430,20 +420,21 @@ Returns whether or not the given address is a strategy.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `address` | `address` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `address` |   `address`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `bool` | `bool` |  |
+
+| Index | Name |  Type  | Internal Type | Description |
+| :---: | :--: | :----: | :-----------: | ----------- |
+|   0   |      | `bool` |     `bool`    |             |
+
+\
 
 
-<br />
-
-### `liquidityCap` 
+### `liquidityCap`
 
 Gets the liquidity cap for the pool.
 
@@ -455,17 +446,16 @@ Gets the liquidity cap for the pool.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `uint256` | `uint256` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `maxDeposit` 
+### `maxDeposit`
 
 Gets the amount of assets that can be deposited.
 
@@ -480,20 +470,21 @@ Gets the amount of assets that can be deposited.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `receiver_` | `address` | `address` | The address to check the deposit for. |
 
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `receiver_` | `address` |   `address`   | The address to check the deposit for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `maxAssets_` | `uint256` | `uint256` |  |
+
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `maxMint` 
+### `maxMint`
 
 Gets the amount of shares that can be minted.
 
@@ -508,20 +499,21 @@ Gets the amount of shares that can be minted.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `receiver_` | `address` | `address` | The address to check the mint for. |
 
+| Index |     Name    |    Type   | Internal Type | Description                        |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `receiver_` | `address` |   `address`   | The address to check the mint for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `maxShares_` | `uint256` | `uint256` |  |
+
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `maxShares_` | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `maxRedeem` 
+### `maxRedeem`
 
 Gets the amount of shares that can be redeemed.
 
@@ -536,20 +528,21 @@ Gets the amount of shares that can be redeemed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the redemption for. |
 
+| Index |   Name   |    Type   | Internal Type | Description                              |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `owner_` | `address` |   `address`   | The address to check the redemption for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `maxShares_` | `uint256` | `uint256` |  |
+
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `maxShares_` | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
-
-### `maxWithdraw` 
+### `maxWithdraw`
 
 Gets the amount of assets that can be withdrawn.
 
@@ -564,22 +557,23 @@ Gets the amount of assets that can be withdrawn.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the withdraw for. |
 
+| Index |   Name   |    Type   | Internal Type | Description                            |
+| :---: | :------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `owner_` | `address` |   `address`   | The address to check the withdraw for. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `maxAssets_` | `uint256` | `uint256` |  |
+
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
+
+\
 
 
-<br />
+### `migrate`
 
-### `migrate` 
-
-Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with some arguments.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Modifies the proxy's storage by delegate-calling a migrator contract with some arguments. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function migrate(
@@ -590,15 +584,16 @@ Modifies the proxy&#x27;s storage by delegate-calling a migrator contract with s
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `migrator_` | `address` | `address` | The address of a migrator contract. |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the migration. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                      |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
+
+\
 
 
-<br />
-
-### `pendingPoolDelegate` 
+### `pendingPoolDelegate`
 
 Gets the address of the pending pool delegate.
 
@@ -610,17 +605,16 @@ Gets the address of the pending pool delegate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `pool` 
+### `pool`
 
 Gets the address of the pool.
 
@@ -632,17 +626,16 @@ Gets the address of the pool.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `poolDelegate` 
+### `poolDelegate`
 
 Gets the address of the pool delegate.
 
@@ -654,17 +647,16 @@ Gets the address of the pool delegate.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `poolDelegateCover` 
+### `poolDelegateCover`
 
 Gets the address of the pool delegate cover.
 
@@ -676,17 +668,16 @@ Gets the address of the pool delegate cover.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `poolPermissionManager` 
+### `poolPermissionManager`
 
 Gets the address of the pool delegate cover.
 
@@ -698,17 +689,16 @@ Gets the address of the pool delegate cover.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `previewRedeem` 
+### `previewRedeem`
 
 Gets the amount of shares that can be redeemed.
 
@@ -724,21 +714,22 @@ Gets the amount of shares that can be redeemed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the redemption for. |
-| 1 | `shares_` | `uint256` | `uint256` | The amount of requested shares to redeem. |
 
+| Index |    Name   |    Type   | Internal Type | Description                               |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |  `owner_` | `address` |   `address`   | The address to check the redemption for.  |
+|   1   | `shares_` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `assets_` | `uint256` | `uint256` |  The amount of assets that will be returned for &#x60;shares_&#x60;. |
+
+| Index |    Name   |    Type   | Internal Type | Description                                                  |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`shares\_\`. |
+
+\
 
 
-<br />
-
-### `previewWithdraw` 
+### `previewWithdraw`
 
 Gets the amount of assets that can be redeemed.
 
@@ -754,21 +745,22 @@ Gets the amount of assets that can be redeemed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address to check the redemption for. |
-| 1 | `assets_` | `uint256` | `uint256` | The amount of requested shares to redeem. |
 
+| Index |    Name   |    Type   | Internal Type | Description                               |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |  `owner_` | `address` |   `address`   | The address to check the redemption for.  |
+|   1   | `assets_` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` |  The amount of assets that will be returned for &#x60;assets_&#x60;. |
+
+| Index |    Name   |    Type   | Internal Type | Description                                                  |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`assets\_\`. |
+
+\
 
 
-<br />
-
-### `processRedeem` 
+### `processRedeem`
 
 Processes a redemptions of shares for assets from the pool.
 
@@ -786,23 +778,24 @@ Processes a redemptions of shares for assets from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
-| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
-| 2 | `sender_` | `address` | `address` | The address of the sender of the redeem call. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                   |
+| :---: | :-------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.               |
+|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.       |
+|   2   | `sender_` | `address` |   `address`   | The address of the sender of the redeem call. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableShares_` | `uint256` | `uint256` | The amount of shares redeemed. |
-| 1 | `resultingAssets_` | `uint256` | `uint256` |  The amount of assets withdrawn. |
+
+| Index |         Name        |    Type   | Internal Type | Description                     |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
+|   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
+
+\
 
 
-<br />
-
-### `processWithdraw` 
+### `processWithdraw`
 
 Processes a redemptions of shares for assets from the pool.
 
@@ -820,23 +813,24 @@ Processes a redemptions of shares for assets from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `assets_` | `uint256` | `uint256` | The amount of assets to withdraw. |
-| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
-| 2 | `sender_` | `address` | `address` | The address of the sender of the withdraw call. |
 
+| Index |    Name   |    Type   | Internal Type | Description                                     |
+| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets to withdraw.               |
+|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.         |
+|   2   | `sender_` | `address` |   `address`   | The address of the sender of the withdraw call. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `redeemableShares_` | `uint256` | `uint256` | The amount of shares redeemed. |
-| 1 | `resultingAssets_` | `uint256` | `uint256` |  The amount of assets withdrawn. |
+
+| Index |         Name        |    Type   | Internal Type | Description                     |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
+|   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
+
+\
 
 
-<br />
-
-### `removeShares` 
+### `removeShares`
 
 Requests a redemption of shares from the pool.
 
@@ -852,21 +846,22 @@ Requests a redemption of shares from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
-| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
 
+| Index |    Name   |    Type   | Internal Type | Description                             |
+| :---: | :-------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.         |
+|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares. |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `sharesReturned_` | `uint256` | `uint256` | The amount of shares withdrawn. |
+
+| Index |        Name       |    Type   | Internal Type | Description                     |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `sharesReturned_` | `uint256` |   `uint256`   | The amount of shares withdrawn. |
+
+\
 
 
-<br />
-
-### `requestFunds` 
+### `requestFunds`
 
 Strategy can request funds from the pool via the poolManager.
 
@@ -879,15 +874,16 @@ Strategy can request funds from the pool via the poolManager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `destination_` | `address` | `address` | The address to send the funds to. |
-| 1 | `principal_` | `uint256` | `uint256` | The principal amount to fund the strategy with. |
+
+| Index |      Name      |    Type   | Internal Type | Description                                     |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `destination_` | `address` |   `address`   | The address to send the funds to.               |
+|   1   |  `principal_`  | `uint256` |   `uint256`   | The principal amount to fund the strategy with. |
+
+\
 
 
-<br />
-
-### `requestRedeem` 
+### `requestRedeem`
 
 Requests a redemption of shares from the pool.
 
@@ -901,16 +897,17 @@ Requests a redemption of shares from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
-| 1 | `owner_` | `address` | `address` | The address of the owner of the shares. |
-| 2 | `sender_` | `address` | `address` | The address of the sender of the shares. |
+
+| Index |    Name   |    Type   | Internal Type | Description                              |
+| :---: | :-------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
+|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
+|   2   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
+
+\
 
 
-<br />
-
-### `requestWithdraw` 
+### `requestWithdraw`
 
 Requests a withdrawal of assets from the pool.
 
@@ -925,17 +922,18 @@ Requests a withdrawal of assets from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `shares_` | `uint256` | `uint256` | The amount of shares to redeem. |
-| 1 | `assets_` | `uint256` | `uint256` | The amount of assets to withdraw. |
-| 2 | `owner_` | `address` | `address` | The address of the owner of the shares. |
-| 3 | `sender_` | `address` | `address` | The address of the sender of the shares. |
+
+| Index |    Name   |    Type   | Internal Type | Description                              |
+| :---: | :-------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
+|   1   | `assets_` | `uint256` |   `uint256`   | The amount of assets to withdraw.        |
+|   2   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
+|   3   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
+
+\
 
 
-<br />
-
-### `setActive` 
+### `setActive`
 
 Sets a the pool to be active or inactive.
 
@@ -947,14 +945,15 @@ Sets a the pool to be active or inactive.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `active_` | `bool` | `bool` | Whether the pool is active. |
+
+| Index |    Name   |  Type  | Internal Type | Description                 |
+| :---: | :-------: | :----: | :-----------: | --------------------------- |
+|   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
+
+\
 
 
-<br />
-
-### `setDelegateManagementFeeRate` 
+### `setDelegateManagementFeeRate`
 
 Sets the value for the delegate management fee rate.
 
@@ -966,16 +965,17 @@ Sets the value for the delegate management fee rate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `delegateManagementFeeRate_` | `uint256` | `uint256` | The value for the delegate management fee rate. |
+
+| Index |             Name             |    Type   | Internal Type | Description                                     |
+| :---: | :--------------------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
+
+\
 
 
-<br />
+### `setImplementation`
 
-### `setImplementation` 
-
-Modifies the proxy&#x27;s implementation address.
+Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
@@ -985,14 +985,15 @@ Modifies the proxy&#x27;s implementation address.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `implementation_` | `address` | `address` |  |
+
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `implementation_` | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `setIsStrategy` 
+### `setIsStrategy`
 
 Sets if the strategy is valid in the isStrategy mapping.
 
@@ -1005,15 +1006,16 @@ Sets if the strategy is valid in the isStrategy mapping.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategy_` | `address` | `address` | The address of the strategy |
-| 1 | `isStrategy_` | `bool` | `bool` | Whether the strategy is valid. |
+
+| Index |      Name     |    Type   | Internal Type | Description                    |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
+|   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy    |
+|   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
+
+\
 
 
-<br />
-
-### `setLiquidityCap` 
+### `setLiquidityCap`
 
 Sets the value for liquidity cap.
 
@@ -1025,14 +1027,15 @@ Sets the value for liquidity cap.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityCap_` | `uint256` | `uint256` | The value for liquidity cap. |
+
+| Index |       Name      |    Type   | Internal Type | Description                  |
+| :---: | :-------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value for liquidity cap. |
+
+\
 
 
-<br />
-
-### `setPendingPoolDelegate` 
+### `setPendingPoolDelegate`
 
 Sets an address as the pending pool delegate.
 
@@ -1044,14 +1047,15 @@ Sets an address as the pending pool delegate.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `pendingPoolDelegate_` | `address` | `address` | The address of the new pool delegate. |
+
+| Index |          Name          |    Type   | Internal Type | Description                           |
+| :---: | :--------------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `pendingPoolDelegate_` | `address` |   `address`   | The address of the new pool delegate. |
+
+\
 
 
-<br />
-
-### `setPoolPermissionManager` 
+### `setPoolPermissionManager`
 
 Sets the address of the pool permission manager.
 
@@ -1063,14 +1067,15 @@ Sets the address of the pool permission manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolPermissionManager_` | `address` | `address` |  |
+
+| Index |           Name           |    Type   | Internal Type | Description |
+| :---: | :----------------------: | :-------: | :-----------: | ----------- |
+|   0   | `poolPermissionManager_` | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `setWithdrawalManager` 
+### `setWithdrawalManager`
 
 Sets the address of the withdrawal manager.
 
@@ -1082,14 +1087,15 @@ Sets the address of the withdrawal manager.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `withdrawalManager_` | `address` | `address` | The address of the withdrawal manager. |
+
+| Index |         Name         |    Type   | Internal Type | Description                            |
+| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
+
+\
 
 
-<br />
-
-### `strategyList` 
+### `strategyList`
 
 Gets the address of the strategy in the list.
 
@@ -1104,22 +1110,23 @@ Gets the address of the strategy in the list.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `` | `uint256` | `uint256` |  |
 
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   | \`\` | `uint256` |   `uint256`   |             |
 
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
+### `strategyListLength`
 
-### `strategyListLength` 
-
-Returns the length of the &#x60;strategyList&#x60;.
+Returns the length of the \`strategyList\`.
 
 ```solidity
     function strategyListLength()
@@ -1129,17 +1136,16 @@ Returns the length of the &#x60;strategyList&#x60;.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategyListLength_` | `uint256` | `uint256` | The length of the &#x60;strategyList&#x60;. |
+
+| Index |          Name         |    Type   | Internal Type | Description                         |
+| :---: | :-------------------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `strategyListLength_` | `uint256` |   `uint256`   | The length of the \`strategyList\`. |
+
+\
 
 
-<br />
-
-### `totalAssets` 
+### `totalAssets`
 
 Returns the amount of total assets.
 
@@ -1151,17 +1157,16 @@ Returns the amount of total assets.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `totalAssets_` | `uint256` | `uint256` | Amount of of total assets. |
+
+| Index |      Name      |    Type   | Internal Type | Description                |
+| :---: | :------------: | :-------: | :-----------: | -------------------------- |
+|   0   | `totalAssets_` | `uint256` |   `uint256`   | Amount of of total assets. |
+
+\
 
 
-<br />
-
-### `triggerDefault` 
+### `triggerDefault`
 
 Triggers the default of a loan.
 
@@ -1174,15 +1179,16 @@ Triggers the default of a loan.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | Loan to trigger the default. |
-| 1 | `liquidatorFactory_` | `address` | `address` | Factory used to deploy the liquidator. |
+
+| Index |         Name         |    Type   | Internal Type | Description                            |
+| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   |        `loan_`       | `address` |   `address`   | Loan to trigger the default.           |
+|   1   | `liquidatorFactory_` | `address` |   `address`   | Factory used to deploy the liquidator. |
+
+\
 
 
-<br />
-
-### `unrealizedLosses` 
+### `unrealizedLosses`
 
 Returns the amount unrealized losses.
 
@@ -1194,19 +1200,18 @@ Returns the amount unrealized losses.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `unrealizedLosses_` | `uint256` | `uint256` | Amount of unrealized losses. |
+
+| Index |         Name        |    Type   | Internal Type | Description                  |
+| :---: | :-----------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `unrealizedLosses_` | `uint256` |   `uint256`   | Amount of unrealized losses. |
+
+\
 
 
-<br />
+### `upgrade`
 
-### `upgrade` 
-
-Upgrades a contract implementation to a specific version.         Access control logic critical since caller can force a selfdestruct via a malicious &#x60;migrator_&#x60; which is delegatecalled.
+Upgrades a contract implementation to a specific version. Access control logic critical since caller can force a selfdestruct via a malicious \`migrator\_\` which is delegatecalled.
 
 ```solidity
     function upgrade(
@@ -1217,15 +1222,16 @@ Upgrades a contract implementation to a specific version.         Access control
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `version_` | `uint256` | `uint256` |  |
-| 1 | `arguments_` | `bytes` | `bytes` | Some encoded arguments to use for the upgrade. |
+
+| Index |     Name     |    Type   | Internal Type | Description                                    |
+| :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
+
+\
 
 
-<br />
-
-### `withdrawalManager` 
+### `withdrawalManager`
 
 Gets the address of the withdrawal manager.
 
@@ -1237,17 +1243,16 @@ Gets the address of the withdrawal manager.
         );
 ```
 
-
-
 #### Return Values:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 |  | `address` | `address` |  |
+
+| Index | Name |    Type   | Internal Type | Description |
+| :---: | :--: | :-------: | :-----------: | ----------- |
+|   0   |      | `address` |   `address`   |             |
+
+\
 
 
-<br />
-
-### `withdrawCover` 
+### `withdrawCover`
 
 Withdraws cover from the pool.
 
@@ -1260,13 +1265,13 @@ Withdraws cover from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of cover to withdraw. |
-| 1 | `recipient_` | `address` | `address` | The address of the recipient. |
 
+| Index |     Name     |    Type   | Internal Type | Description                      |
+| :---: | :----------: | :-------: | :-----------: | -------------------------------- |
+|   0   |   `amount_`  | `uint256` |   `uint256`   | The amount of cover to withdraw. |
+|   1   | `recipient_` | `address` |   `address`   | The address of the recipient.    |
 
-<br />
+\
 
 
 ## Events
@@ -1283,12 +1288,14 @@ Emitted when a collateral liquidations is finished.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
-| 1 | `unrealizedLosses_` | `uint256` | `uint256` | The amount of unrealized losses. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                      |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
+|   0   |       `loan_`       | `address` |   `address`   | The address of the loan.         |
+|   1   | `unrealizedLosses_` | `uint256` |   `uint256`   | The amount of unrealized losses. |
+
+\
+
 
 ### `CollateralLiquidationTriggered`
 
@@ -1301,11 +1308,13 @@ Emitted when a collateral liquidations is triggered.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `loan_` | `address` | `address` | The address of the loan. |
 
-<br />
+| Index |   Name  |    Type   | Internal Type | Description              |
+| :---: | :-----: | :-------: | :-----------: | ------------------------ |
+|   0   | `loan_` | `address` |   `address`   | The address of the loan. |
+
+\
+
 
 ### `CoverDeposited`
 
@@ -1318,11 +1327,13 @@ Emitted when cover is deposited.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of cover deposited. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                    |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover deposited. |
+
+\
+
 
 ### `CoverLiquidated`
 
@@ -1336,12 +1347,14 @@ Emitted when cover is liquidated in the case of a loan defaulting.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toTreasury_` | `uint256` | `uint256` | The amount of cover sent to the Treasury. |
-| 1 | `toPool_` | `uint256` | `uint256` | The amount of cover sent to the Pool. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                               |
+| :---: | :-----------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `toTreasury_` | `uint256` |   `uint256`   | The amount of cover sent to the Treasury. |
+|   1   |   `toPool_`   | `uint256` |   `uint256`   | The amount of cover sent to the Pool.     |
+
+\
+
 
 ### `CoverWithdrawn`
 
@@ -1354,11 +1367,13 @@ Emitted when cover is withdrawn.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `amount_` | `uint256` | `uint256` | The amount of cover withdrawn. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                    |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover withdrawn. |
+
+\
+
 
 ### `DelegateManagementFeeRateSet`
 
@@ -1371,11 +1386,13 @@ Emitted when a new management fee rate is set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `managementFeeRate_` | `uint256` | `uint256` | The amount of management fee rate. |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description                        |
+| :---: | :------------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `managementFeeRate_` | `uint256` |   `uint256`   | The amount of management fee rate. |
+
+\
+
 
 ### `IsStrategySet`
 
@@ -1389,12 +1406,14 @@ Emitted when a strategy is set as valid.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategy_` | `address` | `address` | The address of the strategy. |
-| 1 | `isStrategy_` | `bool` | `bool` | Whether the strategy is valid. |
 
-<br />
+| Index |      Name     |    Type   | Internal Type | Description                    |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
+|   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy.   |
+|   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
+
+\
+
 
 ### `LiquidityCapSet`
 
@@ -1407,11 +1426,13 @@ Emitted when a new liquidity cap is set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `liquidityCap_` | `uint256` | `uint256` | The value of liquidity cap. |
 
-<br />
+| Index |       Name      |    Type   | Internal Type | Description                 |
+| :---: | :-------------: | :-------: | :-----------: | --------------------------- |
+|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value of liquidity cap. |
+
+\
+
 
 ### `PendingDelegateAccepted`
 
@@ -1425,12 +1446,14 @@ Emitted when the pending pool delegate accepts the ownership transfer.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousDelegate_` | `address` | `address` | The address of the previous delegate. |
-| 1 | `newDelegate_` | `address` | `address` | The address of the new delegate. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                           |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
+|   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
+
+\
+
 
 ### `PendingDelegateSet`
 
@@ -1444,12 +1467,14 @@ Emitted when the pending pool delegate is set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `previousDelegate_` | `address` | `address` | The address of the previous delegate. |
-| 1 | `newDelegate_` | `address` | `address` | The address of the new delegate. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                           |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
+|   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
+
+\
+
 
 ### `PoolConfigurationComplete`
 
@@ -1459,8 +1484,8 @@ Emitted when the pool configuration is marked as complete.
     event PoolConfigurationComplete();
 ```
 
+\
 
-<br />
 
 ### `PoolPermissionManagerSet`
 
@@ -1473,11 +1498,13 @@ Emitted when the pool permission manager is set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `poolPermissionManager_` | `address` | `address` | The address of the pool permission manager. |
 
-<br />
+| Index |           Name           |    Type   | Internal Type | Description                                 |
+| :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermissionManager_` | `address` |   `address`   | The address of the pool permission manager. |
+
+\
+
 
 ### `RedeemProcessed`
 
@@ -1492,13 +1519,15 @@ Emitted when a redemption of shares from the pool is processed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The owner of the shares. |
-| 1 | `redeemableShares_` | `uint256` | `uint256` | The amount of redeemable shares. |
-| 2 | `resultingAssets_` | `uint256` | `uint256` | The amount of assets redeemed. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                      |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
+|   0   |       `owner_`      | `address` |   `address`   | The owner of the shares.         |
+|   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
+|   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
+
+\
+
 
 ### `RedeemRequested`
 
@@ -1512,12 +1541,14 @@ Emitted when a redemption of shares from the pool is requested.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The owner of the shares. |
-| 1 | `shares_` | `uint256` | `uint256` | The amount of redeemable shares. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                      |
+| :---: | :-------: | :-------: | :-----------: | -------------------------------- |
+|   0   |  `owner_` | `address` |   `address`   | The owner of the shares.         |
+|   1   | `shares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
+
+\
+
 
 ### `SetAsActive`
 
@@ -1530,11 +1561,13 @@ Emitted when a pool is sets to be active or inactive.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `active_` | `bool` | `bool` | Whether the pool is active. |
 
-<br />
+| Index |    Name   |  Type  | Internal Type | Description                 |
+| :---: | :-------: | :----: | :-----------: | --------------------------- |
+|   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
+
+\
+
 
 ### `SharesRemoved`
 
@@ -1548,12 +1581,14 @@ Emitted when shares are removed from the pool.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The address of the owner of the shares. |
-| 1 | `shares_` | `uint256` | `uint256` | The amount of shares removed. |
 
-<br />
+| Index |    Name   |    Type   | Internal Type | Description                             |
+| :---: | :-------: | :-------: | :-----------: | --------------------------------------- |
+|   0   |  `owner_` | `address` |   `address`   | The address of the owner of the shares. |
+|   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares removed.           |
+
+\
+
 
 ### `StrategyAdded`
 
@@ -1566,11 +1601,13 @@ Emitted when a new strategy is added.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `strategy_` | `address` | `address` | The address of the new strategy. |
 
-<br />
+| Index |     Name    |    Type   | Internal Type | Description                      |
+| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
+
+\
+
 
 ### `Upgraded`
 
@@ -1584,12 +1621,14 @@ The instance was upgraded.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `toVersion_` | `uint256` | `uint256` | The new version of the loan. |
-| 1 | `arguments_` | `bytes` | `bytes` | The upgrade arguments, if any. |
 
-<br />
+| Index |     Name     |    Type   | Internal Type | Description                    |
+| :---: | :----------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
+|   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
+
+\
+
 
 ### `WithdrawalManagerSet`
 
@@ -1602,11 +1641,13 @@ Emitted when the withdrawal manager is set.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `withdrawalManager_` | `address` | `address` | The address of the withdrawal manager. |
 
-<br />
+| Index |         Name         |    Type   | Internal Type | Description                            |
+| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
+
+\
+
 
 ### `WithdrawalProcessed`
 
@@ -1621,11 +1662,11 @@ Emitted when withdrawal of assets from the pool is processed.
 ```
 
 #### Parameters:
-| Index | Name | Type | Internal Type | Description |
-| :---: | :--: | :--: | :-----------: | :---------- |
-| 0 | `owner_` | `address` | `address` | The owner of the assets. |
-| 1 | `redeemableShares_` | `uint256` | `uint256` | The amount of redeemable shares. |
-| 2 | `resultingAssets_` | `uint256` | `uint256` | The amount of assets redeemed. |
 
-<br />
+| Index |         Name        |    Type   | Internal Type | Description                      |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
+|   0   |       `owner_`      | `address` |   `address`   | The owner of the assets.         |
+|   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
+|   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
 
+\
