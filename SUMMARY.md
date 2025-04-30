@@ -163,4 +163,3 @@
 * [KYC](legal/kyc.md)
 * [Interface Terms of Use](legal/interface-terms-of-use.md)
 * [Privacy Policy](legal/privacy-policy.md)
-* [MPL Token Migration T\&Cs](legal/mpl-migration.md)
