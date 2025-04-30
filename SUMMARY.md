@@ -25,8 +25,9 @@
 
 ## Maple for Token Holders
 
-* [Introduction to SYRUP](maple-for-token-holders/mpl-token.md)
-* [MPL to SYRUP Conversion](maple-for-token-holders/mpl-token-migration.md)
+* [Introduction to SYRUP](maple-for-token-holders/mpl-token/README.md)
+  * [MPL to SYRUP Conversion](maple-for-token-holders/mpl-token/mpl-token-migration.md)
+  * [FAQs](maple-for-token-holders/mpl-token/faqs.md)
 * [SYRUP Tokenomics](maple-for-token-holders/syrup-tokenomics/README.md)
   * [Staking](maple-for-token-holders/syrup-tokenomics/staking.md)
   * [Staking Smart Contract Details](maple-for-token-holders/syrup-tokenomics/staking-smart-contract-details.md)
@@ -38,7 +39,6 @@
   * [TV Segments](maple-for-token-holders/research-and-media/tv-segments.md)
   * [Research Reports](maple-for-token-holders/research-and-media/research-reports.md)
   * [Data Dashboards](maple-for-token-holders/research-and-media/data-dashboards.md)
-* [FAQs](maple-for-token-holders/faqs.md)
 * [Additional Resources](maple-for-token-holders/additional-resources.md)
 
 ## Technical Resources
