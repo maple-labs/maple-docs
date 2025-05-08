@@ -4,7 +4,7 @@
 
 The introduction of the SYRUP token enhances alignment between the Maple and Syrup ecosystems and enables the protocol to capture value from institutional credit markets through DeFi. The Drips Rewards Program is an innovative rewards program that enables users to earn SYRUP by creating rewards for early participation and long-term commitment.
 
-Each earning period for earning rewards is known as a Season, each lasting one month. Users accumulate Drips every 4 hours, with the base rate established as 1 Drip per 1 USDC per day. Users can then perform actions that will increase this base rate, such as depositing into Syrup using one of our wallet integration partners or leveraging syrupUSDC throughout DeFi. These small actions translate directly into boosted rewards for users.
+Each earning period for earning rewards is known as a Season, each lasting one quarter. Users accumulate Drips on a 4h basis, with the base rate established as 1 Drip per 1 USDC per day. Users can then perform actions that will increase this base rate, such as depositing into Syrup using one of our wallet integration partners or leveraging syrupUSDC throughout DeFi. These small actions translate directly into boosted rewards for users.
 
 In addition to these incentives and enhancements, depositors can also boost their Drip rewards by taking a more substantial stake in the Syrup ecosystem:
 
@@ -16,7 +16,7 @@ In addition to these incentives and enhancements, depositors can also boost thei
 
 **The Drips claiming schedule is released!** SyrupFi users can now see exactly when they will be able to claim their $SYRUP tokens, earned with the Drips they collected. [Drips](https://syrup.gitbook.io/syrup/about-syrup/drips-program) recipients will be eligible to convert their Drips to SYRUP and staked SYRUP (stSYRUP).
 
-The Drips campaign was launched as a way to incentivize early users to join and participate in the overall growth of Maple and SyrupFi. It has been a massive success with more than 250M+ in TVL within a couple of months and integrations with the largest DeFi players including OKX, Pendle and [Ether.fi](http://ether.fi/).
+The Drips campaign was launched as a way to incentivize early users to join and participate in the overall growth of Maple and SyrupFi. It has been a massive success with strong TVL growth integrations with the largest DeFi players including OKX, Pendle, Morpho and Ether.fi.
 
 All SyrupFi users qualify for Drips and can see their current Drips allocation, broken down per season, on [syrup.fi/drips](http://syrup.fi/drips). **The Pendle and OKX Drips are available for all users to see now as well!**
 
@@ -28,7 +28,13 @@ For seasons 4-7, users could start claiming ⅓ of their rewards on February 18 
 
 For seasons 8-10, users will be able to claim their rewards in full the month following the start of the season.
 
-Users in later seasons can see the exact schedule for when their Drips unlock in the table below:
+**The $SYRUP tokens will unlock in a signle batch for all users**. Where 1/3 of allocated tokens for the seasons that unlock will be claimable each month for three consecutive months. Unlocks are always at 2pm UTC on the 18th of the month following the season end. Rewards can be claimed on [syrup.fi/drips](http://syrup.fi/drips)
+
+**Please note that the tokens are only claimable until the next claim date starts.** As an example, for Drips season one, users were able to claim the allocated SYRUP tokens between the 18th of December at 2pm UTC and the 18th of January at 1:59pm UTC. Unclaimed tokens are returned to the treasury.
+
+**Drips will continue throughout 2025**, with the program now having a quarterly distribution schedule.
+
+**SYRUP tokens when claimed can automatically be staked**, which will let users participate in the growth of the Maple ecosystem.
 
 <table><thead><tr><th>Drips Season</th><th>Season Month</th><th width="154">Eligible Claim Date</th><th>Eligible Claim Date</th><th>Eligible Claim Date</th></tr></thead><tbody><tr><td>Season 1</td><td>July 2024</td><td>18 DEC 2024</td><td>18 JAN 2025</td><td>18 FEB 2025</td></tr><tr><td>Season 2</td><td>August 2024</td><td>18 DEC 2024</td><td>18 JAN 2025</td><td>18 FEB 2025</td></tr><tr><td>Season 3</td><td>September 2024</td><td>18 DEC 2024</td><td>18 JAN 2025</td><td>18 FEB 2025</td></tr><tr><td>Season 4</td><td>October 2024</td><td>18 FEB 2025</td><td>18 MAR 2025</td><td>N/A</td></tr><tr><td>Season 5</td><td>November 2024</td><td>18 FEB 2025</td><td>18 MAR 2025</td><td>N/A</td></tr><tr><td>Season 6</td><td>December 2024</td><td>18 FEB 2025</td><td>18 MAR 2025</td><td>N/A</td></tr><tr><td>Season 7</td><td>January 2025</td><td>18 FEB 2025</td><td>18 MAR 2025</td><td>N/A</td></tr><tr><td>Season 8</td><td>February 2025</td><td>18 MAR 2025</td><td>N/A</td><td>N/A</td></tr><tr><td>Season 9</td><td>March 2025</td><td>18 APR 2025</td><td>N/A</td><td>N/A</td></tr><tr><td>Season 10</td><td>April 2025</td><td>18 MAY 2025</td><td>N/A</td><td>N/A</td></tr></tbody></table>
 
@@ -45,6 +51,20 @@ Please only claim on [syrup.fi/drips](http://syrup.fi/drips). Don't engage with 
 In case you want to stay up-to-date on the latest for Drips claiming, join the channel here: [https://t.me/+zvAVuclP1t5mMTIx](https://t.me/+zvAVuclP1t5mMTIx)
 
 #### FAQ <a href="#faq" id="faq"></a>
+
+The Drips campaign incentivizes early users to join and contribute to the growth of Maple.
+
+All Syrup depositors qualify for Drips rewards. Users can view their current allocation and breakdown by season on [syrup.fi/drips](http://syrup.fi/drips).
+
+The exact claim date depends on the season. Rewards can be claimed on the 18th of the month following the season end.
+
+Tokens are unlocked in full on the respective claim date.&#x20;
+
+Unclaimed tokens will be returned to the treasury at the end of each claim period.
+
+Yes, claimed $SYRUP tokens can automatically be staked, allowing users to participate in the growth of Maple and Syrup.
+
+**9. Where can I ask questions or stay updated?**
 
 #### 1. **What is the Drips campaign?**
 
