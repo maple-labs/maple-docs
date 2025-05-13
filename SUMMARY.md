@@ -24,6 +24,7 @@
 ***
 
 * [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-rewards-prize-draw-program-summary.md)
+* [FAQ](faq.md)
 
 ## Cash Management Pool
 
