@@ -11,6 +11,20 @@
 * [Risk](maple-for-lenders/risk.md)
 * [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
 
+## syrupUSDC for Lenders
+
+* [Powered by Maple](syrupusdc-for-lenders/introduction.md)
+* [Lending in syrupUSDC and syrupUSDT](syrupusdc-for-lenders/lending.md)
+* [Commitments](syrupusdc-for-lenders/defaults-and-impairments.md)
+* [Drips Rewards](syrupusdc-for-lenders/defaults-and-impairments-1.md)
+* [Withdrawals](syrupusdc-for-lenders/risk.md)
+* [Monthly Updates](syrupusdc-for-lenders/withdrawal-process.md)
+* [Pendle Integration](syrupusdc-for-lenders/pendle-integration.md)
+
+***
+
+* [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-rewards-prize-draw-program-summary.md)
+
 ## Cash Management Pool
 
 * [Overview](cash-management-pool/overview.md)
@@ -163,3 +177,11 @@
 * [KYC](legal/kyc.md)
 * [Interface Terms of Use](legal/interface-terms-of-use.md)
 * [Privacy Policy](legal/privacy-policy.md)
+* [syrupUSDC and syrupUSDT - Risks](legal/syrupusdc-and-syrupusdt-risks.md)
+* [syrupUSDC and syrupUSDT - Defaults and Impairments](legal/syrupusdc-and-syrupusdt-defaults-and-impairments.md)
+* [syrupUSDC and syrupUSDT - Available Jurisdictions](legal/syrupusdc-and-syrupusdt-available-jurisdictions.md)
+* [Interface Terms of Use \[syrupUSDC and syrupUSDT\]](legal/interface-terms-of-use-syrupusdc-and-syrupusdt.md)
+* [Interface Terms of Use \[Syrup.fi/convert/ and Syrup.fi/stake/\]](legal/interface-terms-of-use-syrup.fi-convert-and-syrup.fi-stake.md)
+* [syrupUSDC and syrupUSDT- Privacy Policy](legal/syrupusdc-and-syrupusdt-privacy-policy.md)
+* [MiCA Syrup Token Disclosure](legal/mica-syrup-token-disclosure.md)
+* [SyrupUSDC Rewards Prize Draw Terms & Conditions](legal/syrupusdc-rewards-prize-draw-terms-and-conditions.md)
