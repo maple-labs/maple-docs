@@ -4,7 +4,7 @@ description: Last Revised May 2024
 
 # Interface Terms of Use \[syrupUSDC and syrupUSDT]
 
-These Terms of Service (these “Terms”) explain the terms and conditions by which you may access and use our website, \[https://syrup.fi/] (the “Website”), operated by or on behalf of Syrup Ltd (inclusive with its affiliates, the “Company”, “we” or “us”), our Interface (as defined below), and any other Services provided by the Company, including any related content, tools, documentation, features and functionality collectively the “Services”.\
+These Terms of Service (these “Terms”) explain the terms and conditions by which you may access and use our website, \[[https://app.maple.finance/earn](https://app.maple.finance/earn)] (the “Website”), operated by or on behalf of Syrup Ltd (inclusive with its affiliates, the “Company”, “we” or “us”), our Interface (as defined below), and any other Services provided by the Company, including any related content, tools, documentation, features and functionality collectively the “Services”.\
 
 
 These Terms govern your access to and use of the Services located at https://syrup.fi/. Please read these Terms carefully, as they include important information about your legal rights. By accessing and/or using the Services, or clicking accept or agree to the Terms when this option is made available, you are agreeing to be bound and abide by these Terms and the Privacy Policy incorporated here by reference. If you do not understand or agree to these Terms, please do not use the Services.
