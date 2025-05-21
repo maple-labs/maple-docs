@@ -4,7 +4,7 @@ Simply connect your wallet, deposit funds, and start earning consistent high yie
 
 To deposit, visit [app.maple.finance/earn](https://app.maple.finance/earn). Choose your Commitment. Longer commitments earn greater Drips rewards. You can view your deposit in the[ Portfolio](https://app.maple.finance/earn/portfolio) page.
 
-[Certain jurisdictions](https://maplefinance.gitbook.io/maple/legal/available-jurisdictions) are ineligible to deposit in Syrup.\
+[Certain jurisdictions](https://maplefinance.gitbook.io/maple/legal/syrupusdc-and-syrupusdt-available-jurisdictions) are ineligible to deposit in Syrup.\
 
 
 **Approvals**

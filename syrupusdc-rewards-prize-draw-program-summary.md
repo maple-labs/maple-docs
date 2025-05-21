@@ -85,7 +85,7 @@ Don't miss this exceptional opportunity to earn competitive yields while potenti
 
 [Deposit Now →](https://app.maple.finance/earn)
 
-Note: Please review the full [Terms and Conditions](https://maplefinance.gitbook.io/maple/syrupusdc-rewards-prize-draw-terms-and-conditions) for complete details about eligibility requirements and program rules.
+Note: Please review the full [Terms and Conditions](https://maplefinance.gitbook.io/maple/legal/syrupusdc-rewards-prize-draw-terms-and-conditions) for complete details about eligibility requirements and program rules.
 
 \
 \
