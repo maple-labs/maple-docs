@@ -20,6 +20,6 @@ Syrup makes Maple's institutional lending marketplace available to all through D
 * Messari: [https://messari.io/project/syrup](https://messari.io/project/syrup)&#x20;
 * Coin Market Cap: [https://coinmarketcap.com/currencies/maple-finance/](https://coinmarketcap.com/currencies/maple-finance/)&#x20;
 * Coin Gecko: [https://www.coingecko.com/en/coins/maple-finance](https://www.coingecko.com/en/coins/maple-finance)&#x20;
-* DeFi Llama: [https://defillama.com/protocol/maple](https://defillama.com/protocol/maple)
+* DeFi Llama: [https://defillama.com/protocol/maple-finance](https://defillama.com/protocol/maple-finance)
 * YouTube: [https://www.youtube.com/channel/UCXJPzNcN\_kSXj82EfRrV1pQ](https://www.youtube.com/channel/UCXJPzNcN_kSXj82EfRrV1pQ)
 {% endhint %}
