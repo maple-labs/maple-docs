@@ -11,7 +11,7 @@ Drips compound every 4h and this boosts the total APY for syrupUSDC and syrupUSD
 
 #### Eligibility
 
-The compliance requirements for syrupUSDC or syrupUSDT have been determined and set prior to the launch and enforced by the application. Anyone that is able to access and deposit into syrupUSDC or syrupUSDT will be eligible for Drips rewards and to receive any associated token distributions. These compliance requirements include the necessary geo-blocking and AML standards which are enforced in the webapp and smart contracts.
+The compliance requirements for syrupUSDC or syrupUSDT have been determined and set prior to the launch and enforced by the application. Anyone that is able to access and deposit into syrupUSDC or syrupUSDT on Ethereum will be eligible for Drips rewards and to receive any associated token distributions. These compliance requirements include the necessary geo-blocking and AML standards which are enforced in the webapp and smart contracts. Please note that Drips are not available on Solana.&#x20;
 
 #### Token Distribution
 
