@@ -10,7 +10,7 @@ The Maple protocol contracts went through 3 audits during its development for th
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Trail of Bits | [`2022-08-24 - Trail of Bits Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2022-december/TrailOfBits-Maple.pdf) |
 | Spearbit      | [`2022-10-17 - Spearbit Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2022-december/Spearbit-maple.pdf)                   |
-| Three Sigma   | [`2022-10-24 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2022-december/ThreeSigma-Maple.pdf)   |
+| Three Sigma   | [`2022-10-24 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2022-december/Three-Sigma-Maple-Finance-Dec-2022.pdf)   |
 
 
 
@@ -31,8 +31,8 @@ The Maple protocol contracts went through 2 audits during its development for th
 
 | Auditor     | Report Link                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three Sigma | [`2023-11-06 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-december/ThreeSigma-Maple.pdf) |
-| 0xMacro     | [`2023-11-27 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-december/0xMacro-Maple.pdf)         |
+| Three Sigma | [`2023-11-06 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-december/Three-Sigma-Maple-Finance-Dec-2023.pdf) |
+| 0xMacro     | [`2023-11-27 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-december/0xMacro-Maple-Finance-Dec-2023.pdf)         |
 
 ### August 2024 Release
 
@@ -50,8 +50,8 @@ The Maple & Syrup protocol contracts went through 2 audits during its developmen
 
 | Auditor     | Report Link                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three Sigma | [`2024-12-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/ThreeSigma-Maple.pdf) |
-| 0xMacro     | [`2024-12-20 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/%200xMacro-Maple.pdf)         |
+| Three Sigma | [`2024-12-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/Three-Sigma-Maple-Finance-Dec-2024%20.pdf) |
+| 0xMacro     | [`2024-12-20 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/0xMacro-Maple-Finance-Dec-2024.pdf)         |
 
 
 
