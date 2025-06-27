@@ -21,7 +21,7 @@ The Maple protocol contracts went through 2 audits during its development for th
 
 | Auditor                       | Report Link                                                                                                                                                                |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-june/cantina-Maple.pdf)                         |
+| Spearbit Auditors via Cantina | [`2023-06-05 - Cantina Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-june/Cantina-Maple.pdf)                         |
 | Three Sigma                   | [`2023-04-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2023-june/ThreeSigma-Maple.pdf) |
 
 
@@ -40,9 +40,9 @@ The Maple & Syrup protocol contracts went through 2 audits during its developmen
 
 | Auditor     | Report Link                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three Sigma | [`2024-08-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-august/ThreeSigma-Maple-Finance-Aug-2024.pdf) |
+| Three Sigma | [`2024-08-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-august/Three-Sigma-Maple-Finance-Aug-2024.pdf) |
 | 0xMacro     | [`2024-08-14 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-august/0xMacro-Maple-Finance-Aug-2024.pdf)         |
-| ThreeSigma (Router) | [`2024-05-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-august/ThreeSigma-MapleSyrupRouter.pdf) |
+| ThreeSigma (Router) | [`2024-05-23 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-august/Three-Sigma-Maple-Finance-Aug-2024-Syrup.pdf) |
 
 ### December 2024 Release
 
