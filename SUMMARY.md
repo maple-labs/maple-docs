@@ -15,6 +15,7 @@
 
 * [Powered by Maple](syrupusdc-for-lenders/introduction.md)
 * [Lending in syrupUSDC and syrupUSDT](syrupusdc-for-lenders/lending.md)
+* [Drips Rewards](syrupusdc-for-lenders/drips-rewards.md)
 * [Commitments](syrupusdc-for-lenders/defaults-and-impairments.md)
 * [Drips Rewards](syrupusdc-for-lenders/defaults-and-impairments-1.md)
 * [Withdrawals](syrupusdc-for-lenders/risk.md)
@@ -47,7 +48,6 @@
   * [Staking](maple-for-token-holders/syrup-tokenomics/staking.md)
   * [Staking Smart Contract Details](maple-for-token-holders/syrup-tokenomics/staking-smart-contract-details.md)
 * [Governance and Voting](maple-for-token-holders/governance-and-voting.md)
-* [Drips Rewards](maple-for-token-holders/drips-rewards.md)
 * [Research and Media](maple-for-token-holders/research-and-media/README.md)
   * [Podcasts](maple-for-token-holders/research-and-media/podcasts.md)
   * [News Articles](maple-for-token-holders/research-and-media/news-articles.md)

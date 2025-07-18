@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Drips Rewards
 
 SyrupUSDC or syrupUSDT users are rewarded through an innovative rewards system known as Drips that aligns the community through token incentives. Drips can be converted to SYRUP at the end of each season. Participants will earn Drips for depositing USDC and USDT, with additional reward boosts for locking their deposits for up to 6 months.
