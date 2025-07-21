@@ -1,6 +1,6 @@
 # Table of contents
 
-- [Welcome to Maple](README.md)
+* [Welcome to Maple](README.md)
 
 ## Integrate SyrupUSD
 
