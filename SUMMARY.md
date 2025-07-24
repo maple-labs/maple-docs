@@ -10,7 +10,7 @@
   * [Edge cases](integrate-syrupusd/frontend-integrations.md#edge-cases)
   * [FAQ](integrate-syrupusd/frontend-integrations.md#faq)
 * [Backend Integrations](integrate-syrupusd/backend-integrations.md)
-  * [Step-by-step](integrate-syrupusd/backend-integrations.md#title)
+  * [Step-by-step](integrate-syrupusd/backend-integrations.md#deposit)
   * [Edge cases](integrate-syrupusd/backend-integrations.md#edge-cases)
   * [FAQ](integrate-syrupusd/backend-integrations.md#faq)
 * [Smart Contract Integrations](integrate-syrupusd/smart-contract-integrations.md)
