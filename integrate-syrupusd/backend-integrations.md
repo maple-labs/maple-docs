@@ -29,9 +29,9 @@ All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 - **Maple JS GitHub (Addresses):**
   https://github.com/maple-labs/maple-js/tree/main/src/addresses
 
-Within the Maple SDK, you can access both ABIs and network-specific addresses.
+Within the Maple SDK, both ABIs and network-specific addresses are accessible.
 
-You can also install the package and use it within your application.
+The package can also be installed and used within applications.
 
 {% tabs %}
 {% tab title="npm" %}
@@ -59,7 +59,7 @@ pnpm add @maplelabs/maple-js
 {% endtab %}
 {% endtabs %}
 
-To access necessary data use Maple GraphQL API:
+To access the necessary data, use the Maple GraphQL API:
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -70,11 +70,11 @@ To access necessary data use Maple GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-**NOTE**: In order to perform integration in Sepolia you may need to message Telegram chat [https://t.me/syrupfi](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
+**NOTE**: In order to perform the integration in Sepolia, it may be necessary to contact the Syrup team via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
 
 ## Deposit
 
-### Step 1 - Querying the Maple API
+### Step 1 - Query the Maple API
 
 Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authorized participants to securely access and benefit from the yields available in the Maple ecosystem, abstracting all the complexities of the permissioning system inherent to Maple. Each Syrup `PoolV2` has an associated `SyrupRouter`.
 
@@ -119,7 +119,7 @@ Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authoriz
 {% endtab %}
 {% endtabs %}
 
-You can also access addresses of routers via Maple GraphQL API.
+Router addresses can also be accessed via the Maple GraphQL API.
 
 #### Example query
 
@@ -192,7 +192,7 @@ const main = async () => {
 main();
 ```
 
-Important to note that the query uses the `syrupRouter_not` filter, to return specifically Syrup pools.
+It is important to note that the query uses the `syrupRouter_not` filter to return specifically Syrup pools.
 
 **Response Fields:**
 
@@ -201,9 +201,9 @@ Important to note that the query uses the `syrupRouter_not` filter, to return sp
 
 These addresses can then be used to interact with the `SyrupRouter` contract.
 
-### Step 2 - Determining user authorization
+### Step 2 - Determine User Authorization
 
-Before depositing, check if a user is already authorized in the Syrup as this is necessary to perform a deposit. To do this, query the `Account` entity.
+Before depositing, check if a user is already authorized in Syrup, as this is necessary to perform a deposit. To do this, query the `Account` entity.
 
 #### Example Query
 
@@ -215,7 +215,7 @@ query GetMapleAccount($accountId: ID!) {
 }
 ```
 
-**Note:** The account ID must be provided in lowercase.
+**NOTE**: The account ID must be provided in lowercase.
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
@@ -247,7 +247,7 @@ const main = async () => {
   });
 
   if (mapleAccount) {
-    console.log(`Can user ${account} deposit into Syrup: ${isSyrupLender}`);
+    console.log(`Can user ${account} deposit into Syrup: ${mapleAccount.isSyrupLender}`);
   } else {
     console.log("Account not found");
   }
@@ -256,33 +256,33 @@ const main = async () => {
 main();
 ```
 
-If `isSyrupLender = true`, the user is already authorized into `Pool Permission Manager` and can deposit into Syrup pools. Otherwise, the user must perform authorization before their initial deposit.
+If `isSyrupLender = true`, the user is already authorized in the `Pool Permission Manager` and can deposit into Syrup pools. Otherwise, the user must perform authorization before their initial deposit.
 
-### Step 3 - Retrieving authorization signature
+### Step 3 - Retrieve Authorization Signature
 
-**Note:** This step is only required in case you got `isSyrupLender = false` in previous step, otherwise you can continue to next step.
+**Note:** This step is only required if `isSyrupLender = false` was returned in the previous step. Otherwise, continue to the next step.
 
 The Maple Protocol is geared towards institutions and has a permissioning system that requires allowlisting for executing most functions. For pool deposits, in general, lenders need to have their wallet allowlisted in Maple's `Pool Permission Manager`. Aiming to abstract and simplify the process, the `SyrupRouter` integrates directly with the `Pool Permission Manager` to allow for valid users to self-authorize and deposit in a single transaction assuming the user meets eligibility requirements.
 
-To retrieve authorization signature please message Telegram chat [https://t.me/syrupfi](https://t.me/syrupfi)
+To retrieve the authorization signature, contact the Syrup team via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi).
 
-### Step 4 - Executing contract calls
+### Step 4 - Execute Contract Calls
 
-The first time you lend an asset (e.g. `USDC`, `USDT`) to Syrup, you may need to allow the contract to interact with your asset. This is a common transaction on Ethereum.
+The first time an asset (e.g., `USDC`, `USDT`) is lent to Syrup, it may be necessary to allow the contract to interact with the asset. This is a common transaction on Ethereum.
 
-Depositing into a pool requires a transaction. Once the transaction has been processed `SyrupRouter` will accept your lending tokens and you will receive Pool LP (Liquidity Provider) Tokens.
+Depositing into a pool requires a transaction. Once the transaction has been processed, `SyrupRouter` will accept the lending tokens and Pool LP (Liquidity Provider) tokens will be received.
 
 Each pool contract inherits the [ERC-4626](https://erc4626.info/) standard, also known as the `Tokenized Vault` Standard. This standard informs how the LP Tokens accrue value from borrower repayments of loans.
 
-#### `isSyrupLender = true` - user is already authorized
+#### `isSyrupLender = true` - User is Already Authorized
 
-You can directly call the `deposit` or `depositWithPermit` method on `SyrupRouter`.
+The `deposit` or `depositWithPermit` method can be called directly on `SyrupRouter`.
 
 ```solidity
 function deposit(uint256 assets, bytes32 depositData)
 ```
 
-**NOTE**: `depositData` is an optional field which you will not need to provide
+**NOTE**: `depositData` is an optional field that does not need to be provided.
 
 ![deposit()](https://github.com/maple-labs/syrup-router/assets/16119563/2e911fe4-cd81-4b58-a290-6809d7bba125)
 
@@ -356,7 +356,7 @@ main();
 {% endtab %}
 {% endtabs %}
 
-You can also deposit into Syrup with gasless approval `permit` for more information please have a look here - https://eips.ethereum.org/EIPS/eip-2612
+Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
 ```solidity
 function depositWithPermit(
@@ -369,7 +369,7 @@ function depositWithPermit(
 )
 ```
 
-**NOTE**: `depositWithPermit` is only available for `Syrup USDC`
+**NOTE**: `depositWithPermit` is only available for `Syrup USDC`.
 
 ![depositWithPermit()](https://github.com/maple-labs/syrup-router/assets/16119563/db8192f8-c9d3-42d9-9522-9a91df95fb5d)
 
@@ -441,10 +441,10 @@ const main = async () => {
 main();
 ```
 
-#### `isSyrupLender = false` - user requires authorization
+#### `isSyrupLender = false` - User Requires Authorization
 
-1. Retrieve a signature from the Maple API. Follow instructions received from the team as mentioned in the step above.
-2. Use the retrieved signature and the `authorizeAndDeposit` or `authorizeAndDepositWithPermit` method on `SyrupRouter`.
+1. Retrieve a signature from the Maple API. Follow the instructions received from the team as mentioned in the step above.
+2. Use the retrieved signature with the `authorizeAndDeposit` or `authorizeAndDepositWithPermit` method on `SyrupRouter`.
 
 ```solidity
 function authorizeAndDeposit(
@@ -468,7 +468,7 @@ import { addresses, syrupUtils } from "@maplelabs/maple-js";
 const main = async () => {
   ... // Exact same steps as regular deposit
 
-  const { bitmap, deadline, sig } = authorize(); // Please contact us to get information about authorization
+  const { bitmap, deadline, sig } = authorize(); // Contact the Syrup team for authorization information
 
   const authorizeAndDepositReceipt = await syrupRouter.authorizeAndDeposit(
     bitmap,
@@ -485,7 +485,7 @@ const main = async () => {
 main();
 ```
 
-You can also deposit into Syrup with gasless approval `permit` for more information please have a look here - https://eips.ethereum.org/EIPS/eip-2612
+Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
 ```solidity
 function authorizeAndDepositWithPermit(
@@ -503,7 +503,7 @@ function authorizeAndDepositWithPermit(
     )
 ```
 
-**NOTE**: `authorizeAndDepositWithPermit` is only available for `Syrup USDC`
+**NOTE**: `authorizeAndDepositWithPermit` is only available for `Syrup USDC`.
 
 ![authAndDepositWithPermit()](https://github.com/maple-labs/syrup-router/assets/16119563/c0e4d64f-e092-46b0-9b7f-00def236ace7)
 
@@ -516,7 +516,7 @@ import { addresses, syrupUtils } from "@maplelabs/maple-js";
 const main = async () {
   ... // Exact same steps as regular depositWithPermit
 
-  const { bitmap, authDeadline, authSig } = authorize(); // Please contact us to get information about authorization
+  const { bitmap, authDeadline, authSig } = authorize(); // Contact the Syrup team for authorization information
 
   const authorizeAndDepositWithPermitReceipt = await syrupRouter.authorizeAndDepositWithPermit(
     bitmap,
@@ -541,7 +541,7 @@ main();
 
 ### Step 1 - Retrieve Pool Position Data
 
-Query the Maple API for the user’s pool position data using the `PoolV2Position` field on the `Account` query:
+Query the Maple API for the user's pool position data using the `PoolV2Position` field in the `Account` query:
 
 #### Data model
 
@@ -638,9 +638,9 @@ main();
 
 ### Step 2 - Calculate Shares to Redeem
 
-- Your withdrawal request must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, note that losses or impairments on the pool may affect the value of your assets relative to shares.
-- To ensure accuracy, convert the desired asset amount to “exit shares” using the pool contract’s conversion method:
-- These transactions leverage the `ERC-4626` tokenised vault standard, which you can read more about here: https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/
+- Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
+- To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
+- These transactions leverage the `ERC-4626` tokenized vault standard. For more information, see https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/.
 
 #### Function signature
 
@@ -671,7 +671,7 @@ main();
 
 ### Step 3 - Execute the Withdrawal
 
-Now that you have calculated `sharesToRedeem` or fetched `availableShares`, call the `requestRedeem` method on the Pool contract to initiate your withdrawal.
+After calculating `sharesToRedeem` or fetching `availableShares`, call the `requestRedeem` method on the Pool contract to initiate the withdrawal.
 
 #### Function signature
 
@@ -708,7 +708,7 @@ main();
 
 ### Step 4 - Await Withdrawal Completion
 
-Once the transaction is successful and there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. You can get the current status of the withdrawal queue either directly from `WithdrawalManagerQueue` contract or through Maple GraphQL API:
+Once the transaction is successful and there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. The current status of the withdrawal queue can be retrieved either directly from the `WithdrawalManagerQueue` contract or through the Maple GraphQL API:
 
 #### Example query
 
@@ -785,11 +785,11 @@ const main = async () => {
 main();
 ```
 
-## Edge cases
+## Edge Cases
 
-### User not authorized
+### User Not Authorized
 
-When you try to `deposit` or `depositWithPermit` and get error `SR:D:NOT_AUTHORIZED` it means account you are trying to deposit with is not authorized into Syrup USD. In order to authorize you need to perform `authorizeAndDeposit` or `authorizeAndDepositWithPermit`
+When attempting to use `deposit` or `depositWithPermit` and receiving the error `SR:D:NOT_AUTHORIZED`, it indicates that the account being used for deposit is not authorized in Syrup USD. To authorize the account, use `authorizeAndDeposit` or `authorizeAndDepositWithPermit`.
 
 **Problem:**
 
@@ -819,7 +819,7 @@ import { addresses, syrupUtils } from "@maplelabs/maple-js";
 const main = async () => {
   ...
 
-  const { bitmap, deadline, sig } = authorize(); // Please contact us to get information about authorization
+  const { bitmap, deadline, sig } = authorize(); // Contact the Syrup team for authorization information
 
   const authorizeAndDepositReceipt = await syrupRouter.authorizeAndDeposit(
     bitmap,
@@ -836,9 +836,9 @@ const main = async () => {
 main();
 ```
 
-### Insufficient approval
+### Insufficient Approval
 
-When you try to `deposit` or `depositWithPermit` and get error `SR:D:TRANSFER_FROM_FAIL` it means that `SyrupRouter` could not transfer lending tokens on your behalf. Make sure amount you are trying to deposit matches current approval for `SyrupRouter`, if it doesn't please increase approval.
+When attempting to use `deposit` or `depositWithPermit` and receiving the error `SR:D:TRANSFER_FROM_FAIL`, it indicates that `SyrupRouter` could not transfer lending tokens. Ensure that the deposit amount matches the current approval for `SyrupRouter`. If it does not, increase the approval.
 
 **Problem:**
 
@@ -889,17 +889,17 @@ const main = async () => {
 main();
 ```
 
-### Invalid signature
+### Invalid Signature
 
-When you try to `depositWithPermit` and get error `ERC20:P:INVALID_SIGNATURE` it means that recovered address from signature is not matching address that tries to deposits. Please make sure that signature is signed by the account that executes transaction.
+When attempting to use `depositWithPermit` and receiving the error `ERC20:P:INVALID_SIGNATURE`, it indicates that the recovered address from the signature does not match the address attempting to deposit. Ensure that the signature is signed by the account executing the transaction.
 
-### Expired signature
+### Expired Signature
 
-When you try to `depositWithPermit` and get error `ERC20:P:EXPIRED` it means your permit signature is expired. Make sure that the deadline you set on the signature has enough threshold to execute the transaction.
+When attempting to use `depositWithPermit` and receiving the error `ERC20:P:EXPIRED`, it indicates that the permit signature has expired. Ensure that the deadline set on the signature provides sufficient time to execute the transaction.
 
-### Insufficient gas
+### Insufficient Gas
 
-When transactions fail due to insufficient gas, increase the gas limit in your transaction parameters. Syrup operations require more gas than simple token transfers due to the complex authorization and routing logic.
+When transactions fail due to insufficient gas, increase the gas limit in the transaction parameters. Syrup operations require more gas than simple token transfers due to the complex authorization and routing logic.
 
 **Problem:**
 
@@ -947,9 +947,9 @@ const main = async () => {
 main();
 ```
 
-### Pool deposit limit exceeded
+### Pool Deposit Limit Exceeded
 
-When you encounter error `P:DEPOSIT_GT_LIQ_CAP`, it means the deposit amount exceeds the pool's deposit limit. Check the pool's current capacity before attempting large deposits.
+When encountering error `P:DEPOSIT_GT_LIQ_CAP`, it means the deposit amount exceeds the pool's deposit limit. Check the pool's current capacity before attempting large deposits.
 
 **Problem:**
 
@@ -1001,7 +1001,7 @@ const main = async () => {
 main();
 ```
 
-In case you want to perform deposit larger than the limit please contact the Syrup team via [Telegram](https://t.me/syrupfi)
+To perform a deposit larger than the limit, contact the Syrup team via [Telegram](https://t.me/syrupfi).
 
 ## FAQ
 
@@ -1017,7 +1017,7 @@ The `authorizeAndDepositWithPermit` function combines three operations into a si
 
 This function is ideal for first-time users who want to deposit USDC without requiring separate authorization and approval transactions. It saves gas and improves user experience by reducing the number of required transactions from three to one.
 
-**Note:** Only available for USDC deposits, not USDT.
+**NOTE**: Only available for USDC deposits, not USDT.
 
 </details>
 
@@ -1027,13 +1027,13 @@ This function is ideal for first-time users who want to deposit USDC without req
 
 There are 5 parameters required for permit signature:
 
-- **`owner`** - The wallet address that owns the tokens and is granting permission (typically the user's address)
-- **`spender`** - The contract address receiving approval (in our case it will be the `SyrupRouter` contract address)
-- **`value`** - The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend.
-- **`nonce`** - A unique number preventing replay attacks (get by calling `nonces(address)` on the token contract). It increments with each permit signature used.
-- **`deadline`** - Unix timestamp when the permit expires
+- **`owner`**: The wallet address that owns the tokens and is granting permission (typically the user's address)
+- **`spender`**: The contract address receiving approval (the `SyrupRouter` contract address)
+- **`value`**: The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend
+- **`nonce`**: A unique number preventing replay attacks (obtained by calling `nonces(address)` on the token contract). It increments with each permit signature used
+- **`deadline`**: Unix timestamp when the permit expires
 
-**Example:**
+**Example**
 
 ```typescript
 const permitMessage = {
@@ -1056,13 +1056,13 @@ Withdrawals follow a queue-based system:
 1. **Request**: Call `requestRedeem()` to enter the withdrawal queue
 2. **Queue Position**: Withdrawals are processed first-in, first-out (FIFO)
 3. **Processing**: When pool liquidity is available, withdrawals are automatically processed
-4. **Completion**: Assets are sent directly to your wallet (no additional transaction required)
+4. **Completion**: Assets are sent directly to the wallet (no additional transaction required)
 
-**Timeline:**
+**Timeline**
 
 - Most withdrawals process within 24 hours
 - During low liquidity periods, it may take up to 30 days
-- No penalties for withdrawing, but you stop earning yield once you request withdrawal
+- No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
 
 </details>
 
@@ -1072,7 +1072,7 @@ Withdrawals follow a queue-based system:
 
 Yes, authorization is required for all Syrup deposits. Syrup is built on Maple Protocol, which uses a permissioning system for institutional-grade security.
 
-**Authorization process:**
+**Authorization Process**
 
 1. Contact the Syrup team via [Telegram](https://t.me/syrupfi) for eligibility verification
 2. Receive authorization signature parameters
