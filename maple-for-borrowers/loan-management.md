@@ -10,7 +10,7 @@ We strive to make managing your loans on Maple as simple as possible. As a Borro
 
 The first step in the loan process occurs off-chain. Borrowers negotiate directly with Maple and sign legal term sheets corresponding to loan terms. After the terms are signed, the borrower creates a loan request on-chain, which is then funded by Maple Direct. The process of bringing the legal agreement on-chain is as simple as inputting key terms from your term sheet into the create loan form on the borrower page.
 
-There are two key pieces of data to discuss upfront: the Origination Fee and the Admin Fee. Please see the [Fees](../fees/loan-management.md) section for more information.
+There are two key pieces of data to discuss upfront: the Origination Fee and the Admin Fee. Please see the [Fees](../technical-resources/protocol-overview/fees.md) section for more information.
 
 **Making a Payment**
 

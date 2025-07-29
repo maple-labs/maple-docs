@@ -2,7 +2,9 @@
 
 **Drip Rewards Overview**
 
-The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi.  Drips facilitate an innovative rewards program that enables users to earn SYRUP by creating rewards for participation and long-term commitment.
+The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi.  Drips facilitate an innovative rewards program that enables users to earn SYRUP by creating rewards for participation and long-term commitment.\
+\
+Please note that drips are only available on Ethereum.&#x20;
 
 Each earning period for earning rewards is known as a Season, each lasting one quarter. Users accumulate Drips on a 4H, with the base rate established as 1 Drip per 1 USDC per day. Users can then perform actions that will increase this base rate, such as depositing into syrupUSDC using one of our wallet integration partners or leveraging syrupUSDC throughout DeFi. These small actions translate directly into boosted rewards for users.
 
@@ -40,7 +42,7 @@ Drips are an incentive layer on top of syrupUSDC's native yield.&#x20;
 
 #### 2. **Who qualifies for Drips rewards?**
 
-All syrupUSDC holders that minted it through [https://app.maple.finance/earn](https://app.maple.finance/earn) or one of our DeFi partner UIs.
+All syrupUSDC holders on Ethereum that minted it through [https://app.maple.finance/earn](https://app.maple.finance/earn) or one of our DeFi partner UIs.
 
 #### 3. **When can I start claiming my $SYRUP tokens?**
 

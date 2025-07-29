@@ -2,11 +2,11 @@
 
 Win from a $500K USDC Prize Pool While Earning Top-Tier Yields
 
-We're excited to announce the SyrupUSDC Rewards Prize Draw—an exclusive opportunity SyrupUSDC lenders users to win substantial USDC prizes while enjoying the platform's industry-leading yields. With a $300,000 USDC Grand Prize and a total of $500,000 USDC up for grabs, this is your chance to boost your DeFi rewards.
+We're excited to announce the syrupUSDC Rewards Prize Draw—an exclusive opportunity SyrupUSDC lenders users to win substantial USDC prizes while enjoying the platform's industry-leading yields. With a $300,000 USDC Grand Prize and a total of $500,000 USDC up for grabs, this is your chance to boost your DeFi rewards.
 
 ### How the Prize Draw Works
 
-The SyrupUSDC Rewards Prize Draw runs from May 1, 2025 to October 30, 2025, with winners announced in the first week of November. It's designed to reward users who deposit and maintain USDC in the Syrup.fi platform. Here's how it works:
+The syrupUSDC Rewards Prize Draw runs from May 1, 2025 to October 30, 2025, with winners announced in the first week of November. It's designed to reward users who deposit USDC and maintain their deposit. Here's how it works:
 
 #### Earning Tickets
 
@@ -17,13 +17,6 @@ Every participant receives tickets that serve as entries into the prize draw:
 * Maintenance Tickets: Additional tickets accrue for each day you maintain your deposit in the pool
 
 The more tickets you accumulate, the better your chances of winning prizes from the $500,000 USDC pool!
-
-#### Tracking Your Progress
-
-Stay motivated and engaged with our real-time leaderboard:
-
-* Live Ticket Count: See exactly how many tickets you've earned at any time
-* Leaderboard Ranking: Track your position relative to other participants
 
 ### Incredible Prizes Await
 
@@ -43,7 +36,6 @@ Getting started is simple:
 2. Connect your wallet to the platform
 3. Deposit at least $1,000 USDC (remember, larger deposits earn exponentially more tickets!)
 4. Maintain your deposit for the duration of the campaign (until October 30, 2025)
-5. Watch your tickets accumulate on the leaderboard
 
 That's it! You're now eligible for the prize draw while earning some of the best yields available in DeFi.
 
@@ -55,9 +47,9 @@ Additionally, you'll earn maintenance tickets for each day you keep your deposit
 
 ### Double the Benefits
 
-Participating in the SyrupUSDC Rewards Prize Draw offers two significant advantages:
+Participating in the syrupUSDC Rewards Prize Draw offers two significant advantages:
 
-1. Earn Industry-Leading Yields: SyrupUSDC typically offers yields significantly higher than other DeFi lending platforms, generated from secure, overcollateralized loans to institutional borrowers
+1. Earn Industry-Leading Yields: syrupUSDC typically offers yields significantly higher than other DeFi lending platforms, generated from secure, overcollateralized loans to institutional borrowers
 2. Chance to Win Incredible Prizes: On top of your regular yield, you now have the opportunity to win from the $500,000 USDC prize pool, including a $300,000 grand prize that could transform your financial future.&#x20;
 
 ### Important Dates to Remember
