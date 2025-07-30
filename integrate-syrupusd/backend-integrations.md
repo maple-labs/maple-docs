@@ -24,8 +24,8 @@ _This documentation provides guidance on integrating with the Syrup protocol to 
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
-* **Maple JS GitHub (ABIs):** https://github.com/maple-labs/maple-js/tree/main/src/abis
-* **Maple JS GitHub (Addresses):** https://github.com/maple-labs/maple-js/tree/main/src/addresses
+* **Maple JS GitHub (ABIs):** [https://github.com/maple-labs/maple-js/tree/main/src/abis](https://github.com/maple-labs/maple-js/tree/main/src/abis)
+* **Maple JS GitHub (Addresses):** [https://github.com/maple-labs/maple-js/tree/main/src/addresses](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
 
 Within the Maple SDK, both ABIs and network-specific addresses are accessible.
 
@@ -63,7 +63,7 @@ To access the necessary data, use the Maple GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-**NOTE**: In order to perform the integration in Sepolia, it may be necessary to contact the Syrup team via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
+**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
 
 ## Deposit
 
