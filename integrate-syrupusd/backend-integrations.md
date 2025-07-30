@@ -1,33 +1,31 @@
 # Backend Integrations
 
 {% hint style="info" %}
-
-## Programmatically deposit and withdraw from SyrupUSD
+### Programmatically deposit and withdraw from SyrupUSD
 
 _This documentation provides guidance on integrating with the Syrup protocol to successfully deposit and withdraw from a pool._
 
 **Deposit**:
 
-1. [**Querying the Maple API**](#step-1---querying-the-maple-api) to retrieve the necessary contract addresses.
-2. [**Determining user authorization**](#step-2---determining-user-authorization) as a Syrup lender.
-3. [**Retrieving an authorization signature**](#step-3---retrieving-authorization-signature) from the Maple API
-4. [**Executing contract calls**](#step-4---executing-contract-calls) (authorize and deposit, or deposit only).
+1. [**Querying the Maple API**](backend-integrations.md#step-1-query-the-maple-api) to retrieve the necessary contract addresses.
+2. [**Determining user authorization**](backend-integrations.md#step-2-determine-user-authorization) as a Syrup lender.
+3. [**Retrieving an authorization signature**](backend-integrations.md#step-3-retrieve-authorization-signature) from the Maple API
+4. [**Executing contract calls**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
 
 **Withdrawal**:
 
-1. [**Retrieve Position Data**](#step-1---retrieve-pool-position-data) from the Maple API
-2. [**Calculate Shares to Redeem**](#step-2---calculate-shares-to-redeem) from the Pool contract
-3. [**Execute the Withdrawal**](#step-3---execute-the-withdrawal) on the Pool contract
-4. [**Await Withdrawal Completion**](#step-4---await-withdrawal-completion){% endhint %}
+1. [**Retrieve Position Data**](backend-integrations.md#step-1-retrieve-pool-position-data) from the Maple API
+2. [**Calculate Shares to Redeem**](backend-integrations.md#step-2-calculate-shares-to-redeem) from the Pool contract
+3. [**Execute the Withdrawal**](backend-integrations.md#step-3-execute-the-withdrawal) on the Pool contract
+4. [**Await Withdrawal Completion**](backend-integrations.md#step-4-await-withdrawal-completion)
+{% endhint %}
 
 ## Maple SDK and Maple GraphQL API
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
-- **Maple JS GitHub (ABIs):**
-  https://github.com/maple-labs/maple-js/tree/main/src/abis
-- **Maple JS GitHub (Addresses):**
-  https://github.com/maple-labs/maple-js/tree/main/src/addresses
+* **Maple JS GitHub (ABIs):** https://github.com/maple-labs/maple-js/tree/main/src/abis
+* **Maple JS GitHub (Addresses):** https://github.com/maple-labs/maple-js/tree/main/src/addresses
 
 Within the Maple SDK, both ABIs and network-specific addresses are accessible.
 
@@ -35,27 +33,21 @@ The package can also be installed and used within applications.
 
 {% tabs %}
 {% tab title="npm" %}
-
 ```sh
 npm install @maplelabs/maple-js
 ```
-
 {% endtab %}
 
 {% tab title="yarn" %}
-
 ```sh
 yarn add @maplelabs/maple-js
 ```
-
 {% endtab %}
 
 {% tab title="pnpm" %}
-
 ```sh
 pnpm add @maplelabs/maple-js
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -65,6 +57,7 @@ To access the necessary data, use the Maple GraphQL API:
 {% tab title="Mainnet" %}
 `https://api.maple.finance/v2/graphql`
 {% endtab %}
+
 {% tab title="Sepolia" %}
 `https://sepolia.api.maple.finance/v2/graphql`
 {% endtab %}
@@ -80,8 +73,7 @@ Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authoriz
 
 {% tabs %}
 {% tab title="Mainnet" %}
-
-#### Syrup USDC
+**Syrup USDC**
 
 | Contract               | Address                                                                                                               |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -89,18 +81,17 @@ Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authoriz
 | SyrupRouter            | [0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76](https://etherscan.io/address/0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76) |
 | WithdrawalManagerQueue | [0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3](https://etherscan.io/address/0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3) |
 
-#### Syrup USDT
+**Syrup USDT**
 
 | Contract               | Address                                                                                                               |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | PoolV2                 | [0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D](https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D) |
 | SyrupRouter            | [0xF007476Bb27430795138C511F18F821e8D1e5Ee2](https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2) |
 | WithdrawalManagerQueue | [0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C](https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C) |
-
 {% endtab %}
-{% tab title="Sepolia" %}
 
-#### Syrup USDC
+{% tab title="Sepolia" %}
+**Syrup USDC**
 
 | Contract               | Address                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -108,14 +99,13 @@ Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authoriz
 | SyrupRouter            | [0x5387ab37f93af968920af6c0faa6dbc52973b020](https://sepolia.etherscan.io/address/0x5387ab37f93af968920af6c0faa6dbc52973b020) |
 | WithdrawalManagerQueue | [0x2ff61035de7a1550219be12a6e9d33aa10b844b6](https://sepolia.etherscan.io/address/0x2ff61035de7a1550219be12a6e9d33aa10b844b6) |
 
-#### Syrup USDT
+**Syrup USDT**
 
 | Contract               | Address                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | PoolV2                 | [0x7679cbe9ae66298114ac6dac73487b63ac023c0b](https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b) |
 | SyrupRouter            | [0x0b703919cf2d30dbb18bad6febe8f0ea4f191918](https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918) |
 | WithdrawalManagerQueue | [0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3](https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3) |
-
 {% endtab %}
 {% endtabs %}
 
@@ -196,8 +186,8 @@ It is important to note that the query uses the `syrupRouter_not` filter to retu
 
 **Response Fields:**
 
-- `poolV2S.id`: The Syrup Pool contract address.
-- `poolV2S.syrupRouter.id`: The `SyrupRouter` contract address.
+* `poolV2S.id`: The Syrup Pool contract address.
+* `poolV2S.syrupRouter.id`: The `SyrupRouter` contract address.
 
 These addresses can then be used to interact with the `SyrupRouter` contract.
 
@@ -290,7 +280,6 @@ function deposit(uint256 assets, bytes32 depositData)
 
 {% tabs %}
 {% tab title="USDC" %}
-
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -319,10 +308,9 @@ const main = async () => {
 
 main();
 ```
-
 {% endtab %}
-{% tab title="USDT" %}
 
+{% tab title="USDT" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils, environmentMocks } from "@maplelabs/maple-js";
@@ -352,7 +340,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -638,9 +625,9 @@ main();
 
 ### Step 2 - Calculate Shares to Redeem
 
-- Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
-- To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
-- These transactions leverage the `ERC-4626` tokenized vault standard. For more information, see https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/.
+* Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
+* To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
+* These transactions leverage the `ERC-4626` tokenized vault standard. For more information, see https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/.
 
 #### Function signature
 
@@ -1027,11 +1014,11 @@ This function is ideal for first-time users who want to deposit USDC without req
 
 There are 5 parameters required for permit signature:
 
-- **`owner`**: The wallet address that owns the tokens and is granting permission (typically the user's address)
-- **`spender`**: The contract address receiving approval (the `SyrupRouter` contract address)
-- **`value`**: The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend
-- **`nonce`**: A unique number preventing replay attacks (obtained by calling `nonces(address)` on the token contract). It increments with each permit signature used
-- **`deadline`**: Unix timestamp when the permit expires
+* **`owner`**: The wallet address that owns the tokens and is granting permission (typically the user's address)
+* **`spender`**: The contract address receiving approval (the `SyrupRouter` contract address)
+* **`value`**: The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend
+* **`nonce`**: A unique number preventing replay attacks (obtained by calling `nonces(address)` on the token contract). It increments with each permit signature used
+* **`deadline`**: Unix timestamp when the permit expires
 
 **Example**
 
@@ -1060,9 +1047,9 @@ Withdrawals follow a queue-based system:
 
 **Timeline**
 
-- Most withdrawals process within 24 hours
-- During low liquidity periods, it may take up to 30 days
-- No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
+* Most withdrawals process within 24 hours
+* During low liquidity periods, it may take up to 30 days
+* No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
 
 </details>
 

@@ -1,3 +1,5 @@
-# Get started
+# Get Started
 
-{% content-ref url="integrate-syrupusd/backend-integrations.md" %} Backend Integrations - Programatically deposit into SyrupUSD {% endcontent-ref %}
+{% content-ref url="backend-integrations.md" %}
+[backend-integrations.md](backend-integrations.md)
+{% endcontent-ref %}
