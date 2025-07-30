@@ -7,10 +7,10 @@ _This documentation provides guidance on integrating with the Syrup protocol to 
 
 **Deposit**:
 
-1. [**Querying the Maple API**](backend-integrations.md#step-1-query-the-maple-api) to retrieve the necessary contract addresses.
-2. [**Determining user authorization**](backend-integrations.md#step-2-determine-user-authorization) as a Syrup lender.
-3. [**Retrieving an authorization signature**](backend-integrations.md#step-3-retrieve-authorization-signature) from the Maple API
-4. [**Executing contract calls**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
+1. [**Query the Maple API**](backend-integrations.md#step-1-query-the-maple-api) to retrieve the necessary contract addresses.
+2. [**Determine user authorization**](backend-integrations.md#step-2-determine-user-authorization) as a Syrup lender.
+3. [**Retrieve an authorization signature**](backend-integrations.md#step-3-retrieve-authorization-signature) from the Maple API
+4. [**Execute contract calls**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
 
 **Withdrawal**:
 
