@@ -65,7 +65,7 @@ To access the necessary data, use the Maple GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
+_**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via_ [_Telegram_](https://t.me/syrupfi) _to receive Sepolia `USDC`/`USDT` tokens._
 
 ## Deposit
 
