@@ -5,15 +5,10 @@
 ## Integrate SyrupUSD
 
 * [Get Started](integrate-syrupusd/get-started.md)
-* [Frontend Integrations](integrate-syrupusd/frontend-integrations.md)
-  * [Step-by-step](integrate-syrupusd/frontend-integrations.md#embed-syrup-webapp-into-your-app)
-  * [Edge cases](integrate-syrupusd/frontend-integrations.md#edge-cases)
-  * [FAQ](integrate-syrupusd/frontend-integrations.md#faq)
 * [Backend Integrations](integrate-syrupusd/backend-integrations.md)
   * [Step-by-step](integrate-syrupusd/backend-integrations.md#deposit)
   * [Edge cases](integrate-syrupusd/backend-integrations.md#edge-cases)
   * [FAQ](integrate-syrupusd/backend-integrations.md#faq)
-* [Smart Contract Integrations](integrate-syrupusd/smart-contract-integrations.md)
 
 ## Maple for Lenders
 
