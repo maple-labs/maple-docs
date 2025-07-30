@@ -22,7 +22,7 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 4. [**Await Withdrawal Completion**](backend-integrations.md#step-4-await-withdrawal-completion)
 {% endhint %}
 
-## Maple SDK and GraphQL API
+## SDK and GraphQL API
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
