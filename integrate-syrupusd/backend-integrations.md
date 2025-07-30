@@ -12,7 +12,7 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 1. [**Query the Maple API**](backend-integrations.md#step-1-query-the-maple-api) to retrieve the necessary contract addresses.
 2. [**Determine user authorization**](backend-integrations.md#step-2-determine-user-authorization) as a Syrup lender.
 3. [**Retrieve an authorization signature**](backend-integrations.md#step-3-retrieve-authorization-signature) from the Maple API
-4. [**Execute contract calls**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
+4. [**Execute the Deposit**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
 
 **Withdrawal**:
 
@@ -256,7 +256,7 @@ The Maple Protocol is geared towards institutions and has a permissioning system
 
 To retrieve the authorization signature, contact the Syrup team via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi).
 
-### Step 4 - Execute Contract Calls
+### Step 4 - Execute the Deposit
 
 The first time an asset (e.g., `USDC`, `USDT`) is lent to Syrup, it may be necessary to allow the contract to interact with the asset. This is a common transaction on Ethereum.
 
