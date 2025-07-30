@@ -29,9 +29,7 @@ All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 * [**Maple JS GitHub (ABIs)**](https://github.com/maple-labs/maple-js/tree/main/src/abis)
 * [**Maple JS GitHub (Addresses)**](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
 
-Within the Maple SDK, both ABIs and network-specific addresses are accessible.
-
-The package can also be installed and used within applications.
+Within the SDK, both ABIs and network-specific addresses are accessible. The package can also be installed and used within applications.
 
 {% tabs %}
 {% tab title="npm" %}
@@ -53,7 +51,7 @@ pnpm add @maplelabs/maple-js
 {% endtab %}
 {% endtabs %}
 
-To access the necessary data, use the Maple GraphQL API:
+To access the necessary data, use the GraphQL API:
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -65,7 +63,7 @@ To access the necessary data, use the Maple GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-_**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via_ [_Telegram_](https://t.me/syrupfi) _to receive Sepolia `USDC`/`USDT` tokens._
+**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via [Telegram](https://t.me/syrupfi) to receive Sepolia `USDC`/`USDT` tokens.
 
 ## Deposit
 
@@ -111,7 +109,7 @@ Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authoriz
 {% endtab %}
 {% endtabs %}
 
-Router addresses can also be accessed via the Maple GraphQL API.
+Router addresses can also be accessed via the GraphQL API.
 
 #### Example query
 
@@ -195,7 +193,7 @@ These addresses can then be used to interact with the `SyrupRouter` contract.
 
 ### Step 2 - Determine User Authorization
 
-Before depositing, check if a user is already authorized in Syrup, as this is necessary to perform a deposit. To do this, query the `Account` entity.
+Before depositing, check if a user is already authorized by querying the `Account` entity. This is necessary to perform a deposit.
 
 #### Example Query
 
