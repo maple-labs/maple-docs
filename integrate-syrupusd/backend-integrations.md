@@ -67,7 +67,7 @@ To access the necessary data, use the GraphQL API:
 
 ## Deposit
 
-### Step 1 - Query the Maple API
+### 1. Query the Maple API
 
 Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authorized participants to securely access and benefit from the yields available in the Maple ecosystem, abstracting all the complexities of the permissioning system inherent to Maple. Each Syrup `PoolV2` has an associated `SyrupRouter`.
 
@@ -191,7 +191,7 @@ It is important to note that the query uses the `syrupRouter_not` filter to retu
 
 These addresses can then be used to interact with the `SyrupRouter` contract.
 
-### Step 2 - Determine User Authorization
+### 2. Determine User Authorization
 
 Before depositing, check if a user is already authorized by querying the `Account` entity. This is necessary to perform a deposit.
 
@@ -248,7 +248,7 @@ main();
 
 If `isSyrupLender = true`, the user is already authorized in the `Pool Permission Manager` and can deposit into Syrup pools. Otherwise, the user must perform authorization before their initial deposit.
 
-### Step 3 - Retrieve Authorization Signature
+### 3. Retrieve Authorization Signature
 
 **Note:** This step is only required if `isSyrupLender = false` was returned in the previous step. Otherwise, continue to the next step.
 
@@ -256,7 +256,7 @@ The Maple Protocol is geared towards institutions and has a permissioning system
 
 To retrieve the authorization signature, contact the Syrup team via Telegram at [https://t.me/syrupfi](https://t.me/syrupfi).
 
-### Step 4 - Execute the Deposit
+### 4. Execute the Deposit
 
 The first time an asset (e.g., `USDC`, `USDT`) is lent to Syrup, it may be necessary to allow the contract to interact with the asset. This is a common transaction on Ethereum.
 
@@ -526,7 +526,7 @@ main();
 
 ## Withdrawal
 
-### Step 1 - Retrieve Pool Position Data
+### 1. Retrieve Pool Position Data
 
 Query the Maple API for the user's pool position data using the `PoolV2Position` field in the `Account` query:
 
@@ -623,7 +623,7 @@ const main = async () => {
 main();
 ```
 
-### Step 2 - Calculate Shares to Redeem
+### 2. Calculate Shares to Redeem
 
 * Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
 * To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
@@ -656,7 +656,7 @@ const main = async () => {
 main();
 ```
 
-### Step 3 - Execute the Withdrawal
+### 3. Execute the Withdrawal
 
 After calculating `sharesToRedeem` or fetching `availableShares`, call the `requestRedeem` method on the Pool contract to initiate the withdrawal.
 
@@ -693,7 +693,7 @@ const main = async () => {
 main();
 ```
 
-### Step 4 - Await Withdrawal Completion
+### 4. Await Withdrawal Completion
 
 Once the transaction is successful and there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. The current status of the withdrawal queue can be retrieved either directly from the `WithdrawalManagerQueue` contract or through the Maple GraphQL API:
 
