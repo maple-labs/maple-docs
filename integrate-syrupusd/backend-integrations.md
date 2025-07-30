@@ -1,13 +1,11 @@
 ---
-description: >-
-  This documentation provides guidance on integrating with the Syrup protocol to
-  successfully deposit and withdraw from a pool.
+description: Programmatically deposit into and withdraw from SyrupUSD
 ---
 
 # Backend Integrations
 
 {% hint style="info" %}
-### Programmatically deposit and withdraw from SyrupUSD
+### Step-by-step
 
 **Deposit**:
 
