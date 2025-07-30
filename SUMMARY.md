@@ -2,6 +2,14 @@
 
 * [Welcome to Maple](README.md)
 
+## Integrate SyrupUSD
+
+* [Get Started](integrate-syrupusd/get-started.md)
+* [Backend Integrations](integrate-syrupusd/backend-integrations.md)
+  * [Step-by-step](integrate-syrupusd/backend-integrations.md#deposit)
+  * [Edge cases](integrate-syrupusd/backend-integrations.md#edge-cases)
+  * [FAQ](integrate-syrupusd/backend-integrations.md#faq)
+
 ## Maple for Lenders
 
 * [Introduction](maple-for-lenders/introduction.md)
