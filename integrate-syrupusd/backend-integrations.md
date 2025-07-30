@@ -24,8 +24,8 @@ _This documentation provides guidance on integrating with the Syrup protocol to 
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
-* **Maple JS GitHub (ABIs):** [https://github.com/maple-labs/maple-js/tree/main/src/abis](https://github.com/maple-labs/maple-js/tree/main/src/abis)
-* **Maple JS GitHub (Addresses):** [https://github.com/maple-labs/maple-js/tree/main/src/addresses](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
+* [**Maple JS GitHub (ABIs)**](https://github.com/maple-labs/maple-js/tree/main/src/abis)
+* [**Maple JS GitHub (Addresses)**](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
 
 Within the Maple SDK, both ABIs and network-specific addresses are accessible.
 
