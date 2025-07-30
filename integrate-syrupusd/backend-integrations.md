@@ -1,9 +1,13 @@
+---
+description: >-
+  This documentation provides guidance on integrating with the Syrup protocol to
+  successfully deposit and withdraw from a pool.
+---
+
 # Backend Integrations
 
 {% hint style="info" %}
 ### Programmatically deposit and withdraw from SyrupUSD
-
-_This documentation provides guidance on integrating with the Syrup protocol to successfully deposit and withdraw from a pool._
 
 **Deposit**:
 
@@ -20,7 +24,7 @@ _This documentation provides guidance on integrating with the Syrup protocol to 
 4. [**Await Withdrawal Completion**](backend-integrations.md#step-4-await-withdrawal-completion)
 {% endhint %}
 
-## Maple SDK and Maple GraphQL API
+## Maple SDK and GraphQL API
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
