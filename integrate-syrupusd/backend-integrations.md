@@ -774,7 +774,9 @@ main();
 
 ## Edge Cases
 
-### User Not Authorized
+<details>
+
+<summary>User Not Authorized</summary>
 
 When attempting to use `deposit` or `depositWithPermit` and receiving the error `SR:D:NOT_AUTHORIZED`, it indicates that the account being used for deposit is not authorized in Syrup USD. To authorize the account, use `authorizeAndDeposit` or `authorizeAndDepositWithPermit`.
 
@@ -823,7 +825,11 @@ const main = async () => {
 main();
 ```
 
-### Insufficient Approval
+</details>
+
+<details>
+
+<summary>Insufficient Approval</summary>
 
 When attempting to use `deposit` or `depositWithPermit` and receiving the error `SR:D:TRANSFER_FROM_FAIL`, it indicates that `SyrupRouter` could not transfer lending tokens. Ensure that the deposit amount matches the current approval for `SyrupRouter`. If it does not, increase the approval.
 
@@ -876,15 +882,27 @@ const main = async () => {
 main();
 ```
 
-### Invalid Signature
+</details>
+
+<details>
+
+<summary>Invalid Signature</summary>
 
 When attempting to use `depositWithPermit` and receiving the error `ERC20:P:INVALID_SIGNATURE`, it indicates that the recovered address from the signature does not match the address attempting to deposit. Ensure that the signature is signed by the account executing the transaction.
 
-### Expired Signature
+</details>
+
+<details>
+
+<summary>Expired Signature</summary>
 
 When attempting to use `depositWithPermit` and receiving the error `ERC20:P:EXPIRED`, it indicates that the permit signature has expired. Ensure that the deadline set on the signature provides sufficient time to execute the transaction.
 
-### Insufficient Gas
+</details>
+
+<details>
+
+<summary>Insufficient Gas</summary>
 
 When transactions fail due to insufficient gas, increase the gas limit in the transaction parameters. Syrup operations require more gas than simple token transfers due to the complex authorization and routing logic.
 
@@ -934,7 +952,11 @@ const main = async () => {
 main();
 ```
 
-### Pool Deposit Limit Exceeded
+</details>
+
+<details>
+
+<summary>Pool Deposit Limit Exceeded</summary>
 
 When encountering error `P:DEPOSIT_GT_LIQ_CAP`, it means the deposit amount exceeds the pool's deposit limit. Check the pool's current capacity before attempting large deposits.
 
@@ -989,6 +1011,8 @@ main();
 ```
 
 To perform a deposit larger than the limit, contact the Syrup team via [Telegram](https://t.me/syrupfi).
+
+</details>
 
 ## FAQ
 
@@ -1067,11 +1091,11 @@ Withdrawals follow a queue-based system:
 
 <summary>Do I need authorization for smart contract integration?</summary>
 
-Yes, authorization is required for all Syrup deposits. Syrup is built by Maple, which uses a permissioning system for institutional-grade security.
+Yes, authorization is required for all Syrup deposits. Syrup protocol is built by Maple, which uses a permissioning system for institutional-grade security.
 
 **Authorization Process**
 
-1. Contact the Syrup team via [Telegram](https://t.me/syrupfi) for eligibility verification
+1. Contact us via [Telegram](https://t.me/syrupfi) for eligibility verification
 2. Receive authorization signature parameters
 3. Use `authorizeAndDeposit` or `authorizeAndDepositWithPermit` for first deposit
 4. Subsequent deposits only need `deposit` or `depositWithPermit`
