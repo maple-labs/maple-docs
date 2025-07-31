@@ -994,6 +994,16 @@ To perform a deposit larger than the limit, contact the Syrup team via [Telegram
 
 <details>
 
+<summary>What is the difference between Syrup and Maple?</summary>
+
+Syrup is the protocol - the smart contracts that power onchain lending. Maple encompasses the entities that conduct institutional lending services using this infrastructure.
+
+**For developers:** You'll be integrating with Syrup (the protocol), while Maple handles the institutional lending operations.
+
+</details>
+
+<details>
+
 <summary>What is the authorize and deposit function with permit?</summary>
 
 The `authorizeAndDepositWithPermit` function combines three operations into a single transaction:
