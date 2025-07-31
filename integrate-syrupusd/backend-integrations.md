@@ -118,7 +118,7 @@ query {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code lineNumbers="true" fullWidth="false" %}
+{% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
 ```typescript
 import { gql, GraphQLClient } from "graphql-request";
 
@@ -274,7 +274,7 @@ function deposit(uint256 assets, bytes32 depositData)
 
 {% tabs %}
 {% tab title="USDC" %}
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -362,7 +362,7 @@ function depositWithPermit(
 
 #### Code example using Maple SDK
 
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils, erc20 } from "@maplelabs/maple-js";
@@ -452,7 +452,7 @@ function authorizeAndDeposit(
 
 #### Code example using Maple SDK for `USDC` or `USDT`.
 
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -504,7 +504,7 @@ function authorizeAndDepositWithPermit(
 
 #### Code example using Maple SDK
 
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -575,7 +575,7 @@ query GetMapleAccount($accountId: ID!, $poolId: String!) {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { gql, GraphQLClient } from "graphql-request";
 
@@ -742,7 +742,7 @@ query GetPoolV2Queue($id: ID!) {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { gql, GraphQLClient } from "graphql-request";
 
