@@ -9,17 +9,17 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 
 **Deposit**:
 
-1. [**Query the Maple API**](backend-integrations.md#step-1-query-the-maple-api) to retrieve the necessary contract addresses.
-2. [**Determine user authorization**](backend-integrations.md#step-2-determine-user-authorization) as a Syrup lender.
-3. [**Retrieve an authorization signature**](backend-integrations.md#step-3-retrieve-authorization-signature) from the Maple API
-4. [**Execute the Deposit**](backend-integrations.md#step-4-execute-contract-calls) (authorize and deposit, or deposit only).
+1. [**Query the Maple API**](backend-integrations.md#id-1.-query-the-maple-api) to retrieve the necessary contract addresses.
+2. [**Determine user authorization**](backend-integrations.md#id-2.-determine-user-authorization) as a Syrup lender.
+3. [**Retrieve an authorization signature**](backend-integrations.md#id-3.-retrieve-authorization-signature) from the Maple API
+4. [**Execute the Deposit**](backend-integrations.md#id-4.-execute-the-deposit) (authorize and deposit, or deposit only).
 
 **Withdrawal**:
 
-1. [**Retrieve Pool Position**](backend-integrations.md#step-1-retrieve-pool-position-data) from the Maple API
-2. [**Calculate Shares to Redeem**](backend-integrations.md#step-2-calculate-shares-to-redeem) from the Pool contract
-3. [**Execute the Withdrawal**](backend-integrations.md#step-3-execute-the-withdrawal) on the Pool contract
-4. [**Await Withdrawal Completion**](backend-integrations.md#step-4-await-withdrawal-completion)
+1. [**Retrieve Pool Position**](backend-integrations.md#id-1.-retrieve-pool-position) from the Maple API
+2. [**Calculate Shares to Redeem**](backend-integrations.md#id-2.-calculate-shares-to-redeem) from the Pool contract
+3. [**Execute the Withdrawal**](backend-integrations.md#id-3.-execute-the-withdrawal) on the Pool contract
+4. [**Await Withdrawal Completion**](backend-integrations.md#id-4.-await-withdrawal-completion)
 {% endhint %}
 
 ## SDK and GraphQL API
