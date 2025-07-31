@@ -4,8 +4,6 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 
 # Backend Integrations
 
-## Summary
-
 {% hint style="info" %}
 ### Step-by-step
 
@@ -71,7 +69,7 @@ To access the necessary data, use the GraphQL API:
 
 ### 1. Query the Maple API
 
-Syrup's main contract, the `SyrupRouter`, is uniquely designed to allow authorized participants to securely access and benefit from the yields available in the Maple ecosystem, abstracting all the complexities of the permissioning system inherent to Maple. Each Syrup `PoolV2` has an associated `SyrupRouter`.
+Syrup's main contract, the `SyrupRouter`, is designed to allow authorized participants to securely access the yields available in the Maple ecosystem, abstracting all the complexity of the permissioning system. Each Syrup `PoolV2` has an associated `SyrupRouter`.
 
 {% tabs %}
 {% tab title="Mainnet" %}
