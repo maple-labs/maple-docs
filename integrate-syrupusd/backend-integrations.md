@@ -4,6 +4,8 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 
 # Backend Integrations
 
+## Summary
+
 {% hint style="info" %}
 ### Step-by-step
 
@@ -16,7 +18,7 @@ description: Programmatically deposit into and withdraw from SyrupUSD
 
 **Withdrawal**:
 
-1. [**Retrieve Position Data**](backend-integrations.md#step-1-retrieve-pool-position-data) from the Maple API
+1. [**Retrieve Pool Position**](backend-integrations.md#step-1-retrieve-pool-position-data) from the Maple API
 2. [**Calculate Shares to Redeem**](backend-integrations.md#step-2-calculate-shares-to-redeem) from the Pool contract
 3. [**Execute the Withdrawal**](backend-integrations.md#step-3-execute-the-withdrawal) on the Pool contract
 4. [**Await Withdrawal Completion**](backend-integrations.md#step-4-await-withdrawal-completion)
@@ -524,9 +526,9 @@ const main = async () {
 main();
 ```
 
-## Withdrawal
+## Withdraw
 
-### 1. Retrieve Pool Position Data
+### 1. Retrieve Pool Position
 
 Query the Maple API for the user's pool position data using the `PoolV2Position` field in the `Account` query:
 
