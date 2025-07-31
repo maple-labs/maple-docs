@@ -1067,7 +1067,7 @@ Withdrawals follow a queue-based system:
 
 <summary>Do I need authorization for smart contract integration?</summary>
 
-Yes, authorization is required for all Syrup deposits. Syrup is built on Maple Protocol, which uses a permissioning system for institutional-grade security.
+Yes, authorization is required for all Syrup deposits. Syrup is built by Maple, which uses a permissioning system for institutional-grade security.
 
 **Authorization Process**
 
