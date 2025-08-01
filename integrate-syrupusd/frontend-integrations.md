@@ -1,10 +1,14 @@
 ---
 description: >-
-  Enables new wallets to connect, deposit & withdraw syrupUSD via the Syrup app.
-  Handle permissions and user interactions.
+  Enable new wallets to connect to syrupUSD via the Syrup app. Handle
+  permissions and user interactions (e.g. new wallets)
 ---
 
 # Frontend Integrations
+
+{% hint style="info" %}
+Looking to enable users to deposit into syrupUSD through your own app? See [backend-integrations.md](backend-integrations.md "mention")
+{% endhint %}
 
 ## Overview
 

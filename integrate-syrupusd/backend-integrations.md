@@ -1,5 +1,7 @@
 ---
-description: Programmatically deposit into and withdraw from SyrupUSD
+description: >-
+  Enable your users to deposit into syrupUSD through your own app. Manage
+  deposits programmatically (e.g. wallets, exchanges, custody solutions)
 ---
 
 # Backend Integrations
