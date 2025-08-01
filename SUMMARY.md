@@ -7,9 +7,6 @@
 * [Get Started](integrate-syrupusd/get-started.md)
 * [Frontend Integrations](integrate-syrupusd/frontend-integrations.md)
 * [Backend Integrations](integrate-syrupusd/backend-integrations.md)
-  * [Step-by-step](integrate-syrupusd/backend-integrations.md#deposit)
-  * [Edge cases](integrate-syrupusd/backend-integrations.md#edge-cases)
-  * [FAQ](integrate-syrupusd/backend-integrations.md#faq)
 
 ## Maple for Lenders
 
