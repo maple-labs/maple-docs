@@ -7,7 +7,7 @@ description: >-
 # Frontend Integrations
 
 {% hint style="info" %}
-Looking to enable users to deposit into syrupUSD through your own app? See [backend-integrations.md](backend-integrations.md "mention")
+Looking to enable your users to deposit into syrupUSD through your own app? See [backend-integrations.md](backend-integrations.md "mention")
 {% endhint %}
 
 ## Overview
