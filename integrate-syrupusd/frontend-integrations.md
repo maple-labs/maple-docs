@@ -1,7 +1,7 @@
 ---
 description: >-
   Enable new wallets to connect to syrupUSD via the Syrup app. Handle
-  permissions and user interactions (e.g. new wallets)
+  permissions and user interactions. For new wallets.
 ---
 
 # Frontend Integrations
