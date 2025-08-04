@@ -1100,6 +1100,23 @@ const permitMessage = {
 
 <details>
 
+<summary>Do I need authorization for smart contract integration?</summary>
+
+Yes, authorization is required for all Syrup deposits. Syrup protocol is built by Maple, which uses a permissioning system for institutional-grade security.
+
+**Authorization Process**
+
+1. Contact us via [Telegram](https://t.me/syrupfi) for eligibility verification
+2. Receive authorization signature parameters
+3. Use `authorizeAndDeposit` or `authorizeAndDepositWithPermit` for first deposit
+4. Subsequent deposits only need `deposit` or `depositWithPermit`
+
+Once authorized, the permission persists across all Syrup pools and future deposits.
+
+</details>
+
+<details>
+
 <summary>How do withdrawals work?</summary>
 
 Withdrawals follow a queue-based system:
@@ -1119,17 +1136,36 @@ Withdrawals follow a queue-based system:
 
 <details>
 
-<summary>Do I need authorization for smart contract integration?</summary>
+<summary>How can I get the APY data for syrupUSD?</summary>
 
-Yes, authorization is required for all Syrup deposits. Syrup protocol is built by Maple, which uses a permissioning system for institutional-grade security.
+Querying the GraphQL API is the simplest way to get APY data for syrupUSD into your app:
 
-**Authorization Process**
+```
+{
+  poolV2(id: "0xaa45e2cd38b1733b1cfe375f9d62a4f046660600") {
+    name
+    weeklyApy
+    monthlyApy
+  }
+}
+```
 
-1. Contact us via [Telegram](https://t.me/syrupfi) for eligibility verification
-2. Receive authorization signature parameters
-3. Use `authorizeAndDeposit` or `authorizeAndDepositWithPermit` for first deposit
-4. Subsequent deposits only need `deposit` or `depositWithPermit`
+This returns:
 
-Once authorized, the permission persists across all Syrup pools and future deposits.
+<pre><code><strong>{
+</strong>  "data": {
+    "poolV2": {
+      "name": "Syrup USDC",
+      "weeklyApy": "12493398710000000000000000000",
+      "monthlyApy": "12432256000000000000000000000"
+    }
+  }
+}
+
+</code></pre>
+
+In the example above, the monthly APY is 12.43%. This is the base APY and does not include Drips rewards. To include Drips rewards, please contact us via [Telegram](https://t.me/syrupfi).
+
+
 
 </details>
