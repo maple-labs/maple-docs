@@ -1152,8 +1152,9 @@ Querying the GraphQL API is the simplest way to get APY data for syrupUSD into y
 
 This returns:
 
-<pre><code><strong>{
-</strong>  "data": {
+```
+{  
+  "data": {
     "poolV2": {
       "name": "Syrup USDC",
       "weeklyApy": "12493398710000000000000000000",
@@ -1162,7 +1163,7 @@ This returns:
   }
 }
 
-</code></pre>
+```
 
 In the example above, the monthly APY is 12.43%. This is the base APY and does not include Drips rewards. To include Drips rewards, please contact us via [Telegram](https://t.me/syrupfi).
 
