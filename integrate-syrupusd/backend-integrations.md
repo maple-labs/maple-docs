@@ -1138,34 +1138,42 @@ Withdrawals follow a queue-based system:
 
 <summary>How can I get the APY data for syrupUSD?</summary>
 
-Querying the GraphQL API is the simplest way to get APY data for syrupUSD into your app:
+Querying the GraphQL API is the simplest way to get APY data for syrupUSD into your app.
+
+**Example request**
 
 ```
 {
-  poolV2(id: "0xaa45e2cd38b1733b1cfe375f9d62a4f046660600") {
+  poolV2(id: "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b") {
     name
     weeklyApy
     monthlyApy
   }
+  syrupGlobals {
+    dripsYieldBoost
+  }
 }
 ```
 
-This returns:
+**This returns**
 
 ```
-{  
+{
   "data": {
     "poolV2": {
       "name": "Syrup USDC",
-      "weeklyApy": "12493398710000000000000000000",
-      "monthlyApy": "12432256000000000000000000000"
+      "weeklyApy": "69937809610000000000000000000",
+      "monthlyApy": "67212806350000000000000000000"
+    },
+    "syrupGlobals": {
+      "apy": "69731920498003078965054825961",
+      "dripsYieldBoost": "22000"
     }
   }
 }
-
 ```
 
-In the example above, the monthly APY is 12.43%. This is the base APY and does not include Drips rewards. To include Drips rewards, please contact us via [Telegram](https://t.me/syrupfi).
+In the example above, the monthly base APY is 6.72% with the Drips rewards adding an extra 2.2% on top.
 
 
 
