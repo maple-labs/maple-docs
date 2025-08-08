@@ -37,7 +37,7 @@ Ensure your wallet appears in the Rainbow Wallet registry. If not listed, comple
 
 ### 2. Submit Integration Request
 
-Contact the Maple team via [Telegram](https://t.me/syrupfi) with the following information:
+Contact the Maple team via [Telegram](https://t.me/maplefinance) with the following information:
 
 * Wallet name and website
 * Rainbow listing URL
