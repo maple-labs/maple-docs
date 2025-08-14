@@ -1,6 +1,6 @@
 ---
 description: >-
-  Enable your users to deposit into syrupUSD through your own app. Manage
+  Enable your users to deposit into syrupUSDC through your own app. Manage
   deposits programmatically. For wallets, exchanges, custody solutions etc.
 ---
 

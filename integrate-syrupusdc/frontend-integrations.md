@@ -1,18 +1,18 @@
 ---
 description: >-
-  Enable new wallets to connect to syrupUSD via the Syrup app. Handle
+  Enable new wallets to connect to syrupUSDC via the Syrup app. Handle
   permissions and user interactions. For new wallets.
 ---
 
 # Frontend Integrations
 
 {% hint style="info" %}
-Looking to enable your users to deposit into syrupUSD through your own app? See [backend-integrations.md](backend-integrations.md "mention")
+Looking to enable your users to deposit into syrupUSDC through your own app? See [backend-integrations.md](backend-integrations.md "mention")
 {% endhint %}
 
 ## Overview
 
-Frontend integration allows wallet providers to request whitelisting for their wallets to connect to the Syrup app. This enables users of your wallet to interact with syrupUSD directly through our interface.
+Frontend integration allows wallet providers to request whitelisting for their wallets to connect to the Syrup app. This enables users of your wallet to interact with syrupUSDC directly through our interface.
 
 ## Requirements
 
@@ -59,16 +59,16 @@ After whitelisting, test the connection flow:
 1. Navigate to [https://app.maple.finance/earn](https://app.maple.finance/earn)
 2. Click "Connect Wallet"
 3. Select your wallet from the list
-4. Verify successful connection and syrupUSD interactions
+4. Verify successful connection and syrupUSDC interactions
 
 ## Post-Integration
 
 Once integrated, your wallet users can:
 
 * Connect to the Syrup app
-* View syrupUSD balances
-* Deposit USDC to mint syrupUSD
-* Redeem syrupUSD for USDC
+* View syrupUSDC balances
+* Deposit USDC to mint syrupUSDC
+* Redeem syrupUSDC for USDC
 * Track their positions and yield
 
 ## FAQ
@@ -101,7 +101,7 @@ Yes, as long as they're listed on Rainbow and support standard connection protoc
 
 <details>
 
-<summary><strong>Do we need to implement any syrupUSD-specific features?</strong></summary>
+<summary><strong>Do we need to implement any syrupUSDC-specific features?</strong></summary>
 
 No, standard ERC-20 token support is sufficient. syrupUSD follows the ERC-20 standard.
 

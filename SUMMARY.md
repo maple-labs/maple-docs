@@ -2,11 +2,12 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSD
+## Integrate SyrupUSDC
 
-* [Get Started](integrate-syrupusd/get-started.md)
-* [Frontend Integrations](integrate-syrupusd/frontend-integrations.md)
-* [Backend Integrations](integrate-syrupusd/backend-integrations.md)
+* [Get Started](integrate-syrupusdc/get-started.md)
+* [Frontend Integrations](integrate-syrupusdc/frontend-integrations.md)
+* [Backend Integrations](integrate-syrupusdc/backend-integrations.md)
+* [syrupUSDC Crosschain](integrate-syrupusdc/syrupusdc-crosschain.md)
 
 ## Maple for Lenders
 
