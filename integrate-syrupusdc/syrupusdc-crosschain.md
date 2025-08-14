@@ -79,7 +79,7 @@ If your integration needs market data for pricing or risk checks, you can access
 
 #### **Data Streams (low latency)**
 
-Streams work on all supported chains above - full list of available chains [here](https://docs.chain.link/data-streams/crypto-streams?page=1\&testnetPage=1)
+Streams work on all supported chains above - full list of available chains [here](https://docs.chain.link/data-streams/crypto-streams?page=1\&testnetPage=1).
 
 {% tabs %}
 {% tab title="SyrupUSDC/USDC" %}
@@ -91,7 +91,7 @@ Stream feed ID: `0x0003e2c8ee282f518aee9efd1e14a5fd51da7a0e3207041f5db1785d0729c
 {% endtab %}
 {% endtabs %}
 
-Use Chainlink's integration documentation to consume them:
+Use Chainlink's Data Streams documentation to consume them:
 
 * [Data Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
 * [Data Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
