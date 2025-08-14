@@ -73,7 +73,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 * Solana (SVM) specifics: Use the SVM Router program (`ccip_send`) and follow the [SVM API docs](https://docs.chain.link/ccip/api-reference/svm/v1.6.0/router?utm_source=chatgpt.com) for building send/receive flows
 * Observability: Track the CCIP message ID from the Router response and correlate with destination events
 
-### Market data
+## Market data
 
 If your integration needs market data for pricing or risk checks, you can access it below.
 
