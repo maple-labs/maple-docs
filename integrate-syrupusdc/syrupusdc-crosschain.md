@@ -98,7 +98,7 @@ Use Chainlink's integration documentation to consume them:
 
 #### **Data Feeds (onchain oracles)**
 
-SyrupUSDC/USDC data feed addresses exist on Base, Arbitrum & Avalanche.&#x20;
+SyrupUSDC/USDC data feed addresses exist on Base & Arbitrum.&#x20;
 
 {% tabs %}
 {% tab title="Base" %}
