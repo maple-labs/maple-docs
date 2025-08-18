@@ -8,6 +8,10 @@
 * [Frontend Integrations](integrate-syrupusdc/frontend-integrations.md)
 * [Backend Integrations](integrate-syrupusdc/backend-integrations.md)
 * [syrupUSDC Crosschain](integrate-syrupusdc/syrupusdc-crosschain.md)
+* [Technical Resources](integrate-syrupusdc/technical-resources/README.md)
+  * [Protocol Overview](technical-resources/protocol-overview/README.md)
+  * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
+  * [SDK](technical-resources/sdk/README.md)
 
 ## Maple for Lenders
 
@@ -164,7 +168,7 @@
   * [Recapitalization Module](technical-resources/syrup/recapitalization-module.md)
   * [Emergency Module](technical-resources/syrup/emergency-module.md)
   * [Deployment and Migration Procedure](technical-resources/syrup/deployment-and-migration-procedure.md)
-* [GraphQL API](technical-resources/graphql-api.md)
+* [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
 * [SDK](technical-resources/sdk/README.md)
   * [Introduction](technical-resources/sdk/introduction.md)
   * [Installation](technical-resources/sdk/installation.md)
