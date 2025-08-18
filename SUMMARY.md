@@ -12,6 +12,7 @@
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
+  * [Collateral & Yield Disclosure](integrate-syrupusdc/technical-resources/collateral-and-yield-disclosure.md)
 
 ## Maple for Lenders
 
