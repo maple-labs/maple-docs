@@ -1,6 +1,6 @@
 ---
 description: >-
-  Enable new wallets to connect to syrupUSDC via the Syrup app. Handle
+  Enable new wallets to connect to syrupUSDC via the Syrup webapp. Handle
   permissions and user interactions. For new wallets.
 ---
 
