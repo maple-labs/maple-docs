@@ -1,8 +1,7 @@
 ---
 description: >-
   syrupUSDC is an ERC-4626 vault that enables you to offer sustainable high
-  yields from fixed-rate, overcollateralized loans to institutional borrowers
-  via Maple's proven lending platform
+  yields from fixed-rate, overcollateralized loans to institutional borrowers.
 ---
 
 # Get Started
