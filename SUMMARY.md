@@ -175,9 +175,9 @@
   * [Protocol Actors](technical-resources/sdk/protocol-actors.md)
   * [Usage Guide](technical-resources/sdk/usage-guide.md)
 
-## Troubleshooting & Support
+## Contact Us
 
-* [Get in touch](troubleshooting-and-support/intercom.md)
+* [Get in touch](contact-us/intercom.md)
 
 ## Maple 1.0
 
