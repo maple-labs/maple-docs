@@ -65,7 +65,7 @@ To access the necessary data, use the GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us via [Telegram](https://t.me/maplefinance) to receive Sepolia `USDC`/`USDT` tokens.
+**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance) to receive Sepolia `USDC`/`USDT` tokens.
 
 ## Deposit
 
@@ -248,7 +248,7 @@ If `isSyrupLender = true`, the user is already authorized in the `Pool Permissio
 
 The Maple Protocol is geared towards institutions and has a permissioning system that requires allowlisting for executing most functions. For pool deposits, in general, lenders need to have their wallet allowlisted in Maple's `Pool Permission Manager`. Aiming to abstract and simplify the process, the `SyrupRouter` integrates directly with the `Pool Permission Manager` to allow for valid users to self-authorize and deposit in a single transaction assuming the user meets eligibility requirements.
 
-To retrieve the authorization signature, contact us via [Telegram](https://t.me/maplefinance).
+To retrieve the authorization signature, contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance).
 
 ### 4. Execute the Deposit
 
@@ -1106,7 +1106,7 @@ Yes, authorization is required for all Syrup deposits. Syrup protocol is built b
 
 **Authorization Process**
 
-1. Contact us via [Telegram](https://t.me/maplefinance) for eligibility verification
+1. Contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance) for eligibility verification
 2. Receive authorization signature parameters
 3. Use `authorizeAndDeposit` or `authorizeAndDepositWithPermit` for first deposit
 4. Subsequent deposits only need `deposit` or `depositWithPermit`
