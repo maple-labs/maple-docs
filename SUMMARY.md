@@ -177,7 +177,7 @@
 
 ## Troubleshooting & Support
 
-* [Intercom](troubleshooting-and-support/intercom.md)
+* [Get in touch](troubleshooting-and-support/intercom.md)
 
 ## Maple 1.0
 
