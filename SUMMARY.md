@@ -177,7 +177,7 @@
 
 ## Contact Us
 
-* [Get in touch](contact-us/intercom.md)
+* [Get in touch](contact-us/get-in-touch.md)
 
 ## Maple 1.0
 
