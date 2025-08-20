@@ -32,31 +32,31 @@ Smart contracts integrating with syrupUSD act as lenders and must interact via `
 
 ### 2. Syrup Addresses (Mainnet)
 
-All ABIs are available in the Maple JS repository: https://github.com/maple-labs/maple-js/tree/main/src/abis
+All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-labs/maple-js/tree/main/src/abis)
 
 #### Syrup USDC
 
-| Contract               | Address                                                                 |
-| ---------------------- | ----------------------------------------------------------------------- |
-| PoolV2                 | https://etherscan.io/address/0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b |
-| SyrupRouter            | https://etherscan.io/address/0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76 |
-| WithdrawalManagerQueue | https://etherscan.io/address/0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3 |
-| USDC                   | https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 |
+| Contract               | Address                                                                                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| PoolV2                 | [0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b](https://etherscan.io/address/0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b) |
+| SyrupRouter            | [0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76](https://etherscan.io/address/0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76) |
+| WithdrawalManagerQueue | [0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3](https://etherscan.io/address/0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3) |
+| USDC                   | [0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48) |
 
 #### Syrup USDT
 
-| Contract               | Address                                                                 |
-| ---------------------- | ----------------------------------------------------------------------- |
-| PoolV2                 | https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D |
-| SyrupRouter            | https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2 |
-| WithdrawalManagerQueue | https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C |
-| USDT                   | https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7 |
+| Contract               | Address                                                                                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| PoolV2                 | [0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D](https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D) |
+| SyrupRouter            | [0xF007476Bb27430795138C511F18F821e8D1e5Ee2](https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2) |
+| WithdrawalManagerQueue | [0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C](https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C) |
+| USDT                   | [0xdAC17F958D2ee523a2206206994597C13D831ec7](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7) |
 
 #### Shared (Global)
 
-| Contract              | Address                                                                 |
-| --------------------- | ----------------------------------------------------------------------- |
-| PoolPermissionManager | https://etherscan.io/address/0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3 |
+| Contract              | Address                                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| PoolPermissionManager | [0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3](https://etherscan.io/address/0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3) |
 
 ### 3. Testing on Sepolia
 
@@ -66,14 +66,14 @@ Sepolia addresses:
 
 - Syrup USDC
 
-  - PoolV2: https://sepolia.etherscan.io/address/0x2d8d21fee98d060655729efd7b14bc432c375ac1
-  - SyrupRouter: https://sepolia.etherscan.io/address/0x5387ab37f93af968920af6c0faa6dbc52973b020
-  - WithdrawalManagerQueue: https://sepolia.etherscan.io/address/0x2ff61035de7a1550219be12a6e9d33aa10b844b6
+  - PoolV2: [0x2d8d21fee98d060655729efd7b14bc432c375ac1](https://sepolia.etherscan.io/address/0x2d8d21fee98d060655729efd7b14bc432c375ac1)
+  - SyrupRouter: [0x5387ab37f93af968920af6c0faa6dbc52973b020](https://sepolia.etherscan.io/address/0x5387ab37f93af968920af6c0faa6dbc52973b020)
+  - WithdrawalManagerQueue: [0x2ff61035de7a1550219be12a6e9d33aa10b844b6](https://sepolia.etherscan.io/address/0x2ff61035de7a1550219be12a6e9d33aa10b844b6)
 
 - Syrup USDT
-  - PoolV2: https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b
-  - SyrupRouter: https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918
-  - WithdrawalManagerQueue: https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3
+  - PoolV2: [0x7679cbe9ae66298114ac6dac73487b63ac023c0b](https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b)
+  - SyrupRouter: [0x0b703919cf2d30dbb18bad6febe8f0ea4f191918](https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918)
+  - WithdrawalManagerQueue: [0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3](https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3)
 
 ---
 
