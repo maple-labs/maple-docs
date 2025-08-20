@@ -12,15 +12,15 @@ description: >-
 
 Deposit:
 
-1. Determine lender authorization (on-chain via PoolPermissionManager)
-2. Retrieve authorization signature (from Maple)
-3. Execute the deposit (authorize-and-deposit or deposit)
+1. [Determine lender authorization](smart-contract-integrations.md#id-1.-determine-lender-authorization-onchain) (onchain via PoolPermissionManager)
+2. [Retrieve authorization signature](smart-contract-integrations.md#id-2.-retrieve-authorization-signature) (from Maple)
+3. [Execute the deposit](smart-contract-integrations.md#id-3.-execute-the-deposit) (authorize-and-deposit or deposit)
 
 Withdraw:
 
-1. Retrieve lender balance (shares)
-2. Calculate shares to redeem (full balance or convertToExitShares for partial)
-3. Execute the withdrawal (requestRedeem)
+1. [Retrieve lender balance](smart-contract-integrations.md#id-1.-retrieve-lenders-balance) (shares)
+2. [Calculate shares to redeem](smart-contract-integrations.md#id-2.-calculate-shares-to-redeem) (full balance or convertToExitShares for partial)
+3. [Execute the withdrawal](smart-contract-integrations.md#id-3.-execute-the-withdrawal) (requestRedeem)
 {% endhint %}
 
 ## Overview
@@ -67,9 +67,9 @@ Contact [partnerships@maple.finance](mailto:partnerships@maple.finance) for test
 
 ## Deposit
 
-### 1. Determine Lender Authorization (on-chain)
+### 1. Determine Lender Authorization (onchain)
 
-Use `PoolPermissionManager` to verify lender authorization for a specific pool. You can derive the manager on-chain from the Pool.
+Use `PoolPermissionManager` to verify lender authorization for a specific pool. You can derive the manager onchain from the Pool.
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```solidity
@@ -99,7 +99,7 @@ Mainnet `PoolPermissionManager` (for reference): `0xBe10aDcE8B6E3E02Db384E7FaDA5
 
 ### 2. Retrieve Authorization Signature
 
-If not authorized, contact `partnerships@maple.finance` to obtain:
+If not authorized, contact [partnerships@maple.finance](mailto:partnerships@maple.finance) to obtain:
 
 * `bitmap`, `deadline`, `v`, `r`, `s`
 * `depositData` (provided by Maple). Conventionally `"0:<integrator-name>"`, encoded as `bytes32`. Keep within 32 bytes when hex-encoded.
