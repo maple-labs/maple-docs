@@ -268,7 +268,7 @@ To retrieve the authorization signature, contact us at [partnerships@maple.finan
 {% hint style="info" %}
 Deposit data
 
-- Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:AcmeProtocol`).
+- Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:acme-protocol`).
 - Maple will provide the final `depositData` for production.
 - Must be passed as `bytes32` (32-byte hex).
   {% endhint %}
@@ -767,7 +767,7 @@ main();
 
 ### 4. Await Withdrawal Completion
 
-Once the transaction is successful and there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. The current status of the withdrawal queue can be retrieved either directly from the `WithdrawalManagerQueue` contract or through the Maple GraphQL API:
+Withdrawals are processed automatically by Maple. If there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. Expected processing time is typically less than 2 days, but it can take up to 30 days depending on available liquidity. The current status of the withdrawal queue can be retrieved either directly from the `WithdrawalManagerQueue` contract or through the Maple GraphQL API:
 
 #### Example query
 
@@ -1176,7 +1176,7 @@ Withdrawals follow a queue-based system:
 
 **Timeline**
 
-- Most withdrawals process within 24 hours
+- Expected processing time is typically less than 2 days
 - During low liquidity periods, it may take up to 30 days
 - No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
 
