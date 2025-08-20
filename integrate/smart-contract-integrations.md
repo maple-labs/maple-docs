@@ -51,11 +51,15 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 {% tab title="Sepolia" %}
 **Syrup USDC**
 
-<table><thead><tr><th width="225.015625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x2d8d21fee98d060655729efd7b14bc432c375ac1">0x2d8d21fee98d060655729efd7b14bc432c375ac1</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x5387ab37f93af968920af6c0faa6dbc52973b020">0x5387ab37f93af968920af6c0faa6dbc52973b020</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x2ff61035de7a1550219be12a6e9d33aa10b844b6">0x2ff61035de7a1550219be12a6e9d33aa10b844b6</a></td></tr></tbody></table>
+<table><thead><tr><th width="225.015625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x2d8D21FeE98d060655729eFD7b14bc432C375aC1">0x2d8D21FeE98d060655729eFD7b14bc432C375aC1</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x5387Ab37f93Af968920af6c0Faa6dbc52973b020">0x5387Ab37f93Af968920af6c0Faa6dbc52973b020</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x2Ff61035dE7A1550219Be12a6e9D33AA10B844B6">0x2Ff61035dE7A1550219Be12a6e9D33AA10B844B6</a></td></tr><tr><td>USDC</td><td><a href="https://sepolia.etherscan.io/address/0xC40E5D31187ae7AFC6238594765DA5873A5bB8ed">0xC40E5D31187ae7AFC6238594765DA5873A5bB8ed</a></td></tr></tbody></table>
 
 **Syrup USDT**
 
-<table><thead><tr><th width="224.62890625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b">0x7679cbe9ae66298114ac6dac73487b63ac023c0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918">0x0b703919cf2d30dbb18bad6febe8f0ea4f191918</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3">0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3</a></td></tr></tbody></table>
+<table><thead><tr><th width="224.62890625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x7679CBe9aE66298114AC6dAC73487B63ac023c0b">0x7679CBe9aE66298114AC6dAC73487B63ac023c0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x0B703919cF2d30DbB18bAD6feBe8F0eA4F191918">0x0B703919cF2d30DbB18bAD6feBe8F0eA4F191918</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0xbBe2Bf30b76729a4eB75bf40ceD47A58000AE1D3">0xbBe2Bf30b76729a4eB75bf40ceD47A58000AE1D3</a></td></tr><tr><td>USDT</td><td><a href="https://sepolia.etherscan.io/address/0x658DAE0F3388892692A213494E1CbB04844Df0A3">0x658DAE0F3388892692A213494E1CbB04844Df0A3</a></td></tr></tbody></table>
+
+**Shared (Global)**
+
+<table><thead><tr><th width="225">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolPermissionManager</td><td><a href="https://sepolia.etherscan.io/address/0xd3BAaf866ccd5AF28b3caA2b4aC92E3FAaC8432B">0xd3BAaf866ccd5AF28b3caA2b4aC92E3FAaC8432B</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
