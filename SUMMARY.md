@@ -2,18 +2,18 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSDC
+## Integrate SyrupUSDC <a href="#integrate" id="integrate"></a>
 
-* [Get Started](integrate-syrupusdc/get-started.md)
-* [Frontend Integrations](integrate-syrupusdc/frontend-integrations.md)
-* [Backend Integrations](integrate-syrupusdc/backend-integrations.md)
-* [Smart Contract Integrations](integrate-syrupusdc/smart-contract-integrations.md)
-* [syrupUSDC Crosschain](integrate-syrupusdc/syrupusdc-crosschain.md)
-* [Technical Resources](integrate-syrupusdc/technical-resources/README.md)
+* [Get Started](integrate/get-started.md)
+* [Frontend Integrations](integrate/frontend-integrations.md)
+* [Backend Integrations](integrate/backend-integrations.md)
+* [Smart Contract Integrations](integrate/smart-contract-integrations.md)
+* [syrupUSDC Crosschain](integrate/syrupusdc-crosschain.md)
+* [Technical Resources](integrate/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
-  * [Collateral & Yield Disclosure](integrate-syrupusdc/technical-resources/collateral-and-yield-disclosure.md)
+  * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
 
 ## Maple for Lenders
 
