@@ -10,17 +10,17 @@ description: >-
 {% hint style="info" %}
 #### Step-by-step
 
-Deposit:
+**Deposit:**
 
-1. [Determine lender authorization](smart-contract-integrations.md#id-1.-determine-lender-authorization-onchain) (onchain via PoolPermissionManager)
-2. [Retrieve authorization signature](smart-contract-integrations.md#id-2.-retrieve-authorization-signature) (from Maple)
-3. [Execute the deposit](smart-contract-integrations.md#id-3.-execute-the-deposit) (authorize-and-deposit or deposit)
+1. [**Determine lender authorization**](smart-contract-integrations.md#id-1.-determine-lender-authorization-onchain) (onchain via PoolPermissionManager)
+2. [**Retrieve authorization signature**](smart-contract-integrations.md#id-2.-retrieve-authorization-signature) (from Maple)
+3. [**Execute the deposit**](smart-contract-integrations.md#id-3.-execute-the-deposit) (authorize-and-deposit or deposit)
 
-Withdraw:
+**Withdraw:**
 
-1. [Retrieve lender balance](smart-contract-integrations.md#id-1.-retrieve-lenders-balance) (shares)
-2. [Calculate shares to redeem](smart-contract-integrations.md#id-2.-calculate-shares-to-redeem) (full balance or convertToExitShares for partial)
-3. [Execute the withdrawal](smart-contract-integrations.md#id-3.-execute-the-withdrawal) (requestRedeem)
+1. [**Retrieve lender balance**](smart-contract-integrations.md#id-1.-retrieve-lenders-balance) (shares)
+2. [**Calculate shares to redeem**](smart-contract-integrations.md#id-2.-calculate-shares-to-redeem) (full balance or convertToExitShares for partial)
+3. [**Execute the withdrawal**](smart-contract-integrations.md#id-3.-execute-the-withdrawal) (requestRedeem)
 {% endhint %}
 
 ## Overview
