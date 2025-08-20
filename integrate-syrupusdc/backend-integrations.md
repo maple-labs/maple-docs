@@ -7,8 +7,7 @@ description: >-
 # Backend Integrations
 
 {% hint style="info" %}
-
-### Step-by-step
+#### Step-by-step
 
 **Deposit**:
 
@@ -23,40 +22,34 @@ description: >-
 2. [**Calculate Shares to Redeem**](backend-integrations.md#id-2.-calculate-shares-to-redeem) from the Pool contract
 3. [**Execute the Withdrawal**](backend-integrations.md#id-3.-execute-the-withdrawal) on the Pool contract
 4. [**Await Withdrawal Completion**](backend-integrations.md#id-4.-await-withdrawal-completion)
-   {% endhint %}
+{% endhint %}
 
 ## SDK and GraphQL API
 
 All necessary ABIs and addresses are available in the Maple SDK or via GitHub:
 
-- [**Maple JS GitHub (ABIs)**](https://github.com/maple-labs/maple-js/tree/main/src/abis)
-- [**Maple JS GitHub (Addresses)**](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
+* [**Maple JS GitHub (ABIs)**](https://github.com/maple-labs/maple-js/tree/main/src/abis)
+* [**Maple JS GitHub (Addresses)**](https://github.com/maple-labs/maple-js/tree/main/src/addresses)
 
 Within the SDK, both ABIs and network-specific addresses are accessible. The package can also be installed and used within applications.
 
 {% tabs %}
 {% tab title="npm" %}
-
 ```sh
 npm install @maplelabs/maple-js
 ```
-
 {% endtab %}
 
 {% tab title="yarn" %}
-
 ```sh
 yarn add @maplelabs/maple-js
 ```
-
 {% endtab %}
 
 {% tab title="pnpm" %}
-
 ```sh
 pnpm add @maplelabs/maple-js
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -107,7 +100,6 @@ Router addresses can also be accessed via the GraphQL API.
 #### Example query
 
 {% code lineNumbers="true" %}
-
 ```gql
 query {
   poolV2S(where: { syrupRouter_not: null }) {
@@ -124,13 +116,11 @@ query {
   }
 }
 ```
-
 {% endcode %}
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
 {% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
-
 ```typescript
 import { gql, GraphQLClient } from "graphql-request";
 
@@ -180,15 +170,14 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 It is important to note that the query uses the `syrupRouter_not` filter to return specifically Syrup pools.
 
 **Response Fields:**
 
-- `poolV2S.id`: The Syrup Pool contract address.
-- `poolV2S.syrupRouter.id`: The `SyrupRouter` contract address.
+* `poolV2S.id`: The Syrup Pool contract address.
+* `poolV2S.syrupRouter.id`: The `SyrupRouter` contract address.
 
 These addresses can then be used to interact with the `SyrupRouter` contract.
 
@@ -199,7 +188,6 @@ Before depositing, check if a user is already authorized by querying the `Accoun
 #### Example Query
 
 {% code lineNumbers="true" %}
-
 ```gql
 query GetMapleAccount($accountId: ID!) {
   account(id: $accountId) {
@@ -207,7 +195,6 @@ query GetMapleAccount($accountId: ID!) {
   }
 }
 ```
-
 {% endcode %}
 
 **NOTE**: The account ID must be provided in lowercase.
@@ -215,7 +202,6 @@ query GetMapleAccount($accountId: ID!) {
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
@@ -252,7 +238,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 If `isSyrupLender = true`, the user is already authorized in the `Pool Permission Manager` and can deposit into Syrup pools. Otherwise, the user must perform authorization before their initial deposit.
@@ -268,10 +253,10 @@ To retrieve the authorization signature, contact us at [partnerships@maple.finan
 {% hint style="info" %}
 Deposit data
 
-- Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:acme-protocol`).
-- Maple will provide the final `depositData` for production.
-- Must be passed as `bytes32` (32-byte hex).
-  {% endhint %}
+* Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:acme-protocol`).
+* Maple will provide the final `depositData` for production.
+* Must be passed as `bytes32` (32-byte hex).
+{% endhint %}
 
 ### 4. Execute the Deposit
 
@@ -286,11 +271,9 @@ Each pool contract inherits the [ERC-4626](https://erc4626.info/) standard, also
 The `deposit` or `depositWithPermit` method can be called directly on `SyrupRouter`.
 
 {% code lineNumbers="true" %}
-
 ```solidity
 function deposit(uint256 assets, bytes32 depositData)
 ```
-
 {% endcode %}
 
 **NOTE**: `depositData` is an optional field that does not need to be provided.
@@ -302,7 +285,6 @@ function deposit(uint256 assets, bytes32 depositData)
 {% tabs %}
 {% tab title="USDC" %}
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils } from '@maplelabs/maple-js';
@@ -328,13 +310,11 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 {% endtab %}
 
 {% tab title="USDT" %}
 {% code lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils, environmentMocks } from '@maplelabs/maple-js';
@@ -361,7 +341,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -369,7 +348,6 @@ main();
 Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
 {% code lineNumbers="true" %}
-
 ```solidity
 function depositWithPermit(
   uint256 amount,
@@ -380,7 +358,6 @@ function depositWithPermit(
   bytes32 depositData_
 )
 ```
-
 {% endcode %}
 
 **NOTE**: `depositWithPermit` is only available for `Syrup USDC`.
@@ -390,7 +367,6 @@ function depositWithPermit(
 #### Code example using Maple SDK
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils, erc20 } from '@maplelabs/maple-js';
@@ -456,7 +432,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 #### `isSyrupLender = false` - User Requires Authorization
@@ -465,7 +440,6 @@ main();
 2. Use the retrieved signature with the `authorizeAndDeposit` or `authorizeAndDepositWithPermit` method on `SyrupRouter`.
 
 {% code lineNumbers="true" %}
-
 ```solidity
 function authorizeAndDeposit(
         uint256 bitmap,
@@ -476,7 +450,6 @@ function authorizeAndDeposit(
         uint256 amount,
         bytes32 depositData)
 ```
-
 {% endcode %}
 
 ![authAndDeposit()](https://github.com/maple-labs/syrup-router/assets/16119563/1c59065b-c1cb-4b55-9ab8-1d04ebb9fe83)
@@ -484,7 +457,6 @@ function authorizeAndDeposit(
 #### Code example using Maple SDK for `USDC` or `USDT`.
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -508,13 +480,11 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
 {% code lineNumbers="true" %}
-
 ```solidity
 function authorizeAndDepositWithPermit(
         uint256 bitmap,
@@ -530,7 +500,6 @@ function authorizeAndDepositWithPermit(
         bytes32 permit_s
     )
 ```
-
 {% endcode %}
 
 **NOTE**: `authorizeAndDepositWithPermit` is only available for `Syrup USDC`.
@@ -540,7 +509,6 @@ function authorizeAndDepositWithPermit(
 #### Code example using Maple SDK
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -568,7 +536,6 @@ const main = async () {
 
 main();
 ```
-
 {% endcode %}
 
 ## Withdraw
@@ -580,7 +547,6 @@ Query the Maple API for the user's pool position data using the `PoolV2Position`
 #### Data model
 
 {% code lineNumbers="true" %}
-
 ```gql
 PoolPositionV2 {
 	availableBalance // The pool position in the pool asset.
@@ -588,13 +554,11 @@ PoolPositionV2 {
 	redeemRequested // A boolean indicating if a redeem request is active.
 }
 ```
-
 {% endcode %}
 
 #### Example query
 
 {% code lineNumbers="true" %}
-
 ```gql
 query GetMapleAccount($accountId: ID!, $poolId: String!) {
 	account(id: $accountId) {
@@ -611,13 +575,11 @@ query GetMapleAccount($accountId: ID!, $poolId: String!) {
   }
 }
 ```
-
 {% endcode %}
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
@@ -679,29 +641,25 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 ### 2. Calculate Shares to Redeem
 
-- Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
-- To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
-- These transactions leverage the `ERC-4626` tokenized vault standard. For more information, see https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/.
+* Withdrawal requests must be expressed in shares. Although the Maple API provides both `availableShares` and `availableBalance`, losses or impairments on the pool may affect the value of assets relative to shares.
+* To ensure accuracy, convert the desired asset amount to "exit shares" using the pool contract's conversion method.
+* These transactions leverage the `ERC-4626` tokenized vault standard. For more information, see https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/.
 
 #### Function signature
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```solidity
 function convertToExitShares(uint256 assets_) external view returns (uint256 shares_);
 ```
-
 {% endcode %}
 
 #### Code example using Maple SDK
 
 {% code lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, providers } from 'ethers';
 import { poolV2 } from '@maplelabs/maple-js';
@@ -720,7 +678,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 ### 3. Execute the Withdrawal
@@ -730,20 +687,17 @@ After calculating `sharesToRedeem` or fetching `availableShares`, call the `requ
 #### Function signature
 
 {% code lineNumbers="true" %}
-
 ```solidity
 function requestRedeem(
 	uint256 shares,   // Shares to redeem (from Step 1 or Step 2)
 	address receiver  // Address to receive the assets
 )
 ```
-
 {% endcode %}
 
 #### Code example using Maple SDK
 
 {% code lineNumbers="true" %}
-
 ```typescript
 import { BigNumber, providers, Wallet } from 'ethers';
 import { poolV2 } from '@maplelabs/maple-js';
@@ -762,7 +716,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 ### 4. Await Withdrawal Completion
@@ -772,7 +725,6 @@ Withdrawals are processed automatically by Maple. If there is sufficient liquidi
 #### Example query
 
 {% code lineNumbers="true" %}
-
 ```gql
 query GetPoolV2Queue($id: ID!) {
   poolV2(id: $id) {
@@ -787,13 +739,11 @@ query GetPoolV2Queue($id: ID!) {
   }
 }
 ```
-
 {% endcode %}
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
 {% code overflow="wrap" lineNumbers="true" %}
-
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
@@ -847,7 +797,6 @@ const main = async () => {
 
 main();
 ```
-
 {% endcode %}
 
 ## Edge Cases
@@ -1126,11 +1075,11 @@ This function is ideal for first-time users who want to deposit USDC without req
 
 There are 5 parameters required for permit signature:
 
-- **`owner`**: The wallet address that owns the tokens and is granting permission (typically the user's address)
-- **`spender`**: The contract address receiving approval (the `SyrupRouter` contract address)
-- **`value`**: The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend
-- **`nonce`**: A unique number preventing replay attacks (obtained by calling `nonces(address)` on the token contract). It increments with each permit signature used
-- **`deadline`**: Unix timestamp when the permit expires
+* **`owner`**: The wallet address that owns the tokens and is granting permission (typically the user's address)
+* **`spender`**: The contract address receiving approval (the `SyrupRouter` contract address)
+* **`value`**: The token amount in smallest units (for USDC: 6 decimals, e.g., 1000000 = 1 USDC) that the spender is allowed to spend
+* **`nonce`**: A unique number preventing replay attacks (obtained by calling `nonces(address)` on the token contract). It increments with each permit signature used
+* **`deadline`**: Unix timestamp when the permit expires
 
 **Example**
 
@@ -1176,9 +1125,9 @@ Withdrawals follow a queue-based system:
 
 **Timeline**
 
-- Expected processing time is typically less than 2 days
-- During low liquidity periods, it may take up to 30 days
-- No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
+* Expected processing time is typically less than 2 days
+* During low liquidity periods, it may take up to 30 days
+* No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
 
 </details>
 
