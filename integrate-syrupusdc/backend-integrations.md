@@ -265,6 +265,14 @@ The Maple Protocol is geared towards institutions and has a permissioning system
 
 To retrieve the authorization signature, contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance).
 
+{% hint style="info" %}
+Deposit data
+
+- Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:AcmeProtocol`).
+- Maple will provide the final `depositData` for production.
+- Must be passed as `bytes32` (32-byte hex).
+  {% endhint %}
+
 ### 4. Execute the Deposit
 
 The first time an asset (e.g., `USDC`, `USDT`) is lent to Syrup, it may be necessary to allow the contract to interact with the asset. This is a common transaction on Ethereum.
@@ -887,7 +895,7 @@ const main = async () => {
     sig.r,
     sig.s,
     amount,
-    utils.formatBytes32String("")
+    utils.formatBytes32String('0:<integrator-name>')
   );
   await authorizeAndDepositReceipt.wait();
 };
@@ -987,7 +995,7 @@ const main = async () => {
 
   const depositReceipt = await syrupRouter.deposit(
     amount,
-    utils.formatBytes32String("")
+    utils.formatBytes32String('0:<integrator-name>')
   );
   await depositReceipt.wait();
 };

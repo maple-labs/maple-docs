@@ -151,7 +151,13 @@ function authorizeAndDeposit(
 }
 ```
 
-`depositData` is provided by Maple. General format is `0:<integrator-name>` encoded to `bytes32`.
+{% hint style="info" %}
+Deposit data
+
+- Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:AcmeProtocol`).
+- Maple will provide the final `depositData` for production.
+- Must be passed as `bytes32` (32-byte hex).
+  {% endhint %}
 
 ---
 
