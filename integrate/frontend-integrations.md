@@ -85,7 +85,7 @@ Syrup is the protocol - the smart contracts that power onchain lending. Maple en
 
 <details>
 
-<summary><strong>How long does the whitelisting process take?</strong></summary>
+<summary>How long does the whitelisting process take?</summary>
 
 Typically 5-10 days after submitting all required information.
 
@@ -93,7 +93,7 @@ Typically 5-10 days after submitting all required information.
 
 <details>
 
-<summary><strong>Can mobile wallets integrate?</strong></summary>
+<summary>Can mobile wallets integrate?</summary>
 
 Yes, as long as they're listed on Rainbow and support standard connection protocols.
 
@@ -101,7 +101,7 @@ Yes, as long as they're listed on Rainbow and support standard connection protoc
 
 <details>
 
-<summary><strong>Do we need to implement any syrupUSDC-specific features?</strong></summary>
+<summary>Do we need to implement any syrupUSDC-specific features?</summary>
 
 No, standard ERC-20 token support is sufficient. syrupUSD follows the ERC-20 standard.
 
