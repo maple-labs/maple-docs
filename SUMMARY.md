@@ -7,6 +7,7 @@
 * [Get Started](integrate-syrupusdc/get-started.md)
 * [Frontend Integrations](integrate-syrupusdc/frontend-integrations.md)
 * [Backend Integrations](integrate-syrupusdc/backend-integrations.md)
+* [Smart Contract Integrations](integrate-syrupusdc/smart-contract-integrations.md)
 * [syrupUSDC Crosschain](integrate-syrupusdc/syrupusdc-crosschain.md)
 * [Technical Resources](integrate-syrupusdc/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
