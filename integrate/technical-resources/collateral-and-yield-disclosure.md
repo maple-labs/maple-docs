@@ -4,7 +4,7 @@ All the data shown in the [Maple Open Access Details](https://app.maple.finance/
 
 ## Get Details Data Programmatically&#x20;
 
-Query the [Maple GraphQL API](https://api.maple.finance/v2/graphql) for a detailed breakdown of AUM, APY, loans & collateral:
+Query the [Maple GraphQL API](https://api.maple.finance/v2/graphql) for a detailed breakdown of AUM, APY, loans and collateral:
 
 ```graphql
 {
