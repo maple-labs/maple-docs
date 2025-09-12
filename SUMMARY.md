@@ -55,6 +55,7 @@
 ## Maple for Token Holders
 
 * [Introduction to SYRUP](maple-for-token-holders/mpl-token/README.md)
+  * [Exchanges](maple-for-token-holders/mpl-token/exchanges.md)
   * [MPL to SYRUP Conversion](maple-for-token-holders/mpl-token/mpl-token-migration.md)
   * [FAQs](maple-for-token-holders/mpl-token/faqs.md)
 * [SYRUP Tokenomics](maple-for-token-holders/syrup-tokenomics/README.md)
