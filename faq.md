@@ -8,7 +8,7 @@ syrupUSDC has scaled rapidly since launch and is a trusted source of real, susta
 
 ### What is the APY?
 
-syrupUSDC's base APY can vary and recently has been around 6.3%. This indicates consistent yield outperformance compared to other leading DeFi lending protocols. Yield generation is enhanced through liquid and native staking, with full transparency provided to lenders.
+syrupUSDC's base APY can vary and recently has been around 7%. This indicates consistent yield outperformance compared to other leading DeFi lending protocols. Yield generation is enhanced through liquid and native staking, with full transparency provided to lenders.
 
 ### How are the loans protected?
 
