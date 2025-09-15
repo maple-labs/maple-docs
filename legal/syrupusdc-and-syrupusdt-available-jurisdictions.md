@@ -2,7 +2,13 @@
 
 ### Are syrupUSDC and syrupUSDT available everywhere?
 
-No, syrupUSDC and syrupUSDT are not available in all jurisdictions. Please find all the jurisdictions where [syrupUSDC](https://app.maple.finance/lend) and syrupUSDT are not available below:
+No, syrupUSDC and syrupUSDT are not available to:
+
+1. Individuals who are residents, citizens, or tax residents of any restricted jurisdiction
+2. Entities incorporated, organized, or having their principal place of business in any restricted jurisdiction
+3. Any person accessing the protocol from within a restricted jurisdiction.&#x20;
+
+The following are considered restricted jurisdictions:&#x20;
 
 * Abkhazia
 * Afghanistan
