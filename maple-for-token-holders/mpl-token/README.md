@@ -6,8 +6,8 @@
 
 At the core of Maple is the **SYRUP token**, which aligns stakeholders, drives governance, and incentivizes participation. SYRUP is the governance token of the Maple ecosystem and powers two complementary but distinct product lines:
 
-1. **Maple Institutional**: Connecting institutional capital to high-quality digital asset lending opportunities.
-2. **Syrup.fi**: A permissionless DeFi protocol democratizing access to institutional-grade yield.
+1. **Maple Permissioned (Institutional)**: Connecting institutional capital to high-quality digital asset lending opportunities.
+2. **Maple Open Access:** A permissionless DeFi protocol democratizing access to institutional-grade yield.
 
 SYRUP empowers participants to shape Maple’s future while directly benefiting from its success. It captures value, incentivizes participation, and ensures that growth is shared across the entire ecosystem.&#x20;
 
@@ -21,7 +21,7 @@ For more information, explore official Maple resources and trusted third-party d
 
 [maple.finance](http://maple.finance/)
 
-[syrup.fi](http://syrup.fi/)
+[https://app.maple.finance/earn](https://app.maple.finance/earn)
 
 [CoinMarketCap](https://coinmarketcap.com/currencies/maple-finance/)
 

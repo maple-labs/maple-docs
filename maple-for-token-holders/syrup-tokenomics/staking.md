@@ -6,7 +6,7 @@ Staking rewards represent token distributions to reward stakers for securing the
 
 Technically, stSYRUP is a smart contract that represents a token that distributes rewards to its holders. Users that hold SYRUP can stake it in order to receive stSYRUP, and receive their portion of rewards that are distributed in SYRUP tokens.
 
-In the first 90 days post token launch November 13th 2024, 5,000,000 SYRUP is being distributed to stakers. The current staking rate is visible on [syrup.fi/stake](https://syrup.fi/stake)&#x20;
+In the first 90 days post token launch November 13th 2024, 5,000,000 SYRUP is being distributed to stakers. The current staking rate is visible on [https://app.maple.finance/earn/stake](https://app.maple.finance/earn/stake).&#x20;
 
 SYRUP tokens are distributed linearly throughout the 90-day period, incentivizing token holders to stake as soon as they can and for the duration of the program.
 
