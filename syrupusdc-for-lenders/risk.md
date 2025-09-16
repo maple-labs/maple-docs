@@ -1,6 +1,6 @@
 # Withdrawals
 
-To request a withdrawal in syrupUSDC or syrupUSDT, head to the[ Portfolio](https://app.maple.finance/earn/portfolio) page. Any deposits that were not committed or have been committed and matured are eligible to request a withdrawal. Once you locate your available balance, select the Withdraw button to the right. Input the amount you would like to withdraw, review the request, and approve the transaction.&#x20;
+To request a withdrawal in syrupUSDC or syrupUSDT, head to the[ Portfolio](https://app.maple.finance/earn/portfolio) page. Once you locate your available balance, select the Withdraw button to the right. Input the amount you would like to withdraw, review the request, and approve the transaction.&#x20;
 
 Your withdrawal will be added to the syrupUSDC or syrupUSDT withdrawal queues and continue to earn interest until processed.
 

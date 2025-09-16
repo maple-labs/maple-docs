@@ -11,7 +11,7 @@ We’re excited to present our integration with [Pendle](https://app.pendle.fina
      * **Drips Rewards** earned from your activity are displayed and claimable within [app.maple.finance/earn](https://app.maple.finance/earn).
 2. **Drips Allocation**
    * syrupUSDC checks Pendle rewards and ensures users’ earned Drips are up-to-date and accurate.
-   * Drips are allocated based on activity in Pendle. Pendle deposits automatically earn a 3x Drips boost, equivalent to a 6-month commitment.
+   * Drips are allocated based on activity in Pendle. Pendle deposits automatically earn a 5x Drips boost.
    * If you’d like to dive deeper into Pendle's features and how they work, check out their official documentation [here](https://docs.pendle.finance/home?utm_source=landing\&utm_medium=landing) or contact their team for further assistance.
 
 ### Notes for Users

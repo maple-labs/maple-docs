@@ -29,8 +29,6 @@
 * [Powered by Maple](syrupusdc-for-lenders/introduction.md)
 * [Lending in syrupUSDC and syrupUSDT](syrupusdc-for-lenders/lending.md)
 * [Drips Rewards](syrupusdc-for-lenders/drips-rewards.md)
-* [Commitments](syrupusdc-for-lenders/defaults-and-impairments.md)
-* [Drips Rewards](syrupusdc-for-lenders/defaults-and-impairments-1.md)
 * [Withdrawals](syrupusdc-for-lenders/risk.md)
 * [Monthly Updates](syrupusdc-for-lenders/withdrawal-process.md)
 * [Pendle Integration](syrupusdc-for-lenders/pendle-integration.md)

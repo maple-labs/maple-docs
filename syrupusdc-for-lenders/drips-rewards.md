@@ -2,17 +2,11 @@
 
 **Drip Rewards Overview**
 
-The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi.  Drips facilitate an innovative rewards program that enables users to earn SYRUP by creating rewards for participation and long-term commitment.\
+The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi.  Drips facilitate an innovative rewards program that enables users to earn SYRUP by creating rewards for participation.\
 \
 Please note that drips are only available on Ethereum.&#x20;
 
-Each earning period for earning rewards is known as a Season, each lasting one quarter. Users accumulate Drips on a 4H, with the base rate established as 1 Drip per 1 USDC per day. Users can then perform actions that will increase this base rate, such as depositing into syrupUSDC using one of our wallet integration partners or leveraging syrupUSDC throughout DeFi. These small actions translate directly into boosted rewards for users.
-
-In addition to these incentives and enhancements, depositors can also boost their Drip rewards by taking a more substantial stake in the Maple ecosystem:
-
-* A 3-month capital commitment to holding syrupUSDC will earn a 1.5x multiplier on the user’s base rate.
-* A 6-month capital commitment would ensure a 3x multiplier on the user’s base rate.
-* These Boosts are designed to reward substantial actions that support the long term growth of syrupUSDC. Boosts can also be compounded by participating in more than one incentivized activity.
+Each earning period for earning rewards is known as a Season, each lasting one quarter. Users accumulate Drips every 4h, with the rate established as 1 Drip per 1 USDC/USDT per day. Users can then perform actions that will increase this base rate, such as depositing into syrupUSDC & syrupUSDT using one of our wallet integration partners or using syrupUSDC & syrupUSDT throughout DeFi. These actions translate directly into boosted rewards for users.
 
 #### Drips Claiming <a href="#drips-claiming" id="drips-claiming"></a>
 
@@ -22,9 +16,9 @@ The Drips campaign was launched as a way to incentivize early users to join and 
 
 All syrupUSDC minters qualify for Drips and can see their current Drips allocation, broken down per season, on [https://app.maple.finance/earn/drips](https://app.maple.finance/earn/drips). This also includes Pendle, Morpho and OKX users.
 
-Each new claim window opens on the 18th at 12pm UTC and closes on the 18th of the following month at 3am UTC.&#x20;
+Each new claim window opens on the 18th at 12pm UTC the month after a season ends and closes on the 18th of the following month at 3am UTC.&#x20;
 
-**$SYRUP token rewards unlock in full**. Unlocks are always at 12pm UTC. Once the tokens are unlocked, they will be instantly claimable without any vesting, including for everyone who has committed their deposits.&#x20;
+**$SYRUP token rewards unlock in full**. Unlocks are always at 12pm UTC. Once the tokens are unlocked, they will be instantly claimable without any vesting.
 
 **Please note that the tokens are only claimable for one month after the claim starts.**  Unclaimed tokens are returned to the treasury.
 
@@ -46,7 +40,7 @@ All syrupUSDC holders on Ethereum that minted it through [https://app.maple.fina
 
 #### 3. **When can I start claiming my $SYRUP tokens?**
 
-Claim dates vary by season. Refer to the table above for your specific claim dates.
+Each new claim window opens on the 18th at 12pm UTC the month after a season ends and closes on the 18th of the following month at 3am UTC. Refer to the table above for precise dates.
 
 #### 4. **What happens if I don’t claim my tokens in time?**
 
@@ -64,7 +58,11 @@ Yes,  $SYRUP tokens can be staked upon claiming them.&#x20;
 
 The only claim link is [https://app.maple.finance/earn/drips](https://app.maple.finance/earn/drips).&#x20;
 
-#### 8. **Where can I ask questions or stay updated?**
+#### 8. **Can I still commit my balance for 3 or 6 months?**
 
-Join our Telegram group at https://t.me/maplefinance for questions and updates.
+Commitments have been discontinued at the end of Season 11 (Sep 2025). If you have an existing commitment, you'll continue earning boosted drips until the commitment period is over. You can also earn boosted Drips by using syrupUSDC & syrupUSDT throughout DeFi.
+
+#### 9. **Where can I ask questions or stay updated?**
+
+Join our Telegram group at [https://t.me/maplefinance](https://t.me/maplefinance) for questions and updates.
 
