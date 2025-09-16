@@ -60,7 +60,7 @@ The only claim link is [https://app.maple.finance/earn/drips](https://app.maple.
 
 #### 8. **Can I still commit my balance for 3 or 6 months?**
 
-Commitments have been discontinued at the end of Season 11 (Sep 2025). If you have an existing commitment, you'll continue earning boosted drips until the commitment period is over. You can also earn boosted Drips by using syrupUSDC & syrupUSDT throughout DeFi.
+Commitments have been discontinued at the end of Season 11 (Sep 2025). If you have an existing commitment, you'll continue earning boosted Drips until the commitment period is over. You can also earn boosted Drips by using syrupUSDC & syrupUSDT throughout DeFi.
 
 #### 9. **Where can I ask questions or stay updated?**
 
