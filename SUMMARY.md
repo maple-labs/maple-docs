@@ -2,7 +2,7 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSDC <a href="#integrate" id="integrate"></a>
+## Integrate SyrupUSD <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
 * [Frontend Integrations](integrate/frontend-integrations.md)
