@@ -10,7 +10,7 @@ description: >-
 {% hint style="info" %}
 **⚡️ Speed Up Your Integration**
 
-Add the [Maple Docs MCP server](https://docs.maple.finance/~gitbook/mcp) to your IDE for faster, context-aware development.                             &#x20;
+Add the Maple Docs MCP server to your IDE for faster, context-aware development.                             &#x20;
 
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=maple-docs\&config=eyJjb21tYW5kIjoibnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZ2l0Ym9vayBodHRwczovL2RvY3MubWFwbGUuZmluYW5jZSJ9) [![](../.gitbook/assets/vscode-new.svg)](vscode:mcp/install?%7B%22name%22%3A%22maple-docs%22%2C%22gallery%22%3Afalse%2C%22uri%22%3A%22https%3A%2F%2Fdocs.maple.finance%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-gitbook%22%2C%22https%3A%2F%2Fdocs.maple.finance%22%5D%7D)
 {% endhint %}
