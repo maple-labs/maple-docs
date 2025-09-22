@@ -4,9 +4,7 @@ Use the Maple Docs MCP server to access the full protocol & integration context 
 
 ## What does the Maple Docs MCP Server do?
 
-It connects Maple Docs to tools like Cursor, Claude Code, and more. Access protocol and integration context and get your AI agents to help you with the syrupUSD integration.
-
-Let us know how you and your agents use the Maple Docs MCP to power your workflows! If you have questions, feedback, reach out at [support@maple.finance](mailto:support@maple.finance)
+It connects Maple Docs to tools like Cursor, Claude Code, and any other MCP-enabled software, enabling your AI agents to help with the syrupUSD integration and protocol questions. If you have problems, questions or feedback, please reach out to us via the Intercom chat on the bottom right hand side of the screen.
 
 ## Setup Instructions
 
