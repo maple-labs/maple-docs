@@ -14,6 +14,7 @@
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
+  * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
 
 ## Maple for Lenders
 
