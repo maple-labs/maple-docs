@@ -53,6 +53,16 @@ The Maple & Syrup protocol contracts went through 2 audits during its developmen
 | Three Sigma | [`2024-12-10 - Three Sigma Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/Three-Sigma-Maple-Finance-Dec-2024%20.pdf) |
 | 0xMacro     | [`2024-12-20 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2024-december/0xMacro-Maple-Finance-Dec-2024.pdf)         |
 
+### September 2025 Release
+
+This release is for the Governor Timelock Contract upgrade. The Maple protocol contracts went through 2 audits during its development for the September 2025 release. Details of these audits can be found below, and all relevant issues identified by auditors were addressed prior to release.
+
+| Auditor     | Report Link                                                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sherlock    | [`2025-09-10 - Sherlock Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-sept-governor-timelock/Sherlock-Maple-Finance-timelock-Sept-2025.pdf)         |
+| 0xMacro     | [`2025-09-18 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-sept-governor-timelock/0xMacro-Maple-Finance-timelock-Sept-2025.pdf)         |
+
+
 
 
 ## Bug Bounty
