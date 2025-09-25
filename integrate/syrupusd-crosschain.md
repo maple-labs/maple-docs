@@ -12,7 +12,7 @@ If you run a bridge, wallet, or aggregator UI, use the **token** and **router** 
 
 If your protocol needs to bake in crosschain syrupUSDC transfers, implement CCIP send/receive flows in your smart contracts and interact with the Router on the source chain, please contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance).
 
-## syrupUSDC Mainnet: supported networks & addresses
+## syrupUSDC Mainnet: networks & addresses
 
 {% tabs %}
 {% tab title="Solana" %}
@@ -32,7 +32,7 @@ If your protocol needs to bake in crosschain syrupUSDC transfers, implement CCIP
 {% endtab %}
 {% endtabs %}
 
-## syrupUSDC Testnet: supported networks & addresses
+## syrupUSDC Testnet: networks & addresses
 
 CCIP provides two ERC-20 test tokens, so you don’t depend on third-party liquidity while testing:
 
@@ -59,7 +59,7 @@ Not deployed on Testnet
 
 Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](https://docs.chain.link/ccip/test-tokens).
 
-## syrupUSDT Mainnet: supported networks & addresses
+## syrupUSDT Mainnet: networks & addresses
 
 {% tabs %}
 {% tab title="Plasma" %}
