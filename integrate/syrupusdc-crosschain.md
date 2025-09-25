@@ -1,6 +1,6 @@
-# syrupUSDC Crosschain
+# syrupUSD Crosschain
 
-syrupUSDC uses Chainlink Crosschain Interoperability Protocol (CCIP) to facilitate minting, holding & redeeming on chains other than Ethereum mainnet. CCIP handles secure crosschain token movement and message delivery, so you don’t need to build a custom bridge.
+syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) to facilitate minting, holding & redeeming on chains other than Ethereum mainnet. CCIP handles secure crosschain token movement and message delivery, so you don’t need to build a custom bridge.
 
 ## Integration paths
 
@@ -12,7 +12,7 @@ If you run a bridge, wallet, or aggregator UI, use the **token** and **router** 
 
 If your protocol needs to bake in crosschain syrupUSDC transfers, implement CCIP send/receive flows in your smart contracts and interact with the Router on the source chain, please contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance).
 
-## Mainnet Supported networks & addresses
+## syrupUSDC Mainnet: supported networks & addresses
 
 {% tabs %}
 {% tab title="Solana" %}
@@ -32,7 +32,7 @@ If your protocol needs to bake in crosschain syrupUSDC transfers, implement CCIP
 {% endtab %}
 {% endtabs %}
 
-## Testnet Supported networks & addresses
+## syrupUSDC Testnet: supported networks & addresses
 
 CCIP provides two ERC-20 test tokens, so you don’t depend on third-party liquidity while testing:
 
@@ -59,12 +59,20 @@ Not deployed on Testnet
 
 Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](https://docs.chain.link/ccip/test-tokens).
 
+## syrupUSDT Mainnet: supported networks & addresses
+
+{% tabs %}
+{% tab title="Plasma" %}
+<table><thead><tr><th width="149.881103515625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token Address</td><td><code>0xC4374775489CB9C56003BF2C9b12495fC64F0771</code></td></tr><tr><td>Router Address</td><td></td></tr><tr><td>Pool Address</td><td><code>0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</code></td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
+
 ## High-level flow
 
 1. User picks source & destination chains in your UI or protocol flow
-2. Approve syrupUSDC to the CCIP Router on the source chain (standard ERC-20 approval; Solana uses SPL program approvals)
+2. Approve syrupUSDC / syrupUSDT to the CCIP Router on the source chain (standard ERC-20 approval; Solana uses SPL program approvals)
 3. Initiate CCIP transfer via the Router with destination chain selector, recipient, and amount
-4. CCIP finalizes on destination chain and releases/mints syrupUSDC to the recipient
+4. CCIP finalizes on destination chain and releases/mints syrupUSDC / syrupUSDT to the recipient
 
 ## Implementation notes
 
@@ -75,42 +83,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 
 ## Market data
 
-If your integration needs market data for pricing or risk checks, you can access it below.
 
-#### **Data Streams (low latency)**
-
-Streams work on all supported chains above - full list of available chains [here](https://docs.chain.link/data-streams/crypto-streams?page=1\&testnetPage=1).
-
-{% tabs %}
-{% tab title="SyrupUSDC/USDC" %}
-Stream feed ID: `0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9`
-{% endtab %}
-
-{% tab title="SYRUP/USD" %}
-Stream feed ID: `0x0003e2c8ee282f518aee9efd1e14a5fd51da7a0e3207041f5db1785d0729cd1d`
-{% endtab %}
-{% endtabs %}
-
-Use Chainlink's Data Streams docs to consume them:
-
-* [Data Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
-* [Data Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
-
-#### **Data Feeds (onchain oracles)**
-
-SyrupUSDC/USDC data feed addresses exist on Base & Arbitrum.&#x20;
-
-{% tabs %}
-{% tab title="Base" %}
-`0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2`
-{% endtab %}
-
-{% tab title="Arbitrum" %}
-`0xF8722c901675C4F2F7824E256B8A6477b2c105FB`
-{% endtab %}
-{% endtabs %}
-
-Use [Chainlink's Data Feeds docs](https://docs.chain.link/data-feeds/getting-started) to consume them.
 
 ## Resources & Contact
 
@@ -118,5 +91,6 @@ Use [Chainlink's Data Feeds docs](https://docs.chain.link/data-feeds/getting-sta
 * [CCIP docs](https://docs.chain.link/ccip)
 * [CCIP Directory (mainnet)](https://docs.chain.link/ccip/directory/mainnet)
 * [Token page (syrupUSDC)](https://docs.chain.link/ccip/directory/mainnet/token/syrupUSDC)
+* [Token page (syrupUSDT)](https://docs.chain.link/ccip/directory/mainnet/token/syrupUSDT)
 * [Integration Support](https://chain.link/ccip-contact)
 

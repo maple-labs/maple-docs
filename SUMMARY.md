@@ -8,13 +8,14 @@
 * [Frontend Integrations](integrate/frontend-integrations.md)
 * [Backend Integrations](integrate/backend-integrations.md)
 * [Smart Contract Integrations](integrate/smart-contract-integrations.md)
-* [syrupUSDC Crosschain](integrate/syrupusdc-crosschain.md)
+* [syrupUSD Crosschain](integrate/syrupusdc-crosschain.md)
 * [Technical Resources](integrate/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
+  * [Market Data Streams & Feeds](integrate/technical-resources/market-data-streams-and-feeds.md)
 
 ## Maple for Lenders
 
