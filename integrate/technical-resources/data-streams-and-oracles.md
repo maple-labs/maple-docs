@@ -1,4 +1,4 @@
-# Market Data Streams & Feeds
+# Data Streams & Oracles
 
 If your integration needs market data for pricing or risk checks, you can access it below.
 
@@ -21,9 +21,9 @@ Use Chainlink's Data Streams docs to consume them:
 * [Data Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
 * [Data Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
 
-## **Data Feeds (onchain oracles)**
+## &#x20;**Onchain Oracles**
 
-SyrupUSDC/USDC data feed addresses exist on Base & Arbitrum.&#x20;
+### SyrupUSDC/USDC
 
 {% tabs %}
 {% tab title="Base" %}
@@ -35,4 +35,15 @@ SyrupUSDC/USDC data feed addresses exist on Base & Arbitrum.&#x20;
 {% endtab %}
 {% endtabs %}
 
+### SyrupUSDT/USDT
+
+{% tabs %}
+{% tab title="Plasma" %}
+`0x89a0e204591Fce2611e89CA7634c12B400d347fe`
+{% endtab %}
+{% endtabs %}
+
+
+
 Use [Chainlink's Data Feeds docs](https://docs.chain.link/data-feeds/getting-started) to consume them.
+

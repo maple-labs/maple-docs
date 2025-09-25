@@ -15,7 +15,7 @@
   * [SDK](technical-resources/sdk/README.md)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
-  * [Market Data Streams & Feeds](integrate/technical-resources/market-data-streams-and-feeds.md)
+  * [Data Streams & Oracles](integrate/technical-resources/data-streams-and-oracles.md)
 
 ## Maple for Lenders
 

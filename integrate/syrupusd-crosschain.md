@@ -80,7 +80,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 * Chain selectors & fees: Pull chain selectors and fee token options from the [CCIP directory](https://docs.chain.link/ccip/directory/mainnet); keep them in config
 * Solana (SVM) specifics: Use the SVM Router program (`ccip_send`) and follow the [SVM API docs](https://docs.chain.link/ccip/api-reference/svm/v1.6.0/router?utm_source=chatgpt.com) for building send/receive flows
 * Observability: Track the CCIP message ID from the Router response and correlate with destination events
-* If you require market data streams or feeds, please see [market-data-streams-and-feeds.md](technical-resources/market-data-streams-and-feeds.md "mention")
+* If you require market data streams or feeds, please see [data-streams-and-oracles.md](technical-resources/data-streams-and-oracles.md "mention")
 
 ## Resources & Contact
 
