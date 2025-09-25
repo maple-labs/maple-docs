@@ -63,7 +63,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 
 {% tabs %}
 {% tab title="Plasma" %}
-<table><thead><tr><th width="149.881103515625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token Address</td><td><code>0xC4374775489CB9C56003BF2C9b12495fC64F0771</code></td></tr><tr><td>Router Address</td><td></td></tr><tr><td>Pool Address</td><td><code>0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</code></td></tr></tbody></table>
+<table><thead><tr><th width="149.881103515625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token Address</td><td><code>0xC4374775489CB9C56003BF2C9b12495fC64F0771</code></td></tr><tr><td>Router Address</td><td><code>0xcDca5D374e46A6DDDab50bD2D9acB8c796eC35C3</code></td></tr><tr><td>Pool Address</td><td><code>0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</code></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
