@@ -2,7 +2,7 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSD <a href="#integrate" id="integrate"></a>
+## MapleKit: Integrate SyrupUSD <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
 * [Frontend Integrations](integrate/frontend-integrations.md)
