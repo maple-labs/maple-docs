@@ -21,8 +21,7 @@
 
 * [Introduction](maple-for-lenders/introduction.md)
 * [Lending](maple-for-lenders/lending.md)
-* [Defaults and Impairments](maple-for-lenders/defaults-and-impairments/README.md)
-  * [Maple Loan Default & Impairment Procedure](maple-for-lenders/defaults-and-impairments/maple-loan-default-and-impairment-procedure.md)
+* [Defaults and Impairments](maple-for-lenders/defaults-and-impairments.md)
 * [Margin Calls and Liquidations](maple-for-lenders/defaults-and-impairments-1.md)
 * [Risk](maple-for-lenders/risk.md)
 * [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
