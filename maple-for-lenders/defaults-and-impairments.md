@@ -18,3 +18,8 @@ When a loan is impaired, its value is temporarily reduced. This allows lenders w
 If a lender decides to proceed with withdrawing their funds while the impairment is active, they will have a permanent impairment loss of the difference in value and will be unable to claim any returned capital in the event that there is restitution. Any future recoveries will be pro-rated to those lenders that remained in the pool.
 
 If a new lender decided to deposit into the pool during an impairment, their lending balance will be affected by the impairment. If an impairment is able to be repaid in full, these depositors will be made whole, but will not have any claim to any forfeited recoveries by those who withdrew when the impairment was active.
+
+[Procedure for handling impairments and defaults](https://downloads.eth.maple.finance/docs/Maple_Loan_Default_%26_Impairment_Procedure.pdf)
+
+
+
