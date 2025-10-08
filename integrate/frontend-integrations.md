@@ -1,7 +1,7 @@
 ---
 description: >-
-  Enable new wallets to connect to syrupUSDC via the Syrup webapp. Handle
-  permissions and user interactions. For new wallets.
+  Enable new wallets to deposit into syrupUSDC & syrupUSDT via the Maple webapp.
+  Handle permissions and user interactions.
 ---
 
 # Frontend Integrations

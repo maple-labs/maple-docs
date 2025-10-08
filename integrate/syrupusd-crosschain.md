@@ -1,4 +1,11 @@
-# syrupUSD Crosschain
+---
+description: >-
+  Access syrupUSDC & syrupUSDT across multiple blockchains using CCIP. Find
+  contract addresses, oracles, and bridge contracts for Solana, Plasma,
+  Arbitrum, Base etc.
+---
+
+# Crosschain
 
 syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) to facilitate minting, holding & redeeming on chains other than Ethereum mainnet. CCIP handles secure crosschain token movement and message delivery, so you don’t need to build a custom bridge.
 
