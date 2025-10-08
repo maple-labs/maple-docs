@@ -1,14 +1,14 @@
 ---
 description: >-
-  Integrate syrupUSD (syrupUSDC / syrupUSDT) via smart contracts. Lenders (your
-  smart contracts) must deposit through SyrupRouter with authorization handled
-  by PoolPermissionManager.
+  Integrate syrupUSDC & syrupUSDT via smart contracts. Lenders (your smart
+  contracts) must deposit through SyrupRouter with authorization handled by
+  PoolPermissionManager.
 ---
 
 # Smart Contract Integrations
 
 {% hint style="info" %}
-#### Step-by-step
+**Step-by-step**
 
 **Deposit:**
 
@@ -27,7 +27,7 @@ description: >-
 
 ### 1. Syrup Protocol Overview
 
-Smart contracts integrating with syrupUSD act as lenders and must interact via `SyrupRouter`. Authorization is enforced by `PoolPermissionManager`. First-time deposits require an authorization signature; subsequent deposits can call `deposit` directly once authorized.
+Smart contracts integrating with syrupUSDC & syrupUSDT act as lenders and must interact via `SyrupRouter`. Authorization is enforced by `PoolPermissionManager`. First-time deposits require an authorization signature; subsequent deposits can call `deposit` directly once authorized.
 
 ### 2. Syrup Addresses
 
@@ -106,7 +106,7 @@ Mainnet `PoolPermissionManager` (for reference): `0xBe10aDcE8B6E3E02Db384E7FaDA5
 If not authorized, contact [partnerships@maple.finance](mailto:partnerships@maple.finance) to obtain:
 
 * `bitmap`, `deadline`, `v`, `r`, `s`
-* `depositData` (provided by Maple). Conventionally `"0:<integrator-name>"`, encoded as `bytes32`. Keep within 32 bytes when hex-encoded.
+* `depositData` - conventionally `"0:<integrator-name>"`, encoded as `bytes32`. Keep within 32 bytes when hex-encoded.
 
 ### 3. Execute the Deposit
 

@@ -1,7 +1,8 @@
 ---
 description: >-
-  Enable your users to deposit into syrupUSD through your own app. Manage
-  deposits programmatically. For wallets, exchanges, custody solutions etc.
+  Enable your users to deposit into syrupUSDC & syrupUSDT through your own app.
+  Manage deposits programmatically. For wallets, exchanges, custody solutions
+  etc.
 ---
 
 # Backend Integrations
@@ -1133,9 +1134,9 @@ Withdrawals follow a queue-based system:
 
 <details>
 
-<summary>How can I get the APY data for syrupUSD?</summary>
+<summary>How can I get the APY data for syrupUSDC or syrupUSDT?</summary>
 
-Querying the GraphQL API is the simplest way to get APY data for syrupUSD into your app.
+Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or syrupUSDT into your app.
 
 **Example request**
 
