@@ -1185,7 +1185,9 @@ In the example above, the monthly base APY is 6.72% with the Drips rewards addin
 
 <details>
 
-<summary>How can I get the spot exchange rate of syrupUSDC or syrupUSDT?</summary>
+<summary>How can I get the price received on redemption for syrupUSDC or syrupUSDT?</summary>
+
+syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.&#x20;
 
 You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the GraphQL API.
 
