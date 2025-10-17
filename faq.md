@@ -54,3 +54,65 @@ Maple and syrupUSDC have a track record of yield outperformance compared to lead
 
 Further, when there is lower borrower demand, and market rates fall, Maple issues shorter term loans, setting up flexibility to re-issue loans at higher rates when market conditions change. When rates are elevated, the team issues loans with longer time frames to lock in the higher yield environment.‍
 
+### What price do I receive on redemption for syrupUSDC/syrupUSDT?
+
+syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.
+
+<details>
+
+<summary>Getting the spot exchange rate for syrupUSDC/syrupUSDT</summary>
+
+You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet).
+
+**Example request**
+
+```
+{
+  account(id: "0xyourwallet") {
+    poolV2Positions {
+      pool {
+        asset {
+          symbol
+          decimals
+        }
+        id
+        name
+      }
+      lendingBalance
+      totalShares
+    }
+  }
+}
+```
+
+**This returns**
+
+```
+{
+  "data": {
+    "account": {
+      "poolV2Positions": [
+        {
+          "pool": {
+            "asset": {
+              "symbol": "USDC",
+              "decimals": 6
+            },
+            "id": "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+            "name": "Syrup USDC"
+          },
+          "lendingBalance": "3102053352414",
+          "totalShares": "2742550894631"
+        }
+      ]
+    }
+  }
+}
+```
+
+The ratio of `lendingBalance` / `totalShares` is the spot exchange rate.
+
+</details>
+
+
+
