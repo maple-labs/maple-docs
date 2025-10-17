@@ -234,24 +234,160 @@ Authorization and routing are enforced via \`SyrupRouter\` and \`PoolPermissionM
 
 <details>
 
-<summary>How long do withdrawals take?</summary>
-
-Withdrawals are serviced by Maple’s automation. Expected processing time is less than 2 days, but it can take up to 30 days depending on available liquidity.
-
-</details>
-
-<details>
-
 <summary>What is depositData and who provides it?</summary>
 
-\`depositData\` is provided by Maple. It typically follows \`0:\` and must be provided as a \`bytes32\` value (32-byte hex).
+\`depositData\` is provided by Maple. It typically follows \`0:\` and your company name. It must be provided as a \`bytes32\` value (32-byte hex).
 
 </details>
 
 <details>
 
-<summary>How do I verify lender authorization on-chain?</summary>
+<summary>How do I verify lender authorization onchain?</summary>
 
-Read \`lenderBitmaps(lender)\` and \`poolBitmaps(pool)\` in \`PoolPermissionManager\` and check \`(lenderBitmap ^ poolBitmap) == poolBitmap\`.
+Read `lenderBitmaps(lender)` and `poolBitmaps(pool)` in `PoolPermissionManager` and check `(lenderBitmap ^ poolBitmap) == poolBitmap`.
+
+</details>
+
+<details>
+
+<summary>Do I need authorization for smart contract integration?</summary>
+
+Yes, authorization is required for all Syrup deposits. Syrup protocol is built by Maple, which uses a permissioning system for institutional-grade security.
+
+**Authorization Process**
+
+1. Contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance) for eligibility verification
+2. Receive authorization signature parameters
+3. Use `authorizeAndDeposit` or `authorizeAndDepositWithPermit` for first deposit
+4. Subsequent deposits only need `deposit` or `depositWithPermit`
+
+Once authorized, the permission persists across all Syrup pools and future deposits.
+
+</details>
+
+<details>
+
+<summary>How do withdrawals work?</summary>
+
+Withdrawals follow a queue-based system:
+
+1. **Request**: Call `requestRedeem()` to enter the withdrawal queue
+2. **Queue Position**: Withdrawals are processed first-in, first-out (FIFO)
+3. **Processing**: When pool liquidity is available, withdrawals are automatically processed
+4. **Completion**: Assets are sent directly to the wallet (no additional transaction required)
+
+**Timeline**
+
+* Expected processing time is typically less than 2 days
+* During low liquidity periods, it may take up to 30 days
+* No penalties for withdrawing, but yield stops accumulating once withdrawal is requested
+
+</details>
+
+<details>
+
+<summary>How long do withdrawals take?</summary>
+
+syrupUSDC & syrupUSDT normally have instant liquidity, but in rare cases withdrawals can take around 24h with the maximum possible time being 30 days. You can see the available funds to withdraw in the Liquidity section of the [Details page](https://app.maple.finance/earn/details).
+
+</details>
+
+<details>
+
+<summary>How can I get the APY data for syrupUSDC or syrupUSDT?</summary>
+
+Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or syrupUSDT into your app.
+
+**Example request**
+
+```
+{
+  poolV2(id: "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b") {
+    name
+    weeklyApy
+    monthlyApy
+  }
+  syrupGlobals {
+    dripsYieldBoost
+  }
+}
+```
+
+**This returns**
+
+```
+{
+  "data": {
+    "poolV2": {
+      "name": "Syrup USDC",
+      "weeklyApy": "69937809610000000000000000000",
+      "monthlyApy": "67212806350000000000000000000"
+    },
+    "syrupGlobals": {
+      "apy": "69731920498003078965054825961",
+      "dripsYieldBoost": "22000"
+    }
+  }
+}
+```
+
+In the example above, the monthly base APY is 6.72% with the Drips rewards adding an extra 2.2% on top.
+
+</details>
+
+<details>
+
+<summary>How can I get the spot exchange rate of syrupUSDC or syrupUSDT?</summary>
+
+You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the GraphQL API.
+
+**Example request**
+
+```
+{
+  account(id: "0xyourwallet") {
+    poolV2Positions {
+      pool {
+        asset {
+          symbol
+          decimals
+        }
+        id
+        name
+      }
+      lendingBalance
+      totalShares
+    }
+  }
+}
+
+```
+
+**This returns**
+
+```
+{
+  "data": {
+    "account": {
+      "poolV2Positions": [
+        {
+          "pool": {
+            "asset": {
+              "symbol": "USDC",
+              "decimals": 6
+            },
+            "id": "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+            "name": "Syrup USDC"
+          },
+          "lendingBalance": "3102053352414",
+          "totalShares": "2742550894631"
+        }
+      ]
+    }
+  }
+}
+```
+
+The ratio of `lendingBalance` / `totalShares` is the spot exchange rate.
 
 </details>

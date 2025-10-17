@@ -1134,6 +1134,14 @@ Withdrawals follow a queue-based system:
 
 <details>
 
+<summary>How long do withdrawals take?</summary>
+
+syrupUSDC & syrupUSDT normally have instant liquidity, but in rare cases withdrawals can take around 24h with the maximum possible time being 30 days. You can see the available funds to withdraw in the Liquidity section of the [Details page](https://app.maple.finance/earn/details).
+
+</details>
+
+<details>
+
 <summary>How can I get the APY data for syrupUSDC or syrupUSDT?</summary>
 
 Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or syrupUSDT into your app.
@@ -1174,3 +1182,61 @@ Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or sy
 In the example above, the monthly base APY is 6.72% with the Drips rewards adding an extra 2.2% on top.
 
 </details>
+
+<details>
+
+<summary>How can I get the spot exchange rate of syrupUSDC or syrupUSDT?</summary>
+
+You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the GraphQL API.
+
+**Example request**
+
+```
+{
+  account(id: "0xyourwallet") {
+    poolV2Positions {
+      pool {
+        asset {
+          symbol
+          decimals
+        }
+        id
+        name
+      }
+      lendingBalance
+      totalShares
+    }
+  }
+}
+
+```
+
+**This returns**
+
+```
+{
+  "data": {
+    "account": {
+      "poolV2Positions": [
+        {
+          "pool": {
+            "asset": {
+              "symbol": "USDC",
+              "decimals": 6
+            },
+            "id": "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+            "name": "Syrup USDC"
+          },
+          "lendingBalance": "3102053352414",
+          "totalShares": "2742550894631"
+        }
+      ]
+    }
+  }
+}
+```
+
+The ratio of `lendingBalance` / `totalShares` is the spot exchange rate.
+
+</details>
+
