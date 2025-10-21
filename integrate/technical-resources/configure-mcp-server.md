@@ -20,14 +20,8 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
 {
   "mcpServers": {
     "maple-docs": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance/~gitbook/mcp"
-      ],
-      "env": {},
-      "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
+      "type": "http",
+      "url": "https://docs.maple.finance/~gitbook/mcp"
     }
   }
 }
@@ -44,14 +38,8 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
 {
   "mcpServers": {
     "maple-docs": {
-      "command": "npx",
-      "env": {},
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance/~gitbook/mcp"
-      ],
-      "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
+      "type": "http",
+      "url": "https://docs.maple.finance/~gitbook/mcp"
     }
   }
 }
@@ -60,7 +48,7 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
 
 ## VS Code
 
-1. Open (or create) `~/.vscode/mcp.json` on Mac/Linux or `%USERPROFILE%\.vscode\mcp.json` on Windows
+1. Open (or create) `~/.vscode/mcp.json` on Mac/Linux or Windows
 2. Add:
 
 {% code overflow="wrap" %}
@@ -68,14 +56,8 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
 {
   "mcpServers": {
     "maple-docs": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance/~gitbook/mcp"
-      ],
-      "env": {},
-      "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
+      "type": "http",
+      "url": "https://docs.maple.finance/~gitbook/mcp"
     }
   }
 }
