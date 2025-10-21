@@ -24,7 +24,7 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
       "args": [
         "-y",
         "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance"
+        "https://docs.maple.finance/~gitbook/mcp"
       ],
       "env": {},
       "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
@@ -49,7 +49,7 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
       "args": [
         "-y",
         "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance"
+        "https://docs.maple.finance/~gitbook/mcp"
       ],
       "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
     }
@@ -72,7 +72,7 @@ MCP Server URL: [https://docs.maple.finance/\~gitbook/mcp](https://docs.maple.fi
       "args": [
         "-y",
         "@modelcontextprotocol/server-gitbook",
-        "https://docs.maple.finance"
+        "https://docs.maple.finance/~gitbook/mcp"
       ],
       "env": {},
       "description": "Maple Finance documentation - Onchain Asset Manager docs including syrupUSD integration and API references"
