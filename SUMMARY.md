@@ -2,7 +2,7 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSDC & syrupUSDT <a href="#integrate" id="integrate"></a>
+## Integrate SyrupUSDC/USDT <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
 * [Frontend Integrations](integrate/frontend-integrations.md)
@@ -17,28 +17,25 @@
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
   * [Data Streams & Oracles](integrate/technical-resources/data-streams-and-oracles.md)
 
-## Maple for Lenders
+## syrupUSDC/USDT for Lenders
 
-* [Introduction](maple-for-lenders/introduction.md)
-* [Lending](maple-for-lenders/lending.md)
-* [Defaults and Impairments](maple-for-lenders/defaults-and-impairments.md)
-* [Margin Calls and Liquidations](maple-for-lenders/defaults-and-impairments-1.md)
-* [Risk](maple-for-lenders/risk.md)
-* [Withdrawal Process](maple-for-lenders/withdrawal-process.md)
+* [Powered by Maple](syrupusdc-usdt-for-lenders/introduction.md)
+* [Lending in syrupUSDC/USDT](syrupusdc-usdt-for-lenders/lending.md)
+* [Drips Rewards](syrupusdc-usdt-for-lenders/drips-rewards.md)
+* [Withdrawals](syrupusdc-usdt-for-lenders/risk.md)
+* [Monthly Updates](syrupusdc-usdt-for-lenders/withdrawal-process.md)
+* [Pendle Integration](syrupusdc-usdt-for-lenders/pendle-integration.md)
+* [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-usdt-for-lenders/syrupusdc-rewards-prize-draw-program-summary.md)
+* [FAQ](syrupusdc-usdt-for-lenders/faq.md)
 
-## syrupUSDC for Lenders
+## Maple Institutional for Lenders
 
-* [Powered by Maple](syrupusdc-for-lenders/introduction.md)
-* [Lending in syrupUSDC and syrupUSDT](syrupusdc-for-lenders/lending.md)
-* [Drips Rewards](syrupusdc-for-lenders/drips-rewards.md)
-* [Withdrawals](syrupusdc-for-lenders/risk.md)
-* [Monthly Updates](syrupusdc-for-lenders/withdrawal-process.md)
-* [Pendle Integration](syrupusdc-for-lenders/pendle-integration.md)
-
-***
-
-* [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-rewards-prize-draw-program-summary.md)
-* [FAQ](faq.md)
+* [Introduction](maple-institutional-for-lenders/introduction.md)
+* [Lending](maple-institutional-for-lenders/lending.md)
+* [Defaults and Impairments](maple-institutional-for-lenders/defaults-and-impairments.md)
+* [Margin Calls and Liquidations](maple-institutional-for-lenders/defaults-and-impairments-1.md)
+* [Risk](maple-institutional-for-lenders/risk.md)
+* [Withdrawal Process](maple-institutional-for-lenders/withdrawal-process.md)
 
 ## Cash Management Pool
 
