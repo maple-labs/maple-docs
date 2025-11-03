@@ -75,7 +75,7 @@ Contact [partnerships@maple.finance](mailto:partnerships@maple.finance) for test
 
 Use `PoolPermissionManager` to verify lender authorization for a specific pool. You can derive the manager onchain from the Pool.
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```solidity
 interface IPool { function manager() external view returns (address); }
 interface IPoolManager { function poolPermissionManager() external view returns (address); }
@@ -112,7 +112,7 @@ If not authorized, contact [partnerships@maple.finance](mailto:partnerships@mapl
 
 Minimal SC calls (lender must hold sufficient USDC/USDT):
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```solidity
 interface IERC20 { function approve(address spender, uint256 amount) external returns (bool); }
 interface ISyrupRouter {
@@ -169,7 +169,7 @@ Deposit data
 
 ### 1. Retrieve Lender’s Balance
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```solidity
 interface IPool {
     function balanceOf(address account) external view returns (uint256);
@@ -187,7 +187,7 @@ function getLenderPosition(address pool, address lender) external view returns (
 
 Use full balance for full redemption, or compute shares for a specific asset amount.
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```solidity
 interface IPool { function convertToExitShares(uint256 assets) external view returns (uint256); }
 

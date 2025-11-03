@@ -121,7 +121,7 @@ query {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
+{% code overflow="wrap" lineNumbers="true" fullWidth="false" expandable="true" %}
 ```typescript
 import { gql, GraphQLClient } from "graphql-request";
 
@@ -188,7 +188,7 @@ Before depositing, check if a user is already authorized by querying the `Accoun
 
 #### Example Query
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```gql
 query GetMapleAccount($accountId: ID!) {
   account(id: $accountId) {
@@ -202,7 +202,7 @@ query GetMapleAccount($accountId: ID!) {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
@@ -285,7 +285,7 @@ function deposit(uint256 assets, bytes32 depositData)
 
 {% tabs %}
 {% tab title="USDC" %}
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils } from '@maplelabs/maple-js';
@@ -315,7 +315,7 @@ main();
 {% endtab %}
 
 {% tab title="USDT" %}
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils, environmentMocks } from '@maplelabs/maple-js';
@@ -348,7 +348,7 @@ main();
 
 Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```solidity
 function depositWithPermit(
   uint256 amount,
@@ -367,7 +367,7 @@ function depositWithPermit(
 
 #### Code example using Maple SDK
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, Contract, providers, utils, Wallet } from 'ethers';
 import { addresses, syrupUtils, erc20 } from '@maplelabs/maple-js';
@@ -440,7 +440,7 @@ main();
 1. Retrieve a signature from the Maple API. Follow the instructions received from the team as mentioned in the step above.
 2. Use the retrieved signature with the `authorizeAndDeposit` or `authorizeAndDepositWithPermit` method on `SyrupRouter`.
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```solidity
 function authorizeAndDeposit(
         uint256 bitmap,
@@ -457,7 +457,7 @@ function authorizeAndDeposit(
 
 #### Code example using Maple SDK for `USDC` or `USDT`.
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -485,7 +485,7 @@ main();
 
 Deposits into Syrup can also be made with gasless approval using `permit`. For more information, see https://eips.ethereum.org/EIPS/eip-2612.
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```solidity
 function authorizeAndDepositWithPermit(
         uint256 bitmap,
@@ -509,7 +509,7 @@ function authorizeAndDepositWithPermit(
 
 #### Code example using Maple SDK
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, providers, utils, Wallet } from "ethers";
 import { addresses, syrupUtils } from "@maplelabs/maple-js";
@@ -580,7 +580,7 @@ query GetMapleAccount($accountId: ID!, $poolId: String!) {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
@@ -660,7 +660,7 @@ function convertToExitShares(uint256 assets_) external view returns (uint256 sha
 
 #### Code example using Maple SDK
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, providers } from 'ethers';
 import { poolV2 } from '@maplelabs/maple-js';
@@ -698,7 +698,7 @@ function requestRedeem(
 
 #### Code example using Maple SDK
 
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" expandable="true" %}
 ```typescript
 import { BigNumber, providers, Wallet } from 'ethers';
 import { poolV2 } from '@maplelabs/maple-js';
@@ -744,7 +744,7 @@ query GetPoolV2Queue($id: ID!) {
 
 #### Code example using [**graphql-request**](https://www.npmjs.com/package/graphql-request)
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```typescript
 import { gql, GraphQLClient } from 'graphql-request';
 
