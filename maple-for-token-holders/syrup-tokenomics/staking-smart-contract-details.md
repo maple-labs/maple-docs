@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Staking Smart Contract Details
 
 #### **Contract Overview** <a href="#contract-overview" id="contract-overview"></a>
