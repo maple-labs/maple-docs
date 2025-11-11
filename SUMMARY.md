@@ -56,7 +56,7 @@
   * [MPL to SYRUP Conversion](maple-for-token-holders/mpl-token/mpl-token-migration.md)
   * [FAQs](maple-for-token-holders/mpl-token/faqs.md)
 * [SYRUP Tokenomics](maple-for-token-holders/syrup-tokenomics/README.md)
-  * [Staking](maple-for-token-holders/syrup-tokenomics/staking.md)
+  * [Staking Rewards](maple-for-token-holders/syrup-tokenomics/staking.md)
   * [Staking Smart Contract Details](maple-for-token-holders/syrup-tokenomics/staking-smart-contract-details.md)
 * [Governance and Voting](maple-for-token-holders/governance-and-voting.md)
 * [Research and Media](maple-for-token-holders/research-and-media/README.md)
