@@ -43,10 +43,6 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `setStrategyFeeRate`
 * `setPsm` (Sky Strategy only)
 
-## Withdrawal Manager (Cyclical)
-
-* `setExitConfig`
-
 ## Withdrawal Manager (Queue)
 
 * `processRedemptions`

@@ -251,20 +251,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `claim`
 
-### WithdrawalManager (Cyclical)
-
-**Governor only functionality**
-
-* `setExitConfig`
-
-**Operational Admin only functionality**
-
-* `setExitConfig`
-
-**Pool Delegate only functionality**
-
-* `setExitConfig`
-
 ### WithdrawalManager (Queue)
 
 **Factory Permissioned Functions**

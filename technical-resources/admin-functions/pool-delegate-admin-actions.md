@@ -59,11 +59,6 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `setStrategyFeeRate`
 * `setPsm` (Sky Strategy only)
 
-## Withdrawal Manager (Cyclical)
-
-* `upgrade`
-* `setExitConfig`
-
 ## Withdrawal Manager (Queue)
 
 * `upgrade`

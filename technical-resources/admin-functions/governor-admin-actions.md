@@ -66,10 +66,6 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 
-## Withdrawal Manager (Cyclical)
-
-* `setExitConfig`
-
 ## Withdrawal Manager (Queue)
 
 * `processRedemptions`

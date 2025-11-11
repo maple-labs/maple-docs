@@ -67,22 +67,6 @@
    * Invariant C: lender.bitmap ∈ [0, MAX]
    * Invariant D: pool.permissionLevel == public -> permanently public
 
-* Withdrawal Manager (Cyclical)
-   * Invariant A: WM LP balance == ∑lockedShares(user)
-   * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
-   * Invariant C: windowStart[currentCycle] <= block.timestamp
-   * Invariant D: initialCycleTime[currentConfig] <= block.timestamp
-   * Invariant E: initialCycleId[currentConfig] <= currentCycle
-   * Invariant F: getRedeemableAmounts.shares[owner] <= WM LP balance
-   * Invariant G: getRedeemableAmounts.shares[owner] <= lockedShares[user]
-   * Invariant H: getRedeemableAmounts.shares[owner] <= totalCycleShares[exitCycleId[user]]
-   * Invariant I: getRedeemableAmounts.assets[owner] <= fundsAsset balance of pool
-   * Invariant J: getRedeemableAmounts.assets[owner] <= totalCycleShares[exitCycleId[user]] * exchangeRate
-   * Invariant K: getRedeemableAmounts.assets[owner] <= lockedShares[user] * exchangeRate
-   * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
-   * Invariant M: lockedLiquidity <= pool.totalAssets()
-   * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
-
 * Withdrawal Manager (Queue)
    * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
    * Invariant B: balanceOf(this) >= totalShares
