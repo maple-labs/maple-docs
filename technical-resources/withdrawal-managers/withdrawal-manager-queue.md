@@ -43,6 +43,17 @@ If there is insufficient liquidity available during the processing of a request,
 
 `redeemableShares(user) = min(lockedShares(user), lockedShares(user) * availableAssets / requiredAssets)`
 
+### Adjust or Cancel a Request (removeSharesById)
+
+The request owner can reduce or cancel a specific pending request at any time before it is processed by calling:
+
+`removeSharesById(requestId, sharesToRemove)`
+
+- Caller must be the request owner.
+- If `sharesToRemove` equals the current request shares, the request is cancelled; otherwise the request is decreased and remains in the queue with the original position.
+- Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.
+- Use `requests(requestId)` or `requestsByOwner(owner)` to inspect pending requests and shares.
+
 ### Manual Requests (2 step process)
 
 Each withdrawal request can be processed automatically (by default) or manually by calling `requestRedeem()` first then calling `redeem()`. The pool delegate or any protocol admin can enable manual requests for users who want to opt-out of automatic processing. The difference between automatic and manual requests is as follows:
@@ -50,6 +61,17 @@ Each withdrawal request can be processed automatically (by default) or manually 
 * Automatic requests will be immediately redeemed on processing.
 * Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (mainly for integrators). Automatic requests are the default and preferred way of handling withdrawals.
 * Pool Delegates are expected to be in touch with integrators to ensure they have manual requests enabled.
+
+### Roles & Permissions
+
+- OnlyPoolManager: `addShares`, `processExit`, `removeShares` (Pool-driven queue interactions).
+- OnlyRedeemer (WITHDRAWAL_REDEEMER instance, Pool Delegate, or Operational Admin): `processRedemptions`, `processEmptyRedemptions`.
+- Unprivileged user (request owner): `removeSharesById` (decrease or cancel a request).
+
+### Events & Queue Internals
+
+- Events: `RequestCreated`, `RequestDecreased`, `RequestRemoved`, `RequestProcessed`, `ManualWithdrawalSet`, `EmptyRedemptionsProcessed`.
+- Queue pointers: `nextRequestId` and `lastRequestId` track processing range. `processEmptyRedemptions(n)` advances `nextRequestId` over empty entries to keep processing efficient.
 
 ### Legacy Functions
 

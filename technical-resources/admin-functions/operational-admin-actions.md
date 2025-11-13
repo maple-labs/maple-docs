@@ -31,6 +31,7 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `configurePool`
 * `setLenderAllowlist`
 * `setLenderBitmaps`
+* `setPermissionAdmin`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 

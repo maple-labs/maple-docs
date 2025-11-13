@@ -2,6 +2,8 @@
 
 The Governor is the main administrator of the protocol, and is managed by a multisig. The Governor controls administrative functions in the protocol, such as managing the MapleTreasury and defining global parameters. The main contract the Governor administers is [MapleGlobals](https://github.com/maple-labs/globals-v2/blob/main/contracts/MapleGlobals.sol) but it can also call administrative functions to manage Loans for a given Pool.
 
+Note: Governor‑privileged transactions are executed through the `GovernorTimelock`. See `technical-resources/singletons/governor-timelock.md` for scheduling and execution flows.
+
 # Governor-Permissioned Functions
 
 ## Globals
@@ -63,6 +65,7 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `configurePool`
 * `setLenderAllowlist`
 * `setLenderBitmaps`
+* `setPermissionAdmin`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 

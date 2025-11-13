@@ -29,7 +29,69 @@ description: >-
 
 Smart contracts integrating with syrupUSDC & syrupUSDT act as lenders and must interact via `SyrupRouter`. Authorization is enforced by `PoolPermissionManager`. First-time deposits require an authorization signature; subsequent deposits can call `deposit` directly once authorized.
 
-### 2. Syrup Addresses
+### 2. SyrupRouter Interface
+
+Below are the primary functions exposed by `SyrupRouter` for integrators. These mirror the onchain interface and are stable entry points for deposits:
+
+{% code overflow="wrap" %}
+```solidity
+// Events
+event DepositData(address indexed owner, uint256 amount, bytes32 depositData);
+
+// Views
+function asset() external view returns (address);
+function pool() external view returns (address);
+function poolManager() external view returns (address);
+function poolPermissionManager() external view returns (address);
+function nonces(address owner) external view returns (uint256);
+
+// First-time (with authorization signature)
+function authorizeAndDeposit(
+    uint256 bitmap,
+    uint256 deadline,
+    uint8   v,
+    bytes32 r,
+    bytes32 s,
+    uint256 amount,
+    bytes32 depositData
+) external returns (uint256 shares);
+
+// First-time with ERC-2612 token permit
+function authorizeAndDepositWithPermit(
+    uint256 bitmap,
+    uint256 authDeadline,
+    uint8   authV,
+    bytes32 authR,
+    bytes32 authS,
+    uint256 amount,
+    bytes32 depositData,
+    uint256 permitDeadline,
+    uint8   permitV,
+    bytes32 permitR,
+    bytes32 permitS
+) external returns (uint256 shares);
+
+// Subsequent deposits (already authorized)
+function deposit(uint256 amount, bytes32 depositData) external returns (uint256 shares);
+function depositWithPermit(
+    uint256 amount,
+    uint256 deadline,
+    uint8   v,
+    bytes32 r,
+    bytes32 s,
+    bytes32 depositData
+) external returns (uint256 shares);
+```
+{% endcode %}
+
+Notes for implementers:
+
+- Authorization signature: For first-time deposits, Maple (a permission admin) provides an ECDSA signature authorizing the lender’s bitmap permissions. The signature digest includes `chainId`, the `SyrupRouter` address, the `owner` (msg.sender), a `nonce`, the `bitmap`, and `deadline`. Your smart contract should pass this signature through to `authorizeAndDeposit`/`authorizeAndDepositWithPermit`.
+- Permissions: The router enforces `PoolPermissionManager.hasPermission(poolManager, owner, "P:deposit")`. Your address must be permissioned (via allowlist or bitmaps) before deposits succeed.
+- Deposit metadata: `depositData` is a `bytes32` field emitted via `DepositData` for off-chain correlation (e.g., internal IDs). Use a pre-hashed value if longer than 32 bytes.
+- Gas optimization: Prefer `depositWithPermit` where the asset supports EIP‑2612 to avoid a separate approval step.
+
+### 3. Syrup Addresses
 
 All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-labs/maple-js/tree/main/src/abis)
 

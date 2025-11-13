@@ -292,6 +292,10 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `upgrade`
 
+**User Callable Functions**
+
+* `removeSharesById`
+
 ### OpenTermLoan
 
 **Factory Permissioned Functions**

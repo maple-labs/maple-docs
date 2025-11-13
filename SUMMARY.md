@@ -112,6 +112,7 @@
   * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
 * [Singletons](technical-resources/singletons/README.md)
   * [Globals](technical-resources/singletons/globals.md)
+  * [Governor Timelock](technical-resources/singletons/governor-timelock.md)
   * [MapleTreasury](technical-resources/singletons/maple-treasury.md)
   * [Oracles](technical-resources/singletons/oracles.md)
   * [Pool Permission Manager](technical-resources/singletons/pool-permission-manager.md)

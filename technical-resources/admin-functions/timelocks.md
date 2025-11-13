@@ -2,6 +2,11 @@
 
 Timelocks are a mechanism to delay an action that may have significant effects. This allows any stakeholders that foresee the transaction impacting them negatively the appropriate time to react accordingly.
 
+# Governor-Level vs Pool-Delegate Timelocks
+
+- Governor‑privileged actions now route through a dedicated `GovernorTimelock` contract. See `technical-resources/singletons/governor-timelock.md` for roles, lifecycle, and usage.
+- Pool Delegate–level timelocks (e.g., PoolManager/LoanManager/WithdrawalManager upgrades) continue to use the protocol timelock checks documented on this page.
+
 # Affected Actions
 
 The following actions require a timelocked execution:

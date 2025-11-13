@@ -6,6 +6,10 @@ The Pool contract is the core unit that keeps tracks of liquidity provider share
 
 The pool contract is an implementation of a Tokenized Vault Standard ([ERC-4626](https://erc4626.info/)), implementing the full interface defined in the [specification](https://eips.ethereum.org/EIPS/eip-4626).
 
+### Call Gating & Permissions
+
+All state-changing Pool calls are gated by the `PoolManager` via a `checkCall` modifier that delegates to `PoolManager.canCall(functionId, caller, args)`. Common function identifiers include `P:deposit`, `P:depositWithPermit`, `P:mint`, `P:mintWithPermit`, `P:redeem`, `P:requestRedeem`, and `P:removeShares`. The `PoolPermissionManager` config (allowlist/bitmaps/levels) ultimately determines which addresses can call which Pool functions.
+
 ## Permits
 
 As a convenience, Pools implements the `depositWithPermit` and `mintWithPermit` that allows users to deposit performing a single transaction and not needing to approve tokens beforehand. This is an extension of the current ERC-4626 vault standard.
@@ -29,3 +33,7 @@ Once the conditions contained in the WithdrawalManager are met, the users can ca
 ## Removing Shares
 
 This function can be used if a `requestRedeem` was previously called, but the users wants to cancel the request and get their shares back. Note that this function is also subjected to the specific withdrawal logic defined in the WithdrawalManager in use.
+
+## Bootstrap Mint
+
+Pools may be initialized with a one-time `BOOTSTRAP_MINT` to seed supply for arithmetic stability. The first mint operation effectively receives `shares - BOOTSTRAP_MINT` and an event is emitted. This is expected and has no ongoing effect after initialization.
