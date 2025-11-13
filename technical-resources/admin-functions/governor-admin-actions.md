@@ -38,9 +38,18 @@ Note: Governor‑privileged transactions are executed through the `GovernorTimel
 * `setValidPoolDeployer`
 * `unscheduleCall`
 
+Note: `setValidPoolDeployer` is deprecated for enabling deployers and only supports disabling. Use `setCanDeployFrom(factory, account, true)` together with `setValidInstanceOf(<FACTORY_KEY>, factory, true)` to allow deployments.
+
 ## PoolManager
 
+* `addStrategy`
 * `finishCollateralLiquidation`
+* `setDelegateManagementFeeRate`
+* `setIsStrategy`
+* `setLiquidityCap`
+* `setPendingPoolDelegate`
+* `setPoolPermissionManager`
+* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `triggerDefault`
 
 ## Fixed Term LoanManager
@@ -68,12 +77,6 @@ Note: Governor‑privileged transactions are executed through the `GovernorTimel
 * `setPermissionAdmin`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
-
-## Withdrawal Manager (Queue)
-
-* `processRedemptions`
-* `removeRequest`
-* `setManualWithdrawal`
 
 ## Strategies Contracts
 

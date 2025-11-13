@@ -25,6 +25,12 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `finishCollateralLiquidation`
 * `setPendingPoolDelegate`
 * `triggerDefault`
+* `addStrategy`
+* `setDelegateManagementFeeRate`
+* `setIsStrategy`
+* `setLiquidityCap`
+* `setPoolPermissionManager`
+* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 
 ## Pool Permission Manager
 
@@ -46,6 +52,7 @@ The Governor retains the exclusive authority to appoint or replace the operation
 
 ## Withdrawal Manager (Queue)
 
+* `processEmptyRedemptions`
 * `processRedemptions`
 * `removeRequest`
 * `setManualWithdrawal`

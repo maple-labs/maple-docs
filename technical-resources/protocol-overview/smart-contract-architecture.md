@@ -15,7 +15,7 @@ The main actors that interact with the PoolManager are the Pool Delegate, Govern
 
 # LoanManagers (Primary yield strategy)
 
-The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrue mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. There are two types of LoanManagers in the Maple protocol: fixed-term LoanManagers and open-term LoanManagers.
+The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrue mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. In the current architecture, LoanManagers are attached to the PoolManager as strategies via `addStrategy` using the appropriate LoanManager factory. There are two types of LoanManagers in the Maple protocol: fixed-term LoanManagers and open-term LoanManagers.
 
 # Loans
 

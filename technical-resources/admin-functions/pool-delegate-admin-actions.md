@@ -9,15 +9,14 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `upgrade`
 * `acceptPoolDelegate`
 * `setPendingPoolDelegate`
-* `addLoanManager`
-* `setAllowedLender`
+* `addStrategy`
 * `setDelegateManagementFeeRate`
-* `setIsLoanManager`
+* `setIsStrategy`
 * `setLiquidityCap`
-* `setOpenToPublic`
+* `setPoolPermissionManager`
+* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `finishCollateralLiquidation`
 * `triggerDefault`
-* `withdrawCover`
 
 ## FixedTermLoanManager
 
@@ -62,6 +61,7 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 ## Withdrawal Manager (Queue)
 
 * `upgrade`
+* `processEmptyRedemptions`
 * `processRedemptions`
 * `removeRequest`
 * `setManualWithdrawal`
