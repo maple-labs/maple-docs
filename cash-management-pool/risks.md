@@ -30,7 +30,7 @@ Maple's smart contracts are expected to hold minimal USDC - the commercial inten
 
 Protocol security is a top priority for Maple, and the Maple smart contracts have consistently performed as designed since the protocol launched. Our smart contracts have successfully completed audits from leading firms in the industry [Spearbit](https://spearbit.com/), [Three Sigma](https://threesigma.xyz/labs/code-audits) and [Trail of Bits](https://www.trailofbits.com/) and you can view those here. Recently Maple was awarded a 92% Defi Safety score - an increase from 91%.
 
-Maple’s smart contracts are open-source. The Maple team also has an ongoing [bug bounty](https://immunefi.com/bounty/maple/) with Immunefi to incentivize the reporting of high and critical severity bugs to the Maple incident response team so they can be addressed safely to protect user funds.
+Maple’s smart contracts are open-source. The Maple team also has an ongoing [bug bounty](https://immunefi.com/bug-bounty/maple/information/) with Immunefi to incentivize the reporting of high and critical severity bugs to the Maple incident response team so they can be addressed safely to protect user funds.
 
 **USDC**
 

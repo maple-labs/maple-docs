@@ -63,7 +63,14 @@ This release is for the Governor Timelock Contract upgrade. The Maple protocol c
 | 0xMacro     | [`2025-09-18 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-sept-governor-timelock/0xMacro-Maple-Finance-timelock-Sept-2025.pdf)         |
 
 
+### December 2025 Release
 
+TODO: Add a brief summary of the December 2025 release scope and components covered by audits.
+
+| Auditor  | Report Link |
+| -------- | ----------- |
+| Spearbit | TODO        |
+| Sherlock | TODO        |
 
 ## Bug Bounty
 
