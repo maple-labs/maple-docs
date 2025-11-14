@@ -2,7 +2,7 @@
 
 ## Overview
 
-Across the protocol, many proxy contracts are used, incorporating upgradeability functionality. These contracts are deployed using the same pattern, governed by the MapleProxyFactory contract. This is a generic factory contract that deploys proxies and manages their implementations using the Governor. This patten has multiple benefits as listed below.
+Across the protocol, many proxy contracts are used, incorporating upgradeability functionality. These contracts are deployed using the same pattern, governed by the MapleProxyFactory contract. This is a generic factory contract that deploys proxies and manages their implementations under Governor control (the on‑chain `GovernorTimelock`). This pattern has multiple benefits as listed below.
 
 #### Cheaper deployment of contracts
 
@@ -10,17 +10,23 @@ Since proxies are being deployed instead of full contracts, the gas cost of cont
 
 #### Single factory contract can manage many versions
 
-Since the proxies are deployed from a central factory contract, this contract can be allowlisted in `MapleGlobals` once by the Governor, and then can be used for many versions afterwards. The Governor manages all versions that are to be used by contracts deployed by a given factory, so upgrades can only happen to implementation contracts that have been vetted by both the protocol smart contracts team and the Maple DAO.
+Since the proxies are deployed from a central factory contract, this contract can be allowlisted in `MapleGlobals` once by the Governor (via the timelock), and then can be used for many versions afterwards. The Governor manages all versions that are to be used by contracts deployed by a given factory, so upgrades can only happen to implementation contracts that have been vetted and approved through the governance process.
 
 It is also beneficial from an events perspective to use a single contract for the factory, as all creation events will come from the same address. For a new version of a contract to be used a new implementation must be deployed, and the implementation must be registered and tied to a version by the Governor. Once that is done, all subsequent contracts deployed from the factory will use that version.
 
 ## Version Management
 
-In order to manage versions in the `MapleProxyFactory`, the following actions are performed by the Governor only:
+In order to manage versions in the `MapleProxyFactory`, the following actions are performed by the Governor (via the `GovernorTimelock`):
 
 * **Add a new version**: Once an implementation is deployed, that implementation can be registered in the context of the factory and tied to a version identifier.
-* **Enable/Disable upgrade path**: If it is determined to be entirely safe to upgrade a deployed proxy instance from one implementation to another, the upgrade path can be added to the factory by the Governor. Only then can upgrades be performed by Borrowers from one version to another.
+* **Enable/Disable upgrade path**: If it is determined to be entirely safe to upgrade a deployed proxy instance from one implementation to another, the upgrade path can be added to the factory by the Governor. Only then can upgrades be performed by authorized admins from one version to another.
 * **Set the default version**: The default version is the version that is used for all deployments of contracts. This means that if it is decided that an older version is preferable, it can be set and all new deployments will be at the old version. It also means that the factory can be paused by the Governor if the default version is set to zero, since that will return a null implementation which will prevent the deployment of new contracts.
+
+### Governance, Allowlisting, and Timelocks
+
+- Factories are allowlisted in Globals using `setValidInstanceOf("<FACTORY_KEY>", <factoryAddress>, true)` and deploy permissions are granted per account using `setCanDeployFrom(<factoryAddress>, <account>, true)`. Note: `setValidPoolDeployer` is deprecated for enabling deployers and should not be used for that purpose.
+- Governor‑privileged actions (e.g., adding versions, enabling upgrade paths, setting defaults) must be scheduled and executed via the `GovernorTimelock` (schedule → delay → execution window).
+- Certain contract upgrades initiated by pool‑level admins (e.g., Pool Delegate) require a valid scheduled call recorded in Globals before execution. The Security Admin may have direct execution rights depending on the contract ACLs.
 
 ### Proxy Deployment
 
@@ -32,11 +38,11 @@ Below is a diagram outlining the smart contract architecture and calls used for 
 
 Below is a diagram outlining the process for upgrading a proxy contract. When an upgrade is performed the following occurs:
 
-1. Borrower calls `upgrade()` on the Proxy.
+1. An authorized admin calls `upgrade()` on the Proxy (e.g., Pool Delegate via a valid scheduled call, or Security Admin where permitted by the contract ACLs).
 2. Proxy delegatecalls `upgrade()` to v2.0.0 implementation.
-3. `upgrade()` calls the MapleLoanFactory to do `upgradeInstance()`, which checks that this is a valid upgrade path.
+3. `upgrade()` calls the relevant Factory to do `upgradeInstance()`, which checks that this is a valid upgrade path.
 4. `upgradeInstance()` calls `setImplementation()` on the Proxy.
-5. Proxy delegatecalls `setImplementation()` to v2.0.0 implementation, which updates the implementation address in Proxy storage at `IMPLEMENTATION_SLOT` to the v3.0.0 implementation address.
+5. Proxy delegatecalls `setImplementation()` to the current implementation, which updates the implementation address in Proxy storage at `IMPLEMENTATION_SLOT` to the target implementation address.
 6. `upgradeInstance()` calls `migrate()` on the Proxy.
 7. Proxy delegatecalls `migrate()` to the v3.0.0 implementation.
 8. v3.0.0 implementation delegatecalls `migrate()` to the Migrator, which updates any storage necessary in the Proxy to finalize the upgrade.
