@@ -42,7 +42,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 ### Liquidator
 
-* `liquidatePortion` - Used by keepers to perform liquidations.
+* `liquidatePortion` - Used to perform liquidations.
 
 ### PoolManager
 
