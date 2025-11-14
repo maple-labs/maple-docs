@@ -2,7 +2,7 @@
 ## Pre-Upgrade Pausing
 In the previous version of the protocol, there was a single switch that determined whether the protocol was paused. This switch had a global effect on all functions within the protocol. The security admin was responsible for triggering the global pause.
 
-However, while effective as an emergency shut down, this architecture posed limitations for recovery strategies to return the system to normal operations from a paused state. To illustrate this limitation, consider a scenario where a pool delegate misconfigures a parameter that affects a pool, such as setting an inappropriate liquidation rate, which allows collateral to be traded at an unwanted discount.
+However, while effective as an emergency shut down, this architecture posed limitations for recovery strategies to return the system to normal operations from a paused state. To illustrate this limitation, consider a scenario where a pool delegate misconfigured a parameter that affects a pool, such as setting an inappropriate liquidation rate, which allows collateral to be traded at an unwanted discount.
 
 In such a situation, the security admin would trigger a pause, which stops all operations. However, the fix requires either the governor or the pool delegate to reset the minimum ratio, which cannot be done in a paused state. Full recovery requires the following atomic actions to be performed:
 

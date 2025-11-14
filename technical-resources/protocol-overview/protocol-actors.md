@@ -19,7 +19,7 @@ The [Governor](../admin-functions/governor-admin-actions.md) is a governance mul
 
 ## Security Admin
 
-A Security Admin is an account that has the ability to call the emergency [pause function](../security/emergency-protocol-pause-function.md) that can pause every function in the protocol. This is only to be used in the case of critical incident response, during which action must be taken to prevent and/or stop damage from occurring to the protocol.
+A Security Admin is an account that has the ability to call the emergency [pause function](../security/emergency-protocol-pause.md) that can pause every function in the protocol. This is only to be used in the case of critical incident response, during which action must be taken to prevent and/or stop damage from occurring to the protocol.
 
 ## Operational Admin
 
