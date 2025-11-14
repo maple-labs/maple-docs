@@ -98,7 +98,7 @@ $$
 
 Service fees are paid during loan payments. Service fees are calculated in the following way:
 
-* `delegateServiceFeeRate` is a loan term that is specified on loan instantiation as a yearly rate (e.g., `100 USDC`).
+* `delegateServiceFeeRate` is a loan term that is specified on loan instantiation as an annualized rate scaled by `1e6` (the `HUNDRED_PERCENT` constant). It is a rate, not a nominal currency amount (e.g., `100_000` = 10%).
 * `platformServiceFeeRate` is a Governor-settable variable in globals that is settable on a Pool level. When a loan is funded,
 
 The service fee amount to be paid is calculated using the following formula for both the delegate and platform service fees:
