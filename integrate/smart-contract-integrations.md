@@ -140,10 +140,15 @@ Use `PoolPermissionManager` to verify lender authorization for a specific pool. 
 {% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```solidity
 interface IPool { function manager() external view returns (address); }
+
 interface IPoolManager { function poolPermissionManager() external view returns (address); }
+
 interface IPoolPermissionManager {
+    function hasPermission(address poolManager, address lender, bytes32 functionId) external view returns (bool);
+
+    // Optional introspection helpers
     function lenderBitmaps(address lender) external view returns (uint256);
-    function poolBitmaps(address pool) external view returns (uint256);
+    function poolBitmaps(address poolManager, bytes32 functionId) external view returns (uint256);
 }
 
 function getPoolPermissionManager(address pool) internal view returns (address) {
@@ -151,12 +156,29 @@ function getPoolPermissionManager(address pool) internal view returns (address) 
     return IPoolManager(manager).poolPermissionManager();
 }
 
-function isAuthorized(address pool, address lender) internal view returns (bool) {
-    address ppm = getPoolPermissionManager(pool);
+function isAuthorizedToDeposit(address pool, address lender) internal view returns (bool) {
+    address manager = IPool(pool).manager();
+    address ppm     = IPoolManager(manager).poolPermissionManager();
+    return IPoolPermissionManager(ppm).hasPermission(manager, lender, "P:deposit");
+}
+```
+{% endcode %}
+
+Onchain permission checks are equivalent to a bitmap AND comparison. A lender is authorized for a function if all required bits in the pool’s bitmap are present in the lender’s bitmap:
+
+- Condition: `(poolBitmap & lenderBitmap) == poolBitmap`
+
+Example (optional introspection, prefer `hasPermission` in production):
+
+{% code overflow="wrap" lineNumbers="true" expandable="true" %}
+```solidity
+function isAuthorizedBitmaps(address pool, address lender) internal view returns (bool) {
+    address manager = IPool(pool).manager();
+    address ppm     = IPoolManager(manager).poolPermissionManager();
+    // Per-function pool bitmap for deposits
+    uint256 poolBitmap   = IPoolPermissionManager(ppm).poolBitmaps(manager, "P:deposit");
     uint256 lenderBitmap = IPoolPermissionManager(ppm).lenderBitmaps(lender);
-    uint256 poolBitmap   = IPoolPermissionManager(ppm).poolBitmaps(pool);
-    // Authorized if XOR equals the pool bitmap
-    return (lenderBitmap ^ poolBitmap) == poolBitmap;
+    return (poolBitmap & lenderBitmap) == poolBitmap;
 }
 ```
 {% endcode %}
