@@ -47,6 +47,7 @@ Below is a diagram outlining the process for upgrading a proxy contract. When an
 7. Proxy delegatecalls `migrate()` to the v3.0.0 implementation.
 8. v3.0.0 implementation delegatecalls `migrate()` to the Migrator, which updates any storage necessary in the Proxy to finalize the upgrade.
 
+TODO: Update this image to replace "Borrower" with "Authorized Admin"
 ![](https://user-images.githubusercontent.com/35537333/141996856-bf9bbb08-0935-49ad-9d58-459dc8279c14.png)
 
 ### Note on MapleLoan Implementation

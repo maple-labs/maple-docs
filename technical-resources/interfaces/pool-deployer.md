@@ -56,7 +56,7 @@ Deploys a pool along with its dependencies. NOTE: The PoolManager address is enc
 |   5   |   `poolPermissionManager_`  |   `address`  |   `address`   | The address of the PoolPermissionManager to use.                                                                                                                                |
 |   6   |           `name_`           |   `string`   |    `string`   | The name of the Pool.                                                                                                                                                           |
 |   7   |          `symbol_`          |   `string`   |    `string`   | The symbol of the Pool.                                                                                                                                                         |
-|   8   |       `configParams_`       | `uint256[4]` |  `uint256[4]` | Array of uint256 config parameters. Array used to avoid stack too deep issues. \[0]: liquidityCap \[1]: delegateManagementFeeRate \[2]: coverAmountRequired \[3]: initialSupply |
+|   8   |       `configParams_`       | `uint256[4]` |  `uint256[4]` | Array of uint256 config parameters. For the queue‑based deployer, only index \[3] (`initialSupply`) is used during deployment; other operational parameters (e.g., liquidityCap, delegateManagementFeeRate, cover) are configured post‑deployment via PoolManager/Globals. |
 
 #### Return Values:
 
