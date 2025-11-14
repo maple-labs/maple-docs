@@ -15,7 +15,7 @@ The primary Maple strategies are loans for institutions (borrowers) that want to
 
 ## Governor
 
-The [Governor](../admin-functions/governor-admin-actions.md) is a governance multisig wallet that performs actions based on token holder voting. The Governor controls administrative functions in the protocol, such as managing the MapleTreasury, defining global parameters and pausing functionality.
+The [Governor](../admin-functions/governor-admin-actions.md) is the on‑chain `GovernorTimelock` contract, which is managed by a multisig (and other designated roles). It administers protocol‑level configuration (e.g., MapleTreasury, Globals parameters, pause controls). Governor‑privileged transactions execute via the timelock with a schedule → delay → execution window. Administrative changes are proposed and queued, then executed only after the configured delay within a bounded window.
 
 ## Security Admin
 
@@ -24,7 +24,3 @@ A Security Admin is an account that has the ability to call the emergency [pause
 ## Operational Admin
 
 The Operational Admin is endowed with the authority to execute a subset of operational functions essential for the routine management of the protocol. It possesses limited powers compared to the Governor, ensuring a balance between operational efficiency and security.
-
-## Keepers
-
-Keepers are external actors that are incentivized to perform liquidation when needed. Anyone can be a Keeper if they so wish, but the protocol only accepts actions that are within the constraints defined by the protocol. More details on the Liquidations [page](../loans/defaults.md).

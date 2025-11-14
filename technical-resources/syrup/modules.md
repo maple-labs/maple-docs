@@ -4,7 +4,7 @@ The `mint` and `burn` functions of the SYRUP contract need to be exposed only to
 
 ## Modules
 
-Modules are smart contracts with pre-defined rules that can mint or burn MPL tokens. Authorized modules have a significant impact on the token and the protocol and should aim for simplicity to avoid unintended consequences. The onboarding and offboarding of modules will be performed off-chain. The SYRUP contract will store a single authorized address that can add or remove modules. This entity, such as the `Governor` multisig or another account, is assumed to act according to off-chain governance decisions. The token itself will not impose any restrictions or checks on the actions of allowing modules.
+Modules are smart contracts with pre-defined rules that can mint or burn MPL tokens. Authorized modules have a significant impact on the token and the protocol and should aim for simplicity to avoid unintended consequences. The onboarding and offboarding of modules will be performed off-chain. The SYRUP contract will store a single authorized address that can add or remove modules. This entity, such as the `GovernorTimelock` (managed by a multisig) or another account, is assumed to act according to off-chain governance decisions. The token itself will not impose any restrictions or checks on the actions of allowing modules.
 
 To activate the module, the following actions needed to be taken:
 

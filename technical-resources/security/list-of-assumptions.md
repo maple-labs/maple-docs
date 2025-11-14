@@ -20,7 +20,9 @@ Since the oracle price is used in the liquidation module, it is assumed that the
 
 #### 5. The Governor & Operational Admin are trusted actors.
 
-The Governor multisig is held by founders and partners of the protocol, that are heavily incentivized to act in the protocol's best interest. Likewise the Operational Admin is held by the Maple team, which is also heavily incentivized to act in the protocol's best interest.
+Governor control is exercised via the on‑chain `GovernorTimelock`, whose controlling roles (e.g., proposer, executor, role admin) are held by Maple managed multisigs. 
+
+The Operational Admin is also a multisig controlled by Maple managed multisigs. .
 
 #### 6. Loans are expected to be instantiated with reasonable terms.
 

@@ -87,31 +87,3 @@ In the case of an uncollateralized Loan default, no collateral auctioning proced
 In the case of a collateralized Loan default, a two-step procedure must be conducted.
 1. The collateral must be repossessed and put up for liquidation.
 2. The liquidation must be finalized, taking the resulting funds, calculating the remaining losses and liquidating cover liquidated up to the `maxCoverLiquidationPercent`. Remaining losses are represented to LPs as a decrease in `totalAssets`.
-
-## Collateral Liquidation Mechanism (Unused)
-
-*Note this aspect of the protocol isn't used as collateral is held with custodians.*
-
-The `Liquidator` is a smart contract that performs the liquidation of any ERC-20 compatible assets using flash loans. Performing liquidations is not a permissioned action, so any user can perform these steps:
-
-1. User calls `liquidatePortion()`, specifying an amount of collateral assets that they would like to liquidate. This amount of collateral is then sent to the user.
-2. An arbitrary low-level function call is made to the user, allowing the opportunity for a strategy to be implemented to convert `collateralAsset` into `fundsAsset` atomically. It should be noted that the user can be a smart contract that has a defined strategy or an EOA that simply wants to buy the collateral at a discounted rate.
-3. The total amount of liquidity assets owed is calculated by calling `loanManager.getExpectedAmount()`, which uses oracle price data and any predefined discounts in order to determine the price of the collateral asset. This amount is then pulled from the user performing the liquidation, or otherwise the whole transaction reverts.
-
-`getExpectedAmount` has two configurable parameters defined by the Pool Delegate: `allowedSlippage` and `minRatio`.
-- `allowedSlippage` is the percentage from the Chainlink oracle price to use for the discounted flash loan rate.
-- `minRatio` is the minimum acceptable rate to use for flash loans. This is to protect against oracle outages.
-
-## Collateral Liquidation Example
-
-Two ready-to-use strategies are included in the [liquidations](https://github.com/maple-labs/liquidations) repository, one to perform an AMM swap on UniswapV2, another to perform an AMM swap on Sushiswap. An end to end example is outlined below:
-1. 100 WBTC is put up for liquidation, with a market value of 60,000.00 USDC per WBTC ($6m of value total).
-2. The Auctioneer is set to return a 2% discounted rate on the market value of WBTC, so it returns 58,800.00 USDC per WBTC.
-3. One Keeper uses the UniswapV2 strategy to liquidate 40 WBTC.
-4. 40 WBTC is transferred to this Keeper, they swap 40 BTC on UniswapV2, incurring 1.5% slippage, getting 2,364,000 USDC
-5. 40 WBTC at 58,800 USDC requires that 2,352,000 USDC be returned to the Liquidator.
-6. Keeper is left the remaining funds, 12,000 USDC.
-7. A second Keeper wants to buy the collateral outright, since they have enough USDC on hand.
-8. The second Keeper simply calculates the amount required to buy the remaining 60 WBTC (3,528,000 USDC).
-9. The second Keeper approves 3,528,000 USDC to the liquidator and calls `liquidatePortion` from their EOA.
-10. This amount is pulled using `transferFrom`, and the 60 WBTC is sent to the second Keeper.
