@@ -10,11 +10,11 @@ The relationship between the Pool and PoolManager is currently one-to-one, howev
 
 The Pool is not aware of any of the LoanManagers or the WithdrawalManager, so these contracts can be changed in the future as seen fit (can only be changeable to contracts that have been vetted by the protocol smart contracts team and the DAO).
 
-In addition, in future iterations of the protocol, this will allow for newly deployed Pools to be configured in a custom manner. Pool Delegates could choose from a suite of LoanManager, PoolDelegateCover, and WithdrawalManager contracts and initialize a Pool that meets the specific needs they have to run their lending business.
+In addition, in future iterations of the protocol, this will allow newly deployed pools to be configured from a suite of LoanManager and WithdrawalManager contracts to meet pool requirements.
 
 # Administrative Functions
 
-Pool Delegates have permissions to alter the configuration of the PoolManager contract. All parameters that can be configured are listed below.
+The Pool Delegate address has permissions to alter the configuration of the PoolManager contract. All parameters that can be configured are listed below.
 
 * `poolDelegate`: The address allowed to configure the pool and fund loans.
 * `liquidityCap`: The maximum amount of funds asset that can be deposited.

@@ -60,7 +60,7 @@ Each withdrawal request can be processed automatically (by default) or manually 
 
 * Automatic requests will be immediately redeemed on processing.
 * Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (mainly for integrators). Automatic requests are the default and preferred way of handling withdrawals.
-* Pool Delegates are expected to be in touch with integrators to ensure they have manual requests enabled.
+* The pool administrator coordinates with integrators to ensure manual requests are enabled when required.
 
 ### Roles & Permissions
 

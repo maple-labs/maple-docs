@@ -2,7 +2,7 @@ This page outlines all of the different actors in the Maple protocol and gives a
 
 ## Pool Delegate
 
-Pool Delegates are users that manage Pools on Maple. They earn management fees in return for deploying capital with attractive risk-adjusted returns. Pool Delegates earn revenue from management fees. Pool are mostly managed by Pool Delegates from Maple Direct.
+A Pool Delegate is an address used to administer a pool. The Pool Delegate address configures pool parameters, manages strategies, and performs loan administration as permitted by protocol roles. Management fees compensate the pool administration function.
 
 ## Liquidity Provider
 
@@ -10,7 +10,7 @@ Liquidity Providers (LPs) add capital to the Pools to be used to fund strategies
 
 ## Borrowers
 
-The primary Maple strategies are loans for institutions (borrowers) that want to borrow capital from the Maple protocol. They do so by negotiating with Pool Delegates and deploying a Loan on-chain. After agreeing on terms, a Pool Delegate can fund the Loan with funds available in their Pool.
+The primary Maple strategies are loans for institutions (borrowers) that want to borrow capital from the Maple protocol. After agreeing terms with Maple, a Pool Delegate address can fund the loan with funds available in the pool.
 
 
 ## Governor
