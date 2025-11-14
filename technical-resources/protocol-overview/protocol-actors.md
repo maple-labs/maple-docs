@@ -2,11 +2,11 @@ This page outlines all of the different actors in the Maple protocol and gives a
 
 ## Pool Delegate
 
-A Pool Delegate is an address used to administer a pool. The Pool Delegate address configures pool parameters, manages strategies, and performs loan administration as permitted by protocol roles. Management fees compensate the pool administration function.
+A Pool Delegate is an address used to administer a pool. The Pool Delegate address configures pool parameters, manages strategies, and performs loan administration as permitted by protocol roles.
 
 ## Liquidity Provider
 
-Liquidity Providers (LPs) add capital to the Pools to be used to fund strategies. LPs are lenders that want to earn yield on their capital by allowing Maple Direct to underwrite strategies and earn interest. LPs earn interest by holding ERC-4626 compliant LP tokens representing their share in the pool, which appreciates in value over time as interest is earned. LPs can choose which Pool they want to deposit their capital in based on multiple factors, such as the historical performance and underlying collateral.&#x20;
+Liquidity Providers (LPs) add capital to the Pools to be used to fund strategies. LPs are lenders that want to earn yield on their capital by allowing Maple Direct to underwrite strategies and earn interest. LPs earn interest by holding ERC-4626 compliant LP tokens representing their share in the pool, which appreciates in value over time as interest is earned. LPs can choose which Pool they want to deposit their capital in based on multiple factors, such as the historical performance and underlying collateral.
 
 ## Borrowers
 
