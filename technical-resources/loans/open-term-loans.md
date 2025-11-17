@@ -108,9 +108,9 @@ $$defaultDate = \min(callDefaultDate, impairedDefaultDate, normalDefaultDate)$$
 
 ## Loan Calls
 
-The Pool Delegate (PD) exclusively possesses the ability to commence a Loan Call, specifying the principal amount that must not exceed the current principal balance. In the event of partial Loan Calls, the loan continues with a reduced balance but the same terms. Conversely, a complete Loan Call leads to the loan maturing once the borrower repays. Upon a Loan Call by the PD, the borrower is obligated to settle the demanded amount within the Notice Period or risk the loan defaulting.
+The lender exclusively has the ability to commence a Loan Call, specifying the principal amount that must not exceed the current principal balance. In the event of partial Loan Calls, the loan continues with a reduced balance but the same terms. Conversely, a complete Loan Call leads to the loan maturing once the borrower repays. Upon a Loan Call by the lender, the borrower is obligated to settle the demanded amount within the Notice Period or risk the loan defaulting.
 
-The PD also has the power to withdraw a Loan Call, which reverts the payment schedule back to its original state prior to the Loan Call. If a Loan Call is actioned on a late loan, the PD has the discretion to default the loan at the termination of either the Notice Period or the Grace Period, depending on which comes first.
+The lender can also withdraw a Loan Call, which reverts the payment schedule back to its original state prior to the Loan Call. If a Loan Call is made on a late loan, the lender can default the loan at the termination of either the Notice Period or the Grace Period, depending on which comes first.
 
 It's worth noting that refinancing is considered a valid resolution to Loan Calls, with such calls being settled once the parties agree to new terms.
 
@@ -120,7 +120,9 @@ Open-Term Loans have `delegateServiceFees` and `platformServiceFees` which are p
 
 ## Closing Loan
 
-If a Borrower wants to close a Loan, they can do so by calling `makePayment` with a principalToReturn matching the outstand principal.
+If a borrower wants to close a loan, they can do so by calling `makePayment` with `principalToReturn` equal to the outstanding principal.
+
+Note: `makePayment` is permissionless. Any address can pay on behalf of the borrower by transferring funds via `transferFrom` to the lender; typical usage is the borrower calling directly.
 
 ## Initialization Parameters
 
