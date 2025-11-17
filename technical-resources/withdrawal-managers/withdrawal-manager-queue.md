@@ -21,6 +21,8 @@ _NOTE_: Withdrawal requests can only be submitted in the form of redemption requ
 
 The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If there is insufficient liquidity to process all requests, only the earliest requests are processed. The remainder stay in the queue to be processed later.
 
+For SyrupBTC pools, the `SyrupBitcoinRouter` coordinates after the Withdrawal Manager has processed shares for a request. The router can process in any order once the Withdrawal Manager has advanced the queue. In practice processing will be FIFO for fairness. See `technical-resources/interfaces/syrup-bitcoin-router.md` for details
+
 ### Request Processing
 
 The pool delegate or any of the protocol admins can at any time process any amount of shares that are pending redemption. The amount of shares to be processed is specified in advance, and as many redemption requests as possible will be processed using that amount of shares. The requests are processed based on their position in the queue (first to last), and using the current exchange rate.

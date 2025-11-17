@@ -2,14 +2,14 @@
 
 ```
 * Fixed Term Loan
-   * Invariant A: collateral balance >= collateral`
-   * Invariant B: fundsAsset >= drawableFunds`
-   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
+   * Invariant A: collateral balance >= _collateral`
+   * Invariant B: fundsAsset >= _drawableFunds`
+   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
 
 * Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
    * Invariant B: sortedPayments is always sorted
-   * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)
+   * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)A
    * Invariant D: totalPrincipal = ∑loan.principal()
    * Invariant E: issuanceRate = ∑issuanceRate(payment)
    * Invariant F: unrealizedLosses <= assetsUnderManagement()
@@ -43,11 +43,11 @@
    * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
    * Invariant J: payment.impairedDate >= payment.startDate
    * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
-   * Invariant L: fundsAsset balance of LoanManager == 0
-   * Invariant M: allowance(LoanManager, each loan) == 0
+   * Invariant L: fundsAsset.balanceOf(OTLM) == 0
+   * Invariant M: fundsAsset.allowance(OTLM, address(loan)) == 0
 
 * Pool (non-liquidating)
-   * Invariant A: totalAssets >= fundsAsset balance of pool
+   * Invariant A: totalAssets > fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
    * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
    * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
@@ -61,7 +61,7 @@
 
 * PoolManager (non-liquidating)
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
-   * Invariant B: unrealizedLosses() <= totalAssets()
+   * Invariant B: totalAssets >= unrealizedLosses
 
 * Pool Permission Manager
    * Invariant A: pool.permissionLevel ∈ [0, 3]
@@ -88,4 +88,13 @@
    * Invariant E: strategyState == INACTIVE -> assetsUnderManagement == unrealizedLosses == 0
    * Invariant F: strategyState ∈ [0, 2]
    * Invariant G: if STRATEGY_TYPE() != "CORE" then strategyFeeRate <= 1e6
+
+* Syrup BTC
+   * Invariant A: depositAssets(wBTC) == poolAssets(wBTC)
+   * Invariant B: balanceOf(pool) == poolAssets(wBTC)
+   * Invariant C: totalSupply == balanceOf(pool)
+   * Invariant D: balanceOf(wm) == Σrequest.shares
+   * Invariant E: Σrouter.request.shares == Σwm.request.shares + manualShares(router)
+   * Invariant F: (remainingYield > 0) == (remainingDuration > 0)
+   * Invariant G: accruedFees() <= accruedYield()
 ```
