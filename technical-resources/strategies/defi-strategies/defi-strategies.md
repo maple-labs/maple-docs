@@ -16,7 +16,9 @@ Pool assets are pulled into the strategy contracts via `requestFunds()` in the `
 
 ## Strategy Fees
 
-A performance fee is charged on the yield generated from each strategy. A snapshot is taken of the strategy's total assets during `deposit()`, `withdraw()`, and `setStrategyFeeRate()` function calls as `lastRecordedTotalAssets`. This snapshot is then compared at the next interaction, and if yield has been generated, the fee is charged and sent to the Maple Treasury.
+Aave, Basic, and Sky strategies charge a performance fee on realized yield. Core strategies do not charge performance fees.
+
+For Aave/Basic/Sky, a snapshot of total assets (`lastRecordedTotalAssets`) is taken during strategy interactions such as `fundStrategy(...)`, `withdrawFromStrategy(...)`, and `setStrategyFeeRate(...)`. On the next interaction, the delta in total assets determines the fee that is sent to the Maple Treasury.
 
 The strategy fee is calculated using the formula:
 
@@ -25,8 +27,10 @@ $$
 \text{strategyFee} = \dfrac{\text{yieldAccrued} \times \text{strategyFeeRate}}{1 \times 10^6}
 $$
 
+TODO: CHECK THE BELOW FORMATTING after publishing. It renders in vscode preview, but is wrong on the website.
+
 **Where:**
-- $\text{yieldAccrued}$ is the total yield accrued since the last `deposit()`, `withdraw()`, or `setStrategyFeeRate()` function call.
+- $\text{yieldAccrued}$ is the total yield accrued since the last `fundStrategy(...)`, `withdrawFromStrategy(...)`, or `setStrategyFeeRate(...)` call (Aave/Basic/Sky).
 - $\text{strategyFeeRate}$ is the fee rate for the strategy, which can be no greater than $1 \times 10^6$.
 - $1 \times 10^6$ represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
 
@@ -56,7 +60,7 @@ $$
 
 Refers to the default state of a strategy where it can be used to access all external functions, and it is expected that `assetsUnderManagement` is being correctly reported. This can include situations where the strategy is earning yield or even at a loss, as long as it's correctly reported and the underlying assets can be withdrawn.
 
-Please note that when a strategy is reactivated, the protocol admins reserve the ability to update the accounting of `lastRecordedTotalAssets`. For example, if `lastRecordedTotalAssets` is being over reported, updating this variable upon reactivation ensures that performance fees can be correctly accrued. Conversely, if `lastRecordedTotalAssets` is correct, there is no need to update this variable during reactivation.
+Please note that when a strategy is reactivated, protocol admins may update the accounting baseline (`lastRecordedTotalAssets`) to avoid retroactive fees for the inactive/impaired period. For Aave/Basic/Sky this is controlled by a `reactivateStrategy(bool updateAccounting)` flag. NOTE: The Core strategy exposes `reactivateStrategy()` without an update‑accounting parameter.
 
 ### Impaired
 
@@ -130,8 +134,33 @@ The Basic Strategy is a generic strategy to be used with any fully ERC-4626 comp
 Each ERC-4626 compliant vault that is being considered for integration will be tested for compatibility first before being onboarded, similar to how ERC-20 tokens are vetted.
 
 **Notes:**
-- `fundStrategy()` has added slippage protection when depositing assets, where the admin can specify the `minSharesOut` for the shares minted by the ERC-4626 vault. Slippage isn't required on the `withdrawFromStrategy()` function due to the EIP spec specifying that the assets out must equal the amount requested or revert. (Note: As Aave and Sky contracts are known ahead of time and have adequate liquidity, slippage isn't a concern on the respective strategy contracts.)
-- Currently, this strategy is only tested to work with `sUSDS`, which is compliant with the ERC-4626 standard.
-- Each ERC-4626 vault will need to be tested to ensure `previewRedeem()` does not revert before integrating.
+- Basic Strategy adds explicit slippage bounds:
+  - `fundStrategy(assetsIn, minSharesOut)` enforces a minimum shares check.
+  - `withdrawFromStrategy(assetsOut, maxSharesBurned)` enforces a maximum shares burned check.
+- Aave and Sky strategies use `fundStrategy(assetsIn)` and `withdrawFromStrategy(assetsOut)` without slippage parameters.
+- Core Strategy uses a queue‑based withdrawal flow: `requestWithdrawFromStrategy(assetsOut)`, then `removeShares(...)`/`removeSharesById(...)` as needed, and `pushAssetsToPool()` to return funds to the Pool.
 - Each ERC-4626 vault will need to be tested to ensure upon withdrawal the amount of shares required to withdraw the known assets doesn't drastically change e.g a slashing event as in this case slippage controls would be required. These controls can be added in a future upgrade if needed or a bespoke strategy contract can be implemented.
 
+## Strategy Interfaces
+
+- Core Strategy
+  - `fundStrategy(uint256 assetsIn)`
+  - `requestWithdrawFromStrategy(uint256 assetsOut)`
+  - `removeShares(uint256 shares)` / `removeSharesById(uint256 requestId, uint256 shares)`
+  - `pushAssetsToPool()`
+  - No performance fees (STRATEGY_TYPE = "CORE").
+
+- Basic Strategy
+  - `fundStrategy(uint256 assetsIn, uint256 minSharesOut)`
+  - `withdrawFromStrategy(uint256 assetsOut, uint256 maxSharesBurned)`
+  - Performance fee based on `lastRecordedTotalAssets` and `strategyFeeRate` (scaled by 1e6).
+
+- Aave Strategy
+  - `fundStrategy(uint256 assetsIn)`
+  - `withdrawFromStrategy(uint256 assetsOut)`
+  - Performance fee based on `lastRecordedTotalAssets` and `strategyFeeRate` (scaled by 1e6).
+
+- Sky Strategy
+  - `fundStrategy(uint256 assetsIn)` (PSM swap to USDS, then ERC‑4626 deposit)
+  - `withdrawFromStrategy(uint256 assetsOut)` (withdraw and PSM redeem path)
+  - Performance fee based on `lastRecordedTotalAssets` and `strategyFeeRate` (scaled by 1e6).
