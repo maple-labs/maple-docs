@@ -43,9 +43,11 @@
    * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
    * Invariant J: payment.impairedDate >= payment.startDate
    * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
+   * Invariant L: fundsAsset balance of LoanManager == 0
+   * Invariant M: allowance(LoanManager, each loan) == 0
 
 * Pool (non-liquidating)
-   * Invariant A: totalAssets > fundsAsset balance of pool
+   * Invariant A: totalAssets >= fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
    * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
    * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
@@ -59,7 +61,7 @@
 
 * PoolManager (non-liquidating)
    * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
-   * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
+   * Invariant B: unrealizedLosses() <= totalAssets()
 
 * Pool Permission Manager
    * Invariant A: pool.permissionLevel ∈ [0, 3]
@@ -76,7 +78,7 @@
    * Invariant F: requests(0) == (0, 0)
    * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
    * Invariant H: requestId is unique
-   * Invariant I: lender is unique
+   * Invariant I: assets from getRedeemableAmounts <= pool fundsAsset balance
 
 * Strategy
    * Invariant A: assetsUnderManagement == currentTotalAssets - accruedFees
@@ -85,5 +87,5 @@
    * Invariant D: strategyState == IMPAIRED -> assetsUnderManagement == unrealizedLosses
    * Invariant E: strategyState == INACTIVE -> assetsUnderManagement == unrealizedLosses == 0
    * Invariant F: strategyState ∈ [0, 2]
-   * Invariant G: strategyFeeRate <= 1e6
+   * Invariant G: if STRATEGY_TYPE() != "CORE" then strategyFeeRate <= 1e6
 ```
