@@ -9,11 +9,11 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `upgrade`
 * `acceptPoolDelegate`
 * `setPendingPoolDelegate`
-* `addStrategy`
-* `setDelegateManagementFeeRate`
+* `addStrategy` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setDelegateManagementFeeRate` (only before initial configuration; callable prior to `completeConfiguration`)
 * `setIsStrategy`
-* `setLiquidityCap`
-* `setPoolPermissionManager`
+* `setLiquidityCap` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setPoolPermissionManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `finishCollateralLiquidation`
 * `triggerDefault`
@@ -34,12 +34,15 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 
 * `upgrade`
 * `fund`
+* `impairLoan`
+* `removeLoanImpairment`
+
+## OpenTermLoan
+
 * `proposeNewTerms`
 * `rejectNewTerms`
 * `callPrincipal`
 * `removeCall`
-* `impairLoan`
-* `removeLoanImpairment`
 
 ## Pool Permission Manager
 
