@@ -11,21 +11,21 @@ The relationship between the Pool and PoolManager is currently one-to-one, howev
 The Pool is not aware of any of the LoanManagers or the WithdrawalManager, so these contracts can be changed in the future as seen fit (can only be changeable to contracts that have been vetted by the protocol smart contracts team and the DAO).
 
 In addition, in future iterations of the protocol, this will allow newly deployed pools to be configured from a suite of LoanManager and WithdrawalManager contracts to meet pool requirements.
-
 # Administrative Functions
 
-The Pool Delegate address has permissions to alter the configuration of the PoolManager contract. All parameters that can be configured are listed below.
+Core configuration is gated to protocol admins (Governor, Operational Admin or Pool Delegate) or only allowed prior to initial configuration.
 
-* `poolDelegate`: The address allowed to configure the pool and fund loans.
-* `liquidityCap`: The maximum amount of funds asset that can be deposited.
-* `openToPublic`: Indicates if the pool is permissioned or not.
-* `delegateManagementRate`: The percentage of the interest that is paid to the Pool Delegate.
+- `setDelegateManagementFeeRate` 
+- `setLiquidityCap` 
+- `setPoolPermissionManager`
+- `setWithdrawalManager` 
+- `addStrategy` 
+- `setIsStrategy` 
 
-Additionally, the PoolManager also stores relevant information regarding the modules used by the pool, such as:
-
-* List of `loanManagers`
-* The `withdrawalManager`
-* The `poolDelegateCover` contract.
+Additionally, the PoolManager stores relevant module addresses:
+- List of `loanManagers`
+- The `withdrawalManager`
+- The `poolDelegateCover` contract
 
 # Funds Asset Approval
 

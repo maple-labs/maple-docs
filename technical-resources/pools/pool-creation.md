@@ -4,7 +4,7 @@ The PoolDeployer contract facilitates the atomic deployment and initialization o
 * `PoolManager`, which itself deploys the `Pool` and acts as the hub for configuration and strategy attachment
 * `WithdrawalManager (Queue)`
 
-The `deployPool` function in the PoolDeployer contract handles the deployment of the queue-based withdrawal manager.
+The `deployPool` function in the PoolDeployer contract handles deployment of the PoolManager/Pool, the queue‑based Withdrawal Manager, and strategy instances.
 
 # Pre-Requisite Transactions
 
