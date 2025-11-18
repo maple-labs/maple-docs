@@ -36,6 +36,7 @@ This function sets various permissions and configurations in the Globals contrac
 | `setValidInstanceOf`          | `"LOAN_FACTORY"`               | `fixedTermLoanFactoryV2`              | `true`      |
 | `setValidInstanceOf`          | `"FT_LOAN_FACTORY"`            | `fixedTermLoanFactoryV2`              | `true`      |
 | `setValidInstanceOf`          | `"POOL_PERMISSION_MANAGER"`    | `address(poolPermissionManager)`      | `true`      |
+| `setValidInstanceOf`          | `"WITHDRAWAL_MANAGER_CYCLE_FACTORY"` | `withdrawalManagerFactory`         | `true`      |
 | `setValidInstanceOf`          | `"WITHDRAWAL_MANAGER_QUEUE_FACTORY"` | `queueWMFactory`                   | `true`      |
 | `setValidInstanceOf`          | `"WITHDRAWAL_MANAGER_FACTORY"` | `queueWMFactory`                       | `true`      |
 | `setValidInstanceOf`          | `"QUEUE_POOL_MANAGER"`         | `cashManagementUSDCPoolManager`        | `true`      |
@@ -69,6 +70,8 @@ This function registers new implementations and default versions in various fact
 | Fixed Term Loan Factory       | `enableUpgradePath`          | 501 -> 502 | `501, 502, fixedTermLoanV502Migrator`                |
 | Fixed Term Loan Factory V2    | `registerImplementation`     | 502       | `502, fixedTermLoanImplementationV502, fixedTermLoanInitializerV500` |
 | Fixed Term Loan Factory V2    | `setDefaultVersion`          | 502       | `502`                                                 |
+| Withdrawal Manager Factory    | `registerImplementation`     | 110       | `110, cyclicalWMImplementation, cyclicalWMInitializer` |
+| Withdrawal Manager Factory    | `setDefaultVersion`          | 110       | `110`                                                 |
 | Queue Withdrawal Manager Factory | `registerImplementation`   | 100       | `100, queueWMImplementation, queueWMInitializer`     |
 | Queue Withdrawal Manager Factory | `setDefaultVersion`        | 100       | `100`                                                 |
 
