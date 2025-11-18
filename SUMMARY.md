@@ -138,7 +138,6 @@
   * [Liquidator](technical-resources/interfaces/liquidator.md)
   * [GovernorTimelock](technical-resources/interfaces/governor-timelock.md)
   * [SyrupRouter](technical-resources/interfaces/syrup-router.md)
-  * [MapleRouter](technical-resources/interfaces/maple-router.md)
   * [LiquidatorFactory](technical-resources/interfaces/liquidator-factory.md)
   * [LiquidatorInitializer](technical-resources/interfaces/liquidator-initializer.md)
   * [OpenTermLoan](technical-resources/interfaces/open-term-loan.md)
