@@ -17,6 +17,8 @@ The first step is deploying various new contract implementations and initializin
 | `PoolManagerWMMigrator` | The migrator contract for setting the new queue withdrawal manager implementation on deployed versions of the pool manager |
 | `NonTransparentProxy (PoolPermissionManager)` | The new pool permission manager contract. This will be a non transparent proxy. |
 | `PoolPermissionManagerImplementation` | The new pool permission manager contract implementation. |
+| `WithdrawalManagerCyclical` | The new implementation of the withdrawal manager cyclical contract |
+| `WithdrawalManagerCyclicalInitializer` | The initializer for the withdrawal manager cyclical contract |
 | `PoolPermissionManagerInitializer` | The new pool permission manager Initializer contract. |
 | `WithdrawalManagerQueueFactory` | The factory for creating instances of the withdrawal manager queue contract |
 | `WithdrawalManagerQueue` | The new implementation of the withdrawal manager queue contract |
