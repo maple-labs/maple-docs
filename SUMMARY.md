@@ -2,6 +2,16 @@
 
 * [Welcome to Maple](README.md)
 
+## SyrupBTC
+
+SyrupBTC extends Maple Pools with wBTC deposit support using a controller and router layer to wrap assets, manage strategies, and orchestrate redemptions.
+
+* [Overview](technical-resources/SyrupBTC/overview.md)
+* [Architecture and Flows](technical-resources/SyrupBTC/architecture.md)
+* [Controller Module](technical-resources/SyrupBTC/controller.md)
+* [SyrupBitcoinRouter](technical-resources/SyrupBTC/router.md)
+* [Contracts](technical-resources/SyrupBTC/contracts-overview.md)
+
 ## Integrate SyrupUSDC/USDT <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
@@ -107,7 +117,7 @@
     * [Accounting Examples](technical-resources/strategies/fixed-term-loan-manager/fixed-term-lm-accounting-examples.md)
   * [Open Term Loan Manager](technical-resources/strategies/open-term-loan-manager/open-term-loan-manager.md)
   * [DeFi Strategies](technical-resources/strategies/defi-strategies/defi-strategies.md)
-  * [Bitcoin Strategy](technical-resources/strategies/bitcoin-strategy.md)
+  * [Bitcoin Strategy](technical-resources/SyrupBTC/bitcoin-strategy.md)
 * [Withdrawal Managers](technical-resources/withdrawal-managers/README.md)
   * [WithdrawalManager (Queue)](technical-resources/withdrawal-managers/withdrawal-manager-queue.md)
 * [Singletons](technical-resources/singletons/README.md)
