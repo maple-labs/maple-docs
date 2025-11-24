@@ -98,10 +98,6 @@ Ran 5 tests for tests/integration/pool/PoolAccountingViewFunctions.t.sol:TotalAs
 [PASS] test_totalAssets_zeroTotalSupply() (gas: 61877)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 37.78ms (5.72ms CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/asset-controller/view-functions/PoolAsset.t.sol:PoolAssetTests
-[PASS] test_poolAsset_modifyViaStorage() (gas: 63158)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 41.49ms (371.15µs CPU time)
-
 Ran 9 tests for tests/integration/strategies/AaveStrategy.t.sol:AaveStrategyDeactivateTests
 [PASS] testFork_aaveStrategy_deactivate_failIfAlreadyInactive() (gas: 94894)
 [PASS] testFork_aaveStrategy_deactivate_failIfNotProtocolAdmin() (gas: 60662)
@@ -113,10 +109,6 @@ Ran 9 tests for tests/integration/strategies/AaveStrategy.t.sol:AaveStrategyDeac
 [PASS] testFork_aaveStrategy_deactivate_withGain_strategyFees() (gas: 614869)
 [PASS] testFork_aaveStrategy_deactivate_withLoss_strategyFees() (gas: 686558)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 139.57ms (15.30ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/asset-controller/view-functions/PoolAssets.t.sol:PoolAssetsTests
-[PASS] test_poolAssets_success() (gas: 515507)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 52.02ms (1.12ms CPU time)
 
 Ran 12 tests for tests/integration/permission-manager/PoolEntryPermission.t.sol:FunctionLevelPermissionTests
 [PASS] test_poolEntry_functionLevel_deposit() (gas: 375834)
@@ -243,10 +235,6 @@ Ran 5 tests for tests/integration/permission-manager/PoolExitPermission.t.sol:Pu
 [PASS] test_poolExit_public_withdraw() (gas: 74179)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 39.46ms (3.20ms CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/PoolManager.t.sol:PoolManagerTests
-[PASS] test_poolManager_getter() (gas: 14938)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 47.56ms (189.04µs CPU time)
-
 Ran 12 tests for tests/integration/strategies/AaveStrategy.t.sol:AaveStrategyWithdrawTests
 [PASS] testFork_aaveStrategy_withdraw_failIfLowAssets() (gas: 99935)
 [PASS] testFork_aaveStrategy_withdraw_failIfNotStrategyManager() (gas: 58628)
@@ -304,26 +292,11 @@ Ran 2 tests for tests/integration/permission-manager/PoolTransferPermission.t.so
 [PASS] test_poolTransfer_public_transferFrom() (gas: 97850)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 40.02ms (634.13µs CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/asset-controller/view-functions/PreviewDeploy.t.sol:PreviewDeployTests
-[PASS] test_previewDeploy_identicalOutput() (gas: 39539)
-[PASS] test_previewDeploy_zero() (gas: 39562)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 45.15ms (445.19µs CPU time)
-
 Ran 3 tests for tests/integration/governor-timelock/AcceptTokenWithdrawer.t.sol:AcceptTokenWithdrawerTests
 [PASS] test_acceptTokenWithdrawer_revert_notAuthorized() (gas: 10661)
 [PASS] test_acceptTokenWithdrawer_success() (gas: 37183)
 [PASS] test_setUp() (gas: 55582)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 71.09ms (722.19µs CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/asset-controller/view-functions/PreviewReconcile.t.sol:PreviewReconcileTests
-[PASS] test_previewReconcile_identicalOutput() (gas: 39474)
-[PASS] test_previewReconcile_zero() (gas: 39453)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 46.93ms (507.25µs CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AccruedFees.t.sol:AccruedFeesTests
-[PASS] testFuzz_accruedFees_withSchedule(uint256,uint256,uint32,uint32) (runs: 100, μ: 161834, ~: 161974)
-[PASS] test_accruedFees_withoutSchedule() (gas: 17168)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 93.80ms (34.50ms CPU time)
 
 Ran 8 tests for tests/integration/withdrawal-manager/queue/ProcessEmptyRedemptions.t.sol:ProcessEmptyRedemptionsQueueTests
 [PASS] test_partialProcess_then_cancel_head_then_processEmptyRedemptions() (gas: 680287)
@@ -335,11 +308,6 @@ Ran 8 tests for tests/integration/withdrawal-manager/queue/ProcessEmptyRedemptio
 [PASS] test_processEmptyRedemptions_zeroRequests_reverts() (gas: 54592)
 [PASS] test_processRedemptions_then_processEmptyRedemptions_skipsCancelledFront() (gas: 839272)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 93.45ms (19.42ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AccruedYield.t.sol:AccruedYieldTests
-[PASS] testFuzz_accruedYield_withSchedule(uint256,uint32,uint32) (runs: 100, μ: 111140, ~: 111098)
-[PASS] test_accruedYield_withoutSchedule() (gas: 17259)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 63.44ms (24.61ms CPU time)
 
 Ran 3 tests for tests/integration/globals/ActivatePoolManager.t.sol:ActivatePoolManagerFailureTests
 [PASS] test_activatePoolManager_failIfNotGlobals() (gas: 35070)
@@ -373,36 +341,6 @@ Ran 6 tests for tests/integration/withdrawal-manager/queue/AddShares.t.sol:AddSh
 [PASS] test_addShares_failIfTransferFail() (gas: 102673)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 68.97ms (1.54ms CPU time)
 
-Ran 27 tests for tests/integration/syrup-btc/syrup-btc-router/ProcessRedemptions.t.sol:SyrupBitcoinRouterProcessRedemptionsTests
-[PASS] test_syrupBitcoinRouter_deposit_processRedemptions_transferFailure() (gas: 752270)
-[PASS] test_syrupBitcoinRouter_deposit_processRedemptions_transferFeeFailure() (gas: 790688)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_assetController_canUnwrapFalse() (gas: 673155)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_assetController_transferFailed() (gas: 697264)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_assetController_transferFromFailed() (gas: 664190)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_assetController_zeroWithdrawAmount() (gas: 639569)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_emptyRequestIds() (gas: 41095)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_insufficientLiquidity() (gas: 753914)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_noAssetController() (gas: 126172)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_noSharesToRedeem() (gas: 146234)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_onlyRedeemer() (gas: 61026)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_paused() (gas: 53868)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_requestIdTooBig() (gas: 70759)
-[PASS] test_syrupBitcoinRouter_processRedemptions_revert_tooManyShares() (gas: 153066)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success() (gas: 914044)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_outOfOrderIds() (gas: 894471)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_partialFirstRequest() (gas: 657023)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_partialThenFinish() (gas: 1175661)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_redemptionFeeEqualsRedeemAmount_userReceivesZeroShares() (gas: 706051)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_singleRequestOnly() (gas: 709547)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_skipAlreadyProcessedRequests() (gas: 898656)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_skipCancelledRequestId() (gas: 260611)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_skipCancelledThenProcessValid() (gas: 728502)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_skipFutureRequestIds() (gas: 124891)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_withFullRedemptionFee() (gas: 921712)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_withRedemptionFee() (gas: 945692)
-[PASS] test_syrupBitcoinRouter_processRedemptions_success_zeroPoolAssets() (gas: 678059)
-Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 112.58ms (64.91ms CPU time)
-
 Ran 6 tests for tests/integration/governor-timelock/ProposeRoleUpdates.t.sol:ProposeRoleUpdatesTests
 [PASS] test_proposeRoleUpdates_revert_emptyArray() (gas: 14694)
 [PASS] test_proposeRoleUpdates_revert_invalidAccountsLength() (gas: 15106)
@@ -420,30 +358,6 @@ Ran 5 tests for tests/integration/withdrawal-manager/queue/AddShares.t.sol:AddSh
 [PASS] test_addShares_withApproval() (gas: 353997)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 77.50ms (8.85ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/RealizedFees.t.sol:RealizedFeesTests
-[PASS] testFuzz_realizedFees_withSchedule(uint256,uint256,uint32,uint32) (runs: 100, μ: 166992, ~: 173033)
-[PASS] test_realizedFees_withoutSchedule() (gas: 12719)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 99.05ms (50.56ms CPU time)
-
-Ran 16 tests for tests/integration/syrup-btc/bitcoin-strategy/Reconcile.t.sol:ReconcileFailureTests
-[PASS] test_reconcile_accountingUnderflow() (gas: 355079)
-[PASS] test_reconcile_cantPullFromReconciler() (gas: 61027)
-[PASS] test_reconcile_cantPullFromStrategy() (gas: 208784)
-[PASS] test_reconcile_cantPushToPool() (gas: 342766)
-[PASS] test_reconcile_cantPushToStrategy() (gas: 260345)
-[PASS] test_reconcile_compositePaused() (gas: 183890)
-[PASS] test_reconcile_controllerPaused() (gas: 147858)
-[PASS] test_reconcile_missingController() (gas: 89341)
-[PASS] test_reconcile_notController() (gas: 173443)
-[PASS] test_reconcile_notReconciler() (gas: 45691)
-[PASS] test_reconcile_notStrategy() (gas: 137766)
-[PASS] test_reconcile_notWhitelisted() (gas: 177264)
-[PASS] test_reconcile_strategyPaused() (gas: 78980)
-[PASS] test_reconcile_unsupportedAsset() (gas: 164111)
-[PASS] test_reconcile_zeroDepositAmount() (gas: 46037)
-[PASS] test_reconcile_zeroMintAmount() (gas: 149343)
-Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 51.97ms (6.73ms CPU time)
-
 Ran 9 tests for tests/integration/pool/AddStrategy.t.sol:AddStrategyTests
 [PASS] test_addStrategy_invalidAsset() (gas: 230970)
 [PASS] test_addStrategy_invalidFactory() (gas: 46622)
@@ -456,40 +370,11 @@ Ran 9 tests for tests/integration/pool/AddStrategy.t.sol:AddStrategyTests
 [PASS] test_addStrategy_withExtraArguments_withOperationalAdmin() (gas: 544127)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 169.26ms (13.49ms CPU time)
 
-Ran 14 tests for tests/integration/syrup-btc/bitcoin-strategy/Reconcile.t.sol:ReconcileSuccessTests
-[PASS] test_reconcile_duringSchedule_maximum() (gas: 451621)
-[PASS] test_reconcile_duringSchedule_minimum() (gas: 455096)
-[PASS] test_reconcile_duringSchedule_partial() (gas: 457979)
-[PASS] test_reconcile_duringSchedule_yield() (gas: 455456)
-[PASS] test_reconcile_emptySchedule_maximum() (gas: 354980)
-[PASS] test_reconcile_emptySchedule_minimum() (gas: 359867)
-[PASS] test_reconcile_emptySchedule_partial() (gas: 362686)
-[PASS] test_reconcile_newSchedule_maximum() (gas: 421211)
-[PASS] test_reconcile_newSchedule_minimum() (gas: 426008)
-[PASS] test_reconcile_newSchedule_partial() (gas: 428806)
-[PASS] test_reconcile_pastSchedule_maximum() (gas: 408682)
-[PASS] test_reconcile_pastSchedule_minimum() (gas: 408003)
-[PASS] test_reconcile_pastSchedule_partial() (gas: 410187)
-[PASS] test_reconcile_pastSchedule_yield() (gas: 408202)
-Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 64.37ms (15.91ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/composite-token/view-functions/AllAllowed.t.sol:AllAllowedTests
-[PASS] test_allAllowed_revert_allAllowed_disabled() (gas: 155952)
-[PASS] test_success_allowAllAddresses() (gas: 141817)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 84.75ms (3.72ms CPU time)
-
 Ran 3 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:MultiUserRedeemTests
 [PASS] test_redeem_partialLiquidity_sameCash_differentExchangeRate() (gas: 2305986)
 [PASS] test_redeem_partialLiquidity_sameCash_sameExchangeRate() (gas: 2215976)
 [PASS] test_redeem_partialLiquidity_sameCash_sameExchangeRate_exposeRounding() (gas: 4367096)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 110.86ms (64.70ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/composite-token/AllowAddresses.t.sol:CompositeTokenAllowAddressesTests
-[PASS] test_allowAddresses_revert_lengthMismatch() (gas: 51595)
-[PASS] test_allowAddresses_revert_noAddresses() (gas: 50780)
-[PASS] test_allowAddresses_revert_notGovernor() (gas: 27557)
-[PASS] test_allowAddresses_success_governor() (gas: 91356)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 90.72ms (3.19ms CPU time)
 
 Ran 9 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RedeemFailureTests
 [PASS] test_redeem_failIfNoApprove() (gas: 246147)
@@ -503,37 +388,11 @@ Ran 9 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RedeemFai
 [PASS] test_redeem_failWithZeroReceiver() (gas: 301075)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 83.14ms (9.62ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/composite-token/AllowAllAddresses.t.sol:CompositeTokenAllowAllAddressesTests
-[PASS] test_allowAllAddresses_revert_notGovernor() (gas: 26609)
-[PASS] test_allowAllAddresses_success_governor() (gas: 139722)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 83.65ms (2.89ms CPU time)
-
 Ran 3 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RedeemIntegrationTests
 [PASS] test_redeem_oneLPWithImpairedLoan() (gas: 1681933)
 [PASS] test_redeem_twoLPSWithImpairedLoanAndTriggerDefault() (gas: 1780463)
 [PASS] test_redeem_twoLPsWithImpairedLoan() (gas: 1924169)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 75.68ms (14.60ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/composite-token/view-functions/AllowedAddresses.t.sol:AllowedAddressesTests
-[PASS] test_allowedAddresses_revert_permissionRevoked() (gas: 197737)
-[PASS] test_allowedAddresses_success() (gas: 177858)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 58.38ms (2.42ms CPU time)
-
-Ran 6 tests for tests/integration/syrup-btc/asset-controller/AssetControllerInitializerTests.t.sol:AssetControllerInitializerTests
-[PASS] test_assetControllerInitializer_revert_assetControllerOracleNotSetAsInstanceOfControllerOracleOnGlobals() (gas: 2630114)
-[PASS] test_assetControllerInitializer_revert_bitcoinRouterNotSetAsInstanceOfBitcoinRouterOnGlobals() (gas: 2666525)
-[PASS] test_assetControllerInitializer_revert_compositePoolAssetNotSetAsInstanceOfCompositePoolAssetOnGlobals() (gas: 2667379)
-[PASS] test_assetControllerInitializer_revert_invalidImplementation_implementationIsNotAContract() (gas: 565592)
-[PASS] test_assetControllerInitializer_revert_invalidMigrator_migratorIsNotAContract() (gas: 2132197)
-[PASS] test_assetControllerInitializer_success() (gas: 3105232)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 44.23ms (6.79ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/asset-controller-oracle/AssetControllerOracleInitializerTests.t.sol:AssetControllerOracleInitializerTests
-[PASS] test_assetControllerOracleInitializer_revert_invalidGlobals_globalsIsNotAContract() (gas: 272036)
-[PASS] test_assetControllerOracleInitializer_revert_invalidImplementation_implementationIsNotAContract() (gas: 106039)
-[PASS] test_assetControllerOracleInitializer_revert_invalidMigrator_migratorIsNotAContract() (gas: 299126)
-[PASS] test_assetControllerOracleInitializer_success() (gas: 650783)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 36.72ms (3.21ms CPU time)
 
 Ran 7 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RedeemTests
 [PASS] testDeepFuzz_redeem_singleUser_fullLiquidity_oneToOne(uint256,uint256) (runs: 100, μ: 504905, ~: 504581)
@@ -544,11 +403,6 @@ Ran 7 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RedeemTes
 [PASS] test_redeem_singleUser_noLiquidity_notOwner() (gas: 1760711)
 [PASS] test_redeem_singleUser_withApprovals() (gas: 570689)
 Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 246.32ms (196.02ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AssetsUnderManagement.t.sol:AssetsUnderManagementTests
-[PASS] testFuzz_assetsUnderManagement_principalAndYield(uint256,uint256,uint256,uint32,uint32) (runs: 100, μ: 792586, ~: 792599)
-[PASS] test_assetsUnderManagement_default() (gas: 19618)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 208.75ms (156.99ms CPU time)
 
 Ran 4 tests for tests/integration/loan-manager/fixed-term/Redeem.t.sol:RequestRedeemFailureTests
 [PASS] test_requestRedeem_failIfAlreadyLockedShares() (gas: 300234)
@@ -696,24 +550,6 @@ Ran 5 tests for tests/integration/withdrawal-manager/queue/RemoveRequest.t.sol:R
 [PASS] test_removeRequest_success() (gas: 565757)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 42.88ms (8.15ms CPU time)
 
-Ran 15 tests for tests/integration/syrup-btc/syrup-btc-router/RemoveRequests.t.sol:SyrupBitcoinRouterRemoveRequestsTests
-[PASS] test_removeRequests_cancelledRequest() (gas: 243604)
-[PASS] test_removeRequests_emptyArray() (gas: 59470)
-[PASS] test_removeRequests_fullyProcessedRequest() (gas: 353167)
-[PASS] test_removeRequests_invalidOwner() (gas: 301487)
-[PASS] test_removeRequests_multipleRequests() (gas: 377148)
-[PASS] test_removeRequests_nonExistingRequest() (gas: 88763)
-[PASS] test_removeRequests_notAuthorized() (gas: 63387)
-[PASS] test_removeRequests_partiallyProcessed() (gas: 550639)
-[PASS] test_removeRequests_redeemedRequest() (gas: 923224)
-[PASS] test_removeRequests_routerPaused() (gas: 78589)
-[PASS] test_removeRequests_transferFail() (gas: 393157)
-[PASS] test_removeRequests_unprocessedRequest() (gas: 318769)
-[PASS] test_removeRequests_withdrawalManagerPaused() (gas: 140713)
-[PASS] test_removeRequests_zeroAddress() (gas: 63732)
-[PASS] test_removeRequests_zeroRequest() (gas: 86446)
-Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 58.42ms (14.08ms CPU time)
-
 Ran 9 tests for tests/integration/withdrawal-manager/RemoveShares.t.sol:RemoveSharesCyclicalFailureTests
 [PASS] test_removeShares_failIfInsufficientApproval() (gas: 201384)
 [PASS] test_removeShares_failIfInvalidShares() (gas: 98394)
@@ -810,23 +646,6 @@ Ran 8 tests for tests/integration/withdrawal-manager/queue/RemoveSharesById.t.so
 [PASS] test_removeSharesById_sharesPartiallyRemoved_requestPartiallyProcessed_manualWithdrawal() (gas: 478956)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 50.29ms (12.86ms CPU time)
 
-Ran 14 tests for tests/integration/syrup-btc/syrup-btc-router/RemoveSharesById.t.sol:SyrupBitcoinRouterRemoveSharesByIdTests
-[PASS] test_removeSharesById_revert_invalidRequestId() (gas: 40586)
-[PASS] test_removeSharesById_revert_invalidRequest_alreadyRemoved() (gas: 203871)
-[PASS] test_removeSharesById_revert_invalidRequest_fullyProcessed() (gas: 334118)
-[PASS] test_removeSharesById_revert_noChange_requestNotProcessed() (gas: 87190)
-[PASS] test_removeSharesById_revert_noChange_wmRequestPartiallyProcessed() (gas: 323951)
-[PASS] test_removeSharesById_revert_notAuthorized() (gas: 42960)
-[PASS] test_removeSharesById_revert_paused() (gas: 47108)
-[PASS] test_removeSharesById_revert_wmInsufficientShares() (gas: 89387)
-[PASS] test_removeSharesById_revert_wmTransferFail() (gas: 206663)
-[PASS] test_removeSharesById_success_completeRemoval_wmRequestNotProcessed() (gas: 404418)
-[PASS] test_removeSharesById_success_completeRemoval_wmRequestPartiallyProcessed() (gas: 607522)
-[PASS] test_removeSharesById_success_decreaseShares_wmRequestNotProcessed() (gas: 417591)
-[PASS] test_removeSharesById_success_decreaseShares_wmRequestPartiallyProcessed() (gas: 612207)
-[PASS] test_removeSharesById_success_multipleLPs_multipleRequests_removeRequestsOutOfOrder() (gas: 1070665)
-Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 92.98ms (34.20ms CPU time)
-
 Ran 15 tests for tests/integration/strategies/BasicStrategy.t.sol:BasicStrategyWithdrawTests
 [PASS] testFork_basicStrategy_withdraw_failIfLowAssets() (gas: 322341)
 [PASS] testFork_basicStrategy_withdraw_failIfNotStrategyManager() (gas: 321699)
@@ -845,34 +664,6 @@ Ran 15 tests for tests/integration/strategies/BasicStrategy.t.sol:BasicStrategyW
 [PASS] testFork_basicStrategy_withdraw_withPoolDelegate_noFeesSameBlock() (gas: 470905)
 Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 146.32ms (29.92ms CPU time)
 
-Ran 4 tests for tests/integration/syrup-btc/syrup-btc-router/BitcoinRouterInitializerTests.t.sol:BitcoinRouterInitializerTests
-[PASS] test_bitcoinRouterInitializer_revert_invalidGlobals_globalsIsNotAContract() (gas: 3014940)
-[PASS] test_bitcoinRouterInitializer_revert_invalidImplementation_implementationIsNotAContract() (gas: 621027)
-[PASS] test_bitcoinRouterInitializer_revert_invalidMigrator_migratorIsNotAContract() (gas: 2449307)
-[PASS] test_bitcoinRouterInitializer_success() (gas: 3476374)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 40.00ms (5.33ms CPU time)
-
-Ran 14 tests for tests/integration/syrup-btc/syrup-btc-router/RequestRedeem.t.sol:SyrupBitcoinRouterRequestRedeemTests
-[PASS] test_requestRedeem_revert_cannotUnwrap() (gas: 204062)
-[PASS] test_requestRedeem_revert_invalidPermit_invalidAsset() (gas: 93313)
-[PASS] test_requestRedeem_revert_invalidPermit_wrongAmount() (gas: 88938)
-[PASS] test_requestRedeem_revert_noAssetController() (gas: 41098)
-[PASS] test_requestRedeem_revert_paused() (gas: 50014)
-[PASS] test_requestRedeem_revert_permitExpired() (gas: 64082)
-[PASS] test_requestRedeem_revert_transferFromUserFailed() (gas: 100856)
-[PASS] test_requestRedeem_revert_zeroAmount() (gas: 170889)
-[PASS] test_requestRedeem_success_multipleRequestsByOneLp() (gas: 816169)
-[PASS] test_requestRedeem_success_multipleRequestsMultipleUsers() (gas: 1104991)
-[PASS] test_requestRedeem_success_permit_singleRequestByOneLp() (gas: 558851)
-[PASS] test_requestRedeem_success_singleRequestByOneLp() (gas: 521805)
-[PASS] test_requestRedeem_success_singleRequestByOneLp_allowanceOverridesPermit_notEmptyMetadata() (gas: 537461)
-[PASS] test_requestRedeem_success_singleRequestByOneLp_fullRedeem() (gas: 516964)
-Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 102.23ms (17.12ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/asset-controller/view-functions/Router.t.sol:RouterTests
-[PASS] test_router_success() (gas: 305052)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 42.20ms (680.18µs CPU time)
-
 Ran 6 tests for tests/integration/governor-timelock/Scenarios.t.sol:GovernorTimelockScenariosTests
 [PASS] test_setUp() (gas: 55666)
 [PASS] test_unscheduleProposals_cancellerCanNotUnscheduleRoleUpdate() (gas: 82221)
@@ -881,33 +672,6 @@ Ran 6 tests for tests/integration/governor-timelock/Scenarios.t.sol:GovernorTime
 [PASS] test_upgradeWithdrawalManager() (gas: 303687)
 [PASS] test_withdrawERC20Token_revert_afterChangingTokenWithdrawer() (gas: 148371)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 37.79ms (2.88ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/bitcoin-strategy/Schedule.t.sol:ScheduleFailureTests
-[PASS] test_schedule_deadlineElapsed() (gas: 48136)
-[PASS] test_schedule_deadlineIgnored() (gas: 46049)
-[PASS] test_schedule_notScheduler() (gas: 45577)
-[PASS] test_schedule_protocolPaused() (gas: 58896)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 93.00ms (3.08ms CPU time)
-
-Ran 17 tests for tests/integration/syrup-btc/bitcoin-strategy/Schedule.t.sol:ScheduleSuccessTests
-[PASS] test_schedule_createSchedule() (gas: 137538)
-[PASS] test_schedule_createSchedule_maximumDuration() (gas: 135630)
-[PASS] test_schedule_createSchedule_minimumDuration() (gas: 135493)
-[PASS] test_schedule_decreaseYield() (gas: 223804)
-[PASS] test_schedule_decreaseYield_maximumAmount() (gas: 174590)
-[PASS] test_schedule_decreaseYield_minimumAmount() (gas: 221565)
-[PASS] test_schedule_extendDuration() (gas: 224254)
-[PASS] test_schedule_extendDuration_maximumDuration() (gas: 221353)
-[PASS] test_schedule_extendDuration_minimumDuration() (gas: 221723)
-[PASS] test_schedule_increaseYield() (gas: 223857)
-[PASS] test_schedule_increaseYield_duplicate() (gas: 255494)
-[PASS] test_schedule_increaseYield_maximumAmount() (gas: 218122)
-[PASS] test_schedule_increaseYield_minimumAmount() (gas: 221502)
-[PASS] test_schedule_updateSchedule_maxFees() (gas: 267649)
-[PASS] test_schedule_updateSchedule_removeFees() (gas: 266907)
-[PASS] test_schedule_updateSchedule_yieldGap() (gas: 216386)
-[PASS] test_schedule_updateSchedule_yieldRounding() (gas: 271428)
-Suite result: ok. 17 passed; 0 failed; 0 skipped; finished in 88.45ms (13.19ms CPU time)
 
 Ran 7 tests for tests/integration/governor-timelock/ScheduleProposals.t.sol:ScheduleProposalsTests
 [PASS] test_scheduleProposals_revert_arrayLengthMismatch() (gas: 15125)
@@ -929,67 +693,6 @@ Ran 7 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapDe
 [PASS] test_deposit_secondDepositorGetsCorrectShares() (gas: 422046)
 Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 390.83ms (353.48ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Schedules.t.sol:SchedulesTests
-[PASS] testFuzz_schedules_withSchedule(uint256,uint32,uint32) (runs: 100, μ: 111074, ~: 110985)
-[PASS] test_schedules_withoutSchedule() (gas: 17471)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 143.57ms (54.96ms CPU time)
-
-Ran 11 tests for tests/integration/syrup-btc/bitcoin-strategy/SetAssetController.t.sol:SetAssetControllerTests
-[PASS] test_setAssetController_revert_depositAsset_approveMax() (gas: 115300)
-[PASS] test_setAssetController_revert_depositAsset_approveZero() (gas: 178565)
-[PASS] test_setAssetController_revert_invalidAsset() (gas: 60228)
-[PASS] test_setAssetController_revert_invalidController() (gas: 103566)
-[PASS] test_setAssetController_revert_notAdmin() (gas: 51627)
-[PASS] test_setAssetController_revert_paused() (gas: 56927)
-[PASS] test_setAssetController_revert_poolAsset_approveMax() (gas: 145371)
-[PASS] test_setAssetController_revert_poolAsset_approveZero() (gas: 182495)
-[PASS] test_setAssetController_success_idempotent_setSameController_keepsMaxApprovals() (gas: 207283)
-[PASS] test_setAssetController_success_removeController_revokesApprovals() (gas: 160668)
-[PASS] test_setAssetController_success_swapControllers_updatesAllowances() (gas: 231498)
-Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 85.55ms (5.55ms CPU time)
-
-Ran 11 tests for tests/integration/syrup-btc/syrup-btc-router/SetAssetController.t.sol:SyrupBitcoinRouterSetAssetControllerTests
-[PASS] test_setAssetController_revert_assetApproveFail() (gas: 60717)
-[PASS] test_setAssetController_revert_invalidAsset() (gas: 48826)
-[PASS] test_setAssetController_revert_invalidController() (gas: 86774)
-[PASS] test_setAssetController_revert_newController_noOldController_assetApproveFail() (gas: 95832)
-[PASS] test_setAssetController_revert_newController_noOldController_poolAssetApproveFail() (gas: 128953)
-[PASS] test_setAssetController_revert_notAuthorized() (gas: 40804)
-[PASS] test_setAssetController_revert_paused() (gas: 46383)
-[PASS] test_setAssetController_revert_poolAssetApproveFail() (gas: 76934)
-[PASS] test_setAssetController_success() (gas: 160366)
-[PASS] test_setAssetController_success_idempotent_setSameController_keepsMaxApprovals() (gas: 196433)
-[PASS] test_setAssetController_success_removeController_zeroAddress_revokesApprovals() (gas: 146006)
-Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 92.78ms (4.65ms CPU time)
-
-Ran 5 tests for tests/integration/syrup-btc/composite-token/SetAssetControllers.t.sol:CompositeTokenSetAssetControllersTests
-[PASS] test_setAssetController_revert_invalidController() (gas: 51178)
-[PASS] test_setAssetControllers_revert_lengthMismatch() (gas: 30476)
-[PASS] test_setAssetControllers_revert_noAddresses() (gas: 30053)
-[PASS] test_setAssetControllers_revert_notProtocolAdmins() (gas: 27568)
-[PASS] test_setAssetControllers_success_governor() (gas: 98853)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 67.88ms (1.29ms CPU time)
-
-Ran 10 tests for tests/integration/syrup-btc/asset-controller/SetAssets.t.sol:AssetControllerSetAssetsTests
-[PASS] test_setAssets_revert_lengthMismatch_canDeploy() (gas: 69801)
-[PASS] test_setAssets_revert_lengthMismatch_canReconcile() (gas: 67069)
-[PASS] test_setAssets_revert_lengthMismatch_canUnwrap() (gas: 69684)
-[PASS] test_setAssets_revert_lengthMismatch_canWrap() (gas: 69706)
-[PASS] test_setAssets_revert_noAssets() (gas: 57020)
-[PASS] test_setAssets_revert_notAsset_all() (gas: 78146)
-[PASS] test_setAssets_revert_notAsset_one() (gas: 167862)
-[PASS] test_setAssets_revert_notGovernor() (gas: 61068)
-[PASS] test_setAssets_success_removeAssets() (gas: 299286)
-[PASS] test_setAssets_success_setAssets() (gas: 294746)
-Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 70.83ms (4.09ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/bitcoin-strategy/SetDefault.t.sol:SetDefaultFailureTests
-[PASS] test_setDefault_notAuthorized() (gas: 61857)
-[PASS] test_setDefault_overDefaulted() (gas: 69884)
-[PASS] test_setDefault_overDefaulted_withSchedule() (gas: 141427)
-[PASS] test_setDefault_protocolPaused() (gas: 54623)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 72.75ms (1.23ms CPU time)
-
 Ran 7 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapDepositWithPermitTests
 [PASS] testFuzz_depositWithPermit_gtBootstrapMintAmount(uint256) (runs: 100, μ: 354078, ~: 354171)
 [PASS] testFuzz_depositWithPermit_ltBootstrapMintAmount(uint256) (runs: 100, μ: 234773, ~: 235028)
@@ -1000,19 +703,6 @@ Ran 7 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapDe
 [PASS] test_depositWithPermit_secondDepositorGetsCorrectShares() (gas: 483295)
 Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 527.15ms (494.07ms CPU time)
 
-Ran 10 tests for tests/integration/syrup-btc/bitcoin-strategy/SetDefault.t.sol:SetDefaultSuccessTests
-[PASS] test_setDefault_duringSchedule_fullDefault() (gas: 231896)
-[PASS] test_setDefault_duringSchedule_partialDefault() (gas: 239615)
-[PASS] test_setDefault_multipleDefaults() (gas: 254114)
-[PASS] test_setDefault_newSchedule_fullDefault() (gas: 186309)
-[PASS] test_setDefault_newSchedule_partialDefault() (gas: 193717)
-[PASS] test_setDefault_noOperation() (gas: 101489)
-[PASS] test_setDefault_noSchedule_fullDefault() (gas: 99433)
-[PASS] test_setDefault_noSchedule_partialDefault() (gas: 106772)
-[PASS] test_setDefault_pastSchedule_fullDefault() (gas: 188256)
-[PASS] test_setDefault_pastSchedule_partialDefault() (gas: 195886)
-Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 48.70ms (7.28ms CPU time)
-
 Ran 5 tests for tests/integration/governor-timelock/SetDefaultTimelockParameters.t.sol:SetDefaultTimelockParametersTests
 [PASS] test_setDefaultTimelockParameters_revert_invalidDelay() (gas: 70753)
 [PASS] test_setDefaultTimelockParameters_revert_invalidExecutionWindow() (gas: 70800)
@@ -1020,33 +710,6 @@ Ran 5 tests for tests/integration/governor-timelock/SetDefaultTimelockParameters
 [PASS] test_setDefaultTimelockParameters_success() (gas: 123529)
 [PASS] test_setUp() (gas: 55515)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 39.03ms (2.93ms CPU time)
-
-Ran 12 tests for tests/integration/syrup-btc/bitcoin-strategy/SetFeeRate.t.sol:SetFeeRateTests
-[PASS] test_setFeeRate_revert_notAdmin() (gas: 61882)
-[PASS] test_setFeeRate_revert_paused() (gas: 54670)
-[PASS] test_setFeeRate_revert_rateTooHigh() (gas: 58806)
-[PASS] test_setFeeRate_success_activeSchedule_fullElapsed_clearsSchedule() (gas: 200979)
-[PASS] test_setFeeRate_success_activeSchedule_zeroElapsed_noAccountingChange() (gas: 198315)
-[PASS] test_setFeeRate_success_max() (gas: 93992)
-[PASS] test_setFeeRate_success_noSchedule_noAccountingChange() (gas: 114386)
-[PASS] test_setFeeRate_success_updateAccounting() (gas: 232404)
-[PASS] test_setFeeRate_success_updateAccounting_noTimeElapsed_noExtraAccrual() (gas: 277810)
-[PASS] test_setFeeRate_success_updateAccounting_zeroInitialRate_noFees() (gas: 225246)
-[PASS] test_setFeeRate_success_update_overwrite() (gas: 114143)
-[PASS] test_setFeeRate_success_zero() (gas: 74070)
-Suite result: ok. 12 passed; 0 failed; 0 skipped; finished in 86.51ms (5.87ms CPU time)
-
-Ran 9 tests for tests/integration/syrup-btc/syrup-btc-router/SetFees.t.sol:SyrupBitcoinRouterSetFeesTests
-[PASS] test_setFees_revert_mintFeeTooHigh() (gas: 37721)
-[PASS] test_setFees_revert_notAuthorized() (gas: 47654)
-[PASS] test_setFees_revert_paused() (gas: 44197)
-[PASS] test_setFees_revert_redemptionFeeTooHigh() (gas: 37758)
-[PASS] test_setFees_success_PerAsset() (gas: 154406)
-[PASS] test_setFees_success_maxValues() (gas: 87218)
-[PASS] test_setFees_success_setSameValues() (gas: 100250)
-[PASS] test_setFees_success_update_overwrite() (gas: 108472)
-[PASS] test_setFees_success_zeroes() (gas: 47483)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 75.85ms (2.70ms CPU time)
 
 Ran 8 tests for tests/integration/governor-timelock/SetFunctionTimelockParameters.t.sol:SetFunctionTimelockParametersTests
 [PASS] test_setFunctionTimelockParameters_revert_invalidDefaultForDelay() (gas: 72093)
@@ -1058,21 +721,6 @@ Ran 8 tests for tests/integration/governor-timelock/SetFunctionTimelockParameter
 [PASS] test_setFunctionTimelockParameters_success_timelockOfUnderlyingFunctionIsRespected() (gas: 150192)
 [PASS] test_setUp() (gas: 55560)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 36.95ms (2.83ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/bitcoin-strategy/SetImpairment.t.sol:SetImpairmentFailureTests
-[PASS] test_setImpairment_notAuthorized() (gas: 61837)
-[PASS] test_setImpairment_overImpaired() (gas: 69864)
-[PASS] test_setImpairment_overImpaired_withSchedule() (gas: 139332)
-[PASS] test_setImpairment_protocolPaused() (gas: 54581)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 41.45ms (1.02ms CPU time)
-
-Ran 5 tests for tests/integration/syrup-btc/bitcoin-strategy/SetImpairment.t.sol:SetImpairmentSuccessTests
-[PASS] test_setImpairment_overImpairment() (gas: 405221)
-[PASS] test_setImpairment_partialImpairment() (gas: 121069)
-[PASS] test_setImpairment_principalImpairment() (gas: 119081)
-[PASS] test_setImpairment_removeImpairment() (gas: 135092)
-[PASS] test_setImpairment_yieldImpairment() (gas: 215473)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 87.85ms (5.27ms CPU time)
 
 Ran 7 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapMintTests
 [PASS] testFuzz_mint_gtBootstrapMintAmount(uint256) (runs: 100, μ: 323541, ~: 323617)
@@ -1107,28 +755,11 @@ Ran 5 tests for tests/integration/loan-manager/fixed-term/SetMinRatioAndSlippage
 [PASS] test_setAllowedSlippage_withPoolDelegate() (gas: 76342)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 35.58ms (962.83µs CPU time)
 
-Ran 3 tests for tests/integration/syrup-btc/asset-controller/SetOracle.t.sol:AssetControllerSetOracleTests
-[PASS] test_setOracle_revert_notGovernor() (gas: 33822)
-[PASS] test_setOracle_revert_notOracle() (gas: 45177)
-[PASS] test_setOracle_success() (gas: 1502313)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 52.23ms (906.19µs CPU time)
-
 Ran 3 tests for tests/integration/governor-timelock/SetPendingTokenWithdrawer.t.sol:SetPendingTokenWithdrawerTests
 [PASS] test_setPendingTokenWithdrawer_revert_notTokenWithdrawer() (gas: 12776)
 [PASS] test_setPendingTokenWithdrawer_success() (gas: 48186)
 [PASS] test_setUp() (gas: 55560)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 37.06ms (796.88µs CPU time)
-
-Ran 8 tests for tests/integration/syrup-btc/bitcoin-strategy/SetPermissions.t.sol:SetPermissionsTests
-[PASS] test_setPermissions_revert_deployMismatch() (gas: 76226)
-[PASS] test_setPermissions_revert_noAddresses() (gas: 63570)
-[PASS] test_setPermissions_revert_notAdmin() (gas: 71060)
-[PASS] test_setPermissions_revert_paused() (gas: 76316)
-[PASS] test_setPermissions_revert_reconcileMismatch() (gas: 76214)
-[PASS] test_setPermissions_revert_scheduleMismatch() (gas: 76215)
-[PASS] test_setPermissions_success_multipleAddresses() (gas: 173155)
-[PASS] test_setPermissions_success_singleAddress() (gas: 144264)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 45.65ms (2.78ms CPU time)
 
 Ran 8 tests for tests/integration/permission-manager/SetPoolPermissionLevel.t.sol:SetPoolPermissionLevelTests
 [PASS] testFuzz_setPoolPermissionLevel(uint256,uint256) (runs: 100, μ: 100055, ~: 104268)
@@ -1140,21 +771,6 @@ Ran 8 tests for tests/integration/permission-manager/SetPoolPermissionLevel.t.so
 [PASS] test_setPoolPermissionLevel_operationalAdmin() (gas: 69202)
 [PASS] test_setPoolPermissionLevel_poolDelegate() (gas: 63161)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 112.02ms (77.73ms CPU time)
-
-Ran 3 tests for tests/integration/syrup-btc/asset-controller/SetRouter.t.sol:AssetControllerSetRouterTests
-[PASS] test_setRouter_revert_notGovernor() (gas: 33823)
-[PASS] test_setRouter_revert_notRouter() (gas: 47199)
-[PASS] test_setRouter_success() (gas: 76036)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 46.10ms (674.04µs CPU time)
-
-Ran 6 tests for tests/integration/syrup-btc/asset-controller/SetStrategies.t.sol:AssetControllerSetStrategiesTests
-[PASS] test_setStrategies_revert_lengthMismatch() (gas: 52791)
-[PASS] test_setStrategies_revert_noAddresses() (gas: 40172)
-[PASS] test_setStrategies_revert_notGovernor() (gas: 47609)
-[PASS] test_setStrategies_revert_notStrategy() (gas: 60796)
-[PASS] test_setStrategies_success_falseFlag_keyNotSet() (gas: 84325)
-[PASS] test_setStrategies_success_trueFlag_keySet() (gas: 110484)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 43.48ms (2.70ms CPU time)
 
 Ran 7 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapMintWithPermitTests
 [PASS] testFuzz_mintWithPermit_gtBootstrapMintAmount(uint256) (runs: 100, μ: 356312, ~: 356378)
@@ -1193,31 +809,6 @@ Ran 4 tests for tests/integration/loan/open-term/CallPrincipal.t.sol:CallPrincip
 [PASS] test_callPrincipal_notFullPrincipal() (gas: 158782)
 [PASS] test_callPrincipal_paymentOnTime() (gas: 158690)
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 40.19ms (3.35ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/asset-controller/view-functions/CanDeploy.t.sol:CanDeployTests
-[PASS] test_canDeploy_revert_assetApprovalRemoved() (gas: 351448)
-[PASS] test_canDeploy_success_modifyFlags() (gas: 82959)
-[PASS] test_canDeploy_success_multipleDepositAsset_removeOneAsset() (gas: 214071)
-[PASS] test_canDeploy_success_randomAsset_false() (gas: 23621)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 42.28ms (2.36ms CPU time)
-
-Ran 3 tests for tests/integration/syrup-btc/asset-controller/view-functions/CanReconcile.t.sol:CanReconcileTests
-[PASS] test_canReconcile_revert_assetApprovalRemoved() (gas: 317218)
-[PASS] test_canReconcile_success_modifyFlags() (gas: 82975)
-[PASS] test_canReconcile_success_randomAsset_false() (gas: 23572)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 46.95ms (1.55ms CPU time)
-
-Ran 3 tests for tests/integration/syrup-btc/asset-controller/view-functions/CanUnwrap.t.sol:CanUnwrapTests
-[PASS] test_canUnwrap_revert_assetApprovalRemoved() (gas: 337512)
-[PASS] test_canUnwrap_success_modifyFlags() (gas: 82647)
-[PASS] test_canUnwrap_success_randomAsset_false() (gas: 23398)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 42.93ms (1.66ms CPU time)
-
-Ran 3 tests for tests/integration/syrup-btc/asset-controller/view-functions/CanWrap.t.sol:CanWrapTests
-[PASS] test_canWrap_revert_assetApprovalRemoved() (gas: 301586)
-[PASS] test_canWrap_success_modifyFlags() (gas: 83043)
-[PASS] test_canWrap_success_randomAsset_false() (gas: 23640)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 41.08ms (1.48ms CPU time)
 
 Ran 35 tests for tests/integration/strategies/SkyStrategy.t.sol:SkyStrategyFundStrategyTests
 [PASS] testFork_fundStrategy_fundAfterCompleteLoss_allFees() (gas: 1167779)
@@ -1265,14 +856,6 @@ Ran 5 tests for tests/integration/loan/fixed-term/CloseLoan.t.sol:CloseLoanTests
 [PASS] test_closeLoan_success() (gas: 438314)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 59.46ms (3.16ms CPU time)
 
-Ran 5 tests for tests/integration/syrup-btc/composite-token/CompositeTokenInitializerTests.t.sol:CompositeTokenInitializerTests
-[PASS] test_compositeTokenInitializer_revert_invalidGlobals_globalsIsNotAContract() (gas: 3045101)
-[PASS] test_compositeTokenInitializer_revert_invalidImplementation_implementationIsNotAContract() (gas: 1658699)
-[PASS] test_compositeTokenInitializer_revert_invalidMigrator_migratorIsNotAContract() (gas: 1503451)
-[PASS] test_compositeTokenInitializer_revert_unusedCallData_initializerIsZeroAddressAndCallDataIsNotEmpty() (gas: 1494278)
-[PASS] test_compositeTokenInitializer_success() (gas: 3491428)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 52.86ms (13.73ms CPU time)
-
 Ran 5 tests for tests/integration/strategies/SkyStrategy.t.sol:SkyStrategyImpairStrategyTests
 [PASS] testFork_impairStrategy_active() (gas: 847976)
 [PASS] testFork_impairStrategy_impaired() (gas: 92799)
@@ -1318,13 +901,6 @@ Ran 9 tests for tests/integration/pool/ConfigurePool.t.sol:ConfigurePoolTests
 [PASS] test_configurePool_poolDelegate() (gas: 131742)
 [PASS] test_configurePool_publicPool() (gas: 109280)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 321.64ms (260.83ms CPU time)
-
-Ran 4 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Controllers.t.sol:ControllersTests
-[PASS] testFuzz_controllers_random(address) (runs: 100, μ: 18177, ~: 18177)
-[PASS] test_controllers_default() (gas: 17318)
-[PASS] test_controllers_replace() (gas: 173584)
-[PASS] test_controllers_revoke() (gas: 76194)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 62.78ms (16.08ms CPU time)
 
 Ran 8 tests for tests/integration/strategies/SkyStrategy.t.sol:SkyStrategySetPSMTests
 [PASS] testFork_setPsm_failIfNotValidInstance() (gas: 80308)
@@ -1513,10 +1089,6 @@ Ran 17 tests for tests/integration/strategies/CoreStrategy.t.sol:CoreStrategyRem
 [PASS] test_removeSharesById_zeroShares() (gas: 105800)
 Suite result: ok. 17 passed; 0 failed; 0 skipped; finished in 183.50ms (23.82ms CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/SyrupBTCFullDeploymentTests.t.sol:SyrupBTCFullDeploymentTests
-[PASS] test_setUp() (gas: 763764)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 57.21ms (2.80ms CPU time)
-
 Ran 9 tests for tests/integration/syrup-usdc-router/SyrupRouter.t.sol:SyrupRouterAuthorizeAndDepositTests
 [PASS] test_authorizeAndDepositWithPermit_expiredDeadline() (gas: 21173)
 [PASS] test_authorizeAndDepositWithPermit_malleable() (gas: 18164)
@@ -1626,45 +1198,6 @@ Ran 10 tests for tests/integration/pool/Transfer.t.sol:TransferTests
 [PASS] test_transfer_protocolPaused() (gas: 314573)
 [PASS] test_transfer_publicPool() (gas: 313745)
 Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 58.95ms (9.29ms CPU time)
-
-Ran 7 tests for tests/integration/syrup-btc/composite-token/TransferFrom.t.sol:TransferFromTests
-[PASS] test_transferFrom_revert_insufficientAllowance() (gas: 55454)
-[PASS] test_transferFrom_revert_paused() (gas: 51248)
-[PASS] test_transferFrom_revert_permissionRevoked() (gas: 117085)
-[PASS] test_transferFrom_revert_receiverNotAllowed() (gas: 40504)
-[PASS] test_transferFrom_success_allAllowed() (gas: 107588)
-[PASS] test_transferFrom_success_allowedReceiver() (gas: 83499)
-[PASS] test_transferFrom_success_zeroAmount() (gas: 65137)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 58.12ms (4.02ms CPU time)
-
-Ran 15 tests for tests/integration/syrup-btc/bitcoin-strategy/Deploy.t.sol:DeployFailureTests
-[PASS] test_deploy_cantDepositAsset() (gas: 240821)
-[PASS] test_deploy_failedDeployerPush() (gas: 314286)
-[PASS] test_deploy_failedDepositAssetPush() (gas: 272335)
-[PASS] test_deploy_failedPoolAssetPull() (gas: 225589)
-[PASS] test_deploy_insufficientPoolLiquidity() (gas: 170043)
-[PASS] test_deploy_invalidStrategyFactory() (gas: 133522)
-[PASS] test_deploy_missingAssetController() (gas: 89330)
-[PASS] test_deploy_notAssetController() (gas: 308001)
-[PASS] test_deploy_notValidScheduler() (gas: 45614)
-[PASS] test_deploy_notValidStrategy() (gas: 227612)
-[PASS] test_deploy_protocolPaused() (gas: 58888)
-[PASS] test_deploy_zeroBurnAmount() (gas: 262749)
-[PASS] test_deploy_zeroDeploymentAmount() (gas: 46048)
-[PASS] test_deploy_zeroPoolSupply() (gas: 949938)
-[PASS] test_deploy_zeroPrincipalRequested() (gas: 87980)
-Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 71.30ms (9.40ms CPU time)
-
-Ran 8 tests for tests/integration/syrup-btc/bitcoin-strategy/Deploy.t.sol:DeploySuccessTests
-[PASS] test_deploy_duringSchedule_all() (gas: 427908)
-[PASS] test_deploy_duringSchedule_partial() (gas: 454989)
-[PASS] test_deploy_emptySchedule_all() (gas: 337050)
-[PASS] test_deploy_emptySchedule_partial() (gas: 361538)
-[PASS] test_deploy_newSchedule_all() (gas: 399720)
-[PASS] test_deploy_newSchedule_partial() (gas: 426868)
-[PASS] test_deploy_pastSchedule_all() (gas: 410296)
-[PASS] test_deploy_pastSchedule_partial() (gas: 412777)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 48.91ms (8.76ms CPU time)
 
 Ran 9 tests for tests/integration/globals/TransferPoolOwnership.t.sol:TransferPoolOwnershipTests
 [PASS] test_acceptPoolDelegate() (gas: 102768)
@@ -1781,37 +1314,6 @@ Ran 5 tests for tests/integration/governor-timelock/UnscheduleProposals.t.sol:Un
 [PASS] test_unscheduleProposals_revert_proposalNotFound() (gas: 16176)
 [PASS] test_unscheduleProposals_success() (gas: 125804)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 38.07ms (1.16ms CPU time)
-
-Ran 28 tests for tests/integration/syrup-btc/syrup-btc-router/Deposit.t.sol:SyrupBitcoinRouterDepositTests
-[PASS] test_syrupBitcoinRouter_deposit_revert_feeEqualsDepositAmount_zeroAmountToWrap() (gas: 205654)
-[PASS] test_syrupBitcoinRouter_deposit_revert_invalidPermit_expired() (gas: 66557)
-[PASS] test_syrupBitcoinRouter_deposit_revert_invalidPermit_wrongAmount() (gas: 91137)
-[PASS] test_syrupBitcoinRouter_deposit_revert_invalidPermit_wrongSigner() (gas: 88945)
-[PASS] test_syrupBitcoinRouter_deposit_revert_mint_invalidAssetController() (gas: 162959)
-[PASS] test_syrupBitcoinRouter_deposit_revert_mint_notAllowAddress() (gas: 166756)
-[PASS] test_syrupBitcoinRouter_deposit_revert_noAssetController() (gas: 41382)
-[PASS] test_syrupBitcoinRouter_deposit_revert_noAssetController_disabledAsset() (gas: 89926)
-[PASS] test_syrupBitcoinRouter_deposit_revert_paused() (gas: 52153)
-[PASS] test_syrupBitcoinRouter_deposit_revert_poolTransferFailed() (gas: 530730)
-[PASS] test_syrupBitcoinRouter_deposit_revert_transferFailed_insufficientApproval() (gas: 54710)
-[PASS] test_syrupBitcoinRouter_deposit_revert_transferFailed_insufficientAssets() (gas: 61369)
-[PASS] test_syrupBitcoinRouter_deposit_revert_wrapFailed_invalidAsset() (gas: 144620)
-[PASS] test_syrupBitcoinRouter_deposit_revert_wrapFailed_transferToBitcoinRouter() (gas: 230492)
-[PASS] test_syrupBitcoinRouter_deposit_revert_wrapFailed_zeroDepositAmount() (gas: 86314)
-[PASS] test_syrupBitcoinRouter_deposit_revert_wrap_transferFailureToAssetController() (gas: 205017)
-[PASS] test_syrupBitcoinRouter_deposit_revert_wrap_zeroOracleQuote() (gas: 143068)
-[PASS] test_syrupBitcoinRouter_deposit_revert_zeroDeposit_withFullFee() (gas: 148211)
-[PASS] test_syrupBitcoinRouter_deposit_reverts_roundSharesToZero() (gas: 687196)
-[PASS] test_syrupBitcoinRouter_deposit_success_differentShareMintRatio() (gas: 758545)
-[PASS] test_syrupBitcoinRouter_deposit_success_minimumDeposit_zeroFee() (gas: 539918)
-[PASS] test_syrupBitcoinRouter_deposit_success_noPermit_fullApproval() (gas: 531816)
-[PASS] test_syrupBitcoinRouter_deposit_success_withFee_changeTreasury() (gas: 603749)
-[PASS] test_syrupBitcoinRouter_deposit_success_withFee_feeRoundedUp() (gas: 608143)
-[PASS] test_syrupBitcoinRouter_deposit_success_withMetadata() (gas: 531841)
-[PASS] test_syrupBitcoinRouter_deposit_success_withPartialFee_fullApproval() (gas: 595193)
-[PASS] test_syrupBitcoinRouter_deposit_success_withPermit_and_fullApproval() (gas: 546656)
-[PASS] test_syrupBitcoinRouter_deposit_success_withPermit_noApproval() (gas: 578227)
-Suite result: ok. 28 passed; 0 failed; 0 skipped; finished in 97.03ms (21.14ms CPU time)
 
 Ran 4 tests for tests/integration/governor-timelock/UpdateRole.t.sol:UpdateRoleTests
 [PASS] test_setUp() (gas: 55630)
@@ -1962,54 +1464,12 @@ Ran 3 tests for tests/integration/governor-timelock/WithdrawERC20Token.t.sol:Wit
 [PASS] test_withdrawERC20Token_success() (gas: 97288)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 37.00ms (1.24ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/YieldRate.t.sol:YieldRateTests
-[PASS] testFuzz_yieldRate_withSchedule(uint256,uint32,uint32) (runs: 100, μ: 108445, ~: 108295)
-[PASS] test_yieldRate_withoutSchedule() (gas: 17334)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 76.40ms (28.60ms CPU time)
-
-Ran 7 tests for tests/integration/syrup-btc/composite-token/Transfer.t.sol:TransferTests
-[PASS] test_transfer_revert_insufficientBalance() (gas: 43080)
-[PASS] test_transfer_revert_paused() (gas: 48956)
-[PASS] test_transfer_revert_permissionRevoked() (gas: 102299)
-[PASS] test_transfer_revert_receiverNotAllowed() (gas: 38190)
-[PASS] test_transfer_success_allAllowed() (gas: 102688)
-[PASS] test_transfer_success_allowedReceiver() (gas: 78653)
-[PASS] test_transfer_success_zeroAmount() (gas: 58280)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 49.72ms (1.83ms CPU time)
-
-Ran 6 tests for tests/integration/syrup-btc/composite-token/view-functions/Controllers.t.sol:ControllersTests
-[PASS] test_controllers_revert_burn_invalidController() (gas: 49551)
-[PASS] test_controllers_success() (gas: 23614)
-[PASS] test_controllers_success_mint() (gas: 91393)
-[PASS] test_controllers_success_update() (gas: 59737)
-[PASS] test_onlyController_revert_mint_invalidController() (gas: 49552)
-[PASS] test_onlyController_success_burn() (gas: 100133)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 46.54ms (2.54ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Locked.t.sol:LockedTests
-[PASS] test_locked_getter() (gas: 12674)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 48.79ms (211.43µs CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/PoolAsset.t.sol:PoolAssetTests
-[PASS] test_poolAsset_getter() (gas: 15005)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 44.03ms (200.55µs CPU time)
-
 Ran 4 tests for tests/integration/pool/DepositAndMint.t.sol:MintTest
 [PASS] testDeepFuzz_mint_singleUser(uint256) (runs: 100, μ: 287092, ~: 287092)
 [PASS] testDeepFuzz_mint_variableExchangeRate(uint256,uint256) (runs: 100, μ: 1497606, ~: 1497366)
 [PASS] test_mint_singleUser_oneToOne() (gas: 283397)
 [PASS] test_mint_twoUsers_oneToOne() (gas: 402194)
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 555.34ms (489.55ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/UnrealizedLosses.t.sol:UnrealizedLossesTests
-[PASS] testFuzz_unrealizedLosses_afterImpairment(uint256,uint256) (runs: 100, μ: 951278, ~: 951501)
-[PASS] test_unrealizedLosses_default() (gas: 21787)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 226.11ms (181.86ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/asset-controller/view-functions/IsStrategy.t.sol:IsStrategyTests
-[PASS] test_isStrategy_false_forRandom() (gas: 17486)
-[PASS] test_isStrategy_modifyFlags() (gas: 72705)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 39.18ms (749.46µs CPU time)
 
 Ran 5 tests for tests/integration/pool/DepositAndMint.t.sol:MintWithPermitFailureTests
 [PASS] test_mintWithPermit_insufficientPermit() (gas: 479273)
@@ -2047,13 +1507,6 @@ Ran 2 tests for tests/integration/pool/DepositAndMint.t.sol:MintWithPermitTests
 [PASS] test_mintWithPermit_singleUser() (gas: 315991)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 144.67ms (107.06ms CPU time)
 
-Ran 4 tests for tests/integration/syrup-btc/asset-controller/view-functions/DepositAssets.t.sol:DepositAssetsTests
-[PASS] test_success_depositAssets_updatesOnDeploy() (gas: 706135)
-[PASS] test_success_depositAssets_updatesOnDeposit() (gas: 517036)
-[PASS] test_success_depositAssets_updatesOnReconcile() (gas: 911851)
-[PASS] test_success_depositAssets_updatesOnRedemption() (gas: 1222368)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 50.40ms (8.23ms CPU time)
-
 Ran 5 tests for tests/integration/loan-manager/fixed-term/LoanManagerGetters.t.sol:LoanManagerGetterTests
 [PASS] test_loanManagerGetters_addresses() (gas: 20638)
 [PASS] test_loanManagerGetters_liquidationInformation() (gas: 961343)
@@ -2077,14 +1530,6 @@ Ran 12 tests for tests/integration/governor-timelock/ExecuteProposal.t.sol:Execu
 [PASS] test_setUp() (gas: 55652)
 Suite result: ok. 12 passed; 0 failed; 0 skipped; finished in 43.88ms (5.93ms CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/asset-controller/view-functions/Locked.t.sol:LockedTests
-[PASS] test_locked_modifyViaStorage() (gas: 19611)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 87.87ms (462.44µs CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Factory.t.sol:FactoryViewFunctionTests
-[PASS] test_factory() (gas: 14941)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 88.48ms (2.24ms CPU time)
-
 Ran 3 tests for tests/integration/loan/MakePayment.t.sol:MakePaymentFailureTests
 [PASS] test_makePayment_failIfNotLoan() (gas: 65297)
 [PASS] test_makePayment_failWithTransferFailed() (gas: 209606)
@@ -2106,11 +1551,6 @@ Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 46.38ms (4.23ms CPU
 Ran 1 test for tests/integration/loan/MakePayment.t.sol:MakePaymentTestsDomainStartGtDomainEnd
 [PASS] test_makePayment_domainStart_gt_domainEnd() (gas: 3268288)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 47.03ms (10.85ms CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/FeeRate.t.sol:FeeRateTests
-[PASS] testFuzz_feeRate_updated(uint256) (runs: 100, μ: 98008, ~: 98226)
-[PASS] test_feeRate_default() (gas: 12720)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 107.71ms (36.93ms CPU time)
 
 Ran 1 test for tests/integration/loan/MakePayment.t.sol:MakePaymentTestsPastDomainEnd
 [PASS] test_makePayment_lateLoan3_loan1NotPaid_loan2NotPaid() (gas: 850919)
@@ -2262,10 +1702,6 @@ Ran 6 tests for tests/integration/globals/OperationalAdmin.t.sol:OperationalAdmi
 [PASS] test_operationalAdminAcl_setValidInstanceOf() (gas: 48755)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 43.38ms (917.73µs CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/asset-controller/view-functions/Oracle.t.sol:OracleTests
-[PASS] test_oracle_success() (gas: 83449)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 39.79ms (354.71µs CPU time)
-
 Ran 4 tests for tests/integration/globals/GetLatestPrice.t.sol:GetLatestPriceTests
 [PASS] test_getLatestPrice_currentPrice() (gas: 74222)
 [PASS] test_getLatestPrice_manualOverride() (gas: 46136)
@@ -2273,18 +1709,9 @@ Ran 4 tests for tests/integration/globals/GetLatestPrice.t.sol:GetLatestPriceTes
 [PASS] test_getLatestPrice_unknownAsset() (gas: 20443)
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 166.40ms (1.16ms CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Globals.t.sol:GlobalsViewFunctionTests
-[PASS] test_globals_updatesAfterFactorySetGlobals() (gas: 2798538)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 59.32ms (1.38ms CPU time)
-
 Ran 1 test for tests/integration/governor-timelock/GovernorTimelockTestBase.t.sol:GovernorTimelockTestBase
 [PASS] test_setUp() (gas: 55582)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 36.52ms (255.86µs CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/OutstandingAssets.t.sol:OutstandingAssetsTests
-[PASS] testFuzz_outstandingAssets_principalAndYield(uint256,uint256,uint256,uint32,uint32) (runs: 100, μ: 818893, ~: 819678)
-[PASS] test_outstandingAssets_default() (gas: 12722)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 237.68ms (182.02ms CPU time)
 
 Ran 2 tests for tests/integration/loan-manager/ImpairLoan.t.sol:FixedTermLoanManagerImpairAndRefinanceTests
 [PASS] test_impairLoan_earlyThenRefinance() (gas: 1018409)
@@ -2327,15 +1754,6 @@ Ran 9 tests for tests/integration/loan-manager/ImpairLoan.t.sol:OpenTermLoanMana
 [PASS] test_removeLoanImpairment_protocolPaused() (gas: 49340)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 69.80ms (4.28ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/ImpairedAssets.t.sol:ImpairedAssetsTests
-[PASS] testFuzz_impairedAssets_withImpairment(uint256) (runs: 100, μ: 739733, ~: 740400)
-[PASS] test_impairedAssets_default() (gas: 12654)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 176.48ms (136.84ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Implementation.t.sol:ImplementationViewFunctionTests
-[PASS] test_implementation_updatesAfterUpgrade() (gas: 2922550)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 46.74ms (1.19ms CPU time)
-
 Ran 7 tests for tests/integration/globals/Pause.t.sol:PauseTests
 [PASS] test_contractPause() (gas: 10531971)
 [PASS] test_functionUnpauseAfterContractPause() (gas: 44355542)
@@ -2351,21 +1769,12 @@ Ran 2 tests for tests/integration/pool/PoolAccountingViewFunctions.t.sol:Balance
 [PASS] test_balanceOfAssets() (gas: 388214)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 183.58ms (145.43ms CPU time)
 
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Permissions.t.sol:PermissionsTests
-[PASS] testFuzz_permissions_configured(bool,bool,bool) (runs: 100, μ: 126712, ~: 138652)
-[PASS] testFuzz_permissions_random(address) (runs: 100, μ: 18573, ~: 18573)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 86.66ms (44.81ms CPU time)
-
 Ran 4 tests for tests/integration/pool/PoolAccountingViewFunctions.t.sol:ConvertToAssetsTests
 [PASS] test_convertToAssets_multipleUsers() (gas: 448716)
 [PASS] test_convertToAssets_multipleUsers_changeTotalAssets() (gas: 471404)
 [PASS] test_convertToAssets_singleUser() (gas: 272996)
 [PASS] test_convertToAssets_zeroTotalSupply() (gas: 10148)
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 49.62ms (3.14ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Pool.t.sol:PoolTests
-[PASS] test_pool_getter() (gas: 14940)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 42.88ms (228.35µs CPU time)
 
 Ran 4 tests for tests/integration/pool/PoolAccountingViewFunctions.t.sol:ConvertToSharesTests
 [PASS] test_convertToShares_multipleUsers() (gas: 448786)
@@ -2630,17 +2039,6 @@ Ran 1 test for tests/protocol-upgrade/governor-timelock/plasma/GovernorTimelockU
 [PASS] testFork_setUp_governorTimelockUpgradeTestsPlasma() (gas: 57594)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 232.08ms (185.67µs CPU time)
 
-Ran 4 tests for tests/protocol-upgrade/syrup-btc/SyrupBTCFullDeployment.t.sol:SyrupBTCFullDeploymentTests
-[PASS] testFork_syrupBTCFullDeployment() (gas: 748285)
-[PASS] testFork_syrupBTCFullDeployment_deposit_success() (gas: 687106)
-[PASS] testFork_syrupBTCFullDeployment_fullRedeemProcess_success() (gas: 1399022)
-[PASS] testFork_syrupBTCFullDeployment_requestRedeem_revert() (gas: 742029)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.18s (1.27s CPU time)
-
-Ran 1 test for tests/protocol-upgrade/syrup-btc/SyrupBTCFuzzFork.t.sol:SyrupBTCFuzz
-[PASS] testFuzzFork_syrupBTC_fuzzedSetup_assertInvariants(uint256) (runs: 100, μ: 8429298, ~: 8310531)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 9.38s (3.74s CPU time)
-
 Ran 1 test for tests/protocol-upgrade/withdrawal-manager/HealthCheckers.t.sol:WithdrawalManagersUpgradeHealthCheckersTests
 [PASS] testFork_withdrawalManagerUpgrade_protocolHealthChecker(uint256) (runs: 10, μ: 1541540198, ~: 1543012921)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1124.41s (1123.99s CPU time)
@@ -2648,10 +2046,6 @@ Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1124.41s (1123.99s 
 Ran 1 test for tests/invariants/Regression.t.sol:WithdrawalManagerQueueInvariants
 [PASS] test_regression_invariants() (gas: 50709292)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 232.04ms (190.18ms CPU time)
-
-Ran 1 test for tests/invariants/SyrupBitcoinInvariants.t.sol:SyrupBitcoinInvariants
-[PASS] statefulFuzz_syrupBtc_A_B_C_D_E_F_G() (runs: 200, calls: 50000, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 168.19s (168.13s CPU time)
 
 Ran 1 test for tests/invariants/PermissionInvariants.t.sol:PermissionInvariants
 [PASS] statefulFuzz_permissionManager_A_B_C() (runs: 200, calls: 50000, reverts: 0)
@@ -2788,34 +2182,6 @@ Ran 27 tests for tests/invariants/DefaultsInvariants.t.sol:DefaultsInvariants
 [PASS] statefulFuzz_defaultsInvariants_withdrawalManager_N() (runs: 200, calls: 50000, reverts: 0)
 Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 3849.24s (6318.06s CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Controllers.t.sol:ControllersTests
-[PASS] testFuzz_controllers_random(address) (runs: 10000, μ: 19126, ~: 19126)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 466.94ms (389.24ms CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/FeeRate.t.sol:FeeRateTests
-[PASS] testFuzz_feeRate_updated(uint256) (runs: 10000, μ: 103174, ~: 104061)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.86s (1.80s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AccruedYield.t.sol:AccruedYieldTests
-[PASS] testFuzz_accruedYield_withSchedule(uint256,uint32,uint32) (runs: 10000, μ: 118757, ~: 118690)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.17s (2.11s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AccruedFees.t.sol:AccruedFeesTests
-[PASS] testFuzz_accruedFees_withSchedule(uint256,uint256,uint32,uint32) (runs: 10000, μ: 174684, ~: 175459)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 3.77s (3.70s CPU time)
-
-Ran 1 test for tests/fuzz/AssetControllerOracleConvertFuzz.t.sol:AssetControllerOracleConvertFuzzTest
-[PASS] testFuzz_convert_success(uint256) (runs: 10000, μ: 2835935, ~: 2835935)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 13.00s (12.95s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/ImpairedAssets.t.sol:ImpairedAssetsTests
-[PASS] testFuzz_impairedAssets_withImpairment(uint256) (runs: 10000, μ: 794634, ~: 794255)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 19.54s (19.46s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/AssetsUnderManagement.t.sol:AssetsUnderManagementTests
-[PASS] testFuzz_assetsUnderManagement_principalAndYield(uint256,uint256,uint256,uint32,uint32) (runs: 10000, μ: 855795, ~: 856031)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 22.16s (22.09s CPU time)
-
 Ran 3 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapMintTests
 [PASS] testFuzz_mint_gtBootstrapMintAmount(uint256) (runs: 10000, μ: 356386, ~: 356535)
 [PASS] testFuzz_mint_ltBootstrapMintAmount(uint256) (runs: 10000, μ: 257981, ~: 258624)
@@ -2838,27 +2204,10 @@ Ran 3 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapDe
 [PASS] testFuzz_depositWithPermit_secondDepositorGetsCorrectShares(uint256) (runs: 10000, μ: 563261, ~: 563734)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 49.68s (49.62s CPU time)
 
-Ran 1 test for tests/fuzz/syrup-btc/bitcoin-router/Deposit.t.sol:SyrupBtcDepositFuzzTests
-[PASS] testFuzz_deposit(uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 1703586, ~: 1743240)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 69.55s (69.49s CPU time)
-
-Ran 1 test for tests/fuzz/syrup-btc/bitcoin-strategy/Deploy.t.sol:SyrupBtcDepositFuzzTests
-[PASS] testFuzz_deploy(uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 1539301, ~: 1620086)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 62.23s (62.17s CPU time)
-
-Ran 2 tests for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Permissions.t.sol:PermissionsTests
-[PASS] testFuzz_permissions_configured(bool,bool,bool) (runs: 10000, μ: 134917, ~: 147176)
-[PASS] testFuzz_permissions_random(address) (runs: 10000, μ: 20223, ~: 20223)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 2.97s (2.92s CPU time)
-
 Ran 2 tests for tests/integration/pool/PoolAccountingViewFunctions.t.sol:AutomatedPreviewRedeemWithQueueWMTests
 [PASS] testFuzz_previewRedeem_notProcessed(uint256) (runs: 10000, μ: 36957, ~: 36957)
 [PASS] testFuzz_previewRedeem_processed(uint256) (runs: 10000, μ: 316836, ~: 316836)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 12.87s (12.82s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/Schedules.t.sol:SchedulesTests
-[PASS] testFuzz_schedules_withSchedule(uint256,uint32,uint32) (runs: 10000, μ: 120021, ~: 120127)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.47s (2.41s CPU time)
 
 Ran 4 tests for tests/fuzz/PoolEntryPermissionsFuzz.t.sol:PoolEntryPermissionsFuzzTests
 [PASS] testFuzz_poolEntryTests_deposit(uint256,uint256,uint256,uint256,bool) (runs: 10000, μ: 345947, ~: 325568)
@@ -2877,14 +2226,6 @@ Ran 3 tests for tests/integration/permission-manager/SetPoolPermissionLevel.t.so
 [PASS] testFuzz_setPoolPermissionLevel_publicPool(uint256) (runs: 10000, μ: 94761, ~: 94916)
 Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 6.81s (6.76s CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/RealizedFees.t.sol:RealizedFeesTests
-[PASS] testFuzz_realizedFees_withSchedule(uint256,uint256,uint32,uint32) (runs: 10000, μ: 186001, ~: 189871)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.75s (4.69s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/OutstandingAssets.t.sol:OutstandingAssetsTests
-[PASS] testFuzz_outstandingAssets_principalAndYield(uint256,uint256,uint256,uint32,uint32) (runs: 10000, μ: 884863, ~: 886105)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 22.78s (22.71s CPU time)
-
 Ran 5 tests for tests/fuzz/PoolExitPermissionsFuzz.t.sol:PoolExitPermissionsFuzzTests
 [PASS] testFuzz_poolExit_redeem(uint256,uint256,uint256,uint256,bool) (runs: 10000, μ: 728681, ~: 578010)
 [PASS] testFuzz_poolExit_removeShares(uint256,uint256,uint256,uint256,uint256,bool) (runs: 10000, μ: 663393, ~: 518966)
@@ -2893,30 +2234,14 @@ Ran 5 tests for tests/fuzz/PoolExitPermissionsFuzz.t.sol:PoolExitPermissionsFuzz
 [PASS] testFuzz_poolExit_withdraw(uint256,uint256,uint256,uint256,bool) (runs: 10000, μ: 439608, ~: 381174)
 Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 57.19s (57.14s CPU time)
 
-Ran 1 test for tests/fuzz/syrup-btc/bitcoin-strategy/Reconcile.t.sol:SyrupBtcReconcileFuzzTests
-[PASS] testFuzz_reconcile(uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 1546715, ~: 1622778)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 59.59s (59.54s CPU time)
-
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/YieldRate.t.sol:YieldRateTests
-[PASS] testFuzz_yieldRate_withSchedule(uint256,uint32,uint32) (runs: 10000, μ: 115838, ~: 115534)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.16s (2.10s CPU time)
-
 Ran 2 tests for tests/fuzz/PoolTransferPermissionsFuzz.t.sol:PoolTransferPermissionsFuzzTests
 [PASS] testFuzz_poolTransfer(uint256,uint256,uint256,uint256,uint256,bool,bool) (runs: 10000, μ: 459364, ~: 419610)
 [PASS] testFuzz_poolTransferFrom(uint256,uint256,uint256,uint256,uint256,bool,bool) (runs: 10000, μ: 466800, ~: 422450)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 20.19s (20.14s CPU time)
 
-Ran 1 test for tests/integration/syrup-btc/bitcoin-strategy/view-functions/UnrealizedLosses.t.sol:UnrealizedLossesTests
-[PASS] testFuzz_unrealizedLosses_afterImpairment(uint256,uint256) (runs: 10000, μ: 1023201, ~: 1022889)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 25.70s (25.64s CPU time)
-
 Ran 1 test for tests/fuzz/ProcessExit.t.sol:ProcessExitFuzzTests
 [PASS] testFuzz_processExit(address[10],bool[10],uint256[10],uint256) (runs: 10000, μ: 4434007, ~: 4334137)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 145.37s (145.32s CPU time)
-
-Ran 1 test for tests/fuzz/syrup-btc/bitcoin-router/RequestRedeem.t.sol:SyrupBtcRequestRedeemFuzzTests
-[PASS] testFuzz_requestRedeem(uint256,uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 2060078, ~: 2112363)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 76.08s (76.02s CPU time)
 
 Ran 15 tests for tests/fuzz/PoolViewFunctionsFuzzTest.t.sol:PoolViewFunctionsFuzzTests
 [PASS] testFuzz_convertToAssets_whenTotalSupplyExists(uint256,uint256,uint256,uint256) (runs: 10000, μ: 388772, ~: 389130)
@@ -2936,11 +2261,6 @@ Ran 15 tests for tests/fuzz/PoolViewFunctionsFuzzTest.t.sol:PoolViewFunctionsFuz
 [PASS] testFuzz_previewMint_whenTotalSupplyIsZero(uint256) (runs: 10000, μ: 14531, ~: 13940)
 Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 51.50s (113.48s CPU time)
 
-Ran 2 tests for tests/fuzz/syrup-btc/bitcoin-strategy/Schedule.t.sol:SyrupBtcScheduleFuzzTests
-[PASS] testFuzz_schedule(uint256,uint256,uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 1454036, ~: 1509282)
-[PASS] testFuzz_schedule_overrideCurrentSchedule(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256[4],uint256[4]) (runs: 10000, μ: 1478479, ~: 1533292)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 97.32s (103.35s CPU time)
-
 Ran 2 tests for tests/fuzz/Impair.t.sol:OpenTermLoanFuzz
 [PASS] testFuzz_impair_otl(uint256) (runs: 10000, μ: 11736576, ~: 11750198)
 [PASS] testFuzz_removeImpairment_otl(uint256) (runs: 10000, μ: 11140868, ~: 11120730)
@@ -2955,14 +2275,6 @@ Ran 2 tests for tests/fuzz/OpenTermFuzz.t.sol:OpenTermLoanFuzz
 [PASS] testFuzz_otlFuzzedSetup_makePayment(uint256) (runs: 10000, μ: 10369417, ~: 10362728)
 [PASS] testFuzz_otlFuzzedSetup_triggerDefault(uint256) (runs: 10000, μ: 10284094, ~: 10278618)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 449.40s (631.13s CPU time)
-
-Ran 1 test for tests/fuzz/syrup-btc/SyrupBTCFuzz.t.sol:SyrupBTCFuzz
-[PASS] testFuzz_syrupBTC_fuzzedSetup_assertInvariants(uint256) (runs: 10000, μ: 10606217, ~: 10723329)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 441.77s (441.71s CPU time)
-
-Ran 1 test for tests/protocol-upgrade/syrup-btc/SyrupBTCFuzzFork.t.sol:SyrupBTCFuzz
-[PASS] testFuzzFork_syrupBTC_fuzzedSetup_assertInvariants(uint256) (runs: 10000, μ: 9741859, ~: 9864284)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 429.70s (427.19s CPU time)
 
 Ran 3 tests for tests/integration/pool/BootstrapMintAndDeposit.t.sol:BootstrapMintWithPermitTests
 [PASS] testFuzz_mintWithPermit_gtBootstrapMintAmount(uint256) (runs: 10000, μ: 395662, ~: 395799)
@@ -3090,313 +2402,6 @@ Ran 11 tests for tests/e2e/PoolScenarios.t.sol:PoolScenarioTests
 [PASS] test_poolScenarios_refinanceLateLoanAndDefault() (gas: 1834749)
 [PASS] test_poolScenarios_stressTestAdvanceGlobalPaymentAccounting() (gas: 157641795)
 Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 6.85s (7.47s CPU time)
-
-Ran 15 tests for tests/e2e/SyrupBTCScenario.t.sol:SyrupBTCScenarioTests
-[PASS] test_scenario_addNewStrategy_whileCapitalIsDeployedInPreviousStrategies() (gas: 1360597)
-[PASS] test_scenario_aumGoesDown_multipleDefaults_multipleStrategies() (gas: 687908)
-[PASS] test_scenario_defaultProperlyDuringSchedule() (gas: 536409)
-[PASS] test_scenario_depositDuringScheduledYieldOnStrategy_exchangeRateIsEffected() (gas: 871596)
-[PASS] test_scenario_deposit_gasCostIsApproximatelyTheSame_regardlessOfNumberOfRedeemRequests() (gas: 1762919060)
-[PASS] test_scenario_impairAndDeposit_exchangeRateIsNotEffected() (gas: 1024758)
-[PASS] test_scenario_redeem_completeDefault_userReceivesZeroAssets() (gas: 1108453)
-[PASS] test_scenario_removeSharesById_gasCostIsTheSame_regardlessOfNumberOfRedeemRequests() (gas: 1762683078)
-[PASS] test_scenario_replaceCurrentSchedule_differentDuration() (gas: 337477)
-[PASS] test_scenario_replaceCurrentSchedule_differentYieldAmount_sameDeadline() (gas: 337322)
-[PASS] test_scenario_strategyMigration_duringSchedule() (gas: 822243)
-[PASS] test_scenario_switchingOnAndOffRequestRedeemPermission() (gas: 1728400)
-[PASS] test_scenario_updateFee_duringSchedule_exchangeRateIsEffected() (gas: 366672)
-[PASS] test_scenario_wmMustProcessRequestsInOrder_routerCanCherryPick() (gas: 1678515)
-[PASS] test_scenario_wmRemoveRequests_gasCostIsTheSame_regardlessOfNumberOfRedeemRequests() (gas: 1528156930)
-Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 22.58s (62.03s CPU time)
-
-## controller
-
-Ran 7 tests for tests/unit/non-transparent-proxy-initializable/Constructor.t.sol:ConstructorTests
-[PASS] test_constructor_invalidGlobals() (gas: 50873)
-[PASS] test_constructor_invalidImplementation() (gas: 75883)
-[PASS] test_constructor_invalidMigrator() (gas: 78528)
-[PASS] test_constructor_migratorFailed() (gas: 97187)
-[PASS] test_constructor_success_noCalldata() (gas: 702587)
-[PASS] test_constructor_success_withCalldata() (gas: 704567)
-[PASS] test_constructor_unusedCalldata() (gas: 73821)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 1.87ms (1.12ms CPU time)
-
-Ran 5 tests for tests/unit/composite-token/AllowAddresses.t.sol:AllowAddressesTests
-[PASS] test_allowAddresses_governor() (gas: 87042)
-[PASS] test_allowAddresses_lengthMismatch() (gas: 42192)
-[PASS] test_allowAddresses_noAddresses() (gas: 33632)
-[PASS] test_allowAddresses_notGovernor() (gas: 36288)
-[PASS] test_allowAddresses_operationAdminNotAllowed() (gas: 38929)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 3.02ms (858.97µs CPU time)
-
-Ran 3 tests for tests/unit/composite-token/AllowAllAddresses.t.sol:AllowAllAddressesTests
-[PASS] test_allowAllAddresses_governor() (gas: 54265)
-[PASS] test_allowAllAddresses_notGovernor() (gas: 22388)
-[PASS] test_allowAllAddresses_operationalAdminNotAllowed() (gas: 22389)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 2.35ms (347.77µs CPU time)
-
-Ran 8 tests for tests/unit/asset-controller/Reconcile.t.sol:ReconcileTests
-[PASS] test_reconcile_compositeAssetFailure() (gas: 175494)
-[PASS] test_reconcile_depositAssetFailure() (gas: 113313)
-[PASS] test_reconcile_invalidAsset() (gas: 37658)
-[PASS] test_reconcile_notStrategy() (gas: 34892)
-[PASS] test_reconcile_paused() (gas: 58582)
-[PASS] test_reconcile_reentrancy() (gas: 29024)
-[PASS] test_reconcile_success() (gas: 216424)
-[PASS] test_reconcile_zeroDeposit() (gas: 37884)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 8.53ms (5.55ms CPU time)
-
-Ran 4 tests for tests/unit/composite-token/Transfer.t.sol:TransferTests
-[PASS] test_transfer_allAllowed() (gas: 95604)
-[PASS] test_transfer_allowed() (gas: 103657)
-[PASS] test_transfer_notAllowed() (gas: 34685)
-[PASS] test_transfer_paused() (gas: 53573)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.01ms (3.59ms CPU time)
-
-Ran 6 tests for tests/unit/composite-token/Mint.t.sol:MintTests
-[PASS] test_mint_allAllowed() (gas: 113330)
-[PASS] test_mint_allowed() (gas: 121349)
-[PASS] test_mint_notAllowed() (gas: 36774)
-[PASS] test_mint_notController() (gas: 29754)
-[PASS] test_mint_paused() (gas: 53403)
-[PASS] test_mint_zeroAmount() (gas: 69954)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 9.90ms (8.01ms CPU time)
-
-Ran 5 tests for tests/unit/syrup-bitcoin-router/Initialize.t.sol:SyrupBitcoinRouterInitializeTests
-[PASS] test_initialize_revert_asset_approveFailed() (gas: 78401)
-[PASS] test_initialize_revert_invalidPoolManager() (gas: 39162)
-[PASS] test_initialize_revert_invalidPoolManagerFactory() (gas: 36156)
-[PASS] test_initialize_revert_pool_approveFailed() (gas: 94321)
-[PASS] test_initialize_success() (gas: 205981)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 15.85ms (12.21ms CPU time)
-
-Ran 2 tests for tests/unit/asset-controller/ViewFunctions.t.sol:AssetControllerViewFunctionsTests
-[PASS] test_previewDeploy_oneToOne() (gas: 28268)
-[PASS] test_previewReconcile_oneToOne() (gas: 28268)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 3.01ms (252.46µs CPU time)
-
-Ran 5 tests for tests/unit/composite-token/Burn.t.sol:BurnTests
-[PASS] test_burn_full() (gas: 41196)
-[PASS] test_burn_notController() (gas: 29755)
-[PASS] test_burn_partial() (gas: 51677)
-[PASS] test_burn_paused() (gas: 53467)
-[PASS] test_burn_zeroAmount() (gas: 30465)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 12.29ms (9.95ms CPU time)
-
-Ran 10 tests for tests/unit/syrup-bitcoin-router/SetAssetController.t.sol:SyrupBitcoinRouterSetAssetControllerTests
-[PASS] test_setAssetController_revert_assetApprove0Failed() (gas: 1594974)
-[PASS] test_setAssetController_revert_assetApproveFailed() (gas: 1496650)
-[PASS] test_setAssetController_revert_invalidAsset() (gas: 49425)
-[PASS] test_setAssetController_revert_invalidController() (gas: 85548)
-[PASS] test_setAssetController_revert_notGovernorOrOpsAdmin() (gas: 36849)
-[PASS] test_setAssetController_revert_paused() (gas: 36402)
-[PASS] test_setAssetController_revert_poolAssetApprove0Failed() (gas: 1602063)
-[PASS] test_setAssetController_revert_poolAssetApproveFailed() (gas: 1535198)
-[PASS] test_setAssetController_success_changeControllerAddress() (gas: 1664690)
-[PASS] test_setAssetController_success_zeroAddress() (gas: 1556878)
-Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 21.17ms (17.73ms CPU time)
-
-Ran 2 tests for tests/unit/syrup-bitcoin-router/ViewFunctions.t.sol:SyrupBitcoinRouterViewFunctionsTests
-[PASS] test_locked_view() (gas: 23620)
-[PASS] test_poolManager_view() (gas: 28477)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 3.70ms (421.76µs CPU time)
-
-Ran 4 tests for tests/unit/composite-token/TransferFrom.t.sol:TransferFromTests
-[PASS] test_transferFrom_allAllowed() (gas: 101032)
-[PASS] test_transferFrom_allowed() (gas: 108974)
-[PASS] test_transferFrom_notAllowed() (gas: 37248)
-[PASS] test_transferFrom_paused() (gas: 54117)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 14.26ms (11.07ms CPU time)
-
-Ran 6 tests for tests/unit/composite-token/SetAssetControllers.t.sol:SetAssetControllerTests
-[PASS] test_setAssetControllers_governor() (gas: 92286)
-[PASS] test_setAssetControllers_invalidController() (gas: 48349)
-[PASS] test_setAssetControllers_lengthMismatch() (gas: 42238)
-[PASS] test_setAssetControllers_noAddresses() (gas: 33616)
-[PASS] test_setAssetControllers_notGovernor() (gas: 36312)
-[PASS] test_setAssetControllers_operationalAdminNotAllowed() (gas: 38952)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 3.60ms (1.16ms CPU time)
-
-Ran 8 tests for tests/unit/asset-controller/Wrap.t.sol:WrapTests
-[PASS] test_wrap_compositeAssetFailure() (gas: 175422)
-[PASS] test_wrap_depositAssetFailure() (gas: 113266)
-[PASS] test_wrap_invalidAsset() (gas: 37610)
-[PASS] test_wrap_locked() (gas: 28981)
-[PASS] test_wrap_notRouter() (gas: 34864)
-[PASS] test_wrap_paused() (gas: 58669)
-[PASS] test_wrap_success() (gas: 216398)
-[PASS] test_wrap_zeroDeposit() (gas: 37838)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 7.29ms (3.61ms CPU time)
-
-Ran 13 tests for tests/unit/syrup-bitcoin-router/RemoveRequests.t.sol:SyrupBitcoinRouterRemoveRequestsTests
-[PASS] test_removeRequests_emptyArray() (gas: 49179)
-[PASS] test_removeRequests_invalidRequestId() (gas: 76601)
-[PASS] test_removeRequests_multipleOwners() (gas: 203523)
-[PASS] test_removeRequests_multipleRequests() (gas: 259146)
-[PASS] test_removeRequests_partiallyProcessed() (gas: 219948)
-[PASS] test_removeRequests_protocolPaused() (gas: 44229)
-[PASS] test_removeRequests_reentrancyGuard() (gas: 31749)
-[PASS] test_removeRequests_sharesRemaining() (gas: 144420)
-[PASS] test_removeRequests_transferFailure() (gas: 160383)
-[PASS] test_removeRequests_unauthorizedCaller() (gas: 50517)
-[PASS] test_removeRequests_unprocessedRequest() (gas: 206602)
-[PASS] test_removeRequests_zeroAddress() (gas: 51054)
-[PASS] test_removeRequests_zeroSharesRemaining() (gas: 77124)
-Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 18.64ms (11.82ms CPU time)
-
-Ran 5 tests for tests/unit/syrup-bitcoin-router/SetFees.t.sol:SyrupBitcoinRouterSetFeesTests
-[PASS] test_setFees_revert_invalidFee() (gas: 54996)
-[PASS] test_setFees_revert_notGovernorOrPoolDelegate() (gas: 39710)
-[PASS] test_setFees_revert_paused() (gas: 34686)
-[PASS] test_setFees_success_governorCaller() (gas: 85790)
-[PASS] test_setFees_success_poolDelegateCaller() (gas: 93479)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 5.57ms (2.31ms CPU time)
-
-[PASS] test_initialize_success() (gas: 117897)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.47ms (313.57µs CPU time)
-
-Ran 4 tests for tests/unit/asset-controller/SetOracle.t.sol:SetOracleTests
-[PASS] test_setOracle_locked() (gas: 26487)
-[PASS] test_setOracle_notGovernor() (gas: 29734)
-[PASS] test_setOracle_notOracle() (gas: 41002)
-[PASS] test_setOracle_success() (gas: 68174)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 3.88ms (641.41µs CPU time)
-
-Ran 15 tests for tests/unit/syrup-bitcoin-router/ProcessRedemptions.t.sol:SyrupBitcoinRouterProcessRedemptionsTests
-[PASS] test_processRedemptions_revert_emptyArray() (gas: 35626)
-[PASS] test_processRedemptions_revert_no_asset_controller() (gas: 92045)
-[PASS] test_processRedemptions_revert_nonRedeemer() (gas: 46404)
-[PASS] test_processRedemptions_revert_paused() (gas: 37080)
-[PASS] test_processRedemptions_revert_reentrancy() (gas: 21961)
-[PASS] test_processRedemptions_revert_transferToTreasuryFailed() (gas: 221388)
-[PASS] test_processRedemptions_revert_transferToUserFailed() (gas: 233939)
-[PASS] test_processRedemptions_success_completeProcess_asPoolDelegate() (gas: 238217)
-[PASS] test_processRedemptions_success_completeProcess_asRedeemer() (gas: 228661)
-[PASS] test_processRedemptions_success_partialProcess() (gas: 257335)
-[PASS] test_processRedemptions_success_skipInvalidRequestId() (gas: 240847)
-[PASS] test_processRedemptions_success_treasuryFeeRoundedUp() (gas: 227672)
-[PASS] test_processRedemptions_success_zeroRedeemedAssets() (gas: 121550)
-[PASS] test_processRedemptions_success_zeroUnwrappedAssets() (gas: 167055)
-[PASS] test_processRedemptions_success_zeroWithdrawnAssets() (gas: 194312)
-Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 23.36ms (21.67ms CPU time)
-
-Ran 9 tests for tests/unit/syrup-bitcoin-router/RemoveSharesById.t.sol:SyrupBitcoinRouterRemoveSharesByIdTests
-[PASS] test_removeSharesById_revert_invalid_requestId() (gas: 37856)
-[PASS] test_removeSharesById_revert_notOwner() (gas: 37962)
-[PASS] test_removeSharesById_revert_paused() (gas: 34805)
-[PASS] test_removeSharesById_revert_reentrancy() (gas: 22326)
-[PASS] test_removeSharesById_revert_transferFailed() (gas: 154177)
-[PASS] test_removeSharesById_sharesCompletelyRemoved_wmRequestNotProcessed() (gas: 141600)
-[PASS] test_removeSharesById_sharesPartiallyRemoved_wmRequestNotProcessed() (gas: 154267)
-[PASS] test_removeSharesById_sharesPartiallyRemoved_wmRequestPartiallyProcessed() (gas: 154831)
-[PASS] test_updateRequest_sharesCompletelyRemoved_wmRequestPartiallyProcessed() (gas: 136840)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 31.58ms (23.78ms CPU time)
-
-Ran 9 tests for tests/unit/asset-controller/Unwrap.t.sol:UnwrapTests
-[PASS] test_unwrap_compositeAssetFailure() (gas: 62999)
-[PASS] test_unwrap_depositAssetFailure() (gas: 123665)
-[PASS] test_unwrap_invalidAsset() (gas: 37678)
-[PASS] test_unwrap_locked() (gas: 29090)
-[PASS] test_unwrap_notRouter() (gas: 34867)
-[PASS] test_unwrap_paused() (gas: 58605)
-[PASS] test_unwrap_success() (gas: 155828)
-[PASS] test_unwrap_zeroBurn() (gas: 37772)
-[PASS] test_unwrap_zeroWithdraw() (gas: 76587)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 14.48ms (5.37ms CPU time)
-
-Ran 8 tests for tests/unit/asset-controller/Deploy.t.sol:DeployTests
-[PASS] test_deploy_compositeAssetFailure() (gas: 63112)
-[PASS] test_deploy_depositAssetFailure() (gas: 123735)
-[PASS] test_deploy_invalidAsset() (gas: 37749)
-[PASS] test_deploy_notStrategy() (gas: 34937)
-[PASS] test_deploy_paused() (gas: 58627)
-[PASS] test_deploy_reentrancy() (gas: 29047)
-[PASS] test_deploy_success() (gas: 150967)
-[PASS] test_deploy_zeroWithdraw() (gas: 37907)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 8.41ms (4.17ms CPU time)
-
-Ran 4 tests for tests/unit/asset-controller/SetRouter.t.sol:SetRouterTests
-[PASS] test_setRouter_locked() (gas: 26488)
-[PASS] test_setRouter_notGovernor() (gas: 29732)
-[PASS] test_setRouter_notRouter() (gas: 41025)
-[PASS] test_setRouter_success() (gas: 68198)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 8.46ms (737.92µs CPU time)
-
-Ran 7 tests for tests/unit/asset-controller/SetStrategies.t.sol:SetStrategiesTests
-[PASS] test_setStrategies_invalidLength() (gas: 47186)
-[PASS] test_setStrategies_locked() (gas: 37972)
-[PASS] test_setStrategies_noAddresses() (gas: 37695)
-[PASS] test_setStrategies_notGovernorOrOpsAdmin() (gas: 44321)
-[PASS] test_setStrategies_notStrategy() (gas: 49103)
-[PASS] test_setStrategies_success_governor() (gas: 118786)
-[PASS] test_setStrategies_success_operationalAdmin() (gas: 121818)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 9.30ms (2.81ms CPU time)
-
-Ran 11 tests for tests/unit/syrup-bitcoin-router/Deposit.t.sol:SyrupBitcoinRouterDepositTests
-[PASS] test_deposit_revert_forwardingFailed() (gas: 326594)
-[PASS] test_deposit_revert_paused() (gas: 38178)
-[PASS] test_deposit_revert_permitExpired() (gas: 60855)
-[PASS] test_deposit_revert_reentrancy() (gas: 25763)
-[PASS] test_deposit_revert_transferFromUserFailed() (gas: 49101)
-[PASS] test_deposit_revert_transferToTreasuryFailed() (gas: 299595)
-[PASS] test_deposit_revert_zeroAssetController() (gas: 70009)
-[PASS] test_deposit_success_allowanceOverridesInvalidPermit() (gas: 318150)
-[PASS] test_deposit_success_roundUpTreasuryFee() (gas: 215971)
-[PASS] test_deposit_success_withApprove() (gas: 305334)
-[PASS] test_deposit_success_withPermit() (gas: 342821)
-Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 16.41ms (19.78ms CPU time)
-
-Ran 12 tests for tests/unit/non-transparent-proxy-initializable/Upgrade.t.sol:UpgradeTests
-[PASS] test_upgrade_bubbleRevert_emptyRevert() (gas: 280983)
-[PASS] test_upgrade_bubbleRevert_fallback() (gas: 283392)
-[PASS] test_upgrade_bubbleRevert_migrate() (gas: 283545)
-[PASS] test_upgrade_implementationAndMigration() (gas: 62581)
-[PASS] test_upgrade_implementationChanged() (gas: 51991)
-[PASS] test_upgrade_invalidImplementation() (gas: 30258)
-[PASS] test_upgrade_invalidMigrator() (gas: 32926)
-[PASS] test_upgrade_migrationFailed() (gas: 34525)
-[PASS] test_upgrade_migrationPerformed_noCalldata() (gas: 57870)
-[PASS] test_upgrade_migrationPerformed_withCalldata() (gas: 59737)
-[PASS] test_upgrade_notGovernor() (gas: 24749)
-[PASS] test_upgrade_unusedCalldata() (gas: 28262)
-Suite result: ok. 12 passed; 0 failed; 0 skipped; finished in 19.35ms (1.95ms CPU time)
-
-Ran 8 tests for tests/unit/syrup-bitcoin-router/RequestRedeem.t.sol:SyrupBitcoinRouterRequestRedeemTests
-[PASS] test_requestRedeem_multiple_requests_success() (gas: 386515)
-[PASS] test_requestRedeem_revert_cannotWithdraw() (gas: 117504)
-[PASS] test_requestRedeem_revert_noAssetController() (gas: 73054)
-[PASS] test_requestRedeem_revert_paused() (gas: 38296)
-[PASS] test_requestRedeem_revert_permitExpired() (gas: 68001)
-[PASS] test_requestRedeem_revert_reentrancy() (gas: 25860)
-[PASS] test_requestRedeem_revert_transferFromUserFailed() (gas: 51233)
-[PASS] test_requestRedeem_success() (gas: 263059)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 11.07ms (9.29ms CPU time)
-
-Ran 9 tests for tests/unit/asset-controller/SetAssets.t.sol:SetAssetsTests
-[PASS] test_setAssets_invalidAsset() (gas: 67524)
-[PASS] test_setAssets_invalidLength_canDeploy() (gas: 68670)
-[PASS] test_setAssets_invalidLength_canReconcile() (gas: 69241)
-[PASS] test_setAssets_invalidLength_canUnwrap() (gas: 66450)
-[PASS] test_setAssets_invalidLength_canWrap() (gas: 68569)
-[PASS] test_setAssets_locked() (gas: 56647)
-[PASS] test_setAssets_notGovernor() (gas: 59914)
-[PASS] test_setAssets_success() (gas: 316294)
-[PASS] test_setAssets_zeroAssets() (gas: 56300)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 24.67ms (2.82ms CPU time)
-
-Ran 2 tests for tests/unit/asset-controller/Initialize.t.sol:InitializeTests
-[PASS] test_initialize_notWhitelisted() (gas: 36085)
-[PASS] test_initialize_success() (gas: 163403)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 49.83ms (571.11µs CPU time)
-
-Ran 3 tests for tests/unit/asset-controller-oracle/Convert.t.sol:ConvertTests
-[PASS] testFuzz_convert(uint256) (runs: 1000, μ: 26731, ~: 26731)
-[PASS] test_convert_revert_decimals_mismatch() (gas: 2767756)
-[PASS] test_convert_sanity() (gas: 26643)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 79.95ms (81.76ms CPU time)
-
-Ran 30 test suites in 111.42ms (440.28ms CPU time): 195 tests passed, 0 failed, 0 skipped (195 total tests)
-
 
 ## erc20
 
@@ -5349,12 +4354,6 @@ Ran 4 tests for tests/unit/AaveStrategy.t.sol:ClaimRewardsTests
 [PASS] test_claimRewards_success() (gas: 82923)
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.05ms (1.63ms CPU time)
 
-Ran 3 tests for tests/unit/SetImplementation.t.sol:MapleBitcoinStrategySetImplementationTests
-[PASS] test_setImplementation_notFactory() (gas: 30436)
-[PASS] test_setImplementation_protocolPaused() (gas: 36405)
-[PASS] test_setImplementation_success() (gas: 42165)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 9.04ms (521.61µs CPU time)
-
 Ran 14 tests for tests/unit/AaveStrategy.t.sol:MapleAaveStrategyAccrueFeesTests
 [PASS] test_accrueFees_minimumGain_realisticFeeRate() (gas: 103409)
 [PASS] test_accrueFees_minimumGain_zeroFeeRate() (gas: 80876)
@@ -5424,34 +4423,6 @@ Ran 8 tests for tests/unit/AaveStrategy.t.sol:MapleAaveStrategyReactivateStrateg
 [PASS] test_reactivateStrategy_successWhenInactive_withoutAccountingUpdate() (gas: 53941)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 7.73ms (2.33ms CPU time)
 
-Ran 7 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyUpdateAccountingTests
-[PASS] test_updateAccounting_exactYieldAccrued() (gas: 155586)
-[PASS] test_updateAccounting_multipleUpdates() (gas: 192655)
-[PASS] test_updateAccounting_noTimeElapsed() (gas: 152645)
-[PASS] test_updateAccounting_noYieldAccrued() (gas: 157709)
-[PASS] test_updateAccounting_noYieldSet() (gas: 45290)
-[PASS] test_updateAccounting_partialYieldAccrued() (gas: 201310)
-[PASS] test_updateAccounting_yieldDurationElapsed() (gas: 155739)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 14.95ms (8.87ms CPU time)
-
-Ran 6 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategySetFeeRateTests
-[PASS] test_setFeeRate_existingSchedule() (gas: 223289)
-[PASS] test_setFeeRate_invalidRate() (gas: 48141)
-[PASS] test_setFeeRate_notAdmin() (gas: 50485)
-[PASS] test_setFeeRate_protocolPaused() (gas: 44074)
-[PASS] test_setFeeRate_reentrancy() (gas: 25856)
-[PASS] test_setFeeRate_withoutSchedule() (gas: 106220)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 30.20ms (16.88ms CPU time)
-
-Ran 6 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyViewFunctionsTests
-[PASS] test_accruedFees_partial() (gas: 110123)
-[PASS] test_accruedYield_partial() (gas: 107647)
-[PASS] test_permissions_afterSet() (gas: 91636)
-[PASS] test_permissions_defaults() (gas: 20914)
-[PASS] test_realizedFees_initialAndAccrual() (gas: 139950)
-[PASS] test_schedules_afterScheduleAndUpdate() (gas: 166542)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 8.84ms (2.54ms CPU time)
-
 Ran 18 tests for tests/unit/AaveStrategy.t.sol:MapleAaveStrategySetStrategyFeeRateTests
 [PASS] test_setStrategyFeeRate_failIfImpaired() (gas: 69873)
 [PASS] test_setStrategyFeeRate_failIfInactive() (gas: 69873)
@@ -5482,12 +4453,6 @@ Ran 6 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategyAccrueFeesTests
 [PASS] test_accrueFees_zeroStrategyFeeRate_totalAssetsIncreased() (gas: 112186)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 13.45ms (3.12ms CPU time)
 
-Ran 3 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyYieldRateTests
-[PASS] test_yieldRate_activeYield() (gas: 101676)
-[PASS] test_yieldRate_elapsedYield() (gas: 103641)
-[PASS] test_yieldRate_noYield() (gas: 20849)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 9.62ms (670.85µs CPU time)
-
 Ran 7 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyPushAssetsToPoolTests
 [PASS] test_pushAssetsToPool_failERC20Transfer() (gas: 59225)
 [PASS] test_pushAssetsToPool_paused() (gas: 33855)
@@ -5506,16 +4471,6 @@ Ran 6 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategyDeactivateStrategyT
 [PASS] test_deactivateStrategy_successWhenActive() (gas: 64344)
 [PASS] test_deactivateStrategy_successWhenImpaired() (gas: 64410)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 10.66ms (1.40ms CPU time)
-
-Ran 7 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyDeployTests
-[PASS] test_deploy_noController() (gas: 42667)
-[PASS] test_deploy_notAllowed() (gas: 39824)
-[PASS] test_deploy_protocolPaused() (gas: 46416)
-[PASS] test_deploy_reentrancy() (gas: 28219)
-[PASS] test_deploy_success() (gas: 193767)
-[PASS] test_deploy_transferFailed() (gas: 184459)
-[PASS] test_deploy_zeroAmount() (gas: 40561)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 13.16ms (4.70ms CPU time)
 
 Ran 6 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyDeactivateStrategyTests
 [PASS] test_deactivateStrategy_failIfAlreadyInactive() (gas: 46839)
@@ -5559,18 +4514,6 @@ Ran 10 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyFundStrategyTest
 [PASS] test_fund_successWithStrategyManager() (gas: 141918)
 Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 9.88ms (2.98ms CPU time)
 
-Ran 9 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyReconcileTests
-[PASS] test_reconcile_noController() (gas: 42807)
-[PASS] test_reconcile_notAllowed() (gas: 39940)
-[PASS] test_reconcile_protocolPaused() (gas: 46504)
-[PASS] test_reconcile_reentrancy() (gas: 28175)
-[PASS] test_reconcile_success() (gas: 200756)
-[PASS] test_reconcile_transferFail() (gas: 209404)
-[PASS] test_reconcile_transferFromFailed() (gas: 73187)
-[PASS] test_reconcile_underflow() (gas: 238779)
-[PASS] test_reconcile_zeroAmount() (gas: 40656)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 14.63ms (6.72ms CPU time)
-
 Ran 6 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategyDeactivateStrategyTests
 [PASS] test_deactivateStrategy_failIfAlreadyInactive() (gas: 63837)
 [PASS] test_deactivateStrategy_failIfNotProtocolAdmin() (gas: 138220)
@@ -5588,17 +4531,6 @@ Ran 6 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategyImpairStrategyTests
 [PASS] test_impairStrategy_successWhenActive() (gas: 64365)
 [PASS] test_impairStrategy_successWhenInactive() (gas: 64345)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 9.29ms (1.52ms CPU time)
-
-Ran 8 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategySetImpairmentTests
-[PASS] test_setImpairment_fullImpairment() (gas: 90592)
-[PASS] test_setImpairment_fullImpairment_withDefault() (gas: 124688)
-[PASS] test_setImpairment_fullImpairment_withYield() (gas: 165918)
-[PASS] test_setImpairment_notAdmin() (gas: 50527)
-[PASS] test_setImpairment_overImpaired() (gas: 59688)
-[PASS] test_setImpairment_partialImpairment() (gas: 92560)
-[PASS] test_setImpairment_protocolPaused() (gas: 44073)
-[PASS] test_setImpairment_reentrancy() (gas: 25876)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 36.57ms (2.44ms CPU time)
 
 Ran 4 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyRemoveSharesByIdTests
 [PASS] test_removeSharesById_failIfNotAuthorized() (gas: 54227)
@@ -5618,18 +4550,6 @@ Ran 9 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategyFundStrategyTes
 [PASS] test_fund_successWithPoolDelegate() (gas: 140398)
 [PASS] test_fund_successWithStrategyManager() (gas: 148361)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 7.57ms (2.60ms CPU time)
-
-Ran 9 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyScheduleTests
-[PASS] test_schedule_cancel() (gas: 120851)
-[PASS] test_schedule_create() (gas: 111212)
-[PASS] test_schedule_deadlineElapsed() (gas: 42662)
-[PASS] test_schedule_deadlineUnused() (gas: 40713)
-[PASS] test_schedule_extend() (gas: 151656)
-[PASS] test_schedule_notAllowed() (gas: 39949)
-[PASS] test_schedule_protocolPaused() (gas: 46491)
-[PASS] test_schedule_reentrancy() (gas: 28206)
-[PASS] test_schedule_update() (gas: 153941)
-Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 15.12ms (8.77ms CPU time)
 
 Ran 8 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategyReactivateStrategyTests
 [PASS] test_reactivateStrategy_failIfAlreadyActive() (gas: 42349)
@@ -5660,19 +4580,6 @@ Ran 6 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyRemoveSharesTests
 [PASS] test_removeShares_zeroAmount() (gas: 39252)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 8.54ms (1.17ms CPU time)
 
-Ran 10 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategySetPermissionsTests
-[PASS] test_setPermission_success_asGovernor() (gas: 189209)
-[PASS] test_setPermission_success_asOpsAdmin() (gas: 192160)
-[PASS] test_setPermissions_deployMismatch() (gas: 73032)
-[PASS] test_setPermissions_noAddresses() (gas: 61680)
-[PASS] test_setPermissions_notGovernorOrOpsAdmin() (gas: 70234)
-[PASS] test_setPermissions_poolDelegateNotAllowed() (gas: 72837)
-[PASS] test_setPermissions_protocolPaused() (gas: 71503)
-[PASS] test_setPermissions_reconcileMismatch() (gas: 73645)
-[PASS] test_setPermissions_reentrancy() (gas: 53350)
-[PASS] test_setPermissions_scheduleMismatch() (gas: 71066)
-Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 23.11ms (8.53ms CPU time)
-
 Ran 8 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategyReactivateStrategyTests
 [PASS] test_reactivateStrategy_failIfAlreadyActive() (gas: 42305)
 [PASS] test_reactivateStrategy_failIfNotProtocolAdmin() (gas: 110729)
@@ -5695,12 +4602,6 @@ Ran 8 tests for tests/unit/CoreStrategy.t.sol:MapleCoreStrategyRequestWithdrawFr
 [PASS] test_requestWithdrawFromStrategy_successWithStrategyManager() (gas: 107397)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 9.77ms (3.60ms CPU time)
 
-Ran 3 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyUnrealizedLossesTests
-[PASS] test_unrealizedLosses_noImpairment() (gas: 27606)
-[PASS] test_unrealizedLosses_overImpaired() (gas: 107366)
-[PASS] test_unrealizedLosses_partialImpairment() (gas: 85863)
-Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 7.61ms (878.09µs CPU time)
-
 Ran 8 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategySetPsmTests
 [PASS] test_setPsm_failIfInvalidGem() (gas: 57288)
 [PASS] test_setPsm_failIfInvalidUsds() (gas: 60369)
@@ -5711,15 +4612,6 @@ Ran 8 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategySetPsmTests
 [PASS] test_setPsm_failWhenPaused() (gas: 36579)
 [PASS] test_setPsm_success() (gas: 174068)
 Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 22.06ms (14.98ms CPU time)
-
-Ran 6 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyAccruedYieldTests
-[PASS] test_accruedYield_afterUpdate() (gas: 191326)
-[PASS] test_accruedYield_durationElapsed() (gas: 121414)
-[PASS] test_accruedYield_fullYieldAccrued() (gas: 121261)
-[PASS] test_accruedYield_noTimeElapsed() (gas: 115317)
-[PASS] test_accruedYield_noYieldScheduled() (gas: 31846)
-[PASS] test_accruedYield_partialYieldAccrued() (gas: 121851)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 9.85ms (3.16ms CPU time)
 
 Ran 9 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategySetStrategyFeeRateTests
 [PASS] test_setStrategyFeeRate_failIfImpaired() (gas: 64342)
@@ -5732,41 +4624,6 @@ Ran 9 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategySetStrategyFeeR
 [PASS] test_setStrategyFeeRate_zeroPriorFeeRateAndTotalAssets() (gas: 87207)
 [PASS] test_setStrategyFeeRate_zeroPriorFeeRate_totalAssetsIncreased() (gas: 158638)
 Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 15.10ms (3.35ms CPU time)
-
-Ran 14 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategySetAssetControllerTests
-[PASS] test_setAssetController_depositApproveFailed() (gas: 93945)
-[PASS] test_setAssetController_depositRevokeFailed() (gas: 201490)
-[PASS] test_setAssetController_invalidAsset() (gas: 54506)
-[PASS] test_setAssetController_invalidController() (gas: 65256)
-[PASS] test_setAssetController_newController_asGovernor() (gas: 172602)
-[PASS] test_setAssetController_newController_asOperationalAdmin() (gas: 175664)
-[PASS] test_setAssetController_notGoverorOrOpsAdmin() (gas: 45262)
-[PASS] test_setAssetController_poolApproveFailed() (gas: 134715)
-[PASS] test_setAssetController_poolDelegateNotAllowed() (gas: 47908)
-[PASS] test_setAssetController_poolRevokeFailed() (gas: 208677)
-[PASS] test_setAssetController_protocolPaused() (gas: 46598)
-[PASS] test_setAssetController_reentrancy() (gas: 28422)
-[PASS] test_setAssetController_removeController() (gas: 176936)
-[PASS] test_setAssetController_updateController() (gas: 256227)
-Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 34.57ms (23.08ms CPU time)
-
-Ran 6 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategyAssetsUnderManagementTests
-[PASS] test_assetsUnderManagement_afterUpdate() (gas: 169404)
-[PASS] test_assetsUnderManagement_durationElapsed() (gas: 110482)
-[PASS] test_assetsUnderManagement_fullYieldAccrued() (gas: 110285)
-[PASS] test_assetsUnderManagement_noTimeElapsed() (gas: 104122)
-[PASS] test_assetsUnderManagement_noYieldScheduled() (gas: 23233)
-[PASS] test_assetsUnderManagement_partialYieldAccrued() (gas: 110917)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 8.59ms (1.83ms CPU time)
-
-Ran 6 tests for tests/unit/CreateInstance.t.sol:MapleBitcoinStrategyCreateInstanceTests
-[PASS] test_createInstance_invalidAsset() (gas: 185646)
-[PASS] test_createInstance_invalidCaller() (gas: 28825)
-[PASS] test_createInstance_invalidPoolManagerFactory() (gas: 191995)
-[PASS] test_createInstance_invalidPoolManagerInstance() (gas: 195330)
-[PASS] test_createInstance_success() (gas: 384748)
-[PASS] test_createInstance_zeroAddress() (gas: 162093)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 14.98ms (5.81ms CPU time)
 
 Ran 9 tests for tests/unit/AaveStrategy.t.sol:MapleAaveStrategyWithdrawFromStrategyTests
 [PASS] test_withdrawFromStrategy_failIfLowAssets() (gas: 65578)
@@ -5792,17 +4649,6 @@ Ran 10 tests for tests/unit/SkyStrategy.t.sol:MapleSkyStrategySetStrategyFeeRate
 [PASS] test_setStrategyFeeRate_zeroPriorFeeRateAndTotalAssetsAndZeroTout() (gas: 105388)
 [PASS] test_setStrategyFeeRate_zeroPriorFeeRate_totalAssetsIncreasedWithTout() (gas: 186699)
 Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 21.12ms (7.14ms CPU time)
-
-Ran 8 tests for tests/unit/BitcoinStrategy.t.sol:MapleBitcoinStrategySetDefaultTests
-[PASS] test_setDefault_fullDefault() (gas: 76023)
-[PASS] test_setDefault_fullDefault_withYield() (gas: 137692)
-[PASS] test_setDefault_notAdmin() (gas: 50461)
-[PASS] test_setDefault_overDefaulted() (gas: 59643)
-[PASS] test_setDefault_overDefaulted_withYield() (gas: 130902)
-[PASS] test_setDefault_partialDefault() (gas: 83099)
-[PASS] test_setDefault_protocolPaused() (gas: 44006)
-[PASS] test_setDefault_reentrancy() (gas: 25788)
-Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 22.42ms (15.84ms CPU time)
 
 Ran 7 tests for tests/unit/BasicStrategy.t.sol:MapleBasicStrategyAccrueFeesTests
 [PASS] test_accrueFees_strategyFeeOneHundredPercent() (gas: 127646)
@@ -5885,13 +4731,6 @@ Ran 10 tests for tests/unit/CreateInstance.t.sol:MapleSkyStrategyCreateInstanceT
 [PASS] test_createInstance_zeroPool() (gas: 163321)
 Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 24.90ms (16.93ms CPU time)
 
-Ran 4 tests for tests/unit/Migrate.t.sol:MapleBitcoinStrategyMigrateTests
-[PASS] test_migrate_internalFailure() (gas: 34396)
-[PASS] test_migrate_notFactory() (gas: 30891)
-[PASS] test_migrate_protocolPaused() (gas: 36862)
-[PASS] test_migrate_success() (gas: 41571)
-Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 27.37ms (872.57µs CPU time)
-
 Ran 7 tests for tests/unit/CreateInstance.t.sol:MapleAaveStrategyCreateInstanceTests
 [PASS] test_createInstance_invalidCaller() (gas: 31209)
 [PASS] test_createInstance_invalidPoolManagerFactory() (gas: 196191)
@@ -5948,15 +4787,6 @@ Ran 6 tests for tests/unit/Upgrade.t.sol:MapleBasicStrategyUpgradeTests
 [PASS] test_upgrade_success() (gas: 99320)
 [PASS] test_upgrade_upgradeFailed() (gas: 90257)
 Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 13.94ms (6.96ms CPU time)
-
-Ran 6 tests for tests/unit/Upgrade.t.sol:MapleBitcoinStrategyUpgradeTests
-[PASS] test_upgrade_notAuthorized() (gas: 40722)
-[PASS] test_upgrade_notScheduled() (gas: 43145)
-[PASS] test_upgrade_poolDelegate() (gas: 108447)
-[PASS] test_upgrade_protocolPaused() (gas: 39249)
-[PASS] test_upgrade_securityAdmin() (gas: 100729)
-[PASS] test_upgrade_upgradeFailed() (gas: 89950)
-Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 17.33ms (2.35ms CPU time)
 
 Ran 6 tests for tests/unit/Upgrade.t.sol:MapleCoreStrategyUpgradeTests
 [PASS] test_upgrade_notPoolDelegate() (gas: 123595)
