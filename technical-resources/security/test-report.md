@@ -2,7 +2,7 @@
 
 Below is an report of all smart contract level tests that are run against the protocol, in all repos.
 
-Current number of tests in this report is: **4377 tests**.
+Current number of tests in this report is: **3634 tests**.
 
 ## `maple-core-v2`
 
