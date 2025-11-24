@@ -27,8 +27,6 @@ $$
 \text{strategyFee} = \dfrac{\text{yieldAccrued} \times \text{strategyFeeRate}}{1 \times 10^6}
 $$
 
-TODO: CHECK THE BELOW FORMATTING after publishing. It renders in vscode preview, but is wrong on the website.
-
 **Where:**
 - $\text{yieldAccrued}$ is the total yield accrued since the last `fundStrategy(...)`, `withdrawFromStrategy(...)`, or `setStrategyFeeRate(...)` call (Aave/Basic/Sky).
 - $\text{strategyFeeRate}$ is the fee rate for the strategy, which can be no greater than $1 \times 10^6$.
