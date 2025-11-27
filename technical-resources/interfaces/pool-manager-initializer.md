@@ -159,64 +159,6 @@ Gets the delegate management fee rate.
 \
 
 
-### `isLoanManager`
-
-Returns whether or not the given address is a loan manager.
-
-```solidity
-    function isLoanManager(
-        address
-    )
-        view
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-
-#### Return Values:
-
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
-
-\
-
-
-### `isValidLender`
-
-Returns whether or not the given address is a valid lender.
-
-```solidity
-    function isValidLender(
-        address
-    )
-        view
-        returns (
-            bool
-        );
-```
-
-#### Parameters:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-
-#### Return Values:
-
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
-
-\
-
-
 ### `liquidityCap`
 
 Gets the liquidity cap for the pool.
@@ -238,12 +180,12 @@ Gets the liquidity cap for the pool.
 \
 
 
-### `loanManagerList`
+### `strategyList`
 
-Gets the address of the loan manager in the list.
+Gets the address of the strategy in the list.
 
 ```solidity
-    function loanManagerList(
+    function strategyList(
         uint256
     )
         view
@@ -265,28 +207,6 @@ Gets the address of the loan manager in the list.
 |   0   |      | `address` |   `address`   |             |
 
 \
-
-
-### `openToPublic`
-
-Returns whether or not a pool is open to public deposits.
-
-```solidity
-    function openToPublic()
-        view
-        returns (
-            bool
-        );
-```
-
-#### Return Values:
-
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
-
-\
-
 
 ### `pendingPoolDelegate`
 

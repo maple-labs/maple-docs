@@ -8,8 +8,8 @@ The process of withdrawing assets that have been deposited into a Maple pool is 
 
 Any user holding shares can perform a withdrawal request.
 
-* Each withdrawal request has a unique identifier assigned to it
-* Each user can only have one active withdrawal request at a time.
+* Each withdrawal request has a unique identifier assigned to it.
+* A user may have multiple active withdrawal requests at the same time. Requests are tracked per user and can be adjusted or removed by id.
 * When making the request the user specifies the amount of shares that should be redeemed and that amount of shares is then transferred to the withdrawal manager where it remains in custody.
 * Once the withdrawal is processed the request is deleted and the user can again make another one.
 * The user can also adjust an existing withdrawal request, but only in a downwards manner (by returning some of the shares locked).
@@ -19,7 +19,7 @@ _NOTE_: Withdrawal requests can only be submitted in the form of redemption requ
 
 ### Withdrawal Queue (FIFO)
 
-The withdrawal queue contains all of the pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins decide to process withdrawal requests, they will be processed in that order (**FIFO**). This means withdrawal requests that are made earlier will be processed before withdrawal requests that are made later. In case of insufficient liquidity, there may not be enough assets to process all withdrawal requests. In that case only some of the most recent requests will be processed, and the remainder will remain in the queue to be processed at a later time.
+The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If there is insufficient liquidity to process all requests, only the earliest requests are processed. The remainder stay in the queue to be processed later.
 
 ### Request Processing
 
@@ -43,13 +43,35 @@ If there is insufficient liquidity available during the processing of a request,
 
 `redeemableShares(user) = min(lockedShares(user), lockedShares(user) * availableAssets / requiredAssets)`
 
+### Adjust or Cancel a Request (removeSharesById)
+
+The request owner can reduce or cancel a specific pending request at any time before it is processed by calling:
+
+`removeSharesById(requestId, sharesToRemove)`
+
+- Caller must be the request owner.
+- If `sharesToRemove` equals the current request shares, the request is cancelled. Otherwise the request is decreased and remains in the queue with the original position.
+- Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.
+- Use `requests(requestId)` or `requestsByOwner(owner)` to inspect pending requests and shares.
+
 ### Manual Requests (2 step process)
 
 Each withdrawal request can be processed automatically (by default) or manually by calling `requestRedeem()` first then calling `redeem()`. The pool delegate or any protocol admin can enable manual requests for users who want to opt-out of automatic processing. The difference between automatic and manual requests is as follows:
 
 * Automatic requests will be immediately redeemed on processing.
 * Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (mainly for integrators). Automatic requests are the default and preferred way of handling withdrawals.
-* Pool Delegates are expected to be in touch with integrators to ensure they have manual requests enabled.
+* The pool administrator coordinates with integrators to ensure manual requests are enabled when required.
+
+### Roles & Permissions
+
+- OnlyPoolManager: `addShares`, `processExit`, `removeShares` (Pool-driven queue interactions).
+- OnlyRedeemer (WITHDRAWAL_REDEEMER instance, Pool Delegate, or Operational Admin): `processRedemptions`, `processEmptyRedemptions`, `removeRequest`.
+- Unprivileged user (request owner): `removeSharesById` (decrease or cancel a request).
+
+### Events & Queue Internals
+
+- Events: `RequestCreated`, `RequestDecreased`, `RequestRemoved`, `RequestProcessed`, `ManualWithdrawalSet`, `EmptyRedemptionsProcessed`, `ManualSharesIncreased`, `ManualSharesDecreased`.
+- Queue pointers: `nextRequestId` and `lastRequestId` track processing range. `processEmptyRedemptions(n)` advances `nextRequestId` over empty entries to keep processing efficient.
 
 ### Legacy Functions
 

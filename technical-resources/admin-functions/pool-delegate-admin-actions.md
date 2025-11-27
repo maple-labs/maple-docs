@@ -9,15 +9,14 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `upgrade`
 * `acceptPoolDelegate`
 * `setPendingPoolDelegate`
-* `addLoanManager`
-* `setAllowedLender`
-* `setDelegateManagementFeeRate`
-* `setIsLoanManager`
-* `setLiquidityCap`
-* `setOpenToPublic`
+* `addStrategy` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setDelegateManagementFeeRate` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setIsStrategy`
+* `setLiquidityCap` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setPoolPermissionManager` (only before initial configuration; callable prior to `completeConfiguration`)
+* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `finishCollateralLiquidation`
 * `triggerDefault`
-* `withdrawCover`
 
 ## FixedTermLoanManager
 
@@ -35,12 +34,15 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 
 * `upgrade`
 * `fund`
+* `impairLoan`
+* `removeLoanImpairment`
+
+## OpenTermLoan
+
 * `proposeNewTerms`
 * `rejectNewTerms`
 * `callPrincipal`
 * `removeCall`
-* `impairLoan`
-* `removeLoanImpairment`
 
 ## Pool Permission Manager
 
@@ -59,14 +61,10 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `setStrategyFeeRate`
 * `setPsm` (Sky Strategy only)
 
-## Withdrawal Manager (Cyclical)
-
-* `upgrade`
-* `setExitConfig`
-
 ## Withdrawal Manager (Queue)
 
 * `upgrade`
+* `processEmptyRedemptions`
 * `processRedemptions`
 * `removeRequest`
 * `setManualWithdrawal`

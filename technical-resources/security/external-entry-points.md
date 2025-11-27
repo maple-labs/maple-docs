@@ -42,7 +42,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 ### Liquidator
 
-* `liquidatePortion` - Used by keepers to perform liquidations.
+* `liquidatePortion` - Used to perform liquidations.
 
 ### PoolManager
 
@@ -251,20 +251,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `claim`
 
-### WithdrawalManager (Cyclical)
-
-**Governor only functionality**
-
-* `setExitConfig`
-
-**Operational Admin only functionality**
-
-* `setExitConfig`
-
-**Pool Delegate only functionality**
-
-* `setExitConfig`
-
 ### WithdrawalManager (Queue)
 
 **Factory Permissioned Functions**
@@ -305,6 +291,10 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Security Admin Permissioned Functions**
 
 * `upgrade`
+
+**User Callable Functions**
+
+* `removeSharesById`
 
 ### OpenTermLoan
 

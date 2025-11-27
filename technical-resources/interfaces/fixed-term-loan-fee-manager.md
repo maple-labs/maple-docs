@@ -1,7 +1,6 @@
 # FixedTermLoanFeeManager
 
-\
-
+Manages fee accounting and transfers for fixed‑term loans, including delegate and platform origination fees and service fees. Reads platform fee rates from Globals, computes amounts over time, and transfers proceeds to the Pool Delegate and Maple Treasury as applicable.
 
 ## Constructor
 
@@ -16,8 +15,6 @@
 | Index |    Name    |    Type   | Internal Type | Description |
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
-
-\
 
 
 ## Functions
@@ -48,8 +45,6 @@ Gets the delegate origination fee for the given loan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
-
 
 ### `delegateRefinanceServiceFee`
 
@@ -76,8 +71,6 @@ Gets the delegate service fee rate for the given loan.
 | Index | Name |    Type   | Internal Type | Description |
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
-
-\
 
 
 ### `delegateServiceFee`
@@ -106,7 +99,6 @@ Gets the delegate service fee rate for the given loan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `getDelegateServiceFeesForPeriod`
@@ -137,8 +129,6 @@ Gets the delegate service fee for the given loan.
 | :---: | :-------------------: | :-------: | :-----------: | ---------------------------------------------- |
 |   0   | `delegateServiceFee_` | `uint256` |   `uint256`   | The amount of delegate service fee to be paid. |
 
-\
-
 
 ### `getOriginationFees`
 
@@ -168,8 +158,6 @@ Gets the sum of all origination fees for the given loan.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `originationFees_` | `uint256` |   `uint256`   | The amount of origination fees to be paid. |
 
-\
-
 
 ### `getPlatformOriginationFee`
 
@@ -198,8 +186,6 @@ Gets the platform origination fee value for the given loan.
 | Index |            Name           |    Type   | Internal Type | Description                                        |
 | :---: | :-----------------------: | :-------: | :-----------: | -------------------------------------------------- |
 |   0   | `platformOriginationFee_` | `uint256` |   `uint256`   | The amount of platform origination fee to be paid. |
-
-\
 
 
 ### `getPlatformServiceFeeForPeriod`
@@ -231,8 +217,6 @@ Gets the delegate service fee for the given loan.
 | Index |          Name         |    Type   | Internal Type | Description                                    |
 | :---: | :-------------------: | :-------: | :-----------: | ---------------------------------------------- |
 |   0   | `platformServiceFee_` | `uint256` |   `uint256`   | The amount of platform service fee to be paid. |
-
-\
 
 
 ### `getServiceFeeBreakdown`
@@ -269,8 +253,6 @@ Gets the service fees for the given interval.
 |   2   |  `platformServiceFee_`  | `uint256` |   `uint256`   | The amount of platform service fee to be paid.   |
 |   3   | `platformRefinanceFee_` | `uint256` |   `uint256`   | The amount of platform refinance fee to be paid. |
 
-\
-
 
 ### `getServiceFees`
 
@@ -299,8 +281,6 @@ Gets the service fees for the given interval.
 | Index |      Name      |    Type   | Internal Type | Description                                    |
 | :---: | :------------: | :-------: | :-----------: | ---------------------------------------------- |
 |   0   | `serviceFees_` | `uint256` |   `uint256`   | The amount of platform service fee to be paid. |
-
-\
 
 
 ### `getServiceFeesForPeriod`
@@ -331,8 +311,6 @@ Gets the service fees for the given interval.
 | :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
 |   0   | `serviceFee_` | `uint256` |   `uint256`   | The amount of platform service fee to be paid. |
 
-\
-
 
 ### `globals`
 
@@ -351,8 +329,6 @@ Gets the global contract address.
 | Index | Name |    Type   | Internal Type | Description |
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
-
-\
 
 
 ### `payOriginationFees`
@@ -383,8 +359,6 @@ Called during \`fundLoan\`, performs fee payments to poolDelegate and treasury.
 | :---: | :--------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `feePaid_` | `uint256` |   `uint256`   | The total amount of fees paid. |
 
-\
-
 
 ### `payServiceFees`
 
@@ -414,8 +388,6 @@ Called during \`makePayment\`, performs fee payments to the pool delegate and tr
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `feePaid_` | `uint256` |   `uint256`   |             |
 
-\
-
 
 ### `platformRefinanceServiceFee`
 
@@ -442,8 +414,6 @@ Gets the platform fee rate for the given loan.
 | Index | Name |    Type   | Internal Type | Description |
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
-
-\
 
 
 ### `platformServiceFee`
@@ -472,8 +442,6 @@ Gets the platform fee rate for the given loan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
-
 
 ### `updateDelegateFeeTerms`
 
@@ -493,8 +461,6 @@ Called during loan creation or refinance, sets the fee terms.
 | :---: | :-----------------------: | :-------: | :-----------: | -------------------------------------------------- |
 |   0   | `delegateOriginationFee_` | `uint256` |   `uint256`   | The amount of delegate origination fee to be paid. |
 |   1   |   `delegateServiceFee_`   | `uint256` |   `uint256`   | The amount of delegate service fee to be paid.     |
-
-\
 
 
 ### `updatePlatformServiceFee`
@@ -516,8 +482,6 @@ Function called by loans to update the saved platform service fee rate.
 |   0   | `principalRequested_` | `uint256` |   `uint256`   |             |
 |   1   |   `paymentInterval_`  | `uint256` |   `uint256`   |             |
 
-\
-
 
 ### `updateRefinanceServiceFees`
 
@@ -537,8 +501,6 @@ Called during loan refinance to save the partial service fees accrued.
 | :---: | :---------------------: | :-------: | :-----------: | ------------------------------------------------ |
 |   0   |  `principalRequested_`  | `uint256` |   `uint256`   | The amount of principal pre-refinance requested. |
 |   1   | `timeSinceLastDueDate_` | `uint256` |   `uint256`   | The amount of time since last payment due date.  |
-
-\
 
 
 ## Events
@@ -563,8 +525,6 @@ New fee terms have been set.
 |   1   | `delegateOriginationFee_` | `uint256` |   `uint256`   | The new value for delegate origination fee. |
 |   2   |   `delegateServiceFee_`   | `uint256` |   `uint256`   | The new value for delegate service fee.     |
 
-\
-
 
 ### `OriginationFeesPaid`
 
@@ -585,8 +545,6 @@ A fee payment was made.
 |   0   |          `loan_`          | `address` |   `address`   | The address of the loan contract.            |
 |   1   | `delegateOriginationFee_` | `uint256` |   `uint256`   | The amount of delegate origination fee paid. |
 |   2   | `platformOriginationFee_` | `uint256` |   `uint256`   | The amount of platform origination fee paid. |
-
-\
 
 
 ### `PartialRefinanceServiceFeesUpdated`
@@ -609,8 +567,6 @@ New fee terms have been set.
 |   1   | `partialPlatformServiceFee_` | `uint256` |   `uint256`   | The value for the platform service fee. |
 |   2   | `partialDelegateServiceFee_` | `uint256` |   `uint256`   | The value for the delegate service fee. |
 
-\
-
 
 ### `PlatformServiceFeeUpdated`
 
@@ -629,8 +585,6 @@ New fee terms have been set.
 | :---: | :-------------------: | :-------: | :-----------: | ------------------------------------------- |
 |   0   |        `loan_`        | `address` |   `address`   | The address of the loan contract.           |
 |   1   | `platformServiceFee_` | `uint256` |   `uint256`   | The new value for the platform service fee. |
-
-\
 
 
 ### `ServiceFeesPaid`
@@ -656,5 +610,3 @@ A fee payment was made.
 |   2   | `partialRefinanceDelegateServiceFee_` | `uint256` |   `uint256`   | The amount of partial delegate service fee from refinance paid. |
 |   3   |         `platformServiceFee_`         | `uint256` |   `uint256`   | The amount of platform service fee paid.                        |
 |   4   | `partialRefinancePlatformServiceFee_` | `uint256` |   `uint256`   | The amount of partial platform service fee from refinance paid. |
-
-\

@@ -1,6 +1,7 @@
 # Overview
 
-The Governor is the main administrator of the protocol, and is managed by a multisig. The Governor controls administrative functions in the protocol, such as managing the MapleTreasury and defining global parameters. The main contract the Governor administers is [MapleGlobals](https://github.com/maple-labs/globals-v2/blob/main/contracts/MapleGlobals.sol) but it can also call administrative functions to manage Loans for a given Pool.
+The Governor is the on‑chain `GovernorTimelock` contract managed by a multisig (and other designated roles). It controls administrative functions in the protocol. See `technical-resources/singletons/governor-timelock.md` for scheduling and execution flows.
+
 
 # Governor-Permissioned Functions
 
@@ -36,9 +37,18 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `setValidPoolDeployer`
 * `unscheduleCall`
 
+Note: `setValidPoolDeployer` is deprecated for enabling deployers and only supports disabling. Use `setCanDeployFrom(factory, account, true)` together with `setValidInstanceOf(<FACTORY_KEY>, factory, true)` to allow deployments.
+
 ## PoolManager
 
+* `addStrategy`
 * `finishCollateralLiquidation`
+* `setDelegateManagementFeeRate`
+* `setIsStrategy`
+* `setLiquidityCap`
+* `setPendingPoolDelegate`
+* `setPoolPermissionManager`
+* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `triggerDefault`
 
 ## Fixed Term LoanManager
@@ -63,18 +73,9 @@ The Governor is the main administrator of the protocol, and is managed by a mult
 * `configurePool`
 * `setLenderAllowlist`
 * `setLenderBitmaps`
+* `setPermissionAdmin`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
-
-## Withdrawal Manager (Cyclical)
-
-* `setExitConfig`
-
-## Withdrawal Manager (Queue)
-
-* `processRedemptions`
-* `removeRequest`
-* `setManualWithdrawal`
 
 ## Strategies Contracts
 

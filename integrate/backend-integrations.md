@@ -105,13 +105,18 @@ Router addresses can also be accessed via the GraphQL API.
 query {
   poolV2S(where: { syrupRouter_not: null }) {
     id
+    name
     asset {
       symbol
+      decimals
     }
     syrupRouter {
       id
     }
     withdrawalManagerQueue {
+      id
+    }
+    poolPermissionManager {
       id
     }
   }
@@ -172,6 +177,14 @@ const main = async () => {
 main();
 ```
 {% endcode %}
+
+### Listen for Router DepositData events (optional)
+
+If you want to correlate deposits off-chain, subscribe to `DepositData(address owner, uint256 amount, bytes32 depositData)` on the `syrupRouter` address returned by GraphQL. Emitters include the caller’s address, raw deposit amount, and a `bytes32` opaque identifier you pass in the `deposit` call.
+
+### Authorization signature verification (auditors)
+
+Maple returns an authorization signature (v/r/s) used by `authorizeAndDeposit`. The router verifies a digest constructed from `chainId`, `router address`, `owner`, `owner nonce`, `bitmap`, and `deadline`. For internal reviews, auditors can reproduce the `ecrecover` and confirm the signer is a `permissionAdmin` in `PoolPermissionManager`.
 
 It is important to note that the query uses the `syrupRouter_not` filter to return specifically Syrup pools.
 
