@@ -65,12 +65,12 @@ This release is for the Governor Timelock Contract upgrade. The Maple protocol c
 
 ### December 2025 Release
 
-TODO: Add a brief summary of the December 2025 release scope and components covered by audits.
+The December 2025 release is for the Withdrawal Manager upgrade which introduces support to allow multiple pending requests per owner. The upgrade went through two audits by Spearbit and Sherlock. The audit reports can be seen below. 
 
 | Auditor  | Report Link |
 | -------- | ----------- |
-| Spearbit | TODO        |
-| Sherlock | TODO        |
+| Spearbit | [`2025-11 - Spearbit Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Spearbit-Maple-Finance-WM-Nov-2025.pdf) |
+| Sherlock | [`2025-11 - Sherlock Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Sherlock-Maple-Finance-WM-Nov-2025.pdf) |
 
 ## Bug Bounty
 
