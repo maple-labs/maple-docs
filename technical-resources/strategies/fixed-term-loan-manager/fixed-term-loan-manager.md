@@ -20,7 +20,7 @@ $$
 
 ### Introduction
 
-Outstanding interest in the FixedTermLoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. [Interest](../../loan-managers/loans/loans.md#amortization-calculation) in FixedTermLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
+Outstanding interest in the FixedTermLoanManager has to represent the current aggregate value of the outstanding interest in all loans in the most accurate and efficient way possible. Interest in FixedTermLoans is represented as fixed amounts owed at a given date. For example, a $1m loan with 12% interest and a 30 day payment interval would be shown as:
 
 $$
 \large \begin{align} \nonumber interest = 1e6 \times 0.12 \times \frac{30}{365} = 9863.01 \end{align}

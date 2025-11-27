@@ -185,7 +185,7 @@ $$
 
 * `borrower` - The address of the borrower.
 * `lender` - The address of the lender.
-* `feeManager` - The address of the entity responsible for storing and calculating loan fees. ([See here](fee-manager.md))
+* `feeManager` - The address of the entity responsible for storing and calculating loan fees.
 * `collateralAsset` - The address of the asset used as collateral.
 * `fundsAsset` - The address of asset that the loan is denominated in.
 * `gracePeriod` - The amount of time that the lender needs to wait before triggering a default on a late loan.\\

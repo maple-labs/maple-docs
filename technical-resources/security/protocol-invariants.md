@@ -2,9 +2,9 @@
 
 ```
 * Fixed Term Loan
-   * Invariant A: collateral balance >= collateral`
-   * Invariant B: fundsAsset >= drawableFunds`
-   * Invariant C: `collateral >= collateralRequired * (principal - drawableFunds) / principalRequested`
+   * Invariant A: collateral balance >= _collateral`
+   * Invariant B: fundsAsset >= _drawableFunds`
+   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
 
 * Fixed Term Loan Manager (non-liquidating)
    * Invariant A: domainStart <= domainEnd
@@ -43,6 +43,8 @@
    * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
    * Invariant J: payment.impairedDate >= payment.startDate
    * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
+   * Invariant L: fundsAsset.balanceOf(OTLM) == 0
+   * Invariant M: fundsAsset.allowance(OTLM, address(loan)) == 0
 
 * Pool (non-liquidating)
    * Invariant A: totalAssets > fundsAsset balance of pool
@@ -58,30 +60,14 @@
    * Invariant K: convertToExitShares == poolManager.convertToExitShares()
 
 * PoolManager (non-liquidating)
-   * Invariant A: totalAssets == cash + ∑assetsUnderManagement[loanManager]
-   * Invariant B: hasSufficientCover == fundsAsset balance of cover > globals.minCoverAmount
+   * Invariant A: totalAssets == cash + ∑assetsUnderManagement[fixedTermLoanManager] + ∑assetsUnderManagement[openTermLoanManager]
+   * Invariant B: totalAssets >= unrealizedLosses
 
 * Pool Permission Manager
    * Invariant A: pool.permissionLevel ∈ [0, 3]
    * Invariant B: pool.bitmap ∈ [0, MAX]
    * Invariant C: lender.bitmap ∈ [0, MAX]
    * Invariant D: pool.permissionLevel == public -> permanently public
-
-* Withdrawal Manager (Cyclical)
-   * Invariant A: WM LP balance == ∑lockedShares(user)
-   * Invariant B: totalCycleShares == ∑lockedShares(user)[cycle] (for all cycles)
-   * Invariant C: windowStart[currentCycle] <= block.timestamp
-   * Invariant D: initialCycleTime[currentConfig] <= block.timestamp
-   * Invariant E: initialCycleId[currentConfig] <= currentCycle
-   * Invariant F: getRedeemableAmounts.shares[owner] <= WM LP balance
-   * Invariant G: getRedeemableAmounts.shares[owner] <= lockedShares[user]
-   * Invariant H: getRedeemableAmounts.shares[owner] <= totalCycleShares[exitCycleId[user]]
-   * Invariant I: getRedeemableAmounts.assets[owner] <= fundsAsset balance of pool
-   * Invariant J: getRedeemableAmounts.assets[owner] <= totalCycleShares[exitCycleId[user]] * exchangeRate
-   * Invariant K: getRedeemableAmounts.assets[owner] <= lockedShares[user] * exchangeRate
-   * Invariant L: getRedeemableAmounts.partialLiquidity == (lockedShares[user] * exchangeRate < fundsAsset balance of pool)
-   * Invariant M: lockedLiquidity <= pool.totalAssets()
-   * Invariant N: lockedLiquidity <= totalCycleShares[exitCycleId[user]] * exchangeRate
 
 * Withdrawal Manager (Queue)
    * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
@@ -92,7 +78,6 @@
    * Invariant F: requests(0) == (0, 0)
    * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
    * Invariant H: requestId is unique
-   * Invariant I: lender is unique
 
 * Strategy
    * Invariant A: assetsUnderManagement == currentTotalAssets - accruedFees

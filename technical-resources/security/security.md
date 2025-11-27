@@ -63,7 +63,14 @@ This release is for the Governor Timelock Contract upgrade. The Maple protocol c
 | 0xMacro     | [`2025-09-18 - 0xMacro Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-sept-governor-timelock/0xMacro-Maple-Finance-timelock-Sept-2025.pdf)         |
 
 
+### November 2025 Release
 
+The November 2025 release is for the Withdrawal Manager upgrade which introduces support to allow multiple pending requests per owner. The upgrade went through two audits by Spearbit and Sherlock. The audit reports can be seen below. 
+
+| Auditor  | Report Link |
+| -------- | ----------- |
+| Spearbit | [`2025-11 - Spearbit Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Spearbit-Maple-Finance-WM-Nov-2025.pdf) |
+| Sherlock | [`2025-11 - Sherlock Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Sherlock-Maple-Finance-WM-Nov-2025.pdf) |
 
 ## Bug Bounty
 
@@ -82,7 +89,7 @@ Additionally all smart contracts get programmatically verified on Etherscan via 
 
 ## Emergency Pause Function
 
-In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](emergency-protocol-pause-function.md).
+In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](emergency-protocol-pause.md).
 
 ## Oracle/Flash Loan Protections
 
@@ -90,8 +97,7 @@ Maple Finance has implemented a number of protections to mitigate the risk of fl
 
 1. Chainlink Oracles - Maple Finance uses Chainlink oracles to provide price feeds for the protocol. Chainlink oracles are decentralized and provide a high level of security and reliability. In addition, Chainlink oracles are designed to be resistant to flash loan attacks since they provide price data from off-chain sources. More information on Chainlink oracles can be found [here](https://docs.chain.link/).
 2. Oracle Wrappers - Maple Finance uses oracle wrappers to provide additional security and reliability to the Chainlink oracles. Oracle wrappers are designed to prevent oracle outages and oracle manipulation from causing issues in the protocol, specifically during liquidations.
-3. Minimum Liquidation Price - The minimum liquidation price is a parameter that is set by the Pool Delegate. This parameter is used to prevent liquidations from occurring when the price of the collateral is too low. This is done to prevent flash loan attacks from being able to liquidate collateral at unfair prices.
-4. Withdrawal Cooldowns - With withdrawal cooldowns, LPs are required to wait a certain amount of time before they can withdraw their funds. This is done to prevent flash loan attacks from being able to front-run LPs and deposit and withdraw funds to profit unfairly from discrete increases in pool value.
+3. Withdrawal Cooldowns - With withdrawal cooldowns, LPs are required to wait a certain amount of time before they can withdraw their funds. This is done to prevent flash loan attacks from being able to front-run LPs and deposit and withdraw funds to profit unfairly from discrete increases in pool value.
 
 ## Front-Running Protections
 
