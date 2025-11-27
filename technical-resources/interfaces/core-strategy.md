@@ -1,6 +1,6 @@
 # Core Strategy
 
-Generic strategy that allocates pool funds into an external ERC‑4626 vault (strategy vault). Supports funding, withdrawal requests and cancellations, pushing residual assets back to the pool, and strategy reactivation after impairment.
+Maple Specific strategy that allocates pool funds into an another Maple ERC‑4626 vault. Supports funding, withdrawal requests and cancellations, pushing residual assets back to the pool, and strategy reactivation after impairment.
 
 ## Functions
 
