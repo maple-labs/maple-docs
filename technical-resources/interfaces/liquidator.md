@@ -1,6 +1,5 @@
 # Liquidator
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns the address of the collateral asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `collateralRemaining`
@@ -44,7 +42,6 @@ Returns the amount of collateral yet to be liquidated.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `factory`
@@ -65,7 +62,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `fundsAsset`
@@ -86,7 +82,6 @@ Returns the address of the funding asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `getExpectedAmount`
@@ -115,7 +110,6 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 | :---: | :---------------: | :-------: | :-----------: | ----------------------------------------------------------------------- |
 |   0   | `expectedAmount_` | `uint256` |   `uint256`   | Amount of \`fundsAsset\` that must be returned in the same transaction. |
 
-\
 
 
 ### `globals`
@@ -134,7 +128,6 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ### `governor`
@@ -153,7 +146,6 @@ Returns the expected amount to be returned from a flash loan given a certain amo
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `governor_` | `address` |   `address`   |             |
 
-\
 
 
 ### `implementation`
@@ -174,7 +166,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `liquidatePortion`
@@ -198,7 +189,6 @@ Flash loan function that: 1. Transfers a specified amount of \`collateralAsset\`
 |   1   |  `maxReturnAmount_` | `uint256` |   `uint256`   | Max amount of \`fundsAsset\` that can be returned to the liquidator contract. |
 |   2   |       `data_`       |  `bytes`  |    `bytes`    | ABI-encoded arguments to be used in the low-level call to perform step 2.     |
 
-\
 
 
 ### `loanManager`
@@ -219,7 +209,6 @@ Returns the address of the loan manager contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `migrate`
@@ -241,7 +230,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `poolDelegate`
@@ -260,7 +248,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 | :---: | :-------------: | :-------: | :-----------: | ----------- |
 |   0   | `poolDelegate_` | `address` |   `address`   |             |
 
-\
 
 
 ### `pullFunds`
@@ -284,7 +271,6 @@ Pulls a specified amount of ERC-20 tokens from the contract. Can only be called 
 |   1   | `destination_` | `address` |   `address`   | The destination of the transfer.   |
 |   2   |    `amount_`   | `uint256` |   `uint256`   | The amount to transfer.            |
 
-\
 
 
 ### `setCollateralRemaining`
@@ -304,7 +290,6 @@ Sets the initial amount of collateral to be liquidated.
 | :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `collateralAmount_` | `uint256` |   `uint256`   | The amount of collateral to be liquidated. |
 
-\
 
 
 ### `setImplementation`
@@ -324,7 +309,6 @@ Modifies the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `upgrade`
@@ -346,7 +330,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -371,7 +354,6 @@ Funds were withdrawn from the liquidator.
 |   1   | `destination_` | `address` |   `address`   | Address of where tokens were sent.       |
 |   2   |    `amount_`   | `uint256` |   `uint256`   | Amount of tokens that were sent.         |
 
-\
 
 
 ### `PortionLiquidated`
@@ -392,7 +374,6 @@ Portion of collateral was liquidated.
 |   0   |   `swapAmount_`   | `uint256` |   `uint256`   | Amount of collateralAsset that was liquidated. |
 |   1   | `returnedAmount_` | `uint256` |   `uint256`   | Amount of fundsAsset that was returned.        |
 
-\
 
 
 ### `Upgraded`
@@ -413,4 +394,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\

@@ -1,6 +1,5 @@
 # LiquidatorFactory
 
-\
 
 
 ## Constructor
@@ -17,7 +16,6 @@
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ## Functions
@@ -50,7 +48,6 @@ Deploys a new instance proxying the default implementation version, with some in
 | :---: | :---------: | :-------: | :-----------: | ------------------------------------------- |
 |   0   | `instance_` | `address` |   `address`   | The address of the deployed proxy contract. |
 
-\
 
 
 ### `defaultImplementation`
@@ -71,7 +68,6 @@ The address of an implementation for proxies.
 | :---: | :----------------------: | :-------: | :-----------: | ----------- |
 |   0   | `defaultImplementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `defaultVersion`
@@ -92,7 +88,6 @@ The default version.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `disableUpgradePath`
@@ -114,7 +109,6 @@ Disables upgrading from a version to a version of a implementation. Only the Gov
 |   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
 |   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
 
-\
 
 
 ### `enableUpgradePath`
@@ -138,7 +132,6 @@ Enables upgrading from a version to a version of an implementation, with an opti
 |   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
 |   2   |   `migrator_`  | `address` |   `address`   | The address of the migrator, if any.         |
 
-\
 
 
 ### `getInstanceAddress`
@@ -169,7 +162,6 @@ Returns the deterministic address of a potential proxy, given some arguments and
 | :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `instanceAddress_` | `address` |   `address`   | The deterministic address of a potential proxy. |
 
-\
 
 
 ### `implementationOf`
@@ -198,7 +190,6 @@ Returns the address of an implementation version.
 | :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `implementation_` | `address` |   `address`   | The address of the implementation. |
 
-\
 
 
 ### `isInstance`
@@ -227,7 +218,6 @@ Returns if a given address has been deployed by this factory/
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `mapleGlobals`
@@ -248,7 +238,6 @@ The address of the MapleGlobals contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `migratorForPath`
@@ -279,7 +268,6 @@ Returns the address of a migrator contract for a migration path (from version, t
 | :---: | :---------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `migrator_` | `address` |   `address`   | The address of a migrator contract. |
 
-\
 
 
 ### `registerImplementation`
@@ -303,7 +291,6 @@ Registers the address of an implementation contract as a version, with an option
 |   1   | `implementationAddress_` | `address` |   `address`   | The address of the implementation.      |
 |   2   |      `initializer_`      | `address` |   `address`   | The address of the initializer, if any. |
 
-\
 
 
 ### `setDefaultVersion`
@@ -323,7 +310,6 @@ Sets the default version. Only the Governor can call this function.
 | :---: | :--------: | :-------: | :-----------: | ------------------------------------------------- |
 |   0   | `version_` | `uint256` |   `uint256`   | The implementation version to set as the default. |
 
-\
 
 
 ### `setGlobals`
@@ -343,7 +329,6 @@ Sets the Maple Globals contract. Only the Governor can call this function.
 | :---: | :-------------: | :-------: | :-----------: | ---------------------------------------- |
 |   0   | `mapleGlobals_` | `address` |   `address`   | The address of a Maple Globals contract. |
 
-\
 
 
 ### `upgradeEnabledForPath`
@@ -374,7 +359,6 @@ Whether the upgrade is enabled for a path from a version to another version.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `upgradeInstance`
@@ -396,7 +380,6 @@ Upgrades the calling proxy contract's implementation, with some migration argume
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The implementation version to upgrade the proxy contract to. |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The migration arguments, if any.                             |
 
-\
 
 
 ### `versionOf`
@@ -425,7 +408,6 @@ Returns the version of an implementation contract.
 | :---: | :--------: | :-------: | :-----------: | ------------------------------------------- |
 |   0   | `version_` | `uint256` |   `uint256`   | The version of the implementation contract. |
 
-\
 
 
 ## Events
@@ -446,7 +428,6 @@ A default version was set.
 | :---: | :--------: | :-------: | :-----------: | -------------------- |
 |   0   | `version_` | `uint256` |   `uint256`   | The default version. |
 
-\
 
 
 ### `ImplementationRegistered`
@@ -469,7 +450,6 @@ A version of an implementation, at some address, was registered, with an optiona
 |   1   | `implementationAddress_` | `address` |   `address`   | The address of the implementation.      |
 |   2   |      `initializer_`      | `address` |   `address`   | The address of the initializer, if any. |
 
-\
 
 
 ### `InstanceDeployed`
@@ -492,7 +472,6 @@ A proxy contract was deployed with some initialization arguments.
 |   1   |         `instance_`        | `address` |   `address`   | The address of the proxy contract deployed.                                     |
 |   2   | `initializationArguments_` |  `bytes`  |    `bytes`    | The arguments used to initialize the proxy contract, if any.                    |
 
-\
 
 
 ### `InstanceUpgraded`
@@ -517,7 +496,6 @@ A instance has upgraded by proxying to a new implementation, with some migration
 |   2   |      `toVersion_`     | `uint256` |   `uint256`   | The new implementation version being proxied.     |
 |   3   | `migrationArguments_` |  `bytes`  |    `bytes`    | The arguments used to migrate, if any.            |
 
-\
 
 
 ### `MapleGlobalsSet`
@@ -536,7 +514,6 @@ The MapleGlobals was set.
 | :---: | :-------------: | :-------: | :-----------: | ---------------------------------------- |
 |   0   | `mapleGlobals_` | `address` |   `address`   | The address of a Maple Globals contract. |
 
-\
 
 
 ### `UpgradePathDisabled`
@@ -557,7 +534,6 @@ An upgrade path was disabled, with an optional migrator contract.
 |   0   | `fromVersion_` | `uint256` |   `uint256`   | The starting version of the upgrade path.    |
 |   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
 
-\
 
 
 ### `UpgradePathEnabled`
@@ -580,4 +556,3 @@ An upgrade path was enabled, with an optional migrator contract.
 |   1   |  `toVersion_`  | `uint256` |   `uint256`   | The destination version of the upgrade path. |
 |   2   |   `migrator_`  | `address` |   `address`   | The address of the migrator, if any.         |
 
-\

@@ -1,6 +1,5 @@
 # FixedTermLoanManagerInitializer
 
-\
 
 
 ## Functions
@@ -21,7 +20,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint112` |   `uint112`   |             |
 
-\
 
 
 ### `allowedSlippageFor`
@@ -48,7 +46,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `decodeArguments`
@@ -77,7 +74,6 @@ Decodes the initialization arguments of a loan manager.
 | :---: | :------------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `poolManager_` | `address` |   `address`   | Address of the pool manager. |
 
-\
 
 
 ### `domainEnd`
@@ -96,7 +92,6 @@ Decodes the initialization arguments of a loan manager.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `domainStart`
@@ -115,7 +110,6 @@ Decodes the initialization arguments of a loan manager.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `encodeArguments`
@@ -144,7 +138,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :---------: | :-----: | :-----------: | ---------------------------------------- |
 |   0   | `calldata_` | `bytes` |    `bytes`    | ABI encoded address of the pool manager. |
 
-\
 
 
 ### `fundsAsset`
@@ -163,7 +156,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `issuanceRate`
@@ -182,7 +174,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `liquidationInfo`
@@ -219,7 +210,6 @@ Encodes the initialization arguments of a loan manager.
 |   4   |     `platformFees`    |  `uint96` |    `uint96`   |             |
 |   5   |      `liquidator`     | `address` |   `address`   |             |
 
-\
 
 
 ### `minRatioFor`
@@ -246,7 +236,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `paymentCounter`
@@ -265,7 +254,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `paymentIdOf`
@@ -292,7 +280,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `payments`
@@ -331,7 +318,6 @@ Encodes the initialization arguments of a loan manager.
 |   5   |     `refinanceInterest`     | `uint128` |   `uint128`   |             |
 |   6   |        `issuanceRate`       | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `paymentWithEarliestDueDate`
@@ -350,7 +336,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `poolManager`
@@ -369,7 +354,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `principalOut`
@@ -388,7 +372,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `sortedPayments`
@@ -419,7 +402,6 @@ Encodes the initialization arguments of a loan manager.
 |   1   |      `next`      | `uint24` |    `uint24`   |             |
 |   2   | `paymentDueDate` | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `unrealizedLosses`
@@ -438,7 +420,6 @@ Encodes the initialization arguments of a loan manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ## Events
@@ -459,4 +440,3 @@ Emitted when the loan manager is initialized.
 | :---: | :------------: | :-------: | :-----------: | --------------------------------------- |
 |   0   | `poolManager_` | `address` |   `address`   | Address of the associated pool manager. |
 
-\

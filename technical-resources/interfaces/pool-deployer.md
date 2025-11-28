@@ -1,6 +1,5 @@
 # PoolDeployer
 
-\
 
 
 ## Constructor
@@ -17,7 +16,6 @@
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ## Functions
@@ -64,7 +62,6 @@ Deploys a pool along with its dependencies. NOTE: The PoolManager address is enc
 | :---: | :------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `poolManager_` | `address` |   `address`   | The address of the PoolManager. |
 
-\
 
 
 ### `getPoolDeploymentAddresses`
@@ -107,7 +104,6 @@ Gets the addresses that would result from a deployment.
 |   1   |        `pool_`       | `address` |   `address`   | The address of the Pool contract that will be deployed.              |
 |   2   | `poolDelegateCover_` | `address` |   `address`   | The address of the PoolDelegateCover contract that will be deployed. |
 
-\
 
 
 ### `getQueueWithdrawalManagerAddress`
@@ -140,7 +136,6 @@ Gets the address of the Queue Withdrawal Manager that would result from a deploy
 | :---: | :------------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
 |   0   | `withdrawalManager_` | `address` |   `address`   | The address of the WithdrawalManager contract that will be deployed. |
 
-\
 
 
 ### `getStrategiesAddresses`
@@ -173,7 +168,6 @@ Gets the addresses of the Strategies that would result from a deployment.
 | :---: | :-----------: | :---------: | :-----------: | -------------------------------------------------------------- |
 |   0   | `strategies_` | `address[]` |  `address[]`  | The addresses of the Strategy contracts that will be deployed. |
 
-\
 
 
 ### `globals`
@@ -194,7 +188,6 @@ Gets the address of the Globals contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ## Events
@@ -221,4 +214,3 @@ Emitted when a new pool is deployed.
 |   2   | `withdrawalManager_` |  `address`  |   `address`   | The address of the WithdrawalManager deployed.        |
 |   3   |     `strategies_`    | `address[]` |  `address[]`  | An array of the addresses of the Strategies deployed. |
 
-\

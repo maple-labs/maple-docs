@@ -1,6 +1,5 @@
 # FixedTermLoanManager
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns the value considered as the hundred percent.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `PRECISION`
@@ -44,7 +42,6 @@ Returns the precision used for the contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `acceptNewTerms`
@@ -72,7 +69,6 @@ Accepts new loan terms triggering a loan refinance.
 |   3   |       `calls_`       | `bytes[]` |   `bytes[]`   | The encoded calls to set new loan terms.   |
 |   4   | `principalIncrease_` | `uint256` |   `uint256`   | The increase in principal.                 |
 
-\
 
 
 ### `accountedInterest`
@@ -93,7 +89,6 @@ Gets the amount of accounted interest.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint112` |   `uint112`   |             |
 
-\
 
 
 ### `accruedInterest`
@@ -114,7 +109,6 @@ Gets the amount of accrued interest up until this point in time.
 | :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------------------- |
 |   0   | `accruedInterest_` | `uint256` |   `uint256`   | The amount of accrued interest up until this point in time. |
 
-\
 
 
 ### `allowedSlippageFor`
@@ -143,7 +137,6 @@ Gets allowed slippage for a give collateral asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `assetsUnderManagement`
@@ -164,7 +157,6 @@ Gets the amount of assets under the management of the contract.
 | :---: | :----------------------: | :-------: | :-----------: | ---------------------------------------------------------- |
 |   0   | `assetsUnderManagement_` | `uint256` |   `uint256`   | The amount of assets under the management of the contract. |
 
-\
 
 
 ### `claim`
@@ -190,7 +182,6 @@ Called by loans when payments are made, updating the accounting.
 |   2   | `previousPaymentDueDate_` | `uint256` |   `uint256`   | The previous payment due date. |
 |   3   |   `nextPaymentDueDate_`   | `uint256` |   `uint256`   | The new payment due date.      |
 
-\
 
 
 ### `domainEnd`
@@ -211,7 +202,6 @@ Gets the timestamp of the domain end.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `domainStart`
@@ -232,7 +222,6 @@ Gets the timestamp of the domain start.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `factory`
@@ -253,7 +242,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `finishCollateralLiquidation`
@@ -284,7 +272,6 @@ Finishes the collateral liquidation.
 |   0   | `remainingLosses_` | `uint256` |   `uint256`   | The amount of remaining losses. |
 |   1   |   `platformFees_`  | `uint256` |   `uint256`   | The amount of platform fees.    |
 
-\
 
 
 ### `fund`
@@ -304,7 +291,6 @@ Funds a new loan.
 | :---: | :-----: | :-------: | :-----------: | ------------------ |
 |   0   | `loan_` | `address` |   `address`   | Loan to be funded. |
 
-\
 
 
 ### `fundsAsset`
@@ -325,7 +311,6 @@ Gets the address of the funds asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `getExpectedAmount`
@@ -356,7 +341,6 @@ Gets the expected amount of an asset given the input amount.
 | :---: | :-------------: | :-------: | :-----------: | ----------------------------------------- |
 |   0   | `returnAmount_` | `uint256` |   `uint256`   | The desired return amount of funds asset. |
 
-\
 
 
 ### `governor`
@@ -375,7 +359,6 @@ Gets the expected amount of an asset given the input amount.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `governor_` | `address` |   `address`   |             |
 
-\
 
 
 ### `impairLoan`
@@ -395,7 +378,6 @@ Triggers the loan impairment for a loan.
 | :---: | :-----: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `loan_` | `address` |   `address`   | Loan to trigger the loan impairment. |
 
-\
 
 
 ### `implementation`
@@ -416,7 +398,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `isLiquidationActive`
@@ -445,7 +426,6 @@ Returns whether or not a liquidation is in progress.
 | :---: | :---------: | :----: | :-----------: | ------------------------------------- |
 |   0   | `isActive_` | `bool` |     `bool`    | True if a liquidation is in progress. |
 
-\
 
 
 ### `issuanceRate`
@@ -466,7 +446,6 @@ Gets the current issuance rate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `liquidationInfo`
@@ -505,7 +484,6 @@ Gets the information for a liquidation.
 |   4   |     `platformFees`    |  `uint96` |    `uint96`   | The amount of platform fees owed.                      |
 |   5   |      `liquidator`     | `address` |   `address`   | The address of the liquidator.                         |
 
-\
 
 
 ### `migrate`
@@ -527,7 +505,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `minRatioFor`
@@ -556,7 +533,6 @@ Gets the minimum ratio for a collateral asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `paymentCounter`
@@ -577,7 +553,6 @@ Gets the payment counter.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `paymentIdOf`
@@ -606,7 +581,6 @@ Gets the payment if for the given loan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `payments`
@@ -647,7 +621,6 @@ Gets the information for a payment.
 |   5   |     `refinanceInterest`     | `uint128` |   `uint128`   | The amount of refinance interest.               |
 |   6   |        `issuanceRate`       | `uint256` |   `uint256`   | The issuance rate for the loan.                 |
 
-\
 
 
 ### `paymentWithEarliestDueDate`
@@ -668,7 +641,6 @@ Gets the payment id with the earliest due date.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint24` |    `uint24`   |             |
 
-\
 
 
 ### `poolDelegate`
@@ -687,7 +659,6 @@ Gets the payment id with the earliest due date.
 | :---: | :-------------: | :-------: | :-----------: | ----------- |
 |   0   | `poolDelegate_` | `address` |   `address`   |             |
 
-\
 
 
 ### `poolManager`
@@ -708,7 +679,6 @@ Gets the address of the pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `principalOut`
@@ -729,7 +699,6 @@ Gets the amount of principal out.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `rejectNewTerms`
@@ -755,7 +724,6 @@ Reject/cancel proposed new terms for a loan.
 |   2   |  `deadline_`  | `uint256` |   `uint256`   | The deadline by which the lender must accept the new terms. |
 |   3   |    `calls_`   | `bytes[]` |   `bytes[]`   | The array of calls to be made to the refinancer.            |
 
-\
 
 
 ### `removeLoanImpairment`
@@ -775,7 +743,6 @@ Removes the loan impairment for a loan.
 | :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `loan_` | `address` |   `address`   | Loan to remove the loan impairment. |
 
-\
 
 
 ### `setAllowedSlippage`
@@ -797,7 +764,6 @@ Sets the allowed slippage for a collateral asset liquidation.
 |   0   | `collateralAsset_` | `address` |   `address`   | Address of a collateral asset.     |
 |   1   | `allowedSlippage_` | `uint256` |   `uint256`   | New value for \`allowedSlippage\`. |
 
-\
 
 
 ### `setImplementation`
@@ -817,7 +783,6 @@ Modifies the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `setMinRatio`
@@ -839,7 +804,6 @@ Sets the minimum ratio for a collateral asset liquidation. This ratio is express
 |   0   | `collateralAsset_` | `address` |   `address`   | Address of a collateral asset. |
 |   1   |     `minRatio_`    | `uint256` |   `uint256`   | New value for \`minRatio\`.    |
 
-\
 
 
 ### `sortedPayments`
@@ -872,7 +836,6 @@ Gets the information of the sorted list.
 |   1   |      `next`      | `uint24` |    `uint24`   |             |
 |   2   | `paymentDueDate` | `uint48` |    `uint48`   |             |
 
-\
 
 
 ### `triggerDefault`
@@ -907,7 +870,6 @@ Triggers the default of a loan.
 |   1   |   `remainingLosses_`   | `uint256` |   `uint256`   | The amount of remaining losses.                                                  |
 |   2   |     `platformFees_`    | `uint256` |   `uint256`   | The amount of platform fees.                                                     |
 
-\
 
 
 ### `unrealizedLosses`
@@ -928,7 +890,6 @@ Returns the amount unrealized losses.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `updateAccounting`
@@ -940,7 +901,6 @@ Updates the issuance parameters of the LoanManager, callable by the Governor and
         nonpayable;
 ```
 
-\
 
 
 ### `upgrade`
@@ -962,7 +922,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -985,7 +944,6 @@ Emitted when \`setAllowedSlippage\` is called.
 |   0   | `collateralAsset_` | `address` |   `address`   | Address of a collateral asset.     |
 |   1   |   `newSlippage_`   | `uint256` |   `uint256`   | New value for \`allowedSlippage\`. |
 
-\
 
 
 ### `FundsDistributed`
@@ -1008,7 +966,6 @@ Funds have been claimed and distributed into the Pool.
 |   1   |  `principal_`  | `uint256` |   `uint256`   | The amount of principal paid.     |
 |   2   | `netInterest_` | `uint256` |   `uint256`   | The amount of net interest paid.  |
 
-\
 
 
 ### `IssuanceParamsUpdated`
@@ -1031,7 +988,6 @@ Emitted when the issuance parameters are changed.
 |   1   |    `issuanceRate_`   | `uint256` |   `uint256`   | New value for the issuance rate.  |
 |   2   | `accountedInterest_` | `uint112` |   `uint112`   | The amount of accounted interest. |
 
-\
 
 
 ### `LoanTransferAdminSet`
@@ -1050,7 +1006,6 @@ Emitted when the loanTransferAdmin is set by the PoolDelegate.
 | :---: | :------------------: | :-------: | :-----------: | ------------------------------------------------- |
 |   0   | `loanTransferAdmin_` | `address` |   `address`   | The address of the admin that can transfer loans. |
 
-\
 
 
 ### `ManagementFeesPaid`
@@ -1073,7 +1028,6 @@ A fee payment was made.
 |   1   | `delegateManagementFee_` | `uint256` |   `uint256`   | The amount of delegate management fee paid. |
 |   2   | `platformManagementFee_` | `uint256` |   `uint256`   | The amount of platform management fee paid. |
 
-\
 
 
 ### `MinRatioSet`
@@ -1094,7 +1048,6 @@ Emitted when \`setMinRatio\` is called.
 |   0   | `collateralAsset_` | `address` |   `address`   | Address of a collateral asset. |
 |   1   |   `newMinRatio_`   | `uint256` |   `uint256`   | New value for \`minRatio\`.    |
 
-\
 
 
 ### `PaymentAdded`
@@ -1127,7 +1080,6 @@ Emitted when a payment is removed from the LoanManager payments array.
 |   6   |    `netRefinanceInterest_`   | `uint256` |   `uint256`   |                                                 |
 |   7   |          `newRate_`          | `uint256` |   `uint256`   |                                                 |
 
-\
 
 
 ### `PaymentRemoved`
@@ -1148,7 +1100,6 @@ Emitted when a payment is removed from the LoanManager payments array.
 |   0   |    `loan_`   | `address` |   `address`   | The address of the loan.                        |
 |   1   | `paymentId_` | `uint256` |   `uint256`   | The payment ID of the payment that was removed. |
 
-\
 
 
 ### `PrincipalOutUpdated`
@@ -1167,7 +1118,6 @@ Emitted when principal out is updated
 | :---: | :-------------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `principalOut_` | `uint128` |   `uint128`   | The new value for principal out. |
 
-\
 
 
 ### `UnrealizedLossesUpdated`
@@ -1186,7 +1136,6 @@ Emitted when unrealized losses is updated.
 | :---: | :-----------------: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `unrealizedLosses_` | `uint256` |   `uint256`   | The new value for unrealized losses. |
 
-\
 
 
 ### `Upgraded`
@@ -1207,4 +1156,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\

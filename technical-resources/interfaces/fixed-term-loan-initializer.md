@@ -1,6 +1,5 @@
 # FixedTermLoanInitializer
 
-\
 
 
 ## Functions
@@ -45,7 +44,6 @@ Decodes the initialization arguments for a MapleLoan.
 |   6   |    `rates_`    | `uint256[4]` |  `uint256[4]` | Rates parameters: \[0]: interestRate, \[1]: closingFeeRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate, |
 |   7   |     `fees_`    | `uint256[2]` |  `uint256[2]` | Array of fees: \[0]: delegateOriginationFee, \[1]: delegateServiceFee                                         |
 
-\
 
 
 ### `encodeArguments`
@@ -88,7 +86,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-----------------: | :-----: | :-----------: | ----------- |
 |   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-\
 
 
 ## Events
@@ -107,7 +104,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `borrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `CollateralPosted`
@@ -124,7 +120,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------: | :-------: | :-----------: | ----------- |
 |   0   | `amount_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `CollateralRemoved`
@@ -143,7 +138,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   |    `amount_`   | `uint256` |   `uint256`   |             |
 |   1   | `destination_` | `address` |   `address`   |             |
 
-\
 
 
 ### `Funded`
@@ -164,7 +158,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |       `amount_`       | `uint256` |   `uint256`   |             |
 |   2   | `nextPaymentDueDate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `FundsClaimed`
@@ -183,7 +176,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   |    `amount_`   | `uint256` |   `uint256`   |             |
 |   1   | `destination_` | `address` |   `address`   |             |
 
-\
 
 
 ### `FundsDrawnDown`
@@ -202,7 +194,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   |    `amount_`   | `uint256` |   `uint256`   |             |
 |   1   | `destination_` | `address` |   `address`   |             |
 
-\
 
 
 ### `FundsReturned`
@@ -219,7 +210,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------: | :-------: | :-----------: | ----------- |
 |   0   | `amount_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `ImpairmentRemoved`
@@ -236,7 +226,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `nextPaymentDueDate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `Initialized`
@@ -267,7 +256,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   6   |    `rates_`    | `uint256[4]` |  `uint256[4]` |             |
 |   7   |     `fees_`    | `uint256[2]` |  `uint256[2]` |             |
 
-\
 
 
 ### `LenderAccepted`
@@ -284,7 +272,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------: | :-------: | :-----------: | ----------- |
 |   0   | `lender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `LoanClosed`
@@ -305,7 +292,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |  `interestPaid_` | `uint256` |   `uint256`   |             |
 |   2   |    `feesPaid_`   | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `LoanImpaired`
@@ -322,7 +308,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `nextPaymentDueDate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `NewTermsAccepted`
@@ -345,7 +330,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `NewTermsProposed`
@@ -368,7 +352,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `NewTermsRejected`
@@ -391,7 +374,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `PaymentMade`
@@ -412,7 +394,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |  `interestPaid_` | `uint256` |   `uint256`   |             |
 |   2   |      `fees_`     | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `PendingBorrowerSet`
@@ -429,7 +410,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingBorrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `PendingLenderSet`
@@ -446,7 +426,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingLender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `Repossessed`
@@ -467,7 +446,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |    `fundsRepossessed_`   | `uint256` |   `uint256`   |             |
 |   2   |      `destination_`      | `address` |   `address`   |             |
 
-\
 
 
 ### `Skimmed`
@@ -488,4 +466,3 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |    `amount_`   | `uint256` |   `uint256`   |             |
 |   2   | `destination_` | `address` |   `address`   |             |
 
-\

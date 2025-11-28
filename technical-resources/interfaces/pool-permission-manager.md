@@ -1,6 +1,5 @@
 # PoolPermissionManager
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns the proxy's admin address.
 | :---: | :------: | :-------: | :-----------: | ------------------------- |
 |   0   | `admin_` | `address` |   `address`   | The address of the admin. |
 
-\
 
 
 ### `configurePool`
@@ -49,7 +47,6 @@ Configures the permissions of a pool.
 |   2   |   `functionIds_`   | `bytes32[]` |  `bytes32[]`  |             |
 |   3   |   `poolBitmaps_`   | `uint256[]` |  `uint256[]`  |             |
 
-\
 
 
 ### `globals`
@@ -70,7 +67,6 @@ Returns the address of the \`MapleGlobals\` contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `hasPermission`
@@ -103,7 +99,6 @@ Checks if the lender has permission to interact with a pool. The function identi
 | :---: | :--------------: | :----: | :-----------: | ----------- |
 |   0   | `hasPermission_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `hasPermission`
@@ -136,7 +131,6 @@ Checks if the lender has permission to interact with a pool. The function identi
 | :---: | :--------------: | :----: | :-----------: | ----------- |
 |   0   | `hasPermission_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `implementation`
@@ -157,7 +151,6 @@ Returns the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `implementation_` | `address` |   `address`   | The address of the implementation. |
 
-\
 
 
 ### `lenderAllowlist`
@@ -188,7 +181,6 @@ Checks if a pool has allowlisted a lender.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `lenderBitmaps`
@@ -217,7 +209,6 @@ Returns the permission bitmap of a lender.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `permissionAdmins`
@@ -246,7 +237,6 @@ Checks if the account is a permission admin.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `permissionLevels`
@@ -275,7 +265,6 @@ Returns the permission level of a pool. Permission levels: private (0), function
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `poolBitmaps`
@@ -306,7 +295,6 @@ Returns a function-specific pool permission bitmap. Return the pool-level permis
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `setLenderAllowlist`
@@ -330,7 +318,6 @@ Sets the allowlist status of one or more lenders.
 |   1   |   `lenders_`   | `address[]` |  `address[]`  |             |
 |   2   |   `booleans_`  |   `bool[]`  |    `bool[]`   |             |
 
-\
 
 
 ### `setLenderBitmaps`
@@ -352,7 +339,6 @@ Sets the permission bitmaps of one or more lenders.
 |   0   | `lenders_` | `address[]` |  `address[]`  |             |
 |   1   | `bitmaps_` | `uint256[]` |  `uint256[]`  |             |
 
-\
 
 
 ### `setPermissionAdmin`
@@ -374,7 +360,6 @@ Sets the permission admin status of an account.
 |   0   |  `permissionAdmin_`  | `address` |   `address`   |             |
 |   1   | `isPermissionAdmin_` |   `bool`  |     `bool`    |             |
 
-\
 
 
 ### `setPoolBitmaps`
@@ -398,7 +383,6 @@ Sets the permission bitmaps of a pool.
 |   1   | `functionIds_` | `bytes32[]` |  `bytes32[]`  |             |
 |   2   |   `bitmaps_`   | `uint256[]` |  `uint256[]`  |             |
 
-\
 
 
 ### `setPoolPermissionLevel`
@@ -420,7 +404,6 @@ Sets the permission level of a pool. Permission levels: private (0), function-le
 |   0   |   `poolManager_`   | `address` |   `address`   |             |
 |   1   | `permissionLevel_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ## Events
@@ -445,7 +428,6 @@ Emitted when the lender allowlist is updated.
 |   1   |   `lenders`   | `address[]` |  `address[]`  | List of lender addresses to set the allowlist for. |
 |   2   |   `booleans`  |   `bool[]`  |    `bool[]`   | List of boolean values.                            |
 
-\
 
 
 ### `LenderBitmapsSet`
@@ -466,7 +448,6 @@ Emitted when lender bitmaps are updated.
 |   0   | `lenders` | `address[]` |  `address[]`  | List of lender addresses to set the bitmaps for. |
 |   1   | `bitmaps` | `uint256[]` |  `uint256[]`  | List of permission bitmaps.                      |
 
-\
 
 
 ### `PermissionAdminSet`
@@ -487,7 +468,6 @@ Emitted when a permission admin has been updated.
 |   0   | `account` | `address` |   `address`   | Address of the updated account.                                  |
 |   1   | `isAdmin` |   `bool`  |     `bool`    | \`true\` if the account is a permission admin, \`false\` if not. |
 
-\
 
 
 ### `PoolBitmapsSet`
@@ -510,7 +490,6 @@ Emitted when pool bitmaps are updated.
 |   1   | `functionIds` | `bytes32[]` |  `bytes32[]`  | List of function identifiers to set the bitmaps for. |
 |   2   |   `bitmaps`   | `uint256[]` |  `uint256[]`  | List of permission bitmaps.                          |
 
-\
 
 
 ### `PoolPermissionLevelSet`
@@ -531,4 +510,3 @@ Emitted when the permission level of a pool is updated.
 |   0   |   `poolManager`   | `address` |   `address`   | Address of the pool manager. |
 |   1   | `permissionLevel` | `uint256` |   `uint256`   | Pool permission level.       |
 
-\

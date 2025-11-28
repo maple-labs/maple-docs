@@ -1,6 +1,5 @@
 # OpenTermLoanRefinancer
 
-\
 
 
 ## Functions
@@ -21,7 +20,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `calledPrincipal`
@@ -40,7 +38,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `dateCalled`
@@ -59,7 +56,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateFunded`
@@ -78,7 +74,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateImpaired`
@@ -97,7 +92,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `datePaid`
@@ -116,7 +110,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `decreasePrincipal`
@@ -136,7 +129,6 @@ Function to decrease the principal during a refinance.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of which the value will decrease by. |
 
-\
 
 
 ### `delegateServiceFeeRate`
@@ -155,7 +147,6 @@ Function to decrease the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `fundsAsset`
@@ -174,7 +165,6 @@ Function to decrease the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `gracePeriod`
@@ -193,7 +183,6 @@ Function to decrease the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `increasePrincipal`
@@ -213,7 +202,6 @@ Function to increase the principal during a refinance.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of which the value will increase by. |
 
-\
 
 
 ### `interestRate`
@@ -232,7 +220,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lateFeeRate`
@@ -251,7 +238,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lateInterestPremiumRate`
@@ -270,7 +256,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lender`
@@ -289,7 +274,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `noticePeriod`
@@ -308,7 +292,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `paymentInterval`
@@ -327,7 +310,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `pendingBorrower`
@@ -346,7 +328,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `pendingLender`
@@ -365,7 +346,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `platformServiceFeeRate`
@@ -384,7 +364,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `principal`
@@ -403,7 +382,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `refinanceCommitment`
@@ -422,7 +400,6 @@ Function to increase the principal during a refinance.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `bytes32` |   `bytes32`   |             |
 
-\
 
 
 ### `setDelegateServiceFeeRate`
@@ -442,7 +419,6 @@ Function to set the delegateServiceFeeRate during a refinance. The rate is denom
 | :---: | :-----------------------: | :------: | :-----------: | ----------------------------------------- |
 |   0   | `delegateServiceFeeRate_` | `uint64` |    `uint64`   | The new value for delegateServiceFeeRate. |
 
-\
 
 
 ### `setGracePeriod`
@@ -462,7 +438,6 @@ Function to set the gracePeriod during a refinance.
 | :---: | :------------: | :------: | :-----------: | ------------------------------ |
 |   0   | `gracePeriod_` | `uint32` |    `uint32`   | The new value for gracePeriod. |
 
-\
 
 
 ### `setInterestRate`
@@ -482,7 +457,6 @@ Function to set the interestRate during a refinance. The interest rate is measur
 | :---: | :-------------: | :------: | :-----------: | ------------------------------- |
 |   0   | `interestRate_` | `uint64` |    `uint64`   | The new value for interestRate. |
 
-\
 
 
 ### `setLateFeeRate`
@@ -502,7 +476,6 @@ Function to set the lateFeeRate during a refinance.
 | :---: | :------------: | :------: | :-----------: | ------------------------------ |
 |   0   | `lateFeeRate_` | `uint64` |    `uint64`   | The new value for lateFeeRate. |
 
-\
 
 
 ### `setLateInterestPremiumRate`
@@ -522,7 +495,6 @@ Function to set the lateInterestPremiumRate during a refinance.
 | :---: | :------------------------: | :------: | :-----------: | ------------------------------------------ |
 |   0   | `lateInterestPremiumRate_` | `uint64` |    `uint64`   | The new value for lateInterestPremiumRate. |
 
-\
 
 
 ### `setNoticePeriod`
@@ -542,7 +514,6 @@ Function to set the noticePeriod during a refinance.
 | :---: | :-------------: | :------: | :-----------: | ------------------------------- |
 |   0   | `noticePeriod_` | `uint32` |    `uint32`   | The new value for noticePeriod. |
 
-\
 
 
 ### `setPaymentInterval`
@@ -562,7 +533,6 @@ Function to set the paymentInterval during a refinance. The interval is denomina
 | :---: | :----------------: | :------: | :-----------: | ---------------------------------- |
 |   0   | `paymentInterval_` | `uint32` |    `uint32`   | The new value for paymentInterval. |
 
-\
 
 
 ## Events
@@ -583,7 +553,6 @@ The value for the service fee rate for the PoolDelegate (1e18 units).
 | :---: | :-----------------------: | :------: | :-----------: | ----------------------------------------- |
 |   0   | `delegateServiceFeeRate_` | `uint64` |    `uint64`   | The new value for delegateServiceFeeRate. |
 
-\
 
 
 ### `GracePeriodSet`
@@ -602,7 +571,6 @@ A new value for gracePeriod has been set.
 | :---: | :------------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `gracePeriod_` | `uint256` |   `uint256`   | The new value for gracePeriod. |
 
-\
 
 
 ### `InterestRateSet`
@@ -621,7 +589,6 @@ A new value for interestRate has been set.
 | :---: | :-------------: | :------: | :-----------: | ------------------------------- |
 |   0   | `interestRate_` | `uint64` |    `uint64`   | The new value for interestRate. |
 
-\
 
 
 ### `LateFeeRateSet`
@@ -640,7 +607,6 @@ A new value for lateFeeRate has been set.
 | :---: | :------------: | :------: | :-----------: | ------------------------------ |
 |   0   | `lateFeeRate_` | `uint64` |    `uint64`   | The new value for lateFeeRate. |
 
-\
 
 
 ### `LateInterestPremiumRateSet`
@@ -659,7 +625,6 @@ A new value for lateInterestPremiumRate has been set.
 | :---: | :------------------------: | :------: | :-----------: | ------------------------------------------ |
 |   0   | `lateInterestPremiumRate_` | `uint64` |    `uint64`   | The new value for lateInterestPremiumRate. |
 
-\
 
 
 ### `NoticePeriodSet`
@@ -678,7 +643,6 @@ A new value for noticePeriod has been set.
 | :---: | :-------------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `noticePeriod_` | `uint256` |   `uint256`   | The new value for noticedPeriod. |
 
-\
 
 
 ### `PaymentIntervalSet`
@@ -697,7 +661,6 @@ A new value for paymentInterval has been set.
 | :---: | :----------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `paymentInterval_` | `uint256` |   `uint256`   | The new value for paymentInterval. |
 
-\
 
 
 ### `PrincipalDecreased`
@@ -716,7 +679,6 @@ The value of the principal has been decreased.
 | :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `decreasedBy_` | `uint256` |   `uint256`   | The amount of which the value was decreased by. |
 
-\
 
 
 ### `PrincipalIncreased`
@@ -735,4 +697,3 @@ The value of the principal has been increased.
 | :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `increasedBy_` | `uint256` |   `uint256`   | The amount of which the value was increased by. |
 
-\

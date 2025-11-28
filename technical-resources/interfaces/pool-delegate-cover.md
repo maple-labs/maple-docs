@@ -1,6 +1,5 @@
 # PoolDelegateCover
 
-\
 
 
 ## Constructor
@@ -19,7 +18,6 @@
 |   0   | `poolManager_` | `address` |   `address`   |             |
 |   1   |    `asset_`    | `address` |   `address`   |             |
 
-\
 
 
 ## Functions
@@ -42,7 +40,6 @@ Gets the address of the funds asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `moveFunds`
@@ -64,7 +61,6 @@ Move funds from this address to another.
 |   0   |   `amount_`  | `uint256` |   `uint256`   | The amount to move.           |
 |   1   | `recipient_` | `address` |   `address`   | The address of the recipient. |
 
-\
 
 
 ### `poolManager`
@@ -85,4 +81,3 @@ Gets the address of the pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\

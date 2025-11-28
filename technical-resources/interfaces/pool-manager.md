@@ -1,6 +1,5 @@
 # PoolManager
 
-\
 
 
 ## Functions
@@ -21,7 +20,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `acceptPoolDelegate`
@@ -33,7 +31,6 @@ Accepts the role of pool delegate.
         nonpayable;
 ```
 
-\
 
 
 ### `active`
@@ -54,7 +51,6 @@ Returns whether or not a pool is active.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `addStrategy`
@@ -85,7 +81,6 @@ Adds a new strategy. NOTE: The PoolManager address is encoded and prepended to t
 | :---: | :---------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
 
-\
 
 
 ### `asset`
@@ -106,7 +101,6 @@ Gets the address of the funds asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `canCall`
@@ -141,7 +135,6 @@ Checks if a scheduled call can be executed.
 |   0   |    `canCall_`   |  `bool`  |     `bool`    | True if the call can be executed, false otherwise. |
 |   1   | `errorMessage_` | `string` |    `string`   | The error message if the call cannot be executed.  |
 
-\
 
 
 ### `completeConfiguration`
@@ -153,7 +146,6 @@ Complete the configuration.
         nonpayable;
 ```
 
-\
 
 
 ### `configured`
@@ -174,7 +166,6 @@ Returns whether or not a pool is configured.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `convertToExitShares`
@@ -203,7 +194,6 @@ Returns the amount of exit shares for the input amount.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | Amount of shares able to be exited. |
 
-\
 
 
 ### `delegateManagementFeeRate`
@@ -224,7 +214,6 @@ Gets the delegate management fee rate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `depositCover`
@@ -244,7 +233,6 @@ Deposits cover into the pool.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover to deposit. |
 
-\
 
 
 ### `factory`
@@ -265,7 +253,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `finishCollateralLiquidation`
@@ -285,7 +272,6 @@ Finishes the collateral liquidation
 | :---: | :-----: | :-------: | :-----------: | ---------------------------------------- |
 |   0   | `loan_` | `address` |   `address`   | Loan that had its collateral liquidated. |
 
-\
 
 
 ### `getEscrowParams`
@@ -318,7 +304,6 @@ Gets the information of escrowed shares.
 |   0   | `escrowShares_` | `uint256` |   `uint256`   | The amount of escrowed shares.  |
 |   1   |  `destination_` | `address` |   `address`   | The address of the destination. |
 
-\
 
 
 ### `globals`
@@ -339,7 +324,6 @@ Gets the address of the globals.
 | :---: | :--------: | :-------: | :-----------: | --------------------------- |
 |   0   | `globals_` | `address` |   `address`   | The address of the globals. |
 
-\
 
 
 ### `governor`
@@ -360,7 +344,6 @@ Gets the address of the governor.
 | :---: | :---------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `governor_` | `address` |   `address`   | The address of the governor. |
 
-\
 
 
 ### `hasSufficientCover`
@@ -381,7 +364,6 @@ Returns if pool has sufficient cover.
 | :---: | :-------------------: | :----: | :-----------: | ---------------------------------- |
 |   0   | `hasSufficientCover_` | `bool` |     `bool`    | True if pool has sufficient cover. |
 
-\
 
 
 ### `implementation`
@@ -402,7 +384,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `isStrategy`
@@ -431,7 +412,6 @@ Returns whether or not the given address is a strategy.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `liquidityCap`
@@ -452,7 +432,6 @@ Gets the liquidity cap for the pool.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `maxDeposit`
@@ -481,7 +460,6 @@ Gets the amount of assets that can be deposited.
 | :---: | :----------: | :-------: | :-----------: | ----------- |
 |   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `maxMint`
@@ -510,7 +488,6 @@ Gets the amount of shares that can be minted.
 | :---: | :----------: | :-------: | :-----------: | ----------- |
 |   0   | `maxShares_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `maxRedeem`
@@ -539,7 +516,6 @@ Gets the amount of shares that can be redeemed.
 | :---: | :----------: | :-------: | :-----------: | ----------- |
 |   0   | `maxShares_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `maxWithdraw`
@@ -568,7 +544,6 @@ Gets the amount of assets that can be withdrawn.
 | :---: | :----------: | :-------: | :-----------: | ----------- |
 |   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `migrate`
@@ -590,7 +565,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `pendingPoolDelegate`
@@ -611,7 +585,6 @@ Gets the address of the pending pool delegate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `pool`
@@ -632,7 +605,6 @@ Gets the address of the pool.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolDelegate`
@@ -653,7 +625,6 @@ Gets the address of the pool delegate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolDelegateCover`
@@ -674,7 +645,6 @@ Gets the address of the pool delegate cover.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolPermissionManager`
@@ -695,7 +665,6 @@ Gets the address of the pool delegate cover.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `previewRedeem`
@@ -726,7 +695,6 @@ Gets the amount of shares that can be redeemed.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`shares\_\`. |
 
-\
 
 
 ### `previewWithdraw`
@@ -757,7 +725,6 @@ Gets the amount of assets that can be redeemed.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`assets\_\`. |
 
-\
 
 
 ### `processRedeem`
@@ -792,7 +759,6 @@ Processes a redemptions of shares for assets from the pool.
 |   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
 |   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
 
-\
 
 
 ### `processWithdraw`
@@ -827,7 +793,6 @@ Processes a redemptions of shares for assets from the pool.
 |   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
 |   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
 
-\
 
 
 ### `removeShares`
@@ -858,7 +823,6 @@ Requests a redemption of shares from the pool.
 | :---: | :---------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `sharesReturned_` | `uint256` |   `uint256`   | The amount of shares withdrawn. |
 
-\
 
 
 ### `requestFunds`
@@ -880,7 +844,6 @@ Strategy can request funds from the pool via the poolManager.
 |   0   | `destination_` | `address` |   `address`   | The address to send the funds to.               |
 |   1   |  `principal_`  | `uint256` |   `uint256`   | The principal amount to fund the strategy with. |
 
-\
 
 
 ### `requestRedeem`
@@ -904,7 +867,6 @@ Requests a redemption of shares from the pool.
 |   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
 |   2   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
 
-\
 
 
 ### `requestWithdraw`
@@ -930,7 +892,6 @@ Requests a withdrawal of assets from the pool.
 |   2   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
 |   3   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
 
-\
 
 
 ### `setActive`
@@ -950,7 +911,6 @@ Sets a the pool to be active or inactive.
 | :---: | :-------: | :----: | :-----------: | --------------------------- |
 |   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
 
-\
 
 
 ### `setDelegateManagementFeeRate`
@@ -970,7 +930,6 @@ Sets the value for the delegate management fee rate.
 | :---: | :--------------------------: | :-------: | :-----------: | ----------------------------------------------- |
 |   0   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
 
-\
 
 
 ### `setImplementation`
@@ -990,7 +949,6 @@ Modifies the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `setIsStrategy`
@@ -1012,7 +970,6 @@ Sets if the strategy is valid in the isStrategy mapping.
 |   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy    |
 |   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
 
-\
 
 
 ### `setLiquidityCap`
@@ -1032,7 +989,6 @@ Sets the value for liquidity cap.
 | :---: | :-------------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value for liquidity cap. |
 
-\
 
 
 ### `setPendingPoolDelegate`
@@ -1052,7 +1008,6 @@ Sets an address as the pending pool delegate.
 | :---: | :--------------------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `pendingPoolDelegate_` | `address` |   `address`   | The address of the new pool delegate. |
 
-\
 
 
 ### `setPoolPermissionManager`
@@ -1072,7 +1027,6 @@ Sets the address of the pool permission manager.
 | :---: | :----------------------: | :-------: | :-----------: | ----------- |
 |   0   | `poolPermissionManager_` | `address` |   `address`   |             |
 
-\
 
 
 ### `setWithdrawalManager`
@@ -1092,7 +1046,6 @@ Sets the address of the withdrawal manager.
 | :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
 |   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
 
-\
 
 
 ### `strategyList`
@@ -1121,7 +1074,6 @@ Gets the address of the strategy in the list.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `strategyListLength`
@@ -1142,7 +1094,6 @@ Returns the length of the \`strategyList\`.
 | :---: | :-------------------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `strategyListLength_` | `uint256` |   `uint256`   | The length of the \`strategyList\`. |
 
-\
 
 
 ### `totalAssets`
@@ -1163,7 +1114,6 @@ Returns the amount of total assets.
 | :---: | :------------: | :-------: | :-----------: | -------------------------- |
 |   0   | `totalAssets_` | `uint256` |   `uint256`   | Amount of of total assets. |
 
-\
 
 
 ### `triggerDefault`
@@ -1185,7 +1135,6 @@ Triggers the default of a loan.
 |   0   |        `loan_`       | `address` |   `address`   | Loan to trigger the default.           |
 |   1   | `liquidatorFactory_` | `address` |   `address`   | Factory used to deploy the liquidator. |
 
-\
 
 
 ### `unrealizedLosses`
@@ -1206,7 +1155,6 @@ Returns the amount unrealized losses.
 | :---: | :-----------------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `unrealizedLosses_` | `uint256` |   `uint256`   | Amount of unrealized losses. |
 
-\
 
 
 ### `upgrade`
@@ -1228,7 +1176,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ### `withdrawalManager`
@@ -1249,7 +1196,6 @@ Gets the address of the withdrawal manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `withdrawCover`
@@ -1271,7 +1217,6 @@ Withdraws cover from the pool.
 |   0   |   `amount_`  | `uint256` |   `uint256`   | The amount of cover to withdraw. |
 |   1   | `recipient_` | `address` |   `address`   | The address of the recipient.    |
 
-\
 
 
 ## Events
@@ -1294,7 +1239,6 @@ Emitted when a collateral liquidations is finished.
 |   0   |       `loan_`       | `address` |   `address`   | The address of the loan.         |
 |   1   | `unrealizedLosses_` | `uint256` |   `uint256`   | The amount of unrealized losses. |
 
-\
 
 
 ### `CollateralLiquidationTriggered`
@@ -1313,7 +1257,6 @@ Emitted when a collateral liquidations is triggered.
 | :---: | :-----: | :-------: | :-----------: | ------------------------ |
 |   0   | `loan_` | `address` |   `address`   | The address of the loan. |
 
-\
 
 
 ### `CoverDeposited`
@@ -1332,7 +1275,6 @@ Emitted when cover is deposited.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover deposited. |
 
-\
 
 
 ### `CoverLiquidated`
@@ -1353,7 +1295,6 @@ Emitted when cover is liquidated in the case of a loan defaulting.
 |   0   | `toTreasury_` | `uint256` |   `uint256`   | The amount of cover sent to the Treasury. |
 |   1   |   `toPool_`   | `uint256` |   `uint256`   | The amount of cover sent to the Pool.     |
 
-\
 
 
 ### `CoverWithdrawn`
@@ -1372,7 +1313,6 @@ Emitted when cover is withdrawn.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover withdrawn. |
 
-\
 
 
 ### `DelegateManagementFeeRateSet`
@@ -1391,7 +1331,6 @@ Emitted when a new management fee rate is set.
 | :---: | :------------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `managementFeeRate_` | `uint256` |   `uint256`   | The amount of management fee rate. |
 
-\
 
 
 ### `IsStrategySet`
@@ -1412,7 +1351,6 @@ Emitted when a strategy is set as valid.
 |   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy.   |
 |   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
 
-\
 
 
 ### `LiquidityCapSet`
@@ -1431,7 +1369,6 @@ Emitted when a new liquidity cap is set.
 | :---: | :-------------: | :-------: | :-----------: | --------------------------- |
 |   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value of liquidity cap. |
 
-\
 
 
 ### `PendingDelegateAccepted`
@@ -1452,7 +1389,6 @@ Emitted when the pending pool delegate accepts the ownership transfer.
 |   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
 |   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
 
-\
 
 
 ### `PendingDelegateSet`
@@ -1473,7 +1409,6 @@ Emitted when the pending pool delegate is set.
 |   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
 |   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
 
-\
 
 
 ### `PoolConfigurationComplete`
@@ -1484,7 +1419,6 @@ Emitted when the pool configuration is marked as complete.
     event PoolConfigurationComplete();
 ```
 
-\
 
 
 ### `PoolPermissionManagerSet`
@@ -1503,7 +1437,6 @@ Emitted when the pool permission manager is set.
 | :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
 |   0   | `poolPermissionManager_` | `address` |   `address`   | The address of the pool permission manager. |
 
-\
 
 
 ### `RedeemProcessed`
@@ -1526,7 +1459,6 @@ Emitted when a redemption of shares from the pool is processed.
 |   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
 |   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
 
-\
 
 
 ### `RedeemRequested`
@@ -1547,7 +1479,6 @@ Emitted when a redemption of shares from the pool is requested.
 |   0   |  `owner_` | `address` |   `address`   | The owner of the shares.         |
 |   1   | `shares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
 
-\
 
 
 ### `SetAsActive`
@@ -1566,7 +1497,6 @@ Emitted when a pool is sets to be active or inactive.
 | :---: | :-------: | :----: | :-----------: | --------------------------- |
 |   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
 
-\
 
 
 ### `SharesRemoved`
@@ -1587,7 +1517,6 @@ Emitted when shares are removed from the pool.
 |   0   |  `owner_` | `address` |   `address`   | The address of the owner of the shares. |
 |   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares removed.           |
 
-\
 
 
 ### `StrategyAdded`
@@ -1606,7 +1535,6 @@ Emitted when a new strategy is added.
 | :---: | :---------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
 
-\
 
 
 ### `Upgraded`
@@ -1627,7 +1555,6 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\
 
 
 ### `WithdrawalManagerSet`
@@ -1646,7 +1573,6 @@ Emitted when the withdrawal manager is set.
 | :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
 |   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
 
-\
 
 
 ### `WithdrawalProcessed`
@@ -1669,4 +1595,3 @@ Emitted when withdrawal of assets from the pool is processed.
 |   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
 |   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
 
-\

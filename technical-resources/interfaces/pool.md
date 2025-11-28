@@ -1,6 +1,5 @@
 # Pool
 
-\
 
 
 ## Constructor
@@ -29,7 +28,6 @@
 |   5   |      `name_`     |  `string` |    `string`   | The name of the token.   |
 |   6   |     `symbol_`    |  `string` |    `string`   | The symbol of the token. |
 
-\
 
 
 ## Functions
@@ -52,7 +50,6 @@ The amount of shares that will be burned during the first deposit/mint.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `DOMAIN_SEPARATOR`
@@ -73,7 +70,6 @@ Returns the signature domain separator.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `domainSeparator_` | `bytes32` |   `bytes32`   | The signature domain separator. |
 
-\
 
 
 ### `PERMIT_TYPEHASH`
@@ -94,7 +90,6 @@ Returns the permit type hash.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `bytes32` |   `bytes32`   |             |
 
-\
 
 
 ### `allowance`
@@ -125,7 +120,6 @@ Returns the allowance that one account has given another over their tokens.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `approve`
@@ -156,7 +150,6 @@ Function that allows one account to set the allowance of another account over th
 | :---: | :--------: | :----: | :-----------: | --------------------------------------------------- |
 |   0   | `success_` | `bool` |     `bool`    | Boolean indicating whether the operation succeeded. |
 
-\
 
 
 ### `asset`
@@ -177,7 +170,6 @@ The address of the underlying asset used by the Vault. MUST be a contract that i
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `balanceOf`
@@ -206,7 +198,6 @@ Returns the amount of tokens owned by a given account.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `balanceOfAssets`
@@ -235,7 +226,6 @@ Returns the amount of underlying assets owned by the specified account.
 | :---: | :----------------: | :-------: | :-----------: | ----------------------- |
 |   0   | `balanceOfAssets_` | `uint256` |   `uint256`   | Amount of assets owned. |
 
-\
 
 
 ### `convertToAssets`
@@ -264,7 +254,6 @@ The amount of \`assets\_\` the \`shares\_\` are currently equivalent to. MUST NO
 | :---: | :-------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of equivalent assets. |
 
-\
 
 
 ### `convertToExitAssets`
@@ -293,7 +282,6 @@ Returns the amount of exit assets for the input amount.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | Amount of assets able to be exited. |
 
-\
 
 
 ### `convertToExitShares`
@@ -322,7 +310,6 @@ Returns the amount of exit shares for the input amount.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | Amount of shares able to be exited. |
 
-\
 
 
 ### `convertToShares`
@@ -351,7 +338,6 @@ The amount of \`shares\_\` the \`assets\_\` are currently equivalent to. MUST NO
 | :---: | :-------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of equivalent shares. |
 
-\
 
 
 ### `decimals`
@@ -372,7 +358,6 @@ Returns the decimal precision used by the token.
 | :---: | :--: | :-----: | :-----------: | ----------- |
 |   0   |      | `uint8` |    `uint8`    |             |
 
-\
 
 
 ### `decreaseAllowance`
@@ -403,7 +388,6 @@ Function that allows one account to decrease the allowance of another account ov
 | :---: | :--------: | :----: | :-----------: | --------------------------------------------------- |
 |   0   | `success_` | `bool` |     `bool`    | Boolean indicating whether the operation succeeded. |
 
-\
 
 
 ### `deposit`
@@ -434,7 +418,6 @@ Mints \`shares\_\` to \`receiver\_\` by depositing \`assets\_\` into the Vault. 
 | :---: | :-------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares minted. |
 
-\
 
 
 ### `depositWithPermit`
@@ -473,7 +456,6 @@ Does a ERC4626 \`deposit\` with a ERC-2612 \`permit\`.
 | :---: | :-------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares minted. |
 
-\
 
 
 ### `increaseAllowance`
@@ -504,7 +486,6 @@ Function that allows one account to increase the allowance of another account ov
 | :---: | :--------: | :----: | :-----------: | --------------------------------------------------- |
 |   0   | `success_` | `bool` |     `bool`    | Boolean indicating whether the operation succeeded. |
 
-\
 
 
 ### `manager`
@@ -525,7 +506,6 @@ The address of the account that is allowed to update the vesting schedule.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `maxDeposit`
@@ -554,7 +534,6 @@ Maximum amount of \`assets\_\` that can be deposited on behalf of the \`receiver
 | :---: | :----------: | :-------: | :-----------: | --------------------------------------------------- |
 |   0   | `maxAssets_` | `uint256` |   `uint256`   | The maximum amount of assets that can be deposited. |
 
-\
 
 
 ### `maxMint`
@@ -583,7 +562,6 @@ Maximum amount of \`shares\_\` that can be minted on behalf of the \`receiver\_\
 | :---: | :----------: | :-------: | :-----------: | ------------------------------------------------ |
 |   0   | `maxShares_` | `uint256` |   `uint256`   | The maximum amount of shares that can be minted. |
 
-\
 
 
 ### `maxRedeem`
@@ -612,7 +590,6 @@ Maximum amount of \`shares\_\` that can be redeemed from the \`owner\_\` through
 | :---: | :----------: | :-------: | :-----------: | -------------------------------------------------- |
 |   0   | `maxShares_` | `uint256` |   `uint256`   | The maximum amount of shares that can be redeemed. |
 
-\
 
 
 ### `maxWithdraw`
@@ -641,7 +618,6 @@ Maximum amount of \`assets\_\` that can be withdrawn from the \`owner\_\` throug
 | :---: | :----------: | :-------: | :-----------: | --------------------------------------------------- |
 |   0   | `maxAssets_` | `uint256` |   `uint256`   | The maximum amount of assets that can be withdrawn. |
 
-\
 
 
 ### `mint`
@@ -672,7 +648,6 @@ Mints \`shares\_\` to \`receiver\_\` by depositing \`assets\_\` into the Vault. 
 | :---: | :-------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets deposited. |
 
-\
 
 
 ### `mintWithPermit`
@@ -713,7 +688,6 @@ Does a ERC4626 \`mint\` with a ERC-2612 \`permit\`.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of shares deposited. |
 
-\
 
 
 ### `name`
@@ -734,7 +708,6 @@ Returns the name of the token.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `string` |    `string`   |             |
 
-\
 
 
 ### `nonces`
@@ -763,7 +736,6 @@ Returns the nonce for the given owner.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `permit`
@@ -795,7 +767,6 @@ Approve by signature.
 |   5   |     `r_`    | `bytes32` |   `bytes32`   | ECDSA signature r component.                |
 |   6   |     `s_`    | `bytes32` |   `bytes32`   | ECDSA signature s component.                |
 
-\
 
 
 ### `previewDeposit`
@@ -824,7 +795,6 @@ Allows an on-chain or off-chain user to simulate the effects of their deposit at
 | :---: | :-------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares that would be minted. |
 
-\
 
 
 ### `previewMint`
@@ -853,7 +823,6 @@ Allows an on-chain or off-chain user to simulate the effects of their mint at th
 | :---: | :-------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets that would be deposited. |
 
-\
 
 
 ### `previewRedeem`
@@ -882,7 +851,6 @@ Allows an on-chain or off-chain user to simulate the effects of their redemption
 | :---: | :-------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets that would be withdrawn. |
 
-\
 
 
 ### `previewWithdraw`
@@ -911,7 +879,6 @@ Allows an on-chain or off-chain user to simulate the effects of their withdrawal
 | :---: | :-------: | :-------: | :-----------: | -------------------------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares that would be redeemed. |
 
-\
 
 
 ### `redeem`
@@ -944,7 +911,6 @@ Burns \`shares\_\` from \`owner\_\` and sends \`assets\_\` to \`receiver\_\`. MU
 | :---: | :-------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets sent to the receiver. |
 
-\
 
 
 ### `removeShares`
@@ -975,7 +941,6 @@ Removes shares from the withdrawal mechanism, can only be called after the begin
 | :---: | :---------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `sharesReturned_` | `uint256` |   `uint256`   | The amount of shares withdrawn. |
 
-\
 
 
 ### `requestRedeem`
@@ -1006,7 +971,6 @@ Requests a redemption of shares from the pool.
 | :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `escrowedShares_` | `uint256` |   `uint256`   | The amount of shares sent to escrow. |
 
-\
 
 
 ### `requestWithdraw`
@@ -1037,7 +1001,6 @@ Requests a withdrawal of assets from the pool.
 | :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `escrowedShares_` | `uint256` |   `uint256`   | The amount of shares sent to escrow. |
 
-\
 
 
 ### `symbol`
@@ -1058,7 +1021,6 @@ Returns the symbol of the token.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `string` |    `string`   |             |
 
-\
 
 
 ### `totalAssets`
@@ -1079,7 +1041,6 @@ Total amount of the underlying asset that is managed by the Vault. SHOULD includ
 | :---: | :------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `totalAssets_` | `uint256` |   `uint256`   | The total amount of assets the Vault manages. |
 
-\
 
 
 ### `totalSupply`
@@ -1100,7 +1061,6 @@ Returns the total amount of tokens in existence.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `transfer`
@@ -1131,7 +1091,6 @@ Moves an amount of tokens from \`msg.sender\` to a specified account. Emits a {T
 | :---: | :--------: | :----: | :-----------: | --------------------------------------------------- |
 |   0   | `success_` | `bool` |     `bool`    | Boolean indicating whether the operation succeeded. |
 
-\
 
 
 ### `transferFrom`
@@ -1164,7 +1123,6 @@ Moves a pre-approved amount of tokens from a sender to a specified account. Emit
 | :---: | :--------: | :----: | :-----------: | --------------------------------------------------- |
 |   0   | `success_` | `bool` |     `bool`    | Boolean indicating whether the operation succeeded. |
 
-\
 
 
 ### `unrealizedLosses`
@@ -1185,7 +1143,6 @@ Returns the amount unrealized losses.
 | :---: | :-----------------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `unrealizedLosses_` | `uint256` |   `uint256`   | Amount of unrealized losses. |
 
-\
 
 
 ### `withdraw`
@@ -1218,7 +1175,6 @@ Burns \`shares\_\` from \`owner\_\` and sends \`assets\_\` to \`receiver\_\`. MU
 | :---: | :-------: | :-------: | :-----------: | ------------------------------------------- |
 |   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares burned from the owner. |
 
-\
 
 
 ## Events
@@ -1243,7 +1199,6 @@ Emitted when one account has set the allowance of another account over their tok
 |   1   | `spender_` | `address` |   `address`   | Account that tokens are approved for.     |
 |   2   |  `amount_` | `uint256` |   `uint256`   | Amount of tokens that have been approved. |
 
-\
 
 
 ### `BootstrapMintPerformed`
@@ -1270,7 +1225,6 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 |   3   |        `shares_`       | `uint256` |   `uint256`   | The amount of shares that would have been minted to the user if it was not the first deposit. |
 |   4   | `bootStrapMintAmount_` | `uint256` |   `uint256`   | The amount of shares that was minted to the zero address to protect the first depositor.      |
 
-\
 
 
 ### `Deposit`
@@ -1295,7 +1249,6 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 |   2   | `assets_` | `uint256` |   `uint256`   | The amount of assets deposited.                                |
 |   3   | `shares_` | `uint256` |   `uint256`   | The amount of shares minted.                                   |
 
-\
 
 
 ### `OwnershipAccepted`
@@ -1316,7 +1269,6 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 |   0   | `previousOwner_` | `address` |   `address`   | The previous RDT owner. |
 |   1   |    `newOwner_`   | `address` |   `address`   | The new RDT owner.      |
 
-\
 
 
 ### `PendingOwnerSet`
@@ -1337,7 +1289,6 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 |   0   |     `owner_`    | `address` |   `address`   | The current RDT owner.     |
 |   1   | `pendingOwner_` | `address` |   `address`   | The new pending RDT owner. |
 
-\
 
 
 ### `RedemptionRequested`
@@ -1360,7 +1311,6 @@ A new redemption request has been made.
 |   1   |     `shares_`     | `uint256` |   `uint256`   | The amount of shares requested to redeem.                           |
 |   2   | `escrowedShares_` | `uint256` |   `uint256`   | The amount of shares actually escrowed for this withdrawal request. |
 
-\
 
 
 ### `SharesRemoved`
@@ -1381,7 +1331,6 @@ Shares have been removed.
 |   0   |  `owner_` | `address` |   `address`   | The owner of shares.                          |
 |   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares requested to be removed. |
 
-\
 
 
 ### `Transfer`
@@ -1404,7 +1353,6 @@ Emitted when tokens have moved from one account to another.
 |   1   | `recipient_` | `address` |   `address`   | Account that tokens have moved to.           |
 |   2   |   `amount_`  | `uint256` |   `uint256`   | Amount of tokens that have been transferred. |
 
-\
 
 
 ### `Withdraw`
@@ -1431,7 +1379,6 @@ Emitted when tokens have moved from one account to another.
 |   3   |  `assets_`  | `uint256` |   `uint256`   | The amount of assets withdrawn.                                 |
 |   4   |  `shares_`  | `uint256` |   `uint256`   | The amount of shares burned.                                    |
 
-\
 
 
 ### `WithdrawRequested`
@@ -1454,4 +1401,3 @@ A new withdrawal request has been made.
 |   1   |     `assets_`     | `uint256` |   `uint256`   | The amount of assets requested to withdraw.                         |
 |   2   | `escrowedShares_` | `uint256` |   `uint256`   | The amount of shares actually escrowed for this withdrawal request. |
 
-\

@@ -1,6 +1,5 @@
 # Globals
 
-\
 
 
 ## Functions
@@ -21,7 +20,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `acceptGovernor`
@@ -33,7 +31,6 @@ Accepts the governorship if the caller is the \`pendingGovernor\`.
         nonpayable;
 ```
 
-\
 
 
 ### `activatePoolManager`
@@ -53,7 +50,6 @@ Activates the pool manager.
 | :---: | :------------: | :-------: | :-----------: | -------------------------------------------- |
 |   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to activate. |
 
-\
 
 
 ### `admin`
@@ -74,7 +70,6 @@ Returns the proxy's admin address.
 | :---: | :------: | :-------: | :-----------: | ------------------------- |
 |   0   | `admin_` | `address` |   `address`   | The address of the admin. |
 
-\
 
 
 ### `bootstrapMint`
@@ -103,7 +98,6 @@ Gets the virtualized first mint that acts as as offset to \`totalAssets\` and \`
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `canDeploy`
@@ -132,7 +126,6 @@ Gets whether a caller account can deploy from the factory calling this function.
 | :---: | :----------: | :----: | :-----------: | ------------------------------------------------ |
 |   0   | `canDeploy_` | `bool` |     `bool`    | Whether the account can deploy from the factory. |
 
-\
 
 
 ### `canDeployFrom`
@@ -163,7 +156,6 @@ Gets whether a caller account can deploy from a factory.
 | :---: | :--------------: | :----: | :-----------: | ------------------------------------------------ |
 |   0   | `canDeployFrom_` | `bool` |     `bool`    | Whether the account can deploy from the factory. |
 
-\
 
 
 ### `defaultTimelockParameters`
@@ -186,7 +178,6 @@ Gets the default timelock parameters.
 |   0   |   `delay`  | `uint128` |   `uint128`   | The default timelock delay.    |
 |   1   | `duration` | `uint128` |   `uint128`   | The default timelock duration. |
 
-\
 
 
 ### `getLatestPrice`
@@ -215,7 +206,6 @@ Gets the latest price for an asset.
 | :---: | :------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `latestPrice_` | `uint256` |   `uint256`   | The latest price for the asset. |
 
-\
 
 
 ### `governor`
@@ -236,7 +226,6 @@ Gets governor address.
 | :---: | :---------: | :-------: | :-----------: | ---------------------------- |
 |   0   | `governor_` | `address` |   `address`   | The address of the governor. |
 
-\
 
 
 ### `implementation`
@@ -257,7 +246,6 @@ Returns the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `implementation_` | `address` |   `address`   | The address of the implementation. |
 
-\
 
 
 ### `isBorrower`
@@ -286,7 +274,6 @@ Gets the validity of a borrower.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isCollateralAsset`
@@ -315,7 +302,6 @@ Gets the validity of a collateral asset.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isContractPaused`
@@ -344,7 +330,6 @@ Gets whether a contract is uniquely paused.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isFactory`
@@ -375,7 +360,6 @@ Gets the validity of a factory.
 | :---: | :----------: | :----: | :-----------: | ------------------------------------------------- |
 |   0   | `isFactory_` | `bool` |     `bool`    | A boolean indicating the validity of the factory. |
 
-\
 
 
 ### `isFunctionPaused`
@@ -404,7 +388,6 @@ Gets whether a contract's function is paused.
 | :---: | :-----------------: | :----: | :-----------: | ----------- |
 |   0   | `functionIsPaused_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isFunctionPaused`
@@ -435,7 +418,6 @@ Gets whether a contract's function is paused.
 | :---: | :-----------------: | :----: | :-----------: | ----------- |
 |   0   | `functionIsPaused_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isFunctionUnpaused`
@@ -466,7 +448,6 @@ Gets whether a contract's function is uniquely unpaused. A false does not imply 
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isInstanceOf`
@@ -497,7 +478,6 @@ Gets wether an instance is of some instance key.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isPoolAsset`
@@ -526,7 +506,6 @@ Gets the validity of a pool asset.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isPoolDelegate`
@@ -555,7 +534,6 @@ Gets the validity of a pool delegate.
 | :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------- |
 |   0   | `isPoolDelegate_` | `bool` |     `bool`    | A boolean indicating the validity of the pool delegate. |
 
-\
 
 
 ### `isPoolDeployer`
@@ -584,7 +562,6 @@ Gets the validity of a pool deployer.
 | :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------- |
 |   0   | `isPoolDeployer_` | `bool` |     `bool`    | A boolean indicating the validity of the pool deployer. |
 
-\
 
 
 ### `isValidScheduledCall`
@@ -619,7 +596,6 @@ Checks if a call is scheduled.
 | :---: | :--------: | :----: | :-----------: | ----------------------------------------------- |
 |   0   | `isValid_` | `bool` |     `bool`    | True if the call is scheduled, false otherwise. |
 
-\
 
 
 ### `manualOverridePrice`
@@ -648,7 +624,6 @@ Gets the manual override price for an asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `mapleTreasury`
@@ -669,7 +644,6 @@ Gets maple treasury address.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `maxCoverLiquidationPercent`
@@ -698,7 +672,6 @@ Gets the maximum cover liquidation percent for a given pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `migrationAdmin`
@@ -719,7 +692,6 @@ Gets the migration admin address.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `minCoverAmount`
@@ -748,7 +720,6 @@ Gets the minimum cover amount for a given pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `operationalAdmin`
@@ -769,7 +740,6 @@ Gets the operational admin address.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `ownedPoolManager`
@@ -798,7 +768,6 @@ Gets the address of the owner pool manager.
 | :---: | :------------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager. |
 
-\
 
 
 ### `pendingGovernor`
@@ -819,7 +788,6 @@ Gets the pending governor address.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `platformManagementFeeRate`
@@ -848,7 +816,6 @@ Gets the platform management fee rate for a given pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `platformOriginationFeeRate`
@@ -877,7 +844,6 @@ Gets the platform origination fee rate for a given pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `platformServiceFeeRate`
@@ -906,7 +872,6 @@ Gets the platform service fee rate for a given pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `poolDelegates`
@@ -937,7 +902,6 @@ Gets pool delegate address information.
 |   0   | `ownedPoolManager` | `address` |   `address`   | The address of the pool manager owned by the pool delegate.                        |
 |   1   |  `isPoolDelegate`  |   `bool`  |     `bool`    | A boolean indication weather or not the address passed is a current pool delegate. |
 
-\
 
 
 ### `priceOracleOf`
@@ -968,7 +932,6 @@ Gets the address and maximum delay of the oracle for the given asset.
 |   0   |  `oracle`  | `address` |   `address`   | The address of the oracle.       |
 |   1   | `maxDelay` |  `uint96` |    `uint96`   | The maximum delay of the oracle. |
 
-\
 
 
 ### `protocolPaused`
@@ -989,7 +952,6 @@ Gets the status of the protocol pause.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `scheduleCall`
@@ -1013,7 +975,6 @@ Schedules a call to be executed.
 |   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
 |   2   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-\
 
 
 ### `scheduledCalls`
@@ -1048,7 +1009,6 @@ Gets the schedule calls for the parameters.
 |   0   | `timestamp` | `uint256` |   `uint256`   | The timestamp of the next scheduled call. |
 |   1   |  `dataHash` | `bytes32` |   `bytes32`   | The hash of data fot the scheduled call.  |
 
-\
 
 
 ### `securityAdmin`
@@ -1069,7 +1029,6 @@ Gets security admin address.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `setBootstrapMint`
@@ -1091,7 +1050,6 @@ Sets the virtualized first mint that acts as as offset to \`totalAssets\` and \`
 |   0   |  `asset_` | `address` |   `address`   | The address of the pool asset. |
 |   1   | `amount_` | `uint256` |   `uint256`   |                                |
 
-\
 
 
 ### `setCanDeployFrom`
@@ -1115,7 +1073,6 @@ Sets whether an account can deploying an instance from a particular factory.
 |   1   |    `account_`    | `address` |   `address`   | The address of the account.                             |
 |   2   | `canDeployFrom_` |   `bool`  |     `bool`    | Whether the account can deploy or not from the factory. |
 
-\
 
 
 ### `setContractPause`
@@ -1137,7 +1094,6 @@ Sets whether a contract is uniquely paused.
 |   0   |    `contract_`    | `address` |   `address`   | The address of a contract in the protocol. |
 |   1   | `contractPaused_` |   `bool`  |     `bool`    | Whether the contract is uniquely paused.   |
 
-\
 
 
 ### `setDefaultTimelockParameters`
@@ -1159,7 +1115,6 @@ Sets the default time lock parameters.
 |   0   |   `defaultTimelockDelay_`  | `uint128` |   `uint128`   | The default time lock delay.    |
 |   1   | `defaultTimelockDuration_` | `uint128` |   `uint128`   | The default time lock duration. |
 
-\
 
 
 ### `setFunctionUnpause`
@@ -1183,7 +1138,6 @@ Sets whether a contract's function is uniquely unpaused. A false does not imply 
 |   1   |        `sig_`       |  `bytes4` |    `bytes4`   | The function signature within the contract.           |
 |   2   | `functionUnpaused_` |   `bool`  |     `bool`    | Whether the contract's function is uniquely unpaused. |
 
-\
 
 
 ### `setManualOverridePrice`
@@ -1205,7 +1159,6 @@ Sets the manual override price of the asset.
 |   0   | `asset_` | `address` |   `address`   | The address of the asset to set the price for. |
 |   1   | `price_` | `uint256` |   `uint256`   | The price of the asset.                        |
 
-\
 
 
 ### `setMapleTreasury`
@@ -1225,7 +1178,6 @@ Sets the address of the Maple treasury.
 | :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `mapleTreasury_` | `address` |   `address`   | The address of the Maple treasury. |
 
-\
 
 
 ### `setMaxCoverLiquidationPercent`
@@ -1247,7 +1199,6 @@ Sets the maximum cover liquidation percent for the given pool manager.
 |   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the maximum cover liquidation percent for. |
 |   1   | `maxCoverLiquidationPercent_` | `uint256` |   `uint256`   | The maximum cover liquidation percent.                                            |
 
-\
 
 
 ### `setMigrationAdmin`
@@ -1267,7 +1218,6 @@ Sets the address of the migration admin.
 | :---: | :---------------: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `migrationAdmin_` | `address` |   `address`   | The address of the migration admin. |
 
-\
 
 
 ### `setMinCoverAmount`
@@ -1289,7 +1239,6 @@ Sets the minimum cover amount for the given pool manager.
 |   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager to set the minimum cover amount for. |
 |   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The minimum cover amount.                                            |
 
-\
 
 
 ### `setOperationalAdmin`
@@ -1309,7 +1258,6 @@ Sets the address of the operational admin.
 | :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `operationalAdmin_` | `address` |   `address`   | The address of the operational admin. |
 
-\
 
 
 ### `setPendingGovernor`
@@ -1329,7 +1277,6 @@ Sets the pending governor.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------- |
 |   0   | `pendingGovernor_` | `address` |   `address`   | The new pending governor. |
 
-\
 
 
 ### `setPlatformManagementFeeRate`
@@ -1351,7 +1298,6 @@ Sets the platform management fee rate for the given pool manager.
 |   0   |        `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the fee for. |
 |   1   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The platform management fee rate.                   |
 
-\
 
 
 ### `setPlatformOriginationFeeRate`
@@ -1373,7 +1319,6 @@ Sets the platform origination fee rate for the given pool manager.
 |   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager to set the fee for. |
 |   1   | `platformOriginationFeeRate_` | `uint256` |   `uint256`   | The platform origination fee rate.                  |
 
-\
 
 
 ### `setPlatformServiceFeeRate`
@@ -1395,7 +1340,6 @@ Sets the platform service fee rate for the given pool manager.
 |   0   |       `poolManager_`      | `address` |   `address`   | The address of the pool manager to set the fee for. |
 |   1   | `platformServiceFeeRate_` | `uint256` |   `uint256`   | The platform service fee rate.                      |
 
-\
 
 
 ### `setPriceOracle`
@@ -1419,7 +1363,6 @@ Sets the price oracle for the given asset.
 |   1   |  `oracle_`  | `address` |   `address`   | The address of the oracle to set for the asset. |
 |   2   | `maxDelay_` |  `uint96` |    `uint96`   | Maximum delay set to check for stale price.     |
 
-\
 
 
 ### `setProtocolPause`
@@ -1439,7 +1382,6 @@ Sets the protocol pause.
 | :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------ |
 |   0   | `protocolPaused_` | `bool` |     `bool`    | A boolean indicating the status of the protocol pause. |
 
-\
 
 
 ### `setSecurityAdmin`
@@ -1459,7 +1401,6 @@ Sets the address of the security admin.
 | :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
 |   0   | `securityAdmin_` | `address` |   `address`   | The address of the security admin. |
 
-\
 
 
 ### `setTimelockWindow`
@@ -1485,7 +1426,6 @@ Sets the timelock for the given contract.
 |   2   |    `delay_`   | `uint128` |   `uint128`   | The delay for the timelock window.    |
 |   3   |  `duration_`  | `uint128` |   `uint128`   | The duration for the timelock window. |
 
-\
 
 
 ### `setTimelockWindows`
@@ -1511,7 +1451,6 @@ Sets the timelock for the many function ids in a contract.
 |   2   |    `delays_`   | `uint128[]` |  `uint128[]`  | The delays for the timelock window.    |
 |   3   |  `durations_`  | `uint128[]` |  `uint128[]`  | The durations for the timelock window. |
 
-\
 
 
 ### `setValidBorrower`
@@ -1533,7 +1472,6 @@ Sets the validity of the borrower.
 |   0   | `borrower_` | `address` |   `address`   | The address of the borrower to set the validity for. |
 |   1   |  `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the borrower.   |
 
-\
 
 
 ### `setValidCollateralAsset`
@@ -1555,7 +1493,6 @@ Sets the validity of a collateral asset.
 |   0   | `collateralAsset_` | `address` |   `address`   | The address of the collateral asset to set the validity for. |
 |   1   |     `isValid_`     |   `bool`  |     `bool`    | A boolean indicating the validity of the collateral asset.   |
 
-\
 
 
 ### `setValidInstanceOf`
@@ -1579,7 +1516,6 @@ Sets the validity of the instance.
 |   1   |   `instance_`  | `address` |   `address`   | The address of the instance to set the validity for. |
 |   2   |   `isValid_`   |   `bool`  |     `bool`    | Boolean indicating the validity of the instance.     |
 
-\
 
 
 ### `setValidPoolAsset`
@@ -1601,7 +1537,6 @@ Sets the validity of the pool asset.
 |   0   | `poolAsset_` | `address` |   `address`   | The address of the pool asset to set the validity for. |
 |   1   |  `isValid_`  |   `bool`  |     `bool`    | A boolean indicating the validity of the pool asset.   |
 
-\
 
 
 ### `setValidPoolDelegate`
@@ -1623,7 +1558,6 @@ Sets the validity of the pool delegate.
 |   0   | `account_` | `address` |   `address`   |                                                         |
 |   1   | `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the pool delegate. |
 
-\
 
 
 ### `setValidPoolDeployer`
@@ -1645,7 +1579,6 @@ Sets the validity of the pool deployer.
 |   0   |     `account_`    | `address` |   `address`   | The address of the pool deployer to set the validity for. |
 |   1   | `isPoolDeployer_` |   `bool`  |     `bool`    | A boolean indicating the validity of the pool deployer.   |
 
-\
 
 
 ### `timelockParametersOf`
@@ -1678,7 +1611,6 @@ Gets the time lock parameters for a given contract and function.
 |   0   |   `delay`  | `uint128` |   `uint128`   | The time lock delay.    |
 |   1   | `duration` | `uint128` |   `uint128`   | The time lock duration. |
 
-\
 
 
 ### `transferOwnedPoolManager`
@@ -1700,7 +1632,6 @@ Transfer the ownership of the pool manager.
 |   0   | `fromPoolDelegate_` | `address` |   `address`   | The address of the pool delegate to transfer ownership from. |
 |   1   |  `toPoolDelegate_`  | `address` |   `address`   | The address of the pool delegate to transfer ownership to.   |
 
-\
 
 
 ### `unscheduleCall`
@@ -1726,7 +1657,6 @@ Unschedules a call to be executed.
 |   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
 |   3   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-\
 
 
 ### `unscheduleCall`
@@ -1750,7 +1680,6 @@ Unschedules a call to be executed.
 |   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
 |   2   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
-\
 
 
 ## Events
@@ -1773,7 +1702,6 @@ A virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSu
 |   0   |     `asset_`     | `address` |   `address`   | The address of the pool asset.                                             |
 |   1   | `bootstrapMint_` | `uint256` |   `uint256`   | The amount of shares that will offset \`totalAssets\` and \`totalSupply\`. |
 
-\
 
 
 ### `CallScheduled`
@@ -1800,7 +1728,6 @@ A time locked call has been scheduled.
 |   3   |  `dataHash_`  | `bytes32` |   `bytes32`   | The hash of the parameters to pass to the function. |
 |   4   |  `timestamp_` | `uint256` |   `uint256`   | The timestamp of the schedule.                      |
 
-\
 
 
 ### `CallUnscheduled`
@@ -1827,7 +1754,6 @@ A time locked call has been unscheduled.
 |   3   |  `dataHash_`  | `bytes32` |   `bytes32`   | The hash of the parameters to pass to the function. |
 |   4   |  `timestamp_` | `uint256` |   `uint256`   | The timestamp of the schedule.                      |
 
-\
 
 
 ### `CanDeployFromSet`
@@ -1850,7 +1776,6 @@ An account has been allowed/disallowed from deploying an instance from a particu
 |   1   |    `account_`    | `address` |   `address`   | The address of the account.                      |
 |   2   | `canDeployFrom_` |   `bool`  |     `bool`    | Whether the account can deploy from the factory. |
 
-\
 
 
 ### `ContractPauseSet`
@@ -1873,7 +1798,6 @@ The paused state for a given protocol contract was set.
 |   1   |    `contract_`    | `address` |   `address`   | The address of a contract in the protocol.                               |
 |   2   | `contractPaused_` |   `bool`  |     `bool`    | Whether the contract is uniquely paused.                                 |
 
-\
 
 
 ### `DefaultTimelockParametersSet`
@@ -1898,7 +1822,6 @@ The default parameters for the time lock has been set.
 |   2   | `previousDuration_` | `uint256` |   `uint256`   | The previous required duration.  |
 |   3   |  `currentDuration_` | `uint256` |   `uint256`   | The newly set required duration. |
 
-\
 
 
 ### `FunctionUnpauseSet`
@@ -1923,7 +1846,6 @@ The paused state for a function of a given protocol contract was set.
 |   2   |        `sig_`       |  `bytes4` |    `bytes4`   | The function signature within the contract.                              |
 |   3   | `functionUnpaused_` |   `bool`  |     `bool`    | Whether the contract's function is uniquely unpaused.                    |
 
-\
 
 
 ### `GovernorshipAccepted`
@@ -1944,7 +1866,6 @@ The governorship has been accepted.
 |   0   | `previousGovernor_` | `address` |   `address`   | The previous governor. |
 |   1   |  `currentGovernor_` | `address` |   `address`   | The new governor.      |
 
-\
 
 
 ### `ManualOverridePriceSet`
@@ -1965,7 +1886,6 @@ The price for an asset has been set.
 |   0   | `asset_` | `address` |   `address`   | The address of the asset.            |
 |   1   | `price_` | `uint256` |   `uint256`   | The manually set price of the asset. |
 
-\
 
 
 ### `MapleTreasurySet`
@@ -1986,7 +1906,6 @@ The address for the Maple treasury has been set.
 |   0   | `previousMapleTreasury_` | `address` |   `address`   | The previous treasury. |
 |   1   |  `currentMapleTreasury_` | `address` |   `address`   | The new treasury.      |
 
-\
 
 
 ### `MaxCoverLiquidationPercentSet`
@@ -2007,7 +1926,6 @@ The max liquidation percent for the given pool manager has been set.
 |   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager.                 |
 |   1   | `maxCoverLiquidationPercent_` | `uint256` |   `uint256`   | The new value for the cover liquidation percent. |
 
-\
 
 
 ### `MigrationAdminSet`
@@ -2028,7 +1946,6 @@ The migration admin has been set.
 |   0   | `previousMigrationAdmin_` | `address` |   `address`   | The previous migration admin. |
 |   1   |   `nextMigrationAdmin_`   | `address` |   `address`   | The new migration admin.      |
 
-\
 
 
 ### `MinCoverAmountSet`
@@ -2049,7 +1966,6 @@ The minimum cover amount for the given pool manager has been set.
 |   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager.            |
 |   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The new value for the minimum cover amount. |
 
-\
 
 
 ### `OperationalAdminSet`
@@ -2070,7 +1986,6 @@ The operational admin was set.
 |   0   | `previousOperationalAdmin_` | `address` |   `address`   | The address of the previous operational admin. |
 |   1   |  `currentOperationalAdmin_` | `address` |   `address`   | The address of the new operational admin.      |
 
-\
 
 
 ### `PendingGovernorSet`
@@ -2089,7 +2004,6 @@ The pending governor has been set.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------- |
 |   0   | `pendingGovernor_` | `address` |   `address`   | The new pending governor. |
 
-\
 
 
 ### `PlatformManagementFeeRateSet`
@@ -2110,7 +2024,6 @@ The platform management fee rate for the given pool manager has been set.
 |   0   |        `poolManager_`        | `address` |   `address`   | The address of the pool manager.                    |
 |   1   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The new value for the platform management fee rate. |
 
-\
 
 
 ### `PlatformOriginationFeeRateSet`
@@ -2131,7 +2044,6 @@ The platform origination fee rate for the given pool manager has been set.
 |   0   |         `poolManager_`        | `address` |   `address`   | The address of the pool manager.            |
 |   1   | `platformOriginationFeeRate_` | `uint256` |   `uint256`   | The new value for the origination fee rate. |
 
-\
 
 
 ### `PlatformServiceFeeRateSet`
@@ -2152,7 +2064,6 @@ The platform service fee rate for the given pool manager has been set.
 |   0   |       `poolManager_`      | `address` |   `address`   | The address of the pool manager.                 |
 |   1   | `platformServiceFeeRate_` | `uint256` |   `uint256`   | The new value for the platform service fee rate. |
 
-\
 
 
 ### `PoolManagerActivated`
@@ -2173,7 +2084,6 @@ The pool manager was activated.
 |   0   |  `poolManager_` | `address` |   `address`   | The address of the pool manager.  |
 |   1   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate. |
 
-\
 
 
 ### `PoolManagerOwnershipTransferred`
@@ -2196,7 +2106,6 @@ The ownership of the pool manager was transferred.
 |   1   |  `toPoolDelegate_`  | `address` |   `address`   | The address of the new pool delegate.      |
 |   2   |    `poolManager_`   | `address` |   `address`   | The address of the pool manager.           |
 
-\
 
 
 ### `PriceOracleSet`
@@ -2219,7 +2128,6 @@ The oracle for an asset has been set.
 |   1   |  `oracle_`  | `address` |   `address`   | The address of the oracle.       |
 |   2   | `maxDelay_` |  `uint96` |    `uint96`   | The maximum delay of the oracle. |
 
-\
 
 
 ### `ProtocolPauseSet`
@@ -2240,7 +2148,6 @@ The protocol pause was set to a new state.
 |   0   |     `caller_`     | `address` |   `address`   | The address of the security admin or governor that performed the action. |
 |   1   | `protocolPaused_` |   `bool`  |     `bool`    | The protocol paused state.                                               |
 
-\
 
 
 ### `SecurityAdminSet`
@@ -2261,7 +2168,6 @@ The security admin was set.
 |   0   | `previousSecurityAdmin_` | `address` |   `address`   | The address of the previous security admin. |
 |   1   |  `currentSecurityAdmin_` | `address` |   `address`   | The address of the new security admin.      |
 
-\
 
 
 ### `TimelockWindowSet`
@@ -2286,7 +2192,6 @@ A new timelock window was set.
 |   2   |    `delay_`   | `uint128` |   `uint128`   | The delay of the timelock window.    |
 |   3   |  `duration_`  | `uint128` |   `uint128`   | The duration of the timelock window. |
 
-\
 
 
 ### `ValidBorrowerSet`
@@ -2307,7 +2212,6 @@ A valid borrower was set.
 |   0   | `borrower_` | `address` |   `address`   | The address of the borrower.  |
 |   1   |  `isValid_` |   `bool`  |     `bool`    | The validity of the borrower. |
 
-\
 
 
 ### `ValidCollateralAssetSet`
@@ -2328,7 +2232,6 @@ A valid asset was set.
 |   0   | `collateralAsset_` | `address` |   `address`   | The address of the collateral asset.  |
 |   1   |     `isValid_`     |   `bool`  |     `bool`    | The validity of the collateral asset. |
 
-\
 
 
 ### `ValidInstanceSet`
@@ -2351,7 +2254,6 @@ A valid instance was set.
 |   1   |   `instance_`  | `address` |   `address`   | The address of the instance.  |
 |   2   |   `isValid_`   |   `bool`  |     `bool`    | The validity of the instance. |
 
-\
 
 
 ### `ValidPoolAssetSet`
@@ -2372,7 +2274,6 @@ A valid asset was set.
 |   0   | `poolAsset_` | `address` |   `address`   | The address of the asset.  |
 |   1   |  `isValid_`  |   `bool`  |     `bool`    | The validity of the asset. |
 
-\
 
 
 ### `ValidPoolDelegateSet`
@@ -2393,7 +2294,6 @@ A valid pool delegate was set.
 |   0   | `account_` | `address` |   `address`   | The address the account.   |
 |   1   | `isValid_` |   `bool`  |     `bool`    | The validity of the asset. |
 
-\
 
 
 ### `ValidPoolDeployerSet`
@@ -2414,4 +2314,3 @@ A valid pool deployer was set.
 |   0   | `poolDeployer_` | `address` |   `address`   | The address the account.   |
 |   1   |    `isValid_`   |   `bool`  |     `bool`    | The validity of the asset. |
 
-\

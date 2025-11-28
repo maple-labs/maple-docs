@@ -104,5 +104,4 @@ To highlight the key reason to support this push pattern is to address the busin
     * Invariant F: requests(0) == (0, 0)
     * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
     * Invariant H: requestId is unique
-    * Invariant I: lender is unique
 ```

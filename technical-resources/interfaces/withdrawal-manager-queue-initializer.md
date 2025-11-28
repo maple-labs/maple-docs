@@ -1,6 +1,5 @@
 # WithdrawalManagerInitializer (Queue)
 
-\
 
 
 ## Functions
@@ -31,7 +30,6 @@ Checks if an account is set to perform withdrawals manually.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `manualSharesAvailable`
@@ -60,7 +58,6 @@ Returns the amount of shares available for manual withdrawal.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `pool`
@@ -81,7 +78,6 @@ Returns the address of the pool contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolManager`
@@ -102,7 +98,6 @@ Returns the address of the pool manager contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `queue`
@@ -125,7 +120,6 @@ Returns the first and last withdrawal requests pending redemption.
 |   0   | `nextRequestId` | `uint128` |   `uint128`   | Identifier of the next withdrawal request that will be processed. |
 |   1   | `lastRequestId` | `uint128` |   `uint128`   | Identifier of the last created withdrawal request.                |
 
-\
 
 
 ### `requestIds`
@@ -154,7 +148,6 @@ Returns the request identifier of an account. Returns zero if the account does n
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `totalShares`
@@ -175,7 +168,6 @@ Returns the total amount of shares pending redemption.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ## Events
@@ -198,4 +190,3 @@ Emitted when the withdrawal manager proxy contract is initialized.
 |   0   |     `pool`    | `address` |   `address`   | Address of the pool contract.         |
 |   1   | `poolManager` | `address` |   `address`   | Address of the pool manager contract. |
 
-\

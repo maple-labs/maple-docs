@@ -1,6 +1,5 @@
 # OpenTermLoan
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ The value that represents 100%, to be easily comparable with the loan rates.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `acceptBorrower`
@@ -35,7 +33,6 @@ Accept the borrower role, must be called by pendingBorrower.
         nonpayable;
 ```
 
-\
 
 
 ### `acceptLender`
@@ -47,7 +44,6 @@ Accept the lender role, must be called by pendingLender.
         nonpayable;
 ```
 
-\
 
 
 ### `acceptNewTerms`
@@ -80,7 +76,6 @@ Accept the proposed terms and trigger refinance execution.
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the accepted refinance agreement. |
 
-\
 
 
 ### `borrower`
@@ -101,7 +96,6 @@ The borrower of the loan, responsible for repayments.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `calledPrincipal`
@@ -122,7 +116,6 @@ The amount of principal yet to be returned to satisfy the loan call.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `callPrincipal`
@@ -153,7 +146,6 @@ The lender called the loan, giving the borrower a notice period within which to 
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date for returning the principal and pro-rate interest to the lender. |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default.                                                     |
 
-\
 
 
 ### `dateCalled`
@@ -174,7 +166,6 @@ The timestamp of the date the loan was called.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateFunded`
@@ -195,7 +186,6 @@ The timestamp of the date the loan was funded.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateImpaired`
@@ -216,7 +206,6 @@ The timestamp of the date the loan was impaired.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `datePaid`
@@ -237,7 +226,6 @@ The timestamp of the date the loan was last paid.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `defaultDate`
@@ -258,7 +246,6 @@ The timestamp of the date the loan will be in default.
 | :---: | :-------------------: | :------: | :-----------: | ----------- |
 |   0   | `paymentDefaultDate_` | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `delegateServiceFeeRate`
@@ -279,7 +266,6 @@ The annualized delegate service fee rate.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `factory`
@@ -300,7 +286,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `fund`
@@ -325,7 +310,6 @@ Lend funds to the loan/borrower.
 |   1   | `paymentDueDate_` |  `uint40` |    `uint40`   | The due date of the first payment.                     |
 |   2   |   `defaultDate_`  |  `uint40` |    `uint40`   | The timestamp of the date the loan will be in default. |
 
-\
 
 
 ### `fundsAsset`
@@ -346,7 +330,6 @@ The address of the fundsAsset funding the loan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `getPaymentBreakdown`
@@ -383,7 +366,6 @@ Get the breakdown of the total payment needed to satisfy the next payment instal
 |   3   | `delegateServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards delegate service fees. |
 |   4   | `platformServiceFee_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards platform service fees. |
 
-\
 
 
 ### `globals`
@@ -404,7 +386,6 @@ The Maple globals address
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ### `gracePeriod`
@@ -425,7 +406,6 @@ The amount of time the borrower has, after a payment is due, to make a payment b
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `impair`
@@ -448,7 +428,6 @@ Fast forward the payment due date to the current time. This enables the pool del
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date to result in the removal of the loan's impairment status. |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The timestamp of the date the loan will be in default.                             |
 
-\
 
 
 ### `implementation`
@@ -469,7 +448,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `interestRate`
@@ -490,7 +468,6 @@ The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `isCalled`
@@ -511,7 +488,6 @@ Whether the loan is called.
 | :---: | :---------: | :----: | :-----------: | ----------- |
 |   0   | `isCalled_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isImpaired`
@@ -532,7 +508,6 @@ Whether the loan is impaired.
 | :---: | :-----------: | :----: | :-----------: | ----------- |
 |   0   | `isImpaired_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `isInDefault`
@@ -553,7 +528,6 @@ Whether the loan is in default.
 | :---: | :------------: | :----: | :-----------: | ----------- |
 |   0   | `isInDefault_` | `bool` |     `bool`    |             |
 
-\
 
 
 ### `lateFeeRate`
@@ -574,7 +548,6 @@ The rate charged at late payments.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lateInterestPremiumRate`
@@ -595,7 +568,6 @@ The premium over the regular interest rate applied when paying late.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lender`
@@ -616,7 +588,6 @@ The lender of the Loan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `makePayment`
@@ -651,7 +622,6 @@ Make a payment to the loan.
 |   2   | `delegateServiceFee_` | `uint256` |   `uint256`   | The portion of the amount paying delegate service fees. |
 |   3   | `platformServiceFee_` | `uint256` |   `uint256`   | The portion of the amount paying platform service fees. |
 
-\
 
 
 ### `migrate`
@@ -673,7 +643,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `noticePeriod`
@@ -694,7 +663,6 @@ The amount of time the borrower has, after the loan is called, to make a payment
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `paymentDueDate`
@@ -715,7 +683,6 @@ The timestamp of the due date of the next payment.
 | :---: | :---------------: | :------: | :-----------: | ----------- |
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `paymentInterval`
@@ -736,7 +703,6 @@ The specified time between loan payments.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `pendingBorrower`
@@ -757,7 +723,6 @@ The address of the pending borrower.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `pendingLender`
@@ -778,7 +743,6 @@ The address of the pending lender.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `platformServiceFeeRate`
@@ -799,7 +763,6 @@ The annualized platform service fee rate.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `principal`
@@ -820,7 +783,6 @@ The amount of principal owed (initially, the requested amount), which needs to b
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `proposeNewTerms`
@@ -853,7 +815,6 @@ Propose new terms for refinance.
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the proposed refinance agreement. |
 
-\
 
 
 ### `refinanceCommitment`
@@ -874,7 +835,6 @@ The hash of the proposed refinance agreement.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `bytes32` |   `bytes32`   |             |
 
-\
 
 
 ### `rejectNewTerms`
@@ -907,7 +867,6 @@ Nullify the current proposed terms.
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the rejected refinance agreement. |
 
-\
 
 
 ### `removeCall`
@@ -930,7 +889,6 @@ Remove the loan's called status.
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
 
-\
 
 
 ### `removeImpairment`
@@ -953,7 +911,6 @@ Remove the loan impairment by restoring the original payment due date.
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.                         |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The timestamp of the date the loan will be in default. |
 
-\
 
 
 ### `repossess`
@@ -982,7 +939,6 @@ Repossess collateral, and any funds, for a loan in default.
 | :---: | :-----------------: | :-------: | :-----------: | -------------------------------------- |
 |   0   | `fundsRepossessed_` | `uint256` |   `uint256`   | The amount of funds asset repossessed. |
 
-\
 
 
 ### `setImplementation`
@@ -1002,7 +958,6 @@ Modifies the proxy's implementation address.
 | :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
-\
 
 
 ### `setPendingBorrower`
@@ -1022,7 +977,6 @@ Set the \`pendingBorrower\` to a new account.
 | :---: | :----------------: | :-------: | :-----------: | --------------------------------------- |
 |   0   | `pendingBorrower_` | `address` |   `address`   | The address of the new pendingBorrower. |
 
-\
 
 
 ### `setPendingLender`
@@ -1042,7 +996,6 @@ Set the \`pendingLender\` to a new account.
 | :---: | :--------------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `pendingLender_` | `address` |   `address`   | The address of the new pendingLender. |
 
-\
 
 
 ### `skim`
@@ -1073,7 +1026,6 @@ Remove all available balance of a specified token. NOTE: Open Term Loans are not
 | :---: | :--------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `skimmed_` | `uint256` |   `uint256`   | The amount of token removed from the loan. |
 
-\
 
 
 ### `upgrade`
@@ -1095,7 +1047,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -1116,7 +1067,6 @@ Borrower was accepted, and set to a new account.
 | :---: | :---------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `borrower_` | `address` |   `address`   | The address of the new borrower. |
 
-\
 
 
 ### `CallRemoved`
@@ -1137,7 +1087,6 @@ The lender reverted the action of the loan being called and the payment due date
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
 
-\
 
 
 ### `Funded`
@@ -1160,7 +1109,6 @@ The loan was funded.
 |   1   | `paymentDueDate_` |  `uint40` |    `uint40`   | The due date of the first payment.    |
 |   2   |   `defaultDate_`  |  `uint40` |    `uint40`   | The date the loan will be in default. |
 
-\
 
 
 ### `Impaired`
@@ -1181,7 +1129,6 @@ The payment due date was fast forwarded to the current time, activating the grac
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The new payment due date.             |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
 
-\
 
 
 ### `ImpairmentRemoved`
@@ -1202,7 +1149,6 @@ The payment due date was restored to it's original value, reverting the action o
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   | The restored payment due date.        |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   | The date the loan will be in default. |
 
-\
 
 
 ### `Initialized`
@@ -1231,7 +1177,6 @@ Loan was initialized.
 |   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  | Array of loan parameters: \[0]: gracePeriod, \[1]: noticePeriod, \[2]: paymentInterval                                       |
 |   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  | Array of rate parameters: \[0]: delegateServiceFeeRate, \[1]: interestRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
 
-\
 
 
 ### `LenderAccepted`
@@ -1250,7 +1195,6 @@ Lender was accepted, and set to a new account.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `lender_` | `address` |   `address`   | The address of the new lender. |
 
-\
 
 
 ### `NewTermsAccepted`
@@ -1275,7 +1219,6 @@ The terms of the refinance proposal were accepted.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `NewTermsProposed`
@@ -1300,7 +1243,6 @@ A refinance was proposed.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `NewTermsRejected`
@@ -1325,7 +1267,6 @@ The terms of the refinance proposal were rejected.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `PaymentMade`
@@ -1358,7 +1299,6 @@ Payments were made.
 |   6   |   `paymentDueDate_`   |  `uint40` |    `uint40`   | The new payment due date.                                                |
 |   7   |     `defaultDate_`    |  `uint40` |    `uint40`   | The date the loan will be in default.                                    |
 
-\
 
 
 ### `PendingBorrowerSet`
@@ -1377,7 +1317,6 @@ Pending borrower was set.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `pendingBorrower_` | `address` |   `address`   | Address that can accept the borrower role. |
 
-\
 
 
 ### `PendingLenderSet`
@@ -1396,7 +1335,6 @@ Pending lender was set.
 | :---: | :--------------: | :-------: | :-----------: | -------------------------------------------- |
 |   0   | `pendingLender_` | `address` |   `address`   | The address that can accept the lender role. |
 
-\
 
 
 ### `PrincipalCalled`
@@ -1419,7 +1357,6 @@ The lender called the loan, giving the borrower a notice period within which to 
 |   1   |   `paymentDueDate_`  |  `uint40` |    `uint40`   | The new payment due date.                                 |
 |   2   |    `defaultDate_`    |  `uint40` |    `uint40`   | The date the loan will be in default.                     |
 
-\
 
 
 ### `PrincipalReturned`
@@ -1440,7 +1377,6 @@ Principal was returned to lender, to close the loan or return future interest pa
 |   0   |  `principalReturned_` | `uint256` |   `uint256`   | The amount of principal returned.              |
 |   1   | `principalRemaining_` | `uint256` |   `uint256`   | The amount of principal remaining on the loan. |
 
-\
 
 
 ### `Repossessed`
@@ -1461,7 +1397,6 @@ The loan was in default and funds and collateral was repossessed by the lender.
 |   0   | `fundsRepossessed_` | `uint256` |   `uint256`   | The amount of funds asset repossessed.             |
 |   1   |    `destination_`   | `address` |   `address`   | The address of the recipient of the funds, if any. |
 
-\
 
 
 ### `Skimmed`
@@ -1484,7 +1419,6 @@ Some token was removed from the loan.
 |   1   |    `amount_`   | `uint256` |   `uint256`   | The amount of token remove from the loan. |
 |   2   | `destination_` | `address` |   `address`   | The recipient of the token.               |
 
-\
 
 
 ### `Upgraded`
@@ -1505,4 +1439,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\
