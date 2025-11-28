@@ -117,7 +117,7 @@
   * [Pool Permission Manager](technical-resources/singletons/pool-permission-manager.md)
 * [Admin Functions](technical-resources/admin-functions/README.md)
   * [Governor Admin Actions](technical-resources/admin-functions/governor-admin-actions.md)
-    * [Operational Admin Actions](technical-resources/admin-functions/operational-admin-actions.md)
+  * [Operational Admin Actions](technical-resources/admin-functions/operational-admin-actions.md)
   * [Pool Delegate Admin Actions](technical-resources/admin-functions/pool-delegate-admin-actions.md)
   * [Timelocks](technical-resources/admin-functions/timelocks.md)
 * [Operations](technical-resources/operations/README.md)
