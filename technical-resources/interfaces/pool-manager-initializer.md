@@ -1,6 +1,5 @@
 # PoolManagerInitializer
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns whether or not a pool is active.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `asset`
@@ -44,7 +42,6 @@ Gets the address of the funds asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `configured`
@@ -65,7 +62,6 @@ Returns whether or not a pool is configured.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `decodeArguments`
@@ -100,7 +96,6 @@ Returns whether or not a pool is configured.
 |   3   |      `name_`     |  `string` |    `string`   |             |
 |   4   |     `symbol_`    |  `string` |    `string`   |             |
 
-\
 
 
 ### `delegateManagementFeeRate`
@@ -121,7 +116,6 @@ Gets the delegate management fee rate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `encodeArguments`
@@ -156,7 +150,6 @@ Gets the delegate management fee rate.
 | :---: | :-----------------: | :-----: | :-----------: | ----------- |
 |   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
 
-\
 
 
 ### `liquidityCap`
@@ -177,7 +170,6 @@ Gets the liquidity cap for the pool.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `strategyList`
@@ -206,7 +198,6 @@ Gets the address of the strategy in the list.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 ### `pendingPoolDelegate`
 
@@ -226,7 +217,6 @@ Gets the address of the pending pool delegate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `pool`
@@ -247,7 +237,6 @@ Gets the address of the pool.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolDelegate`
@@ -268,7 +257,6 @@ Gets the address of the pool delegate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolDelegateCover`
@@ -289,7 +277,6 @@ Gets the address of the pool delegate cover.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `withdrawalManager`
@@ -310,7 +297,6 @@ Gets the address of the withdrawal manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ## Events
@@ -333,4 +319,3 @@ Gets the address of the withdrawal manager.
 |   1   | `asset_` | `address` |   `address`   |             |
 |   2   |  `pool_` | `address` |   `address`   |             |
 
-\

@@ -1,6 +1,5 @@
 # WithdrawalManager (Queue)
 
-\
 
 
 ## Functions
@@ -24,7 +23,6 @@ Add shares to the withdrawal manager.
 |   0   | `shares_` | `uint256` |   `uint256`   |             |
 |   1   |  `owner_` | `address` |   `address`   |             |
 
-\
 
 
 ### `asset`
@@ -45,7 +43,6 @@ Returns the address of the underlying pool asset.
 | :---: | :------: | :-------: | :-----------: | ----------- |
 |   0   | `asset_` | `address` |   `address`   |             |
 
-\
 
 
 ### `factory`
@@ -66,7 +63,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `globals`
@@ -87,7 +83,6 @@ Returns the address of the globals contract.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ### `governor`
@@ -108,7 +103,6 @@ Return the address of the governor.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `governor_` | `address` |   `address`   |             |
 
-\
 
 
 ### `implementation`
@@ -129,7 +123,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `isInExitWindow`
@@ -158,7 +151,6 @@ Returns if a user is able to withdraw. Required for compatibility with pool mana
 | :---: | :---------------: | :----: | :-----------: | ---------------------------------------------- |
 |   0   | `isInExitWindow_` | `bool` |     `bool`    | True if the account is in the withdraw window. |
 
-\
 
 
 ### `isManualWithdrawal`
@@ -187,7 +179,6 @@ Checks if an account is set to perform withdrawals manually.
 | :---: | :--: | :----: | :-----------: | ----------- |
 |   0   |      | `bool` |     `bool`    |             |
 
-\
 
 
 ### `lockedLiquidity`
@@ -208,7 +199,6 @@ Gets the total amount of funds that need to be locked to fulfill exits. NOTE: Al
 | :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
 |   0   | `lockedLiquidity_` | `uint256` |   `uint256`   | The amount of locked liquidity. |
 
-\
 
 
 ### `lockedShares`
@@ -237,7 +227,6 @@ Gets the amount of locked shares for an account.
 | :---: | :-------------: | :-------: | :-----------: | -------------------------------------- |
 |   0   | `lockedShares_` | `uint256` |   `uint256`   | The amount of manual shares available. |
 
-\
 
 
 ### `manualSharesAvailable`
@@ -266,7 +255,6 @@ Returns the amount of shares available for manual withdrawal.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `migrate`
@@ -288,7 +276,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `pool`
@@ -309,7 +296,6 @@ Returns the address of the pool contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `poolDelegate`
@@ -330,7 +316,6 @@ Returns the address of the pool delegate.
 | :---: | :-------------: | :-------: | :-----------: | ----------- |
 |   0   | `poolDelegate_` | `address` |   `address`   |             |
 
-\
 
 
 ### `poolManager`
@@ -351,7 +336,6 @@ Returns the address of the pool manager contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `previewRedeem`
@@ -384,7 +368,6 @@ Returns the amount of shares that can be redeemed. NOTE: The \`shares\` value is
 |   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
 |   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `previewWithdraw`
@@ -417,7 +400,6 @@ Gets the amount of shares that can be withdrawn. NOTE: Values just passed throug
 |   0   | `redeemableAssets_` | `uint256` |   `uint256`   | The amount of assets that can be withdrawn. |
 |   1   |  `resultingShares_` | `uint256` |   `uint256`   | The amount of shares that will be burned.   |
 
-\
 
 
 ### `processExit`
@@ -450,7 +432,6 @@ Processes a withdrawal request. Uses the current exchange rate to calculate the 
 |   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
 |   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `processRedemptions`
@@ -470,7 +451,6 @@ Processes pending redemption requests. Requests are processed in the order they 
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `maxSharesToProcess_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `queue`
@@ -493,7 +473,6 @@ Returns the first and last withdrawal requests pending redemption.
 |   0   | `nextRequestId` | `uint128` |   `uint128`   | Identifier of the next withdrawal request that will be processed. |
 |   1   | `lastRequestId` | `uint128` |   `uint128`   | Identifier of the last created withdrawal request.                |
 
-\
 
 
 ### `removeRequest`
@@ -513,7 +492,6 @@ Removes a withdrawal request from the queue. Can only be called by the pool dele
 | :---: | :------: | :-------: | :-----------: | ----------- |
 |   0   | `owner_` | `address` |   `address`   |             |
 
-\
 
 
 ### `removeShares`
@@ -544,7 +522,6 @@ Removes shares from the withdrawal manager.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `sharesReturned_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `requestIds`
@@ -573,7 +550,6 @@ Returns the request identifier of an account. Returns zero if the account does n
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `requests`
@@ -604,7 +580,6 @@ Returns the owner and amount of shares associated with a withdrawal request.
 |   0   |  `owner_` | `address` |   `address`   |             |
 |   1   | `shares_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `securityAdmin`
@@ -625,7 +600,6 @@ Returns the address of the security admin.
 | :---: | :--------------: | :-------: | :-----------: | ----------- |
 |   0   | `securityAdmin_` | `address` |   `address`   |             |
 
-\
 
 
 ### `setImplementation`
@@ -645,7 +619,6 @@ Modifies the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `setManualWithdrawal`
@@ -667,7 +640,6 @@ Defines if an account will withdraw shares manually or automatically.
 |   0   |   `owner_`  | `address` |   `address`   |             |
 |   1   | `isManual_` |   `bool`  |     `bool`    |             |
 
-\
 
 
 ### `totalShares`
@@ -688,7 +660,6 @@ Returns the total amount of shares pending redemption.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `upgrade`
@@ -710,7 +681,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -733,7 +703,6 @@ Emitted when a manual redemption takes place.
 |   0   |      `owner`      | `address` |   `address`   | Address of the account.    |
 |   1   | `sharesDecreased` | `uint256` |   `uint256`   | Amount of shares redeemed. |
 
-\
 
 
 ### `ManualSharesIncreased`
@@ -754,7 +723,6 @@ Emitted when a manual redemption is processed.
 |   0   |    `owner`    | `address` |   `address`   | Address of the account.                          |
 |   1   | `sharesAdded` | `uint256` |   `uint256`   | Amount of shares added to the redeemable amount. |
 
-\
 
 
 ### `ManualWithdrawalSet`
@@ -775,7 +743,6 @@ Emitted when the withdrawal type of an account is updated.
 |   0   |   `owner`  | `address` |   `address`   | Address of the account.                                             |
 |   1   | `isManual` |   `bool`  |     `bool`    | \`true\` if the withdrawal is manual, \`false\` if it is automatic. |
 
-\
 
 
 ### `RequestCreated`
@@ -798,7 +765,6 @@ Emitted when a withdrawal request is created.
 |   1   |   `owner`   | `address` |   `address`   | Address of the owner of the shares.        |
 |   2   |   `shares`  | `uint256` |   `uint256`   | Amount of shares requested for redemption. |
 
-\
 
 
 ### `RequestDecreased`
@@ -819,7 +785,6 @@ Emitted when a withdrawal request is updated.
 |   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request.                 |
 |   1   |   `shares`  | `uint256` |   `uint256`   | Amount of shares reduced during a redemption request. |
 
-\
 
 
 ### `RequestProcessed`
@@ -844,7 +809,6 @@ Emitted when a withdrawal request is processed.
 |   2   |   `shares`  | `uint256` |   `uint256`   | Amount of redeemable shares.          |
 |   3   |   `assets`  | `uint256` |   `uint256`   | Amount of withdrawable assets.        |
 
-\
 
 
 ### `RequestRemoved`
@@ -863,7 +827,6 @@ Emitted when a withdrawal request is removed.
 | :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request. |
 
-\
 
 
 ### `Upgraded`
@@ -884,4 +847,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\

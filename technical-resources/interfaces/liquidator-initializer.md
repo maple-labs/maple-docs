@@ -1,6 +1,5 @@
 # LiquidatorInitializer
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns the address of the collateral asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `collateralRemaining`
@@ -44,7 +42,6 @@ Returns the amount of collateral yet to be liquidated.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `decodeArguments`
@@ -75,7 +72,6 @@ Returns the amount of collateral yet to be liquidated.
 |   1   | `collateralAsset_` | `address` |   `address`   |             |
 |   2   |    `fundsAsset_`   | `address` |   `address`   |             |
 
-\
 
 
 ### `encodeArguments`
@@ -106,7 +102,6 @@ Returns the amount of collateral yet to be liquidated.
 | :---: | :---------: | :-----: | :-----------: | ----------- |
 |   0   | `calldata_` | `bytes` |    `bytes`    |             |
 
-\
 
 
 ### `fundsAsset`
@@ -127,7 +122,6 @@ Returns the address of the funding asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `loanManager`
@@ -148,4 +142,3 @@ Returns the address of the loan manager contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\

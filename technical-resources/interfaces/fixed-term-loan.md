@@ -2,7 +2,6 @@
 
 MapleLoan implements a primitive loan with additional functionality, and is intended to be proxied.
 
-\
 
 
 ## Functions
@@ -25,7 +24,6 @@ The value that represents 100%, to be easily comparable with the loan rates.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `acceptBorrower`
@@ -37,7 +35,6 @@ Accept the borrower role, must be called by pendingBorrower.
         nonpayable;
 ```
 
-\
 
 
 ### `acceptLender`
@@ -49,7 +46,6 @@ Accept the lender role, must be called by pendingLender.
         nonpayable;
 ```
 
-\
 
 
 ### `acceptNewTerms`
@@ -82,7 +78,6 @@ Accept the proposed terms ans trigger refinance execution
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the accepted refinance agreement. |
 
-\
 
 
 ### `borrower`
@@ -103,7 +98,6 @@ The borrower of the loan, responsible for repayments.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `borrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `closeLoan`
@@ -136,7 +130,6 @@ Repay all principal and interest and close a loan. FUNDS SHOULD NOT BE TRANSFERR
 |   1   |  `interest_` | `uint256` |   `uint256`   | The portion of the amount paying interest.       |
 |   2   |    `fees_`   | `uint256` |   `uint256`   | The portion of the amount paying service fees.   |
 
-\
 
 
 ### `closingRate`
@@ -157,7 +150,6 @@ The fee rate (applied to principal) to close the loan. This value should be conf
 | :---: | :------------: | :-------: | :-----------: | ----------- |
 |   0   | `closingRate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `collateral`
@@ -178,7 +170,6 @@ The amount of collateral posted against outstanding (drawn down) principal.
 | :---: | :-----------: | :-------: | :-----------: | ----------- |
 |   0   | `collateral_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `collateralAsset`
@@ -199,7 +190,6 @@ The address of the asset deposited by the borrower as collateral, if needed.
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `collateralAsset_` | `address` |   `address`   |             |
 
-\
 
 
 ### `collateralRequired`
@@ -220,7 +210,6 @@ The amount of collateral required if all of the principal required is drawn down
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `collateralRequired_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `drawableFunds`
@@ -241,7 +230,6 @@ The amount of funds that have yet to be drawn down by the borrower.
 | :---: | :--------------: | :-------: | :-----------: | ----------- |
 |   0   | `drawableFunds_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `drawdownFunds`
@@ -272,7 +260,6 @@ Draw down funds from the loan.
 | :---: | :-----------------: | :-------: | :-----------: | --------------------------------------------------- |
 |   0   | `collateralPosted_` | `uint256` |   `uint256`   | The amount of additional collateral posted, if any. |
 
-\
 
 
 ### `endingPrincipal`
@@ -293,7 +280,6 @@ The portion of principal to not be paid down as part of payment installments, wh
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `endingPrincipal_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `excessCollateral`
@@ -314,7 +300,6 @@ Returns the excess collateral that can be removed.
 | :---: | :-----------------: | :-------: | :-----------: | -------------------------------------------------- |
 |   0   | `excessCollateral_` | `uint256` |   `uint256`   | The excess collateral that can be removed, if any. |
 
-\
 
 
 ### `factory`
@@ -335,7 +320,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `feeManager`
@@ -356,7 +340,6 @@ The address of the contract that handles payments of fees on behalf of the loan.
 | :---: | :-----------: | :-------: | :-----------: | ----------- |
 |   0   | `feeManager_` | `address` |   `address`   |             |
 
-\
 
 
 ### `fundLoan`
@@ -377,7 +360,6 @@ Lend funds to the loan/borrower.
 | :---: | :----------: | :-------: | :-----------: | ------------------ |
 |   0   | `fundsLent_` | `uint256` |   `uint256`   | The amount funded. |
 
-\
 
 
 ### `fundsAsset`
@@ -398,7 +380,6 @@ The asset deposited by the lender to fund the loan.
 | :---: | :-----------: | :-------: | :-----------: | ----------- |
 |   0   | `fundsAsset_` | `address` |   `address`   |             |
 
-\
 
 
 ### `getAdditionalCollateralRequiredFor`
@@ -427,7 +408,6 @@ Get the additional collateral to be posted to drawdown some amount.
 | :---: | :-----------: | :-------: | :-----------: | ----------- |
 |   0   | `collateral_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `getClosingPaymentBreakdown`
@@ -452,7 +432,6 @@ Get the breakdown of the total payment needed to satisfy an early repayment to c
 |   1   |  `interest_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards interest fees. |
 |   2   |    `fees_`   | `uint256` |   `uint256`   | The portion of the total amount that will go towards fees.          |
 
-\
 
 
 ### `getNextPaymentBreakdown`
@@ -477,7 +456,6 @@ Get the breakdown of the total payment needed to satisfy the next payment instal
 |   1   |  `interest_` | `uint256` |   `uint256`   | The portion of the total amount that will go towards interest fees.              |
 |   2   |    `fees_`   | `uint256` |   `uint256`   | The portion of the total amount that will go towards paying administrative fees. |
 
-\
 
 
 ### `getNextPaymentDetailedBreakdown`
@@ -502,7 +480,6 @@ Get the detailed breakdown of the total payment needed to satisfy the next payme
 |   1   |  `interest_` | `uint256[3]` |  `uint256[3]` | The portion of the total amount that will go towards interest fees. \[0] Interest from the payment interval. \[1] Late interest. \[2] Refinance interest. |
 |   2   |    `fees_`   | `uint256[2]` |  `uint256[2]` | The portion of the total amount that will go towards paying administrative fees. \[0] Delegate fees. \[1] Platform fees.                                  |
 
-\
 
 
 ### `getRefinanceInterest`
@@ -531,7 +508,6 @@ Get the extra interest that will be charged according to loan terms before refin
 | :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------------- |
 |   0   | `proRataInterest_` | `uint256` |   `uint256`   | The interest portion to be added in the next payment. |
 
-\
 
 
 ### `getUnaccountedAmount`
@@ -560,7 +536,6 @@ Get the amount on an asset that in not accounted for by the accounting variables
 | :---: | :------------------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `unaccountedAmount_` | `uint256` |   `uint256`   | The amount that is not accounted for. |
 
-\
 
 
 ### `globals`
@@ -581,7 +556,6 @@ The Maple globals address
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `globals_` | `address` |   `address`   |             |
 
-\
 
 
 ### `governor`
@@ -602,7 +576,6 @@ The address of the Maple Governor.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `governor_` | `address` |   `address`   |             |
 
-\
 
 
 ### `gracePeriod`
@@ -623,7 +596,6 @@ The amount of time the borrower has, after a payment is due, to make a payment b
 | :---: | :------------: | :-------: | :-----------: | ----------- |
 |   0   | `gracePeriod_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `impairLoan`
@@ -635,7 +607,6 @@ Fast forward the next payment due date to the current time. This enables the poo
         nonpayable;
 ```
 
-\
 
 
 ### `implementation`
@@ -656,7 +627,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `interestRate`
@@ -677,7 +647,6 @@ The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
 | :---: | :-------------: | :-------: | :-----------: | ----------- |
 |   0   | `interestRate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `isImpaired`
@@ -698,7 +667,6 @@ Return if the loan has been impaired.
 | :---: | :-----------: | :----: | :-----------: | ---------------------------- |
 |   0   | `isImpaired_` | `bool` |     `bool`    | Is the loan impaired or not. |
 
-\
 
 
 ### `lateFeeRate`
@@ -719,7 +687,6 @@ The rate charged at late payments.
 | :---: | :------------: | :-------: | :-----------: | ----------- |
 |   0   | `lateFeeRate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `lateInterestPremiumRate`
@@ -740,7 +707,6 @@ The premium over the regular interest rate applied when paying late.
 | :---: | :------------------------: | :-------: | :-----------: | ----------- |
 |   0   | `lateInterestPremiumRate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `lender`
@@ -761,7 +727,6 @@ The lender of the Loan.
 | :---: | :-------: | :-------: | :-----------: | ----------- |
 |   0   | `lender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `makePayment`
@@ -794,7 +759,6 @@ Make a payment to the loan. FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NON
 |   1   |  `interest_` | `uint256` |   `uint256`   | The portion of the amount paying interest fees.  |
 |   2   |    `fees_`   | `uint256` |   `uint256`   | The portion of the amount paying service fees.   |
 
-\
 
 
 ### `migrate`
@@ -816,7 +780,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `nextPaymentDueDate`
@@ -837,7 +800,6 @@ The timestamp due date of the next payment.
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `nextPaymentDueDate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `originalNextPaymentDueDate`
@@ -858,7 +820,6 @@ The saved original payment due date from a loan impairment.
 | :---: | :---------------------------: | :-------: | :-----------: | ----------- |
 |   0   | `originalNextPaymentDueDate_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `paymentInterval`
@@ -879,7 +840,6 @@ The specified time between loan payments.
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `paymentInterval_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `paymentsRemaining`
@@ -900,7 +860,6 @@ The number of payment installments remaining for the loan.
 | :---: | :------------------: | :-------: | :-----------: | ----------- |
 |   0   | `paymentsRemaining_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `pendingBorrower`
@@ -921,7 +880,6 @@ The address of the pending borrower.
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingBorrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `pendingLender`
@@ -942,7 +900,6 @@ The address of the pending lender.
 | :---: | :--------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingLender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `postCollateral`
@@ -971,7 +928,6 @@ Post collateral to the loan. FUNDS SHOULD NOT BE TRANSFERRED TO THIS CONTRACT NO
 | :---: | :-----------------: | :-------: | :-----------: | ------------------ |
 |   0   | `collateralPosted_` | `uint256` |   `uint256`   | The amount posted. |
 
-\
 
 
 ### `principal`
@@ -992,7 +948,6 @@ The amount of principal owed (initially, the requested amount), which needs to b
 | :---: | :----------: | :-------: | :-----------: | ----------- |
 |   0   | `principal_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `principalRequested`
@@ -1013,7 +968,6 @@ The initial principal amount requested by the borrower.
 | :---: | :-------------------: | :-------: | :-----------: | ----------- |
 |   0   | `principalRequested_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `proposeNewTerms`
@@ -1046,7 +1000,6 @@ Propose new terms for refinance.
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the proposed refinance agreement. |
 
-\
 
 
 ### `refinanceCommitment`
@@ -1067,7 +1020,6 @@ The hash of the proposed refinance agreement.
 | :---: | :--------------------: | :-------: | :-----------: | ----------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   |             |
 
-\
 
 
 ### `refinanceInterest`
@@ -1088,7 +1040,6 @@ Amount of unpaid interest that has accrued before a refinance was accepted.
 | :---: | :------------------: | :-------: | :-----------: | ----------- |
 |   0   | `refinanceInterest_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `rejectNewTerms`
@@ -1121,7 +1072,6 @@ Nullify the current proposed terms.
 | :---: | :--------------------: | :-------: | :-----------: | --------------------------------------------- |
 |   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   | The hash of the rejected refinance agreement. |
 
-\
 
 
 ### `removeCollateral`
@@ -1143,7 +1093,6 @@ Remove collateral from the loan (opposite of posting collateral).
 |   0   |    `amount_`   | `uint256` |   `uint256`   | The amount removed.                             |
 |   1   | `destination_` | `address` |   `address`   | The destination to send the removed collateral. |
 
-\
 
 
 ### `removeLoanImpairment`
@@ -1155,7 +1104,6 @@ Remove the loan impairment by restoring the original payment due date.
         nonpayable;
 ```
 
-\
 
 
 ### `repossess`
@@ -1186,7 +1134,6 @@ Repossess collateral, and any funds, for a loan in default.
 |   0   | `collateralRepossessed_` | `uint256` |   `uint256`   | The amount of collateral asset repossessed. |
 |   1   |    `fundsRepossessed_`   | `uint256` |   `uint256`   | The amount of funds asset repossessed.      |
 
-\
 
 
 ### `returnFunds`
@@ -1215,7 +1162,6 @@ Return funds to the loan (opposite of drawing down). FUNDS SHOULD NOT BE TRANSFE
 | :---: | :--------------: | :-------: | :-----------: | -------------------- |
 |   0   | `fundsReturned_` | `uint256` |   `uint256`   | The amount returned. |
 
-\
 
 
 ### `setImplementation`
@@ -1235,7 +1181,6 @@ Modifies the proxy's implementation address.
 | :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
-\
 
 
 ### `setPendingBorrower`
@@ -1255,7 +1200,6 @@ Set the pendingBorrower to a new account.
 | :---: | :----------------: | :-------: | :-----------: | --------------------------------------- |
 |   0   | `pendingBorrower_` | `address` |   `address`   | The address of the new pendingBorrower. |
 
-\
 
 
 ### `setPendingLender`
@@ -1275,7 +1219,6 @@ Set the pendingLender to a new account.
 | :---: | :--------------: | :-------: | :-----------: | ------------------------------------- |
 |   0   | `pendingLender_` | `address` |   `address`   | The address of the new pendingLender. |
 
-\
 
 
 ### `skim`
@@ -1306,7 +1249,6 @@ Remove all token that is not accounted for by the loan (i.e. not \`collateral\` 
 | :---: | :--------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `skimmed_` | `uint256` |   `uint256`   | The amount of token removed from the loan. |
 
-\
 
 
 ### `upgrade`
@@ -1328,7 +1270,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -1349,7 +1290,6 @@ Borrower was accepted, and set to a new account.
 | :---: | :---------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `borrower_` | `address` |   `address`   | The address of the new borrower. |
 
-\
 
 
 ### `CollateralPosted`
@@ -1368,7 +1308,6 @@ Collateral was posted.
 | :---: | :-------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of collateral posted. |
 
-\
 
 
 ### `CollateralRemoved`
@@ -1389,7 +1328,6 @@ Collateral was removed.
 |   0   |    `amount_`   | `uint256` |   `uint256`   | The amount of collateral removed.        |
 |   1   | `destination_` | `address` |   `address`   | The recipient of the collateral removed. |
 
-\
 
 
 ### `Funded`
@@ -1412,7 +1350,6 @@ The loan was funded.
 |   1   |       `amount_`       | `uint256` |   `uint256`   | The amount funded.                |
 |   2   | `nextPaymentDueDate_` | `uint256` |   `uint256`   | The due date of the next payment. |
 
-\
 
 
 ### `FundsClaimed`
@@ -1433,7 +1370,6 @@ Funds were claimed.
 |   0   |    `amount_`   | `uint256` |   `uint256`   | The amount of funds claimed.        |
 |   1   | `destination_` | `address` |   `address`   | The recipient of the funds claimed. |
 
-\
 
 
 ### `FundsDrawnDown`
@@ -1454,7 +1390,6 @@ Funds were drawn.
 |   0   |    `amount_`   | `uint256` |   `uint256`   | The amount of funds drawn.             |
 |   1   | `destination_` | `address` |   `address`   | The recipient of the funds drawn down. |
 
-\
 
 
 ### `FundsReturned`
@@ -1473,7 +1408,6 @@ Funds were returned.
 | :---: | :-------: | :-------: | :-----------: | ----------------------------- |
 |   0   | `amount_` | `uint256` |   `uint256`   | The amount of funds returned. |
 
-\
 
 
 ### `ImpairmentRemoved`
@@ -1492,7 +1426,6 @@ The loan impairment was explicitly removed (i.e. not the result of a payment or 
 | :---: | :-------------------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `nextPaymentDueDate_` | `uint256` |   `uint256`   | The new next payment due date. |
 
-\
 
 
 ### `Initialized`
@@ -1525,7 +1458,6 @@ Loan was initialized.
 |   6   |    `rates_`    | `uint256[4]` |  `uint256[4]` | Fee parameters: \[0]: interestRate, \[1]: closingFeeRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
 |   7   |     `fees_`    | `uint256[2]` |  `uint256[2]` | Array of fees: \[0]: delegateOriginationFee, \[1]: delegateServiceFee                                      |
 
-\
 
 
 ### `LenderAccepted`
@@ -1544,7 +1476,6 @@ Lender was accepted, and set to a new account.
 | :---: | :-------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `lender_` | `address` |   `address`   | The address of the new lender. |
 
-\
 
 
 ### `LoanClosed`
@@ -1567,7 +1498,6 @@ Loan was repaid early and closed.
 |   1   |  `interestPaid_` | `uint256` |   `uint256`   | The portion of the total amount that went towards interest.  |
 |   2   |    `feesPaid_`   | `uint256` |   `uint256`   | The portion of the total amount that went towards fees.      |
 
-\
 
 
 ### `LoanImpaired`
@@ -1586,7 +1516,6 @@ The next payment due date was fast forwarded to the current time, activating the
 | :---: | :-------------------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `nextPaymentDueDate_` | `uint256` |   `uint256`   | The new next payment due date. |
 
-\
 
 
 ### `NewTermsAccepted`
@@ -1611,7 +1540,6 @@ The terms of the refinance proposal were accepted.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `NewTermsProposed`
@@ -1636,7 +1564,6 @@ A refinance was proposed.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `NewTermsRejected`
@@ -1661,7 +1588,6 @@ The terms of the refinance proposal were rejected.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   | The deadline for accepting the new terms.                 |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   | The individual calls for the refinancer contract.         |
 
-\
 
 
 ### `PaymentMade`
@@ -1684,7 +1610,6 @@ Payments were made.
 |   1   |  `interestPaid_` | `uint256` |   `uint256`   | The portion of the total amount that went towards interest.  |
 |   2   |      `fees_`     | `uint256` |   `uint256`   | The portion of the total amount that went towards fees.      |
 
-\
 
 
 ### `PendingBorrowerSet`
@@ -1703,7 +1628,6 @@ Pending borrower was set.
 | :---: | :----------------: | :-------: | :-----------: | ------------------------------------------ |
 |   0   | `pendingBorrower_` | `address` |   `address`   | Address that can accept the borrower role. |
 
-\
 
 
 ### `PendingLenderSet`
@@ -1722,7 +1646,6 @@ Pending lender was set.
 | :---: | :--------------: | :-------: | :-----------: | ---------------------------------------- |
 |   0   | `pendingLender_` | `address` |   `address`   | Address that can accept the lender role. |
 
-\
 
 
 ### `Repossessed`
@@ -1745,7 +1668,6 @@ The loan was in default and funds and collateral was repossessed by the lender.
 |   1   |    `fundsRepossessed_`   | `uint256` |   `uint256`   | The amount of funds asset repossessed.             |
 |   2   |      `destination_`      | `address` |   `address`   | The recipient of the collateral and funds, if any. |
 
-\
 
 
 ### `Skimmed`
@@ -1768,7 +1690,6 @@ Some token (neither fundsAsset nor collateralAsset) was removed from the loan.
 |   1   |    `amount_`   | `uint256` |   `uint256`   | The amount of token remove from the loan. |
 |   2   | `destination_` | `address` |   `address`   | The recipient of the token.               |
 
-\
 
 
 ### `Upgraded`
@@ -1789,4 +1710,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\

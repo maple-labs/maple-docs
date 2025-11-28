@@ -27,7 +27,7 @@ The pool delegate or any of the protocol admins can at any time process any amou
 
 _NOTE_: The `processRedemptions()` function has a reentrancy guard since it performs external calls.
 
-_NOTE_: The amount of shares must be specified and are assumed to be a reasonable amount where out of gas issued don't occur.
+_NOTE_: The amount of shares must be specified and are assumed to be a reasonable amount where out of gas issues don't occur.
 
 ### Exchange Rate
 
@@ -104,5 +104,4 @@ To highlight the key reason to support this push pattern is to address the busin
     * Invariant F: requests(0) == (0, 0)
     * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
     * Invariant H: requestId is unique
-    * Invariant I: lender is unique
 ```

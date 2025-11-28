@@ -1,6 +1,5 @@
 # OpenTermLoanManager
 
-\
 
 
 ## Functions
@@ -23,7 +22,6 @@ Returns the value considered as the hundred percent.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `PRECISION`
@@ -44,7 +42,6 @@ Returns the precision used for the contract.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `accountedInterest`
@@ -65,7 +62,6 @@ Gets the amount of accounted interest.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint112` |   `uint112`   |             |
 
-\
 
 
 ### `accruedInterest`
@@ -86,7 +82,6 @@ Gets the amount of accrued interest up until this point in time.
 | :---: | :----------------: | :-------: | :-----------: | ----------------------------------------------------------- |
 |   0   | `accruedInterest_` | `uint256` |   `uint256`   | The amount of accrued interest up until this point in time. |
 
-\
 
 
 ### `assetsUnderManagement`
@@ -107,7 +102,6 @@ Gets the amount of assets under the management of the contract.
 | :---: | :----------------------: | :-------: | :-----------: | ---------------------------------------------------------- |
 |   0   | `assetsUnderManagement_` | `uint256` |   `uint256`   | The amount of assets under the management of the contract. |
 
-\
 
 
 ### `callPrincipal`
@@ -129,7 +123,6 @@ Calls a loan.
 |   0   |    `loan_`   | `address` |   `address`   | Loan to be called.                         |
 |   1   | `principal_` | `uint256` |   `uint256`   | Amount of principal to call the Loan with. |
 
-\
 
 
 ### `claim`
@@ -157,7 +150,6 @@ Called by loans when payments are made, updating the accounting.
 |   3   | `platformServiceFee_` | `uint256` |   `uint256`   | The amount of platform service fee paid.                                                                                     |
 |   4   | `nextPaymentDueDate_` |  `uint40` |    `uint40`   |                                                                                                                              |
 
-\
 
 
 ### `domainStart`
@@ -178,7 +170,6 @@ Gets the timestamp of the domain start.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `factory`
@@ -199,7 +190,6 @@ The address of the proxy factory.
 | :---: | :--------: | :-------: | :-----------: | ----------- |
 |   0   | `factory_` | `address` |   `address`   |             |
 
-\
 
 
 ### `fund`
@@ -219,7 +209,6 @@ Funds a new loan.
 | :---: | :-----: | :-------: | :-----------: | ------------------ |
 |   0   | `loan_` | `address` |   `address`   | Loan to be funded. |
 
-\
 
 
 ### `fundsAsset`
@@ -240,7 +229,6 @@ Gets the address of the funds asset.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `impairLoan`
@@ -260,7 +248,6 @@ Triggers the impairment of a loan.
 | :---: | :-----: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `loan_` | `address` |   `address`   | Loan to trigger the loan impairment. |
 
-\
 
 
 ### `impairmentFor`
@@ -291,7 +278,6 @@ Gets the information for an impairment.
 |   0   |    `impairedDate`    | `uint40` |    `uint40`   | The date the impairment was triggered.                |
 |   1   | `impairedByGovernor` |  `bool`  |     `bool`    | True if the impairment was triggered by the governor. |
 
-\
 
 
 ### `implementation`
@@ -312,7 +298,6 @@ The address of the implementation contract being proxied.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `issuanceRate`
@@ -333,7 +318,6 @@ Gets the current issuance rate.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `migrate`
@@ -355,7 +339,6 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 |   0   |  `migrator_` | `address` |   `address`   | The address of a migrator contract.              |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the migration. |
 
-\
 
 
 ### `paymentFor`
@@ -390,7 +373,6 @@ Gets the information for a payment.
 |   2   |         `startDate`         |  `uint40` |    `uint40`   | The start date of the payment.                  |
 |   3   |        `issuanceRate`       | `uint168` |   `uint168`   | The issuance rate for the loan.                 |
 
-\
 
 
 ### `poolManager`
@@ -411,7 +393,6 @@ Gets the address of the pool manager.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `principalOut`
@@ -432,7 +413,6 @@ Gets the amount of principal out.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `proposeNewTerms`
@@ -458,7 +438,6 @@ Proposes new terms for a loan.
 |   2   |  `deadline_`  | `uint256` |   `uint256`   | The deadline by which the borrower must accept the new terms. |
 |   3   |    `calls_`   | `bytes[]` |   `bytes[]`   | The array of calls to be made to the refinancer.              |
 
-\
 
 
 ### `rejectNewTerms`
@@ -484,7 +463,6 @@ Reject/cancel proposed new terms for a loan.
 |   2   |  `deadline_`  | `uint256` |   `uint256`   | The deadline by which the borrower must accept the new terms. |
 |   3   |    `calls_`   | `bytes[]` |   `bytes[]`   | The array of calls to be made to the refinancer.              |
 
-\
 
 
 ### `removeCall`
@@ -504,7 +482,6 @@ Removes a loan call.
 | :---: | :-----: | :-------: | :-----------: | ------------------------ |
 |   0   | `loan_` | `address` |   `address`   | Loan to remove call for. |
 
-\
 
 
 ### `removeLoanImpairment`
@@ -524,7 +501,6 @@ Removes the loan impairment for a loan.
 | :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
 |   0   | `loan_` | `address` |   `address`   | Loan to remove the loan impairment. |
 
-\
 
 
 ### `setImplementation`
@@ -544,7 +520,6 @@ Modifies the proxy's implementation address.
 | :---: | :---------------: | :-------: | :-----------: | ----------- |
 |   0   | `implementation_` | `address` |   `address`   |             |
 
-\
 
 
 ### `triggerDefault`
@@ -579,7 +554,6 @@ Triggers the default of a loan.
 |   1   |     `remainingLosses_`     | `uint256` |   `uint256`   | The amount of un-recovered principal and interest (net of management fees). |
 |   2   | `unrecoveredPlatformFees_` | `uint256` |   `uint256`   | The amount of un-recovered platform fees.                                   |
 
-\
 
 
 ### `triggerDefault`
@@ -610,7 +584,6 @@ Triggers the default of a loan.
 |   0   |     `remainingLosses_`     | `uint256` |   `uint256`   | The amount of un-recovered principal and interest (net of management fees). |
 |   1   | `unrecoveredPlatformFees_` | `uint256` |   `uint256`   | The amount of un-recovered platform fees.                                   |
 
-\
 
 
 ### `unrealizedLosses`
@@ -631,7 +604,6 @@ Returns the amount unrealized losses.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint128` |   `uint128`   |             |
 
-\
 
 
 ### `upgrade`
@@ -653,7 +625,6 @@ Upgrades a contract implementation to a specific version. Access control logic c
 |   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
-\
 
 
 ## Events
@@ -676,7 +647,6 @@ Emitted when the accounting state of the loan manager is updated.
 |   0   |    `issuanceRate_`   | `uint256` |   `uint256`   | New value for the issuance rate.  |
 |   1   | `accountedInterest_` | `uint112` |   `uint112`   | The amount of accounted interest. |
 
-\
 
 
 ### `ClaimedFundsDistributed`
@@ -707,7 +677,6 @@ Funds have been claimed and distributed to the Pool, Pool Delegate, and Maple Tr
 |   5   | `platformManagementFee_` | `uint256` |   `uint256`   | The amount of platform management fees paid. |
 |   6   |   `platformServiceFee_`  | `uint256` |   `uint256`   | The amount of platform service fees paid.    |
 
-\
 
 
 ### `ExpectedClaim`
@@ -734,7 +703,6 @@ Funds that were expected to be claimed and distributed to the Pool and Maple Tre
 |   3   | `platformManagementFee_` | `uint256` |   `uint256`   | The amount of platform management fees that were expected to be paid. |
 |   4   |   `platformServiceFee_`  | `uint256` |   `uint256`   | The amount of platform service fees that were expected to paid.       |
 
-\
 
 
 ### `LiquidatedFundsDistributed`
@@ -759,7 +727,6 @@ Funds that were liquidated and distributed to the Pool, Maple Treasury, and Borr
 |   2   |   `toPool_`   | `uint256` |   `uint256`   | The amount of recovered funds transferred to the Pool.              |
 |   3   | `toTreasury_` | `uint256` |   `uint256`   | The amount of recovered funds transferred to the Treasury.          |
 
-\
 
 
 ### `PaymentAdded`
@@ -786,7 +753,6 @@ Emitted when a payment is added to the LoanManager payments mapping.
 |   3   |       `paymentDueDate_`      | `uint256` |   `uint256`   | The due date of the payment.                                                           |
 |   4   |        `issuanceRate_`       | `uint256` |   `uint256`   | The issuance of the payment, 1e27 precision.                                           |
 
-\
 
 
 ### `PaymentRemoved`
@@ -805,7 +771,6 @@ Emitted when a payment is removed from the LoanManager payments mapping.
 | :---: | :-----: | :-------: | :-----------: | ------------------------ |
 |   0   | `loan_` | `address` |   `address`   | The address of the loan. |
 
-\
 
 
 ### `PrincipalOutUpdated`
@@ -824,7 +789,6 @@ Emitted when principal out is updated
 | :---: | :-------------: | :-------: | :-----------: | -------------------------------- |
 |   0   | `principalOut_` | `uint128` |   `uint128`   | The new value for principal out. |
 
-\
 
 
 ### `UnrealizedLossesUpdated`
@@ -843,7 +807,6 @@ Emitted when unrealized losses is updated.
 | :---: | :-----------------: | :-------: | :-----------: | ------------------------------------ |
 |   0   | `unrealizedLosses_` | `uint128` |   `uint128`   | The new value for unrealized losses. |
 
-\
 
 
 ### `Upgraded`
@@ -864,4 +827,3 @@ The instance was upgraded.
 |   0   | `toVersion_` | `uint256` |   `uint256`   | The new version of the loan.   |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | The upgrade arguments, if any. |
 
-\

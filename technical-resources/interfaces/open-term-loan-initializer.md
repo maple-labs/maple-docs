@@ -1,6 +1,5 @@
 # OpenTermLoanInitializer
 
-\
 
 
 ## Functions
@@ -21,7 +20,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `calledPrincipal`
@@ -40,7 +38,6 @@
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `dateCalled`
@@ -59,7 +56,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateFunded`
@@ -78,7 +74,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `dateImpaired`
@@ -97,7 +92,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `datePaid`
@@ -116,7 +110,6 @@
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `decodeArguments`
@@ -155,7 +148,6 @@ Decodes the initialization arguments for a MapleLoan.
 |   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  | Array of loan parameters: \[0]: gracePeriod, \[1]: noticePeriod, \[2]: paymentInterval                                       |
 |   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  | Array of rate parameters: \[0]: delegateServiceFeeRate, \[1]: interestRate, \[2]: lateFeeRate, \[3]: lateInterestPremiumRate |
 
-\
 
 
 ### `delegateServiceFeeRate`
@@ -174,7 +166,6 @@ Decodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `encodeArguments`
@@ -213,7 +204,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-----------------: | :-----: | :-----------: | ---------------------------------------------- |
 |   0   | `encodedArguments_` | `bytes` |    `bytes`    | The encoded arguments for initializing a loan. |
 
-\
 
 
 ### `fundsAsset`
@@ -232,7 +222,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `gracePeriod`
@@ -251,7 +240,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `interestRate`
@@ -270,7 +258,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lateFeeRate`
@@ -289,7 +276,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lateInterestPremiumRate`
@@ -308,7 +294,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `lender`
@@ -327,7 +312,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `noticePeriod`
@@ -346,7 +330,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `paymentInterval`
@@ -365,7 +348,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint32` |    `uint32`   |             |
 
-\
 
 
 ### `pendingBorrower`
@@ -384,7 +366,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `pendingLender`
@@ -403,7 +384,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `address` |   `address`   |             |
 
-\
 
 
 ### `platformServiceFeeRate`
@@ -422,7 +402,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :------: | :-----------: | ----------- |
 |   0   |      | `uint64` |    `uint64`   |             |
 
-\
 
 
 ### `principal`
@@ -441,7 +420,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `refinanceCommitment`
@@ -460,7 +438,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--: | :-------: | :-----------: | ----------- |
 |   0   |      | `bytes32` |   `bytes32`   |             |
 
-\
 
 
 ## Events
@@ -479,7 +456,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :---------: | :-------: | :-----------: | ----------- |
 |   0   | `borrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `CallRemoved`
@@ -498,7 +474,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `Funded`
@@ -519,7 +494,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   | `paymentDueDate_` |  `uint40` |    `uint40`   |             |
 |   2   |   `defaultDate_`  |  `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `Impaired`
@@ -538,7 +512,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `ImpairmentRemoved`
@@ -557,7 +530,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   | `paymentDueDate_` | `uint40` |    `uint40`   |             |
 |   1   |   `defaultDate_`  | `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `Initialized`
@@ -584,7 +556,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   4   |     `termDetails_`    | `uint32[3]` |  `uint32[3]`  |             |
 |   5   |        `rates_`       | `uint64[4]` |  `uint64[4]`  |             |
 
-\
 
 
 ### `LenderAccepted`
@@ -601,7 +572,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :-------: | :-------: | :-----------: | ----------- |
 |   0   | `lender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `NewTermsAccepted`
@@ -624,7 +594,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `NewTermsProposed`
@@ -647,7 +616,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `NewTermsRejected`
@@ -670,7 +638,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   2   |       `deadline_`      | `uint256` |   `uint256`   |             |
 |   3   |        `calls_`        | `bytes[]` |   `bytes[]`   |             |
 
-\
 
 
 ### `PaymentMade`
@@ -701,7 +668,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   6   |   `paymentDueDate_`   |  `uint40` |    `uint40`   |             |
 |   7   |     `defaultDate_`    |  `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `PendingBorrowerSet`
@@ -718,7 +684,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :----------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingBorrower_` | `address` |   `address`   |             |
 
-\
 
 
 ### `PendingLenderSet`
@@ -735,7 +700,6 @@ Encodes the initialization arguments for a MapleLoan.
 | :---: | :--------------: | :-------: | :-----------: | ----------- |
 |   0   | `pendingLender_` | `address` |   `address`   |             |
 
-\
 
 
 ### `PrincipalCalled`
@@ -756,7 +720,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |   `paymentDueDate_`  |  `uint40` |    `uint40`   |             |
 |   2   |    `defaultDate_`    |  `uint40` |    `uint40`   |             |
 
-\
 
 
 ### `PrincipalReturned`
@@ -775,7 +738,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   |  `principalReturned_` | `uint256` |   `uint256`   |             |
 |   1   | `principalRemaining_` | `uint256` |   `uint256`   |             |
 
-\
 
 
 ### `Repossessed`
@@ -794,7 +756,6 @@ Encodes the initialization arguments for a MapleLoan.
 |   0   | `fundsRepossessed_` | `uint256` |   `uint256`   |             |
 |   1   |    `destination_`   | `address` |   `address`   |             |
 
-\
 
 
 ### `Skimmed`
@@ -815,4 +776,3 @@ Encodes the initialization arguments for a MapleLoan.
 |   1   |    `amount_`   | `uint256` |   `uint256`   |             |
 |   2   | `destination_` | `address` |   `address`   |             |
 
-\
