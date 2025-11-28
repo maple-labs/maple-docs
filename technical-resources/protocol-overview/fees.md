@@ -12,9 +12,9 @@ $$
 $$
 
 **Where:**
-- $\text{yieldAccrued}$ is the total yield accrued since the last `deposit()`, `withdraw()`, or `setStrategyFeeRate()` function call.
-- $\text{strategyFeeRate}$ is the fee rate for the strategy, which can be no greater than $1 \times 10^6$.
-- $1 \times 10^6$ represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
+- `yieldAccrued` is the total yield accrued since the last `deposit()`, `withdraw()`, or `setStrategyFeeRate()` function call.
+- `strategyFeeRate` is the fee rate for the strategy, which can be no greater than `1 x 10^6`.
+- `1 x 10^6` represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
 
 The fee rate is set by the protocol admins on a per-strategy basis and can be changed at any time.
 
@@ -99,9 +99,7 @@ $$
 Service fees are paid during loan payments. Service fees are calculated in the following way:
 
 * `delegateServiceFeeRate` is a loan term that is specified on loan instantiation as an annualized rate scaled by `1e6` (the `HUNDRED_PERCENT` constant). It is a rate, not a nominal currency amount (e.g., `100_000` = 10%).
-* `platformServiceFeeRate` is a Governor-settable variable in globals that is settable on a Pool level. When a loan is funded,
-
-The service fee amount to be paid is calculated using the following formula for both the delegate and platform service fees:
+* `platformServiceFeeRate` is a Governor-settable variable in globals that is settable on a Pool level. When a loan is funded, the service fee amount to be paid is calculated using the following formula for both the delegate and platform service fees:
 
 $$
 \large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
@@ -130,7 +128,7 @@ $$
 \large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
 $$
 
-3. The platform and delegate service fee amounts that have accrued between the last payment or funding (which ever is greatest) and the refinance are paid during the refinance using the following formula:
+3. The platform and delegate service fee amounts that have accrued between the last payment or funding (whichever is greatest) and the refinance are paid during the refinance using the following formula:
 
 $$
 \large \begin{align} \nonumber refinanceServiceFee = serviceFee \times \frac{(timestamp - \max(datePaid, dateFunded))}{paymentInterval} \end{align}
