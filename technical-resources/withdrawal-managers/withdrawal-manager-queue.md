@@ -27,7 +27,7 @@ The pool delegate or any of the protocol admins can at any time process any amou
 
 _NOTE_: The `processRedemptions()` function has a reentrancy guard since it performs external calls.
 
-_NOTE_: The amount of shares must be specified and are assumed to be a reasonable amount where out of gas issued don't occur.
+_NOTE_: The amount of shares must be specified and are assumed to be a reasonable amount where out of gas issues don't occur.
 
 ### Exchange Rate
 
