@@ -28,9 +28,9 @@ $$
 $$
 
 **Where:**
-- $\text{yieldAccrued}$ is the total yield accrued since the last `fundStrategy(...)`, `withdrawFromStrategy(...)`, or `setStrategyFeeRate(...)` call (Aave/Basic/Sky).
-- $\text{strategyFeeRate}$ is the fee rate for the strategy, which can be no greater than $1 \times 10^6$.
-- $1 \times 10^6$ represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
+- `yieldAccrued` is the total yield accrued since the last `fundStrategy(...)`, `withdrawFromStrategy(...)`, or `setStrategyFeeRate(...)` call (Aave/Basic/Sky).
+- `strategyFeeRate` is the fee rate for the strategy, which can be no greater than `1 x 10^6`.
+- `1 x 10^6` represents the scaling factor for 100%, declared as the constant `HUNDRED_PERCENT` in the contracts.
 
 ## Assets Under Management
 
@@ -42,8 +42,8 @@ $$
 $$
 
 **Where:**
-- $\text{currentTotalAssets}$ is the gross value of the strategy at that block, which may increase if yield is generated or decrease if there is a loss in the strategy.
-- $\text{currentAccruedFees}$ is the calculated fee at that block, which is positive if the strategy has gained value since the last snapshot (`lastRecordedTotalAssets`), otherwise 0.
+- `currentTotalAssets` is the gross value of the strategy at that block, which may increase if yield is generated or decrease if there is a loss in the strategy.
+- `currentAccruedFees` is the calculated fee at that block, which is positive if the strategy has gained value since the last snapshot (`lastRecordedTotalAssets`), otherwise 0.
 
 ## Strategy States
 
