@@ -12,6 +12,6 @@ Previously, the Maple DAO voted to recapitalize the Maple Treasury, introducing 
 
 Following the approval of MIP-010, a migrator contract allows MPL users to convert to SYRUP, and all issuance and emissions will also be minted as SYRUP tokens.
 
-In line with the agreed token inflation schedule and issuance, the expected supply of SYRUP tokens will be 1,228,740,800 by September 2026.
+In line with the agreed token inflation schedule and issuance, the expected supply of SYRUP tokens will be 1,267,875,000 by September 2026.
 
 Details regarding the SYRUP token issuance can be found in our [governance proposal](https://community.maple.finance/t/mip-010-syrup-token-launch-and-mpl-syrup-conversion/334).
