@@ -48,25 +48,27 @@ Here's how to derive each parameter:
 
 Thess will be be the first parameter to `schedule`.
 
-2. Get the duration, in seconds, of each desired period, except for the last one. Those values are:
+2. Get the duration, in seconds, of each desired period. Those values are:
 
 * **7948800** -> 92 days (October 1st 2023 - December 31st 2023)
 * **31622400** -> 366 days (January 1st 2024 - December 31st 2024)
 * **31536000** -> 365 days (January 1st 2025 - December 31st 2025)
+* **23587200** -> 273 days (January 1st 2026 - September 30th 2026)
 
 3. To get the proper issuance rate, just divide the desired number of tokens including decimals, taken from the MIP, by the period duration, from step 2:
 
 * **1st Period**: `125000e18 / 7948800 = 15725644122383252`
-* **2025**: `566767e18 / 31622400 = 17922959674155030`
-* **2026**: `595641e18 / 31536000 = 18887652207001524`
-* **2027**: 0, since the issuance stops after the third year.
+* **2nd Period**: `566767e18 / 31622400 = 17922959674155030`
+* **3rd Period**: `595641e18 / 31536000 = 18887652207001524`
+* **4th Period**: `39134200e18 / 23587200 = 1659128679962013200`
+* **5th Period**: 0, since the issuance stops after the third year.
 
-The next step is to divide the amount of tokens, by the duration of the period, which would yield the following results:`[15725644122383252, 17922959674155030, 18887652207001524, 0]`
+The next step is to divide the amount of tokens, by the duration of the period, which would yield the following results:`[15725644122383252, 17922959674155030, 18887652207001524, 1659128679962013200, 0]`
 
 In conclusion, to configure the mentioned issuance schedule, the function to be called is:
 
 ```
-module.schedule([1696132800, 1704081600, 1735704000, 1767240000],[15725644122383252, 17922959674155030, 18887652207001524, 0])
+module.schedule([1696132800, 1704081600, 1735704000, 1767240000, 1790827200],[15725644122383252, 17922959674155030, 18887652207001524, 1659128679962013200, 0])
 ```
 
 ### Insertion Logic
