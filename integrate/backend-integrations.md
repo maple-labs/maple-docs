@@ -8,7 +8,7 @@ description: >-
 # Backend Integrations
 
 {% hint style="info" %}
-#### Step-by-step
+**Step-by-step**
 
 **Deposit**:
 
@@ -76,21 +76,21 @@ Syrup's main contract, the `SyrupRouter`, is designed to allow authorized partic
 
 {% tabs %}
 {% tab title="Mainnet" %}
-**Syrup USDC**
+**syrupUSDC**
 
 <table><thead><tr><th width="224.8125">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b">0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76">0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3">0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3</a></td></tr></tbody></table>
 
-**Syrup USDT**
+**syrupUSDT**
 
 <table><thead><tr><th width="224.6953125">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D">0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2">0xF007476Bb27430795138C511F18F821e8D1e5Ee2</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C">0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Sepolia" %}
-**Syrup USDC**
+**syrupUSDC**
 
 <table><thead><tr><th width="225.05078125">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x2d8d21fee98d060655729efd7b14bc432c375ac1">0x2d8d21fee98d060655729efd7b14bc432c375ac1</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x5387ab37f93af968920af6c0faa6dbc52973b020">0x5387ab37f93af968920af6c0faa6dbc52973b020</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x2ff61035de7a1550219be12a6e9d33aa10b844b6">0x2ff61035de7a1550219be12a6e9d33aa10b844b6</a></td></tr></tbody></table>
 
-**Syrup USDT**
+**syrupUSDT**
 
 <table><thead><tr><th width="225.046875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b">0x7679cbe9ae66298114ac6dac73487b63ac023c0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918">0x0b703919cf2d30dbb18bad6febe8f0ea4f191918</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3">0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3</a></td></tr></tbody></table>
 {% endtab %}
@@ -1200,7 +1200,7 @@ In the example above, the monthly base APY is 6.72% with the Drips rewards addin
 
 <summary>How can I get the price received on redemption for syrupUSDC or syrupUSDT?</summary>
 
-syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.&#x20;
+syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.
 
 You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the GraphQL API.
 
@@ -1254,4 +1254,3 @@ You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by
 The ratio of `lendingBalance` / `totalShares` is the spot exchange rate.
 
 </details>
-

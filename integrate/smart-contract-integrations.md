@@ -86,10 +86,10 @@ function depositWithPermit(
 
 Notes for implementers:
 
-- Authorization signature: For first-time deposits, Maple (a permission admin) provides an ECDSA signature authorizing the lender’s bitmap permissions. The signature digest includes `chainId`, the `SyrupRouter` address, the `owner` (msg.sender), a `nonce`, the `bitmap`, and `deadline`. Your smart contract should pass this signature through to `authorizeAndDeposit`/`authorizeAndDepositWithPermit`.
-- Permissions: The router enforces `PoolPermissionManager.hasPermission(poolManager, owner, "P:deposit")`. Your address must be permissioned (via allowlist or bitmaps) before deposits succeed.
-- Deposit metadata: `depositData` is a `bytes32` field emitted via `DepositData` for off-chain correlation (e.g., internal IDs). Use a pre-hashed value if longer than 32 bytes.
-- Gas optimization: Prefer `depositWithPermit` where the asset supports EIP‑2612 to avoid a separate approval step.
+* Authorization signature: For first-time deposits, Maple (a permission admin) provides an ECDSA signature authorizing the lender’s bitmap permissions. The signature digest includes `chainId`, the `SyrupRouter` address, the `owner` (msg.sender), a `nonce`, the `bitmap`, and `deadline`. Your smart contract should pass this signature through to `authorizeAndDeposit`/`authorizeAndDepositWithPermit`.
+* Permissions: The router enforces `PoolPermissionManager.hasPermission(poolManager, owner, "P:deposit")`. Your address must be permissioned (via allowlist or bitmaps) before deposits succeed.
+* Deposit metadata: `depositData` is a `bytes32` field emitted via `DepositData` for off-chain correlation (e.g., internal IDs). Use a pre-hashed value if longer than 32 bytes.
+* Gas optimization: Prefer `depositWithPermit` where the asset supports EIP‑2612 to avoid a separate approval step.
 
 ### 3. Syrup Addresses
 
@@ -97,11 +97,11 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 
 {% tabs %}
 {% tab title="Mainnet" %}
-**Syrup USDC**
+**syrupUSDC**
 
 <table><thead><tr><th width="224.77734375">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b">0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76">0x134cCaaA4F1e4552eC8aEcb9E4A2360dDcF8df76</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3">0x1bc47a0Dd0FdaB96E9eF982fdf1F34DC6207cfE3</a></td></tr><tr><td>USDC</td><td><a href="https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</a></td></tr></tbody></table>
 
-**Syrup USDT**
+**syrupUSDT**
 
 <table><thead><tr><th width="224.82421875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D">0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2">0xF007476Bb27430795138C511F18F821e8D1e5Ee2</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C">0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C</a></td></tr><tr><td>USDT</td><td><a href="https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7">0xdAC17F958D2ee523a2206206994597C13D831ec7</a></td></tr></tbody></table>
 
@@ -111,11 +111,11 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 {% endtab %}
 
 {% tab title="Sepolia" %}
-**Syrup USDC**
+**syrupUSDC**
 
 <table><thead><tr><th width="225.015625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x2d8D21FeE98d060655729eFD7b14bc432C375aC1">0x2d8D21FeE98d060655729eFD7b14bc432C375aC1</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x5387Ab37f93Af968920af6c0Faa6dbc52973b020">0x5387Ab37f93Af968920af6c0Faa6dbc52973b020</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x2Ff61035dE7A1550219Be12a6e9D33AA10B844B6">0x2Ff61035dE7A1550219Be12a6e9D33AA10B844B6</a></td></tr><tr><td>USDC</td><td><a href="https://sepolia.etherscan.io/address/0xC40E5D31187ae7AFC6238594765DA5873A5bB8ed">0xC40E5D31187ae7AFC6238594765DA5873A5bB8ed</a></td></tr></tbody></table>
 
-**Syrup USDT**
+**syrupUSDT**
 
 <table><thead><tr><th width="224.62890625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x7679CBe9aE66298114AC6dAC73487B63ac023c0b">0x7679CBe9aE66298114AC6dAC73487B63ac023c0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x0B703919cF2d30DbB18bAD6feBe8F0eA4F191918">0x0B703919cF2d30DbB18bAD6feBe8F0eA4F191918</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0xbBe2Bf30b76729a4eB75bf40ceD47A58000AE1D3">0xbBe2Bf30b76729a4eB75bf40ceD47A58000AE1D3</a></td></tr><tr><td>USDT</td><td><a href="https://sepolia.etherscan.io/address/0x658DAE0F3388892692A213494E1CbB04844Df0A3">0x658DAE0F3388892692A213494E1CbB04844Df0A3</a></td></tr></tbody></table>
 
@@ -166,7 +166,7 @@ function isAuthorizedToDeposit(address pool, address lender) internal view retur
 
 Onchain permission checks are equivalent to a bitmap AND comparison. A lender is authorized for a function if all required bits in the pool’s bitmap are present in the lender’s bitmap:
 
-- Condition: `(poolBitmap & lenderBitmap) == poolBitmap`
+* Condition: `(poolBitmap & lenderBitmap) == poolBitmap`
 
 Example (optional introspection, prefer `hasPermission` in production):
 
@@ -423,7 +423,7 @@ In the example above, the monthly base APY is 6.72% with the Drips rewards addin
 
 <summary>How can I get the price received on redemption for syrupUSDC or syrupUSDT?</summary>
 
-syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.&#x20;
+syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.
 
 You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by querying the GraphQL API.
 
