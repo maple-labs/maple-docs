@@ -2,7 +2,7 @@
 
 **Drip Rewards Overview**
 
-The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi. Drips facilitated an innovative rewards program that enabled users to earn SYRUP by creating rewards for participation.\
+The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi. Drips facilitated an innovative rewards program that enabled users to earn SYRUP by creating rewards for deposits and ecosystem participation.\
 \
 As the products matured, the Drips program has been phased out in favor of direct incentives for using syrupUSDC and syrupUSDT with ecosystem partners. You can see all opportunities on [Merkl](https://app.merkl.xyz/?search=syrup).
 
