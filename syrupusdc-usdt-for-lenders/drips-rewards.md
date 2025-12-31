@@ -4,7 +4,7 @@
 
 The introduction of the SYRUP token enhanced alignment within the Maple ecosystem and enabled the protocol to start capturing value from institutional credit markets through DeFi. Drips facilitated an innovative rewards program that enabled users to earn SYRUP by creating rewards for deposits and ecosystem participation.\
 \
-As the products matured, the Drips program has been phased out in favor of direct incentives for using syrupUSDC and syrupUSDT with ecosystem partners. You can see all opportunities on [Merkl](https://app.merkl.xyz/?search=syrup).
+The Drips program has been phased out in favor of direct incentives for using syrupUSDC and syrupUSDT with ecosystem partners. You can see all opportunities on [Merkl](https://app.merkl.xyz/?search=syrup).
 
 The final claim for Drips accumulated during Q4 2025 will be open between January 18, 2026 and February 18, 2026. You can claim by going to: [https://app.maple.finance/earn/rewards](https://app.maple.finance/earn/rewards)
 
