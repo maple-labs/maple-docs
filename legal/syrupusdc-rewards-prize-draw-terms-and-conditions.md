@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # SyrupUSDC Rewards Prize Draw Terms & Conditions
 
 ### TERMS AND CONDITIONS
@@ -81,13 +85,13 @@ The Prize Draw is not available to residents of the following countries:
 
 #### 3.1. PROMOTIONAL CAMPAIGNS
 
-The Prize Draw consists of a six (6) month promotional campaign (the "Promotional Campaign"). There may be additional Promotional Campaigns.&#x20;
+The Prize Draw consists of a six (6) month promotional campaign (the "Promotional Campaign"). There may be additional Promotional Campaigns.
 
 #### 3.2. DURATION OF PROMOTIONAL CAMPAIGNS
 
-Promotional Campaign 1: 1 May 2025 to 30 October 2025.&#x20;
+Promotional Campaign 1: 1 May 2025 to 30 October 2025.
 
-Promotional Campaign 2: Dates to be determined.&#x20;
+Promotional Campaign 2: Dates to be determined.
 
 The Company reserves the right to modify the duration of any Promotional Campaign by providing notice through the Interface.
 
@@ -270,4 +274,4 @@ For questions about the Prize Draw or these Terms and Conditions, please contact
 By participating in the SyrupUSDC Rewards Prize Draw, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
 
 \
-\
+\\

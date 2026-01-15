@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # SyrupUSDC Rewards Prize Draw Program Summary
 
 Win from a $500K USDC Prize Pool While Earning Top-Tier Yields
@@ -50,7 +54,7 @@ Additionally, you'll earn maintenance tickets for each day you keep your deposit
 Participating in the syrupUSDC Rewards Prize Draw offers two significant advantages:
 
 1. Earn Industry-Leading Yields: syrupUSDC typically offers yields significantly higher than other DeFi lending platforms, generated from secure, overcollateralized loans to institutional borrowers
-2. Chance to Win Incredible Prizes: On top of your regular yield, you now have the opportunity to win from the $500,000 USDC prize pool, including a $300,000 grand prize that could transform your financial future.&#x20;
+2. Chance to Win Incredible Prizes: On top of your regular yield, you now have the opportunity to win from the $500,000 USDC prize pool, including a $300,000 grand prize that could transform your financial future.
 
 ### Important Dates to Remember
 
@@ -80,4 +84,4 @@ Don't miss this exceptional opportunity to earn competitive yields while potenti
 Note: Please review the full [Terms and Conditions](https://maplefinance.gitbook.io/maple/legal/syrupusdc-rewards-prize-draw-terms-and-conditions) for complete details about eligibility requirements and program rules.
 
 \
-\
+\\

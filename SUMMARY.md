@@ -191,6 +191,7 @@
 * [syrupUSDC and syrupUSDT - Risks](legal/syrupusdc-and-syrupusdt-risks.md)
 * [syrupUSDC and syrupUSDT - Defaults and Impairments](legal/syrupusdc-and-syrupusdt-defaults-and-impairments.md)
 * [syrupUSDC and syrupUSDT - Available Jurisdictions](legal/syrupusdc-and-syrupusdt-available-jurisdictions.md)
+* [syrupUSDC - Product Disclosures & Disclaimers](legal/syrupusdc-product-disclosures-and-disclaimers.md)
 * [Interface Terms of Use \[syrupUSDC and syrupUSDT\]](legal/interface-terms-of-use-syrupusdc-and-syrupusdt.md)
 * [Interface Terms of Use \[Syrup.fi/convert/ and Syrup.fi/stake/\]](legal/interface-terms-of-use-syrup.fi-convert-and-syrup.fi-stake.md)
 * [syrupUSDC and syrupUSDT- Privacy Policy](legal/syrupusdc-and-syrupusdt-privacy-policy.md)

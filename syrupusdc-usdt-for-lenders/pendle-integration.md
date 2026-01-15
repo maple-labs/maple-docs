@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Pendle Integration
 
 We’re excited to present our integration with [Pendle](https://app.pendle.finance/trade/points/0x373dc7be84fadebc2e879c98289fc662c6985946), enabling advanced yield opportunities and streamlined reward management for our users.
