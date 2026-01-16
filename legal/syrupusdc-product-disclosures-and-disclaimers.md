@@ -1,7 +1,0 @@
-# syrupUSDC - Product Disclosures & Disclaimers
-
-The syrupUSDC token is a product developed, issued, and managed exclusively by Maple Finance. It is not sponsored, endorsed, administered by, or otherwise associated with Circle Internet Financial, LLC or its related entities ("Circle"). The syrupUSDC token is not a stablecoin and is not backed by USDC; its value is derived from a dynamic pool of underlying loan assets managed through the Maple Protocol.
-
-The yield associated with syrupUSDC is generated from interest payments on overcollateralized loans made to institutional borrowers. All lending activities involve significant risk, including but not limited to credit risk, liquidity risk, borrower default, and the potential for partial or total loss of your principal. Past performance is not indicative of future results, and yields are not guaranteed.
-
-Intellectual Property Notice: Third-party trademarks, including "USDC," which is a registered trademark of Circle, are the property of their respective owners. The use of such trademarks herein is for identification and descriptive purposes only and does not imply any affiliation with or endorsement by the trademark holders.
