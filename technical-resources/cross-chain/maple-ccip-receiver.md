@@ -100,6 +100,8 @@ The receiver uses a defensive pattern to store failed messages for recovery:
 
 ![Failure handling and recovery flow](../../.gitbook/assets/maple-ccip-receiver-recovery-flow.png)
 
+For step-by-step retry and recovery instructions, see [Failed Message Retry and Recovery](failed-message-recovery.md).
+
 ## Roles and permissions
 
 - **DEFAULT_ADMIN_ROLE**
