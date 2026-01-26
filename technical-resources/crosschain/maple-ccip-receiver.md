@@ -129,3 +129,4 @@ The receiver uses a defensive pattern to store failed messages for recovery:
 - Chain selectors must be configured with a `ChainType` before messages can be sent.
 - Redemptions require a configured `REDEMPTION_EXECUTOR` in Maple Globals.
 - Use CCIP message IDs and emitted events (`MessageReceived`, `MessageSent`, `CrossChainDeposit`, `CrossChainRedeem`) for observability.
+- For integrators: validate deposits and redemptions so the amount is greater than the configured fee for that token. Deposit fees and redemption fees are configured on the receiver contract, so amounts below the fee will revert.
