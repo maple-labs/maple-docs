@@ -1,6 +1,6 @@
 # Failed Message Retry and Recovery
 
-This guide explains how to identify failed cross-chain messages and use MapleCCIPReceiver's retry and recovery flows. It also shows how to check message status in the Chainlink CCIP Explorer.
+This guide explains how to identify failed crosschain messages and use MapleCCIPReceiver's retry and recovery flows. It also shows how to check message status in the Chainlink CCIP Explorer.
 
 ## Prerequisites and permissions
 
@@ -22,7 +22,7 @@ If you only have a transaction hash, you can search for the transaction in the C
 
 ## Check status in the Chainlink CCIP Explorer
 
-The CCIP Explorer tracks cross-chain messages and supports searching by message ID.
+The CCIP Explorer tracks crosschain messages and supports searching by message ID.
 
 Steps:
 
