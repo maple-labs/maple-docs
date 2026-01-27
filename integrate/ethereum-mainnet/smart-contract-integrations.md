@@ -1,11 +1,11 @@
 ---
 description: >-
-  Integrate syrupUSDC & syrupUSDT via smart contracts. Lenders (your smart
-  contracts) must deposit through SyrupRouter with authorization handled by
+  Integrate syrupUSDC & syrupUSDT via smart contracts on Ethereum mainnet. Your
+  contracts must deposit through SyrupRouter with authorization handled
   PoolPermissionManager.
 ---
 
-# Smart Contract Integrations
+# Smart Contract Integration
 
 {% hint style="info" %}
 **Step-by-step**
@@ -33,7 +33,7 @@ Smart contracts integrating with syrupUSDC & syrupUSDT act as lenders and must i
 
 Below are the primary functions exposed by `SyrupRouter` for integrators. These mirror the onchain interface and are stable entry points for deposits:
 
-{% code overflow="wrap" %}
+{% code overflow="wrap" expandable="true" %}
 ```solidity
 // Events
 event DepositData(address indexed owner, uint256 amount, bytes32 depositData);

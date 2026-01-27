@@ -1,11 +1,10 @@
 ---
 description: >-
-  Enable your users to deposit into syrupUSDC & syrupUSDT through your own app.
-  Manage deposits programmatically. For wallets, exchanges, custody solutions
-  etc.
+  Enable your users to deposit into syrupUSDC & syrupUSDT from your app via
+  SDK/API on Ethereum mainnet. For wallets, apps, DEXes, custody solutions etc.
 ---
 
-# Backend Integrations
+# Frontend Integration
 
 {% hint style="info" %}
 **Step-by-step**

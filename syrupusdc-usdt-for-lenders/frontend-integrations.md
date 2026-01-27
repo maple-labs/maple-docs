@@ -4,10 +4,10 @@ description: >-
   Handle permissions and user interactions.
 ---
 
-# Frontend Integrations
+# New Wallets
 
 {% hint style="info" %}
-Looking to enable your users to deposit into syrupUSDC through your own app? See [backend-integrations.md](backend-integrations.md "mention")
+Looking to enable your users to deposit into syrupUSDC through your own app? See [backend-integrations.md](../integrate/ethereum-mainnet/backend-integrations.md "mention")
 {% endhint %}
 
 ## Overview

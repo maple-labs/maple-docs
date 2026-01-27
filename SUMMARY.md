@@ -5,17 +5,19 @@
 ## Integrate SyrupUSDC/USDT <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
-* [Frontend Integrations](integrate/frontend-integrations.md)
-* [Backend Integrations](integrate/backend-integrations.md)
-* [Smart Contract Integrations](integrate/smart-contract-integrations.md)
-* [Crosschain](integrate/syrupusd-crosschain.md)
+* [Ethereum Mainnet](integrate/ethereum-mainnet/README.md)
+  * [Asset Integration](integrate/ethereum-mainnet/asset-integration.md)
+  * [Frontend Integration](integrate/ethereum-mainnet/backend-integrations.md)
+  * [Smart Contract Integration](integrate/ethereum-mainnet/smart-contract-integrations.md)
+* [Crosschain (Solana, Arbitrum, Base, Plasma)](integrate/crosschain-solana-arbitrum-base-plasma/README.md)
+  * [Asset Integration](integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain.md)
+  * [Native Mint/Redeem (syrupUSDC Coming Soon)](integrate/crosschain-solana-arbitrum-base-plasma/native-mint-redeem-syrupusdc-coming-soon.md)
 * [Technical Resources](integrate/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
-  * [Data Streams & Oracles](integrate/technical-resources/data-streams-and-oracles.md)
 
 ## syrupUSDC/USDT for Lenders
 
@@ -24,6 +26,7 @@
 * [Drips Rewards](syrupusdc-usdt-for-lenders/drips-rewards.md)
 * [Withdrawals](syrupusdc-usdt-for-lenders/risk.md)
 * [Monthly Updates](syrupusdc-usdt-for-lenders/withdrawal-process.md)
+* [New Wallets](syrupusdc-usdt-for-lenders/frontend-integrations.md)
 * [Pendle Integration](syrupusdc-usdt-for-lenders/pendle-integration.md)
 * [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-usdt-for-lenders/syrupusdc-rewards-prize-draw-program-summary.md)
 * [FAQ](syrupusdc-usdt-for-lenders/faq.md)
