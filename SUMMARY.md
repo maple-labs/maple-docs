@@ -127,6 +127,7 @@
   * [Strategies Release Deployment Procedure](technical-resources/operations/strategies-release-deployment-procedure.md)
 * [Crosschain Receiver](technical-resources/crosschain/README.md)
   * [Maple CCIP Receiver](technical-resources/crosschain/maple-ccip-receiver.md)
+  * [Failed Message Retry and Recovery](technical-resources/crosschain/failed-message-recovery.md)
 * [Interfaces](technical-resources/interfaces/README.md)
   * [FixedTermLoan](technical-resources/interfaces/fixed-term-loan.md)
   * [FixedTermLoanFactory](technical-resources/interfaces/fixed-term-loan-factory.md)
