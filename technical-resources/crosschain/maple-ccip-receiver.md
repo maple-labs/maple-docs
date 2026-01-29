@@ -2,7 +2,7 @@
 
 The Maple CCIP Receiver is an upgradeable CCIP Any2EVM receiver that binds to a single Maple pool on the destination chain. It accepts chain transfers of either the pool asset (deposit flow) or the pool share token (redemption flow), validates the sender and pool, and returns the resulting tokens to the origin chain.
 
-Contract: https://github.com/maple-labs/maple-cross-chain-receiver
+Repository: https://github.com/maple-labs/maple-cross-chain-receiver
 
 ## Architecture
 
@@ -93,7 +93,7 @@ Outbound transfers are sent with `IRouterClient.getFee()` and `IRouterClient.cci
 
 The receiver uses a defensive pattern to store failed messages for recovery:
 
-- On failure, the full `Any2EVMMessage` is stored and marked `FAILED`.
+- On failure, the full `Any2EVMMessage` is stored and marked `FAILED` which contains the sender of the request which can be used for recovery.
 - `retryFailedMessage()` retries processing using the stored message.
 - `recoverFailedTokensBackToSender()` attempts a retry first, then sends tokens back to the original sender if retry fails.
 - `adminRescueTokens()` is a last-resort admin path that transfers tokens directly to a beneficiary.
