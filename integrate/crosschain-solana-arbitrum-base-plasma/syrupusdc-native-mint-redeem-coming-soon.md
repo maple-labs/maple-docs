@@ -6,24 +6,24 @@ description: >-
 hidden: true
 ---
 
-# Native Mint/Redeem (syrupUSDC Coming Soon)
+# syrupUSDC Native Mint/Redeem (Coming Soon)
 
 > **Deposits & withdrawals for Solana & EVM chains are only available for syrupUSDC. syrupUSDT support is coming in Q2 2026.**
 
 {% hint style="info" %}
 Step-by-step
 
-1. [**Overview**](native-mint-redeem-syrupusdc-coming-soon.md#overview)
-2. [**Prerequisites**](native-mint-redeem-syrupusdc-coming-soon.md#prerequisites)
-3. [**Receiver Contract Details**](native-mint-redeem-syrupusdc-coming-soon.md#receiver-contract-details)
-4. [**Message Structure**](native-mint-redeem-syrupusdc-coming-soon.md#message-structure)
-5. [**Building the Message**](native-mint-redeem-syrupusdc-coming-soon.md#building-the-message)
-6. [**Gas Estimation**](native-mint-redeem-syrupusdc-coming-soon.md#gas-estimation)
-7. [**Fee Estimation**](native-mint-redeem-syrupusdc-coming-soon.md#fee-estimation)
-8. [**Executing the Transaction**](native-mint-redeem-syrupusdc-coming-soon.md#executing-the-transaction)
-9. [**Complete Code Example**](native-mint-redeem-syrupusdc-coming-soon.md#complete-code-example)
-10. [**Message Monitoring with CCIP API**](native-mint-redeem-syrupusdc-coming-soon.md#message-monitoring)
-11. [**Important Notes**](native-mint-redeem-syrupusdc-coming-soon.md#important-notes)
+1. [**Overview**](syrupusdc-native-mint-redeem-coming-soon.md#overview)
+2. [**Prerequisites**](syrupusdc-native-mint-redeem-coming-soon.md#prerequisites)
+3. [**Receiver Contract Details**](syrupusdc-native-mint-redeem-coming-soon.md#receiver-contract-details)
+4. [**Message Structure**](syrupusdc-native-mint-redeem-coming-soon.md#message-structure)
+5. [**Building the Message**](syrupusdc-native-mint-redeem-coming-soon.md#building-the-message)
+6. [**Gas Estimation**](syrupusdc-native-mint-redeem-coming-soon.md#gas-estimation)
+7. [**Fee Estimation**](syrupusdc-native-mint-redeem-coming-soon.md#fee-estimation)
+8. [**Executing the Transaction**](syrupusdc-native-mint-redeem-coming-soon.md#executing-the-transaction)
+9. [**Complete Code Example**](syrupusdc-native-mint-redeem-coming-soon.md#complete-code-example)
+10. [**Message Monitoring with CCIP API**](syrupusdc-native-mint-redeem-coming-soon.md#message-monitoring)
+11. [**Important Notes**](syrupusdc-native-mint-redeem-coming-soon.md#important-notes)
 {% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
