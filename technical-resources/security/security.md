@@ -72,6 +72,16 @@ The November 2025 release is for the Withdrawal Manager upgrade which introduces
 | Spearbit | [`2025-11 - Spearbit Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Spearbit-Maple-Finance-WM-Nov-2025.pdf) |
 | Sherlock | [`2025-11 - Sherlock Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2025-november/Sherlock-Maple-Finance-WM-Nov-2025.pdf) |
 
+### January 2026 Release
+
+The January 2026 release is for the Maple CCIP Receiver on Ethereum mainnet allowing crosschain deposits and redemptions for syrupUSDC.
+
+| Auditor  | Report Link |
+| -------- | ----------- |
+| Dedaub | [`2025-11 - Dedaub Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2025-november/Dedaub-Chainlink-Maple.pdf) |
+| Sigma Prime | [`2026-01 - Sigma Prime Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2026-january/SigmaPrime-Chainlink-Maple.pdf) |
+
+
 ## Bug Bounty
 
 The Maple protocol has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
