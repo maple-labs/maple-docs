@@ -11,7 +11,7 @@
   * [Smart Contract Integration](integrate/ethereum-mainnet/smart-contract-integrations.md)
 * [Crosschain (Solana, Arbitrum, Base, Plasma)](integrate/crosschain-solana-arbitrum-base-plasma/README.md)
   * [Asset Integration](integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain.md)
-  * [syrupUSDC Native Mint/Redeem (Coming Soon)](integrate/crosschain-solana-arbitrum-base-plasma/syrupusdc-native-mint-redeem-coming-soon.md)
+  * [syrupUSDC Native Mint/Redeem (Coming Soon)](integrate/crosschain-solana-arbitrum-base-plasma/native-mint-redeem-syrupusdc-coming-soon.md)
 * [Technical Resources](integrate/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
