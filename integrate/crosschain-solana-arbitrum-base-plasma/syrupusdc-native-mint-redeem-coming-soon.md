@@ -36,7 +36,7 @@ This guide covers sending messages from **Solana** to **Ethereum** (testnet), bu
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-> _Note: This guide uses `@chainlink/ccip-sdk` v0.95. The stable v1.0 release will be available shortly._
+> _This guide uses `@chainlink/ccip-sdk` v0.95. The stable v1.0 release will be available shortly._
 
 * Node.js 20 or higher
 * `@chainlink/ccip-sdk` ^0.95.0 - install via npm
@@ -61,7 +61,7 @@ npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-r
 * **Destination Chain**: Ethereum Sepolia
 * **Chain Selector**: `16015286601757825753`
 
-> **⚠** These addresses are for testnet only. When deploying to mainnet, you must update all addresses to be mainnet from [https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain](https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain "mention").
+> **⚠** These addresses are for testnet only. When deploying to mainnet, you must update all addresses to be mainnet from [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
 
 #### Token Addresses
 
@@ -75,7 +75,7 @@ npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-r
 * **USDC**: Different from Solana - use the USDC contract address on Ethereum Sepolia
 * **syrupUSDC**: Use the syrupUSDC contract address on Ethereum Sepolia
 
-> **Important:** For EVM-to-EVM deposits and withdrawals, use the appropriate USDC or syrupUSDC addresses for the destination chain from [https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain](https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain "mention").
+> **⚠** For EVM-to-EVM deposits and withdrawals, use the appropriate USDC or syrupUSDC addresses for the destination chain from [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
 
 ### Message Structure <a href="#message-structure" id="message-structure"></a>
 
@@ -981,7 +981,7 @@ All addresses in this guide are for **testnet only**. Before deploying to mainne
 4. Update destination chain selector if using a different chain
 5. Verify all addresses on mainnet explorer
 
-All addresses are available in [https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain](https://docs.maple.finance/integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain "mention").
+All addresses are available in [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
 
 #### Gas Estimation Best Practices
 
