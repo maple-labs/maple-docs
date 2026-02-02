@@ -24,7 +24,7 @@ Step-by-step
 11. [**Important Notes**](syrupusdc-native-mint-redeem.md#important-notes)
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 Maple's receiver contract processes programmable token transfers via CCIP messages. The receiver contract handles two types of operations:
 
@@ -33,7 +33,9 @@ Maple's receiver contract processes programmable token transfers via CCIP messag
 
 This guide covers sending messages from **Solana** to **Ethereum** (testnet), but the same principles apply to EVM-to-EVM transfers with appropriate token address changes.
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Step By Step Guide
+
+### 1. Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 > _This guide uses `@chainlink/ccip-sdk` v0.95. The stable v1.0 release will be available shortly._
 
@@ -50,7 +52,7 @@ This guide covers sending messages from **Solana** to **Ethereum** (testnet), bu
 npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-react ethers viem
 ```
 
-### Receiver Contract Details <a href="#receiver-contract-details" id="receiver-contract-details"></a>
+### 2. Receiver Contract Details <a href="#receiver-contract-details" id="receiver-contract-details"></a>
 
 #### Testnet Deployment (Ethereum Sepolia)
 
@@ -76,7 +78,7 @@ npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-r
 
 > **⚠** For EVM-to-EVM deposits and withdrawals, use the appropriate USDC or syrupUSDC addresses for the destination chain from [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
 
-### Message Structure <a href="#message-structure" id="message-structure"></a>
+### 3. Message Structure <a href="#message-structure" id="message-structure"></a>
 
 The Maple receiver contract expects a `UniversalMessage` struct encoded as ABI-encoded bytes:
 
@@ -98,7 +100,7 @@ struct UniversalMessage {
    * E.g. `0:maple` as bytes32
    * Default: `0x0000000000000000000000000000000000000000000000000000000000000000`
 
-### Building the Message <a href="#building-the-message" id="building-the-message"></a>
+### 4. Building the Message <a href="#building-the-message" id="building-the-message"></a>
 
 #### Step 1: Convert Solana Address to bytes32
 
@@ -178,7 +180,7 @@ const receiverBytes32 = evmToBytes32(receiverAddress);
 ```
 {% endcode %}
 
-### Gas Estimation <a href="#gas-estimation" id="gas-estimation"></a>
+### 5. Gas Estimation <a href="#gas-estimation" id="gas-estimation"></a>
 
 > **⚠** Always use `estimateReceiveExecution` to estimate gas limits. Never hardcode gas values as they vary based on message data, token amounts, and receiver contract complexity.
 
@@ -319,7 +321,7 @@ try {
 * The fallback 700,000 gas is a conservative safety value, not a recommended value
 * Always investigate why estimation failed before using fallback values
 
-### Fee Estimation <a href="#fee-estimation" id="fee-estimation"></a>
+### 6. Fee Estimation <a href="#fee-estimation" id="fee-estimation"></a>
 
 Fee estimation calculates the CCIP fee required to send the message across chains.
 
@@ -377,7 +379,7 @@ console.log(`Estimated fee: ${Number(fee) / 1e9} SOL`);
 ```
 {% endcode %}
 
-### Executing the Transaction <a href="#executing-the-transaction" id="executing-the-transaction"></a>
+### 7. Executing the Transaction <a href="#executing-the-transaction" id="executing-the-transaction"></a>
 
 #### Step 1: Generate Unsigned Transaction
 
@@ -522,7 +524,7 @@ async function signAndSendTransaction(
 ```
 {% endcode %}
 
-### Complete Code Example <a href="#complete-code-example" id="complete-code-example"></a>
+## Complete Code Example <a href="#complete-code-example" id="complete-code-example"></a>
 
 Here's a complete example integrating all the steps:
 
@@ -792,7 +794,7 @@ function useMapleCCIP() {
 ```
 {% endcode %}
 
-### Message Monitoring with CCIP API <a href="#message-monitoring" id="message-monitoring"></a>
+## Message Monitoring with CCIP API <a href="#message-monitoring" id="message-monitoring"></a>
 
 After sending CCIP messages, you'll want to monitor their status and display message history to users. The CCIP API provides REST endpoints for querying message transactions by sender address, receiver address, or both.
 
@@ -962,83 +964,7 @@ function isStatusComplete(status: MessageStatus): boolean {
 5. **Status Polling**: Only poll for messages that aren't in final states (SUCCESS/FAILED)
 6. **Rate Limiting**: Be mindful of API rate limits in production
 
-### Important Notes <a href="#important-notes" id="important-notes"></a>
-
-#### Address Format Differences
-
-* **Gas Estimation**: Use standard EVM address format (20 bytes, 42 characters with `0x`)
-  * Example: `0x1be1be14e43448bd9d977d5e34cdc810b43ab802`
-* **Message Construction**: Use bytes32-padded address format (32 bytes, 66 characters with `0x`)
-  * Example: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
-
-#### Token Transfer Behavior
-
-* **USDC Transfer**: When USDC is sent to the receiver, it processes a **deposit** operation
-* **SyrupUSDC Transfer**: When SyrupUSDC is sent to the receiver, it processes a **redemption** operation
-
-Ensure you're sending the correct token type based on the operation you want to perform.
-
-#### Mainnet Deployment
-
-All addresses in this guide are for **testnet only**. Before deploying to mainnet:
-
-1. Update receiver contract address
-2. Update pool contract address
-3. Update token addresses (USDC, SyrupUSDC) for mainnet
-4. Update destination chain selector if using a different chain
-5. Verify all addresses on mainnet explorer
-
-All addresses are available in [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
-
-#### Gas Estimation Best Practices
-
-Always use `estimateReceiveExecution` to estimate gas limits. Never hardcode gas values.
-
-**Key Points:**
-
-* **Always estimate**: Use `estimateReceiveExecution` for every message
-* **Sender required**: Include the sender address for accurate Solana-to-EVM estimation
-* **API signature**: Use `estimateReceiveExecution({ source, dest, routerOrRamp, message })`
-* **Validate estimates**: Check that estimates are reasonable (not zero, not extremely high)
-* **Handle failures**: If estimation fails, retry before using fallback values
-* **Fallback value**: 700,000 gas is a conservative fallback for emergency cases, not a recommended value
-
-**Why estimation is important:**
-
-* Gas requirements vary based on message data size
-* SyrupUSDC Contract state can cause variable gas usage
-* Other conditions can influence gas requirements
-
-**If estimation fails:**
-
-1. Check network connectivity
-2. Verify receiver contract is deployed and accessible
-3. Ensure all parameters (sender, receiver, data) are correct
-4. Retry the estimation (most failures are transient)
-5. Only use fallback values as a last resort
-
-#### Out-of-Order Execution
-
-Always set `allowOutOfOrderExecution: true`
-
-#### Error Handling
-
-Implement comprehensive error handling for:
-
-* User transaction rejection
-* Insufficient funds (SOL for fees, tokens for transfer)
-* Network errors
-* Gas estimation failures
-* Transaction confirmation failures
-
-#### Message Tracking
-
-After sending, track your message using the CCIP Explorer:
-
-* URL: `https://ccip.chain.link/msg/{messageId}`
-* The message ID is extracted from the transaction logs after confirmation
-
-### Using CCIP API to Get Message Information <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
+## Using CCIP API to Get Message Information <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
 
 The CCIP API provides endpoints to query detailed message information by message ID, sender address, or receiver address. This is useful for building monitoring dashboards, transaction history, and status tracking in your application.
 
@@ -1343,7 +1269,95 @@ function MessageStatus({ messageId }: { messageId: string }) {
 5. **Pagination**: Use cursors for pagination when querying multiple messages
 6. **Address Format**: Ensure addresses are in the correct format (lowercase for EVM, base58 for Solana)
 
-### Resources & Contact
+## Important Notes <a href="#important-notes" id="important-notes"></a>
+
+#### **Minimum Transfer Amounts**
+
+> **⚠** Deposits and redemptions must exceed the configured fee for that token. Transactions with amounts below the fee will require manual recovery (handled by Maple).
+
+Before sending a crosschain deposit or redemption:
+
+1. Query the receiver contract for the current fee configuration
+2. Validate the user's amount exceeds the fee
+3. Display a clear error if the amount is too low
+
+Fee amounts are configured per-token on the receiver contract. For fee queries and recovery procedures, see Failed Message Retry and Recovery in Technical Documentation.
+
+#### Address Format Differences
+
+* **Gas Estimation**: Use standard EVM address format (20 bytes, 42 characters with `0x`)
+  * Example: `0x1be1be14e43448bd9d977d5e34cdc810b43ab802`
+* **Message Construction**: Use bytes32-padded address format (32 bytes, 66 characters with `0x`)
+  * Example: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
+
+#### Token Transfer Behavior
+
+* **USDC Transfer**: When USDC is sent to the receiver, it processes a **deposit** operation
+* **SyrupUSDC Transfer**: When SyrupUSDC is sent to the receiver, it processes a **redemption** operation
+
+Ensure you're sending the correct token type based on the operation you want to perform.
+
+#### Mainnet Deployment
+
+All addresses in this guide are for **testnet only**. Before deploying to mainnet:
+
+1. Update receiver contract address
+2. Update pool contract address
+3. Update token addresses (USDC, SyrupUSDC) for mainnet
+4. Update destination chain selector if using a different chain
+5. Verify all addresses on mainnet explorer
+
+All addresses are available in [syrupusd-crosschain.md](syrupusd-crosschain.md "mention").
+
+#### Gas Estimation Best Practices
+
+Always use `estimateReceiveExecution` to estimate gas limits. Never hardcode gas values.
+
+**Key Points:**
+
+* **Always estimate**: Use `estimateReceiveExecution` for every message
+* **Sender required**: Include the sender address for accurate Solana-to-EVM estimation
+* **API signature**: Use `estimateReceiveExecution({ source, dest, routerOrRamp, message })`
+* **Validate estimates**: Check that estimates are reasonable (not zero, not extremely high)
+* **Handle failures**: If estimation fails, retry before using fallback values
+* **Fallback value**: 700,000 gas is a conservative fallback for emergency cases, not a recommended value
+
+**Why estimation is important:**
+
+* Gas requirements vary based on message data size
+* SyrupUSDC Contract state can cause variable gas usage
+* Other conditions can influence gas requirements
+
+**If estimation fails:**
+
+1. Check network connectivity
+2. Verify receiver contract is deployed and accessible
+3. Ensure all parameters (sender, receiver, data) are correct
+4. Retry the estimation (most failures are transient)
+5. Only use fallback values as a last resort
+
+#### Out-of-Order Execution
+
+Always set `allowOutOfOrderExecution: true`
+
+#### Error Handling
+
+Implement comprehensive error handling for:
+
+* User transaction rejection
+* Insufficient funds (SOL for fees, tokens for transfer)
+* Network errors
+* Gas estimation failures
+* Transaction confirmation failures
+
+#### Message Tracking
+
+After sending, track your message using the CCIP Explorer:
+
+* URL: `https://ccip.chain.link/msg/{messageId}`
+* The message ID is extracted from the transaction logs after confirmation
+
+## Resources & Contact
 
 * Partnerships & queries: [partnerships@maple.finance](mailto:partnerships@maple.finance)
 * Technical Docs
