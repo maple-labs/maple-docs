@@ -2,7 +2,6 @@
 description: >-
   Enable syrupUSDC deposits and withdrawals in your app via CCIP on chains other
   than Ethereum. For wallets, apps, DEXes, custody solutions etc.
-hidden: true
 ---
 
 # syrupUSDC Native Mint/Redeem (Coming Soon)
