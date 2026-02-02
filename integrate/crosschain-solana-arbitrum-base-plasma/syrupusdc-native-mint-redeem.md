@@ -136,7 +136,11 @@ function encodeUniversalMessage(
 ): `0x${string}` {
   return encodeAbiParameters(
     parseAbiParameters("bytes32, address, bytes32"),
-    [universalSenderAddress, poolAddress, metaData]
+    [
+      universalSenderAddress as `0x${string}`,
+      poolAddress as `0x${string}`,
+      metaData as `0x${string}`
+    ]
   );
 }
 
@@ -565,13 +569,17 @@ function evmToBytes32(address: string): string {
 }
 
 function encodeUniversalMessage(
-  universalSenderAddress: string,
-  poolAddress: string,
+  universalSenderAddress: string, // bytes32 hex string
+  poolAddress: string,            // EVM address
   metaData: string = "0x0000000000000000000000000000000000000000000000000000000000000000"
 ): `0x${string}` {
   return encodeAbiParameters(
     parseAbiParameters("bytes32, address, bytes32"),
-    [universalSenderAddress, poolAddress, metaData]
+    [
+      universalSenderAddress as `0x${string}`,
+      poolAddress as `0x${string}`,
+      metaData as `0x${string}`
+    ]
   );
 }
 
