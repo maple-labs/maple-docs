@@ -964,7 +964,7 @@ function isStatusComplete(status: MessageStatus): boolean {
 5. **Status Polling**: Only poll for messages that aren't in final states (SUCCESS/FAILED)
 6. **Rate Limiting**: Be mindful of API rate limits in production
 
-## Using CCIP API to Get Message Information <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
+## Message Information with CCIP API <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
 
 The CCIP API provides endpoints to query detailed message information by message ID, sender address, or receiver address. This is useful for building monitoring dashboards, transaction history, and status tracking in your application.
 
@@ -1260,7 +1260,7 @@ function MessageStatus({ messageId }: { messageId: string }) {
 ```
 {% endcode %}
 
-#### Best Practices
+#### Best Practices (Same as Monitoring)
 
 1. **Rate Limiting**: Be mindful of API rate limits. Implement exponential backoff for retries
 2. **Caching**: Cache message data to reduce API calls, especially for completed messages
