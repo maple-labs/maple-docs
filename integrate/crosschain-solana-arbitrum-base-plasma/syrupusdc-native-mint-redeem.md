@@ -794,7 +794,7 @@ function useMapleCCIP() {
 ```
 {% endcode %}
 
-## Message Monitoring with CCIP API <a href="#message-monitoring" id="message-monitoring"></a>
+## Message Monitoring via API <a href="#message-monitoring" id="message-monitoring"></a>
 
 After sending CCIP messages, you'll want to monitor their status and display message history to users. The CCIP API provides REST endpoints for querying message transactions by sender address, receiver address, or both.
 
@@ -964,7 +964,7 @@ function isStatusComplete(status: MessageStatus): boolean {
 5. **Status Polling**: Only poll for messages that aren't in final states (SUCCESS/FAILED)
 6. **Rate Limiting**: Be mindful of API rate limits in production
 
-## Message Information with CCIP API <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
+## Message Information via API <a href="#ccip-api-message-info" id="ccip-api-message-info"></a>
 
 The CCIP API provides endpoints to query detailed message information by message ID, sender address, or receiver address. This is useful for building monitoring dashboards, transaction history, and status tracking in your application.
 
