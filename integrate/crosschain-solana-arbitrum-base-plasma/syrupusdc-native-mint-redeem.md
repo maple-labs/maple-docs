@@ -1281,7 +1281,7 @@ Before sending a crosschain deposit or redemption:
 2. Validate the user's amount exceeds the fee
 3. Display a clear error if the amount is too low
 
-Fee amounts are configured per-token on the receiver contract. For fee queries and recovery procedures, see Failed Message Retry and Recovery in Technical Documentation.
+Fee amounts are configured per-token on the receiver contract. For fee queries and recovery procedures, see ​[Failed Deposit/Redemption Retry and Recovery](https://app.gitbook.com/o/-MIMmTxoTYmO0Lq3Xw9S/s/-MLg9y0GYo0LxapRXEes/technical-resources/crosschain/failed-message-recovery). Maple handles these edge cases with a 24h SLA, but you can as well for faster resolution.
 
 #### Address Format Differences
 
