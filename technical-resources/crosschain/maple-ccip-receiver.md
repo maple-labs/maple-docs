@@ -2,7 +2,7 @@
 
 The Maple CCIP Receiver is an upgradeable CCIP Any2EVM receiver that binds to a single Maple pool on the destination chain. It accepts chain transfers of either the pool asset (deposit flow) or the pool share token (redemption flow), validates the sender and pool, and returns the resulting tokens to the origin chain.
 
-Repository: https://github.com/maple-labs/maple-cross-chain-receiver
+Repository: [https://github.com/maple-labs/maple-cross-chain-receiver](https://github.com/maple-labs/maple-cross-chain-receiver)
 
 ## Architecture
 
