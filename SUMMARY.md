@@ -128,7 +128,7 @@
   * [Open Term Loan Deployment](technical-resources/operations/open-term-loan-deployment.md)
   * [December 2023 Deployment & Upgrade Procedure](technical-resources/operations/december-2023-release-deployment-and-upgrade.md)
   * [Strategies Release Deployment Procedure](technical-resources/operations/strategies-release-deployment-procedure.md)
-* [Crosschain Receiver](technical-resources/crosschain/README.md)
+* [Maple-Chainlink Crosschain](technical-resources/crosschain/README.md)
   * [Maple CCIP Receiver](technical-resources/crosschain/maple-ccip-receiver.md)
   * [Failed Message Retry and Recovery](technical-resources/crosschain/failed-message-recovery.md)
 * [Interfaces](technical-resources/interfaces/README.md)
