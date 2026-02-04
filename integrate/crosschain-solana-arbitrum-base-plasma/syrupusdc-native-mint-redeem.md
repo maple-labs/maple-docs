@@ -1360,7 +1360,6 @@ After sending, track your message using the CCIP Explorer:
 ## Resources & Contact
 
 * Partnerships & queries: [partnerships@maple.finance](mailto:partnerships@maple.finance)
-* Technical Docs
+* [Technical Docs](../../technical-resources/crosschain/)
 * [Integration Support](https://chain.link/ccip-contact)
-
-<br>
+* [Failed Deposit/Redemption Retry and Recovery](../../technical-resources/crosschain/failed-message-recovery.md) <br>
