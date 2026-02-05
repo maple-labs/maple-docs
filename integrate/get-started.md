@@ -1,8 +1,8 @@
 ---
 description: >-
-  syrupUSDC & syrupUSDT are ERC-4626 vaults that enable you to offer sustainable
-  high yields from fixed-rate, overcollateralized loans to institutional
-  borrowers.
+  syrupUSDC & syrupUSDT are ERC-4626 vaults generating sustainable high yields
+  primarily from overcollateralized institutional loans and additional yield
+  strategies.
 ---
 
 # Get Started
