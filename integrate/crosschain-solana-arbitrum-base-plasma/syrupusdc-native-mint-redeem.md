@@ -57,7 +57,7 @@ npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-r
 #### Testnet Deployment (Ethereum Sepolia)
 
 * **Receiver Address**: `0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
-* **Receiver Address (bytes32)**: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
+* **Receiver Address (bytes32)**: `0x00000000000000000000000002b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
 * **Pool Address**: `0x3EB612858EE843eBb14Df37b9Ec2c7c82B23eE2B`
 * **Destination Chain**: Ethereum Sepolia
 * **Chain Selector**: `16015286601757825753`
@@ -176,7 +176,7 @@ function evmToBytes32(address: string): string {
 // Example usage
 const receiverAddress = "0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4";
 const receiverBytes32 = evmToBytes32(receiverAddress);
-// Result: 0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802
+// Result: 0x00000000000000000000000002b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4
 ```
 {% endcode %}
 
@@ -1288,7 +1288,7 @@ Fee amounts are configured per-token on the receiver contract. For fee queries a
 * **Gas Estimation**: Use standard EVM address format (20 bytes, 42 characters with `0x`)
   * Example: `0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
 * **Message Construction**: Use bytes32-padded address format (32 bytes, 66 characters with `0x`)
-  * Example: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
+  * Example: `0x00000000000000000000000002b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
 
 #### Token Transfer Behavior
 
