@@ -18,9 +18,9 @@ Active collateral management and overcollateralisation ensure that lender princi
 
 syrupUSDC leverages the same smart contract infrastructure and borrower network as Maple, but offers permissionless access through DeFi. syrupUSDC yield is derived from a blend of Maple High Yield Secured and Blue Chip Secured lending pools.
 
-### How are Maple and syrupUSDC vaults segregated?&#x20;
+### How are Maple and syrupUSDC vaults segregated?
 
-Each individual loan in Maple and syrupUSDC has a unique margin call and liquidation level. Further, lender funds are stored in non-custodial smart contracts for both Maple and syrupUSDC pools. However, Maple and syrupUSDC vaults differ in legal structure. Maple constructs a segregated bankruptcy-remote entity for each individual pool, while syrupUSDC utilizes a segregated SPV for its pool. The use of a bankruptcy-remote entity reflects the institutional focus of Maple.&#x20;
+Each individual loan in Maple and syrupUSDC has a unique margin call and liquidation level. Further, lender funds are stored in non-custodial smart contracts for both Maple and syrupUSDC pools. However, Maple and syrupUSDC vaults differ in legal structure. Maple constructs a segregated bankruptcy-remote entity for each individual pool, while syrupUSDC utilizes a segregated SPV for its pool. The use of a bankruptcy-remote entity reflects the institutional focus of Maple.
 
 ### Who are the borrowers on Maple/syrupUSDC?
 
@@ -28,21 +28,21 @@ Maple and syrupUSDC facilitate lending to permissioned borrowers, which complete
 
 ### What collateral is accepted and how are new collateral evaluated?
 
-Rigorous borrower underwriting and detailed collateral analysis ensure robust risk management and capital preservation. Collateral is evaluated for liquidity, historical volatility, and technical security.&#x20;
+Rigorous borrower underwriting and detailed collateral analysis ensure robust risk management and capital preservation. Collateral is evaluated for liquidity, historical volatility, and technical security.
 
 Assets without acceptable liquidity are not eligible, and concentration limits are applied across the loan book so that Maple will never be too large a portion of a given market (minimizing slippage). More volatile assets require higher collateral-to-loan ratios. Maple’s industry leading smart contracts team completes a detailed analysis of the underlying protocol (e.g. Lido, Pendle), including a review of previous audits and code architecture.
 
-Once internal approvals on the underwrite and collateral type have been met, the team sets tailored terms for the borrower.&#x20;
+Once internal approvals on the underwrite and collateral type have been met, the team sets tailored terms for the borrower.
 
-### How is collateral stored?&#x20;
+### How is collateral stored?
 
 Collateral is held with institutional grade custody solutions (e.g. Anchorage, BitGo, Zodia), and Maple provides on-chain addresses for lenders to verify the collateral details for each outstanding loan.
 
 Maple can stake collateral and pass on a portion of the yield to lenders to enhance yield. There are two main ways Maple stakes digital assets to earn rewards: liquid staking and native staking. More on that [here](https://maple.finance/news/yield-generation-underwriting-and-risk-management).
 
-### At what rate are liquidation levels set and how are they managed?&#x20;
+### At what rate are liquidation levels set and how are they managed?
 
-The Maple Direct team actively manages the health of the loan book through margin calls and liquidation levels, always set conservatively above 100% collateralization to protect lender funds.&#x20;
+The Maple Direct team actively manages the health of the loan book through margin calls and liquidation levels, always set conservatively above 100% collateralization to protect lender funds.
 
 The Maple Operations team has a proprietary alert system in place with three separate sources for price feeds, and a 24/7/365 live monitoring process to enable swift margin calls and collateral liquidation.
 
@@ -50,13 +50,22 @@ If collateral value falls to the Margin Call Level, the borrower is automaticall
 
 ### Why do Maple’s offerings outperform?
 
-Maple and syrupUSDC have a track record of yield outperformance compared to leading DeFi lending protocols through a combination of active management and high utilization. Maple and Syrup have consistently high utilization across their secured lending products, driven by actively sourced deals.&#x20;
+Maple and syrupUSDC have a track record of yield outperformance compared to leading DeFi lending protocols through a combination of active management and high utilization. Maple and Syrup have consistently high utilization across their secured lending products, driven by actively sourced deals.
 
 Further, when there is lower borrower demand, and market rates fall, Maple issues shorter term loans, setting up flexibility to re-issue loans at higher rates when market conditions change. When rates are elevated, the team issues loans with longer time frames to lock in the higher yield environment.‍
 
 ### What price do I receive on redemption for syrupUSDC/syrupUSDT?
 
 syrupUSDC and syrupUSDT are redeemed at the smart contract exchange rate at the point of processing the withdrawal, incurring no slippage.
+
+### What are Maple's supporting yield strategies?
+
+While Maple's primary strategy remains overcollateralized lending to institutional borrowers, the protocol deploys USDC/USDT into supporting strategies to optimize yield and provide instant liquidity. These include:
+
+* **Futures Basis Trading**: Cash and carry strategies capturing term structure spreads in BTC futures markets
+* **DeFi Liquidity Provision**: Strategic deployments into select DeFi protocols across Ethereum, Plasma and other chains
+
+
 
 <details>
 
@@ -113,6 +122,3 @@ You can get the spot exchange rate for syrupUSDC to USDC or syrupUSDT to USDT by
 The ratio of `lendingBalance` / `totalShares` is the spot exchange rate.
 
 </details>
-
-
-
