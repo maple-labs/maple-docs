@@ -56,7 +56,7 @@ npm install @chainlink/ccip-sdk@^0.95.0 @solana/web3.js @solana/wallet-adapter-r
 
 #### Testnet Deployment (Ethereum Sepolia)
 
-* **Receiver Address**: `0x1be1be14e43448bd9d977d5e34cdc810b43ab802`
+* **Receiver Address**: `0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
 * **Receiver Address (bytes32)**: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
 * **Pool Address**: `0x3EB612858EE843eBb14Df37b9Ec2c7c82B23eE2B`
 * **Destination Chain**: Ethereum Sepolia
@@ -174,7 +174,7 @@ function evmToBytes32(address: string): string {
 }
 
 // Example usage
-const receiverAddress = "0x1be1be14e43448bd9d977d5e34cdc810b43ab802";
+const receiverAddress = "0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4";
 const receiverBytes32 = evmToBytes32(receiverAddress);
 // Result: 0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802
 ```
@@ -250,7 +250,7 @@ async function estimateGasLimit(
 
 // Example usage
 const solanaSenderAddress = "2hVTZGxQZTpPjarHQsnQfnRSGSy8LPy85szn8Wy4sj5V"; // Solana public key
-const receiverAddress = "0x1be1be14e43448bd9d977d5e34cdc810b43ab802"; // Standard address for estimation
+const receiverAddress = "0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4"; // Standard address for estimation
 
 const gasLimit = await estimateGasLimit(
   solanaChain,
@@ -541,7 +541,7 @@ import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 // Configuration
 const MAPLE_CONFIG = {
   // Testnet addresses
-  receiverAddress: "0x1be1be14e43448bd9d977d5e34cdc810b43ab802",
+  receiverAddress: "0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4",
   poolAddress: "0x3EB612858EE843eBb14Df37b9Ec2c7c82B23eE2B",
   destinationChainSelector: "16015286601757825753", // Ethereum Sepolia
   
@@ -1072,7 +1072,7 @@ async function getMessagesByReceiver(
 }
 
 // Example: Get all messages sent to Maple receiver contract
-const receiverAddress = "0x1be1be14e43448bd9d977d5e34cdc810b43ab802";
+const receiverAddress = "0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4";
 const result = await getMessagesByReceiver(receiverAddress);
 
 console.log(`Found ${result.data.length} messages`);
@@ -1286,7 +1286,7 @@ Fee amounts are configured per-token on the receiver contract. For fee queries a
 #### Address Format Differences
 
 * **Gas Estimation**: Use standard EVM address format (20 bytes, 42 characters with `0x`)
-  * Example: `0x1be1be14e43448bd9d977d5e34cdc810b43ab802`
+  * Example: `0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4`
 * **Message Construction**: Use bytes32-padded address format (32 bytes, 66 characters with `0x`)
   * Example: `0x0000000000000000000000001be1be14e43448bd9d977d5e34cdc810b43ab802`
 
