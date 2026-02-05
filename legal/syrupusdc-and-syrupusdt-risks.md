@@ -8,7 +8,7 @@ The Maple DAO has administrative controls over certain aspects of the protocol t
 
 ### Smart Contract Risk
 
-Smart contracts increase their risk profile with the amount of value they hold. The Maple team takes this threat very seriously and has audited the protocol code both internally and externally. The most recent version of the smart contracts has been audited by [Spearbit](https://spearbit.com/), [Three Sigma](https://threesigma.xyz/labs/code-audits) and [0xMacro](https://0xmacro.com/). More information can be found in the [Security](https://maplefinance.gitbook.io/maple/technical-resources/security) section of the Maple documentation.&#x20;
+Smart contracts increase their risk profile with the amount of value they hold. The Maple team takes this threat very seriously and has audited the protocol code both internally and externally. The most recent version of the smart contracts has been audited by [Spearbit](https://spearbit.com/), [Three Sigma](https://threesigma.xyz/labs/code-audits) and [0xMacro](https://0xmacro.com/). More information can be found in the [Security](https://maplefinance.gitbook.io/maple/technical-resources/security) section of the Maple documentation.
 
 ### Default Risk
 
@@ -17,3 +17,14 @@ Syrup provides access to loans originated to institutional counterparties. These
 ### Risk of Loss
 
 Holding, lending, or borrowing digital assets involves a substantial degree of risk, including the risk of complete loss of those assets.
+
+### **Trading Strategy Risks**
+
+Capital deployed through syrupUSDC and syrupUSDT may be allocated to trading strategies, including but not limited to futures basis trading and other delta-neutral or market-neutral approaches, as well as liquidity provision in decentralized finance protocols. Such deployments carry inherent risks distinct from lending activities, including:
+
+* Counterparty and exchange risk (including the risk of exchange insolvency, withdrawal restrictions, or operational failures);
+* Basis spread compression or inversion (which may result in reduced or negative returns on futures-based strategies);
+* Forced liquidation under adverse market conditions; and
+* DeFi protocol risk, including smart contract vulnerabilities, liquidity constraints, and impermanent loss in liquidity provision strategies.
+
+Trading strategy allocations are subject to the same governance, monitoring, and disclosure standards applicable to primary lending operations. Current allocations are visible in the Liquidity section of the syrupUSDC/syrupUSDT Details page.
