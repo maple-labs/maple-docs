@@ -18,7 +18,7 @@ Syrup provides access to loans originated to institutional counterparties. These
 
 Holding, lending, or borrowing digital assets involves a substantial degree of risk, including the risk of complete loss of those assets.
 
-### **Trading Strategy Risks**
+### Trading Strategy Risks
 
 Capital deployed through syrupUSDC and syrupUSDT may be allocated to trading strategies, including but not limited to futures basis trading and other delta-neutral or market-neutral approaches, as well as liquidity provision in decentralized finance protocols. Such deployments carry inherent risks distinct from lending activities, including:
 
