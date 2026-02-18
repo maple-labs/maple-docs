@@ -9,6 +9,8 @@ description: >-
 
 syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) to facilitate bridging and holding on chains other than Ethereum mainnet. CCIP handles secure crosschain token movement and message delivery, so you don’t need to build a custom bridge.
 
+Both tokens have 6 decimals across all chains.
+
 ## Mainnet Addresses
 
 ### syrupUSDC&#x20;
