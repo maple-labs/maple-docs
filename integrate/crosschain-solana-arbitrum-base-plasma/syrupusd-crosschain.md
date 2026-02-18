@@ -86,15 +86,15 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 
 {% tabs %}
 {% tab title="Solana" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://solscan.io/account/CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T">CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T</a></td></tr></tbody></table>
+<table><thead><tr><th width="194.67095947265625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://solscan.io/account/CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T">CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Arbitrum" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://arbiscan.io/address/0xF8722c901675C4F2F7824E256B8A6477b2c105FB">0xF8722c901675C4F2F7824E256B8A6477b2c105FB</a></td></tr></tbody></table>
+<table><thead><tr><th width="195.3870849609375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://arbiscan.io/address/0xF8722c901675C4F2F7824E256B8A6477b2c105FB">0xF8722c901675C4F2F7824E256B8A6477b2c105FB</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Base" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://basescan.org/address/0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2">0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2</a></td></tr></tbody></table>
+<table><thead><tr><th width="194.69268798828125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://basescan.org/address/0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2">0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -102,15 +102,15 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 
 {% tabs %}
 {% tab title="Plasma" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://plasmascan.to/address/0x89a0e204591fce2611e89ca7634c12b400d347fe">0x89a0e204591Fce2611e89CA7634c12B400d347fe</a></td></tr></tbody></table>
+<table><thead><tr><th width="194.90533447265625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://plasmascan.to/address/0x89a0e204591fce2611e89ca7634c12b400d347fe">0x89a0e204591Fce2611e89CA7634c12B400d347fe</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Mantle" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://mantlescan.xyz/address/0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a">0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a</a></td></tr></tbody></table>
+<table><thead><tr><th width="194.7578125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://mantlescan.xyz/address/0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a">0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="BNB" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://bscscan.com/address/0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658">0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658</a></td></tr></tbody></table>
+<table><thead><tr><th width="194.85760498046875">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://bscscan.com/address/0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658">0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
