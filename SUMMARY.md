@@ -14,7 +14,7 @@
   * [syrupUSDC Native Mint/Redeem](integrate/crosschain-solana-arbitrum-base-plasma/syrupusdc-native-mint-redeem.md)
 * [Technical Resources](integrate/technical-resources/README.md)
   * [Protocol Overview](technical-resources/protocol-overview/README.md)
-  * [Crosschain](technical-resources/crosschain/README.md)
+  * [Crosschain Mint/Redeem](technical-resources/crosschain/README.md)
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](technical-resources/sdk/README.md)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)

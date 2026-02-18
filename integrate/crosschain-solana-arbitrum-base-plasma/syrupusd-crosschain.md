@@ -39,6 +39,14 @@ syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) 
 {% tab title="Plasma" %}
 <table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://plasmascan.to/address/0xC4374775489CB9C56003BF2C9b12495fC64F0771">0xC4374775489CB9C56003BF2C9b12495fC64F0771</a></td></tr><tr><td>CCIP Router</td><td><a href="https://plasmascan.to/address/0xcdca5d374e46a6dddab50bd2d9acb8c796ec35c3">0xcDca5D374e46A6DDDab50bD2D9acB8c796eC35C3</a></td></tr><tr><td>Pool</td><td><a href="https://plasmascan.to/address/0x1d952d2f6ee86ef4940fa648aa7477c8ff175f09">0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://plasmascan.to/address/0x2efff88747eb5a3ff00d4d8d0f0800e306c0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
 {% endtab %}
+
+{% tab title="Mantle" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://mantlescan.xyz/token/0x051665f2455116e929b9972c36d23070f5054ce0">0x051665f2455116e929b9972c36d23070f5054ce0</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://mantlescan.xyz/address/0x0aA145a62153190B8f0D3cA00c441e451529f755">0x0aA145a62153190B8f0D3cA00c441e451529f755</a></td></tr><tr><td>Token Admin (Timelock)</td><td>[To be added]</td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="BNB" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://bscscan.com/token/0x8E9d4cEa39299323FE8eda678cAD449718556c4e">0x8E9d4cEa39299323FE8eda678cAD449718556c4e</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://bscscan.com/address/0xEAA7E1f805747ae29d5618b568d1b044A8b37A01">0xEAA7E1f805747ae29d5618b568d1b044A8b37A01</a></td></tr></tbody></table>
+{% endtab %}
 {% endtabs %}
 
 ## Testnet Addresses
