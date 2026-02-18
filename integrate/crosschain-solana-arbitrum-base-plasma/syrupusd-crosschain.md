@@ -41,7 +41,7 @@ syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) 
 {% endtab %}
 
 {% tab title="Mantle" %}
-<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://mantlescan.xyz/token/0x051665f2455116e929b9972c36d23070f5054ce0">0x051665f2455116e929b9972c36d23070f5054ce0</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://mantlescan.xyz/address/0x0aA145a62153190B8f0D3cA00c441e451529f755">0x0aA145a62153190B8f0D3cA00c441e451529f755</a></td></tr><tr><td>Token Admin (Timelock)</td><td>[To be added]</td></tr></tbody></table>
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://mantlescan.xyz/token/0x051665f2455116e929b9972c36d23070f5054ce0">0x051665f2455116e929b9972c36d23070f5054ce0</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://mantlescan.xyz/address/0x0aA145a62153190B8f0D3cA00c441e451529f755">0x0aA145a62153190B8f0D3cA00c441e451529f755</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://mantlescan.xyz/address/0x2efff88747eb5a3ff00d4d8d0f0800e306c0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="BNB" %}
