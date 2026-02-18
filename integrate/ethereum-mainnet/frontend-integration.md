@@ -11,17 +11,17 @@ description: >-
 
 **Deposit**:
 
-1. [**Query the Maple API**](backend-integrations.md#id-1.-query-the-maple-api) to retrieve the necessary contract addresses.
-2. [**Determine user authorization**](backend-integrations.md#id-2.-determine-user-authorization) as a Syrup lender.
-3. [**Retrieve an authorization signature**](backend-integrations.md#id-3.-retrieve-authorization-signature) from the Maple API
-4. [**Execute the Deposit**](backend-integrations.md#id-4.-execute-the-deposit) (authorize and deposit, or deposit only).
+1. [**Query the Maple API**](frontend-integration.md#id-1.-query-the-maple-api) to retrieve the necessary contract addresses.
+2. [**Determine user authorization**](frontend-integration.md#id-2.-determine-user-authorization) as a Syrup lender.
+3. [**Retrieve an authorization signature**](frontend-integration.md#id-3.-retrieve-authorization-signature) from the Maple API
+4. [**Execute the Deposit**](frontend-integration.md#id-4.-execute-the-deposit) (authorize and deposit, or deposit only).
 
 **Withdrawal**:
 
-1. [**Retrieve Pool Position**](backend-integrations.md#id-1.-retrieve-pool-position) from the Maple API
-2. [**Calculate Shares to Redeem**](backend-integrations.md#id-2.-calculate-shares-to-redeem) from the Pool contract
-3. [**Execute the Withdrawal**](backend-integrations.md#id-3.-execute-the-withdrawal) on the Pool contract
-4. [**Await Withdrawal Completion**](backend-integrations.md#id-4.-await-withdrawal-completion)
+1. [**Retrieve Pool Position**](frontend-integration.md#id-1.-retrieve-pool-position) from the Maple API
+2. [**Calculate Shares to Redeem**](frontend-integration.md#id-2.-calculate-shares-to-redeem) from the Pool contract
+3. [**Execute the Withdrawal**](frontend-integration.md#id-3.-execute-the-withdrawal) on the Pool contract
+4. [**Await Withdrawal Completion**](frontend-integration.md#id-4.-await-withdrawal-completion)
 {% endhint %}
 
 ## SDK and GraphQL API
@@ -264,11 +264,10 @@ The Maple Protocol is geared towards institutions and has a permissioning system
 To retrieve the authorization signature, contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance).
 
 {% hint style="info" %}
-Deposit data
+depositData Parameter
 
-* Replace `0:<integrator-name>` with your integrator identifier (e.g. `0:acme-protocol`).
-* Maple will provide the final `depositData` for production.
-* Must be passed as `bytes32` (32-byte hex).
+* Please send `0:<integrator-name>` with your protocol name (e.g. `0:maple`) as `bytes32` (32-byte hex).
+* You must send this field with your deposits to enable Maple to correctly attribute them to specific partners and run rewards programs.
 {% endhint %}
 
 ### 4. Execute the Deposit

@@ -12,15 +12,15 @@ description: >-
 
 **Deposit:**
 
-1. [**Determine lender authorization**](smart-contract-integrations.md#id-1.-determine-lender-authorization-onchain) (onchain via PoolPermissionManager)
-2. [**Retrieve authorization signature**](smart-contract-integrations.md#id-2.-retrieve-authorization-signature) (from Maple)
-3. [**Execute the deposit**](smart-contract-integrations.md#id-3.-execute-the-deposit) (authorize-and-deposit or deposit)
+1. [**Determine lender authorization**](smart-contract-integration.md#id-1.-determine-lender-authorization-onchain) (onchain via PoolPermissionManager)
+2. [**Retrieve authorization signature**](smart-contract-integration.md#id-2.-retrieve-authorization-signature) (from Maple)
+3. [**Execute the deposit**](smart-contract-integration.md#id-3.-execute-the-deposit) (authorize-and-deposit or deposit)
 
 **Withdraw:**
 
-1. [**Retrieve lender balance**](smart-contract-integrations.md#id-1.-retrieve-lenders-balance) (shares)
-2. [**Calculate shares to redeem**](smart-contract-integrations.md#id-2.-calculate-shares-to-redeem) (full balance or convertToExitShares for partial)
-3. [**Execute the withdrawal**](smart-contract-integrations.md#id-3.-execute-the-withdrawal) (requestRedeem)
+1. [**Retrieve lender balance**](smart-contract-integration.md#id-1.-retrieve-lenders-balance) (shares)
+2. [**Calculate shares to redeem**](smart-contract-integration.md#id-2.-calculate-shares-to-redeem) (full balance or convertToExitShares for partial)
+3. [**Execute the withdrawal**](smart-contract-integration.md#id-3.-execute-the-withdrawal) (requestRedeem)
 {% endhint %}
 
 ## Overview
@@ -409,13 +409,15 @@ Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or sy
     },
     "syrupGlobals": {
       "apy": "69731920498003078965054825961",
-      "dripsYieldBoost": "22000"
+      "dripsYieldBoost": "0"
     }
   }
 }
 ```
 
-In the example above, the monthly base APY is 6.72% with the Drips rewards adding an extra 2.2% on top.
+You can get the APY % by using the fomula: `APY % = rawValue / 1e28`
+
+In the example above, the monthly base APY is 6.97%. Drips have been discontinued after Q4 2025 in favour of rewards distributed via Merkl for using partner products. You can discard `dripsYieldBoost` going forward. Read more: [drips-rewards.md](../../syrupusdc-usdt-for-lenders/drips-rewards.md "mention")
 
 </details>
 

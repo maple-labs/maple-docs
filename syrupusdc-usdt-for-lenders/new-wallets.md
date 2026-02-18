@@ -7,7 +7,7 @@ description: >-
 # New Wallets
 
 {% hint style="info" %}
-Looking to enable your users to deposit into syrupUSDC through your own app? See [backend-integrations.md](../integrate/ethereum-mainnet/backend-integrations.md "mention")
+Looking to enable your users to deposit into syrupUSDC through your own app? See [frontend-integration.md](../integrate/ethereum-mainnet/frontend-integration.md "mention")
 {% endhint %}
 
 ## Overview
