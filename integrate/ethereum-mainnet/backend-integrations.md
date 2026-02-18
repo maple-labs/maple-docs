@@ -1185,13 +1185,15 @@ Querying the GraphQL API is the simplest way to get APY data for syrupUSDC or sy
     },
     "syrupGlobals": {
       "apy": "69731920498003078965054825961",
-      "dripsYieldBoost": "22000"
+      "dripsYieldBoost": "0"
     }
   }
 }
 ```
 
-In the example above, the monthly base APY is 6.72% with the Drips rewards adding an extra 2.2% on top.
+You can get the APY % by using the fomula: `APY % = rawValue / 1e28`
+
+In the example above, the monthly base APY is 6.72%. Drips have been discontinued after Q4 2025 in favour of rewards distributed via Merkl for using partner products. You can discard `dripsYieldBoost` going forward. Read more: [drips-rewards.md](../../syrupusdc-usdt-for-lenders/drips-rewards.md "mention")
 
 </details>
 
