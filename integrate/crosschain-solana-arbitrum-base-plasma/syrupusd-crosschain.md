@@ -105,12 +105,12 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 <table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://plasmascan.to/address/0x89a0e204591fce2611e89ca7634c12b400d347fe">0x89a0e204591Fce2611e89CA7634c12B400d347fe</a></td></tr></tbody></table>
 {% endtab %}
 
-{% tab title="BNB" %}
-<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://bscscan.com/address/0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658">0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658</a></td></tr></tbody></table>
-{% endtab %}
-
 {% tab title="Mantle" %}
 <table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://mantlescan.xyz/address/0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a">0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="BNB" %}
+<table><thead><tr><th width="141.67181396484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Price Oracle</td><td><a href="https://bscscan.com/address/0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658">0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
