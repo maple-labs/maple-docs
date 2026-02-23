@@ -195,7 +195,7 @@
 * [KYC](legal/kyc.md)
 * [Interface Terms of Use](legal/interface-terms-of-use.md)
 * [Privacy Policy](legal/privacy-policy.md)
-* [syrupUSDC and syrupUSDT - Risks](legal/syrupusdc-and-syrupusdt-risks.md)
+* [syrupUSDC and syrupUSDT - Risk Disclosures](legal/syrupusdc-and-syrupusdt-risks.md)
 * [syrupUSDC and syrupUSDT - Defaults and Impairments](legal/syrupusdc-and-syrupusdt-defaults-and-impairments.md)
 * [syrupUSDC and syrupUSDT - Available Jurisdictions](legal/syrupusdc-and-syrupusdt-available-jurisdictions.md)
 * [Interface Terms of Use \[syrupUSDC and syrupUSDT\]](legal/interface-terms-of-use-syrupusdc-and-syrupusdt.md)
