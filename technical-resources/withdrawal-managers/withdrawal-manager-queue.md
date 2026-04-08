@@ -59,8 +59,7 @@ The request owner can reduce or cancel a specific pending request at any time be
 Each withdrawal request can be processed automatically (by default) or manually by calling `requestRedeem()` first then calling `redeem()`. The pool delegate or any protocol admin can enable manual requests for users who want to opt-out of automatic processing. The difference between automatic and manual requests is as follows:
 
 * Automatic requests will be immediately redeemed on processing.
-* Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (mainly for integrators). Automatic requests are the default and preferred way of handling withdrawals.
-* The pool administrator coordinates with integrators to ensure manual requests are enabled when required.
+* Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (**internal use only**). Automatic requests are the default and preferred way of handling withdrawals.
 
 ### Roles & Permissions
 
