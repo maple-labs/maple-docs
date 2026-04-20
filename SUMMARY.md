@@ -9,7 +9,7 @@
   * [Asset Integration](integrate/ethereum-mainnet/asset-integration.md)
   * [Frontend Integration](integrate/ethereum-mainnet/frontend-integration.md)
   * [Smart Contract Integration](integrate/ethereum-mainnet/smart-contract-integration.md)
-* [Crosschain (Solana, Arbitrum, Base, Plasma)](integrate/crosschain-solana-arbitrum-base-plasma/README.md)
+* [Crosschain](integrate/crosschain-solana-arbitrum-base-plasma/README.md)
   * [Asset Integration](integrate/crosschain-solana-arbitrum-base-plasma/syrupusd-crosschain.md)
   * [syrupUSDC Native Mint/Redeem](integrate/crosschain-solana-arbitrum-base-plasma/syrupusdc-native-mint-redeem.md)
 * [Technical Resources](integrate/technical-resources/README.md)
