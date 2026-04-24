@@ -2,7 +2,7 @@
 
 ### MPL to SYRUP Migration Overview
 
-In 2023, the Maple Community approved MIP-009, introducing the SYRUP token as the next evolution of governance and utility within the Maple ecosystem. SYRUP follows a defined inflation schedule and governance framework, with total supply projected to reach 1,228,740,800 by 2026.
+In 2023, the Maple Community approved MIP-009, introducing the SYRUP token as the next evolution of governance and utility within the Maple ecosystem. SYRUP follows a defined inflation schedule and governance framework, with total supply projected to reach 1,267,875,000 by September 2026.&#x20;
 
 MIP-010 established a one-time conversion rate of 1 MPL to 100 SYRUP tokens, allowing MPL and xMPL holders to migrate to SYRUP without dilution. This initial program concluded on April 30, 2025, as specified in MIP-011.
 
