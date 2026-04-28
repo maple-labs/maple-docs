@@ -6,11 +6,11 @@ hidden: true
 
 The Borrower App brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
 
-**\[IMAGE 1: Loan detail page showing summary cards (LTV, next payment, status) and the action buttons row.]**
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Loan statuses
 
-Every loan carries two layers of status: a **Loan Health** status driven by collateral value, and a **Payment Status** that appears when there is a payment issue.
+Every loan carries two layers of status: a **Loan Health** status driven by collateral value, and a **Loan State** that appears when there is a payment issue.
 
 ### Loan Health
 
@@ -24,17 +24,15 @@ Each loan shows the live LTV, the margin call and liquidation levels, and the tr
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-### Payment Status
+### Loan State
 
-Loan states appear when there is a payment issue:
+Loan States appear when there is a payment issue:
 
 * `Grace Period` - interest is past due but still within the grace period defined in your term sheet. No late interest is charged yet
 * `Overdue` - you are past due on an interest payment beyond the interest grace period. Late interest is now charged. This appears in the Interest accrued column
 * `Defaulted` - you missed an interest payment or a final principal repayment. Late interest is being charged. Defaulted loans can still be actioned (paid down or repaid in full)
 
 **Late interest** is charged as a premium rate above your loan's normal interest rate. It begins accruing after the grace period expires.
-
-**\[Image with statuses]**
 
 ## Loan actions
 

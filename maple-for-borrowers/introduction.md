@@ -21,7 +21,7 @@ You start the onboarding by contacting us:
 
 Loans start from $10M and are usually processed within 24h or less once onboarded. For any questions on onboarding or required documentation, please talk to your Maple contact.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## What you get on the Maple app
 
