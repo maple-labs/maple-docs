@@ -4,7 +4,7 @@ hidden: true
 
 # Loan Management
 
-The Borrower App brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
+The Maple app brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +40,7 @@ The Maple app supports 5 key actions. Interest can be paid from any wallet. All 
 
 ### 1. Accept new loan
 
-After you and the Maple team agree to terms offline and sign the term sheet, Maple proposes the loan onchain. The loan appears in the Borrower App as `Pending Funding` with the proposed terms.
+After you and the Maple team agree to terms offline and sign the term sheet, Maple proposes the loan onchain. The loan appears in the Maple app as `Pending Funding` with the proposed terms.
 
 To accept, review the terms in the app and sign. Once accepted, Maple funds the loan and the payment schedule begins.
 
@@ -52,7 +52,7 @@ Click `Pay interest`, review the breakdown and sign. The app calculates the amou
 
 ### 3. Accept refinance
 
-Refinances are initiated by Maple after offline negotiation and a term sheet amendment. The proposed new terms appear in the Borrower App with a clear before → after view of what's changing (e.g. interest rate, principal, term length, fees etc). Review the changes and sign to accept. The new terms take effect onchain.&#x20;
+Refinances are initiated by Maple after offline negotiation and a term sheet amendment. The proposed new terms appear in the Maple app with a clear before → after view of what's changing (e.g. interest rate, principal, term length, fees etc). Review the changes and sign to accept. The new terms take effect onchain.&#x20;
 
 Borrowers cannot initiate refinances from the app - reach out to your Maple contact to start the conversation.
 
