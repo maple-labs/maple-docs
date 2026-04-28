@@ -50,7 +50,10 @@
 
 ## Maple for Borrowers
 
+* [Introduction](maple-for-borrowers/introduction-old.md)
+* [Loan Management](maple-for-borrowers/loan-management-old.md)
 * [Introduction](maple-for-borrowers/introduction.md)
+* [Account Management](maple-for-borrowers/account-management.md)
 * [Loan Management](maple-for-borrowers/loan-management.md)
 
 ## Maple for Token Holders

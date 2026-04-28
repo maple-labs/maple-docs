@@ -30,6 +30,10 @@ Both tokens have 6 decimals across all chains.
 <table><thead><tr><th width="209.73345947265625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://basescan.org/token/0x660975730059246a68521a3e2fbd4740173100f5">0x660975730059246A68521a3e2FBD4740173100f5</a></td></tr><tr><td>CCIP Router</td><td><a href="https://basescan.org/address/0x881e3a65b4d4a04dd529061dd0071cf975f58bcd">0x881e3A65B4d4a04dD529061dd0071cf975F58bCD</a></td></tr><tr><td>Pool</td><td><a href="https://basescan.org/address/0xa36955b2bc12aee77ff7519482d16c7b86dbe42a">0xA36955b2Bc12Aee77FF7519482D16C7B86DBe42a</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
 {% endtab %}
 
+{% tab title="Ink" %}
+<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9">0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9</a></td></tr><tr><td>CCIP Router</td><td>To be added</td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43">0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43</a></td></tr></tbody></table>
+{% endtab %}
+
 {% tab title="Ethereum" %}
 <table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://etherscan.io/token/0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b">0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b</a></td></tr><tr><td>CCIP Router</td><td><a href="https://etherscan.io/address/0x80226fc0ee2b096224eeac085bb9a8cba1146f7d">0x80226fc0Ee2b096224EeAc085Bb9a8cba1146f7D</a></td></tr><tr><td>Pool</td><td><a href="https://etherscan.io/address/0x20b79d39bd44deee4f89b1e9d0e3b945fde06491">0x20B79D39Bd44dEee4F89B1e9d0e3b945fde06491</a></td></tr></tbody></table>
 {% endtab %}
@@ -48,6 +52,10 @@ Both tokens have 6 decimals across all chains.
 
 {% tab title="BNB" %}
 <table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://bscscan.com/token/0x8E9d4cEa39299323FE8eda678cAD449718556c4e">0x8E9d4cEa39299323FE8eda678cAD449718556c4e</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://bscscan.com/address/0xEAA7E1f805747ae29d5618b568d1b044A8b37A01">0xEAA7E1f805747ae29d5618b568d1b044A8b37A01</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Ink" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x8A76fe7fA6da27f85a626c5C53730B38D13603d7">0x8A76fe7fA6da27f85a626c5C53730B38D13603d7</a></td></tr><tr><td>CCIP Router</td><td>[To be added]</td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x543164a51401a468B6Fee3F7db27a30871448ff5">0x543164a51401a468B6Fee3F7db27a30871448ff5</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 

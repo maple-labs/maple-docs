@@ -1,30 +1,76 @@
+---
+hidden: true
+---
+
 # Loan Management
 
-We strive to make managing your loans on Maple as simple as possible. As a Borrower there are three essential actions:
+The Borrower App brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
 
-1. Creating a Loan
-2. Making a Payment
-3. Proposing a Refinance
+**\[IMAGE 1: Loan detail page showing summary cards (LTV, next payment, status) and the action buttons row.]**
 
-**Creating a Loan**
+## Loan statuses
 
-The first step in the loan process occurs off-chain. Borrowers negotiate directly with Maple and sign legal term sheets corresponding to loan terms. After the terms are signed, the borrower creates a loan request on-chain, which is then funded by Maple Direct. The process of bringing the legal agreement on-chain is as simple as inputting key terms from your term sheet into the create loan form on the borrower page.
+Every loan carries two layers of status: a **Loan Health** status driven by collateral value, and a **Payment Status** that appears when there is a payment issue.
 
-There are two key pieces of data to discuss upfront: the Origination Fee and the Admin Fee. Please see the [Fees](../technical-resources/protocol-overview/fees.md) section for more information.
+### Loan Health
 
-**Making a Payment**
+Loan Health is based on your LTV (loan-to-value) relative to the thresholds set in your term sheet.
 
-Borrowers can make payments anytime throughout the lifetime of the loan before the due date indicated in the borrower dashboard. Managing payments can be done using the upcoming repayments tab in the borrower interface.
+* `Healthy` - LTV is below the margin call level
+* `Margin Call` - LTV has crossed the margin call level. Action required: top up collateral or pay down principal partially
+* `Liquidation` - LTV has crossed the liquidation level. Maple may liquidate a portion of your collateral to return the loan to a healthy LTV
 
-Because the accounting is handled by Maple’s smart contracts, there is no need to manually enter in the payment amount. Before making a payment, the UI will give the borrower a breakdown of the payment in terms of principle, interest and fees, with an instruction to pay the total.
+Each loan shows the live LTV, the margin call and liquidation levels, and the trigger price for each (e.g. `SOL at $50 = Margin Call`).
 
-**Proposing a Refinance**
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-Borrowers may propose to refinance a loan. Normally this would occur after negotiating these terms with Maple Direct and signing an amendment to the loan terms. Refinancing allows the borrower to update loan terms such as:
+### Payment Status
 
-* Interest Rate
-* Term Length
-* Principal
-* Origination and Admin Fees
+Loan states appear when there is a payment issue:
 
-The UI will ask you to acknowledge the proposed changes to the loan term before they are submitted on chain for approval or rejection. Proposed terms are only valid for 48 hours after which they may no longer be approved or rejected.
+* `Grace Period` - interest is past due but still within the grace period defined in your term sheet. No late interest is charged yet
+* `Overdue` - you are past due on an interest payment beyond the interest grace period. Late interest is now charged. This appears in the Interest accrued column
+* `Defaulted` - you missed an interest payment or a final principal repayment. Late interest is being charged. Defaulted loans can still be actioned (paid down or repaid in full)
+
+**Late interest** is charged as a premium rate above your loan's normal interest rate. It begins accruing after the grace period expires.
+
+**\[Image with statuses]**
+
+## Loan actions
+
+The Maple app supports 5 key actions. Interest can be paid from any wallet. All others require a wallet registered to the Legal Entity holding the loan, and a user role with action permissions (see [Account Management](https://docs.maple.finance/maple-for-borrowers/account-management)).&#x20;
+
+### 1. Accept new loan
+
+After you and the Maple team agree to terms offline and sign the term sheet, Maple proposes the loan onchain. The loan appears in the Borrower App as `Pending Funding` with the proposed terms.
+
+To accept, review the terms in the app and sign. Once accepted, Maple funds the loan and the payment schedule begins.
+
+### 2. Pay interest
+
+Interest payments follow the schedule in your term sheet. The app shows the next payment, the amount and the due date for each loan.
+
+Click `Pay interest`, review the breakdown and sign. The app calculates the amount owed. If the payment is past the grace period, late interest accrued to date is included in the total.
+
+### 3. Accept refinance
+
+Refinances are initiated by Maple after offline negotiation and a term sheet amendment. The proposed new terms appear in the Borrower App with a clear before → after view of what's changing (e.g. interest rate, principal, term length, fees etc). Review the changes and sign to accept. The new terms take effect onchain.&#x20;
+
+Borrowers cannot initiate refinances from the app - reach out to your Maple contact to start the conversation.
+
+### 4. Repay loan
+
+Principal can be paid down at any time after the loan is called either by you or Maple. Reducing principal lowers your LTV and is one way to cure a margin call.
+
+### 5. Curing a margin call (coming soon)
+
+When a loan enters `Margin Call`, you have two ways to bring LTV back below the threshold:
+
+1. **Top up collateral** - send additional collateral to your loan's collateral address. Once received, the loan returns to `Healthy`&#x20;
+2. **Pay down principal** - use `Repay loan` to reduce principal until LTV is below the margin call level
+
+Maple will reach out via your usual channels (Telegram and email) when a margin call is triggered. The time you have to cure it is defined in your term sheet.
+
+## Fees
+
+Maple loans carry an origination fee and ongoing service fees, defined in your term sheet. See [Fees](https://docs.maple.finance/technical-resources/protocol-overview/fees) for details.

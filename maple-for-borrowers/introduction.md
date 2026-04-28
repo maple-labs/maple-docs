@@ -1,25 +1,36 @@
+---
+hidden: true
+---
+
 # Introduction
 
-Maple is a leading digital asset lending platform, offering secure and innovative lending solutions. Lending opportunities are tailored to meet diverse liquidity needs, risk appetites, and return expectations and facilitated through Maple’s technology to provide real time monitoring and transparency.
+Maple is an onchain asset manager offering institutional borrowers secure, transparent, overcollateralized loans against crypto collateral. Borrowers choose Maple for the institutional-grade, white glove service, competitive rates and flexible terms.&#x20;
 
-**How to Borrow**
+Loans are originated by the Maple team and managed by borrowers in the Maple app. To date, Maple has facilitated over $20B in loans across 100+ borrowers, with an average funding time of 24 hours.
 
-1\. New borrowers on Maple will need to create an account and go through an approval process.&#x20;
+## Becoming a borrower
 
-Complete the type form in the “Borrow” tab on the WebApp and a member of the Maple team will be in touch to discuss next steps. Borrowers who have already completed this process simply can connect their wallet and view the Borrower Dashboard.
+You start the onboarding by contacting us:
 
-<figure><img src="../.gitbook/assets/borrower-onboarding.png" alt=""><figcaption></figcaption></figure>
+1. Submit the [contact form on the Maple website](https://maple.finance/#contact). A member of the Maple team will reach out
+2. Complete KYC / KYB and supply the required entity documentation
+3. Maple verifies the details and performs a credit review
+4. Sign the master lending agreement and agree loan terms
+5. Maple provisions your account in the app: your Organization, Legal Entities and your first user
+6. You receive an email invite to log in. From there, you can invite your team and start transacting
 
-2\. Borrowers can view their full loan history including matured, active and unfunded loans on the dashboard.
+Loans start from $10M and are usually processed within 24h or less once onboarded. For any questions on onboarding or required documentation, please talk to your Maple contact.
 
-<figure><img src="../.gitbook/assets/loan-history (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-3\. Once a borrower is approved on the platform, they are able to submit loan requests in pools. Before doing so, Maple Direct conducts financial due diligence on the borrower and agree to terms with the borrower off-chain. Borrowers then submit a new loan request on-chain. Once the new loan request is submitted on-chain it cannot be altered in any way. If there is an error a new loan request would need to be created.
+## What you get on the Maple app
 
-<figure><img src="../.gitbook/assets/create-new-loan.png" alt=""><figcaption></figcaption></figure>
+* **Email login** - any team member can be added without needing wallet access
+* **Multi-entity portfolio view** - every loan across every Legal Entity in one view
+* **Loan health** - LTV, margin call and liquidation levels, and trigger prices on every loan
+* **Live status** - know at a glance which loans are healthy and which need attention
+* **Self-serve actions** - accept new loans and refinances, pay interest, pay down principal
 
-4\. Once due diligence is completed, terms are agreed to, and the on-chain loan request is submitted, Maple Direct funds the loan by making the funds requested available for drawdown by the Borrower. It is at this point that the loan is finalised and the repayment schedule commences.
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-5\. Borrowers will return to the WebApp to make their interest repayments on a recurring basis and view the details of their loans on Maple. The final payment at the end of the loan term will prompt repayment of the principal balance.
-
-<figure><img src="../.gitbook/assets/repayment-schedule.png" alt=""><figcaption></figcaption></figure>
+For team and account setup, see [Account Management](https://docs.maple.finance/maple-for-borrowers/account-management). For loan workflows and statuses, see [Loan Management](https://docs.maple.finance/maple-for-borrowers/loan-management).
