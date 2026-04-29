@@ -36,7 +36,7 @@ Each loan shows the live LTV, the margin call and liquidation levels, and the tr
 
 ### 3. Loan State
 
-Loan States are based on the payment lifecycle status of the loan:
+Loan States are based on the lifecycle status of the loan:
 
 * `Accept terms`: review and accept the terms of a new loan. The terms in the app will match your term sheet.
 * `Pending funding`: once terms are accepted, Maple will fund the loan.
