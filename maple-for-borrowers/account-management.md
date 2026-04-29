@@ -18,12 +18,7 @@ A single team can manage multiple borrowing entities under one login, with portf
 
 Maple sets up your first Admin during onboarding. From there, Admins and Managers can invite team members and assign or change roles.
 
-| Role         | Access                                                        |
-| ------------ | ------------------------------------------------------------- |
-| Admin        | Full access. Manage users and execute all loan actions.       |
-| Manager      | All loan actions plus add and remove non-Admin users.         |
-| Loan Actions | Execute all loan actions across entities. No user management. |
-| Viewer       | Read-only. View entities, loans, payments, and wallets.       |
+<table><thead><tr><th width="147.32464599609375">Role</th><th>Access</th></tr></thead><tbody><tr><td>Admin</td><td>Full access. Manage users and execute all loan actions.</td></tr><tr><td>Manager</td><td>All loan actions plus add and remove non-Admin users.</td></tr><tr><td>Loan Actions</td><td>Execute all loan actions across entities. No user management.</td></tr><tr><td>Viewer</td><td>Read-only. View entities, loans, payments, and wallets.</td></tr></tbody></table>
 
 ## Inviting and removing users
 
