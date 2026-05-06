@@ -11,7 +11,7 @@ Syrup makes Maple's institutional lending marketplace available to all through D
 {% hint style="info" %}
 **Links:**
 
-* Website: [www.maple.finance](http://www.maple.finance/)
+* Website: [https://maple.finance/](https://maple.finance/)
 * Telegram: [https://t.me/maplefinance](https://t.me/maplefinance)
 * Twitter: [https://twitter.com/maplefinance](https://twitter.com/maplefinance)
 * LinkedIn: [https://www.linkedin.com/company/maplefinance/](https://www.linkedin.com/company/maplefinance/)
