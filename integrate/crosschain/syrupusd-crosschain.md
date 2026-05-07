@@ -37,7 +37,7 @@ Both tokens have 6 decimals across all chains.
 {% tab title="Tempo" %}
 <table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explore.tempo.xyz/address/0x20c0000000000000000000008191667423F70E67">0x20c0000000000000000000008191667423F70E67</a></td></tr><tr><td>Pool</td><td><a href="https://explore.tempo.xyz/address/0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19">0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19</a></td></tr></tbody></table>
 
-_Note: syrupUSDC on Tempo is a TIP-20 token. No changes to bridging._
+_Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol/tip20/overview)_. Bridging works the same via CCIP._
 {% endtab %}
 
 {% tab title="Ethereum" %}
