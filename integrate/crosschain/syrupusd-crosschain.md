@@ -41,7 +41,7 @@ _Note: syrupUSDC on Tempo is a TIP-20 token. No changes to bridging._
 {% endtab %}
 
 {% tab title="Ethereum" %}
-<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explore.tempo.xyz/address/0x20c0000000000000000000008191667423F70E67">0x20c0000000000000000000008191667423F70E67</a></td></tr><tr><td>CCIP Router</td><td></td></tr><tr><td>Pool</td><td><a href="https://explore.tempo.xyz/address/0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19">0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19</a></td></tr></tbody></table>
+<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explore.tempo.xyz/address/0x20c0000000000000000000008191667423F70E67">0x20c0000000000000000000008191667423F70E67</a></td></tr><tr><td>Pool</td><td><a href="https://explore.tempo.xyz/address/0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19">0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
