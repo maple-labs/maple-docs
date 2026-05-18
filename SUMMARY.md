@@ -93,7 +93,7 @@
   * [Protocol Invariants](technical-resources/security/protocol-invariants.md)
   * [Test Report](technical-resources/security/test-report.md)
 * [Maple Protocol Loans: Overview](technical-resources/loans/README.md)
-  * [Maple Protocol Loans](technical-resources/loans/loans.md)
+  * [Loan Smart Contract Reference](technical-resources/loans/loans.md)
   * [Fixed Term Loans](technical-resources/loans/fixed-term-loans.md)
   * [Open Term Loans](technical-resources/loans/open-term-loans.md)
   * [Refinancing](technical-resources/loans/refinancing.md)
