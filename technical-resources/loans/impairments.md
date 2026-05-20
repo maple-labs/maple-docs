@@ -26,3 +26,6 @@ Example scenario with an impairment [here](../pools/accounting/pool-accounting.m
 
 ## Access Control
 Both the Pool Delegate and Governor are allowed to impair a Loan at any given time. If the Governor impairs the Loan, the Pool Delegate DOES NOT have the right to revert the impairment. If the Pool Delegate impairs the Loan, the Governor DOES have the right to revert the impairment.
+
+## Open Term Loans Impairments
+For Open Term Loans a loan will first be called operationally before it is impaired. This ensures the next payment due is for the full principal amount. 
