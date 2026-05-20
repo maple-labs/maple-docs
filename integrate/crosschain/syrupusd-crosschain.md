@@ -5,7 +5,7 @@ description: >-
   Plasma etc.
 ---
 
-# Asset Integration
+# Asset Integration: Crosschain
 
 syrupUSDC & syrupUSDT use Chainlink Crosschain Interoperability Protocol (CCIP) to facilitate bridging and holding on chains other than Ethereum mainnet. CCIP handles secure crosschain token movement and message delivery, so you don’t need to build a custom bridge.
 
@@ -31,7 +31,11 @@ Both tokens have 6 decimals across all chains.
 {% endtab %}
 
 {% tab title="Ink" %}
-<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9">0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43">0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43</a></td></tr></tbody></table>
+<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9">0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43">0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Monad" %}
+<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://monadscan.com/address/0xaB6e5a0C3799d020c790D34F7B2C02639e238AF7">0xaB6e5a0C3799d020c790D34F7B2C02639e238AF7</a></td></tr><tr><td>Pool</td><td><a href="https://monadscan.com/address/0x4eA35565147A7A6BfDAF7e605BDCdA4BD039A540">0x4eA35565147A7A6BfDAF7e605BDCdA4BD039A540</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Tempo" %}
