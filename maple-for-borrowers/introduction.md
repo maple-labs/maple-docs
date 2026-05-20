@@ -1,8 +1,8 @@
 # How to Borrow from Maple: Borrower Guide
 
-Maple offers onchain asset management to institutional borrowers, providing secure, transparent, overcollateralized loans against crypto collateral. Borrowers choose Maple for the institutional-grade, white-glove service, competitive rates, and flexible terms.
+Maple is the largest onchain asset management platform, offering institutional borrowers access to secured, overcollateralised credit facilities backed by digital assets. Lending opportunities are tailored to meet diverse liquidity needs, risk appetites, and return expectations and facilitated through Maple’s technology to provide real time monitoring and transparency.
 
-Loans are originated by the Maple team and managed by borrowers in the Borrower Hub. To date, Maple has facilitated over $20B in loans across 100+ borrowers, with an average funding time of 24 hours.
+Borrowers choose Maple for the institutional-grade, white-glove service, competitive rates, and flexible terms. Loans are originated by the Maple team and managed by borrowers in the Borrower Hub. To date, Maple has facilitated over $20B in loans across 100+ borrowers, with an average funding time of 24 hours.
 
 ## Becoming a borrower
 

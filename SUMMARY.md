@@ -50,7 +50,7 @@
 
 ## Maple for Borrowers
 
-* [How to Borrow from Maple: Borrower Guide](maple-for-borrowers/introduction-old.md)
+* [How to Borrow from Maple: Borrower Guide](maple-for-borrowers/introduction.md)
 * [Account Management](maple-for-borrowers/account-management.md)
 * [Loan Management](maple-for-borrowers/loan-management-old.md)
 * [Borrower FAQ](maple-for-borrowers/borrower-faq.md)
