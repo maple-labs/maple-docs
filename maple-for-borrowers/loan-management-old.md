@@ -1,10 +1,6 @@
----
-hidden: true
----
-
 # Loan Management
 
-The Maple app brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
+The Maple Borrower Hub brings every loan across every Legal Entity into one view and lets your team manage them onchain. This page covers the loan statuses you'll see and the actions you can take.
 
 ![Loans](<../.gitbook/assets/image (10).png>)
 
@@ -38,7 +34,7 @@ Each loan shows the live LTV, the margin call and liquidation levels, and the tr
 
 Loan States are based on the lifecycle status of the loan:
 
-* `Accept terms`: review and accept the terms of a new loan. The terms in the app will match your term sheet.
+* `Accept terms`: review and accept the terms of a new loan. The terms in the Hub will match your term sheet.
 * `Pending funding`: once terms are accepted, Maple will fund the loan.
 * `Active`: all payments are up to date.
 * `Repay soon`: principal repayment has been triggered and the loan call period defined in your term sheet has started. The loan principal cannot yet be repaid.
@@ -51,25 +47,25 @@ Loan States are based on the lifecycle status of the loan:
 
 ## Loan actions
 
-The Maple app supports 5 key actions. Interest can be paid from any wallet. All others require a wallet registered to the Legal Entity holding the loan, and a user role with action permissions.
+The Maple Borrower Hub supports 5 key actions. Interest can be paid from any wallet. All others require a wallet registered to the Legal Entity holding the loan, and a user role with action permissions.
 
 ### 1. Accept new loan
 
-After you and the Maple team agree to terms offline and sign the term sheet, Maple proposes the loan onchain. The loan appears in the app as `Accept terms` with the proposed terms.
+After you and the Maple team agree to terms offline and sign the term sheet, Maple proposes the loan onchain. The loan appears in the Borrower Hub as `Accept terms` with the proposed terms.
 
-To accept, review the terms in the app and sign. The loan moves to `Pending funding` while Maple funds it, then to `Active` once the payment schedule begins.
+To accept, review the terms in the Borrower Hub and sign. The loan moves to `Pending funding` while Maple funds it, then to `Active` once the payment schedule begins.
 
 ### 2. Pay interest
 
-Interest payments follow the schedule in your term sheet. The app shows the next payment, the amount, and the due date for each loan.
+Interest payments follow the schedule in your term sheet. The Borrower Hub shows the next payment, the amount, and the due date for each loan.
 
-Click Pay interest, review the breakdown, and sign. The app calculates the amount owed. If the payment is past due, late interest accrued to date is included in the total.
+Click Pay interest, review the breakdown, and sign. The Borrower Hub calculates the amount owed. If the payment is past due, late interest accrued to date is included in the total.
 
 ### 3. Accept refinance
 
-Refinances are initiated by Maple after offline negotiation and a term sheet amendment. The proposed new terms appear in the Maple app with a clear before and after view of what's changing (e.g. interest rate, principal, term length, and fees). Review the changes and sign to accept. The new terms take effect onchain.
+Refinances are initiated by Maple after offline negotiation and a term sheet amendment. The proposed new terms appear in the Maple Borrower Hub with a clear before and after view of what's changing (e.g. interest rate, principal, term length, and fees). Review the changes and sign to accept. The new terms take effect onchain.
 
-Borrowers cannot initiate refinances from the app - reach out to your Maple contact to start the conversation.
+Borrowers cannot initiate refinances from the Borrower Hub - reach out to your Maple contact to start the conversation.
 
 ### 4. Repay loan
 

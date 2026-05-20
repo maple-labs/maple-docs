@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Account Management
 
 Account Management covers how your team accesses Maple, the roles assigned to each user, and the wallets approved to transact onchain on your loans.
@@ -10,7 +6,7 @@ Maple borrower accounts are built around three concepts:
 
 * **Organization**: your top-level Maple account.
 * **Legal Entity**: one or more legal entities under your Organization that hold loans, e.g. a fund vehicle, an offshore subsidiary.
-* **User**: a member of your team who can log into the app.
+* **User**: a member of your team who can log into the Borrower Hub.
 
 A single team can manage multiple borrowing entities under one login, with portfolio-level visibility and loan management per entity.
 
