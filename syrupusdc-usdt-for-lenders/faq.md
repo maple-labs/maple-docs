@@ -8,7 +8,7 @@ syrupUSDC has scaled rapidly since launch and is a trusted source of real, susta
 
 ### What is the APY?
 
-Rates are variable and reflect current institutional lending market conditions. See the [Maple app](https://app.maple.finance/earn) for live figures. Historically Maple assets have shown consistent yield outperformance compared to other leading DeFi lending protocols. Lenders get real-time transparency through the [Proof of Reserves](https://app.maple.finance/earn/details).&#x20;
+Rates are variable and reflect current institutional lending market conditions. See the [Maple app](https://app.maple.finance/earn) for live figures. Historically Maple assets have shown consistent yield outperformance compared to other leading DeFi lending protocols. Lenders get real-time transparency through the [Proof of Reserves](https://app.maple.finance/earn/details).
 
 ### How are the loans protected?
 
@@ -24,7 +24,7 @@ SYRUP and syrupUSDC are distinct tokens that serve different purposes within the
 
 ### How are Maple and syrupUSDC vaults segregated?
 
-Each individual loan in Maple and syrupUSDC has a unique margin call and liquidation level. Further, lender funds are stored in non-custodial smart contracts for both Maple and syrupUSDC pools. However, Maple and syrupUSDC vaults differ in legal structure. Maple constructs a segregated bankruptcy-remote entity for each individual pool, while syrupUSDC utilizes a segregated SPV for its pool. The use of a bankruptcy-remote entity reflects the institutional focus of Maple.
+Maple constructs a segregated bankruptcy-remote entity for each individual pool. syrupUSDC operates through Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1, and syrupUSDT operates through Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1, each a distinct legal entity providing full legal separation between the two products and from Maple's institutional pools.
 
 ### Who are the borrowers on Maple/syrupUSDC?
 
@@ -68,8 +68,6 @@ While Maple's primary strategy remains overcollateralized lending to institution
 
 * **Futures Basis Trading**: Cash and carry strategies capturing term structure spreads in BTC futures markets
 * **DeFi Liquidity Provision**: Strategic deployments into select DeFi protocols across Ethereum, Plasma and other chains
-
-
 
 <details>
 

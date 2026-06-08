@@ -6,9 +6,9 @@ Maple is a leading digital asset lending platform, empowering the digital asset 
 
 #### Maple, syrupUSDC, and syrupUSDT Structure
 
-SyrupUSDC and syrupUSDT enable direct access to Maple pools through an interface and smart contract router (refer to Technical Resources for further details). Maple established new unique pools for syrupUSDC and syrupUSDT to ensure that proceeds and risks are segmented from existing pools accessible to Maple customers. The legal structure has been created to reflect the segregation required between Maple, syrupUSDC, and syrupUSDT (refer to Legal section for more details).\
+SyrupUSDC and syrupUSDT enable direct access to Maple pools through an interface and smart contract router (refer to Technical Resources for further details). Maple established new unique pools for syrupUSDC and syrupUSDT to ensure that proceeds and risks are segmented from existing pools accessible to Maple customers. Each of syrupUSDC and syrupUSDT operates under its own distinct legal entity, syrupUSDC through Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1, and syrupUSDT through Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1, providing full legal separation between the two products and from Maple's institutional pools. Refer to the Legal section for further details on each product's structure.\
 \
-More details on the differences between Maple, syrupUSDC, and syrupUSDT pools, and their benefits, can be found[ here](https://maple.finance/news/yield-comparison-maple-syrup-ethena-and-aave).
+More details on the differences between Maple, syrupUSDC, and syrupUSDT pools, and their benefits, can be found [here](https://maple.finance/news/yield-comparison-maple-syrup-ethena-and-aave).
 
 #### Maple Underwriting and Credit
 
