@@ -7,12 +7,12 @@ description: >-
 # New Wallets
 
 {% hint style="info" %}
-Looking to enable your users to deposit into syrupUSDC through your own app? See [frontend-integration.md](../integrate/ethereum-mainnet/frontend-integration.md "mention")
+Looking to enable your users to deposit into syrupUSDC and syrupUSDT through your own app? See [frontend-integration.md](../integrate/ethereum-mainnet/frontend-integration.md "mention")
 {% endhint %}
 
 ## Overview
 
-Frontend integration allows wallet providers to request whitelisting for their wallets to connect to the Syrup app. This enables users of your wallet to interact with syrupUSDC directly through our interface.
+Frontend integration allows wallet providers to request whitelisting for their wallets to connect to the Syrup app. This enables users of your wallet to interact with syrupUSDC and syrupUSDT directly through our interface.
 
 ## Requirements
 
@@ -59,16 +59,16 @@ After whitelisting, test the connection flow:
 1. Navigate to [https://app.maple.finance/earn](https://app.maple.finance/earn)
 2. Click "Connect Wallet"
 3. Select your wallet from the list
-4. Verify successful connection and syrupUSDC interactions
+4. Verify successful connection and syrupUSDC and syrupUSDT interactions
 
 ## Post-Integration
 
 Once integrated, your wallet users can:
 
 * Connect to the Syrup app
-* View syrupUSDC balances
-* Deposit USDC to mint syrupUSDC
-* Redeem syrupUSDC for USDC
+* View syrupUSDC and syrupUSDT balances
+* Deposit USDC to mint syrupUSDC and deposit USDT to mint syrupUSDT
+* Redeem syrupUSDC for USDC and syrupUSDT for USDT
 * Track their positions and yield
 
 ## FAQ
@@ -101,8 +101,8 @@ Yes, as long as they're listed on Rainbow and support standard connection protoc
 
 <details>
 
-<summary>Do we need to implement any syrupUSDC-specific features?</summary>
+<summary>Do we need to implement any syrupUSDC- or syrupUSDT-specific features?</summary>
 
-No, standard ERC-20 token support is sufficient. syrupUSD follows the ERC-20 standard.
+No, standard ERC-20 token support is sufficient. syrupUSDC and syrupUSDT follow the ERC-20 standard.
 
 </details>
