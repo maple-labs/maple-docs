@@ -204,5 +204,6 @@
 * [syrupUSDC and syrupUSDT - Privacy Policy](legal/syrupusdc-and-syrupusdt-privacy-policy.md)
 * [Interface Terms of Use \[Syrup.fi/convert/ and Syrup.fi/stake/\]](legal/interface-terms-of-use-syrup.fi-convert-and-syrup.fi-stake.md)
 * [syrupUSDC Product Disclosures & Disclaimers](legal/syrupusdc-product-disclosures-and-disclaimers.md)
+* [syrupUSDT Product Disclosures & Disclaimers](legal/syrupusdt-product-disclosures-and-disclaimers.md)
 * [MiCA Whitepaper](legal/mica-whitepaper.md)
 * [SyrupUSDC Rewards Prize Draw Terms & Conditions](legal/syrupusdc-rewards-prize-draw-terms-and-conditions.md)
