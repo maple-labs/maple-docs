@@ -12,7 +12,7 @@ Last Modified: April 24, 2025
 
 Welcome to the SyrupUSDC Rewards Prize Draw (the "Prize Draw"). These Terms and Conditions govern your access to and participation in the Prize Draw offered through the Syrup.fi platform ("Interface").
 
-The Prize Draw is operated by Maple International Operations SPC. ("the Company", "we", "us", or "our"), a Cayman Islands Segregated Portfolio Company. By participating in the Prize Draw, you agree to be bound by these Terms and Conditions, as well as the[ Interface Terms of Use \[Syrup.fi\]](https://syrup.gitbook.io/syrup/legal/interface-terms-of-use).
+The Prize Draw is operated by Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1 ("the Company", "we", "us", or "our"), a Cayman Islands Segregated Portfolio Company. By participating in the Prize Draw, you agree to be bound by these Terms and Conditions, as well as the[ Interface Terms of Use \[Syrup.fi\]](https://syrup.gitbook.io/syrup/legal/interface-terms-of-use).
 
 PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE PARTICIPATING IN THE PRIZE DRAW. THESE TERMS AND CONDITIONS MAY AFFECT YOUR LEGAL RIGHTS AND OBLIGATIONS.
 
@@ -247,7 +247,7 @@ These Terms and Conditions and all matters arising out of or relating to these T
 
 #### 9.2. DISPUTE RESOLUTION
 
-Any dispute arising out of or in connection with these Terms and Conditions, including any question regarding its existence, validity, or termination, shall be referred to and finally resolved by arbitration under the rules of the London Court of International Arbitration, which rules are deemed to be incorporated by reference into this clause. The number of arbitrators shall be one. The seat, or legal place, of arbitration shall be London, England. The language to be used in the arbitral proceedings shall be English.
+This Agreement shall be governed by and construed in accordance with the laws of the Cayman Islands. Any dispute arising out of or in connection with this Agreement, including any question regarding its existence, validity, or termination, shall be referred to and finally resolved by binding arbitration administered by the Cayman International Mediation & Arbitration Centre Ltd. under its Arbitration Rules in effect at the time of the arbitration. The seat of the arbitration shall be George Town, Grand Cayman, Cayman Islands; the arbitration tribunal shall consist of a sole arbitrator; and the language of the arbitration shall be English. The parties agree to keep confidential all matters relating to the arbitration, including related court proceedings, except as may be required by applicable law or regulatory requirements. This arbitration agreement shall be binding on the parties and their respective successors and assigns.
 
 #### 9.3. NO ASSIGNMENT
 
