@@ -2,13 +2,15 @@
 
 ### Important Notice
 
-This document describes the material risks associated with syrupUSDC and syrupUSDT (collectively, the "SyrupUSD Tokens"). It is intended to provide a clear, consolidated overview of the risks involved in depositing into and holding SyrupUSD Tokens. This document does not constitute financial, legal, or investment advice. You should consult your own advisors before making any decision to use the SyrupUSD Tokens.
+This document describes the material risks associated with syrupUSDC and syrupUSDT. It is intended to provide a clear, consolidated overview of the risks involved in depositing into and holding syrupUSDC and/or syrupUSDT This document does not constitute financial, legal, or investment advice. You should consult your own advisors before making any decision to use syrupUSDC and/or syrupUSDT.
 
-In this document, "the Issuer" refers to Maple International Operations SPC, a Segregated Portfolio Company registered in the Cayman Islands, which issues the SyrupUSD Tokens through its segregated portfolios. "The Interface Operator" refers to Syrup Ltd, which operates the interface at app.maple.finance/earn. Together, the Issuer and the Interface Operator are referred to as "the Company" where the context applies to both. "The Services" refers to the interface and related services as defined in the Interface Terms of Use.
+In this document, "the syrupUSDC Issuer" refers to Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1. "The syrupUSDT Issuer" refers to Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1. Where the context applies to both, they are referred to collectively as "the Issuers".
 
-By depositing into or holding SyrupUSD Tokens, you acknowledge that you have read, understood, and accepted the risks described in this document and in the Interface Terms of Use.
+&#x20;"The Interface Operator" refers to Syrup Ltd, which operates the interface at app.maple.finance/earn. Together, the applicable Issuer and the Interface Operator are referred to as "the Company" where the context applies to both. "The Services" refers to the interface and related services as defined in the Interface Terms of Use.
 
-### 1. Product Overview and Nature of the SyrupUSD Tokens
+By depositing into or holding syrupUSDC and/or syrupUSDT, you acknowledge that you have read, understood, and accepted the risks described in this document and in the Interface Terms of Use.
+
+### 1. Product Overview and Nature of syrupUSDC and/or syrupUSDT
 
 #### 1.1 What are syrupUSDC and syrupUSDT?
 
@@ -16,11 +18,11 @@ syrupUSDC and syrupUSDT are tokenized representations of a lender's deposit in a
 
 #### 1.2 What syrupUSDC and syrupUSDT Are Not
 
-The SyrupUSD Tokens are not stablecoins and are not backed by USDC or USDT on a one-to-one basis. They are not sponsored, endorsed, administered by, or otherwise associated with Circle Internet Financial, LLC ("Circle") or Tether Limited. The value of SyrupUSD Tokens is derived from a dynamic pool of underlying assets, including loans and other yield-generating strategies, and may fluctuate. There is no guarantee that you will be able to redeem your SyrupUSD Tokens for the amount of USDC or USDT you originally deposited.
+syrupUSDC and/or syrupUSDT are not stablecoins and are not backed by USDC or USDT on a one-to-one basis. They are not sponsored, endorsed, administered by, or otherwise associated with Circle Internet Financial, LLC ("Circle") or Tether Limited. The value of syrupUSDC and/or syrupUSDT is derived from a dynamic pool of underlying assets, including loans and other yield-generating strategies, and may fluctuate. There is no guarantee that you will be able to redeem your syrupUSDC and/or syrupUSDT for the amount of USDC or USDT you originally deposited.
 
 #### 1.3 How Yield is Generated
 
-The yield associated with SyrupUSD Tokens is generated from two primary sources:
+The yield associated with syrupUSDC and/or syrupUSDT is generated from two primary sources:
 
 1. Overcollateralized Lending. Interest payments on overcollateralized loans originated to institutional borrowers, governed by Master Lending Agreements with posted collateral.
 2. Supporting Yield Strategies. Capital may also be allocated to supporting yield strategies, including but not limited to futures basis trading, other delta-neutral or market-neutral approaches, and liquidity provision in decentralized finance protocols.
@@ -31,7 +33,7 @@ Past performance is not indicative of future results, and yields are not guarant
 
 #### 2.1 Credit and Default Risk
 
-SyrupUSD Tokens provide exposure to loans originated to institutional counterparties. While these loans are overcollateralized and governed by Master Lending Agreements, each loan is subject to the risk of borrower default.
+syrupUSDC and/or syrupUSDT provide exposure to loans originated to institutional counterparties. While these loans are overcollateralized and governed by Master Lending Agreements, each loan is subject to the risk of borrower default.
 
 **What happens if a borrower defaults?**\
 If a borrower fails to make a required payment past the applicable grace period, Maple may execute a default on the loan. This will:
@@ -39,7 +41,7 @@ If a borrower fails to make a required payment past the applicable grace period,
 1. Reduce the pool's value by the amount of outstanding principal on the loan and any accrued interest.
 2. Trigger the liquidation of any collateral posted against the loan, with the proceeds returned to the pool.
 
-If the liquidated collateral does not fully cover the outstanding loan amount, the pool will incur a net loss. This loss is shared proportionally among all lenders in the pool, meaning the value of your SyrupUSD Tokens will decrease. In a severe scenario involving multiple simultaneous defaults, you could lose a substantial portion or all of your deposited principal.
+If the liquidated collateral does not fully cover the outstanding loan amount, the pool will incur a net loss. This loss is shared proportionally among all lenders in the pool, meaning the value of your syrupUSDC and/or syrupUSDT will decrease. In a severe scenario involving multiple simultaneous defaults, you could lose a substantial portion or all of your deposited principal.
 
 #### 2.2 Impairment Risk
 
@@ -108,12 +110,12 @@ If an oracle provides inaccurate, delayed, or manipulated price data, it could r
 
 #### 4.3 Dependency and Composability Risk
 
-The SyrupUSD Tokens and the Maple Protocol interact with and depend on several external systems and assets, including:
+syrupUSDC and/or syrupUSDT and the Maple Protocol interact with and depend on several external systems and assets, including:
 
-* **Underlying Stablecoins (USDC, USDT).** The SyrupUSD Tokens are denominated in USDC and USDT, which are themselves subject to issuer risk (e.g., the risk that Circle or Tether cannot honor redemptions), regulatory risk, and the risk of de-pegging from their intended value.
+* **Underlying Stablecoins (USDC, USDT).** syrupUSDC and/or syrupUSDT are denominated in USDC and USDT, which are themselves subject to issuer risk (e.g., the risk that Circle or Tether cannot honor redemptions), regulatory risk, and the risk of de-pegging from their intended value.
 * **Blockchain Infrastructure (Ethereum and others).** The protocol operates on Ethereum and other blockchains. Network congestion, high gas fees, hard forks, or consensus failures on these networks could impair the functioning of the protocol or delay transactions.
-* **Third-Party DeFi Protocols.** Where capital is deployed into third-party DeFi protocols for yield strategies, the SyrupUSD Tokens inherit the risks of those protocols, including their own smart contract risks, governance risks, and operational risks.
-* Bridge and Crosschain Risk. For users interacting with SyrupUSD Tokens on chains other than Ethereum (e.g., Solana, Arbitrum, Base), the crosschain mint/redeem mechanism introduces additional risks, including bridge security vulnerabilities and potential delays or failures in crosschain message passing.
+* **Third-Party DeFi Protocols.** Where capital is deployed into third-party DeFi protocols for yield strategies, the syrupUSDC and/or syrupUSDT inherit the risks of those protocols, including their own smart contract risks, governance risks, and operational risks.
+* Bridge and Crosschain Risk. For users interacting with syrupUSDC and/or syrupUSDT on chains other than Ethereum (e.g., Solana, Arbitrum, Base), the crosschain mint/redeem mechanism introduces additional risks, including bridge security vulnerabilities and potential delays or failures in crosschain message passing.
 
 A failure, exploit, or adverse event in any of these dependencies could result in a partial or total loss of funds, even if the Maple Protocol itself is functioning correctly.
 
@@ -130,7 +132,7 @@ While these controls are designed to protect the protocol and its users, they al
 
 #### 5.2 Multi-Signature Wallet Risk
 
-Certain protocol functions are controlled by multi-signature wallets ("MultiSigs"). While some MultiSig signatories may be employed or engaged by the Issuer or the Interface Operator, others may be unaffiliated third parties. Neither the Issuer nor the Interface Operator can guarantee the actions or inactions of unaffiliated MultiSig members, and adverse actions by MultiSig members could impact the protocol's operation.
+Certain protocol functions are controlled by multi-signature wallets ("MultiSigs"). While some MultiSig signatories may be employed or engaged by the applicable Issuer or the Interface Operator, others may be unaffiliated third parties. Neither the applicable Issuer nor the Interface Operator can guarantee the actions or inactions of unaffiliated MultiSig members, and adverse actions by MultiSig members could impact the protocol's operation.
 
 #### 5.3 Governance Risk
 
@@ -140,42 +142,44 @@ Decisions about the protocol's development, parameter settings, and strategic di
 
 #### 6.1 Regulatory Uncertainty
 
-The regulatory regimes governing blockchain technologies, cryptocurrencies, and other digital assets are uncertain and evolving. New regulations or policies in any jurisdiction may materially adversely affect the utility or value of the SyrupUSD Tokens, the ability of the Issuer or the Interface Operator to continue providing the Services, or the legal status of the protocol's activities. You are encouraged to consult with your own legal and tax advisors regarding the implications of using the SyrupUSD Tokens in your jurisdiction.
+The regulatory regimes governing blockchain technologies, cryptocurrencies, and other digital assets are uncertain and evolving. New regulations or policies in any jurisdiction may materially adversely affect the utility or value of syrupUSDC and/or syrupUSDT, the ability of the applicable Issuer or the Interface Operator to continue providing the Services, or the legal status of the protocol's activities. You are encouraged to consult with your own legal and tax advisors regarding the implications of using syrupUSDC and/or syrupUSDTin your jurisdiction.
 
 #### 6.2 Jurisdictional Restrictions
 
-syrupUSDC and syrupUSDT are not available to individuals or entities in certain restricted jurisdictions, including but not limited to the United States, Australia, and other sanctioned or restricted territories. A full list of restricted jurisdictions is maintained in the [Available Jurisdictions](https://docs.maple.finance/legal/syrupusdc-and-syrupusdt-available-jurisdictions) section. Accessing or using the SyrupUSD Tokens from a restricted jurisdiction is a violation of the Terms of Use.
+syrupUSDC and syrupUSDT are not available to individuals or entities in certain restricted jurisdictions, including but not limited to the United States, Australia, and other sanctioned or restricted territories. A full list of restricted jurisdictions is maintained in the [Available Jurisdictions](https://docs.maple.finance/legal/syrupusdc-and-syrupusdt-available-jurisdictions) section. Accessing or using syrupUSDC and/or syrupUSDT from a restricted jurisdiction is a violation of the Terms of Use.
 
 #### 6.3 Entity Structure
 
-The SyrupUSD Tokens are issued through Maple International Operations SPC, a Segregated Portfolio Company registered in the Cayman Islands. The segregated portfolio structure means that the assets and liabilities of each segregated portfolio are ring-fenced by statute. Lender claims are exclusively against the assets of the specific segregated portfolio in which they have deposited, and the assets of one portfolio cannot be used to satisfy the liabilities of another. This structure is designed to protect lenders from cross-portfolio contagion, but it also means that your recourse in the event of a loss is limited to the assets within the relevant portfolio.
+i) Section 6.3: syrupUSDC is issued by Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1 and syrupUSDT is issued by Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1, each operating independently as legally distinct entities. The assets and liabilities of each entity are ring-fenced by statute. Lender claims are exclusively against the assets of the segregated portfolio in which they have deposited, and the assets of one segregated portfolio cannot be used to satisfy the liabilities of another. This structure is designed to protect lenders from cross-portfolio contagion, but it also means that your recourse in the event of a loss is limited to the assets within the relevant portfolio.
+
+Lender claims are exclusively against the assets of the specific segregated portfolio in which they have deposited, and the assets of one portfolio cannot be used to satisfy the liabilities of another. This structure is designed to protect lenders from cross-portfolio contagion, but it also means that your recourse in the event of a loss is limited to the assets within the relevant portfolio.
 
 #### 6.4 Tax Risk
 
-The tax treatment of transactions involving cryptocurrencies and digital assets, including the SyrupUSD Tokens, is uncertain in many jurisdictions. You are solely responsible for determining and fulfilling your tax obligations in connection with your use of the SyrupUSD Tokens.
+The tax treatment of transactions involving cryptocurrencies and digital assets, including syrupUSDC and/or syrupUSDT, is uncertain in many jurisdictions. You are solely responsible for determining and fulfilling your tax obligations in connection with your use of syrupUSDC and/or syrupUSDT.
 
 ### 7. User Responsibilities and Prohibited Conduct
 
 #### 7.1 Assumption of Risk
 
-By using the SyrupUSD Tokens, you represent that you have sufficient knowledge and experience in business and financial matters, including a sufficient understanding of blockchain technologies, cryptocurrencies, and decentralized finance, to evaluate the risks and benefits described in this document. You acknowledge that you bear the risks of your participation, including the risk of complete loss of your deposited assets.
+By using syrupUSDC and/or syrupUSDT you represent that you have sufficient knowledge and experience in business and financial matters, including a sufficient understanding of blockchain technologies, cryptocurrencies, and decentralized finance, to evaluate the risks and benefits described in this document. You acknowledge that you bear the risks of your participation, including the risk of complete loss of your deposited assets.
 
-The SyrupUSD Tokens are not deposits of, or guaranteed by, a bank. They are not insured by the FDIC or any other governmental agency. No advice or information obtained from the Issuer, the Interface Operator, or through the Services constitutes investment advice or a recommendation to participate.
+syrupUSDC and/or syrupUSDT are not deposits of, or guaranteed by, a bank. They are not insured by the FDIC or any other governmental agency. No advice or information obtained from the applicable Issuer, the Interface Operator, or through the Services constitutes investment advice or a recommendation to participate.
 
 #### 7.2 Prohibited Conduct and Market Integrity
 
-Users of the SyrupUSD Tokens and the Maple Protocol are prohibited from engaging in any conduct that undermines the integrity or fair operation of the protocol, including but not limited to:
+Users of syrupUSDC and/or syrupUSDT and the Maple Protocol are prohibited from engaging in any conduct that undermines the integrity or fair operation of the protocol, including but not limited to:
 
-* **Market Manipulation.** Any attempt to artificially inflate, deflate, or otherwise manipulate the price, value, or market for the SyrupUSD Tokens, underlying assets, or collateral through wash trading, spoofing, layering, or any other deceptive or manipulative practice.
+* **Market Manipulation.** Any attempt to artificially inflate, deflate, or otherwise manipulate the price, value, or market for syrupUSDC and/or syrupUSDT underlying assets, or collateral through wash trading, spoofing, layering, or any other deceptive or manipulative practice.
 * **Exploitation of Protocol Mechanics.** Any attempt to exploit vulnerabilities, design features, or unintended behaviors in the protocol's smart contracts or infrastructure for personal gain at the expense of other users.
 * **Front-Running and Sandwich Attacks.** Any use of non-public information or transaction ordering strategies to extract value from other users' transactions.
 * **Circumvention of Controls.** Any attempt to circumvent jurisdictional restrictions, KYC requirements, withdrawal limits, or other controls implemented by the protocol.
 
-Violation of these prohibitions may result in restriction of access to the Services and may be referred to relevant authorities. The Issuer and the Interface Operator each reserve the right to take any action deemed necessary to protect the integrity of the protocol and its users.
+Violation of these prohibitions may result in restriction of access to the Services and may be referred to relevant authorities. The applicable Issuer and the Interface Operator each reserve the right to take any action deemed necessary to protect the integrity of the protocol and its users.
 
 #### 7.3 No Reliance
 
-You acknowledge that neither the Issuer nor the Interface Operator brokers trading orders on your behalf, matches orders, or offers any financial products for sale or distribution. Neither the Issuer nor the Interface Operator facilitates the execution or settlement of your transactions, which occur entirely on public distributed blockchains. All actions you take utilizing the Services are considered unsolicited, and neither the Issuer nor the Interface Operator conducts a suitability review of any such action.
+You acknowledge that neither the applicable Issuer nor the Interface Operator brokers trading orders on your behalf, matches orders, or offers any financial products for sale or distribution. Neither the applicable Issuer nor the Interface Operator facilitates the execution or settlement of your transactions, which occur entirely on public distributed blockchains. All actions you take utilizing the Services are considered unsolicited, and neither the applicable Issuer nor the Interface Operator conducts a suitability review of any such action.
 
 ### 8. Additional Information
 
