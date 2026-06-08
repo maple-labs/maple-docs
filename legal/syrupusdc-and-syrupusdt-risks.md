@@ -154,6 +154,8 @@ i) Section 6.3: syrupUSDC is issued by Maple International Operations SPC acting
 
 Lender claims are exclusively against the assets of the specific segregated portfolio in which they have deposited, and the assets of one portfolio cannot be used to satisfy the liabilities of another. This structure is designed to protect lenders from cross-portfolio contagion, but it also means that your recourse in the event of a loss is limited to the assets within the relevant portfolio.
 
+syrupUSDC is issued by Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1 and syrupUSDT is issued by Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1, each operating independently as legally distinct entities. The assets and liabilities of each entity are ring-fenced by statute. Lender claims are exclusively against the assets of the segregated portfolio in which they have deposited, and the assets of one segregated portfolio cannot be used to satisfy the liabilities of another. This structure is designed to protect lenders from cross-portfolio contagion, but it also means that your recourse in the event of a loss is limited to the assets within the relevant portfolio.
+
 #### 6.4 Tax Risk
 
 The tax treatment of transactions involving cryptocurrencies and digital assets, including syrupUSDC and/or syrupUSDT, is uncertain in many jurisdictions. You are solely responsible for determining and fulfilling your tax obligations in connection with your use of syrupUSDC and/or syrupUSDT.
