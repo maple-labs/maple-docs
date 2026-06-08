@@ -6,9 +6,11 @@ No, syrupUSDC and syrupUSDT are not available to:
 
 1. Individuals who are residents, citizens, or tax residents of any restricted jurisdiction
 2. Entities incorporated, organized, or having their principal place of business in any restricted jurisdiction
-3. Any person accessing the protocol from within a restricted jurisdiction.&#x20;
+3. Any person accessing the protocol from within a restricted jurisdiction.
 
-The following are considered restricted jurisdictions:&#x20;
+The following restrictions apply independently to syrupUSDC (issued by Maple International Operations SPC acting on behalf of and for the account of Secure Loan Segregated Portfolio 1) and syrupUSDT (issued by Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1). Both products currently share the same jurisdiction restrictions as set out below.
+
+The following are considered restricted jurisdictions:
 
 * Abkhazia
 * Afghanistan

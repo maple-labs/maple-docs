@@ -1,4 +1,4 @@
-# syrupUSDC and syrupUSDT- Privacy Policy
+# syrupUSDC and syrupUSDT - Privacy Policy
 
 Last Modified: September 15, 2024
 
@@ -9,6 +9,8 @@ Syrup Ltd ("**Company**" or "**We**") respect your privacy and are committed to 
 * The types of information we may collect or that you may provide.
 * The types of information we may collect or that you may provide when you visit the website located at http://syrup.fi (including any of its sub-domains or pages) (our "**Website**"), when you access or use the interface for interacting with the Syrup Protocol (the “**Protocol**”) available at http://syrup.fi (the "**Interface**"), or when you contact us via electronic media.
 * Our practices for collecting, using, maintaining, protecting, and disclosing that information.
+
+Syrup Ltd operates the interface for both syrupUSDC and syrupUSDT. The respective issuers are Maple International Operations SPC acting on behalf of and for the account of Secured Loan Segregated Portfolio 1 for syrupUSDC, and Maple International Operations SPC acting on behalf of and for the account of Maple USDT Segregated Portfolio 1 for syrupUSDT. This Privacy Policy governs data collected by Syrup Ltd solely in its capacity as Interface Operator and does not govern data processing by either issuer entity.
 
 This policy applies only to information we collect on our Website, on the Interface, and in email, and other electronic communications sent through or in connection with the Website or the Interface.This policy DOES NOT apply to information that:
 
