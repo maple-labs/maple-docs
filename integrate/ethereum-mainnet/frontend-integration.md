@@ -1,7 +1,8 @@
 ---
 description: >-
-  Enable your users to deposit into syrupUSDC & syrupUSDT from your app via
-  SDK/API on Ethereum mainnet. For wallets, apps, DEXes, custody solutions etc.
+  Enable your users to deposit into syrupUSDC, syrupUSDT & syrupUSDG from your
+  app via SDK/API on Ethereum mainnet. For wallets, apps, DEXes, custody
+  solutions etc.
 ---
 
 # Frontend Integration
@@ -82,6 +83,10 @@ Syrup's main contract, the `SyrupRouter`, is designed to allow authorized partic
 **syrupUSDT**
 
 <table><thead><tr><th width="224.6953125">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D">0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2">0xF007476Bb27430795138C511F18F821e8D1e5Ee2</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C">0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C</a></td></tr></tbody></table>
+
+**syrupUSDG**
+
+<table><thead><tr><th width="224.6953125">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A">0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0x191ac16255f49F7C6cB2e3b2502064A805943849">0x191ac16255f49F7C6cB2e3b2502064A805943849</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0xAf63C06970086d535F338565D77c5fA3bDC5fD79">0xAf63C06970086d535F338565D77c5fA3bDC5fD79</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Sepolia" %}

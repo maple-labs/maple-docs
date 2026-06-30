@@ -1,8 +1,8 @@
 ---
 description: >-
-  Integrate syrupUSDC & syrupUSDT via smart contracts on Ethereum mainnet. Your
-  contracts must deposit through SyrupRouter with authorization handled
-  PoolPermissionManager.
+  Integrate syrupUSDC, syrupUSDT & syrupUSDG via smart contracts on Ethereum
+  mainnet. Your contracts must deposit through SyrupRouter with authorization
+  handled PoolPermissionManager.
 ---
 
 # Smart Contract Integration
@@ -104,6 +104,10 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 **syrupUSDT**
 
 <table><thead><tr><th width="224.82421875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D">0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0xF007476Bb27430795138C511F18F821e8D1e5Ee2">0xF007476Bb27430795138C511F18F821e8D1e5Ee2</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C">0x86eBDf902d800F2a82038290B6DBb2A5eE29eB8C</a></td></tr><tr><td>USDT</td><td><a href="https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7">0xdAC17F958D2ee523a2206206994597C13D831ec7</a></td></tr></tbody></table>
+
+**syrupUSDG**
+
+<table><thead><tr><th width="224.82421875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://etherscan.io/address/0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A">0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://etherscan.io/address/0x191ac16255f49F7C6cB2e3b2502064A805943849">0x191ac16255f49F7C6cB2e3b2502064A805943849</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://etherscan.io/address/0xAf63C06970086d535F338565D77c5fA3bDC5fD79">0xAf63C06970086d535F338565D77c5fA3bDC5fD79</a></td></tr><tr><td>USDG</td><td><a href="https://etherscan.io/address/0xe343167631d89B6Ffc58B88d6b7fB0228795491D">0xe343167631d89B6Ffc58B88d6b7fB0228795491D</a></td></tr></tbody></table>
 
 **Shared (Global)**
 

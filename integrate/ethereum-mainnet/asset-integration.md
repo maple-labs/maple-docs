@@ -1,18 +1,18 @@
 ---
 description: >-
-  List or accept syrupUSDC & syrupUSDT as collateral or liquidity in your
-  protocol.
+  List or accept syrupUSDC, syrupUSDT & syrupUSDG as collateral or liquidity in
+  your protocol.
 ---
 
 # Asset Integration
 
-syrupUSDC and syrupUSDT are ERC-4626 vault tokens on Ethereum mainnet. This page covers token addresses and three methods for obtaining pricing data.
+syrupUSDC, syrupUSDT and syrupUSDG are ERC-4626 vault tokens on Ethereum mainnet. This page covers token addresses and three methods for obtaining pricing data.
 
 ### Token addresses
 
 {% tabs %}
 {% tab title="Mainnet" %}
-<table><thead><tr><th width="171.50872802734375">Token</th><th>Address</th></tr></thead><tbody><tr><td>syrupUSDC</td><td><a href="https://etherscan.io/token/0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b">0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b</a></td></tr><tr><td>syrupUSDT</td><td><a href="https://etherscan.io/token/0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d">0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d</a></td></tr></tbody></table>
+<table><thead><tr><th width="171.50872802734375">Token</th><th>Address</th></tr></thead><tbody><tr><td>syrupUSDC</td><td><a href="https://etherscan.io/token/0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b">0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b</a></td></tr><tr><td>syrupUSDT</td><td><a href="https://etherscan.io/token/0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d">0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d</a></td></tr><tr><td>syrupUSDG</td><td><a href="https://etherscan.io/token/0x87b65c4aaffa76881f9e96f3e7ed945ddfc3cd7a">0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Testnet (Sepolia)" %}
@@ -24,12 +24,12 @@ syrupUSDC and syrupUSDT are ERC-4626 vault tokens on Ethereum mainnet. This page
 
 #### Option 1: Smart contract (ERC-4626)
 
-syrupUSDC and syrupUSDT use the ERC-4626 tokenized vault standard. You can query the token price directly from the contract using two functions:
+syrupUSDC, syrupUSDT and syrupUSDG use the ERC-4626 tokenized vault standard. You can query the token price directly from the contract using two functions:
 
 1. **`convertToAssets(uint256 shares_)`** - Returns the amount of underlying assets (USDC/USDT) that would be received for a given number of shares. Use this for display purposes and general price calculations.
 2. **`convertToExitAssets(uint256 shares_)`** - Returns the amount of underlying assets accounting for any unrealized losses in the pool. Use this when calculating actual redemption values.
 
-Both tokens use 6 decimals. To get the price per token, call either function with `1000000` (1 share):
+All three tokens use 6 decimals. To get the price per token, call either function with `1000000` (1 share):
 
 {% tabs %}
 {% tab title="Solidity" %}
