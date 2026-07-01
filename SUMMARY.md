@@ -23,7 +23,7 @@
 ## syrupUSDC/USDT/USDG for Lenders
 
 * [Powered by Maple](syrupusdc-usdt-for-lenders/introduction.md)
-* [Lending in syrupUSDC/USDT](syrupusdc-usdt-for-lenders/lending.md)
+* [Earning with syrupUSDC/USDT/USDG](syrupusdc-usdt-for-lenders/lending.md)
 * [Drips Rewards](syrupusdc-usdt-for-lenders/drips-rewards.md)
 * [Withdrawals](syrupusdc-usdt-for-lenders/risk.md)
 * [Monthly Updates](syrupusdc-usdt-for-lenders/withdrawal-process.md)

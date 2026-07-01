@@ -1,16 +1,14 @@
-# Lending in syrupUSDC and syrupUSDT
+# Earning with syrupUSDC/USDT/USDG
 
 Simply connect your wallet, deposit funds, and start earning consistent high yield.
 
 To deposit, visit [app.maple.finance/earn](https://app.maple.finance/earn). You can view your deposit in the[ Portfolio](https://app.maple.finance/earn/portfolio) page.
 
-[Certain jurisdictions](https://maplefinance.gitbook.io/maple/legal/syrupusdc-and-syrupusdt-available-jurisdictions) are ineligible to deposit in Syrup.\
-
+[Certain jurisdictions](https://maplefinance.gitbook.io/maple/legal/syrupusdc-and-syrupusdt-available-jurisdictions) are ineligible to deposit in Syrup.
 
 **Approvals**
 
-The first time you lend an asset (e.g. USDC, USDT), you may be prompted to allow the contract to interact with your asset. This is a common transaction on Ethereum.\
-
+The first time you lend an asset (e.g. USDC, USDT, USDG), you may be prompted to allow the contract to interact with your asset. This is a common transaction on Ethereum.
 
 **Technical information**
 
