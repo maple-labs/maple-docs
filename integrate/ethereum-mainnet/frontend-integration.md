@@ -66,7 +66,7 @@ To access the necessary data, use the GraphQL API:
 {% endtab %}
 {% endtabs %}
 
-**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance) to receive Sepolia `USDC`/`USDT` tokens.
+**NOTE**: In order to perform the integration in Sepolia, you'll need to contact us at [partnerships@maple.finance](mailto:partnerships@maple.finance) to receive Sepolia `USDC`/`USDT`/`USDG` tokens.
 
 ## Deposit
 
