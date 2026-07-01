@@ -2,7 +2,7 @@
 
 * [Welcome to Maple](README.md)
 
-## Integrate SyrupUSDC/USDT <a href="#integrate" id="integrate"></a>
+## Integrate syrupUSDC/USDT/USDG <a href="#integrate" id="integrate"></a>
 
 * [Get Started](integrate/get-started.md)
 * [Ethereum Mainnet](integrate/ethereum-mainnet/README.md)
@@ -20,7 +20,7 @@
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
 
-## syrupUSDC/USDT for Lenders
+## syrupUSDC/USDT/USDG for Lenders
 
 * [Powered by Maple](syrupusdc-usdt-for-lenders/introduction.md)
 * [Lending in syrupUSDC/USDT](syrupusdc-usdt-for-lenders/lending.md)
