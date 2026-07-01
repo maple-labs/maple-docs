@@ -1,0 +1,7 @@
+# syrupUSDG Product Disclosures & Disclaimers
+
+The syrupUSDG token is a product developed, issued, and managed exclusively by Maple International Operations SPC acting on behalf of and for the account of Maple USDG Segregated Portfolio 1. It is not sponsored, endorsed, administered by, or otherwise associated with Tether Limited or its related entities ("Tether"). The syrupUSDG token is not a stablecoin and is not backed by USDG; its value is derived from a dynamic pool of underlying loan assets managed through the Maple Protocol.&#x20;
+
+The yield associated with syrupUSDG is generated from interest payments on overcollateralized loans made to institutional borrowers and yield generated through supporting deployment strategies, including futures basis trading and DeFi liquidity provision. These supporting strategies carry risks distinct from lending activities, as described in the [syrupusdc-and-syrupusdt-risks.md](syrupusdc-and-syrupusdt-risks.md "mention"). All lending activities involve significant risk, including but not limited to credit risk, liquidity risk, borrower default, and the potential for partial or total loss of your principal. Past performance is not indicative of future results, and yields are not guaranteed.&#x20;
+
+**Intellectual Property Notice:** Third-party trademarks, including "USDG," which is a trademark of Paxos, are the property of their respective owners. The use of such trademarks herein is for identification and descriptive purposes only and does not imply any affiliation with or endorsement by the trademark holders.
