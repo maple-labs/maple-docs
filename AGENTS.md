@@ -14,11 +14,7 @@ This repo is bidirectionally synced with GitBook. Edits made in the GitBook web 
 - `SUMMARY.md` — GitBook navigation / table of contents. A page must be listed here to publish (e.g. `maple-for-lenders/accessing-permissioned-pools.md` exists but is unregistered, so it does not appear on the site). Register every new page here.
 - `README.md` — site landing page (root of the nav).
 - `.gitbook/assets/` — all images and files; reference with a relative path (`../.gitbook/assets/name.png`).
-- `technical-resources/` — protocol and smart-contract reference: protocol overview, security, loans, pools, strategies, interfaces, singletons, SDK.
-- `integrate/` — Syrup asset / frontend / smart-contract integration guides.
-- `syrupusdc-usdt-for-lenders/`, `maple-institutional-for-lenders/`, `cash-management-pool/` — lender guides per product.
-- `maple-for-borrowers/`, `maple-for-token-holders/` — borrower and SYRUP token-holder guides.
-- `legal/` — terms, privacy, risk disclosures. `maple-1.0/` — deprecated Maple 1.0.
+- `maple-1.0/` — deprecated Maple 1.0; don't add content there.
 
 ## Conventions
 
