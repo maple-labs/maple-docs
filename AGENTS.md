@@ -23,7 +23,7 @@ This repo is bidirectionally synced with GitBook. Edits made in the GitBook web 
 ## Conventions
 
 - **GitBook Markdown extensions** — hint callouts (`{% hint style="info" %} … {% endhint %}`), tabs (`{% tabs %}`), card grids (`<table data-view="cards">`), and cross-page refs (`{% content-ref %}`). These render only through GitBook; match the surrounding page.
-- **Domain terms are canonical** — Pool, Pool Delegate, Lender/LP (never "vault", "manager", "depositor"). The headline metric is **AUM**, not TVL. Existing pages are the reference for tone toward a lay audience.
+- **Domain terms are canonical** — Pool, Pool Delegate, Lender/LP (don't call a Pool a "vault", a Pool Delegate a "manager", or a Lender a "depositor"). "Vault" is correct for Syrup yield vaults (syrupUSDC/USDT/BTC). The headline metric is **AUM**, not TVL. Existing pages are the reference for tone toward a lay audience.
 
 ## Constraints
 
