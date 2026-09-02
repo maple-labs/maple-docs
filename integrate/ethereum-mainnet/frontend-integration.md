@@ -97,6 +97,10 @@ Syrup's main contract, the `SyrupRouter`, is designed to allow authorized partic
 **syrupUSDT**
 
 <table><thead><tr><th width="225.046875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x7679cbe9ae66298114ac6dac73487b63ac023c0b">0x7679cbe9ae66298114ac6dac73487b63ac023c0b</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x0b703919cf2d30dbb18bad6febe8f0ea4f191918">0x0b703919cf2d30dbb18bad6febe8f0ea4f191918</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3">0xbbe2bf30b76729a4eb75bf40ced47a58000ae1d3</a></td></tr></tbody></table>
+
+**syrupUSDG**
+
+<table><thead><tr><th width="225.046875">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x0f40d60293433a64bb8da7e4dfd9d13399ed319e">0x0f40d60293433a64bb8da7e4dfd9d13399ed319e</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1">0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x1fd917c8c64070c151a163e16b10d2225781cc43">0x1fd917c8c64070c151a163e16b10d2225781cc43</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 

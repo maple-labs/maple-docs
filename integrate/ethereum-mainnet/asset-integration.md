@@ -4,7 +4,7 @@ description: >-
   your protocol.
 ---
 
-# Asset Integration
+# Asset Integration: Ethereum Mainnet
 
 syrupUSDC, syrupUSDT and syrupUSDG are ERC-4626 vault tokens on Ethereum mainnet. This page covers token addresses and three methods for obtaining pricing data.
 
@@ -16,7 +16,7 @@ syrupUSDC, syrupUSDT and syrupUSDG are ERC-4626 vault tokens on Ethereum mainnet
 {% endtab %}
 
 {% tab title="Testnet (Sepolia)" %}
-<table><thead><tr><th width="174.407958984375">Token</th><th>Address</th></tr></thead><tbody><tr><td>syrupUSDC</td><td><a href="https://sepolia.etherscan.io/token/0x2d8d21fee98d060655729efd7b14bc432c375ac1">0x2d8d21fee98d060655729efd7b14bc432c375ac1</a></td></tr><tr><td>syrupUSDT</td><td><a href="https://sepolia.etherscan.io/token/0x7679cbe9ae66298114ac6dac73487b63ac023c0b">0x7679cbe9ae66298114ac6dac73487b63ac023c0b</a></td></tr></tbody></table>
+<table><thead><tr><th width="174.407958984375">Token</th><th>Address</th></tr></thead><tbody><tr><td>syrupUSDC</td><td><a href="https://sepolia.etherscan.io/token/0x2d8d21fee98d060655729efd7b14bc432c375ac1">0x2d8d21fee98d060655729efd7b14bc432c375ac1</a></td></tr><tr><td>syrupUSDT</td><td><a href="https://sepolia.etherscan.io/token/0x7679cbe9ae66298114ac6dac73487b63ac023c0b">0x7679cbe9ae66298114ac6dac73487b63ac023c0b</a></td></tr><tr><td>syrupUSDG</td><td><a href="https://sepolia.etherscan.io/token/0x0f40d60293433a64bb8da7e4dfd9d13399ed319e">0x0f40d60293433a64bb8da7e4dfd9d13399ed319e</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
