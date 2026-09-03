@@ -125,7 +125,7 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 
 **syrupUSDG**
 
-<table><thead><tr><th width="234.72265625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x0f40d60293433a64bb8da7e4dfd9d13399ed319e">0x0f40d60293433a64bb8da7e4dfd9d13399ed319e</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1">0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x1fd917c8c64070c151a163e16b10d2225781cc43">0x1fd917c8c64070c151a163e16b10d2225781cc43</a></td></tr><tr><td>USDT</td><td><a href="https://sepolia.etherscan.io/address/0x83a103743ee75e36d89d377603c06eee5f8ed1ab">0x83a103743ee75e36d89d377603c06eee5f8ed1ab</a></td></tr></tbody></table>
+<table><thead><tr><th width="234.72265625">Contract</th><th>Address</th></tr></thead><tbody><tr><td>PoolV2</td><td><a href="https://sepolia.etherscan.io/address/0x0f40d60293433a64bb8da7e4dfd9d13399ed319e">0x0f40d60293433a64bb8da7e4dfd9d13399ed319e</a></td></tr><tr><td>SyrupRouter</td><td><a href="https://sepolia.etherscan.io/address/0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1">0x1d090d34e0b64f9327c0a6b89741a5bd29c886b1</a></td></tr><tr><td>WithdrawalManagerQueue</td><td><a href="https://sepolia.etherscan.io/address/0x1fd917c8c64070c151a163e16b10d2225781cc43">0x1fd917c8c64070c151a163e16b10d2225781cc43</a></td></tr><tr><td>USDG</td><td><a href="https://sepolia.etherscan.io/address/0x83a103743ee75e36d89d377603c06eee5f8ed1ab">0x83a103743ee75e36d89d377603c06eee5f8ed1ab</a></td></tr></tbody></table>
 
 **Shared (Global)**
 
