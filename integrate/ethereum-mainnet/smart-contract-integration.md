@@ -135,7 +135,7 @@ All ABIs are available on GitHub: [Maple JS (ABIs)](https://github.com/maple-lab
 
 ### 3. Testing on Sepolia
 
-Contact [partnerships@maple.finance](mailto:partnerships@maple.finance) for test `USDC/USDT` and access. See the Sepolia tab above for addresses.
+Contact [partnerships@maple.finance](mailto:partnerships@maple.finance) for test `USDC/USDT/USDG` and access. See the Sepolia tab above for addresses.
 
 ***
 
