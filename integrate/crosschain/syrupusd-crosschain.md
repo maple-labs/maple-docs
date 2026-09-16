@@ -51,7 +51,7 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 
 {% tabs %}
 {% tab title="Plasma" %}
-<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://plasmascan.to/address/0xC4374775489CB9C56003BF2C9b12495fC64F0771">0xC4374775489CB9C56003BF2C9b12495fC64F0771</a></td></tr><tr><td>CCIP Router</td><td><a href="https://plasmascan.to/address/0xcdca5d374e46a6dddab50bd2d9acb8c796ec35c3">0xcDca5D374e46A6DDDab50bD2D9acB8c796eC35C3</a></td></tr><tr><td>Pool</td><td><a href="https://plasmascan.to/address/0x1d952d2f6ee86ef4940fa648aa7477c8ff175f09">0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://plasmascan.to/address/0x2efff88747eb5a3ff00d4d8d0f0800e306c0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://plasmascan.to/address/0xC4374775489CB9C56003BF2C9b12495fC64F0771">0xC4374775489CB9C56003BF2C9b12495fC64F0771</a></td></tr><tr><td>Pool</td><td><a href="https://plasmascan.to/address/0x1d952d2f6ee86ef4940fa648aa7477c8ff175f09">0x1d952d2f6eE86Ef4940Fa648aA7477c8fF175F09</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://plasmascan.to/address/0x2efff88747eb5a3ff00d4d8d0f0800e306c0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Mantle" %}
@@ -67,6 +67,29 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% endtab %}
 {% endtabs %}
 
+### syrupUSDG
+
+{% tabs %}
+{% tab title="Solana" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.solana.com/address/CYB6WRi2YuV4Ui6q1dieP5Raev6ah7qftGsQAxJiZo8f">CYB6WRi2YuV4Ui6q1dieP5Raev6ah7qftGsQAxJiZo8f</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.solana.com/address/H1w3zL4yJKqHXut3dHvFQVCbjmYt5DZ3ioZcZrYZZD11">H1w3zL4yJKqHXut3dHvFQVCbjmYt5DZ3ioZcZrYZZD11</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Arbitrum" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://arbiscan.io/address/0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762">0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762</a></td></tr><tr><td>Pool</td><td><a href="https://arbiscan.io/address/0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f#code">0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Ink" %}
+<table><thead><tr><th width="209.6771240234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018">0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F">0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.inkonchain.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
+
+To consume Price Feeds and Data Streams, use the Chainlink docs:
+
+1. [Price Feeds Addresses](https://docs.chain.link/data-feeds/price-feeds/addresses)
+2. [Consuming Data Feeds](https://docs.chain.link/data-feeds/getting-started)
+3. [Data Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
+4. [Data Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
+
 ## Testnet Addresses
 
 CCIP provides two ERC-20 test tokens, so you don’t depend on third-party liquidity while testing:
@@ -74,65 +97,11 @@ CCIP provides two ERC-20 test tokens, so you don’t depend on third-party liqui
 * **CCIP-BnM (Burn & Mint):** deployed on each testnet; transfers are burn → mint
 * **CCIP-LnM (Lock & Mint):** minted only on Ethereum Sepolia
 
-### syrupUSDC
+Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](https://docs.chain.link/ccip/test-tokens) and the addresses of tokens available via the [CCIP Testnet Directory](https://docs.chain.link/ccip/directory/testnet).
 
-{% tabs %}
-{% tab title="Solana" %}
-<table><thead><tr><th width="210.1796875">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://sepolia.arbiscan.io/address/0xbc9A4b299741CBf2A8eD5D2078A426027C31B2A3">95Er6pcK2agiTa2Jctp1BBnQtuDfX1d78XSTZKWZyXKk</a></td></tr><tr><td>CCIP Router</td><td><a href="https://solscan.io/account/Ccip842gzYHhvdDkSyi2YVCoAWPbYJoApMFzSxQroE9C?cluster=devnet">Ccip842gzYHhvdDkSyi2YVCoAWPbYJoApMFzSxQroE9C</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.solana.com/address/B3rp2RHbuZeDeSSZLXww3EbaMr1TVtn9kF2a2FAobnxi?cluster=devnet">B3rp2RHbuZeDeSSZLXww3EbaMr1TVtn9kF2a2FAobnxi</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://sepolia.etherscan.io/address/0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
-{% endtab %}
 
-{% tab title="Arbitrum" %}
-<table><thead><tr><th width="210.06585693359375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://sepolia.arbiscan.io/address/0xbc9A4b299741CBf2A8eD5D2078A426027C31B2A3">0xbc9A4b299741CBf2A8eD5D2078A426027C31B2A3</a></td></tr><tr><td>CCIP Router</td><td></td></tr><tr><td>Pool</td><td><a href="https://sepolia.arbiscan.io/address/0xB2F73a7540A000b383e8a9ffb3BdEECc4709Dc4D">0xB2F73a7540A000b383e8a9ffb3BdEECc4709Dc4D</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://sepolia.etherscan.io/address/0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
-{% endtab %}
 
-{% tab title="Base" %}
-<table><thead><tr><th width="209.87152099609375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://sepolia.basescan.org/address/0x183F67cE6CCCeaBB5D79c69C2d92e78111736B62">0x183F67cE6CCCeaBB5D79c69C2d92e78111736B62</a></td></tr><tr><td>CCIP Router</td><td><a href="https://sepolia.basescan.org/address/0xD3b06cEbF099CE7DA4AcCf578aaebFDBd6e88a93">0xD3b06cEbF099CE7DA4AcCf578aaebFDBd6e88a93</a></td></tr><tr><td>Pool</td><td><a href="https://sepolia.basescan.org/address/0xB6bD6e3e56a8E28CCbE44b6442cA8b586B964Af8">0xB6bD6e3e56a8E28CCbE44b6442cA8b586B964Af8</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://sepolia.etherscan.io/address/0x02b6a75c5d1f430f0614dc5ac8ad5f9d35fba2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
-{% endtab %}
 
-{% tab title="Ethereum" %}
-<table><thead><tr><th width="209.60198974609375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://sepolia.etherscan.io/address/0xb1206B74F612F478c12A647D12E7e822AF5D8244">0xb1206b74f612f478c12a647d12e7e822af5d8244</a></td></tr><tr><td>CCIP Router</td><td><a href="https://sepolia.etherscan.io/address/0x0BF3dE8c5D3e8A2B34D2BEeB17ABfCeBaf363A59">0x0BF3dE8c5D3e8A2B34D2BEeB17ABfCeBaf363A59</a></td></tr><tr><td>Pool</td><td><a href="https://sepolia.etherscan.io/address/0x98C80d0235Eaae38200720Ae86e2D6a62b3B19c9">0x98C80d0235Eaae38200720Ae86e2D6a62b3B19c9</a></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
-
-Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](https://docs.chain.link/ccip/test-tokens).
-
-## Pricing
-
-### **Onchain Oracles**
-
-#### syrupUSDC/USDC
-
-{% tabs %}
-{% tab title="Solana" %}
-<table><thead><tr><th width="194.67095947265625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://solscan.io/account/CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T">CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="Arbitrum" %}
-<table><thead><tr><th width="195.3870849609375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://arbiscan.io/address/0xF8722c901675C4F2F7824E256B8A6477b2c105FB">0xF8722c901675C4F2F7824E256B8A6477b2c105FB</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="Base" %}
-<table><thead><tr><th width="194.69268798828125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://basescan.org/address/0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2">0x311D3A3faA1d5939c681E33C2CDAc041FF388EB2</a></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
-
-#### syrupUSDT/USDT
-
-{% tabs %}
-{% tab title="Plasma" %}
-<table><thead><tr><th width="194.90533447265625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://plasmascan.to/address/0x89a0e204591fce2611e89ca7634c12b400d347fe">0x89a0e204591Fce2611e89CA7634c12B400d347fe</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="Mantle" %}
-<table><thead><tr><th width="194.7578125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://mantlescan.xyz/address/0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a">0xdDEaeAdF319bd363120Af02fBdb1e2C5A3Ce172a</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="BNB" %}
-<table><thead><tr><th width="194.85760498046875">Type</th><th>Address</th></tr></thead><tbody><tr><td>Chainlink Price Oracle</td><td><a href="https://bscscan.com/address/0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658">0xac9962aAb7b8fe63fA3A5065c22D4Dd700B1C658</a></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
-
-Use [Chainlink's Data Feeds docs](https://docs.chain.link/data-feeds/getting-started) to consume them.
 
 ### **Data Streams**
 
@@ -148,10 +117,7 @@ Low latency streams work on supported chains - full list of available chains [he
 {% endtab %}
 {% endtabs %}
 
-Use Chainlink's Data Streams docs to consume them:
 
-* [Data Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
-* [Data Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
 
 ## Integration paths
 
