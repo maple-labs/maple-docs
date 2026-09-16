@@ -45,6 +45,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% tab title="Arc" %}
 <table><thead><tr><th width="230.33941650390625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.arc.io/token/0x0dc6b79f3c3854e4d74514fd4d29be6c96beee39">0x0dC6b79F3c3854E4d74514fD4d29BE6c96Beee39</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.arc.io/token/0x6be14E674f741faa78da2fEcF00870C8B753A0BB">0x6be14E674f741faa78da2fEcF00870C8B753A0BB</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://explorer.arc.io/address/0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4">0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4</a></td></tr></tbody></table>
 {% endtab %}
+
+{% tab title="Robinhood Chain" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14">0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x50056397CF6ccF50D1748e95c32EC361951ee6F9">0x50056397CF6ccF50D1748e95c32EC361951ee6F9</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://robinhoodchain.blockscout.com/address/0x6317f016FA3e312C4625dee51d32b43a223011f8">0x6317f016FA3e312C4625dee51d32b43a223011f8</a></td></tr></tbody></table>
+{% endtab %}
 {% endtabs %}
 
 ### syrupUSDT
@@ -80,6 +84,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 
 {% tab title="Ink" %}
 <table><thead><tr><th width="229.98095703125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018">0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F">0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.inkonchain.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://explorer.inkonchain.com/address/0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35">0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Robinhood Chain" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0x40858070814a57FdF33a613ae84fE0a8b4a874f7">0x40858070814a57FdF33a613ae84fE0a8b4a874f7</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x01FA676ECC8662E6923fdF06bA5278A96ccD725c">0x01FA676ECC8662E6923fdF06bA5278A96ccD725c</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://robinhoodchain.blockscout.com/address/0xDd194C66aDcb422F188a04434e4824D70c151cF0">0xDd194C66aDcb422F188a04434e4824D70c151cF0</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
