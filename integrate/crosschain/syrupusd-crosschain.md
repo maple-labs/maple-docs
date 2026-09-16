@@ -42,12 +42,12 @@ Both tokens have 6 decimals across all chains.
 _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol/tip20/overview)_. Bridging works the same via CCIP._
 {% endtab %}
 
-{% tab title="Arc" %}
-<table><thead><tr><th width="230.33941650390625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.arc.io/token/0x0dc6b79f3c3854e4d74514fd4d29be6c96beee39">0x0dC6b79F3c3854E4d74514fD4d29BE6c96Beee39</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.arc.io/token/0x6be14E674f741faa78da2fEcF00870C8B753A0BB">0x6be14E674f741faa78da2fEcF00870C8B753A0BB</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://explorer.arc.io/address/0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4">0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4</a></td></tr></tbody></table>
+{% tab title="Robinhood" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14">0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x50056397CF6ccF50D1748e95c32EC361951ee6F9">0x50056397CF6ccF50D1748e95c32EC361951ee6F9</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://robinhoodchain.blockscout.com/address/0x6317f016FA3e312C4625dee51d32b43a223011f8">0x6317f016FA3e312C4625dee51d32b43a223011f8</a></td></tr></tbody></table>
 {% endtab %}
 
-{% tab title="Robinhood Chain" %}
-<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14">0xC6a4854eeB493224d5f9485E12Dd3A81f22EEE14</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x50056397CF6ccF50D1748e95c32EC361951ee6F9">0x50056397CF6ccF50D1748e95c32EC361951ee6F9</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://robinhoodchain.blockscout.com/address/0x6317f016FA3e312C4625dee51d32b43a223011f8">0x6317f016FA3e312C4625dee51d32b43a223011f8</a></td></tr></tbody></table>
+{% tab title="Arc" %}
+<table><thead><tr><th width="230.33941650390625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.arc.io/token/0x0dc6b79f3c3854e4d74514fd4d29be6c96beee39">0x0dC6b79F3c3854E4d74514fD4d29BE6c96Beee39</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.arc.io/token/0x6be14E674f741faa78da2fEcF00870C8B753A0BB">0x6be14E674f741faa78da2fEcF00870C8B753A0BB</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://explorer.arc.io/address/0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4">0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -74,6 +74,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 ### syrupUSDG
 
 {% tabs %}
+{% tab title="Robinhood" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0x40858070814a57FdF33a613ae84fE0a8b4a874f7">0x40858070814a57FdF33a613ae84fE0a8b4a874f7</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x01FA676ECC8662E6923fdF06bA5278A96ccD725c">0x01FA676ECC8662E6923fdF06bA5278A96ccD725c</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://robinhoodchain.blockscout.com/address/0xDd194C66aDcb422F188a04434e4824D70c151cF0">0xDd194C66aDcb422F188a04434e4824D70c151cF0</a></td></tr></tbody></table>
+{% endtab %}
+
 {% tab title="Solana" %}
 <table><thead><tr><th width="229.53826904296875">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.solana.com/address/CYB6WRi2YuV4Ui6q1dieP5Raev6ah7qftGsQAxJiZo8f">CYB6WRi2YuV4Ui6q1dieP5Raev6ah7qftGsQAxJiZo8f</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.solana.com/address/H1w3zL4yJKqHXut3dHvFQVCbjmYt5DZ3ioZcZrYZZD11">H1w3zL4yJKqHXut3dHvFQVCbjmYt5DZ3ioZcZrYZZD11</a></td></tr></tbody></table>
 {% endtab %}
@@ -84,10 +88,6 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 
 {% tab title="Ink" %}
 <table><thead><tr><th width="229.98095703125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018">0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F">0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.inkonchain.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://explorer.inkonchain.com/address/0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35">0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="Robinhood Chain" %}
-<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://robinhoodchain.blockscout.com/address/0x40858070814a57FdF33a613ae84fE0a8b4a874f7">0x40858070814a57FdF33a613ae84fE0a8b4a874f7</a></td></tr><tr><td>Pool</td><td><a href="https://robinhoodchain.blockscout.com/address/0x01FA676ECC8662E6923fdF06bA5278A96ccD725c">0x01FA676ECC8662E6923fdF06bA5278A96ccD725c</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://robinhoodchain.blockscout.com/address/0xDd194C66aDcb422F188a04434e4824D70c151cF0">0xDd194C66aDcb422F188a04434e4824D70c151cF0</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -100,15 +100,7 @@ Price Feeds are onchain contracts that Chainlink updates on a set heartbeat. The
 
 Price Streams deliver low-latency signed price reports offchain that your contract verifies onchain when consumed.
 
-{% tabs %}
-{% tab title="syrupUSDC/USDC" %}
-<table><thead><tr><th width="110.165771484375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Feed ID</td><td><code>0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9</code></td></tr><tr><td>Link</td><td><a href="https://data.chain.link/streams/syrupusdc-usdc-exchangerate-streams">Chainlink Stream</a></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="syrupUSDG/USDG" %}
-<table><thead><tr><th width="109.5972900390625"></th><th></th></tr></thead><tbody><tr><td>Feed ID</td><td><code>0x0007f1bf39f52bb9fc4c0a87fe2d1de5e8105a2d3899ca09051082337cc44d91</code></td></tr><tr><td>Link</td><td><a href="https://data.chain.link/streams/syrupusdg-usdg-exchangerate-streams">Chainlink Stream</a></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
+<table><thead><tr><th width="149.64227294921875">Price Stream</th><th>Address / Link</th></tr></thead><tbody><tr><td>syrupUSDC/USDC</td><td><a href="https://data.chain.link/streams/syrupusdc-usdc-exchangerate-streams">0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9</a></td></tr><tr><td>syrupUSDG/USDG</td><td><a href="https://data.chain.link/streams/syrupusdg-usdg-exchangerate-streams">0x0007f1bf39f52bb9fc4c0a87fe2d1de5e8105a2d3899ca09051082337cc44d91</a></td></tr></tbody></table>
 
 To consume Price Streams, use the Chainlink Docs:
 
