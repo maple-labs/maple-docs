@@ -13,13 +13,11 @@ Both tokens have 6 decimals across all chains.
 
 ## Mainnet Addresses
 
-### syrupUSDC&#x20;
+### syrupUSDC
 
 {% tabs %}
 {% tab title="Solana" %}
 <table><thead><tr><th width="210.443603515625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://solscan.io/token/AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj">AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj</a></td></tr><tr><td>CCIP Router</td><td><a href="https://solscan.io/account/Ccip842gzYHhvdDkSyi2YVCoAWPbYJoApMFzSxQroE9C">Ccip842gzYHhvdDkSyi2YVCoAWPbYJoApMFzSxQroE9C</a></td></tr><tr><td>Pool</td><td><a href="https://solscan.io/account/HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm">HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
-
-
 {% endtab %}
 
 {% tab title="Arbitrum" %}
@@ -44,8 +42,8 @@ Both tokens have 6 decimals across all chains.
 _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol/tip20/overview)_. Bridging works the same via CCIP._
 {% endtab %}
 
-{% tab title="Ethereum" %}
-<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explore.tempo.xyz/address/0x20c0000000000000000000008191667423F70E67">0x20c0000000000000000000008191667423F70E67</a></td></tr><tr><td>Pool</td><td><a href="https://explore.tempo.xyz/address/0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19">0xEe71b1a542BeeDf2270437fDEaC190Bd9abBCB19</a></td></tr></tbody></table>
+{% tab title="Arc" %}
+<table><thead><tr><th width="210.47833251953125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.arc.io/token/0x0dc6b79f3c3854e4d74514fd4d29be6c96beee39">0x0dC6b79F3c3854E4d74514fD4d29BE6c96Beee39</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.arc.io/token/0x6be14E674f741faa78da2fEcF00870C8B753A0BB">0x6be14E674f741faa78da2fEcF00870C8B753A0BB</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -102,7 +100,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 
 ### **Onchain Oracles**
 
-#### SyrupUSDC/USDC
+#### syrupUSDC/USDC
 
 {% tabs %}
 {% tab title="Solana" %}
@@ -118,7 +116,7 @@ Find out more and acquire test tokens by visiting the [CCIP Test Tokens page](ht
 {% endtab %}
 {% endtabs %}
 
-#### SyrupUSDT/USDT
+#### syrupUSDT/USDT
 
 {% tabs %}
 {% tab title="Plasma" %}
