@@ -83,7 +83,7 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% endtab %}
 
 {% tab title="Arbitrum" %}
-<table><thead><tr><th width="229.9678955078125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://arbiscan.io/address/0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762">0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762</a></td></tr><tr><td>Pool</td><td><a href="https://arbiscan.io/address/0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f#code">0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f</a></td></tr></tbody></table>
+<table><thead><tr><th width="229.9678955078125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://arbiscan.io/address/0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762">0xE1B0dC5A21b10f1634fBfbE9976fBA2Ee2e1c762</a></td></tr><tr><td>Pool</td><td><a href="https://arbiscan.io/address/0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f#code">0x5355292a5C36C4094B93fB62aA1FEFCa6e28b75f</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://arbiscan.io/address/0x6b1aBf37cFB16deedD27D7C23168e7dF4feD8AFF">0x6b1aBf37cFB16deedD27D7C23168e7dF4feD8AFF</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Ink" %}
