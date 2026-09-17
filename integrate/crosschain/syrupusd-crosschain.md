@@ -105,8 +105,8 @@ Price Streams deliver low-latency signed price reports offchain that your contra
 To consume Price Streams, use the Chainlink Docs:
 
 * [Streams Addresses](https://data.chain.link/streams)
-* [Streams integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
-* [Streams integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
+* [Streams Integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
+* [Streams Integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
 
 ## Testnet Addresses
 
@@ -145,7 +145,7 @@ If your protocol needs to bake in crosschain syrupUSDC transfers, implement CCIP
 
 * Partnerships & queries: [partnerships@maple.finance](mailto:partnerships@maple.finance)
 * [CCIP docs](https://docs.chain.link/ccip)
-* [CCIP Directory (mainnet)](https://docs.chain.link/ccip/directory/mainnet)
+* [CCIP Mainnet Directory](https://docs.chain.link/ccip/directory/mainnet)
 * [Token page (syrupUSDC)](https://docs.chain.link/ccip/directory/mainnet/token/syrupUSDC)
 * [Token page (syrupUSDT)](https://docs.chain.link/ccip/directory/mainnet/token/syrupUSDT)
 * [Token page (syrupUSDG)](https://docs.chain.link/ccip/directory/mainnet/token/syrupUSDG)
