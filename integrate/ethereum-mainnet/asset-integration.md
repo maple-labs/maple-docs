@@ -156,7 +156,7 @@ CoinGecko and CoinMarketCap track syrupUSDC and syrupUSDT prices via DEX pool da
 
 ### Resources & contact
 
-* Partnerships & queries: [integrations@maple.finance](mailto:integrations@maple.finance)
+* Partnerships & queries: [partnerships@maple.finance](mailto:partnerships@maple.finance)
 * [Pyth Price Feeds](https://docs.pyth.network/price-feeds)
 * [CoinGecko API](https://docs.coingecko.com/)
 * [CoinMarketCap API](https://coinmarketcap.com/api/documentation/v1/)
