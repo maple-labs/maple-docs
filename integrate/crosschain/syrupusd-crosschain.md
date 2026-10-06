@@ -29,7 +29,7 @@ Both tokens have 6 decimals across all chains.
 {% endtab %}
 
 {% tab title="Ink" %}
-<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9">0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43">0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr></tbody></table>
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9">0x3c23e6FB09064e9A64829Fa8FEe27Ad19A27Bfa9</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43">0xa3361ff0d9cA1cBA31335a3280eECe47f1a08F43</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://explorer.inkonchain.com/address/0x8B7CdBdE0109a838cb539FF40f4ca5C18b9ad7a7">0x8B7CdBdE0109a838cb539FF40f4ca5C18b9ad7a7</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Monad" %}
