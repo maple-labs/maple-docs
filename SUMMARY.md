@@ -207,4 +207,5 @@
 * [syrupUSDT Product Disclosures & Disclaimers](legal/syrupusdt-product-disclosures-and-disclaimers.md)
 * [syrupUSDG Product Disclosures & Disclaimers](legal/syrupusdg-product-disclosures-and-disclaimers.md)
 * [MiCA Whitepaper](legal/mica-whitepaper.md)
+* [Notice Regarding Similar Names](legal/notice-regarding-similar-names.md)
 * [SyrupUSDC Rewards Prize Draw Terms & Conditions](legal/syrupusdc-rewards-prize-draw-terms-and-conditions.md)
