@@ -91,7 +91,7 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% endtab %}
 {% endtabs %}
 
-Price Feeds are onchain contracts that Chainlink updates on a set heartbeat. They can be read directly. To consume Price Feeds, use the Chainlink docs:
+Price Feeds are Exchange Rate oracle contracts that Chainlink updates on a set heartbeat. They relay the token price from each pool's convertToExitAssets() function, standard in ERC-4626 implementations. To consume Price Feeds, use the Chainlink docs:
 
 1. [Price Feeds Addresses](https://docs.chain.link/data-feeds/price-feeds/addresses)
 2. [Consuming Data Feeds](https://docs.chain.link/data-feeds/getting-started)
