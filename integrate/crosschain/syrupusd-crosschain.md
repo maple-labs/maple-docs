@@ -100,7 +100,7 @@ Price Feeds are onchain contracts that Chainlink updates on a set heartbeat. The
 
 Price Streams deliver low-latency signed price reports offchain that your contract verifies onchain when consumed.
 
-<table><thead><tr><th width="149.64227294921875">Price Stream</th><th>Address / Link</th></tr></thead><tbody><tr><td>syrupUSDC/USDC</td><td><a href="https://data.chain.link/streams/syrupusdc-usdc-exchangerate-streams">0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9</a></td></tr><tr><td>syrupUSDG/USDG</td><td><a href="https://data.chain.link/streams/syrupusdg-usdg-exchangerate-streams">0x0007f1bf39f52bb9fc4c0a87fe2d1de5e8105a2d3899ca09051082337cc44d91</a></td></tr><tr><td>syrupUSDT/USDT</td><td><a href="https://data.chain.link/streams/syrupusdt-usdt-exchangerate-streams">0x00071ec93f578219a986e1dfbda2302551c3b86d48219f23b6351bfcac2efc55</a></td></tr></tbody></table>
+<table><thead><tr><th width="149.64227294921875">Price Stream</th><th>Address / Link</th></tr></thead><tbody><tr><td>syrupUSDC/USDC</td><td><a href="https://data.chain.link/streams/syrupusdc-usdc-exchangerate-streams">0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9</a></td></tr><tr><td>syrupUSDT/USDT</td><td><a href="https://data.chain.link/streams/syrupusdt-usdt-exchangerate-streams">0x00071ec93f578219a986e1dfbda2302551c3b86d48219f23b6351bfcac2efc55</a></td></tr><tr><td>syrupUSDG/USDG</td><td><a href="https://data.chain.link/streams/syrupusdg-usdg-exchangerate-streams">0x0007f1bf39f52bb9fc4c0a87fe2d1de5e8105a2d3899ca09051082337cc44d91</a></td></tr></tbody></table>
 
 To consume Price Streams, use the Chainlink Docs:
 
