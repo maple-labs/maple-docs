@@ -17,7 +17,7 @@ Both tokens have 6 decimals across all chains.
 
 {% tabs %}
 {% tab title="Solana" %}
-<table><thead><tr><th width="229.61029052734375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://solscan.io/token/AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj">AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj</a></td></tr><tr><td>Pool</td><td><a href="https://solscan.io/account/HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm">HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://solscan.io/account/3TP6aEQ1VEt4VhwkpzccjVfvJUnvUDkziQ7pLFvZxir5">3TP6aEQ1VEt4VhwkpzccjVfvJUnvUDkziQ7pLFvZxir5</a></td></tr></tbody></table>
+<table><thead><tr><th width="229.61029052734375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://solscan.io/token/AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj">AvZZF1YaZDziPY2RCK4oJrRVrbN3mTD9NL24hPeaZeUj</a></td></tr><tr><td>Pool</td><td><a href="https://solscan.io/account/HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm">HrTBpF3LqSxXnjnYdR4htnBLyMHNZ6eNaDZGPundvHbm</a></td></tr><tr><td>Receiver (Mint/Redeem)</td><td><a href="https://etherscan.io/address/0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4">0x02B6A75c5D1F430F0614dc5AC8aD5F9D35fbA2c4</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://solscan.io/account/CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T">CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Arbitrum" %}
