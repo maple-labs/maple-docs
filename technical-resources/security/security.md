@@ -65,7 +65,7 @@ This release is for the Governor Timelock Contract upgrade. The Maple protocol c
 
 ### November 2025 Release
 
-The November 2025 release is for the Withdrawal Manager upgrade which introduces support to allow multiple pending requests per owner. The upgrade went through two audits by Spearbit and Sherlock. The audit reports can be seen below. 
+The November 2025 release is for the Withdrawal Manager upgrade which introduces support to allow multiple pending requests per owner. The upgrade went through two audits by Spearbit and Sherlock. The audit reports can be seen below.
 
 | Auditor  | Report Link |
 | -------- | ----------- |
@@ -80,6 +80,16 @@ The January 2026 release is for the Maple CCIP Receiver on Ethereum mainnet allo
 | -------- | ----------- |
 | Dedaub | [`2025-11 - Dedaub Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2025-november/Dedaub-Chainlink-Maple.pdf) |
 | Sigma Prime | [`2026-01 - Sigma Prime Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2026-january/SigmaPrime-Chainlink-Maple.pdf) |
+
+### November 2026 Release
+
+The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. It does this alongside the strategies it owns directly; after the upgrade, the loans via Open Term Loan Manager remain the same.
+
+| Auditor  | Report Link |
+| -------- | ----------- |
+| Sherlock | [`2026-09 - Sherlock Report`](https://drive.google.com/file/d/1WOQ8uYCD2F_ylKTc_ZjKh9myoYPV28Lw/view?usp=sharing) |
+| Cantina| [`2026-10 - Cantina Report`](https://drive.google.com/file/d/1Cv1quA30NcqJFTo0JXCY9g7CNTZ47YMk/view?usp=sharing) |
+
 
 
 ## Bug Bounty
