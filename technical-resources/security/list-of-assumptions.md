@@ -14,20 +14,16 @@ This assumption is made since all tokens that are used in the Maple protocol hav
 
 Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. They have a public reputation to protect, and are incentivized to act in the protocol's best interest to grow their pool's size. Liquidity Providers and Stakers are inherently trusting a Pool Delegate with their funds when they enter a Maple Pool. This means that they are trusting the Pool Delegate to handle funds and liquidation proceedings in a trusted manner.
 
-#### 4. Oracle prices from Chainlink are considered to be reasonably accurate and frequently updated.
-
-Since the oracle price is used in the liquidation module, it is assumed that these prices are accurate and cannot be exploited (e.g., flash loan oracle manipulation is impossible with an offchain oracle source).
-
-#### 5. The Governor & Operational Admin are trusted actors.
+#### 4. The Governor & Operational Admin are trusted actors.
 
 Governor control is exercised via the on‑chain `GovernorTimelock`, whose controlling roles (e.g., proposer, executor, role admin) are held by Maple managed multisigs. 
 
 The Operational Admin is also a multisig controlled by Maple managed multisigs.
 
-#### 6. Loans are expected to be instantiated with reasonable terms.
+#### 5. Loans are expected to be instantiated with reasonable terms.
 
 During the fuzz testing process, it was discovered that certain overflow conditions can occur in the amortization calculation of the loan, but only at "unreasonable" upper bounds (E.g., 100-year loans with 1 year payment intervals at 100% APR, for >$10b).
 
-#### 7. Pool Delegates don't try to prevent withdrawals.
+#### 6. Pool Delegates don't try to prevent withdrawals.
 
 It's known that, in theory, withdrawal managers can be configured to unreasonable terms, for example, making the withdrawal window 1 second, or the cycle duration to be large,or pool delegates can set the withdrawal manager address to an invalid address. However, it's understood that pool delegates are trusted actors and they are working to making the pool well functioning.

@@ -1,6 +1,6 @@
 # Lending
 
-Lending is the easiest way to earn with Maple Finance. Lenders deposit into a pool to earn interest denominated in the pool's liquidity asset. This interest is determined by the loan terms set by Maple's credit underwriting and risk management. Lenders will not need MPL tokens to participate in lending.
+Lending is the easiest way to earn with Maple Finance. Lenders deposit into a pool to earn interest denominated in the pool's liquidity asset. This interest is determined by the loan terms set by Maple's credit underwriting and risk management.
 
 Lending Opportunities on Maple (called Pools) are permissioned. When Lenders complete KYC, their wallets are automatically added to Maple's Global Allowlist. This means that Lenders' wallets can access every Opportunity on Maple.
 

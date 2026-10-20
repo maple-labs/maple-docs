@@ -1,0 +1,286 @@
+Maple Docs: proposed Technical Resources navigation
+Based on maple-core-v2-private v7.0.0-rc.2. Agreed 2026-10-20.
+
+Technical Resources
+|
+|-- Protocol Overview
+|   |-- How Maple Works
+|   |     Who lends, who borrows, and how funds move between lenders, pools,
+|   |     strategies and borrowers.
+|   |-- Protocol Actors
+|   |     Every role in the protocol, from lenders and borrowers to delegates,
+|   |     admins, liquidity bots and managed wallets, and what each is responsible for.
+|   |-- Smart Contract Architecture
+|   |     Diagram and walkthrough of how Globals, pools, Strategy Managers,
+|   |     underlying strategies, loans and the withdrawal manager connect.
+|   |-- Contract Addresses
+|   |     Deployed contract addresses for each chain, from the Maple address registry.
+|   |-- Fees
+|   |     How loan service fees, management fees and strategy fees are calculated
+|   |     and who receives them.
+|   |-- Token Standards
+|   |     The ERC standards the protocol implements, such as ERC-20, ERC-4626 and
+|   |     ERC-1967, and which contracts use them.
+|   |-- Proxies and Upgradeability
+|   |     How proxies, factories and implementation upgrades work, and who can
+|   |     trigger an upgrade.
+|   |-- Glossary
+|         Definitions of protocol terms and key state variables.
+|
+|-- Releases
+|   |-- November 2026 Release: What Changed
+|   |     New, upgraded and removed contracts in this release, and which pools
+|   |     were upgraded.
+|   |-- November 2026 Release: Deployment and Upgrade
+|         The step-by-step procedure used to deploy the release and upgrade
+|         existing pools.
+|
+|-- Pools
+|   |-- Pool
+|   |     The ERC-4626 vault lenders deposit into: deposits, withdrawals, share
+|   |     conversions and where it differs from the standard.
+|   |-- Pool Manager
+|   |     Manages a pool's settings, attached strategies, strategy caps, funding
+|   |     requests, defaults and withdrawals.
+|   |-- Creating a Pool
+|   |     Prerequisites and steps to deploy a pool with the Pool Deployer and
+|   |     activate it.
+|   |-- Pool Accounting
+|   |     How total assets and unrealized losses are calculated across loans
+|   |     and strategies.
+|   |-- Exchange Rates
+|   |     Why deposits and withdrawals use different exchange rates while losses
+|   |     are unrealized, with worked examples.
+|   |-- Withdrawal Manager
+|         How lender withdrawal requests are queued, processed in order and cancelled.
+|
+|-- Strategies
+|   |-- How Pools Allocate Capital
+|   |     How a pool puts capital into loans and shared strategies, the three caps
+|   |     that limit it, and the funding and redemption flows.
+|   |-- Strategy Manager
+|   |     The shared contract that lets several pools fund one strategy: share
+|   |     accounting, caps, two-step redemptions and activation.
+|   |-- Strategy Deployer
+|   |     How a Strategy Manager and its underlying strategy are deployed, linked
+|   |     and seeded in a single transaction.
+|   |-- Liquidity Router
+|   |     Lets Maple's liquidity bots batch funding and redemption actions across
+|   |     strategies in one atomic transaction.
+|   |
+|   |-- Open Term Loans
+|   |   |-- Open Term Loan
+|   |   |     The loan contract: terms, payments, principal calls, late interest
+|   |   |     and lifecycle.
+|   |   |-- Open Term Loan Manager
+|   |   |     How a pool funds loans and accounts for interest, payments,
+|   |   |     impairments and defaults.
+|   |   |-- Refinancing
+|   |   |     How new loan terms are proposed and accepted during a loan.
+|   |   |-- Impairments
+|   |   |     How a loan's value is written down before a default, and the effect
+|   |   |     on pool accounting.
+|   |   |-- Defaults
+|   |         What happens to a loan and to pool accounting when a loan is defaulted.
+|   |
+|   |-- Aave V3 Strategy
+|   |   |-- Accounting and Fees
+|   |   |     How the position is valued from the Aave balance, how much is
+|   |   |     withdrawable, and how fees accrue and are collected.
+|   |   |-- Funding and Withdrawals
+|   |   |     How capital is supplied to and withdrawn from Aave, plus rewards
+|   |   |     and referral settings.
+|   |   |-- Impairments and Losses
+|   |         Writing the position down, recognising a loss that shuts the
+|   |         strategy down, and sending any remaining funds to the treasury.
+|   |
+|   |-- Sky Strategy
+|   |   |-- Accounting and Fees
+|   |   |     How the sUSDS position is valued through the Sky PSM, PSM fees,
+|   |   |     available liquidity, and fee collection.
+|   |   |-- Funding and Withdrawals
+|   |   |     How capital is converted through the PSM into sUSDS and back, and
+|   |   |     what happens when the PSM is halted.
+|   |   |-- Impairments and Losses
+|   |         Writing the position down, recognising a loss that shuts the
+|   |         strategy down, and sending any remaining sUSDS to the treasury.
+|   |
+|   |-- Allocation Strategy
+|       |-- Managed Wallets
+|       |     How Maple-operated wallets are approved, permissioned and capped, and
+|       |     how they deploy and return capital.
+|       |-- Accounting and Fees
+|       |     Cash-basis accounting, how returned yield vests over time, the yield
+|       |     cap and cooldown, fees, and the known issue with the final withdrawal.
+|       |-- Funding and Withdrawals
+|       |     How capital arrives from the Strategy Manager and how idle cash is
+|       |     returned to pools.
+|       |-- Impairments and Losses
+|             Writing down capital held by managed wallets, recognising losses
+|             against a single wallet, and recovering written-off funds.
+|
+|-- Singletons
+|   |-- Maple Globals
+|   |     Protocol-wide configuration: admin roles, allowlists, delegates, bootstrap
+|   |     amounts and pause controls.
+|   |-- Governor Timelock
+|   |     The contract that delays governor actions: roles, scheduling and
+|   |     execution windows.
+|   |-- Maple Treasury
+|   |     Where protocol fees are sent and who can withdraw them.
+|   |-- Pool Permission Manager
+|         Controls which lenders can call which pool functions, through
+|         allowlists and permission bitmaps.
+|
+|-- Admin Functions
+|   |-- Governor
+|   |     Functions only the Governor can call, all executed through the
+|   |     Governor Timelock.
+|   |-- Operational Admin
+|   |     Day-to-day functions available to Maple's operations multisig.
+|   |-- Security Admin
+|   |     Upgrade and pause functions, and incident controls for the
+|   |     Allocation Strategy.
+|   |-- Pool Delegate
+|   |     Functions a pool's delegate can call: pool settings, strategy caps,
+|   |     loan management and redemption requests.
+|   |-- Strategy Delegate
+|   |     Functions a Strategy Delegate can call on its Strategy Manager and
+|   |     underlying strategy.
+|   |-- Liquidity Bots
+|   |     What Maple's automated bots are allowed to do and the limits that
+|   |     apply to them.
+|   |-- Timelocked Functions
+|         Which actions are delayed by a timelock and how the delays are configured.
+|
+|-- Security
+|   |-- Audits and Security Practices
+|   |     Audit reports for every release, the bug bounty, monitoring and
+|   |     built-in protections.
+|   |-- Trust Assumptions
+|   |     What the protocol assumes about trusted actors and the protocols it
+|   |     integrates with.
+|   |-- Known Issues and Operational Controls
+|   |     Protocol behaviours that are handled operationally rather than in code,
+|   |     what could go wrong, and the procedure Maple follows to prevent it.
+|   |-- External Entry Points
+|   |     Every externally callable function, grouped by contract and by who
+|   |     can call it.
+|   |-- Emergency Pause
+|   |     How the protocol, a single contract or a single function can be paused
+|   |     and selectively unpaused.
+|   |-- Invariants
+|   |     Properties that must always hold across pools, Strategy Managers and
+|   |     strategies, as tested.
+|   |-- Test Report
+|         Results of the full smart contract test suite.
+|
+|-- Crosschain Mint/Redeem
+|   |-- Maple CCIP Receiver
+|   |     How syrupUSDC deposits and redemptions from other chains are processed
+|   |     through Chainlink CCIP.
+|   |-- Failed Message Recovery
+|         How to find failed crosschain messages and retry them or return the tokens.
+|
+|-- Contract Interfaces
+|   |-- Globals
+|   |     Function, event and error reference for Maple Globals.
+|   |-- GovernorTimelock
+|   |     Function, event and error reference for the Governor Timelock.
+|   |-- Pool
+|   |     Function, event and error reference for the Pool.
+|   |-- PoolManager
+|   |     Function, event and error reference for the Pool Manager.
+|   |-- PoolManagerFactory
+|   |     Deploys and upgrades Pool Manager proxies.
+|   |-- PoolManagerInitializer
+|   |     Initialization parameters for new Pool Managers.
+|   |-- PoolDeployer
+|   |     Function reference for deploying a pool and its supporting contracts.
+|   |-- PoolPermissionManager
+|   |     Function, event and error reference for the Pool Permission Manager.
+|   |-- WithdrawalManager
+|   |     Function, event and error reference for the Withdrawal Manager.
+|   |-- WithdrawalManagerFactory
+|   |     Deploys and upgrades Withdrawal Manager proxies.
+|   |-- WithdrawalManagerInitializer
+|   |     Initialization parameters for new Withdrawal Managers.
+|   |-- StrategyManager
+|   |     Function, event and error reference for the Strategy Manager.
+|   |-- StrategyManagerFactory
+|   |     Deploys and upgrades Strategy Manager proxies.
+|   |-- StrategyManagerInitializer
+|   |     Initialization parameters for new Strategy Managers.
+|   |-- StrategyDeployer
+|   |     Function reference for deploying a Strategy Manager with its
+|   |     underlying strategy.
+|   |-- LiquidityRouter
+|   |     Function reference for batched liquidity bot actions.
+|   |-- OpenTermLoan
+|   |     Function, event and error reference for the Open Term Loan.
+|   |-- OpenTermLoanFactory
+|   |     Deploys and upgrades Open Term Loan proxies.
+|   |-- OpenTermLoanInitializer
+|   |     Initialization parameters for new Open Term Loans.
+|   |-- OpenTermLoanRefinancer
+|   |     Functions available when proposing new loan terms.
+|   |-- OpenTermLoanManager
+|   |     Function, event and error reference for the Open Term Loan Manager.
+|   |-- OpenTermLoanManagerFactory
+|   |     Deploys and upgrades Open Term Loan Manager proxies.
+|   |-- OpenTermLoanManagerInitializer
+|   |     Initialization parameters for new Open Term Loan Managers.
+|   |-- AaveV3Strategy
+|   |     Function, event and error reference for the Aave V3 Strategy.
+|   |-- AaveV3StrategyFactory
+|   |     Deploys and upgrades Aave V3 Strategy proxies.
+|   |-- AaveV3StrategyInitializer
+|   |     Initialization parameters for new Aave V3 Strategies.
+|   |-- SkyStrategy
+|   |     Function, event and error reference for the Sky Strategy.
+|   |-- SkyStrategyFactory
+|   |     Deploys and upgrades Sky Strategy proxies.
+|   |-- SkyStrategyInitializer
+|   |     Initialization parameters for new Sky Strategies.
+|   |-- AllocationStrategy
+|   |     Function, event and error reference for the Allocation Strategy.
+|   |-- AllocationStrategyFactory
+|   |     Deploys and upgrades Allocation Strategy proxies.
+|   |-- AllocationStrategyInitializer
+|   |     Initialization parameters for new Allocation Strategies.
+|   |-- SyrupRouter
+|         Function reference for the router used to authorize and deposit into
+|         syrupUSDC, syrupUSDT and syrupUSDG.
+|
+|-- SYRUP Token Contracts
+|   |-- Architecture Overview
+|   |     Diagram of the SYRUP token and its modules.
+|   |-- ERC-20 Base Contract
+|   |     The audited ERC-20 implementation SYRUP is built on.
+|   |-- Upgradeability
+|   |     The proxy pattern SYRUP uses and how it can be upgraded.
+|   |-- Mint and Burn Modules
+|   |     How minting and burning are restricted to approved modules.
+|   |-- Timelocks
+|   |     Which SYRUP admin actions are timelocked, such as adding or
+|   |     removing modules.
+|   |-- Recapitalization Module
+|   |     Scheduled SYRUP issuance windows and how issued tokens are claimed.
+|   |-- Emergency Module
+|   |     Governor-controlled minting and burning, kept ready for emergencies.
+|   |-- Deployment and Migration
+|         The order SYRUP contracts were deployed in and how MPL was migrated.
+|
+|-- GraphQL API
+|     Maple's public GraphQL API for pool, account and protocol data.
+|
+|-- JavaScript SDK
+    |-- Introduction
+    |     What maple-js is and what it exports.
+    |-- Installation
+    |     How to install maple-js and its requirements.
+    |-- Usage Guide
+    |     Connecting to contracts, checking lender permissions, and a full
+    |     React integration example.
+    |-- Examples by Role
+          Code examples for borrowers, lenders and pool delegates.

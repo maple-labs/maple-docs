@@ -8,7 +8,7 @@ The Maple DAO has administrative controls over certain aspects of the protocol. 
 
 This ensures two things, one that the DAO cannot behave directly maliciously and that the Borrower cannot upgrade to a malicious version of the smart contract. They can only perform upgrades to contracts that have been approved by the Maple DAO.
 
-In addition, the Maple DAO has the ability to introduce timelock requirements to sensitive functions, such as setting new withdrawal cooldown parameters. This ensures that Maple cannot maliciously change the withdrawal cooldown parameters to an undesirably high value, which would allow them to hold LPs' funds for a longer period of time.
+In addition, the Maple DAO has the ability to introduce timelock requirements to sensitive functions, giving stakeholders time to react before a change takes effect.
 
 **Smart Contract Risk**
 
