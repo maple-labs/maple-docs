@@ -23,14 +23,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `transfer`
 * `transferFrom`
 
-### FixedTermLoan
-
-* `closeLoan`
-* `makePayment`
-* `postCollateral`
-* `returnFunds`
-* `skim`
-
 ### OpenTermLoan
 
 * `makePayment`
@@ -40,46 +32,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilities.
 * `unscheduleCall`
 
-### Liquidator
-
-* `liquidatePortion` - Used to perform liquidations.
-
-### PoolManager
-
-* `depositCover`
-
 # Permissioned Functions
-
-### FixedTermLoan
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Borrower Permissioned Functions**
-
-* `acceptBorrower`
-* `drawdownFunds`
-* `proposeNewTerms`
-* `rejectNewTerms`
-* `removeCollateral`
-* `setPendingBorrower`
-
-**Lender Permissioned Functions**
-
-* `acceptLender`
-* `acceptNewTerms`
-* `fundLoan`
-* `impairLoan`
-* `rejectNewTerms`
-* `removeLoanImpairment`
-* `repossess`
-* `setPendingLender`
 
 ### Globals
 
@@ -164,7 +117,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 **Governor Permissioned Functions**
 
-* `finishCollateralLiquidation`
 * `triggerDefault`
 
 **Security Admin Permissioned Functions**
@@ -182,16 +134,9 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Pool Delegate Permissioned Functions**
 
 * `acceptPoolDelegate`
-* `addStrategy`
-* `finishCollateralLiquidation`
-* `setAllowedLender`
 * `setDelegateManagementFeeRate`
-* `setIsStrategy`
 * `setLiquidityCap`
-* `setOpenToPublic`
-* `setPendingPoolDelegate`
 * `triggerDefault`
-* `withdrawCover`
 
 **Globals Permissioned Functions**
 
@@ -211,45 +156,6 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `processWithdraw`
 * `requestWithdraw`
-
-### FixedTermLoanManager
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Governor Permissioned Functions**
-
-* `impairLoan`
-* `removeLoanImpairment`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Pool Delegate Permissioned Functions**
-
-* `acceptNewTerms`
-* `fund`
-* `impairLoan`
-* `rejectNewTerms`
-* `removeLoanImpairment`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
-
-**Pool Manager Permissioned Functions**
-
-* `finishCollateralLiquidation`
-* `triggerDefault`
-
-**Loan Permissioned Functions**
-
-* `claim`
 
 ### WithdrawalManager (Queue)
 
@@ -365,105 +271,3 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Loan Permissioned Functions**
 
 * `claim`
-
-### Aave Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-### Basic Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-### Sky Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`

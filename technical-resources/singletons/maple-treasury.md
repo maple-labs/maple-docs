@@ -2,7 +2,7 @@
 
 The MapleTreasury contracts is how the Maple protocol collects and manages revenues.
 
-Revenues collected by the MapleTreasury will be used to fund further development of the protocol, but can also be distributed to the MPL token holders via xMPL.
+Revenues collected by the MapleTreasury will be used to fund further development of the protocol.
 
 ## Access Control
 

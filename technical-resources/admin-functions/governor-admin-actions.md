@@ -42,22 +42,11 @@ Note: `setValidPoolDeployer` is deprecated for enabling deployers and only suppo
 ## PoolManager
 
 * `addStrategy`
-* `finishCollateralLiquidation`
 * `setDelegateManagementFeeRate`
-* `setIsStrategy`
 * `setLiquidityCap`
-* `setPendingPoolDelegate`
 * `setPoolPermissionManager`
 * `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `triggerDefault`
-
-## Fixed Term LoanManager
-
-* `impairLoan`
-* `removeLoanImpairment`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
 
 ## Open Term Loan
 
@@ -77,18 +66,8 @@ Note: `setValidPoolDeployer` is deprecated for enabling deployers and only suppo
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
 
-## Strategies Contracts
-
-* `claimRewards` (Aave Strategy only)
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-* `setPsm` (Sky Strategy only)
-
 ## Upgrading Contracts
 
 The Governor can upgrade the following contracts:
 * Globals
-* Liquidator
 * Withdrawal Manager

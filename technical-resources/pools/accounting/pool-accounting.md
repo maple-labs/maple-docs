@@ -46,7 +46,5 @@ Without the two exchange rate model, a depositor could deposit $1m at a 0.1 exch
 
 For this reason, two exchange rates are maintained during an unrealizedLosses scenario. This accomplishes two things:
 
-1. Discourages withdrawals - LPs are incentivized to wait until the strategy either:
-2. Defaults - Cover and collateral will increase exchange rate
-3. Pays back - The original exchange rate is restored.
-4. Discourages deposits - During a scenario where a default is imminent, it is in future LPs' best interest to wait until the borrower either defaults or pays back their loan before entering the pool.
+1. Discourages withdrawals - LPs are incentivized to wait until the strategy pays back, which restores the original exchange rate.
+2. Discourages deposits - During a scenario where a default is imminent, it is in future LPs' best interest to wait until the borrower either defaults or pays back their loan before entering the pool.

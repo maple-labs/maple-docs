@@ -17,7 +17,6 @@ The following pre-requisite configurations are necessary in order to deploy a Po
 5. The provided `PoolPermissionManager` is a valid instance in `MapleGlobals`.
 6. The Pool Delegate does not own a `Pool` already.
 7. The Pool Asset is a valid asset in `MapleGlobals`.
-8. The required pool cover can be transferred from the Pool Delegate to the `PoolDelegateCover`.
 
 # Pool Deployment with the queue-based Withdrawal Manager
 
@@ -25,7 +24,7 @@ To deploy a Pool, `PoolDeployer` can be called with the following parameters:
 
 * `poolManagerFactory`.
 * `withdrawalManagerFactory` - Address of the queue-based withdrawal manager factory (`WITHDRAWAL_MANAGER_QUEUE_FACTORY`).
-* `strategyFactories` - Array of strategy factory addresses (e.g., LoanManager factory, external strategy factories).
+* `strategyFactories` - Array of strategy factory addresses (e.g., LoanManager factory).
 * `strategyDeploymentData` - Strategy-specific encoded deployment data for each factory.
 * `asset` - The main asset that the pool denominates in.
 * `poolPermissionManager`.
@@ -37,6 +36,4 @@ Note: In the queue-based deployer, additional Pool parameters such as `liquidity
 
 # Pool Activation
 
-Before the Pool can start accepting deposits and operating, the Governor or Operational Admin needs to call `activatePoolManager` in Globals. This will activate the Pool. This allows the Governor or Operational Admin to set up fee parameters, default parameters, and ensure that the requisite cover has been posted by the Pool Delegate before running the Pool.
-
-Deprecated: The cyclical Withdrawal Manager has been deprecated. New pools should use the Withdrawal Manager (Queue).
+Before the Pool can start accepting deposits and operating, the Governor or Operational Admin needs to call `activatePoolManager` in Globals. This will activate the Pool. This allows the Governor or Operational Admin to set up fee parameters and default parameters before running the Pool.

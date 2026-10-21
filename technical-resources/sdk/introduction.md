@@ -22,13 +22,9 @@ TypeChain exports are automatically generated TypeScript bindings for Ethereum s
 
 | Export                 | Purpose                                                                     |
 | ---------------------- | --------------------------------------------------------------------------- |
-| `bPool`                | Manages Balancer liquidity pool functionality                               |
-| `erc20`                | Standard ERC20 token contract functionality                                 |
 | `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality               |
 | `loanManager`          | Manages loan creation and management functionality                          |
-| `loanV5`               | Implements loan v5 functionality                                            |
 | `mapleGlobalsV2`       | Manages global settings and configurations for Maple Protocol (version 2)   |
-| `mapleGlobalsV2V2`     | Manages global settings and configurations for Maple Protocol (version 2.2) |
 | `mapleToken`           | Implements the Maple Protocol token functionality                           |
 | `openTermLoan`         | Implements open-term loans functionality                                    |
 | `openTermLoanManager`  | Manages open-term loan creation and management functionality                |
