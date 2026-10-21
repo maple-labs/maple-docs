@@ -7,11 +7,11 @@ Public product documentation for Maple Finance (lender/borrower/token-holder gui
 This repo is bidirectionally synced with GitBook. Edits made in the GitBook web editor arrive here as commits by `gitbook-bot` (subject `GITBOOK-<n>: No subject`); commits pushed here sync back to the live site. Consequences an agent must respect:
 
 - The repo is **not** the sole source of truth — a page may be edited in GitBook at the same time. Pull before editing and keep changes small to avoid sync conflicts.
-- A page's published URL derives from its file path and `SUMMARY.md` position. Renaming or moving a `.md` file changes that URL and breaks inbound links. Redirects live in `.gitbook.yaml` (keys are URL paths, values are files) — add one whenever a published page is moved or deleted. The `SUMMARY.md` link text, not the file's first heading, sets the published page title.
+- A page's published URL derives from its file path and `SUMMARY.md` position. Renaming or moving a `.md` file changes that URL and breaks inbound links. There is no `.gitbook.yaml`, so no redirects are configured — avoid moves unless a redirect is arranged first.
 
 ## Layout
 
-- `SUMMARY.md` — GitBook navigation / table of contents. A page must be listed here to publish; an unregistered `.md` file does not appear on the site. Register every new page here.
+- `SUMMARY.md` — GitBook navigation / table of contents. A page must be listed here to publish (e.g. `maple-for-lenders/accessing-permissioned-pools.md` exists but is unregistered, so it does not appear on the site). Register every new page here.
 - `README.md` — site landing page (root of the nav).
 - `.gitbook/assets/` — all images and files; reference with a relative path (`../.gitbook/assets/name.png`).
 - `maple-1.0/` — deprecated Maple 1.0; don't add content there.
