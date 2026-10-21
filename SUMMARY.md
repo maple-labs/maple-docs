@@ -28,6 +28,8 @@
 * [Withdrawals](syrupusdc-usdt-for-lenders/risk.md)
 * [Monthly Updates](syrupusdc-usdt-for-lenders/withdrawal-process.md)
 * [New Wallets](syrupusdc-usdt-for-lenders/new-wallets.md)
+* [Pendle Integration](syrupusdc-usdt-for-lenders/pendle-integration.md)
+* [SyrupUSDC Rewards Prize Draw Program Summary](syrupusdc-usdt-for-lenders/syrupusdc-rewards-prize-draw-program-summary.md)
 * [FAQ](syrupusdc-usdt-for-lenders/faq.md)
 
 ## Maple Institutional for Lenders
