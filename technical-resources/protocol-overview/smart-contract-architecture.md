@@ -15,17 +15,20 @@ The main actors that interact with the PoolManager are the Pool Delegate, Govern
 
 # LoanManagers (Primary yield strategy)
 
-The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrual mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. In the current architecture, LoanManagers are attached to the PoolManager as strategies via `addStrategy` using the appropriate LoanManager factory. The Maple protocol uses the open-term LoanManager.
+The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrual mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. In the current architecture, LoanManagers are attached to the PoolManager as strategies via `addStrategy` using the appropriate LoanManager factory. There are two types of LoanManagers in the Maple protocol: fixed-term LoanManagers and open-term LoanManagers.
 
 # Loans
 
-A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. All Loans in the Maple protocol are open-term Loans.
+A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. There are two types of Loans in the Maple protocol: fixed-term Loans and open-term Loans.
+
+# External Strategies (Secondary yield strategy)
+External strategies such as Aave and Sky are used to deposit cash into the pool to earn yield as a secondary yield source for the Pool. A Pool can have many external strategies but a strategy can only interact with one Pool Manager.
 
 # WithdrawalManager
 
 In order to maximize capital efficiency, at any given time, the majority of the assets deposited by Liquidity Providers are directed towards funding loans and therefore, are not available to be withdrawn by LPs. Although depositors are entitled to the full value of their position, full liquidity might not be available at any given time. To address this in an equitable way, the WithdrawalManager contract is used.
 
-Pools use the queue-based WithdrawalManager, which processes withdrawal requests in the order they are made.
+WithdrawalManagers are developed to cater for a specific pool's needs with regards to liquidity management, giving Pool Delegates the flexibility to configure the best withdrawal mechanic for their needs.
 
 # [Maple Globals](../singletons/globals.md)
 
