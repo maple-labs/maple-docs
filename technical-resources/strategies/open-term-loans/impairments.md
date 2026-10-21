@@ -22,7 +22,7 @@ If a Borrower is able to make a full payment according to the Loan schedule, or 
 
 In the case that the Borrower is unable to make the payment, the Loan can be defaulted. This will reduce the `unrealizedLosses` value, and will realize the loss in the Pool by reducing `principalOut` and `accountedInterest` by the value tracked in the Loan.
 
-Example scenario with an impairment [here](../pools/accounting/pool-accounting.md).
+Example scenario with an impairment [here](../../pools/pool-accounting.md).
 
 ## Access Control
 Both the Pool Delegate and Governor are allowed to impair a Loan at any given time. If the Governor impairs the Loan, the Pool Delegate DOES NOT have the right to revert the impairment. If the Pool Delegate impairs the Loan, the Governor DOES have the right to revert the impairment.
