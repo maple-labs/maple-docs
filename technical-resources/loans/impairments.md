@@ -1,8 +1,8 @@
 # Overview
 
-For both Loan types, in the situation where a Borrower is discovered to be unable to make an upcoming payment (e.g., they are discovered to be insolvent), impairment allows the Pool to recognize a "paper loss" (`unrealizedLoss`). This is useful to prevent large liquidity events in the Pool when the Borrowers default is far enough in the future that Liquidity Providers are able to exit the Pools before they occur.
+In the situation where a Borrower is discovered to be unable to make an upcoming payment (e.g., they are discovered to be insolvent), impairment allows the Pool to recognize a "paper loss" (`unrealizedLoss`). This is useful to prevent large liquidity events in the Pool when the Borrowers default is far enough in the future that Liquidity Providers are able to exit the Pools before they occur.
 
-When `impairLoan` is called on the **PoolManager** contract, the principal and any expected interest due up to the `impairLoan` call is made or payment due date (which ever is earlier) is added to the Pool's `unrealizedLosses`. `unrealizedLosses` is factored into the Pool's value for withdrawals, incentivizing current Liquidity Providers to remain in the Pool until the impairment is resolved.
+When `impairLoan` is called on the **Open Term Loan Manager** contract, the principal and any expected interest due up to the `impairLoan` call is made or payment due date (which ever is earlier) is added to the Pool's `unrealizedLosses`. `unrealizedLosses` is factored into the Pool's value for withdrawals, incentivizing current Liquidity Providers to remain in the Pool until the impairment is resolved.
 
 In addition, the payment due date of the Loan is set to either the current timestamp or the existing payment due date, whichever is earlier. This immediately puts the Borrower in arrears if they were before their payment due date, which allows the Pool Delegate to effectuate a default more quickly.
 
@@ -20,7 +20,7 @@ If a Borrower is able to make a full payment according to the Loan schedule, or 
 
 ## Loan Default
 
-In the case that the Borrower is unable to make the payment, the Loan can be defaulted. This will reduce the `unrealizedLosses` value, and will realize the loss in the Pool by reducing `principalOut` and `accountedInterest` by the value tracked in the Loan. Any collateral and cover available will go towards reducing losses in the Pool.
+In the case that the Borrower is unable to make the payment, the Loan can be defaulted. This will reduce the `unrealizedLosses` value, and will realize the loss in the Pool by reducing `principalOut` and `accountedInterest` by the value tracked in the Loan.
 
 Example scenario with an impairment [here](../pools/accounting/pool-accounting.md).
 

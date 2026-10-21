@@ -62,7 +62,7 @@ Once connected to a contract, you can call any available methods using the `cont
 Basic queries can be called using the standard `await` pattern:
 
 ```js
-const basicQuery = await contract.lpCooldownPeriod();
+const basicQuery = await contract.governor();
 ```
 
 **Usage for Transactions**
@@ -85,7 +85,7 @@ Before a wallet can deposit into a Maple pool, it must have a sufficient `permis
 To ensure your wallet has the necessary permissions:
 
 1. **Maple Webapp**: Onboard and verify your account at [Maple Webapp](https://app.maple.finance/). Add your wallets to the account to automatically receive the required permissions.
-2. **Syrup Pools**: Make an initial deposit through the [Syrup UI](https://syrup.fi/) to set permissions.
+2. **Syrup Pools**: Make an initial deposit through the [Maple Webapp](https://app.maple.finance/earn) to set permissions.
 
 ### Querying Permissions with Subgraph
 

@@ -22,12 +22,9 @@ The Governor retains the exclusive authority to appoint or replace the operation
 
 ## Pool Manager
 
-* `finishCollateralLiquidation`
 * `setPendingPoolDelegate`
 * `triggerDefault`
-* `addStrategy`
 * `setDelegateManagementFeeRate`
-* `setIsStrategy`
 * `setLiquidityCap`
 * `setPoolPermissionManager`
 * `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
@@ -40,15 +37,6 @@ The Governor retains the exclusive authority to appoint or replace the operation
 * `setPermissionAdmin`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
-
-## Strategies Contracts
-
-* `claimRewards` (Aave Strategy only)
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-* `setPsm` (Sky Strategy only)
 
 ## Withdrawal Manager (Queue)
 

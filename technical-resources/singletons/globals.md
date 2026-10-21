@@ -34,29 +34,19 @@ In this section, the parameters stored in the globals contract are outlined.
 * `MigrationAdmin` - Special account used during the liquidity migration.
 * `OperationalAdmin` - Special account given the authority by Governor to perform a subset of operational functions.
 * Factories, such as:
-  * `LiquidatorFactory`
-  * `FixedTermLoanFactory`
   * `OpenTermLoanFactory`
-  * `FixedTermLoanManagerFactory`
   * `OpenTermLoanManagerFactory`
-  * `FixedTermRefinancer`
   * `OpenTermRefinancer`
-  * `FeeManager`
-  * `LiquidatorFactory`
   * `PoolManagerFactory`
   * `WithdrawalManagerFactory`
 * Borrowers
 * Pool Delegates
 * Pool assets
-* Price oracles for pool assets
 
 **Pool Specific Parameters**
 
 * `platformManagementFeeRate`
-* `platformOriginationFeeRate`
 * `platformServiceFeeRate`
-* `minCoverAmount`
-* `maxCoverLiquidationPercent`
 
 # Proxy Architecture
 

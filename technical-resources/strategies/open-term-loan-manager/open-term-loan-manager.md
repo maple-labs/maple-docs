@@ -24,7 +24,7 @@ $$outstandingInterest = accountedInterest + issuanceRate \times (block.timestamp
 
 ## Fund
 
-* The PoolDelegate directly calls `fund()` which sets up the accounting of the respective Loan in the LoanManager and requests funds from the Pool via the PoolManager and approves the OT-Loan to pull the funds from the LoanManager. This is different from the Fixed-Term LoanManager where the funds are sent directly to the Loan for the borrower to draw from.
+* The PoolDelegate directly calls `fund()` which sets up the accounting of the respective Loan in the LoanManager and requests funds from the Pool via the PoolManager and approves the OT-Loan to pull the funds from the LoanManager.
 
 ## Refinance
 
@@ -45,22 +45,22 @@ $$outstandingInterest = accountedInterest + issuanceRate \times (block.timestamp
 
 ## Default
 
-* The PoolManager can call `triggerDefault()` on the LoanManager. The entry point to triggering a default remains at the PoolManager since is needs to handle PoolCover.
-* Note the interface for `triggerDefault(address loan_, address liquidatorFactory_)` takes in a `liquidatorFactory` address, which is ignored for the execution in the Open-Term LoanManager (since Open-Term Loans have no collateral) and is in the interface for compatibility of the PoolManager with both Fixed/Open-Term LoanManagers.
+* The PoolManager can call `triggerDefault()` on the LoanManager. The entry point to triggering a default is the PoolManager.
+* Note the interface for `triggerDefault(address loan_, address liquidatorFactory_)` takes in a `liquidatorFactory` address, which is ignored for the execution in the Open-Term LoanManager since Open-Term Loans have no collateral. The PoolManager passes the zero address.
 * The natural progression of all defaults is for the Loan to be impaired first, such that the calculation during the default process to occur from the same station Loan accounting state. Thus, `triggerDefault()` performs steps to account for the Loan's impairment first, if it has already not been impaired, as part of the `triggerDefault()` flow.
 * Global accounting is updated to update the `principalOut`, `accountedInterest` and `unrealizedLosses`.
-* Any recovered fees from the Loan are distributed to the Pool and Treasury with any `remainingLosses` passed back to the `PoolManager.triggerDefault()` to see if anything further can be recovered via the PoolCover.
+* Any recovered fees from the Loan are distributed to the Pool and Treasury with any `remainingLosses` passed back to the `PoolManager.triggerDefault()`.
 
 ## Fees
 
-* Service fees are passed into the `claim()` function and are paid out to the platform and delegate respectively. It is worth noting that if the PoolDelegate does not have enough cover provided, the `delegateServiceFees` are added to the `platformFees` and sent to the Treasury.
-* Management fees are calculated as part of the `claim()` function flow using the stored `managementFeeRate` in the `Payment` struct. Similar to service fees, if the PoolDelegate does not provide enough cover, the `delegateManagementFee` is instead not deducted and the pool gets that portion of fees.
+* Service fees are passed into the `claim()` function and are paid out to the platform and delegate respectively.
+* Management fees are calculated as part of the `claim()` function flow using the stored `managementFeeRate` in the `Payment` struct.
 
 ## Accounting
 
 The Open Term Loan Manager handles accounting for Open Term Loans by being aware of the incoming payment expected. When a Loan is Funded or a Payment is made the payment information is stored in a payment struct containing the `platformManagementFeeRate`, `delegateManagementFeeRate`, `startDate` and `issuanceRate`. The fee rates are snapshots of the global variables at the time, whereas the latter 2 are Loan specific. The global `issuanceRate` is then adjusted and interest accrued prior gets added to the `accountedInterest`, thus updating the accounting state globally.
 
-Note the key distinction between the Open Term Loan Manager and Fixed Term Loan Manager is that in the case of Open Term interest keeps accruing as there is no notion of a `domainEnd`. The assumption is that the Pool Delegate will act to Impair or Default a Open Term Loan in order to make the necessary accounting updates to adjust the issuance rate and stop accruing interest on a Loan where a payment is no longer expected.
+Note that interest keeps accruing in the Open Term Loan Manager as there is no notion of a `domainEnd`. The assumption is that the Pool Delegate will act to Impair or Default a Open Term Loan in order to make the necessary accounting updates to adjust the issuance rate and stop accruing interest on a Loan where a payment is no longer expected.
 
 ## Accounting Examples
 
@@ -111,13 +111,13 @@ $$
 \begin{align} lateInterest &= 500 * 2 \\ outstandingInterest &= outstandingInterest - 7000 \\ issuanceRate &= \frac{5000}{22-12} = 500 \\ domainStart &= 12 \\ cash &= cash + 7000 \\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
 $$
 
-Payment 2 is made on time and follows the same logic as [Example 1](https://github.com/maple-labs/maple-core-v2-private/wiki/Open-Term-Loan-Manager#example-1-single-loan---early-payment)
+Payment 2 is made on time and follows the same logic as Example 1
 
 <div align="center"><img src="https://user-images.githubusercontent.com/59924029/227553957-9fe42cdd-5e5c-4a11-8b6d-36e6290cfc1f.svg" alt="" height="1000"></div>
 
 ### Example 3: Double Loan - Single Early Payment
 
-The same first Loan as [Example 1](https://github.com/maple-labs/maple-core-v2-private/wiki/Open-Term-Loan-Manager#example-1-single-loan---early-payment) but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
+The same first Loan as Example 1 but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
 
 Below demonstrates how the accounting changes on day 5 when the second loan is funded:
 
@@ -147,7 +147,7 @@ $$
 
 ### Example 4: Double Loan - Single Late Payment
 
-The same first Loan as [Example 2](https://github.com/maple-labs/maple-core-v2-private/wiki/Open-Term-Loan-Manager#example-2-single-loan---late-payment) but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
+The same first Loan as Example 2 but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
 
 Note for this example we assume the `lateInterestPremiumRate` is the same as the `interestRate` and that there is zero `lateFeeRate`.
 

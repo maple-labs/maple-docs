@@ -1,27 +1,6 @@
 # Protocol Invariants
 
 ```
-* Fixed Term Loan
-   * Invariant A: collateral balance >= _collateral`
-   * Invariant B: fundsAsset >= _drawableFunds`
-   * Invariant C: `_collateral >= collateralRequired_ * (principal_ - drawableFunds_) / principalRequested_`
-
-* Fixed Term Loan Manager (non-liquidating)
-   * Invariant A: domainStart <= domainEnd
-   * Invariant B: sortedPayments is always sorted
-   * Invariant C: outstandingInterest = ∑outstandingInterest(loan) (theoretical)
-   * Invariant D: totalPrincipal = ∑loan.principal()
-   * Invariant E: issuanceRate = ∑issuanceRate(payment)
-   * Invariant F: unrealizedLosses <= assetsUnderManagement()
-   * Invariant G: unrealizedLosses == 0
-   * Invariant H: assetsUnderManagement == ∑loan.principal() + ∑outstandingInterest(loan)
-   * Invariant I: domainStart <= block.timestamp
-   * Invariant J: if (loanManager.paymentWithEarliestDueDate != 0) then issuanceRate > 0
-   * Invariant K: if (loanManager.paymentWithEarliestDueDate != 0) then domainEnd == paymentWithEarliestDueDate
-   * Invariant L: refinanceInterest[payment] = loan.refinanceInterest()
-   * Invariant M: paymentDueDate[payment] = loan.paymentDueDate()
-   * Invariant N: startDate[payment] <= loan.paymentDueDate() - loan.paymentInterval()
-
 * Open Term Loan
    * Invariant A: dateFunded <= datePaid, dateCalled, dateImpaired (if not zero)
    * Invariant B: datePaid <= dateImpaired (if not zero)
@@ -60,7 +39,7 @@
    * Invariant K: convertToExitShares == poolManager.convertToExitShares()
 
 * PoolManager (non-liquidating)
-   * Invariant A: totalAssets == cash + ∑assetsUnderManagement[fixedTermLoanManager] + ∑assetsUnderManagement[openTermLoanManager]
+   * Invariant A: totalAssets == cash + ∑assetsUnderManagement[strategy]
    * Invariant B: totalAssets >= unrealizedLosses
 
 * Pool Permission Manager
@@ -78,13 +57,4 @@
    * Invariant F: requests(0) == (0, 0)
    * Invariant G: ∀ requestId[lender] ∈ [0, lastRequestId]
    * Invariant H: requestId is unique
-
-* Strategy
-   * Invariant A: assetsUnderManagement == currentTotalAssets - accruedFees
-   * Invariant B: currentAccruedFees <= currentTotalAssets
-   * Invariant C: strategyState == ACTIVE -> unrealizedLosses == 0
-   * Invariant D: strategyState == IMPAIRED -> assetsUnderManagement == unrealizedLosses
-   * Invariant E: strategyState == INACTIVE -> assetsUnderManagement == unrealizedLosses == 0
-   * Invariant F: strategyState ∈ [0, 2]
-   * Invariant G: strategyFeeRate <= 1e6
 ```

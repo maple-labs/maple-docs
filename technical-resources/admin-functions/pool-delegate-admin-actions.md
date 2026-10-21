@@ -8,27 +8,12 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 
 * `upgrade`
 * `acceptPoolDelegate`
-* `setPendingPoolDelegate`
 * `addStrategy` (only before initial configuration; callable prior to `completeConfiguration`)
 * `setDelegateManagementFeeRate` (only before initial configuration; callable prior to `completeConfiguration`)
-* `setIsStrategy`
 * `setLiquidityCap` (only before initial configuration; callable prior to `completeConfiguration`)
 * `setPoolPermissionManager` (only before initial configuration; callable prior to `completeConfiguration`)
 * `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
-* `finishCollateralLiquidation`
 * `triggerDefault`
-
-## FixedTermLoanManager
-
-* `upgrade`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
-* `acceptNewTerms`
-* `fund`
-* `rejectNewTerms`
-* `impairLoan`
-* `removeLoanImpairment`
 
 ## OpenTermLoanManager
 
@@ -51,15 +36,6 @@ The Pool Delegate is responsible for administrating a Pool which involves fundin
 * `setLenderBitmaps`
 * `setPoolBitmaps`
 * `setPoolPermissionLevel`
-
-## Strategies Contracts
-
-* `claimRewards` (Aave Strategy only)
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-* `setPsm` (Sky Strategy only)
 
 ## Withdrawal Manager (Queue)
 

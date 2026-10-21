@@ -28,7 +28,7 @@ $$
 
 ## Example
 
-Below is an example of how the exchange rates work in an impair + default scenario. If one exchange rate was used during this process, a depositor could have deposited at a 0.6 exchange rate and withdrawn at a 0.8 exchange rate soon after. This would be an unfair distribution of funds as that depositor would earn a portion of the proceeds from cover and collateral liquidation as profit, rather than experiencing it as a reduction in loss.
+Below is an example of how the exchange rates work when a loan is impaired and the impairment is later removed. If one exchange rate was used during this process, a depositor could have deposited at a 0.6 exchange rate and withdrawn at a 1.1 exchange rate once the impairment was removed. This would be an unfair distribution of funds as that depositor would capture value belonging to the LPs who were in the pool when the loan was impaired.
 
 ```
 # Pre-Impairment
@@ -40,7 +40,7 @@ unrealizedLosses =    0
 Deposit  exchange rate = 1.1
 Withdraw exchange rate = 1.1
 
-# Post-Impairment (Pre-Default)
+# Post-Impairment
 
 totalAssets      = 1100
 totalSupply      = 1000
@@ -49,13 +49,13 @@ unrealizedLosses =  500
 Deposit  exchange rate = 1.1
 Withdraw exchange rate = 0.6
 
-# Post-Default
+# Impairment Removed (Loan Repaid)
 
-totalAssets      =  800
+totalAssets      = 1100
 totalSupply      = 1000
 unrealizedLosses =    0
 
-Deposit  exchange rate = 0.8
-Withdraw exchange rate = 0.8
+Deposit  exchange rate = 1.1
+Withdraw exchange rate = 1.1
 
 ```
