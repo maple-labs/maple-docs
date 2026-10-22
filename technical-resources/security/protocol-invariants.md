@@ -1,6 +1,6 @@
 # Invariants
 
-Properties that must hold at all times across pools, Strategy Managers and strategies. The stateful fuzz suite in `tests/invariants` asserts every property below after each randomised action, and Maple's on-chain health checkers re-check the loan, Pool and Lender properties every block, see [Critical Monitoring](security.md#critical-monitoring).
+Properties that must hold at all times across pools, Strategy Managers and strategies. The stateful fuzz suite in `tests/invariants` asserts every property below after each randomised action, and Maple's on-chain health checkers re-check most of these properties every block, see [Critical Monitoring](security.md#critical-monitoring).
 
 ```
 * Open Term Loan
@@ -13,11 +13,11 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant G: getPaymentBreakdown == theoretical calculation
 
 * Open Term Loan Manager
-   * Invariant A: accountedInterest + accruedInterest() == ∑loan.getPaymentBreakdown(block.timestamp) (minus fees)
-   * Invariant B: if no payments exist: accountedInterest == 0
+   * Invariant A: accountedInterest + accruedInterest() ~= ∑loan.getPaymentBreakdown(block.timestamp) (minus fees)
+   * Invariant B: if no payments exist: accountedInterest == 0 (with rounding)
    * Invariant C: principalOut = ∑loan.principal()
-   * Invariant D: issuanceRate = ∑payment.issuanceRate
-   * Invariant E: unrealizedLosses <= assetsUnderManagement()
+   * Invariant D: issuanceRate = ∑payment.issuanceRate (excluding impaired loans)
+   * Invariant E: unrealizedLosses <= assetsUnderManagement() (with rounding)
    * Invariant F: if no impairments exist: unrealizedLosses == 0
    * Invariant G: block.timestamp >= domainStart
    * Invariant H: payment.startDate == loan.dateFunded() || loan.datePaid()
@@ -28,7 +28,7 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant M: fundsAsset.allowance(OTLM, address(loan)) == 0
 
 * Pool (non-liquidating)
-   * Invariant A: totalAssets > fundsAsset balance of pool
+   * Invariant A: totalAssets >= fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
    * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
    * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
@@ -51,9 +51,9 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant A: pool.permissionLevel ∈ [0, 3]
    * Invariant B: pool.bitmap ∈ [0, MAX]
    * Invariant C: lender.bitmap ∈ [0, MAX]
-   * Invariant D: pool.permissionLevel == public -> permanently public
+   * Invariant D: pool.permissionLevel == public -> permanently public (enforced by the contract, not asserted by the suite)
 
-* Withdrawal Manager (Queue)
+* Withdrawal Manager
    * Invariant A: ∑request.shares + ∑owner.manualShares == totalShares
    * Invariant B: balanceOf(this) >= totalShares
    * Invariant C: ∀ requestId(owner) != 0 -> request.shares > 0 && request.owner == owner
@@ -64,8 +64,8 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant H: requestId is unique
    * Invariant I: ∀ owner, userEscrowedShares(owner) == ∑requestsByOwner(owner).shares
    * Invariant J: ∑owner.userEscrowedShares + ∑owner.manualSharesAvailable == totalShares
-   * Invariant M: requestsByOwner lists are strictly increasing
-   * Invariant N: requestsByOwner lists match active requests exactly
+   * Invariant K: requestsByOwner lists are strictly increasing
+   * Invariant L: requestsByOwner lists match active requests exactly
 
 * Strategy Manager
    * Invariant A: assetsUnderManagement() == underlyingStrategy.assetsUnderManagement() && unrealizedLosses() == underlyingStrategy.unrealizedLosses()
@@ -80,7 +80,7 @@ Properties that must hold at all times across pools, Strategy Managers and strat
 
 * Aave V3 Strategy
    * Invariant A: assetsUnderManagement() ~= ∑fundings + ∑yield - ∑withdrawals - ∑fees (skipped once isLossRecognized)
-   * Invariant B: aToken.balanceOf(strategy) >= ∑fundings - ∑withdrawals - ∑fees
+   * Invariant B: aToken.balanceOf(strategy) >= ∑fundings - ∑withdrawals - ∑fees (with rounding)
    * Invariant C: fundsAsset.balanceOf(strategy) == 0
    * Invariant D: fundsAsset.allowance(strategy, aavePool) == 0
    * Invariant E: aToken.balanceOf(strategy) >= lastRecordedTotalAssets
@@ -91,7 +91,7 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant J: strategyDelegateFeeRate + strategyProtocolFeeRate <= 1e6
 
 * Sky Strategy
-   * Invariant A: assetsUnderManagement() ~= ∑fundings + ∑yield - ∑withdrawals - ∑fees
+   * Invariant A: assetsUnderManagement() ~= ∑fundings + ∑yield - ∑withdrawals - ∑fees (skipped once isLossRecognized)
    * Invariant B: usds.balanceOf(strategy) == fundsAsset.balanceOf(strategy) == 0
    * Invariant C: allowance(strategy, psm) == allowance(strategy, savingsUsds) == 0
    * Invariant D: gemForUsds(usdsForGem(x)) ~= x

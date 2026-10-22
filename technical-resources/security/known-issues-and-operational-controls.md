@@ -74,6 +74,14 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Control.** Maple monitors reserve utilisation and retries once liquidity returns.
 
+### Sky strategy calls revert while the PSM is halted
+
+**Behaviour.** While the PSM's `tout` is `type(uint256).max`, which halts its `buyGem()` path, `MapleSkyStrategy` rejects `fundUnderlyingStrategy()` with `MSS:FUS:PSM_HALTED`, `setStrategyDelegateFeeRate()` with `MSS:SSDFR:PSM_HALTED` and `setStrategyProtocolFeeRate()` with `MSS:SSPFR:PSM_HALTED`. `withdrawFromUnderlyingStrategy()`, which also harvests fees, reverts because `_usdsForGem()` overflows at the halted `tout`. If the PSM's DaiJoin is caged, `fundUnderlyingStrategy()` reverts with `MSS:FUS:DAI_JOIN_CAGED`. In either state `availableToWithdraw()` returns zero, so `processRedemption()` on the Strategy Manager reverts with `MSM:PR:NOT_ENOUGH_LIQUIDITY`.
+
+**Risk.** Availability only. Funding, redemptions and fee rate changes for that strategy wait until the PSM resumes. `impair()`, `recognizeLoss()` and `recoverPosition()` do not harvest, so they remain callable.
+
+**Control.** Maple monitors the PSM and retries once it resumes. See [Funding and Withdrawals](../strategies/sky-strategy/funding-and-withdrawals.md).
+
 ### Funding reverts after a strategy's assets reach zero while shares remain
 
 **Behaviour.** `fundStrategyManager()` prices new shares with `_convertToShares()`, which divides by `assetsUnderManagement()` when `totalShares` is non-zero. After a full loss the division by zero reverts.
