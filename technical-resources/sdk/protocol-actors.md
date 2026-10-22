@@ -14,7 +14,7 @@ There are three actors in the Maple Protocol ecosystem:
 * Borrowers draw down loans after they are approved and funded.
 * Borrowers repay principal and interest through associated smart contracts.
 
-**Code Example:** This snippet queries the [`GlobalsV2`](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview/smart-contract-architecture#maple-globals) contract to check if a given address is an authorized borrower
+**Code Example:** This snippet queries the [`GlobalsV2`](../protocol-overview/smart-contract-architecture.md#maple-globals) contract to check if a given address is an authorized borrower
 
 ```js
 import { providers } from 'ethers';
