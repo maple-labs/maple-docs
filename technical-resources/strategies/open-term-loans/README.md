@@ -1,5 +1,7 @@
 # Open Term Loans
 
+Open-term loans are the one strategy a Pool owns directly. The Pool Manager deploys the Open Term Loan Manager through `addStrategy` and funds it under a strategy cap, with no [Strategy Manager](../strategy-manager.md) in between. Every other strategy is shared between Pools through a Strategy Manager, see [How Pools Allocate Capital](../how-pools-allocate-capital.md). v7 adds one step to the loan itself: the borrower accepts the loan terms before the loan can be funded.
+
 All loans in the protocol are open-term loans. Their functionality can be summarized as follows:
 
 1. Execution of loan financing.
@@ -17,9 +19,9 @@ Loans operate as proxy contracts that link to a particular implementation. Borro
 The following pre-requisites must be met before the creation of a Loan.
 
 1. The Borrower must be set as valid in the MapleGlobals allowlist.
-2. The Borrower must be set as a valid instance deployer of the factory (i.e. `globals.setCanDeployFrom`).
+2. The Borrower must be able to deploy from the loan factory. Globals lets any valid Borrower deploy from a factory registered as a `LOAN_FACTORY` instance. Otherwise the Borrower must be allowed explicitly with `setCanDeployFrom`.
 3. The asset used for the funding of the Loan must be set as valid by the Governor in MapleGlobals.
-4. The Lender must be a valid instance of the Open Term Loan Manager.
+4. The Lender must be a valid instance of the Open Term Loan Manager with the same `fundsAsset`.
 
 ## Key Characteristics of Open-Term Loans
 - There is no implied date by which the principal and outstanding interest need to be paid back.
@@ -28,7 +30,30 @@ The following pre-requisites must be met before the creation of a Loan.
 - Interest is prorated based on the timestamp the payment is made.
 - Loans charge Service Fees only.
 - The `fundsAsset` balance is paid directly to the borrower during funding, or during a refinance that increases principal.
+- The Borrower must call `acceptLoanTerms()` before the Lender can fund the loan.
 - Refinances are initiated by the Pool Delegate.
 - Loans can be "Called", requiring the borrower to pay back some or all principal by a required date.
 - A borrower can close a loan at any time by paying the full principal amount plus the associated interest and service fees.
 - Loans can be `impaired()` again if they are already impaired, thereby moving (or "pushing") the `impairmentDate`.
+
+## Pages
+
+{% content-ref url="open-term-loan.md" %}
+[open-term-loan.md](open-term-loan.md)
+{% endcontent-ref %}
+
+{% content-ref url="open-term-loan-manager.md" %}
+[open-term-loan-manager.md](open-term-loan-manager.md)
+{% endcontent-ref %}
+
+{% content-ref url="refinancing.md" %}
+[refinancing.md](refinancing.md)
+{% endcontent-ref %}
+
+{% content-ref url="impairments.md" %}
+[impairments.md](impairments.md)
+{% endcontent-ref %}
+
+{% content-ref url="defaults.md" %}
+[defaults.md](defaults.md)
+{% endcontent-ref %}

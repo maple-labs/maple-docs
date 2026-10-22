@@ -1,39 +1,64 @@
-# Overview
+# Creating a Pool
 
-The PoolDeployer contract facilitates the atomic deployment and initialization of the contracts necessary to run a Pool:
-* `PoolManager`, which itself deploys the `Pool` and acts as the hub for configuration and strategy attachment
-* `WithdrawalManager (Queue)`
+`MaplePoolDeployer` deploys and configures everything a Pool needs in one transaction: the Pool Manager (which deploys the Pool), the queue-based Withdrawal Manager, any owned strategies, and the Strategy Managers the Pool will fund. Only a Pool Delegate can call it. Full interface: [PoolDeployer](../interfaces/pool-deployer.md).
 
-The `deployPool` function in the PoolDeployer contract handles deployment of the PoolManager/Pool, the queue‑based Withdrawal Manager, and strategy instances.
+## Prerequisites
 
-# Pre-Requisite Transactions
+The deployment reverts unless all of the following hold in Globals.
 
-The following pre-requisite configurations are necessary in order to deploy a Pool in the Maple protocol.
+1. The caller is a valid Pool Delegate (`isPoolDelegate`) and does not already own a Pool Manager.
+2. The Pool Deployer is registered as a pool deployer (`isPoolDeployer`) and may deploy from the Withdrawal Manager factory (`canDeployFrom`).
+3. `poolManagerFactory` is a `POOL_MANAGER_FACTORY` instance, `withdrawalManagerFactory` is a `WITHDRAWAL_MANAGER_QUEUE_FACTORY` instance and `poolPermissionManager` is a `POOL_PERMISSION_MANAGER` instance.
+4. The Pool asset is a valid pool asset (`isPoolAsset`).
+5. Each owned-strategy factory is a `STRATEGY_FACTORY` instance. Globals lets any Pool Manager deploy from such a factory without further setup.
+6. Each Strategy Manager was deployed by a `STRATEGY_MANAGER_FACTORY` instance and supports the Pool asset. The [Strategy Deployer](../strategies/strategy-deployer.md) deploys Strategy Managers beforehand.
+7. `initialSupply` is zero, or Globals has a migration admin to receive the initial shares.
 
-1. Deploying address is a valid Pool Delegate in `MapleGlobals`.
-2. The provided `PoolManagerFactory` is a valid factory in `MapleGlobals`.
-3. The provided `WithdrawalManager (Queue) Factory` is a valid factory in `MapleGlobals`.
-4. Each provided `LoanManagerFactory` is a valid factory in `MapleGlobals`.
-5. The provided `PoolPermissionManager` is a valid instance in `MapleGlobals`.
-6. The Pool Delegate does not own a `Pool` already.
-7. The Pool Asset is a valid asset in `MapleGlobals`.
+Only queue-based Withdrawal Managers can be deployed. The cyclical variant is no longer supported.
 
-# Pool Deployment with the queue-based Withdrawal Manager
+## deployPool
 
-To deploy a Pool, `PoolDeployer` can be called with the following parameters:
+```solidity
+function deployPool(
+    address poolManagerFactory,
+    address withdrawalManagerFactory,
+    PoolManagerInitParams calldata poolManagerInitParams,
+    PoolConfigParams calldata poolConfigParams,
+    StrategyDeployParams[] calldata strategiesParams,
+    StrategyManagerParams[] calldata strategyManagersParams
+) external returns (address poolManager);
+```
 
-* `poolManagerFactory`.
-* `withdrawalManagerFactory` - Address of the queue-based withdrawal manager factory (`WITHDRAWAL_MANAGER_QUEUE_FACTORY`).
-* `strategyFactories` - Array of strategy factory addresses (e.g., LoanManager factory).
-* `strategyDeploymentData` - Strategy-specific encoded deployment data for each factory.
-* `asset` - The main asset that the pool denominates in.
-* `poolPermissionManager`.
-* `name` and `symbol` for identification of the pool shares token.
-* Configuration params:
-  * `initialSupply` - The initial supply of pool tokens used during Pool deployment
+| Struct | Field | Type | Meaning |
+| --- | --- | --- | --- |
+| `PoolManagerInitParams` | `asset` | `address` | The Pool asset |
+|  | `initialSupply` | `uint256` | Shares minted to the migration admin at construction, normally zero |
+|  | `name`, `symbol` | `string` | ERC-20 metadata of the Pool share token |
+| `PoolConfigParams` | `poolPermissionManager` | `address` | The Pool Permission Manager |
+|  | `delegateManagementFeeRate` | `uint256` | Delegate management fee rate, where `100_0000` is 100% |
+|  | `liquidityCap` | `uint256` | Maximum `totalAssets` the Pool accepts |
+| `StrategyDeployParams` (one per owned strategy) | `factory` | `address` | Strategy factory |
+|  | `cap` | `uint256` | Strategy cap, zero leaves it unset |
+|  | `salt` | `bytes32` | CREATE2 salt |
+|  | `deploymentData` | `bytes` | Factory-specific data. The Pool Manager address is prepended automatically |
+| `StrategyManagerParams` (one per Strategy Manager) | `instance` | `address` | An existing Strategy Manager |
+|  | `cap` | `uint256` | Strategy cap, zero leaves it unset |
 
-Note: In the queue-based deployer, additional Pool parameters such as `liquidityCap`, `delegateManagementFeeRate`, `poolPermissionManager`, and `withdrawalManager` are set post-deployment via `PoolManager` admin functions (typically by Governor or Operational Admin) after activation.
+## What the transaction does
 
-# Pool Activation
+1. Deploys the Pool Manager from its factory. The initializer deploys the Pool, which approves the Pool Manager for its asset.
+2. Deploys the queue Withdrawal Manager for the Pool.
+3. For each `StrategyDeployParams`, calls `addStrategy` on the Pool Manager and, if `cap` is non-zero, `setStrategyCap`.
+4. For each `StrategyManagerParams`, calls `addStrategyManager` and, if `cap` is non-zero, `setStrategyCap`.
+5. Emits `PoolDeployed(pool, poolManager, withdrawalManager, strategies, strategyManagers)`.
+6. Sets the delegate management fee rate, liquidity cap, Pool Permission Manager and Withdrawal Manager, then calls `completeConfiguration`.
 
-Before the Pool can start accepting deposits and operating, the Governor or Operational Admin needs to call `activatePoolManager` in Globals. This will activate the Pool. This allows the Governor or Operational Admin to set up fee parameters and default parameters before running the Pool.
+Addresses are deterministic. `getPoolDeploymentAddresses`, `getQueueWithdrawalManagerAddress` and `getStrategiesAddresses` return the addresses a deployment will produce, so they can be registered or funded in advance.
+
+## Activation
+
+A new Pool is configured but not active, so it rejects deposits with `P:NOT_ACTIVE`. The Governor or Operational Admin calls `activatePoolManager(poolManager)` on Globals. It checks the factory and the Pool Delegate, records the Pool Manager as the delegate's owned Pool, and calls `setActive(true)` on the Pool Manager.
+
+## After deployment
+
+Once configured, the Pool Delegate, Governor or Operational Admin can change the liquidity cap, delegate management fee rate, Pool Permission Manager and strategy caps. Only the Governor can add strategies or Strategy Managers, only the Operational Admin can remove a Strategy Manager, and the Withdrawal Manager cannot be changed. See [Pool Manager](pool-manager.md).

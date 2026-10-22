@@ -2,6 +2,8 @@
 
 The Open Term Loan Manager is responsible for managing the accounting state of all Open Term Loans tied to it via the initial funding. This includes storing the start dates and effective issuance rates resulting from the next expected payment of each Open Term Loan, accruing interest due from a Loans operations (i.e. payments, impairments, refinances, defaults), providing the total assets under management information to the Pool. The Loan Manager also handles a Loan Payment by distributing the `fundsAsset` to the Pool and the relevant Management and Service Fees to the Treasury and Pool Delegate.
 
+In v7 the Open Term Loan Manager is the only strategy a Pool owns directly. The Pool Manager deploys it through `addStrategy` and limits it with a strategy cap, see [Pool Manager](../../pools/pool-manager.md). Full interface: [OpenTermLoanManager](../../interfaces/open-term-loan-manager.md).
+
 ## Key Terms
 
 `issuanceRate` - Denotes how many `fundsAsset` per second the AssetsUnderManagement increases by for the Open Term Loan Manager, denoted using `1e27` decimal precision.
@@ -25,6 +27,7 @@ $$outstandingInterest = accountedInterest + issuanceRate \times (block.timestamp
 ## Fund
 
 * The PoolDelegate directly calls `fund()` which sets up the accounting of the respective Loan in the LoanManager and requests funds from the Pool via the PoolManager and approves the OT-Loan to pull the funds from the LoanManager.
+* The Loan Manager first checks that the Loan comes from an `OT_LOAN_FACTORY` instance and that its borrower is valid in Globals. The Pool Manager reverts with `PM:RF:STRATEGY_CAP` if the Loan Manager's `assetsUnderManagement` plus the principal would exceed its strategy cap, and the Loan reverts with `ML:F:TERMS_NOT_ACCEPTED` unless the Borrower has called `acceptLoanTerms()`.
 
 ## Refinance
 
