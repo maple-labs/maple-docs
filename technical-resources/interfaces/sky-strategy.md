@@ -472,7 +472,7 @@ Returns the address of the security admin.
 
 ### `setFallbackTout`
 
-Sets the fallback PSM \`tout\` used to value the position while Sky halts the PSM \`buyGem\` path by setting the live \`tout\` to type(uint256).max. Callable only by the strategy delegate or operational admin. Operationally managed to mirror the PSM \`tout\` prior to any halt; cannot itself be type(uint256).max.
+Sets the fallback PSM \`tout\` used to value the position while Sky halts the PSM \`buyGem\` path by setting the live \`tout\` to type(uint256).max. Callable only by the strategy delegate or operational admin. Operationally managed to mirror the PSM \`tout\` prior to any halt; cannot exceed 1e18 (a 100% fee).
 
 ```solidity
     function setFallbackTout(
@@ -548,7 +548,7 @@ Sets the referral code used for future deposits into Sky. Callable only by the s
 
 ### `setStrategyDelegateFeeRate`
 
-Sets the percentage of yield collected by the strategy delegate. Callable only by the strategy delegate. Accrues outstanding fees before updating the rate. The combined strategy delegate and protocol fee rates cannot exceed 1e6.
+Sets the percentage of yield collected by the strategy delegate. Callable only by the strategy delegate. Accrues outstanding fees before updating the rate. Reverts while Sky halts the PSM \`buyGem\` path by setting the live \`tout\` to type(uint256).max. The combined strategy delegate and protocol fee rates cannot exceed 1e6.
 
 ```solidity
     function setStrategyDelegateFeeRate(
@@ -567,7 +567,7 @@ Sets the percentage of yield collected by the strategy delegate. Callable only b
 
 ### `setStrategyProtocolFeeRate`
 
-Sets the percentage of yield collected by the Maple treasury. Callable only by protocol admins. Accrues outstanding fees before updating the rate. The combined strategy delegate and protocol fee rates cannot exceed 1e6.
+Sets the percentage of yield collected by the Maple treasury. Callable only by protocol admins. Accrues outstanding fees before updating the rate. Reverts while Sky halts the PSM \`buyGem\` path by setting the live \`tout\` to type(uint256).max. The combined strategy delegate and protocol fee rates cannot exceed 1e6.
 
 ```solidity
     function setStrategyProtocolFeeRate(
@@ -982,11 +982,11 @@ Emitted when funds asset is withdrawn from the underlying Sky strategy to a dest
 
 #### Parameters:
 
-| Index |      Name      |    Type   | Internal Type | Description                                              |
-| :---: | :------------: | :-------: | :-----------: | -------------------------------------------------------- |
-|   0   |  `destination` | `address` |   `address`   | Address that received the funds asset.                   |
-|   1   | `sharesBurned` | `uint256` |   `uint256`   | Amount of sUSDS shares burned to satisfy the redemption. |
-|   2   |   `assetsOut`  | `uint256` |   `uint256`   | Amount of funds asset delivered to the destination.      |
+| Index |      Name      |    Type   | Internal Type | Description                                                                                                   |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------------------------------------------------------------------------------------- |
+|   0   |  `destination` | `address` |   `address`   | Address that received the funds asset.                                                                        |
+|   1   | `sharesBurned` | `uint256` |   `uint256`   | Amount of sUSDS shares burned, including those burned to cover the accrued delegate and protocol fees.        |
+|   2   |   `assetsOut`  | `uint256` |   `uint256`   | Amount of funds asset delivered to the destination, excluding the fees reported by \`StrategyFeesCollected\`. |
 
 
 
