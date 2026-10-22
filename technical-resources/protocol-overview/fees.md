@@ -89,7 +89,7 @@ delegateFee  = yieldAccrued * strategyDelegateFeeRate / 1e6
 protocolFee  = yieldAccrued * strategyProtocolFeeRate / 1e6
 ```
 
-Accrued fees are withdrawn from the venue and paid out whenever a call touches the position: `fundUnderlyingStrategy()`, `withdrawFromUnderlyingStrategy()`, `setStrategyDelegateFeeRate()` and `setStrategyProtocolFeeRate()`. Each of these resets `lastRecordedTotalAssets` to the position after the harvest, so a rate change applies only to yield earned after it. Between harvests, `assetsUnderManagement()` and `availableToWithdraw()` already deduct the accrued fees, so Pools never count fee amounts as their own value. Very small accruals can round a fee down to zero.
+Accrued fees are withdrawn from the venue and paid out whenever a call touches the position: `fundUnderlyingStrategy()`, `withdrawFromUnderlyingStrategy()`, `setStrategyDelegateFeeRate()` and `setStrategyProtocolFeeRate()`. Each of these resets `lastRecordedTotalAssets` to the position after the harvest, so a rate change applies only to yield earned after it. Between harvests, `assetsUnderManagement()` and `availableToWithdraw()` already deduct the accrued fees, so Pools never count fee amounts as their own value. Very small accruals can round a fee down to zero. The Sky Strategy's fee-rate setters revert while Sky halts the PSM `buyGem()` path (`tout == type(uint256).max`).
 
 ### Allocation Strategy: cash basis
 
