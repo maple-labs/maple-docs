@@ -46,12 +46,13 @@ Share accounting, AUM reporting and caps live in the Strategy Manager and are th
 
 ## Which Pools are upgraded
 
-The release upgrades four Pool Managers from v4.0.0 to v5.0.0 and their queue Withdrawal Managers from v2.0.0 to v2.0.1:
+The release upgrades five Pool Managers from v4.0.0 to v5.0.0 and their queue Withdrawal Managers from v2.0.0 to v2.0.1:
 
 * syrupUSDC
 * syrupUSDT
 * syrupUSDG
 * Secured Lending USDC
+* Secured Lending 2 USDC
 
 Every other mainnet Pool stays on its current Pool Manager implementation. There is no forced migration. A non-upgraded Pool keeps its cyclical withdrawal manager, fixed-term loans and cover contract, and the compatibility tests in the release repository exercise deposits, redemptions and loan actions on those Pools after the upgrade. The step-by-step procedure is on [v7 Release: Deployment and Upgrade](v7-deployment-and-upgrade.md).
 
