@@ -52,6 +52,25 @@ Activates the pool manager.
 
 
 
+### `activateStrategyManager`
+
+Activates the strategy manager.
+
+```solidity
+    function activateStrategyManager(
+        address strategyManager_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |        Name        |    Type   | Internal Type | Description                                      |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `strategyManager_` | `address` |   `address`   | The address of the strategy manager to activate. |
+
+
+
 ### `admin`
 
 Returns the proxy's admin address.
@@ -78,25 +97,25 @@ Gets the virtualized first mint that acts as as offset to \`totalAssets\` and \`
 
 ```solidity
     function bootstrapMint(
-        address
+        address asset_
     )
         view
         returns (
-            uint256
+            uint256 bootstrapMint_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                            |
+| :---: | :------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the pool asset to query |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |       Name       |    Type   | Internal Type | Description                                                                |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------------------------------------- |
+|   0   | `bootstrapMint_` | `uint256` |   `uint256`   | The amount of shares that will offset \`totalAssets\` and \`totalSupply\`. |
 
 
 
@@ -254,25 +273,25 @@ Gets the validity of a borrower.
 
 ```solidity
     function isBorrower(
-        address
+        address borrower_
     )
         view
         returns (
-            bool
+            bool isBorrower_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `borrower_` | `address` |   `address`   | The address of the borrower to query. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                                        |
+| :---: | :-----------: | :----: | :-----------: | -------------------------------------------------- |
+|   0   | `isBorrower_` | `bool` |     `bool`    | A boolean indicating the validity of the borrower. |
 
 
 
@@ -282,25 +301,25 @@ Gets the validity of a collateral asset.
 
 ```solidity
     function isCollateralAsset(
-        address
+        address collateralAsset_
     )
         view
         returns (
-            bool
+            bool isCollateralAsset_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |        Name        |    Type   | Internal Type | Description                                  |
+| :---: | :----------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `collateralAsset_` | `address` |   `address`   | The address of the collateralAsset to query. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |         Name         |  Type  | Internal Type | Description                                                |
+| :---: | :------------------: | :----: | :-----------: | ---------------------------------------------------------- |
+|   0   | `isCollateralAsset_` | `bool` |     `bool`    | A boolean indicating the validity of the collateral asset. |
 
 
 
@@ -310,25 +329,25 @@ Gets whether a contract is uniquely paused.
 
 ```solidity
     function isContractPaused(
-        address
+        address contract_
     )
         view
         returns (
-            bool
+            bool isContractPaused_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                                |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `contract_` | `address` |   `address`   | The address of a contract in the protocol. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |         Name        |  Type  | Internal Type | Description                              |
+| :---: | :-----------------: | :----: | :-----------: | ---------------------------------------- |
+|   0   | `isContractPaused_` | `bool` |     `bool`    | Whether the contract is uniquely paused. |
 
 
 
@@ -364,7 +383,7 @@ Gets the validity of a factory.
 
 ### `isFunctionPaused`
 
-Gets whether a contract's function is paused.
+Gets whether a calling contract's function is paused.
 
 ```solidity
     function isFunctionPaused(
@@ -372,7 +391,7 @@ Gets whether a contract's function is paused.
     )
         view
         returns (
-            bool functionIsPaused_
+            bool isFunctionPaused_
         );
 ```
 
@@ -384,9 +403,9 @@ Gets whether a contract's function is paused.
 
 #### Return Values:
 
-| Index |         Name        |  Type  | Internal Type | Description |
-| :---: | :-----------------: | :----: | :-----------: | ----------- |
-|   0   | `functionIsPaused_` | `bool` |     `bool`    |             |
+| Index |         Name        |  Type  | Internal Type | Description                                |
+| :---: | :-----------------: | :----: | :-----------: | ------------------------------------------ |
+|   0   | `isFunctionPaused_` | `bool` |     `bool`    | Whether the contract's function is paused. |
 
 
 
@@ -401,7 +420,7 @@ Gets whether a contract's function is paused.
     )
         view
         returns (
-            bool functionIsPaused_
+            bool isFunctionPaused_
         );
 ```
 
@@ -414,9 +433,9 @@ Gets whether a contract's function is paused.
 
 #### Return Values:
 
-| Index |         Name        |  Type  | Internal Type | Description |
-| :---: | :-----------------: | :----: | :-----------: | ----------- |
-|   0   | `functionIsPaused_` | `bool` |     `bool`    |             |
+| Index |         Name        |  Type  | Internal Type | Description                                |
+| :---: | :-----------------: | :----: | :-----------: | ------------------------------------------ |
+|   0   | `isFunctionPaused_` | `bool` |     `bool`    | Whether the contract's function is paused. |
 
 
 
@@ -426,27 +445,27 @@ Gets whether a contract's function is uniquely unpaused. A false does not imply 
 
 ```solidity
     function isFunctionUnpaused(
-        address,
-        bytes4
+        address contract_,
+        bytes4 sig_
     )
         view
         returns (
-            bool
+            bool isFunctionUnpaused_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-|   1   | \`\` |  `bytes4` |    `bytes4`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                                 |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `contract_` | `address` |   `address`   | The address of a contract in the protocol.  |
+|   1   |    `sig_`   |  `bytes4` |    `bytes4`   | The function signature within the contract. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |          Name         |  Type  | Internal Type | Description                                           |
+| :---: | :-------------------: | :----: | :-----------: | ----------------------------------------------------- |
+|   0   | `isFunctionUnpaused_` | `bool` |     `bool`    | Whether the contract's function is uniquely unpaused. |
 
 
 
@@ -456,27 +475,27 @@ Gets wether an instance is of some instance key.
 
 ```solidity
     function isInstanceOf(
-        bytes32,
-        address
+        bytes32 instanceKey_,
+        address instance_
     )
         view
         returns (
-            bool
+            bool isInstance_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `bytes32` |   `bytes32`   |             |
-|   1   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                    |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `instanceKey_` | `bytes32` |   `bytes32`   | The key of some instance type. |
+|   1   |   `instance_`  | `address` |   `address`   | The address of an instance.    |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                                                       |
+| :---: | :-----------: | :----: | :-----------: | ----------------------------------------------------------------- |
+|   0   | `isInstance_` | `bool` |     `bool`    | A boolean indicating whether the instance is of the instance key. |
 
 
 
@@ -486,25 +505,25 @@ Gets the validity of a pool asset.
 
 ```solidity
     function isPoolAsset(
-        address
+        address poolAsset_
     )
         view
         returns (
-            bool
+            bool isPoolAsset_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |     Name     |    Type   | Internal Type | Description                            |
+| :---: | :----------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `poolAsset_` | `address` |   `address`   | The address of the poolAsset to query. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name      |  Type  | Internal Type | Description                                          |
+| :---: | :------------: | :----: | :-----------: | ---------------------------------------------------- |
+|   0   | `isPoolAsset_` | `bool` |     `bool`    | A boolean indicating the validity of the pool asset. |
 
 
 
@@ -542,7 +561,7 @@ Gets the validity of a pool deployer.
 
 ```solidity
     function isPoolDeployer(
-        address caller_
+        address account_
     )
         view
         returns (
@@ -552,15 +571,43 @@ Gets the validity of a pool deployer.
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   | `caller_` | `address` |   `address`   |             |
+| Index |    Name    |    Type   | Internal Type | Description                          |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account_` | `address` |   `address`   | The address of the account to query. |
 
 #### Return Values:
 
 | Index |        Name       |  Type  | Internal Type | Description                                             |
 | :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------- |
 |   0   | `isPoolDeployer_` | `bool` |     `bool`    | A boolean indicating the validity of the pool deployer. |
+
+
+
+### `isStrategyDelegate`
+
+Gets the validity of a strategy delegate.
+
+```solidity
+    function isStrategyDelegate(
+        address account_
+    )
+        view
+        returns (
+            bool isStrategyDelegate_
+        );
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                          |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account_` | `address` |   `address`   | The address of the account to query. |
+
+#### Return Values:
+
+| Index |          Name         |  Type  | Internal Type | Description                                                 |
+| :---: | :-------------------: | :----: | :-----------: | ----------------------------------------------------------- |
+|   0   | `isStrategyDelegate_` | `bool` |     `bool`    | A boolean indicating the validity of the strategy delegate. |
 
 
 
@@ -604,25 +651,25 @@ Gets the manual override price for an asset.
 
 ```solidity
     function manualOverridePrice(
-        address
+        address asset_
     )
         view
         returns (
-            uint256
+            uint256 manualOverridePrice_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                        |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the asset to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |          Name          |    Type   | Internal Type | Description                              |
+| :---: | :--------------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `manualOverridePrice_` | `uint256` |   `uint256`   | The manual override price for the asset. |
 
 
 
@@ -634,15 +681,15 @@ Gets maple treasury address.
     function mapleTreasury()
         view
         returns (
-            address
+            address mapleTreasury_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name       |    Type   | Internal Type | Description                        |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `mapleTreasury_` | `address` |   `address`   | The address of the maple treasury. |
 
 
 
@@ -652,25 +699,25 @@ Gets the maximum cover liquidation percent for a given pool manager.
 
 ```solidity
     function maxCoverLiquidationPercent(
-        address
+        address poolManager_
     )
         view
         returns (
-            uint256
+            uint256 maxCoverLiquidationPercent_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |              Name             |    Type   | Internal Type | Description                            |
+| :---: | :---------------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `maxCoverLiquidationPercent_` | `uint256` |   `uint256`   | The maximum cover liquidation percent. |
 
 
 
@@ -682,15 +729,15 @@ Gets the migration admin address.
     function migrationAdmin()
         view
         returns (
-            address
+            address migrationAdmin_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |        Name       |    Type   | Internal Type | Description                         |
+| :---: | :---------------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `migrationAdmin_` | `address` |   `address`   | The address of the migration admin. |
 
 
 
@@ -700,25 +747,25 @@ Gets the minimum cover amount for a given pool manager.
 
 ```solidity
     function minCoverAmount(
-        address
+        address poolManager_
     )
         view
         returns (
-            uint256
+            uint256 minCoverAmount_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name       |    Type   | Internal Type | Description               |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------- |
+|   0   | `minCoverAmount_` | `uint256` |   `uint256`   | The minimum cover amount. |
 
 
 
@@ -730,15 +777,15 @@ Gets the operational admin address.
     function operationalAdmin()
         view
         returns (
-            address
+            address operationalAdmin_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |         Name        |    Type   | Internal Type | Description                           |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `operationalAdmin_` | `address` |   `address`   | The address of the operational admin. |
 
 
 
@@ -770,6 +817,34 @@ Gets the address of the owner pool manager.
 
 
 
+### `ownedStrategyManager`
+
+Gets the address of the owner strategy manager.
+
+```solidity
+    function ownedStrategyManager(
+        address account_
+    )
+        view
+        returns (
+            address strategyManager_
+        );
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                          |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `account_` | `address` |   `address`   | The address of the account to query. |
+
+#### Return Values:
+
+| Index |        Name        |    Type   | Internal Type | Description                          |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager_` | `address` |   `address`   | The address of the strategy manager. |
+
+
+
 ### `pendingGovernor`
 
 Gets the pending governor address.
@@ -778,15 +853,15 @@ Gets the pending governor address.
     function pendingGovernor()
         view
         returns (
-            address
+            address pendingGovernor_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |        Name        |    Type   | Internal Type | Description                          |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `pendingGovernor_` | `address` |   `address`   | The address of the pending governor. |
 
 
 
@@ -796,25 +871,25 @@ Gets the platform management fee rate for a given pool manager.
 
 ```solidity
     function platformManagementFeeRate(
-        address
+        address poolManager_
     )
         view
         returns (
-            uint256
+            uint256 platformManagementFeeRate_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |             Name             |    Type   | Internal Type | Description                       |
+| :---: | :--------------------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `platformManagementFeeRate_` | `uint256` |   `uint256`   | The platform management fee rate. |
 
 
 
@@ -824,25 +899,25 @@ Gets the platform origination fee rate for a given pool manager.
 
 ```solidity
     function platformOriginationFeeRate(
-        address
+        address poolManager_
     )
         view
         returns (
-            uint256
+            uint256 platformOriginationFeeRate_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |              Name             |    Type   | Internal Type | Description                        |
+| :---: | :---------------------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `platformOriginationFeeRate_` | `uint256` |   `uint256`   | The platform origination fee rate. |
 
 
 
@@ -852,25 +927,25 @@ Gets the platform service fee rate for a given pool manager.
 
 ```solidity
     function platformServiceFeeRate(
-        address
+        address poolManager_
     )
         view
         returns (
-            uint256
+            uint256 platformServiceFeeRate_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                               |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | The address of the pool manager to query. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |            Name           |    Type   | Internal Type | Description                    |
+| :---: | :-----------------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `platformServiceFeeRate_` | `uint256` |   `uint256`   | The platform service fee rate. |
 
 
 
@@ -880,7 +955,7 @@ Gets pool delegate address information.
 
 ```solidity
     function poolDelegates(
-        address
+        address poolDelegate_
     )
         view
         returns (
@@ -891,9 +966,9 @@ Gets pool delegate address information.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                                |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate to query. |
 
 #### Return Values:
 
@@ -910,7 +985,7 @@ Gets the address and maximum delay of the oracle for the given asset.
 
 ```solidity
     function priceOracleOf(
-        address
+        address asset_
     )
         view
         returns (
@@ -921,9 +996,9 @@ Gets the address and maximum delay of the oracle for the given asset.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                        |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the asset to query. |
 
 #### Return Values:
 
@@ -942,15 +1017,15 @@ Gets the status of the protocol pause.
     function protocolPaused()
         view
         returns (
-            bool
+            bool protocolPaused_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |        Name       |  Type  | Internal Type | Description                                            |
+| :---: | :---------------: | :----: | :-----------: | ------------------------------------------------------ |
+|   0   | `protocolPaused_` | `bool` |     `bool`    | A boolean indicating the status of the protocol pause. |
 
 
 
@@ -983,9 +1058,9 @@ Gets the schedule calls for the parameters.
 
 ```solidity
     function scheduledCalls(
-        address,
-        address,
-        bytes32
+        address caller_,
+        address contract_,
+        bytes32 functionId_
     )
         view
         returns (
@@ -996,11 +1071,11 @@ Gets the schedule calls for the parameters.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-|   1   | \`\` | `address` |   `address`   |             |
-|   2   | \`\` | `bytes32` |   `bytes32`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                  |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The address of the caller.   |
+|   1   |  `contract_`  | `address` |   `address`   | The address of the contract. |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id function to call.     |
 
 #### Return Values:
 
@@ -1019,15 +1094,15 @@ Gets security admin address.
     function securityAdmin()
         view
         returns (
-            address
+            address securityAdmin_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name       |    Type   | Internal Type | Description                        |
+| :---: | :--------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `securityAdmin_` | `address` |   `address`   | The address of the security admin. |
 
 
 
@@ -1038,17 +1113,17 @@ Sets the virtualized first mint that acts as as offset to \`totalAssets\` and \`
 ```solidity
     function setBootstrapMint(
         address asset_,
-        uint256 amount_
+        uint256 bootstrapMint_
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                    |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
-|   0   |  `asset_` | `address` |   `address`   | The address of the pool asset. |
-|   1   | `amount_` | `uint256` |   `uint256`   |                                |
+| Index |       Name       |    Type   | Internal Type | Description                                                                |
+| :---: | :--------------: | :-------: | :-----------: | -------------------------------------------------------------------------- |
+|   0   |     `asset_`     | `address` |   `address`   | The address of the pool asset.                                             |
+|   1   | `bootstrapMint_` | `uint256` |   `uint256`   | The amount of shares that will offset \`totalAssets\` and \`totalSupply\`. |
 
 
 
@@ -1234,10 +1309,10 @@ Sets the minimum cover amount for the given pool manager.
 
 #### Parameters:
 
-| Index |        Name       |    Type   | Internal Type | Description                                                          |
-| :---: | :---------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
-|   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager to set the minimum cover amount for. |
-|   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The minimum cover amount.                                            |
+| Index |        Name       |    Type   | Internal Type | Description                                                           |
+| :---: | :---------------: | :-------: | :-----------: | --------------------------------------------------------------------- |
+|   0   |   `poolManager_`  | `address` |   `address`   | The address of the pool manager to set the minimum cover amount  for. |
+|   1   | `minCoverAmount_` | `uint256` |   `uint256`   | The minimum cover amount.                                             |
 
 
 
@@ -1518,6 +1593,27 @@ Sets the validity of the instance.
 
 
 
+### `setValidMapleManagedWallet`
+
+Sets the validity of a Maple managed wallet.
+
+```solidity
+    function setValidMapleManagedWallet(
+        address wallet_,
+        bool isValid_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                                                    |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------------------------------------- |
+|   0   |  `wallet_` | `address` |   `address`   | The address of the Maple managed wallet.                       |
+|   1   | `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the Maple managed wallet. |
+
+
+
 ### `setValidPoolAsset`
 
 Sets the validity of the pool asset.
@@ -1545,7 +1641,7 @@ Sets the validity of the pool delegate.
 
 ```solidity
     function setValidPoolDelegate(
-        address account_,
+        address poolDelegate_,
         bool isValid_
     )
         nonpayable;
@@ -1553,10 +1649,10 @@ Sets the validity of the pool delegate.
 
 #### Parameters:
 
-| Index |    Name    |    Type   | Internal Type | Description                                             |
-| :---: | :--------: | :-------: | :-----------: | ------------------------------------------------------- |
-|   0   | `account_` | `address` |   `address`   |                                                         |
-|   1   | `isValid_` |   `bool`  |     `bool`    | A boolean indicating the validity of the pool delegate. |
+| Index |       Name      |    Type   | Internal Type | Description                                               |
+| :---: | :-------------: | :-------: | :-----------: | --------------------------------------------------------- |
+|   0   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate to set the validity for. |
+|   1   |    `isValid_`   |   `bool`  |     `bool`    | A boolean indicating the validity of the pool delegate.   |
 
 
 
@@ -1581,14 +1677,65 @@ Sets the validity of the pool deployer.
 
 
 
+### `setValidStrategyDelegate`
+
+Sets the validity of the strategy delegate.
+
+```solidity
+    function setValidStrategyDelegate(
+        address strategyDelegate_,
+        bool isValid_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |         Name        |    Type   | Internal Type | Description                                                   |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------------------------- |
+|   0   | `strategyDelegate_` | `address` |   `address`   | The address of the strategy delegate to set the validity for. |
+|   1   |      `isValid_`     |   `bool`  |     `bool`    | A boolean indicating the validity of the strategy delegate.   |
+
+
+
+### `strategyDelegates`
+
+Gets strategy delegate address information.
+
+```solidity
+    function strategyDelegates(
+        address strategyDelegate_
+    )
+        view
+        returns (
+            address ownedStrategyManager,
+            bool isStrategyDelegate
+        );
+```
+
+#### Parameters:
+
+| Index |         Name        |    Type   | Internal Type | Description                                    |
+| :---: | :-----------------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `strategyDelegate_` | `address` |   `address`   | The address of the strategy delegate to query. |
+
+#### Return Values:
+
+| Index |          Name          |    Type   | Internal Type | Description                                                                            |
+| :---: | :--------------------: | :-------: | :-----------: | -------------------------------------------------------------------------------------- |
+|   0   | `ownedStrategyManager` | `address` |   `address`   | The address of the strategy manager owned by the strategy delegate.                    |
+|   1   |  `isStrategyDelegate`  |   `bool`  |     `bool`    | A boolean indication whether or not the address passed is a current strategy delegate. |
+
+
+
 ### `timelockParametersOf`
 
 Gets the time lock parameters for a given contract and function.
 
 ```solidity
     function timelockParametersOf(
-        address,
-        bytes32
+        address contract_,
+        bytes32 functionId_
     )
         view
         returns (
@@ -1599,10 +1746,10 @@ Gets the time lock parameters for a given contract and function.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-|   1   | \`\` | `bytes32` |   `bytes32`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |  `contract_`  | `address` |   `address`   | The address of the contract to query. |
+|   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to query.      |
 
 #### Return Values:
 
@@ -1634,28 +1781,24 @@ Transfer the ownership of the pool manager.
 
 
 
-### `unscheduleCall`
+### `transferOwnedStrategyManager`
 
-Unschedules a call to be executed.
+Transfer the ownership of the strategy manager.
 
 ```solidity
-    function unscheduleCall(
-        address caller_,
-        address contract_,
-        bytes32 functionId_,
-        bytes callData_
+    function transferOwnedStrategyManager(
+        address fromStrategyDelegate_,
+        address toStrategyDelegate_
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |      Name     |    Type   | Internal Type | Description                                    |
-| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
-|   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
-|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.           |
-|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
-|   3   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
+| Index |           Name          |    Type   | Internal Type | Description                                                      |
+| :---: | :---------------------: | :-------: | :-----------: | ---------------------------------------------------------------- |
+|   0   | `fromStrategyDelegate_` | `address` |   `address`   | The address of the strategy delegate to transfer ownership from. |
+|   1   |  `toStrategyDelegate_`  | `address` |   `address`   | The address of the strategy delegate to transfer ownership to.   |
 
 
 
@@ -1679,6 +1822,31 @@ Unschedules a call to be executed.
 |   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
 |   1   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
 |   2   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
+
+
+
+### `unscheduleCall`
+
+Unschedules a call to be executed.
+
+```solidity
+    function unscheduleCall(
+        address caller_,
+        address contract_,
+        bytes32 functionId_,
+        bytes callData_
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |      Name     |    Type   | Internal Type | Description                                    |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   |   `caller_`   | `address` |   `address`   | The contract to execute the call on.           |
+|   1   |  `contract_`  | `address` |   `address`   | The contract to execute the call on.           |
+|   2   | `functionId_` | `bytes32` |   `bytes32`   | The id of the function to execute.             |
+|   3   |  `callData_`  |  `bytes`  |    `bytes`    | The of the parameters to pass to the function. |
 
 
 
@@ -2170,6 +2338,48 @@ The security admin was set.
 
 
 
+### `StrategyManagerActivated`
+
+The strategy manager was activated.
+
+```solidity
+    event StrategyManagerActivated(
+        address strategyManager_,
+        address strategyDelegate_
+    );
+```
+
+#### Parameters:
+
+| Index |         Name        |    Type   | Internal Type | Description                           |
+| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   |  `strategyManager_` | `address` |   `address`   | The address of the strategy manager.  |
+|   1   | `strategyDelegate_` | `address` |   `address`   | The address of the strategy delegate. |
+
+
+
+### `StrategyManagerOwnershipTransferred`
+
+The ownership of the strategy manager was transferred.
+
+```solidity
+    event StrategyManagerOwnershipTransferred(
+        address fromStrategyDelegate_,
+        address toStrategyDelegate_,
+        address strategyManager_
+    );
+```
+
+#### Parameters:
+
+| Index |           Name          |    Type   | Internal Type | Description                                    |
+| :---: | :---------------------: | :-------: | :-----------: | ---------------------------------------------- |
+|   0   | `fromStrategyDelegate_` | `address` |   `address`   | The address of the previous strategy delegate. |
+|   1   |  `toStrategyDelegate_`  | `address` |   `address`   | The address of the new strategy delegate.      |
+|   2   |    `strategyManager_`   | `address` |   `address`   | The address of the strategy manager.           |
+
+
+
 ### `TimelockWindowSet`
 
 A new timelock window was set.
@@ -2313,4 +2523,24 @@ A valid pool deployer was set.
 | :---: | :-------------: | :-------: | :-----------: | -------------------------- |
 |   0   | `poolDeployer_` | `address` |   `address`   | The address the account.   |
 |   1   |    `isValid_`   |   `bool`  |     `bool`    | The validity of the asset. |
+
+
+
+### `ValidStrategyDelegateSet`
+
+A valid strategy delegate was set.
+
+```solidity
+    event ValidStrategyDelegateSet(
+        address account_,
+        bool isValid_
+    );
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                            |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `account_` | `address` |   `address`   | The address of the account.            |
+|   1   | `isValid_` |   `bool`  |     `bool`    | The validity of the strategy delegate. |
 

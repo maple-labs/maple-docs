@@ -10,17 +10,17 @@ The value that represents 100%, to be easily comparable with the loan rates.
 
 ```solidity
     function HUNDRED_PERCENT()
-        view
+        pure
         returns (
-            uint256
+            uint256 hundredPercent_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `hundredPercent_` | `uint256` |   `uint256`   |             |
 
 
 
@@ -41,6 +41,17 @@ Accept the lender role, must be called by pendingLender.
 
 ```solidity
     function acceptLender()
+        nonpayable;
+```
+
+
+
+### `acceptLoanTerms`
+
+Accept the loan terms, must be called by the borrower.
+
+```solidity
+    function acceptLoanTerms()
         nonpayable;
 ```
 
@@ -86,15 +97,15 @@ The borrower of the loan, responsible for repayments.
     function borrower()
         view
         returns (
-            address
+            address borrower_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description |
+| :---: | :---------: | :-------: | :-----------: | ----------- |
+|   0   | `borrower_` | `address` |   `address`   |             |
 
 
 
@@ -106,15 +117,15 @@ The amount of principal yet to be returned to satisfy the loan call.
     function calledPrincipal()
         view
         returns (
-            uint256
+            uint256 calledPrincipal_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   | `calledPrincipal_` | `uint256` |   `uint256`   |             |
 
 
 
@@ -156,15 +167,15 @@ The timestamp of the date the loan was called.
     function dateCalled()
         view
         returns (
-            uint40
+            uint40 dateCalled_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint40` |    `uint40`   |             |
+| Index |      Name     |   Type   | Internal Type | Description |
+| :---: | :-----------: | :------: | :-----------: | ----------- |
+|   0   | `dateCalled_` | `uint40` |    `uint40`   |             |
 
 
 
@@ -176,15 +187,15 @@ The timestamp of the date the loan was funded.
     function dateFunded()
         view
         returns (
-            uint40
+            uint40 dateFunded_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint40` |    `uint40`   |             |
+| Index |      Name     |   Type   | Internal Type | Description |
+| :---: | :-----------: | :------: | :-----------: | ----------- |
+|   0   | `dateFunded_` | `uint40` |    `uint40`   |             |
 
 
 
@@ -196,15 +207,15 @@ The timestamp of the date the loan was impaired.
     function dateImpaired()
         view
         returns (
-            uint40
+            uint40 dateImpaired_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint40` |    `uint40`   |             |
+| Index |       Name      |   Type   | Internal Type | Description |
+| :---: | :-------------: | :------: | :-----------: | ----------- |
+|   0   | `dateImpaired_` | `uint40` |    `uint40`   |             |
 
 
 
@@ -216,15 +227,15 @@ The timestamp of the date the loan was last paid.
     function datePaid()
         view
         returns (
-            uint40
+            uint40 datePaid_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint40` |    `uint40`   |             |
+| Index |     Name    |   Type   | Internal Type | Description |
+| :---: | :---------: | :------: | :-----------: | ----------- |
+|   0   | `datePaid_` | `uint40` |    `uint40`   |             |
 
 
 
@@ -236,15 +247,15 @@ The timestamp of the date the loan will be in default.
     function defaultDate()
         view
         returns (
-            uint40 paymentDefaultDate_
+            uint40 defaultDate_
         );
 ```
 
 #### Return Values:
 
-| Index |          Name         |   Type   | Internal Type | Description |
-| :---: | :-------------------: | :------: | :-----------: | ----------- |
-|   0   | `paymentDefaultDate_` | `uint40` |    `uint40`   |             |
+| Index |      Name      |   Type   | Internal Type | Description |
+| :---: | :------------: | :------: | :-----------: | ----------- |
+|   0   | `defaultDate_` | `uint40` |    `uint40`   |             |
 
 
 
@@ -256,15 +267,15 @@ The annualized delegate service fee rate.
     function delegateServiceFeeRate()
         view
         returns (
-            uint64
+            uint64 delegateServiceFeeRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint64` |    `uint64`   |             |
+| Index |            Name           |   Type   | Internal Type | Description |
+| :---: | :-----------------------: | :------: | :-----------: | ----------- |
+|   0   | `delegateServiceFeeRate_` | `uint64` |    `uint64`   |             |
 
 
 
@@ -320,15 +331,15 @@ The address of the fundsAsset funding the loan.
     function fundsAsset()
         view
         returns (
-            address
+            address asset_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description |
+| :---: | :------: | :-------: | :-----------: | ----------- |
+|   0   | `asset_` | `address` |   `address`   |             |
 
 
 
@@ -396,15 +407,15 @@ The amount of time the borrower has, after a payment is due, to make a payment b
     function gracePeriod()
         view
         returns (
-            uint32
+            uint32 gracePeriod_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint32` |    `uint32`   |             |
+| Index |      Name      |   Type   | Internal Type | Description |
+| :---: | :------------: | :------: | :-----------: | ----------- |
+|   0   | `gracePeriod_` | `uint32` |    `uint32`   |             |
 
 
 
@@ -458,15 +469,15 @@ The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
     function interestRate()
         view
         returns (
-            uint64
+            uint64 interestRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint64` |    `uint64`   |             |
+| Index |       Name      |   Type   | Internal Type | Description |
+| :---: | :-------------: | :------: | :-----------: | ----------- |
+|   0   | `interestRate_` | `uint64` |    `uint64`   |             |
 
 
 
@@ -538,15 +549,15 @@ The rate charged at late payments.
     function lateFeeRate()
         view
         returns (
-            uint64
+            uint64 lateFeeRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint64` |    `uint64`   |             |
+| Index |      Name      |   Type   | Internal Type | Description |
+| :---: | :------------: | :------: | :-----------: | ----------- |
+|   0   | `lateFeeRate_` | `uint64` |    `uint64`   |             |
 
 
 
@@ -558,15 +569,15 @@ The premium over the regular interest rate applied when paying late.
     function lateInterestPremiumRate()
         view
         returns (
-            uint64
+            uint64 lateInterestPremiumRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint64` |    `uint64`   |             |
+| Index |            Name            |   Type   | Internal Type | Description |
+| :---: | :------------------------: | :------: | :-----------: | ----------- |
+|   0   | `lateInterestPremiumRate_` | `uint64` |    `uint64`   |             |
 
 
 
@@ -578,15 +589,35 @@ The lender of the Loan.
     function lender()
         view
         returns (
-            address
+            address lender_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |    Name   |    Type   | Internal Type | Description |
+| :---: | :-------: | :-------: | :-----------: | ----------- |
+|   0   | `lender_` | `address` |   `address`   |             |
+
+
+
+### `loanTermsAccepted`
+
+Whether the loan terms have been accepted by the borrower.
+
+```solidity
+    function loanTermsAccepted()
+        view
+        returns (
+            bool loanTermsAccepted_
+        );
+```
+
+#### Return Values:
+
+| Index |         Name         |  Type  | Internal Type | Description |
+| :---: | :------------------: | :----: | :-----------: | ----------- |
+|   0   | `loanTermsAccepted_` | `bool` |     `bool`    |             |
 
 
 
@@ -653,15 +684,15 @@ The amount of time the borrower has, after the loan is called, to make a payment
     function noticePeriod()
         view
         returns (
-            uint32
+            uint32 noticePeriod_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint32` |    `uint32`   |             |
+| Index |       Name      |   Type   | Internal Type | Description |
+| :---: | :-------------: | :------: | :-----------: | ----------- |
+|   0   | `noticePeriod_` | `uint32` |    `uint32`   |             |
 
 
 
@@ -693,15 +724,15 @@ The specified time between loan payments.
     function paymentInterval()
         view
         returns (
-            uint32
+            uint32 paymentInterval_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint32` |    `uint32`   |             |
+| Index |        Name        |   Type   | Internal Type | Description |
+| :---: | :----------------: | :------: | :-----------: | ----------- |
+|   0   | `paymentInterval_` | `uint32` |    `uint32`   |             |
 
 
 
@@ -713,15 +744,15 @@ The address of the pending borrower.
     function pendingBorrower()
         view
         returns (
-            address
+            address pendingBorrower_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |        Name        |    Type   | Internal Type | Description |
+| :---: | :----------------: | :-------: | :-----------: | ----------- |
+|   0   | `pendingBorrower_` | `address` |   `address`   |             |
 
 
 
@@ -733,15 +764,15 @@ The address of the pending lender.
     function pendingLender()
         view
         returns (
-            address
+            address pendingLender_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   | `pendingLender_` | `address` |   `address`   |             |
 
 
 
@@ -753,15 +784,15 @@ The annualized platform service fee rate.
     function platformServiceFeeRate()
         view
         returns (
-            uint64
+            uint64 platformServiceFeeRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |   Type   | Internal Type | Description |
-| :---: | :--: | :------: | :-----------: | ----------- |
-|   0   |      | `uint64` |    `uint64`   |             |
+| Index |            Name           |   Type   | Internal Type | Description |
+| :---: | :-----------------------: | :------: | :-----------: | ----------- |
+|   0   | `platformServiceFeeRate_` | `uint64` |    `uint64`   |             |
 
 
 
@@ -773,15 +804,15 @@ The amount of principal owed (initially, the requested amount), which needs to b
     function principal()
         view
         returns (
-            uint256
+            uint256 principal_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |     Name     |    Type   | Internal Type | Description |
+| :---: | :----------: | :-------: | :-----------: | ----------- |
+|   0   | `principal_` | `uint256` |   `uint256`   |             |
 
 
 
@@ -825,15 +856,15 @@ The hash of the proposed refinance agreement.
     function refinanceCommitment()
         view
         returns (
-            bytes32
+            bytes32 refinanceCommitment_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `bytes32` |   `bytes32`   |             |
+| Index |          Name          |    Type   | Internal Type | Description |
+| :---: | :--------------------: | :-------: | :-----------: | ----------- |
+|   0   | `refinanceCommitment_` | `bytes32` |   `bytes32`   |             |
 
 
 
@@ -1194,6 +1225,16 @@ Lender was accepted, and set to a new account.
 | Index |    Name   |    Type   | Internal Type | Description                    |
 | :---: | :-------: | :-------: | :-----------: | ------------------------------ |
 |   0   | `lender_` | `address` |   `address`   | The address of the new lender. |
+
+
+
+### `LoanTermsAccepted`
+
+The loan terms were accepted by the borrower.
+
+```solidity
+    event LoanTermsAccepted();
+```
 
 
 

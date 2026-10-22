@@ -22,45 +22,39 @@
 
 ### `deployPool`
 
-Deploys a pool along with its dependencies. NOTE: The PoolManager address is encoded and prepended to the strategyDeploymentData.
+Deploys a pool along with its dependencies and atomically completes configuration. NOTE: The PoolManager address is encoded and prepended to the strategyDeploymentData.
 
 ```solidity
     function deployPool(
-        address poolManagerFactory_,
-        address withdrawalManagerFactory_,
-        address[] strategyFactories_,
-        bytes[] strategyDeploymentData_,
-        address asset_,
-        address poolPermissionManager_,
-        string name_,
-        string symbol_,
-        uint256[4] configParams_
+        address poolManagerFactory,
+        address withdrawalManagerFactory,
+        PoolManagerInitParams poolManagerInitParams,
+        PoolConfigParams poolConfigParams,
+        StrategyDeployParams[] strategiesParams,
+        StrategyManagerParams[] strategyManagersParams
     )
         nonpayable
         returns (
-            address poolManager_
+            address poolManager
         );
 ```
 
 #### Parameters:
 
-| Index |             Name            |     Type     | Internal Type | Description                                                                                                                                                                     |
-| :---: | :-------------------------: | :----------: | :-----------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   0   |    `poolManagerFactory_`    |   `address`  |   `address`   | The address of the PoolManager factory to use.                                                                                                                                  |
-|   1   | `withdrawalManagerFactory_` |   `address`  |   `address`   | The address of the WithdrawalManager factory to use.                                                                                                                            |
-|   2   |     `strategyFactories_`    |  `address[]` |  `address[]`  | An array of Strategy factories to use.                                                                                                                                          |
-|   3   |  `strategyDeploymentData_`  |   `bytes[]`  |   `bytes[]`   | An array of bytes to use to construct the strategies.                                                                                                                           |
-|   4   |           `asset_`          |   `address`  |   `address`   | The address of the asset to use.                                                                                                                                                |
-|   5   |   `poolPermissionManager_`  |   `address`  |   `address`   | The address of the PoolPermissionManager to use.                                                                                                                                |
-|   6   |           `name_`           |   `string`   |    `string`   | The name of the Pool.                                                                                                                                                           |
-|   7   |          `symbol_`          |   `string`   |    `string`   | The symbol of the Pool.                                                                                                                                                         |
-|   8   |       `configParams_`       | `uint256[4]` |  `uint256[4]` | Array of uint256 config parameters. For the queue‑based deployer, only index \[3] (`initialSupply`) is used during deployment; other operational parameters (e.g., liquidityCap, delegateManagementFeeRate, cover) are configured post‑deployment via PoolManager/Globals. |
+| Index |            Name            |    Type   |           Internal Type          | Description                                                                          |
+| :---: | :------------------------: | :-------: | :------------------------------: | ------------------------------------------------------------------------------------ |
+|   0   |    `poolManagerFactory`    | `address` |             `address`            | The address of the PoolManager factory to use.                                       |
+|   1   | `withdrawalManagerFactory` | `address` |             `address`            | The address of the queue WithdrawalManager factory to use.                           |
+|   2   |   `poolManagerInitParams`  |  `tuple`  |  `struct PoolManagerInitParams`  | Initial parameters for the PoolManager (asset, name, symbol, initialSupply).         |
+|   3   |     `poolConfigParams`     |  `tuple`  |     `struct PoolConfigParams`    | Pool configuration (poolPermissionManager, liquidityCap, delegateManagementFeeRate). |
+|   4   |     `strategiesParams`     | `tuple[]` |  `struct StrategyDeployParams[]` | Strategies to deploy and register on the PoolManager (with optional caps).           |
+|   5   |  `strategyManagersParams`  | `tuple[]` | `struct StrategyManagerParams[]` | Pre-deployed StrategyManagers to register on the PoolManager (with optional caps).   |
 
 #### Return Values:
 
-| Index |      Name      |    Type   | Internal Type | Description                     |
-| :---: | :------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `poolManager_` | `address` |   `address`   | The address of the PoolManager. |
+| Index |      Name     |    Type   | Internal Type | Description                              |
+| :---: | :-----------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | The address of the deployed PoolManager. |
 
 
 
@@ -70,39 +64,37 @@ Gets the addresses that would result from a deployment.
 
 ```solidity
     function getPoolDeploymentAddresses(
-        address poolManagerFactory_,
-        address poolDelegate_,
-        address asset_,
-        uint256 initialSupply_,
-        string name_,
-        string symbol_
+        address poolManagerFactory,
+        address poolDelegate,
+        address asset,
+        uint256 initialSupply,
+        string name,
+        string symbol
     )
         view
         returns (
-            address poolManager_,
-            address pool_,
-            address poolDelegateCover_
+            address poolManager,
+            address pool
         );
 ```
 
 #### Parameters:
 
-| Index |          Name         |    Type   | Internal Type | Description                                                |
-| :---: | :-------------------: | :-------: | :-----------: | ---------------------------------------------------------- |
-|   0   | `poolManagerFactory_` | `address` |   `address`   | The address of the PoolManager factory to use.             |
-|   1   |    `poolDelegate_`    | `address` |   `address`   | The address of the PoolDelegate that will deploy the Pool. |
-|   2   |        `asset_`       | `address` |   `address`   | The address of the asset to use.                           |
-|   3   |    `initialSupply_`   | `uint256` |   `uint256`   | The initial supply of the Pool.                            |
-|   4   |        `name_`        |  `string` |    `string`   | The name of the Pool.                                      |
-|   5   |       `symbol_`       |  `string` |    `string`   | The symbol of the Pool.                                    |
+| Index |         Name         |    Type   | Internal Type | Description                                                |
+| :---: | :------------------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   | `poolManagerFactory` | `address` |   `address`   | The address of the PoolManager factory to use.             |
+|   1   |    `poolDelegate`    | `address` |   `address`   | The address of the PoolDelegate that will deploy the Pool. |
+|   2   |        `asset`       | `address` |   `address`   | The address of the asset to use.                           |
+|   3   |    `initialSupply`   | `uint256` |   `uint256`   | The initial supply of the Pool.                            |
+|   4   |        `name`        |  `string` |    `string`   | The name of the Pool.                                      |
+|   5   |       `symbol`       |  `string` |    `string`   | The symbol of the Pool.                                    |
 
 #### Return Values:
 
-| Index |         Name         |    Type   | Internal Type | Description                                                          |
-| :---: | :------------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
-|   0   |    `poolManager_`    | `address` |   `address`   | The address of the PoolManager contract that will be deployed.       |
-|   1   |        `pool_`       | `address` |   `address`   | The address of the Pool contract that will be deployed.              |
-|   2   | `poolDelegateCover_` | `address` |   `address`   | The address of the PoolDelegateCover contract that will be deployed. |
+| Index |      Name     |    Type   | Internal Type | Description                                                    |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------------------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | The address of the PoolManager contract that will be deployed. |
+|   1   |     `pool`    | `address` |   `address`   | The address of the Pool contract that will be deployed.        |
 
 
 
@@ -112,29 +104,29 @@ Gets the address of the Queue Withdrawal Manager that would result from a deploy
 
 ```solidity
     function getQueueWithdrawalManagerAddress(
-        address withdrawalManagerFactory_,
-        address pool_,
-        address poolManager_
+        address withdrawalManagerFactory,
+        address pool,
+        address poolManager
     )
         view
         returns (
-            address withdrawalManager_
+            address withdrawalManager
         );
 ```
 
 #### Parameters:
 
-| Index |             Name            |    Type   | Internal Type | Description                                          |
-| :---: | :-------------------------: | :-------: | :-----------: | ---------------------------------------------------- |
-|   0   | `withdrawalManagerFactory_` | `address` |   `address`   | The address of the WithdrawalManager factory to use. |
-|   1   |           `pool_`           | `address` |   `address`   | The address of the Pool to use.                      |
-|   2   |        `poolManager_`       | `address` |   `address`   | The address of the PoolManager to use.               |
+| Index |            Name            |    Type   | Internal Type | Description                                          |
+| :---: | :------------------------: | :-------: | :-----------: | ---------------------------------------------------- |
+|   0   | `withdrawalManagerFactory` | `address` |   `address`   | The address of the WithdrawalManager factory to use. |
+|   1   |           `pool`           | `address` |   `address`   | The address of the Pool to use.                      |
+|   2   |        `poolManager`       | `address` |   `address`   | The address of the PoolManager to use.               |
 
 #### Return Values:
 
-| Index |         Name         |    Type   | Internal Type | Description                                                          |
-| :---: | :------------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
-|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the WithdrawalManager contract that will be deployed. |
+| Index |         Name        |    Type   | Internal Type | Description                                                          |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------------------------------------------- |
+|   0   | `withdrawalManager` | `address` |   `address`   | The address of the WithdrawalManager contract that will be deployed. |
 
 
 
@@ -144,29 +136,31 @@ Gets the addresses of the Strategies that would result from a deployment.
 
 ```solidity
     function getStrategiesAddresses(
-        address poolManager_,
-        address[] strategyFactories_,
-        bytes[] strategyDeploymentData_
+        address poolManager,
+        address[] strategyFactories,
+        bytes[] strategyDeploymentData,
+        bytes32[] strategySalts
     )
         view
         returns (
-            address[] strategies_
+            address[] strategies
         );
 ```
 
 #### Parameters:
 
-| Index |            Name           |     Type    | Internal Type | Description                                           |
-| :---: | :-----------------------: | :---------: | :-----------: | ----------------------------------------------------- |
-|   0   |       `poolManager_`      |  `address`  |   `address`   | The address of the PoolManager to use.                |
-|   1   |    `strategyFactories_`   | `address[]` |  `address[]`  | An array of Strategy factories to use.                |
-|   2   | `strategyDeploymentData_` |  `bytes[]`  |   `bytes[]`   | An array of bytes to use to construct the strategies. |
+| Index |           Name           |     Type    | Internal Type | Description                                                   |
+| :---: | :----------------------: | :---------: | :-----------: | ------------------------------------------------------------- |
+|   0   |       `poolManager`      |  `address`  |   `address`   | The address of the PoolManager to use.                        |
+|   1   |    `strategyFactories`   | `address[]` |  `address[]`  | An array of Strategy factories to use.                        |
+|   2   | `strategyDeploymentData` |  `bytes[]`  |   `bytes[]`   | An array of bytes to use to construct the strategies.         |
+|   3   |      `strategySalts`     | `bytes32[]` |  `bytes32[]`  | An array of salts used as the CREATE2 salt for each strategy. |
 
 #### Return Values:
 
-| Index |      Name     |     Type    | Internal Type | Description                                                    |
-| :---: | :-----------: | :---------: | :-----------: | -------------------------------------------------------------- |
-|   0   | `strategies_` | `address[]` |  `address[]`  | The addresses of the Strategy contracts that will be deployed. |
+| Index |     Name     |     Type    | Internal Type | Description                                                    |
+| :---: | :----------: | :---------: | :-----------: | -------------------------------------------------------------- |
+|   0   | `strategies` | `address[]` |  `address[]`  | The addresses of the Strategy contracts that will be deployed. |
 
 
 
@@ -178,15 +172,15 @@ Gets the address of the Globals contract.
     function globals()
         view
         returns (
-            address
+            address globals
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |    Name   |    Type   | Internal Type | Description                          |
+| :---: | :-------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `globals` | `address` |   `address`   | The address of the Globals contract. |
 
 
 
@@ -198,19 +192,105 @@ Emitted when a new pool is deployed.
 
 ```solidity
     event PoolDeployed(
-        address pool_,
-        address poolManager_,
-        address withdrawalManager_,
-        address[] strategies_
+        address pool,
+        address poolManager,
+        address withdrawalManager,
+        address[] strategies,
+        address[] strategyManagers
     );
 ```
 
 #### Parameters:
 
-| Index |         Name         |     Type    | Internal Type | Description                                           |
-| :---: | :------------------: | :---------: | :-----------: | ----------------------------------------------------- |
-|   0   |        `pool_`       |  `address`  |   `address`   | The address of the Pool deployed.                     |
-|   1   |    `poolManager_`    |  `address`  |   `address`   | The address of the PoolManager deployed.              |
-|   2   | `withdrawalManager_` |  `address`  |   `address`   | The address of the WithdrawalManager deployed.        |
-|   3   |     `strategies_`    | `address[]` |  `address[]`  | An array of the addresses of the Strategies deployed. |
+| Index |         Name        |     Type    | Internal Type | Description                                                             |
+| :---: | :-----------------: | :---------: | :-----------: | ----------------------------------------------------------------------- |
+|   0   |        `pool`       |  `address`  |   `address`   | The address of the Pool deployed.                                       |
+|   1   |    `poolManager`    |  `address`  |   `address`   | The address of the PoolManager deployed.                                |
+|   2   | `withdrawalManager` |  `address`  |   `address`   | The address of the queue WithdrawalManager deployed.                    |
+|   3   |     `strategies`    | `address[]` |  `address[]`  | Addresses of the Strategies deployed and registered on the PoolManager. |
+|   4   |  `strategyManagers` | `address[]` |  `address[]`  | Addresses of the StrategyManagers registered on the PoolManager.        |
+
+
+
+## Structs
+
+### `PoolManagerInitParams`
+
+```solidity
+    struct PoolManagerInitParams {
+        address asset;
+        uint256 initialSupply;
+        string name;
+        string symbol;
+    }
+```
+
+#### Members:
+
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   |     `asset`     | `address` |   `address`   |             |
+|   1   | `initialSupply` | `uint256` |   `uint256`   |             |
+|   2   |      `name`     |  `string` |    `string`   |             |
+|   3   |     `symbol`    |  `string` |    `string`   |             |
+
+
+
+### `PoolConfigParams`
+
+```solidity
+    struct PoolConfigParams {
+        address poolPermissionManager;
+        uint256 delegateManagementFeeRate;
+        uint256 liquidityCap;
+    }
+```
+
+#### Members:
+
+| Index |             Name            |    Type   | Internal Type | Description |
+| :---: | :-------------------------: | :-------: | :-----------: | ----------- |
+|   0   |   `poolPermissionManager`   | `address` |   `address`   |             |
+|   1   | `delegateManagementFeeRate` | `uint256` |   `uint256`   |             |
+|   2   |        `liquidityCap`       | `uint256` |   `uint256`   |             |
+
+
+
+### `StrategyDeployParams`
+
+```solidity
+    struct StrategyDeployParams {
+        address factory;
+        uint256 cap;
+        bytes32 salt;
+        bytes deploymentData;
+    }
+```
+
+#### Members:
+
+| Index |       Name       |    Type   | Internal Type | Description |
+| :---: | :--------------: | :-------: | :-----------: | ----------- |
+|   0   |     `factory`    | `address` |   `address`   |             |
+|   1   |       `cap`      | `uint256` |   `uint256`   |             |
+|   2   |      `salt`      | `bytes32` |   `bytes32`   |             |
+|   3   | `deploymentData` |  `bytes`  |    `bytes`    |             |
+
+
+
+### `StrategyManagerParams`
+
+```solidity
+    struct StrategyManagerParams {
+        address instance;
+        uint256 cap;
+    }
+```
+
+#### Members:
+
+| Index |    Name    |    Type   | Internal Type | Description |
+| :---: | :--------: | :-------: | :-----------: | ----------- |
+|   0   | `instance` | `address` |   `address`   |             |
+|   1   |    `cap`   | `uint256` |   `uint256`   |             |
 
