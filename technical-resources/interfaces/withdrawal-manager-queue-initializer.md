@@ -10,25 +10,25 @@ Checks if an account is set to perform withdrawals manually.
 
 ```solidity
     function isManualWithdrawal(
-        address
+        address account
     )
         view
         returns (
-            bool
+            bool isManual
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |    Name   |    Type   | Internal Type | Description             |
+| :---: | :-------: | :-------: | :-----------: | ----------------------- |
+|   0   | `account` | `address` |   `address`   | Address of the account. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |    Name    |  Type  | Internal Type | Description                                                   |
+| :---: | :--------: | :----: | :-----------: | ------------------------------------------------------------- |
+|   0   | `isManual` | `bool` |     `bool`    | \`true\` if the account withdraws manually, \`false\` if not. |
 
 
 
@@ -38,25 +38,25 @@ Returns the amount of shares available for manual withdrawal.
 
 ```solidity
     function manualSharesAvailable(
-        address
+        address owner
     )
         view
         returns (
-            uint256
+            uint256 sharesAvailable
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address of the owner of shares. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name       |    Type   | Internal Type | Description                                       |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `sharesAvailable` | `uint256` |   `uint256`   | Amount of shares available for manual withdrawal. |
 
 
 
@@ -68,15 +68,15 @@ Returns the address of the pool contract.
     function pool()
         view
         returns (
-            address
+            address pool
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |  Name  |    Type   | Internal Type | Description                   |
+| :---: | :----: | :-------: | :-----------: | ----------------------------- |
+|   0   | `pool` | `address` |   `address`   | Address of the pool contract. |
 
 
 
@@ -88,15 +88,15 @@ Returns the address of the pool manager contract.
     function poolManager()
         view
         returns (
-            address
+            address poolManager
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | Address of the pool manager contract. |
 
 
 
@@ -122,34 +122,6 @@ Returns the first and last withdrawal requests pending redemption.
 
 
 
-### `requestIds`
-
-Returns the request identifier of an account. Returns zero if the account does not have a withdrawal request.
-
-```solidity
-    function requestIds(
-        address
-    )
-        view
-        returns (
-            uint128
-        );
-```
-
-#### Parameters:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-
-#### Return Values:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint128` |   `uint128`   |             |
-
-
-
 ### `totalShares`
 
 Returns the total amount of shares pending redemption.
@@ -158,15 +130,43 @@ Returns the total amount of shares pending redemption.
     function totalShares()
         view
         returns (
-            uint256
+            uint256 totalShares
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                                |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `totalShares` | `uint256` |   `uint256`   | Total amount of shares pending redemption. |
+
+
+
+### `userEscrowedShares`
+
+Returns the amount of shares escrowed for a specific user yet to be processed.
+
+```solidity
+    function userEscrowedShares(
+        address owner
+    )
+        view
+        returns (
+            uint256 escrowedShares
+        );
+```
+
+#### Parameters:
+
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address of the owner of shares. |
+
+#### Return Values:
+
+| Index |       Name       |    Type   | Internal Type | Description                             |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `escrowedShares` | `uint256` |   `uint256`   | Amount of shares escrowed for the user. |
 
 
 

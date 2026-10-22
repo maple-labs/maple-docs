@@ -10,18 +10,27 @@ Add shares to the withdrawal manager.
 
 ```solidity
     function addShares(
-        uint256 shares_,
-        address owner_
+        uint256 shares,
+        address owner
     )
-        nonpayable;
+        nonpayable
+        returns (
+            uint256 lastRequestId
+        );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   | `shares_` | `uint256` |   `uint256`   |             |
-|   1   |  `owner_` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                     |
+| :---: | :------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | Amount of shares to add.        |
+|   1   |  `owner` | `address` |   `address`   | Address of the owner of shares. |
+
+#### Return Values:
+
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `lastRequestId` | `uint256` |   `uint256`   |             |
 
 
 
@@ -33,15 +42,15 @@ Returns the address of the underlying pool asset.
     function asset()
         view
         returns (
-            address asset_
+            address asset
         );
 ```
 
 #### Return Values:
 
-| Index |   Name   |    Type   | Internal Type | Description |
-| :---: | :------: | :-------: | :-----------: | ----------- |
-|   0   | `asset_` | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description                           |
+| :---: | :-----: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `asset` | `address` |   `address`   | Address of the underlying pool asset. |
 
 
 
@@ -73,15 +82,15 @@ Returns the address of the globals contract.
     function globals()
         view
         returns (
-            address globals_
+            address globals
         );
 ```
 
 #### Return Values:
 
-| Index |    Name    |    Type   | Internal Type | Description |
-| :---: | :--------: | :-------: | :-----------: | ----------- |
-|   0   | `globals_` | `address` |   `address`   |             |
+| Index |    Name   |    Type   | Internal Type | Description                      |
+| :---: | :-------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `globals` | `address` |   `address`   | Address of the globals contract. |
 
 
 
@@ -93,15 +102,15 @@ Return the address of the governor.
     function governor()
         view
         returns (
-            address governor_
+            address governor
         );
 ```
 
 #### Return Values:
 
-| Index |     Name    |    Type   | Internal Type | Description |
-| :---: | :---------: | :-------: | :-----------: | ----------- |
-|   0   | `governor_` | `address` |   `address`   |             |
+| Index |    Name    |    Type   | Internal Type | Description                       |
+| :---: | :--------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `governor` | `address` |   `address`   | Address of the governor contract. |
 
 
 
@@ -131,25 +140,25 @@ Returns if a user is able to withdraw. Required for compatibility with pool mana
 
 ```solidity
     function isInExitWindow(
-        address owner_
+        address owner
     )
-        pure
+        view
         returns (
-            bool isInExitWindow_
+            bool isInExitWindow
         );
 ```
 
 #### Parameters:
 
-| Index |   Name   |    Type   | Internal Type | Description                                      |
-| :---: | :------: | :-------: | :-----------: | ------------------------------------------------ |
-|   0   | `owner_` | `address` |   `address`   | The account to check if it's in withdraw window. |
+| Index |   Name  |    Type   | Internal Type | Description                                      |
+| :---: | :-----: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `owner` | `address` |   `address`   | The account to check if it's in withdraw window. |
 
 #### Return Values:
 
-| Index |        Name       |  Type  | Internal Type | Description                                    |
-| :---: | :---------------: | :----: | :-----------: | ---------------------------------------------- |
-|   0   | `isInExitWindow_` | `bool` |     `bool`    | True if the account is in the withdraw window. |
+| Index |       Name       |  Type  | Internal Type | Description                                    |
+| :---: | :--------------: | :----: | :-----------: | ---------------------------------------------- |
+|   0   | `isInExitWindow` | `bool` |     `bool`    | True if the account is in the withdraw window. |
 
 
 
@@ -159,25 +168,25 @@ Checks if an account is set to perform withdrawals manually.
 
 ```solidity
     function isManualWithdrawal(
-        address
+        address account
     )
         view
         returns (
-            bool
+            bool isManual
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |    Name   |    Type   | Internal Type | Description             |
+| :---: | :-------: | :-------: | :-----------: | ----------------------- |
+|   0   | `account` | `address` |   `address`   | Address of the account. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |    Name    |  Type  | Internal Type | Description                                                   |
+| :---: | :--------: | :----: | :-----------: | ------------------------------------------------------------- |
+|   0   | `isManual` | `bool` |     `bool`    | \`true\` if the account withdraws manually, \`false\` if not. |
 
 
 
@@ -187,17 +196,17 @@ Gets the total amount of funds that need to be locked to fulfill exits. NOTE: Al
 
 ```solidity
     function lockedLiquidity()
-        pure
+        view
         returns (
-            uint256 lockedLiquidity_
+            uint256 lockedLiquidity
         );
 ```
 
 #### Return Values:
 
-| Index |        Name        |    Type   | Internal Type | Description                     |
-| :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `lockedLiquidity_` | `uint256` |   `uint256`   | The amount of locked liquidity. |
+| Index |        Name       |    Type   | Internal Type | Description                     |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `lockedLiquidity` | `uint256` |   `uint256`   | The amount of locked liquidity. |
 
 
 
@@ -207,25 +216,25 @@ Gets the amount of locked shares for an account.
 
 ```solidity
     function lockedShares(
-        address owner_
+        address owner
     )
         view
         returns (
-            uint256 lockedShares_
+            uint256 lockedShares
         );
 ```
 
 #### Parameters:
 
-| Index |   Name   |    Type   | Internal Type | Description                        |
-| :---: | :------: | :-------: | :-----------: | ---------------------------------- |
-|   0   | `owner_` | `address` |   `address`   | The address to check the exit for. |
+| Index |   Name  |    Type   | Internal Type | Description                        |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address to check the exit for. |
 
 #### Return Values:
 
-| Index |       Name      |    Type   | Internal Type | Description                            |
-| :---: | :-------------: | :-------: | :-----------: | -------------------------------------- |
-|   0   | `lockedShares_` | `uint256` |   `uint256`   | The amount of manual shares available. |
+| Index |      Name      |    Type   | Internal Type | Description                            |
+| :---: | :------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `lockedShares` | `uint256` |   `uint256`   | The amount of manual shares available. |
 
 
 
@@ -235,25 +244,25 @@ Returns the amount of shares available for manual withdrawal.
 
 ```solidity
     function manualSharesAvailable(
-        address
+        address owner
     )
         view
         returns (
-            uint256
+            uint256 sharesAvailable
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address of the owner of shares. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name       |    Type   | Internal Type | Description                                       |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------------- |
+|   0   | `sharesAvailable` | `uint256` |   `uint256`   | Amount of shares available for manual withdrawal. |
 
 
 
@@ -286,15 +295,15 @@ Returns the address of the pool contract.
     function pool()
         view
         returns (
-            address
+            address pool
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |  Name  |    Type   | Internal Type | Description                   |
+| :---: | :----: | :-------: | :-----------: | ----------------------------- |
+|   0   | `pool` | `address` |   `address`   | Address of the pool contract. |
 
 
 
@@ -306,15 +315,15 @@ Returns the address of the pool delegate.
     function poolDelegate()
         view
         returns (
-            address poolDelegate_
+            address poolDelegate
         );
 ```
 
 #### Return Values:
 
-| Index |       Name      |    Type   | Internal Type | Description |
-| :---: | :-------------: | :-------: | :-----------: | ----------- |
-|   0   | `poolDelegate_` | `address` |   `address`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                   |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------- |
+|   0   | `poolDelegate` | `address` |   `address`   | Address of the pool delegate. |
 
 
 
@@ -326,15 +335,15 @@ Returns the address of the pool manager contract.
     function poolManager()
         view
         returns (
-            address
+            address poolManager
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                           |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | Address of the pool manager contract. |
 
 
 
@@ -344,29 +353,29 @@ Returns the amount of shares that can be redeemed. NOTE: The \`shares\` value is
 
 ```solidity
     function previewRedeem(
-        address owner_,
-        uint256 shares_
+        address owner,
+        uint256 shares
     )
         view
         returns (
-            uint256 redeemableShares_,
-            uint256 resultingAssets_
+            uint256 redeemableShares,
+            uint256 resultingAssets
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   |  `owner_` | `address` |   `address`   |             |
-|   1   | `shares_` | `uint256` |   `uint256`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                 |
+| :---: | :------: | :-------: | :-----------: | --------------------------- |
+|   0   |  `owner` | `address` |   `address`   | Address of the share owner  |
+|   1   | `shares` | `uint256` |   `uint256`   | Amount of shares to redeem. |
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description |
-| :---: | :-----------------: | :-------: | :-----------: | ----------- |
-|   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
-|   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
+| Index |        Name        |    Type   | Internal Type | Description                             |
+| :---: | :----------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `redeemableShares` | `uint256` |   `uint256`   | Amount of shares that can be redeemed.  |
+|   1   |  `resultingAssets` | `uint256` |   `uint256`   | Amount of assets that can be withdrawn. |
 
 
 
@@ -376,29 +385,48 @@ Gets the amount of shares that can be withdrawn. NOTE: Values just passed throug
 
 ```solidity
     function previewWithdraw(
-        address owner_,
-        uint256 assets_
+        address owner,
+        uint256 assets
     )
-        pure
+        view
         returns (
-            uint256 redeemableAssets_,
-            uint256 resultingShares_
+            uint256 redeemableAssets,
+            uint256 resultingShares
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                                 |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------------------- |
-|   0   |  `owner_` | `address` |   `address`   | The address to check the withdrawal for.    |
-|   1   | `assets_` | `uint256` |   `uint256`   | The amount of requested shares to withdraw. |
+| Index |   Name   |    Type   | Internal Type | Description                                 |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The address to check the withdrawal for.    |
+|   1   | `assets` | `uint256` |   `uint256`   | The amount of requested shares to withdraw. |
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description                                 |
-| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------------- |
-|   0   | `redeemableAssets_` | `uint256` |   `uint256`   | The amount of assets that can be withdrawn. |
-|   1   |  `resultingShares_` | `uint256` |   `uint256`   | The amount of shares that will be burned.   |
+| Index |        Name        |    Type   | Internal Type | Description                                 |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `redeemableAssets` | `uint256` |   `uint256`   | The amount of assets that can be withdrawn. |
+|   1   |  `resultingShares` | `uint256` |   `uint256`   | The amount of shares that will be burned.   |
+
+
+
+### `processEmptyRedemptions`
+
+Processes empty redemption requests at the front of the queue. Iterates through the queue starting from the front and advances the queue's nextRequestId for each empty request encountered. Stops when a non-empty request is found or the specified number of requests has been processed.
+
+```solidity
+    function processEmptyRedemptions(
+        uint256 numberOfRequests
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |        Name        |    Type   | Internal Type | Description                                  |
+| :---: | :----------------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `numberOfRequests` | `uint256` |   `uint256`   | Maximum number of empty requests to process. |
 
 
 
@@ -408,29 +436,29 @@ Processes a withdrawal request. Uses the current exchange rate to calculate the 
 
 ```solidity
     function processExit(
-        uint256 shares_,
-        address owner_
+        uint256 shares,
+        address owner
     )
         nonpayable
         returns (
-            uint256 redeemableShares_,
-            uint256 resultingAssets_
+            uint256 redeemableShares,
+            uint256 resultingAssets
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   | `shares_` | `uint256` |   `uint256`   |             |
-|   1   |  `owner_` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                               |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | Amount of shares that should be redeemed. |
+|   1   |  `owner` | `address` |   `address`   | Address of the account to process.        |
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description |
-| :---: | :-----------------: | :-------: | :-----------: | ----------- |
-|   0   | `redeemableShares_` | `uint256` |   `uint256`   |             |
-|   1   |  `resultingAssets_` | `uint256` |   `uint256`   |             |
+| Index |        Name        |    Type   | Internal Type | Description                              |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `redeemableShares` | `uint256` |   `uint256`   | Amount of shares that will be burned.    |
+|   1   |  `resultingAssets` | `uint256` |   `uint256`   | Amount of assets that will be withdrawn. |
 
 
 
@@ -440,16 +468,16 @@ Processes pending redemption requests. Requests are processed in the order they 
 
 ```solidity
     function processRedemptions(
-        uint256 maxSharesToProcess_
+        uint256 maxSharesToProcess
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |          Name         |    Type   | Internal Type | Description |
-| :---: | :-------------------: | :-------: | :-----------: | ----------- |
-|   0   | `maxSharesToProcess_` | `uint256` |   `uint256`   |             |
+| Index |         Name         |    Type   | Internal Type | Description                                                      |
+| :---: | :------------------: | :-------: | :-----------: | ---------------------------------------------------------------- |
+|   0   | `maxSharesToProcess` | `uint256` |   `uint256`   | Maximum number of shares that will be processed during the call. |
 
 
 
@@ -477,20 +505,22 @@ Returns the first and last withdrawal requests pending redemption.
 
 ### `removeRequest`
 
-Removes a withdrawal request from the queue. Can only be called by the pool delegate.
+Removes withdrawal requests from the queue. Can only be called by the pool delegate. NOTE: Not to be used in a router based system where the router is managing user requests.
 
 ```solidity
     function removeRequest(
-        address owner_
+        address owner,
+        uint256[] requestIds
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |   Name   |    Type   | Internal Type | Description |
-| :---: | :------: | :-------: | :-----------: | ----------- |
-|   0   | `owner_` | `address` |   `address`   |             |
+| Index |     Name     |     Type    | Internal Type | Description                                                |
+| :---: | :----------: | :---------: | :-----------: | ---------------------------------------------------------- |
+|   0   |    `owner`   |  `address`  |   `address`   | Address of the owner of shares.                            |
+|   1   | `requestIds` | `uint256[]` |  `uint256[]`  | Array of identifiers of the withdrawal requests to remove. |
 
 
 
@@ -500,55 +530,87 @@ Removes shares from the withdrawal manager.
 
 ```solidity
     function removeShares(
-        uint256 shares_,
-        address owner_
+        uint256 shares,
+        address owner
     )
         nonpayable
         returns (
-            uint256 sharesReturned_
+            uint256 sharesReturned
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   | `shares_` | `uint256` |   `uint256`   |             |
-|   1   |  `owner_` | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                     |
+| :---: | :------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | Amount of shares to remove.     |
+|   1   |  `owner` | `address` |   `address`   | Address of the owner of shares. |
 
 #### Return Values:
 
-| Index |        Name       |    Type   | Internal Type | Description |
-| :---: | :---------------: | :-------: | :-----------: | ----------- |
-|   0   | `sharesReturned_` | `uint256` |   `uint256`   |             |
+| Index |       Name       |    Type   | Internal Type | Description                          |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `sharesReturned` | `uint256` |   `uint256`   | Amount of shares that were returned. |
+
+
+
+### `removeSharesById`
+
+Remove shares from a specific withdrawal request. Can only be called by the owner of the request, and only if they have permission in the pool permission manager.
+
+```solidity
+    function removeSharesById(
+        uint256 requestId,
+        uint256 sharesToRemove
+    )
+        nonpayable
+        returns (
+            uint256 sharesReturned,
+            uint256 sharesRemaining
+        );
+```
+
+#### Parameters:
+
+| Index |       Name       |    Type   | Internal Type | Description                                                 |
+| :---: | :--------------: | :-------: | :-----------: | ----------------------------------------------------------- |
+|   0   |    `requestId`   | `uint256` |   `uint256`   | Identifier of the withdrawal request that is being updated. |
+|   1   | `sharesToRemove` | `uint256` |   `uint256`   | Amount of shares to remove from the request.                |
+
+#### Return Values:
+
+| Index |        Name       |    Type   | Internal Type | Description                                |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   |  `sharesReturned` | `uint256` |   `uint256`   | Amount of shares that were returned.       |
+|   1   | `sharesRemaining` | `uint256` |   `uint256`   | Amount of shares remaining in the request. |
 
 
 
 ### `requestIds`
 
-Returns the request identifier of an account. Returns zero if the account does not have a withdrawal request.
+Returns the last request id for a given owner. Function must exist for backwards compatibility with the old implementation where we supported only one request per owner.
 
 ```solidity
     function requestIds(
-        address
+        address owner
     )
         view
         returns (
-            uint128
+            uint256 requestId
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description                                   |
+| :---: | :-----: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The account to check the last request id for. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint128` |   `uint128`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                                                  |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------------------------ |
+|   0   | `requestId` | `uint256` |   `uint256`   | The id of the last valid withdrawal request for the account. |
 
 
 
@@ -558,27 +620,57 @@ Returns the owner and amount of shares associated with a withdrawal request.
 
 ```solidity
     function requests(
-        uint128 requestId_
+        uint256 requestId
     )
         view
         returns (
-            address owner_,
-            uint256 shares_
+            address owner,
+            uint256 shares
         );
 ```
 
 #### Parameters:
 
-| Index |     Name     |    Type   | Internal Type | Description |
-| :---: | :----------: | :-------: | :-----------: | ----------- |
-|   0   | `requestId_` | `uint128` |   `uint128`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `requestId` | `uint256` |   `uint256`   | Identifier of the withdrawal request. |
 
 #### Return Values:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   |  `owner_` | `address` |   `address`   |             |
-|   1   | `shares_` | `uint256` |   `uint256`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                          |
+| :---: | :------: | :-------: | :-----------: | ------------------------------------ |
+|   0   |  `owner` | `address` |   `address`   | Address of the share owner.          |
+|   1   | `shares` | `uint256` |   `uint256`   | Amount of shares pending redemption. |
+
+
+
+### `requestsByOwner`
+
+Returns the pending requests by owner. NOTE: This function may run out of gas if there are too many requests. Use the overload with pagination.
+
+```solidity
+    function requestsByOwner(
+        address owner
+    )
+        view
+        returns (
+            uint256[] requestIds,
+            uint256[] shares
+        );
+```
+
+#### Parameters:
+
+| Index |   Name  |    Type   | Internal Type | Description                                           |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------------------------- |
+|   0   | `owner` | `address` |   `address`   | Address of the account to check for pending requests. |
+
+#### Return Values:
+
+| Index |     Name     |     Type    | Internal Type | Description                                   |
+| :---: | :----------: | :---------: | :-----------: | --------------------------------------------- |
+|   0   | `requestIds` | `uint256[]` |  `uint256[]`  | Array of request identifiers.                 |
+|   1   |   `shares`   | `uint256[]` |  `uint256[]`  | Array of shares associated with each request. |
 
 
 
@@ -590,15 +682,15 @@ Returns the address of the security admin.
     function securityAdmin()
         view
         returns (
-            address securityAdmin_
+            address securityAdmin
         );
 ```
 
 #### Return Values:
 
-| Index |       Name       |    Type   | Internal Type | Description |
-| :---: | :--------------: | :-------: | :-----------: | ----------- |
-|   0   | `securityAdmin_` | `address` |   `address`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                    |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `securityAdmin` | `address` |   `address`   | Address of the security admin. |
 
 
 
@@ -608,16 +700,16 @@ Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
-        address implementation_
+        address newImplementation_
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |        Name       |    Type   | Internal Type | Description |
-| :---: | :---------------: | :-------: | :-----------: | ----------- |
-|   0   | `implementation_` | `address` |   `address`   |             |
+| Index |         Name         |    Type   | Internal Type | Description                                |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
 
 
@@ -627,18 +719,18 @@ Defines if an account will withdraw shares manually or automatically.
 
 ```solidity
     function setManualWithdrawal(
-        address owner_,
-        bool isManual_
+        address account,
+        bool isManual
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |     Name    |    Type   | Internal Type | Description |
-| :---: | :---------: | :-------: | :-----------: | ----------- |
-|   0   |   `owner_`  | `address` |   `address`   |             |
-|   1   | `isManual_` |   `bool`  |     `bool`    |             |
+| Index |    Name    |    Type   | Internal Type | Description                                                                                           |
+| :---: | :--------: | :-------: | :-----------: | ----------------------------------------------------------------------------------------------------- |
+|   0   |  `account` | `address` |   `address`   | Address of the account.                                                                               |
+|   1   | `isManual` |   `bool`  |     `bool`    | \`true\` if the account withdraws manually, \`false\` if the withdrawals are performed automatically. |
 
 
 
@@ -650,15 +742,15 @@ Returns the total amount of shares pending redemption.
     function totalShares()
         view
         returns (
-            uint256
+            uint256 totalShares
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |      Name     |    Type   | Internal Type | Description                                |
+| :---: | :-----------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `totalShares` | `uint256` |   `uint256`   | Total amount of shares pending redemption. |
 
 
 
@@ -668,7 +760,7 @@ Upgrades a contract implementation to a specific version. Access control logic c
 
 ```solidity
     function upgrade(
-        uint256 version_,
+        uint256 toVersion_,
         bytes arguments_
     )
         nonpayable;
@@ -678,12 +770,58 @@ Upgrades a contract implementation to a specific version. Access control logic c
 
 | Index |     Name     |    Type   | Internal Type | Description                                    |
 | :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
-|   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
 
 
+### `userEscrowedShares`
+
+Returns the amount of shares escrowed for a specific user yet to be processed.
+
+```solidity
+    function userEscrowedShares(
+        address owner
+    )
+        view
+        returns (
+            uint256 escrowedShares
+        );
+```
+
+#### Parameters:
+
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address of the owner of shares. |
+
+#### Return Values:
+
+| Index |       Name       |    Type   | Internal Type | Description                             |
+| :---: | :--------------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `escrowedShares` | `uint256` |   `uint256`   | Amount of shares escrowed for the user. |
+
+
+
 ## Events
+
+### `EmptyRedemptionsProcessed`
+
+Emitted when empty redemption requests are processed.
+
+```solidity
+    event EmptyRedemptionsProcessed(
+        uint256 numberOfRequestsProcessed
+    );
+```
+
+#### Parameters:
+
+| Index |             Name            |    Type   | Internal Type | Description                                   |
+| :---: | :-------------------------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `numberOfRequestsProcessed` | `uint256` |   `uint256`   | Number of empty requests that were processed. |
+
+
 
 ### `ManualSharesDecreased`
 
@@ -711,6 +849,7 @@ Emitted when a manual redemption is processed.
 
 ```solidity
     event ManualSharesIncreased(
+        uint256 requestId,
         address owner,
         uint256 sharesAdded
     );
@@ -720,8 +859,9 @@ Emitted when a manual redemption is processed.
 
 | Index |      Name     |    Type   | Internal Type | Description                                      |
 | :---: | :-----------: | :-------: | :-----------: | ------------------------------------------------ |
-|   0   |    `owner`    | `address` |   `address`   | Address of the account.                          |
-|   1   | `sharesAdded` | `uint256` |   `uint256`   | Amount of shares added to the redeemable amount. |
+|   0   |  `requestId`  | `uint256` |   `uint256`   | Identifier of the withdrawal request.            |
+|   1   |    `owner`    | `address` |   `address`   | Address of the account.                          |
+|   2   | `sharesAdded` | `uint256` |   `uint256`   | Amount of shares added to the redeemable amount. |
 
 
 
@@ -751,7 +891,7 @@ Emitted when a withdrawal request is created.
 
 ```solidity
     event RequestCreated(
-        uint128 requestId,
+        uint256 requestId,
         address owner,
         uint256 shares
     );
@@ -761,7 +901,7 @@ Emitted when a withdrawal request is created.
 
 | Index |     Name    |    Type   | Internal Type | Description                                |
 | :---: | :---------: | :-------: | :-----------: | ------------------------------------------ |
-|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request.      |
+|   0   | `requestId` | `uint256` |   `uint256`   | Identifier of the withdrawal request.      |
 |   1   |   `owner`   | `address` |   `address`   | Address of the owner of the shares.        |
 |   2   |   `shares`  | `uint256` |   `uint256`   | Amount of shares requested for redemption. |
 
@@ -773,7 +913,7 @@ Emitted when a withdrawal request is updated.
 
 ```solidity
     event RequestDecreased(
-        uint128 requestId,
+        uint256 requestId,
         uint256 shares
     );
 ```
@@ -782,7 +922,7 @@ Emitted when a withdrawal request is updated.
 
 | Index |     Name    |    Type   | Internal Type | Description                                           |
 | :---: | :---------: | :-------: | :-----------: | ----------------------------------------------------- |
-|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request.                 |
+|   0   | `requestId` | `uint256` |   `uint256`   | Identifier of the withdrawal request.                 |
 |   1   |   `shares`  | `uint256` |   `uint256`   | Amount of shares reduced during a redemption request. |
 
 
@@ -793,7 +933,7 @@ Emitted when a withdrawal request is processed.
 
 ```solidity
     event RequestProcessed(
-        uint128 requestId,
+        uint256 requestId,
         address owner,
         uint256 shares,
         uint256 assets
@@ -804,7 +944,7 @@ Emitted when a withdrawal request is processed.
 
 | Index |     Name    |    Type   | Internal Type | Description                           |
 | :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request. |
+|   0   | `requestId` | `uint256` |   `uint256`   | Identifier of the withdrawal request. |
 |   1   |   `owner`   | `address` |   `address`   | The owner of the shares.              |
 |   2   |   `shares`  | `uint256` |   `uint256`   | Amount of redeemable shares.          |
 |   3   |   `assets`  | `uint256` |   `uint256`   | Amount of withdrawable assets.        |
@@ -817,7 +957,7 @@ Emitted when a withdrawal request is removed.
 
 ```solidity
     event RequestRemoved(
-        uint128 requestId
+        uint256 requestId
     );
 ```
 
@@ -825,7 +965,7 @@ Emitted when a withdrawal request is removed.
 
 | Index |     Name    |    Type   | Internal Type | Description                           |
 | :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `requestId` | `uint128` |   `uint128`   | Identifier of the withdrawal request. |
+|   0   | `requestId` | `uint256` |   `uint256`   | Identifier of the withdrawal request. |
 
 
 

@@ -12,15 +12,15 @@ Returns whether or not a pool is active.
     function active()
         view
         returns (
-            bool
+            bool active_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |    Name   |  Type  | Internal Type | Description                 |
+| :---: | :-------: | :----: | :-----------: | --------------------------- |
+|   0   | `active_` | `bool` |     `bool`    | True if the pool is active. |
 
 
 
@@ -32,15 +32,15 @@ Gets the address of the funds asset.
     function asset()
         view
         returns (
-            address
+            address asset_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                     |
+| :---: | :------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the funds asset. |
 
 
 
@@ -52,49 +52,15 @@ Returns whether or not a pool is configured.
     function configured()
         view
         returns (
-            bool
+            bool configured_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
-
-
-
-### `decodeArguments`
-
-```solidity
-    function decodeArguments(
-        bytes encodedArguments_
-    )
-        pure
-        returns (
-            address poolDelegate_,
-            address asset_,
-            uint256 initialSupply_,
-            string name_,
-            string symbol_
-        );
-```
-
-#### Parameters:
-
-| Index |         Name        |   Type  | Internal Type | Description |
-| :---: | :-----------------: | :-----: | :-----------: | ----------- |
-|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
-
-#### Return Values:
-
-| Index |       Name       |    Type   | Internal Type | Description |
-| :---: | :--------------: | :-------: | :-----------: | ----------- |
-|   0   |  `poolDelegate_` | `address` |   `address`   |             |
-|   1   |     `asset_`     | `address` |   `address`   |             |
-|   2   | `initialSupply_` | `uint256` |   `uint256`   |             |
-|   3   |      `name_`     |  `string` |    `string`   |             |
-|   4   |     `symbol_`    |  `string` |    `string`   |             |
+| Index |      Name     |  Type  | Internal Type | Description                     |
+| :---: | :-----------: | :----: | :-----------: | ------------------------------- |
+|   0   | `configured_` | `bool` |     `bool`    | True if the pool is configured. |
 
 
 
@@ -106,49 +72,71 @@ Gets the delegate management fee rate.
     function delegateManagementFeeRate()
         view
         returns (
-            uint256
+            uint256 delegateManagementFeeRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |             Name             |    Type   | Internal Type | Description                                     |
+| :---: | :--------------------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
 
 
 
-### `encodeArguments`
+### `isStrategy`
+
+Returns whether or not the given address is a registered strategy. These are legacy strategies set to be depreciated in future for the new modular strategies.
 
 ```solidity
-    function encodeArguments(
-        address poolDelegate_,
-        address asset_,
-        uint256 initialSupply_,
-        string name_,
-        string symbol_
+    function isStrategy(
+        address strategy_
     )
-        pure
+        view
         returns (
-            bytes encodedArguments_
+            bool isStrategy_
         );
 ```
 
 #### Parameters:
 
-| Index |       Name       |    Type   | Internal Type | Description |
-| :---: | :--------------: | :-------: | :-----------: | ----------- |
-|   0   |  `poolDelegate_` | `address` |   `address`   |             |
-|   1   |     `asset_`     | `address` |   `address`   |             |
-|   2   | `initialSupply_` | `uint256` |   `uint256`   |             |
-|   3   |      `name_`     |  `string` |    `string`   |             |
-|   4   |     `symbol_`    |  `string` |    `string`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                  |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `strategy_` | `address` |   `address`   | The address of the strategy. |
 
 #### Return Values:
 
-| Index |         Name        |   Type  | Internal Type | Description |
-| :---: | :-----------------: | :-----: | :-----------: | ----------- |
-|   0   | `encodedArguments_` | `bytes` |    `bytes`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                                   |
+| :---: | :-----------: | :----: | :-----------: | --------------------------------------------- |
+|   0   | `isStrategy_` | `bool` |     `bool`    | True if the address is a registered strategy. |
+
+
+
+### `isStrategyManager`
+
+Returns whether or not the given address is a registered strategy manager.
+
+```solidity
+    function isStrategyManager(
+        address strategyManager_
+    )
+        view
+        returns (
+            bool isStrategyManager_
+        );
+```
+
+#### Parameters:
+
+| Index |        Name        |    Type   | Internal Type | Description                          |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager_` | `address` |   `address`   | The address of the strategy manager. |
+
+#### Return Values:
+
+| Index |         Name         |  Type  | Internal Type | Description                                           |
+| :---: | :------------------: | :----: | :-----------: | ----------------------------------------------------- |
+|   0   | `isStrategyManager_` | `bool` |     `bool`    | True if the address is a registered strategy manager. |
 
 
 
@@ -160,43 +148,16 @@ Gets the liquidity cap for the pool.
     function liquidityCap()
         view
         returns (
-            uint256
+            uint256 liquidityCap_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The liquidity cap for the pool. |
 
-
-
-### `strategyList`
-
-Gets the address of the strategy in the list.
-
-```solidity
-    function strategyList(
-        uint256
-    )
-        view
-        returns (
-            address
-        );
-```
-
-#### Parameters:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `uint256` |   `uint256`   |             |
-
-#### Return Values:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
 
 
 ### `pendingPoolDelegate`
@@ -207,15 +168,15 @@ Gets the address of the pending pool delegate.
     function pendingPoolDelegate()
         view
         returns (
-            address
+            address pendingPoolDelegate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |          Name          |    Type   | Internal Type | Description                               |
+| :---: | :--------------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `pendingPoolDelegate_` | `address` |   `address`   | The address of the pending pool delegate. |
 
 
 
@@ -227,15 +188,15 @@ Gets the address of the pool.
     function pool()
         view
         returns (
-            address
+            address pool_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description              |
+| :---: | :-----: | :-------: | :-----------: | ------------------------ |
+|   0   | `pool_` | `address` |   `address`   | The address of the pool. |
 
 
 
@@ -247,35 +208,91 @@ Gets the address of the pool delegate.
     function poolDelegate()
         view
         returns (
-            address
+            address poolDelegate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                       |
+| :---: | :-------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate. |
 
 
 
-### `poolDelegateCover`
+### `poolPermissionManager`
 
-Gets the address of the pool delegate cover.
+Gets the address of the pool permission manager.
 
 ```solidity
-    function poolDelegateCover()
+    function poolPermissionManager()
         view
         returns (
-            address
+            address poolPermissionManager_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |           Name           |    Type   | Internal Type | Description                                 |
+| :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermissionManager_` | `address` |   `address`   | The address of the pool permission manager. |
+
+
+
+### `strategyCapOf`
+
+Gets the pool's AUM exposure cap to a given strategy or strategy manager. The maximum amount of this pool's assets that may be deployed at any one time.
+
+```solidity
+    function strategyCapOf(
+        address strategy_
+    )
+        view
+        returns (
+            uint256 cap_
+        );
+```
+
+#### Parameters:
+
+| Index |     Name    |    Type   | Internal Type | Description                                      |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `strategy_` | `address` |   `address`   | The address of the strategy or strategy manager. |
+
+#### Return Values:
+
+| Index |  Name  |    Type   | Internal Type | Description                  |
+| :---: | :----: | :-------: | :-----------: | ---------------------------- |
+|   0   | `cap_` | `uint256` |   `uint256`   | The pool's AUM exposure cap. |
+
+
+
+### `strategyList`
+
+Gets the address of the strategy in the list.
+
+```solidity
+    function strategyList(
+        uint256 index_
+    )
+        view
+        returns (
+            address strategy_
+        );
+```
+
+#### Parameters:
+
+| Index |   Name   |    Type   | Internal Type | Description                      |
+| :---: | :------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `index_` | `uint256` |   `uint256`   | The index to get the address of. |
+
+#### Return Values:
+
+| Index |     Name    |    Type   | Internal Type | Description              |
+| :---: | :---------: | :-------: | :-----------: | ------------------------ |
+|   0   | `strategy_` | `address` |   `address`   | The address in the list. |
 
 
 
@@ -287,15 +304,15 @@ Gets the address of the withdrawal manager.
     function withdrawalManager()
         view
         returns (
-            address
+            address withdrawalManager_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |         Name         |    Type   | Internal Type | Description                            |
+| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
 
 
 
