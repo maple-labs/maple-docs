@@ -81,7 +81,7 @@ The January 2026 release is for the Maple CCIP Receiver on Ethereum mainnet allo
 | Dedaub | [`2025-11 - Dedaub Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2025-november/Dedaub-Chainlink-Maple.pdf) |
 | Sigma Prime | [`2026-01 - Sigma Prime Report`](https://github.com/maple-labs/maple-cross-chain-receiver/blob/main/audits/2026-january/SigmaPrime-Chainlink-Maple.pdf) |
 
-### November 2026 Release
+### v7 Release (November 2026)
 
 The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. It does this alongside the strategies it owns directly; after the upgrade, the loans via Open Term Loan Manager remain the same.
 

@@ -120,7 +120,7 @@ Use the following endpoint to execute the query: `https://api.maple.finance/v2/g
 - **poolV2**: Retrieves pool permission details.
 - **account**: Retrieves the `permissionsBitmap` for the account.
 
-Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit. For more details on permissions, refer to the [Pool Permission Manager documentation](technical-resources/singletons/pool-permission-manager.md).
+Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit. For more details on permissions, refer to the [Pool Permission Manager documentation](../singletons/pool-permission-manager.md).
 
 ## Example Integration with React
 
