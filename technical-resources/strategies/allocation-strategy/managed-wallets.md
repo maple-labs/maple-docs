@@ -65,4 +65,4 @@ On success the strategy subtracts `assets` from `totalDeployedAssets` and `deplo
 
 ## Metadata
 
-The `metadata` argument on `deployAssets()`, `returnAssets()` and `realizeYield()` is not stored. The strategy emits it as-is on `AssetsDeployed`, `AssetsReturned` and `YieldRealized`, so indexers can attribute a movement to a trade or venue at no storage cost. It is separate from the strategy-wide `strategyMetadata` string set with `setMetadata()`.
+The `metadata` argument on `deployAssets()`, `returnAssets()` and `realizeYield()` is not stored. The strategy emits it as-is on `AssetsDeployed`, `AssetsReturned` and `YieldRealized`, so indexers can attribute a movement to a specific trade at no storage cost. It is separate from the strategy-wide `strategyMetadata` string set with `setMetadata()`.
