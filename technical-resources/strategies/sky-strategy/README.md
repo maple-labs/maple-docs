@@ -49,20 +49,6 @@ The strategy stores no admin addresses of its own. It reads the Strategy Delegat
 
 Every state-changing function except `multicall` can be paused through Globals (`isFunctionPaused`). Once a loss is recognized, every state-changing function except `recoverPosition`, `multicall` and the proxy functions reverts. See [Impairments and Losses](impairments-and-losses.md).
 
-## In this section
-
-{% content-ref url="accounting-and-fees.md" %}
-[accounting-and-fees.md](accounting-and-fees.md)
-{% endcontent-ref %}
-
-{% content-ref url="funding-and-withdrawals.md" %}
-[funding-and-withdrawals.md](funding-and-withdrawals.md)
-{% endcontent-ref %}
-
-{% content-ref url="impairments-and-losses.md" %}
-[impairments-and-losses.md](impairments-and-losses.md)
-{% endcontent-ref %}
-
 ## Contract interfaces
 
 {% content-ref url="../../interfaces/sky-strategy.md" %}
