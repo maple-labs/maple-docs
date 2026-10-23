@@ -103,11 +103,11 @@ Conversions that move value round down, so remainders stay in the position for a
 2. `poolManager` is an instance of a registered `POOL_MANAGER_FACTORY`, and the Underlying Strategy is an instance of a registered `UNDERLYING_STRATEGY_FACTORY`.
 3. Records `assetsUnderManagement()` before the deposit, so new capital does not dilute its own price.
 4. Calls `poolManager.requestFunds(underlyingStrategy, assetsIn)`. The Pool Manager checks its own `strategyCapOf` and transfers assets from the Pool to the Underlying Strategy.
-5. Calls `fundUnderlyingStrategy(assetsIn, data)`, which returns `assetsDeposited`. This can differ from `assetsIn`, for example after a venue fee.
+5. Calls `fundUnderlyingStrategy(assetsIn, data)`, which returns `assetsDeposited`. This can differ from `assetsIn`, for example after an underlying protocol fee.
 6. Mints `convertToShares(assetsDeposited)` against the pre-deposit total. Zero shares reverts.
 7. Checks `poolManagerCapOf`, then `strategyLiquidityCap`.
 
-A cap breach reverts the whole transaction, including the venue deposit. If `assetsUnderManagement()` has fallen to zero while shares remain, for example after a recognized loss, step 6 divides by zero and the Strategy Manager can no longer be funded.
+A cap breach reverts the whole transaction, including the deposit into the underlying protocol. If `assetsUnderManagement()` has fallen to zero while shares remain, for example after a recognized loss, step 6 divides by zero and the Strategy Manager can no longer be funded.
 
 ## Redemptions
 
@@ -134,7 +134,7 @@ sequenceDiagram
     US->>Pool: transfer assets
 ```
 
-The two steps may run back to back in one transaction, through `multicall()` or the [Liquidity Router](liquidity-router.md), when the venue has the liquidity.
+The two steps may run back to back in one transaction, through `multicall()` or the [Liquidity Router](liquidity-router.md), when the underlying protocol has the liquidity.
 
 ## Caps
 

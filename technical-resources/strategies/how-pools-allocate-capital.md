@@ -23,21 +23,21 @@ flowchart TD
     PMA --> LMA[Open Term Loan Manager A<br/>owned by Pool A]
     PMA --> SM[Strategy Manager<br/>shares, caps, redemptions]
     PMB --> SM
-    SM --> US[Underlying Strategy<br/>venue logic]
+    SM --> US[Underlying Strategy<br/>underlying protocol logic]
     US --> V[(Aave V3 / Sky / Managed Wallets)]
 ```
 
 ## Separation of concerns
 
-A shared strategy is two contracts. The [Strategy Manager](strategy-manager.md) is one implementation reused for every venue. The Underlying Strategy is written per venue and knows nothing about Pools.
+A shared strategy is two contracts. The [Strategy Manager](strategy-manager.md) is one implementation reused for every underlying protocol. The Underlying Strategy is written per underlying protocol and knows nothing about Pools.
 
 | Responsibility | Strategy Manager | Underlying Strategy |
 | --- | --- | --- |
 | Share accounting per Pool | Yes | No |
 | Per-Pool value, `assetsOf(poolManager)` | Yes | No, one total only |
 | Valuing the position | No, reads `assetsUnderManagement()` | Yes |
-| Moving capital between Pool and venue | Yes | No |
-| Talking to the venue | No | Yes |
+| Moving capital between Pool and underlying protocol | Yes | No |
+| Talking to the underlying protocol | No | Yes |
 | Redemption requests | Yes | No |
 | Caps | Yes, per Pool and strategy-wide | No |
 | Impairments and loss recognition | No, reads `unrealizedLosses()` | Yes |
@@ -61,9 +61,9 @@ A cap on the Pool Manager defaults to zero, which blocks funding until the Pool 
 
 ## Funding
 
-The Strategy Manager always ends funding by calling `fundUnderlyingStrategy()`. What happens next depends on the venue. Aave V3 and Sky deploy into the protocol in the same transaction. The Allocation Strategy records the assets as available and waits for a Managed Wallet to draw them down later.
+The Strategy Manager always ends funding by calling `fundUnderlyingStrategy()`. What happens next depends on the underlying protocol. Aave V3 and Sky deploy the assets in the same transaction. The Allocation Strategy records the assets as available and waits for a Managed Wallet to draw them down later.
 
-### Synchronous venues (Aave V3, Sky)
+### Synchronous underlying protocols (Aave V3, Sky)
 
 ```mermaid
 sequenceDiagram
@@ -72,7 +72,7 @@ sequenceDiagram
     participant PM as Pool Manager
     participant Pool
     participant US as Underlying Strategy
-    participant V as Venue
+    participant V as Underlying protocol
 
     B->>SM: fundStrategyManager(poolManager, assets, data)
     SM->>PM: requestFunds(underlyingStrategy, assets)
@@ -84,7 +84,7 @@ sequenceDiagram
     SM->>SM: mint shares, check poolManagerCap then strategyLiquidityCap
 ```
 
-### Asynchronous venue (Allocation Strategy)
+### Asynchronous underlying protocol (Allocation Strategy)
 
 ```mermaid
 sequenceDiagram
@@ -112,16 +112,16 @@ sequenceDiagram
 
 Leaving a strategy takes two steps. `requestRedeem()` records shares as pending without burning them. `processRedemption()` burns the shares, prices them at the exit rate net of unrealized losses, and calls `withdrawFromUnderlyingStrategy()`, which sends assets from the Underlying Strategy directly to the Pool. A pending request can be reduced with `cancelRedemption()`. Requests are tracked per Pool and are independent of the Withdrawal Manager's Lender queue.
 
-When the venue has liquidity, both steps can run in one transaction through the [Liquidity Router](liquidity-router.md) or `multicall()`.
+When the underlying protocol has liquidity, both steps can run in one transaction through the [Liquidity Router](liquidity-router.md) or `multicall()`.
 
-### Synchronous venues (Aave V3, Sky)
+### Synchronous underlying protocols (Aave V3, Sky)
 
 ```mermaid
 sequenceDiagram
     participant B as Liquidity Bot
     participant SM as Strategy Manager
     participant US as Underlying Strategy
-    participant V as Venue
+    participant V as Underlying protocol
     participant Pool
 
     B->>SM: requestRedeem(poolManager, shares)
@@ -134,7 +134,7 @@ sequenceDiagram
     US-->>Pool: transfer assets
 ```
 
-### Asynchronous venue (Allocation Strategy)
+### Asynchronous underlying protocol (Allocation Strategy)
 
 Processing succeeds only once the Managed Wallet has returned enough capital, because `availableToWithdraw()` counts only idle cash in the strategy.
 
