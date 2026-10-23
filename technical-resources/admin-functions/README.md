@@ -1,6 +1,6 @@
 # Admin Functions
 
-Every privileged function in v7 checks `msg.sender` against a role read from [Maple Globals](../singletons/globals.md) or a delegate stored on the instance. The matrix shows which roles reach which contracts. The role pages below list the exact functions and the conditions attached to them.
+Every privileged function in v7 checks `msg.sender` against a role read from [Maple Globals](../singletons/globals.md) or a delegate stored on the instance. The matrix shows which roles reach which contracts. The role pages in this section list the exact functions and the conditions attached to them.
 
 | Role | Globals | Pool Manager | Withdrawal Manager | Open Term Loan Manager | Strategy Manager | Underlying Strategies | Liquidity Router |
 |---|---|---|---|---|---|---|---|
@@ -13,31 +13,3 @@ Every privileged function in v7 checks `msg.sender` against a role read from [Ma
 | Managed Wallet | | | | | | Allocation Strategy only: deploy and return capital, report yield | |
 
 Blank cells mean the role has no function on that contract. The Pool Permission Manager and the Open Term Loan are not columns here, but the role pages cover them.
-
-{% content-ref url="governor-admin-actions.md" %}
-[governor-admin-actions.md](governor-admin-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="operational-admin-actions.md" %}
-[operational-admin-actions.md](operational-admin-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="security-admin-actions.md" %}
-[security-admin-actions.md](security-admin-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="pool-delegate-admin-actions.md" %}
-[pool-delegate-admin-actions.md](pool-delegate-admin-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="strategy-delegate-actions.md" %}
-[strategy-delegate-actions.md](strategy-delegate-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="liquidity-bot-actions.md" %}
-[liquidity-bot-actions.md](liquidity-bot-actions.md)
-{% endcontent-ref %}
-
-{% content-ref url="timelocks.md" %}
-[timelocks.md](timelocks.md)
-{% endcontent-ref %}
