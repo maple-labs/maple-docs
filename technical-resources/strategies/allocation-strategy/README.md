@@ -66,24 +66,6 @@ Every state-changing function except `multicall` carries `whenNotPaused`, so the
 
 `multicall(data)` runs each entry in `data` as a `delegatecall` back into the strategy and reverts the whole batch with the first inner error. Because a `delegatecall` keeps `msg.sender`, each inner function checks the address that called `multicall()`, not the strategy itself, so routing a privileged call through `multicall()` gains nothing. The reentrancy lock is taken and released per inner call, so a batch of guarded functions runs in sequence without tripping it. A typical use is impairing one position and recognizing a loss on another in one transaction.
 
-## Pages
-
-{% content-ref url="managed-wallets.md" %}
-[managed-wallets.md](managed-wallets.md)
-{% endcontent-ref %}
-
-{% content-ref url="accounting-and-fees.md" %}
-[accounting-and-fees.md](accounting-and-fees.md)
-{% endcontent-ref %}
-
-{% content-ref url="funding-and-withdrawals.md" %}
-[funding-and-withdrawals.md](funding-and-withdrawals.md)
-{% endcontent-ref %}
-
-{% content-ref url="impairments-and-losses.md" %}
-[impairments-and-losses.md](impairments-and-losses.md)
-{% endcontent-ref %}
-
 ## Interfaces
 
 {% content-ref url="../../interfaces/allocation-strategy.md" %}
