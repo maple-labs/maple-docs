@@ -9,7 +9,7 @@ Before v7, a Pool Manager deployed and owned every strategy it used. In v7 a Poo
 * Strategies it owns outright. After v7 the only owned strategy is the Open Term Loan Manager.
 * Strategy Managers, where the Pool Manager is one of several funders. Each Strategy Manager owns one Underlying Strategy (Aave V3, Sky or Allocation) and tracks each Pool's position with internal, non-tokenised shares.
 
-Share accounting, AUM reporting and caps live in the Strategy Manager and are the same for every strategy. Venue-specific logic lives in the Underlying Strategy, so adding a venue means writing a new Underlying Strategy. Strategy Managers only accept Pool Managers as funders, never Lenders, so KYC, permissioning and redemptions stay in the Pool contracts. See [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md) for the funding and redemption flows.
+Share accounting, AUM reporting and caps live in the Strategy Manager and are the same for every strategy. Logic specific to each underlying protocol lives in the Underlying Strategy, so adding an underlying protocol means writing a new Underlying Strategy. Strategy Managers only accept Pool Managers as funders, never Lenders, so KYC, permissioning and redemptions stay in the Pool contracts. See [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md) for the funding and redemption flows.
 
 ## New contracts
 
