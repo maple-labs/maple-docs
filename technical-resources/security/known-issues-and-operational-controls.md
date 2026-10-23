@@ -88,7 +88,7 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Risk.** Availability only. The Strategy Manager cannot be funded again.
 
-**Control.** Maple does not reuse a Strategy Manager after a full loss. Each Pool detaches with `removeStrategyManager()`, which succeeds because `assetsOf()` is zero, and a new Strategy Manager is deployed if the venue is used again.
+**Control.** Maple does not reuse a Strategy Manager after a full loss. Each Pool detaches with `removeStrategyManager()`, which succeeds because `assetsOf()` is zero, and a new Strategy Manager is deployed if the underlying protocol is used again.
 
 ### Aave and Sky strategies forfeit unharvested fees on `recognizeLoss()`
 

@@ -40,7 +40,7 @@ The v7 contracts are developed by the Maple smart contracts team and audited bef
 
 #### 2. Integrated protocols account for their positions correctly.
 
-`MapleAaveV3Strategy` values its position as its aToken balance. `MapleSkyStrategy` values its position as the funds asset the PSM would return for `previewRedeem()` of its sUSDS balance. Neither uses an independent price oracle, so once Maple integrates a venue it trusts that venue's own accounting.
+`MapleAaveV3Strategy` values its position as its aToken balance. `MapleSkyStrategy` values its position as the funds asset the PSM would return for `previewRedeem()` of its sUSDS balance. Neither uses an independent price oracle, so once Maple integrates an underlying protocol it trusts that protocol's own accounting.
 
 #### 3. Strategy Delegates are trusted actors, comparable to Pool Delegates.
 
