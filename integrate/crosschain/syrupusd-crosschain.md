@@ -91,12 +91,14 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% endtab %}
 {% endtabs %}
 
-Price Feeds are Exchange Rate oracle contracts that Chainlink updates on a set heartbeat. They relay the token price from each pool's convertToExitAssets() function, standard in ERC-4626 implementations. To consume Price Feeds, use the Chainlink docs:
+### Price Feeds
+
+Price Feeds are Exchange Rate oracle contracts that Chainlink updates on a set heartbeat. The Price Feed address for each chain is listed in the tables above. To consume Price Feeds, use the Chainlink docs:
 
 1. [Price Feeds Addresses](https://docs.chain.link/data-feeds/price-feeds/addresses)
 2. [Consuming Data Feeds](https://docs.chain.link/data-feeds/getting-started)
 
-### **Price Streams**
+### Price Streams
 
 Price Streams deliver low-latency signed price reports offchain that your contract verifies onchain when consumed.
 
@@ -107,6 +109,26 @@ To consume Price Streams, use the Chainlink Docs:
 * [Streams Addresses](https://data.chain.link/streams)
 * [Streams Integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
 * [Streams Integration (Solana)](https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification)
+
+## Pricing syrupUSD assets
+
+We recommend Chainlink oracles for pricing syrupUSDC, syrupUSDT and syrupUSDG on every chain. All Chainlink Price Feeds and Price Streams for syrupUSD assets, on every chain, use the same pricing method: they relay the `convertToExitAssets()` value of the corresponding Maple Pool on Ethereum mainnet.
+
+### What `convertToExitAssets()` returns
+
+Every Maple Pool exposes two exchange rates: `convertToAssets()`, the standard ERC-4626 function, and `convertToExitAssets()`, which returns the value of shares on withdrawal:
+
+```
+exchangeRate = (totalAssets - unrealizedLosses) / totalSupply
+```
+
+* **Impairments are priced in immediately.** When a loan or strategy is impaired, its value moves into `unrealizedLosses` and the exit rate drops straight away, before any loss is realized.
+* **Realized losses are priced in.** If a loan or strategy defaults, the loss is written off from the Pool's AUM, so the exit rate reflects it.
+* **In normal conditions the two rates are equal.** With no impairments, `unrealizedLosses` is zero and `convertToExitAssets()` returns the same value as `convertToAssets()`.
+
+This makes the oracle price the value a Lender would actually receive on withdrawal, rather than one that can lag behind a known loss.
+
+You can verify any reported value independently by calling `convertToExitAssets(1000000)` (1 share, 6 decimals) on the syrupUSDC, syrupUSDT or syrupUSDG token contract on Ethereum mainnet. See [Asset Integration: Ethereum Mainnet](../ethereum-mainnet/asset-integration.md) for addresses and code samples, and [Pool Exchange Rates](../../technical-resources/pools/accounting/pool-exchange-rates.md) for worked examples.
 
 ## Testnet Addresses
 
