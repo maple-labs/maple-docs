@@ -1,4 +1,10 @@
-# Open Term Loans
+# Open Term Loan
+
+`MapleLoan` is the open-term loan contract between a Borrower and an Open Term Loan Manager, which acts as the lender. Full interface: [OpenTermLoan](../../interfaces/open-term-loan.md).
+
+## Accepting Loan Terms
+
+A newly deployed loan cannot be funded until the Borrower calls `acceptLoanTerms()`. The call sets `loanTermsAccepted` to true and emits `LoanTermsAccepted`. Only the Borrower, or an address registered as a `BORROWER_ACTIONS` instance in Globals, can make it, and only once. `fund()` reverts with `ML:F:TERMS_NOT_ACCEPTED` until then. The v2.0.2 migrator sets `loanTermsAccepted` to true on loans deployed before this step existed.
 
 ## Accounting
 
@@ -122,17 +128,20 @@ Open-Term Loans have `delegateServiceFees` and `platformServiceFees` which are p
 
 If a borrower wants to close a loan, they can do so by calling `makePayment` with `principalToReturn` equal to the outstanding principal.
 
-Note: `makePayment` is permissionless. Any address can pay on behalf of the borrower by transferring funds via `transferFrom` to the lender; typical usage is the borrower calling directly.
+Note: `makePayment` is permissionless. Any address can pay on behalf of the borrower by transferring funds via `transferFrom` to the lender. Typically, the borrower calls it directly.
 
 ## Initialization Parameters
 
 * `borrower` - The address of the borrower.
 * `lender` - The address of the lender.
 * `fundsAsset` - The address of asset that the loan is denominated in.
+* `principalRequested` - The principal the lender will fund.
 * `gracePeriod` - The amount of time that the lender needs to wait before triggering a default on a late loan.
-* `noticePeriod` - The maximum amount of required for the Borrower fulfill a loan call.
+* `noticePeriod` - The time the Borrower has to satisfy a loan call.
 * `paymentInterval` - The amount of seconds between each loan payment.
 * `interestRate` - The annualized interest rate.
 * `lateFeeRate` - A fee rate applied on principal amount on late payments.
 * `lateInterestPremiumRate` - A premium added on top of the interest rate for late payments.
 * `delegateServiceFeeRate` - A rate of funds assets that is added on every payment destined to the pool delegate.
+
+The `platformServiceFeeRate` is not a parameter. The initializer reads it from Globals for the lender's Pool Manager, and `acceptNewTerms` refreshes it on every refinance.
