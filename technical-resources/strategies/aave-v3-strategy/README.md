@@ -61,20 +61,6 @@ Two modifiers apply across the table:
 - `whenNotPaused` guards every state-changing function except `multicall`. Globals can pause each function selector individually, see [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
 - `whenLossNotRecognized` guards every state-changing function except `recoverPosition`, `claimRewards`, `multicall` and the proxy functions. See [Impairments and Losses](impairments-and-losses.md).
 
-## In this section
-
-{% content-ref url="accounting-and-fees.md" %}
-[accounting-and-fees.md](accounting-and-fees.md)
-{% endcontent-ref %}
-
-{% content-ref url="funding-and-withdrawals.md" %}
-[funding-and-withdrawals.md](funding-and-withdrawals.md)
-{% endcontent-ref %}
-
-{% content-ref url="impairments-and-losses.md" %}
-[impairments-and-losses.md](impairments-and-losses.md)
-{% endcontent-ref %}
-
 ## Contract interfaces
 
 {% content-ref url="../../interfaces/aave-v3-strategy.md" %}
