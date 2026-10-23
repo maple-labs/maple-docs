@@ -4,7 +4,7 @@
 
 | Term | Definition |
 |-|-|
-| `Accrual-basis yield` | Yield recognized continuously as a venue position grows, as in the Aave V3 and Sky strategies. Fees accrue on the growth and are harvested on the next interaction with the position. |
+| `Accrual-basis yield` | Yield recognized continuously as a position in an underlying protocol grows, as in the Aave V3 and Sky strategies. Fees accrue on the growth and are harvested on the next interaction with the position. |
 | `Asset` | An external ERC-20 token that is used to transfer value through the protocol (e.g., USDC, WETH, WBTC). |
 | `Bootstrap mint` | A small permanent deposit the Strategy Delegate pays when a Strategy Manager is deployed. Its shares are assigned to `address(0)` so `totalShares` is never zero, which protects the share price from manipulation. The amount per asset is `bootstrapMint` in Globals. |
 | `Borrower` | An institution approved in Globals that borrows from a Pool through an Open Term Loan. |
@@ -33,7 +33,8 @@
 | `Strategy Delegate` | The approved entity that owns one Strategy Manager. It sets the strategy's caps and its own fee rate, manages impairments and losses, and is always an Operator. |
 | `Strategy liquidity cap` | The limit on a Strategy Manager's total `assetsUnderManagement()` across all Pools, `strategyLiquidityCap`. Set by the Strategy Delegate or Operational Admin. |
 | `Strategy Manager` | `MapleStrategyManager`, the contract that lets several Pools fund one Underlying Strategy. It mints non-transferable shares per Pool Manager, enforces caps and records redemption requests. It never holds assets. |
-| `Underlying Strategy` | The contract that deploys capital to a venue and reports its value, liquidity, losses and fees to its Strategy Manager. v7 has Aave V3, Sky and Allocation implementations. |
+| `Underlying protocol` | The external protocol where an Underlying Strategy deploys capital, such as Aave V3 or Sky. For the Allocation Strategy, it is the Managed Wallets. |
+| `Underlying Strategy` | The contract that deploys capital to an underlying protocol and reports its value, liquidity, losses and fees to its Strategy Manager. v7 has Aave V3, Sky and Allocation implementations. |
 
 ## Technical Terms
 
@@ -56,7 +57,7 @@
 | `gracePeriod` | An amount of seconds that a payment can be late before a default can be triggered on a Loan. |
 | `HUNDRED_PERCENT` | `1e6` (written `100_0000` in some contracts). Every fee rate is scaled by it. |
 | `impairedAssets` | Underlying Strategy, the assets recorded as impaired. Reported through `unrealizedLosses()`, capped at `assetsUnderManagement()`. |
-| `isInstanceOf` | Globals allowlist keyed by an instance key and an address. Registers factories, bots, routers, venue contracts and Managed Wallets. |
+| `isInstanceOf` | Globals allowlist keyed by an instance key and an address. Registers factories, bots, routers, underlying protocol contracts and Managed Wallets. |
 | `issuanceRate` | The amount of interest per second accrued by the Loan Manager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled up to 30 decimal places for improved precision. |
 | `lastRecordedTotalAssets` | Aave V3 and Sky strategies, the position value after the last fee harvest. Growth above it is the yield that fees accrue on. |
 | `lateFeeRate` | A flat rate against principal that is charged when a Loan makes a late payment. |

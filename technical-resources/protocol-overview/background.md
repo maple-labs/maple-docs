@@ -1,6 +1,6 @@
 # How Maple Works
 
-Maple is an onchain asset manager. Lenders deposit into a Pool, and the Pool puts that capital to work in open-term loans to institutional borrowers and in shared yield strategies on venues such as Aave V3 and Sky.
+Maple is an onchain asset manager. Lenders deposit into a Pool, and the Pool puts that capital to work in open-term loans to institutional borrowers and in shared yield strategies on underlying protocols such as Aave V3 and Sky.
 
 ## Lenders
 
@@ -12,7 +12,7 @@ Borrowers are institutions that Maple approves in Globals. Each loan is its own 
 
 ## Strategies
 
-Capital that a Pool is not lending can earn yield in a shared strategy. A strategy is two contracts. The Strategy Manager tracks how much each Pool owns, and several Pools can fund it at once. The Underlying Strategy deploys that capital to one venue: Aave V3, Sky's sUSDS, or Maple-operated Managed Wallets through the Allocation Strategy. The Pool Delegate sets a cap per strategy, and Maple's Liquidity Bots move capital within those caps. See [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md).
+Capital that a Pool is not lending can earn yield in a shared strategy. A strategy is two contracts. The Strategy Manager tracks how much each Pool owns, and several Pools can fund it at once. The Underlying Strategy deploys that capital to one underlying protocol: Aave V3, Sky's sUSDS, or Maple-operated Managed Wallets through the Allocation Strategy. The Pool Delegate sets a cap per strategy, and Maple's Liquidity Bots move capital within those caps. See [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md).
 
 ## Flow of Funds
 

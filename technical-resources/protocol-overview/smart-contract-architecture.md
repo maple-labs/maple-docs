@@ -90,7 +90,7 @@ Each `MapleLoan` is the agreement between one borrower and the Pool. It stores `
 
 A shared strategy is a pair of contracts deployed together. `MapleStrategyManager` (v1.0.0) accounts for which Pool owns what: `sharesOf` and `pendingSharesOf` per Pool Manager, `totalShares`, `poolManagerCapOf`, `strategyLiquidityCap`, `strategyDelegate` and its one `underlyingStrategy`. Several Pools can fund one Strategy Manager, and it never holds assets. On `fundStrategyManager()` it calls `requestFunds()` so the Pool sends assets straight to the Underlying Strategy, then calls `fundUnderlyingStrategy()` and mints shares to the Pool Manager. On `processRedemption()` it burns shares and calls `withdrawFromUnderlyingStrategy()`, which pays the Pool directly. Shares are not tokens and cannot be transferred.
 
-The Underlying Strategy talks to one venue and knows nothing about Pools. It stores `strategyManager`, `fundsAsset`, `impairedAssets` and the two fee rates, and it reports `assetsUnderManagement()`, `availableToWithdraw()` and `unrealizedLosses()` to the Strategy Manager. v7 ships three implementations, each with its own factory registered under `UNDERLYING_STRATEGY_FACTORY`:
+The Underlying Strategy talks to one underlying protocol and knows nothing about Pools. It stores `strategyManager`, `fundsAsset`, `impairedAssets` and the two fee rates, and it reports `assetsUnderManagement()`, `availableToWithdraw()` and `unrealizedLosses()` to the Strategy Manager. v7 ships three implementations, each with its own factory registered under `UNDERLYING_STRATEGY_FACTORY`:
 
 * `MapleAaveV3Strategy` supplies to an Aave V3 pool and holds the aToken.
 * `MapleSkyStrategy` swaps through the Sky PSM and holds sUSDS.
@@ -108,7 +108,7 @@ Most Pool capital is deployed at any time, so lenders cannot always redeem insta
 
 ## Maple Globals
 
-`MapleGlobals` is the singleton every other contract reads. It stores the protocol roles (`governor`, `securityAdmin`, `operationalAdmin`, `mapleTreasury`), the `poolDelegates` and `strategyDelegates` registries that bind each delegate to one owned contract, the `isInstanceOf` allowlists for factories, bots, routers, venues and Managed Wallets, `bootstrapMint` per asset, platform fee rates per Pool Manager, pause flags, and timelock windows for scheduled calls. The Governor is the `GovernorTimelock` contract, so protocol-level changes wait for its delay, and the Treasury receives all protocol fees. See [Maple Globals](../singletons/globals.md), [Governor Timelock](../singletons/governor-timelock.md) and [Maple Treasury](../singletons/maple-treasury.md).
+`MapleGlobals` is the singleton every other contract reads. It stores the protocol roles (`governor`, `securityAdmin`, `operationalAdmin`, `mapleTreasury`), the `poolDelegates` and `strategyDelegates` registries that bind each delegate to one owned contract, the `isInstanceOf` allowlists for factories, bots, routers, underlying protocols and Managed Wallets, `bootstrapMint` per asset, platform fee rates per Pool Manager, pause flags, and timelock windows for scheduled calls. The Governor is the `GovernorTimelock` contract, so protocol-level changes wait for its delay, and the Treasury receives all protocol fees. See [Maple Globals](../singletons/globals.md), [Governor Timelock](../singletons/governor-timelock.md) and [Maple Treasury](../singletons/maple-treasury.md).
 
 ## Factories and Deployers
 
