@@ -26,8 +26,8 @@ syrupUSDC, syrupUSDT and syrupUSDG are ERC-4626 vault tokens on Ethereum mainnet
 
 syrupUSDC, syrupUSDT and syrupUSDG use the ERC-4626 tokenized vault standard. You can query the token price directly from the contract using two functions:
 
-1. **`convertToAssets(uint256 shares_)`** - Returns the amount of underlying assets (USDC/USDT) that would be received for a given number of shares. Use this for display purposes and general price calculations.
-2. **`convertToExitAssets(uint256 shares_)`** - Returns the amount of underlying assets accounting for any unrealized losses in the pool. Use this when calculating actual redemption values.
+1. **`convertToAssets(uint256 shares_)`** - Returns the amount of underlying assets (USDC/USDT/USDG) that would be received for a given number of shares. Use this for display purposes and general price calculations.
+2. **`convertToExitAssets(uint256 shares_)`** - Returns the amount of underlying assets accounting for any unrealized losses in the pool. Use this when calculating actual redemption values or valuing syrupUSD assets as collateral. This is the value Chainlink oracles relay (see [Pool Exchange Rates](../../technical-resources/pools/accounting/pool-exchange-rates.md)).
 
 All three tokens use 6 decimals. To get the price per token, call either function with `1000000` (1 share):
 
@@ -81,82 +81,42 @@ price = contract.functions.convertToAssets(1000000).call()
 {% endtab %}
 {% endtabs %}
 
-#### Option 2: Pyth Oracle
+#### Option 2: Chainlink Oracle
 
-Pyth Network provides low-latency, high-fidelity price feeds for syrupUSDC and syrupUSDT. Pyth calculates pricing using the smart contract ERC-4626 functions.
+Chainlink provides low-latency Price Streams for syrupUSDC, syrupUSDT and syrupUSDG on Ethereum mainnet, and exchange rate Price Feeds on other chains. Every Chainlink oracle for syrupUSD assets relays the Pool's `convertToExitAssets()` value, so it reflects impairments and realized losses. This is the oracle we recommend for lending markets and other protocols that need a price feed.
 
-**Feed IDs**
+**Price Streams**
 
-<table><thead><tr><th width="164.24737548828125">Token</th><th>Price Feed ID</th></tr></thead><tbody><tr><td>syrupUSDC/USDC</td><td><code>0x2ad31d1c4a85fbf2156ce57fab4104124c5ef76a6386375ecfc8da1ed5ce1486</code></td></tr><tr><td>syrupUSDT/USDT</td><td><code>0x7e10170c23d7df62d301b2ade26854200ee584f3f3b84cb2e5195adf35c5b97f</code></td></tr></tbody></table>
+Price Streams deliver low-latency signed price reports offchain that your contract verifies onchain when consumed. The same Stream IDs work on Ethereum mainnet and every other supported chain.
 
-**Contract addresses**
+<table><thead><tr><th width="149.64227294921875">Price Stream</th><th>Address / Link</th></tr></thead><tbody><tr><td>syrupUSDC/USDC</td><td><a href="https://data.chain.link/streams/syrupusdc-usdc-exchangerate-streams">0x000721629eb23678e5c52595523785ae4e0ef470ca8a1cb7e894edcfa03dcfe9</a></td></tr><tr><td>syrupUSDT/USDT</td><td><a href="https://data.chain.link/streams/syrupusdt-usdt-exchangerate-streams">0x00071ec93f578219a986e1dfbda2302551c3b86d48219f23b6351bfcac2efc55</a></td></tr><tr><td>syrupUSDG/USDG</td><td><a href="https://data.chain.link/streams/syrupusdg-usdg-exchangerate-streams">0x0007f1bf39f52bb9fc4c0a87fe2d1de5e8105a2d3899ca09051082337cc44d91</a></td></tr></tbody></table>
 
-<table><thead><tr><th width="156.80816650390625">Network</th><th>Pyth Contract</th></tr></thead><tbody><tr><td>Ethereum</td><td><a href="https://etherscan.io/address/0x4305fb66699c3b2702d4d05cf36551390a4c69c6">0x4305FB66699C3B2702D4d05CF36551390A4c69C6</a></td></tr><tr><td>Sepolia Testnet</td><td><a href="https://sepolia.etherscan.io/address/0xDd24F84d36BF92C65F92307595335bdFab5Bbd21">0xDd24F84d36BF92C65F92307595335bdFab5Bbd21</a></td></tr></tbody></table>
+To consume Price Streams, use the Chainlink docs:
 
-**Get price from Pyth**
+* [Streams Addresses](https://data.chain.link/streams)
+* [Streams Integration (EVM)](https://docs.chain.link/data-streams/tutorials/evm-onchain-report-verification)
 
-{% tabs %}
-{% tab title="Offchain" %}
-**Offchain: Fetch price from Pyth Hermes API**
+**Price Feeds**
 
-**bash**
+There is no Chainlink Price Feed for syrupUSDC, syrupUSDT or syrupUSDG on Ethereum mainnet. To get the same value onchain, call `convertToExitAssets()` directly on the token contract (Option 1). Price Feed addresses for other chains are listed in [Asset Integration: Crosschain](../crosschain/syrupusd-crosschain.md#price-feeds).
 
-```bash
-# Get latest syrupUSDC price
-curl "https://hermes.pyth.network/v2/updates/price/latest?ids[]=0x2ad31d1c4a85fbf2156ce57fab4104124c5ef76a6386375ecfc8da1ed5ce1486"
-```
-
-**javascript**
-
-```javascript
-const feedId = "0x2ad31d1c4a85fbf2156ce57fab4104124c5ef76a6386375ecfc8da1ed5ce1486";
-const response = await fetch(
-  `https://hermes.pyth.network/v2/updates/price/latest?ids[]=${feedId}`
-);
-const data = await response.json();
-const priceData = data.parsed[0].price;
-const price = Number(priceData.price) * Math.pow(10, priceData.expo);
-```
-{% endtab %}
-
-{% tab title="Onchain" %}
-**Onchain: Read price from Pyth contract**
-
-```solidity
-import "@pythnetwork/pyth-sdk-solidity/IPyth.sol";
-import "@pythnetwork/pyth-sdk-solidity/PythStructs.sol";
-
-contract MyContract {
-    IPyth pyth = IPyth(0x4305FB66699C3B2702D4d05CF36551390A4c69C6);
-    bytes32 constant SYRUP_USDC_FEED = 0x2ad31d1c4a85fbf2156ce57fab4104124c5ef76a6386375ecfc8da1ed5ce1486;
-
-    function getSyrupUSDCPrice(bytes[] calldata priceUpdateData) public payable returns (int64) {
-        uint fee = pyth.getUpdateFee(priceUpdateData);
-        pyth.updatePriceFeeds{value: fee}(priceUpdateData);
-        PythStructs.Price memory price = pyth.getPrice(SYRUP_USDC_FEED);
-        return price.price;
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-See [Pyth documentation](https://docs.pyth.network/price-feeds/core/getting-started) for complete integration guides.
+For how the price is calculated, see [Pricing syrupUSD assets](../crosschain/syrupusd-crosschain.md#pricing-syrupusd-assets).
 
 #### Option 3: CoinGecko / CoinMarketCap APIs
 
-CoinGecko and CoinMarketCap track syrupUSDC and syrupUSDT prices via DEX pool data. These prices can fluctuate with onchain swaps, so we recommend Options 1 & 2.
+CoinGecko and CoinMarketCap track syrupUSDC, syrupUSDT and syrupUSDG prices via DEX pool data. These prices can fluctuate with onchain swaps, so we recommend Options 1 & 2.
 
 * [CoinGecko API](https://docs.coingecko.com/)
 * [CoinMarketCap API](https://coinmarketcap.com/api/documentation/v1/)
 
 ### Which price to use
 
-<table><thead><tr><th width="308.9521484375">Use case</th><th>Recommended method</th></tr></thead><tbody><tr><td>DeFi protocols requiring oracle feeds</td><td>Option 1 (ERC-4626 functions) or Option 2 (Pyth)</td></tr><tr><td>Frontend display / portfolios</td><td>Option 1 (ERC-4626 functions) or Option 2 (Pyth)</td></tr><tr><td>Smart contract integrations</td><td>Option 1 (ERC-4626 functions)</td></tr></tbody></table>
+<table><thead><tr><th width="308.9521484375">Use case</th><th>Recommended method</th></tr></thead><tbody><tr><td>DeFi protocols requiring oracle feeds</td><td>Option 1 (ERC-4626 functions) or Option 2 (Chainlink)</td></tr><tr><td>Frontend display / portfolios</td><td>Option 1 (ERC-4626 functions) or Option 2 (Chainlink)</td></tr><tr><td>Smart contract integrations</td><td>Option 1 (ERC-4626 functions)</td></tr></tbody></table>
 
 ### Resources & contact
 
 * Partnerships & queries: [partnerships@maple.finance](mailto:partnerships@maple.finance)
-* [Pyth Price Feeds](https://docs.pyth.network/price-feeds)
+* [Chainlink Data Feeds](https://docs.chain.link/data-feeds)
+* [Chainlink Data Streams](https://docs.chain.link/data-streams)
 * [CoinGecko API](https://docs.coingecko.com/)
 * [CoinMarketCap API](https://coinmarketcap.com/api/documentation/v1/)
