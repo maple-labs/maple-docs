@@ -83,7 +83,7 @@ The January 2026 release is for the Maple CCIP Receiver on Ethereum mainnet allo
 
 ### v7 Release (November 2026)
 
-The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. It does this alongside the strategies it owns directly; after the upgrade, the loans via Open Term Loan Manager remain the same.
+The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. Each Pool keeps its own Open Term Loan Manager for open-term loans.
 
 | Auditor  | Report Link |
 | -------- | ----------- |
