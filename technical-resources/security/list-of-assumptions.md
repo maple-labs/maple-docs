@@ -14,7 +14,7 @@ This assumption is made since all tokens that are used in the Maple protocol hav
 
 #### 3. Pool Delegates are trusted actors.
 
-Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. They have a public reputation to protect, and are incentivized to act in the protocol's best interest to grow their pool's size. Lenders trust a Pool Delegate with their funds when they enter a Maple Pool.
+Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. Lenders trust a Pool Delegate with their funds when they enter a Maple Pool.
 
 #### 4. The Governor & Operational Admin are trusted actors.
 
