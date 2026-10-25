@@ -655,7 +655,7 @@ Funds have been claimed and distributed to the Pool, Pool Delegate, and Maple Tr
 
 ```solidity
     event ClaimedFundsDistributed(
-        address loan_,
+        address indexed loan_,
         uint256 principal_,
         uint256 netInterest_,
         uint256 delegateManagementFee_,
@@ -685,7 +685,7 @@ Funds that were expected to be claimed and distributed to the Pool and Maple Tre
 
 ```solidity
     event ExpectedClaim(
-        address loan_,
+        address indexed loan_,
         uint256 principal_,
         uint256 netInterest_,
         uint256 platformManagementFee_,
@@ -711,7 +711,7 @@ Funds that were liquidated and distributed to the Pool, Maple Treasury, and Borr
 
 ```solidity
     event LiquidatedFundsDistributed(
-        address loan_,
+        address indexed loan_,
         uint256 toBorrower_,
         uint256 toPool_,
         uint256 toTreasury_
@@ -735,7 +735,7 @@ Emitted when a payment is added to the LoanManager payments mapping.
 
 ```solidity
     event PaymentAdded(
-        address loan_,
+        address indexed loan_,
         uint256 platformManagementFeeRate_,
         uint256 delegateManagementFeeRate_,
         uint256 paymentDueDate_,
@@ -761,7 +761,7 @@ Emitted when a payment is removed from the LoanManager payments mapping.
 
 ```solidity
     event PaymentRemoved(
-        address loan_
+        address indexed loan_
     );
 ```
 

@@ -914,7 +914,7 @@ Emitted when funds asset is deployed into the underlying Sky strategy.
 
 ```solidity
     event StrategyFunded(
-        address strategyManager,
+        address indexed strategyManager,
         uint256 assetsIn,
         uint256 sharesMinted,
         uint256 deployedAssets
@@ -974,7 +974,7 @@ Emitted when funds asset is withdrawn from the underlying Sky strategy to a dest
 
 ```solidity
     event StrategyWithdrawal(
-        address destination,
+        address indexed destination,
         uint256 sharesBurned,
         uint256 assetsOut
     );

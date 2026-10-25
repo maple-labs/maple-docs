@@ -1261,7 +1261,7 @@ Emitted when a collateral liquidations is finished.
 
 ```solidity
     event CollateralLiquidationFinished(
-        address loan_,
+        address indexed loan_,
         uint256 unrealizedLosses_
     );
 ```
@@ -1317,8 +1317,8 @@ Emitted when the pending pool delegate accepts the ownership transfer.
 
 ```solidity
     event PendingDelegateAccepted(
-        address previousDelegate,
-        address newDelegate
+        address indexed previousDelegate,
+        address indexed newDelegate
     );
 ```
 
@@ -1337,8 +1337,8 @@ Emitted when the pending pool delegate is set.
 
 ```solidity
     event PendingDelegateSet(
-        address previousDelegate,
-        address newDelegate
+        address indexed previousDelegate,
+        address indexed newDelegate
     );
 ```
 
@@ -1367,7 +1367,7 @@ Emitted when the pool permission manager is set.
 
 ```solidity
     event PoolPermissionManagerSet(
-        address poolPermissionManager
+        address indexed poolPermissionManager
     );
 ```
 
@@ -1385,7 +1385,7 @@ Emitted when a redemption of shares from the pool is processed.
 
 ```solidity
     event RedeemProcessed(
-        address owner,
+        address indexed owner,
         uint256 redeemableShares,
         uint256 resultingAssets
     );
@@ -1407,7 +1407,7 @@ Emitted when a redemption of shares from the pool is requested.
 
 ```solidity
     event RedeemRequested(
-        address owner,
+        address indexed owner,
         uint256 shares
     );
 ```
@@ -1445,7 +1445,7 @@ Emitted when shares are removed from the pool.
 
 ```solidity
     event SharesRemoved(
-        address owner,
+        address indexed owner,
         uint256 shares
     );
 ```
@@ -1465,7 +1465,7 @@ Emitted when a new strategy is added.
 
 ```solidity
     event StrategyAdded(
-        address strategy
+        address indexed strategy
     );
 ```
 
@@ -1483,7 +1483,7 @@ Emitted when the pool's AUM exposure cap to a strategy is set.
 
 ```solidity
     event StrategyCapSet(
-        address strategy,
+        address indexed strategy,
         uint256 cap
     );
 ```
@@ -1503,7 +1503,7 @@ Emitted when a strategy manager is registered with the pool.
 
 ```solidity
     event StrategyManagerAdded(
-        address strategyManager
+        address indexed strategyManager
     );
 ```
 
@@ -1521,7 +1521,7 @@ Emitted when a strategy manager is removed from the pool.
 
 ```solidity
     event StrategyManagerRemoved(
-        address strategyManager
+        address indexed strategyManager
     );
 ```
 
@@ -1559,7 +1559,7 @@ Emitted when the withdrawal manager is set.
 
 ```solidity
     event WithdrawalManagerSet(
-        address withdrawalManager
+        address indexed withdrawalManager
     );
 ```
 

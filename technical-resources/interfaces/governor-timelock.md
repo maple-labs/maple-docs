@@ -590,8 +590,8 @@ Emitted when tokens are withdrawn from the governor timelock contract
 
 ```solidity
     event ERC20TokenWithdrawn(
-        address token,
-        address receiver,
+        address indexed token,
+        address indexed receiver,
         uint256 amount
     );
 ```
@@ -612,8 +612,8 @@ Emitted when the function timelock parameters are set
 
 ```solidity
     event FunctionTimelockSet(
-        address target,
-        bytes4 functionSelector,
+        address indexed target,
+        bytes4 indexed functionSelector,
         uint32 delay,
         uint32 executionWindow
     );
@@ -636,7 +636,7 @@ Emitted when the pending token withdrawer is set
 
 ```solidity
     event PendingTokenWithdrawerSet(
-        address newPendingTokenWithdrawer
+        address indexed newPendingTokenWithdrawer
     );
 ```
 
@@ -654,7 +654,7 @@ Emitted when a proposal is executed
 
 ```solidity
     event ProposalExecuted(
-        uint256 proposalId
+        uint256 indexed proposalId
     );
 ```
 
@@ -672,7 +672,7 @@ Emitted when a proposal is scheduled
 
 ```solidity
     event ProposalScheduled(
-        uint256 proposalId,
+        uint256 indexed proposalId,
         Proposal proposal
     );
 ```
@@ -692,7 +692,7 @@ Emitted when a proposal is unscheduled
 
 ```solidity
     event ProposalUnscheduled(
-        uint256 proposalId
+        uint256 indexed proposalId
     );
 ```
 
@@ -710,8 +710,8 @@ Emitted when a role is updated
 
 ```solidity
     event RoleUpdated(
-        bytes32 role,
-        address account,
+        bytes32 indexed role,
+        address indexed account,
         bool grantRole
     );
 ```
@@ -732,7 +732,7 @@ Emitted when the token withdrawer is accepted
 
 ```solidity
     event TokenWithdrawerAccepted(
-        address tokenWithdrawer
+        address indexed tokenWithdrawer
     );
 ```
 

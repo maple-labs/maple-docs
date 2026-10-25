@@ -252,7 +252,7 @@ Emitted when the Aave V3 strategy proxy is initialized.
 
 ```solidity
     event Initialized(
-        address strategyManager,
+        address indexed strategyManager,
         AaveV3StrategyInitializerParams params
     );
 ```

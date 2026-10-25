@@ -272,7 +272,7 @@ Emitted when the Sky strategy proxy is initialized.
 
 ```solidity
     event Initialized(
-        address strategyManager,
+        address indexed strategyManager,
         SkyStrategyInitializerParams params
     );
 ```

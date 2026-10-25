@@ -1082,7 +1082,7 @@ Emitted when assets are deployed.
 
 ```solidity
     event AssetsDeployed(
-        address deployer,
+        address indexed deployer,
         uint256 assets,
         uint256 recordedAssets,
         bytes metadata
@@ -1106,8 +1106,8 @@ Emitted when deployed assets are returned to the strategy.
 
 ```solidity
     event AssetsReturned(
-        address caller,
-        address onBehalfOf,
+        address indexed caller,
+        address indexed onBehalfOf,
         uint256 assets,
         uint256 recordedAssets,
         bytes metadata
@@ -1132,7 +1132,7 @@ Emitted when unrecorded assets are skimmed from the strategy.
 
 ```solidity
     event AssetsSkimmed(
-        address recipient,
+        address indexed recipient,
         uint256 assets
     );
 ```
@@ -1152,7 +1152,7 @@ Emitted when the deployment cap of a managed wallet is set.
 
 ```solidity
     event DeploymentCapSet(
-        address account,
+        address indexed account,
         uint256 deploymentCap
     );
 ```
@@ -1208,8 +1208,8 @@ Emitted when a loss is recognized against a deployer.
 
 ```solidity
     event LossRecognized(
-        address caller,
-        address deployer,
+        address indexed caller,
+        address indexed deployer,
         uint256 assets
     );
 ```
@@ -1230,7 +1230,7 @@ Emitted when permissions are set for a managed wallet.
 
 ```solidity
     event PermissionSet(
-        address account,
+        address indexed account,
         bool canDeployAssets,
         bool canReturnAssets,
         bool canRealizeYield
@@ -1272,7 +1272,7 @@ Emitted when assets are deployed into the allocation strategy.
 
 ```solidity
     event StrategyFunded(
-        address strategyManager,
+        address indexed strategyManager,
         uint256 assets,
         uint256 recordedAssets
     );
@@ -1330,8 +1330,8 @@ Emitted when assets are withdrawn from the allocation strategy.
 
 ```solidity
     event StrategyWithdrawn(
-        address strategyManager,
-        address destination,
+        address indexed strategyManager,
+        address indexed destination,
         uint256 assets,
         uint256 recordedAssets
     );
@@ -1374,8 +1374,8 @@ Emitted when unrealized yield is cancelled from the yield buffer.
 
 ```solidity
     event YieldCancelled(
-        address caller,
-        address recipient,
+        address indexed caller,
+        address indexed recipient,
         uint256 assets,
         uint256 recordedAssets
     );
@@ -1416,7 +1416,7 @@ Emitted when yield is transferred to the yield buffer.
 
 ```solidity
     event YieldRealized(
-        address caller,
+        address indexed caller,
         uint256 unrealizedYield,
         uint256 netYield,
         uint256 delegateFee,

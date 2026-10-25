@@ -178,8 +178,8 @@ Emitted when the withdrawal manager proxy contract is initialized.
 
 ```solidity
     event Initialized(
-        address pool,
-        address poolManager
+        address indexed pool,
+        address indexed poolManager
     );
 ```
 

@@ -861,7 +861,7 @@ Emitted when rewards are claimed from the Aave Rewards Controller.
 
 ```solidity
     event RewardsClaimed(
-        address rewardToken,
+        address indexed rewardToken,
         uint256 amount
     );
 ```
@@ -919,7 +919,7 @@ Emitted when funds asset is deployed into the underlying Aave strategy.
 
 ```solidity
     event StrategyFunded(
-        address strategyManager,
+        address indexed strategyManager,
         uint256 assetsIn,
         uint256 deployedAssets
     );
@@ -977,7 +977,7 @@ Emitted when funds asset is withdrawn from the underlying Aave strategy to a des
 
 ```solidity
     event StrategyWithdrawal(
-        address destination,
+        address indexed destination,
         uint256 assetsOut
     );
 ```

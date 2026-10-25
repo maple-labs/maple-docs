@@ -360,7 +360,7 @@ Emitted when the allocation strategy proxy is initialized.
 
 ```solidity
     event Initialized(
-        address strategyManager,
+        address indexed strategyManager,
         AllocationStrategyInitializerParams params
     );
 ```

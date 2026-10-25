@@ -70,9 +70,9 @@ Emitted after an action is executed.
 ```solidity
     event ActionExecuted(
         uint256 actionIndex,
-        ActionType actionType,
-        address strategyManager,
-        address poolManager,
+        ActionType indexed actionType,
+        address indexed strategyManager,
+        address indexed poolManager,
         uint256 amount
     );
 ```

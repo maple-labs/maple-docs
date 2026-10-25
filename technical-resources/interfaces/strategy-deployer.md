@@ -122,9 +122,9 @@ Emitted when a new strategy manager and its underlying strategy are deployed.
 
 ```solidity
     event StrategyManagerDeployed(
-        address strategyDelegate,
-        address strategyManager,
-        address underlyingStrategy
+        address indexed strategyDelegate,
+        address indexed strategyManager,
+        address indexed underlyingStrategy
     );
 ```
 

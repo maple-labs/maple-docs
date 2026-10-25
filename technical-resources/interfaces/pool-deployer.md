@@ -192,9 +192,9 @@ Emitted when a new pool is deployed.
 
 ```solidity
     event PoolDeployed(
-        address pool,
-        address poolManager,
-        address withdrawalManager,
+        address indexed pool,
+        address indexed poolManager,
+        address indexed withdrawalManager,
         address[] strategies,
         address[] strategyManagers
     );

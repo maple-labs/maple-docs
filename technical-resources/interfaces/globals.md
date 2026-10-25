@@ -1858,7 +1858,7 @@ A virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSu
 
 ```solidity
     event BootstrapMintSet(
-        address asset_,
+        address indexed asset_,
         uint256 bootstrapMint_
     );
 ```
@@ -1878,9 +1878,9 @@ A time locked call has been scheduled.
 
 ```solidity
     event CallScheduled(
-        address caller_,
-        address contract_,
-        bytes32 functionId_,
+        address indexed caller_,
+        address indexed contract_,
+        bytes32 indexed functionId_,
         bytes32 dataHash_,
         uint256 timestamp_
     );
@@ -1904,9 +1904,9 @@ A time locked call has been unscheduled.
 
 ```solidity
     event CallUnscheduled(
-        address caller_,
-        address contract_,
-        bytes32 functionId_,
+        address indexed caller_,
+        address indexed contract_,
+        bytes32 indexed functionId_,
         bytes32 dataHash_,
         uint256 timestamp_
     );
@@ -1930,8 +1930,8 @@ An account has been allowed/disallowed from deploying an instance from a particu
 
 ```solidity
     event CanDeployFromSet(
-        address factory_,
-        address account_,
+        address indexed factory_,
+        address indexed account_,
         bool canDeployFrom_
     );
 ```
@@ -1952,8 +1952,8 @@ The paused state for a given protocol contract was set.
 
 ```solidity
     event ContractPauseSet(
-        address caller_,
-        address contract_,
+        address indexed caller_,
+        address indexed contract_,
         bool contractPaused_
     );
 ```
@@ -1998,9 +1998,9 @@ The paused state for a function of a given protocol contract was set.
 
 ```solidity
     event FunctionUnpauseSet(
-        address caller_,
-        address contract_,
-        bytes4 sig_,
+        address indexed caller_,
+        address indexed contract_,
+        bytes4 indexed sig_,
         bool functionUnpaused_
     );
 ```
@@ -2022,8 +2022,8 @@ The governorship has been accepted.
 
 ```solidity
     event GovernorshipAccepted(
-        address previousGovernor_,
-        address currentGovernor_
+        address indexed previousGovernor_,
+        address indexed currentGovernor_
     );
 ```
 
@@ -2042,7 +2042,7 @@ The price for an asset has been set.
 
 ```solidity
     event ManualOverridePriceSet(
-        address asset_,
+        address indexed asset_,
         uint256 price_
     );
 ```
@@ -2062,8 +2062,8 @@ The address for the Maple treasury has been set.
 
 ```solidity
     event MapleTreasurySet(
-        address previousMapleTreasury_,
-        address currentMapleTreasury_
+        address indexed previousMapleTreasury_,
+        address indexed currentMapleTreasury_
     );
 ```
 
@@ -2082,7 +2082,7 @@ The max liquidation percent for the given pool manager has been set.
 
 ```solidity
     event MaxCoverLiquidationPercentSet(
-        address poolManager_,
+        address indexed poolManager_,
         uint256 maxCoverLiquidationPercent_
     );
 ```
@@ -2102,8 +2102,8 @@ The migration admin has been set.
 
 ```solidity
     event MigrationAdminSet(
-        address previousMigrationAdmin_,
-        address nextMigrationAdmin_
+        address indexed previousMigrationAdmin_,
+        address indexed nextMigrationAdmin_
     );
 ```
 
@@ -2122,7 +2122,7 @@ The minimum cover amount for the given pool manager has been set.
 
 ```solidity
     event MinCoverAmountSet(
-        address poolManager_,
+        address indexed poolManager_,
         uint256 minCoverAmount_
     );
 ```
@@ -2142,8 +2142,8 @@ The operational admin was set.
 
 ```solidity
     event OperationalAdminSet(
-        address previousOperationalAdmin_,
-        address currentOperationalAdmin_
+        address indexed previousOperationalAdmin_,
+        address indexed currentOperationalAdmin_
     );
 ```
 
@@ -2162,7 +2162,7 @@ The pending governor has been set.
 
 ```solidity
     event PendingGovernorSet(
-        address pendingGovernor_
+        address indexed pendingGovernor_
     );
 ```
 
@@ -2180,7 +2180,7 @@ The platform management fee rate for the given pool manager has been set.
 
 ```solidity
     event PlatformManagementFeeRateSet(
-        address poolManager_,
+        address indexed poolManager_,
         uint256 platformManagementFeeRate_
     );
 ```
@@ -2200,7 +2200,7 @@ The platform origination fee rate for the given pool manager has been set.
 
 ```solidity
     event PlatformOriginationFeeRateSet(
-        address poolManager_,
+        address indexed poolManager_,
         uint256 platformOriginationFeeRate_
     );
 ```
@@ -2220,7 +2220,7 @@ The platform service fee rate for the given pool manager has been set.
 
 ```solidity
     event PlatformServiceFeeRateSet(
-        address poolManager_,
+        address indexed poolManager_,
         uint256 platformServiceFeeRate_
     );
 ```
@@ -2240,8 +2240,8 @@ The pool manager was activated.
 
 ```solidity
     event PoolManagerActivated(
-        address poolManager_,
-        address poolDelegate_
+        address indexed poolManager_,
+        address indexed poolDelegate_
     );
 ```
 
@@ -2260,9 +2260,9 @@ The ownership of the pool manager was transferred.
 
 ```solidity
     event PoolManagerOwnershipTransferred(
-        address fromPoolDelegate_,
-        address toPoolDelegate_,
-        address poolManager_
+        address indexed fromPoolDelegate_,
+        address indexed toPoolDelegate_,
+        address indexed poolManager_
     );
 ```
 
@@ -2282,8 +2282,8 @@ The oracle for an asset has been set.
 
 ```solidity
     event PriceOracleSet(
-        address asset_,
-        address oracle_,
+        address indexed asset_,
+        address indexed oracle_,
         uint96 maxDelay_
     );
 ```
@@ -2304,7 +2304,7 @@ The protocol pause was set to a new state.
 
 ```solidity
     event ProtocolPauseSet(
-        address caller_,
+        address indexed caller_,
         bool protocolPaused_
     );
 ```
@@ -2324,8 +2324,8 @@ The security admin was set.
 
 ```solidity
     event SecurityAdminSet(
-        address previousSecurityAdmin_,
-        address currentSecurityAdmin_
+        address indexed previousSecurityAdmin_,
+        address indexed currentSecurityAdmin_
     );
 ```
 
@@ -2344,8 +2344,8 @@ The strategy manager was activated.
 
 ```solidity
     event StrategyManagerActivated(
-        address strategyManager_,
-        address strategyDelegate_
+        address indexed strategyManager_,
+        address indexed strategyDelegate_
     );
 ```
 
@@ -2364,9 +2364,9 @@ The ownership of the strategy manager was transferred.
 
 ```solidity
     event StrategyManagerOwnershipTransferred(
-        address fromStrategyDelegate_,
-        address toStrategyDelegate_,
-        address strategyManager_
+        address indexed fromStrategyDelegate_,
+        address indexed toStrategyDelegate_,
+        address indexed strategyManager_
     );
 ```
 
@@ -2386,8 +2386,8 @@ A new timelock window was set.
 
 ```solidity
     event TimelockWindowSet(
-        address contract_,
-        bytes32 functionId_,
+        address indexed contract_,
+        bytes32 indexed functionId_,
         uint128 delay_,
         uint128 duration_
     );
@@ -2410,7 +2410,7 @@ A valid borrower was set.
 
 ```solidity
     event ValidBorrowerSet(
-        address borrower_,
+        address indexed borrower_,
         bool isValid_
     );
 ```
@@ -2430,7 +2430,7 @@ A valid asset was set.
 
 ```solidity
     event ValidCollateralAssetSet(
-        address collateralAsset_,
+        address indexed collateralAsset_,
         bool isValid_
     );
 ```
@@ -2450,8 +2450,8 @@ A valid instance was set.
 
 ```solidity
     event ValidInstanceSet(
-        bytes32 instanceKey_,
-        address instance_,
+        bytes32 indexed instanceKey_,
+        address indexed instance_,
         bool isValid_
     );
 ```
@@ -2472,7 +2472,7 @@ A valid asset was set.
 
 ```solidity
     event ValidPoolAssetSet(
-        address poolAsset_,
+        address indexed poolAsset_,
         bool isValid_
     );
 ```
@@ -2492,7 +2492,7 @@ A valid pool delegate was set.
 
 ```solidity
     event ValidPoolDelegateSet(
-        address account_,
+        address indexed account_,
         bool isValid_
     );
 ```
@@ -2512,7 +2512,7 @@ A valid pool deployer was set.
 
 ```solidity
     event ValidPoolDeployerSet(
-        address poolDeployer_,
+        address indexed poolDeployer_,
         bool isValid_
     );
 ```
@@ -2532,7 +2532,7 @@ A valid strategy delegate was set.
 
 ```solidity
     event ValidStrategyDelegateSet(
-        address account_,
+        address indexed account_,
         bool isValid_
     );
 ```

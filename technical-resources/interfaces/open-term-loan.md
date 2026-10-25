@@ -10,7 +10,7 @@ The value that represents 100%, to be easily comparable with the loan rates.
 
 ```solidity
     function HUNDRED_PERCENT()
-        pure
+        view
         returns (
             uint256 hundredPercent_
         );
@@ -1088,7 +1088,7 @@ Borrower was accepted, and set to a new account.
 
 ```solidity
     event BorrowerAccepted(
-        address borrower_
+        address indexed borrower_
     );
 ```
 
@@ -1188,9 +1188,9 @@ Loan was initialized.
 
 ```solidity
     event Initialized(
-        address borrower_,
-        address lender_,
-        address fundsAsset_,
+        address indexed borrower_,
+        address indexed lender_,
+        address indexed fundsAsset_,
         uint256 principalRequested_,
         uint32[3] termDetails_,
         uint64[4] rates_
@@ -1216,7 +1216,7 @@ Lender was accepted, and set to a new account.
 
 ```solidity
     event LenderAccepted(
-        address lender_
+        address indexed lender_
     );
 ```
 
@@ -1316,7 +1316,7 @@ Payments were made.
 
 ```solidity
     event PaymentMade(
-        address lender_,
+        address indexed lender_,
         uint256 principalPaid_,
         uint256 interestPaid_,
         uint256 lateInterestPaid_,
@@ -1348,7 +1348,7 @@ Pending borrower was set.
 
 ```solidity
     event PendingBorrowerSet(
-        address pendingBorrower_
+        address indexed pendingBorrower_
     );
 ```
 
@@ -1366,7 +1366,7 @@ Pending lender was set.
 
 ```solidity
     event PendingLenderSet(
-        address pendingLender_
+        address indexed pendingLender_
     );
 ```
 
@@ -1427,7 +1427,7 @@ The loan was in default and funds and collateral was repossessed by the lender.
 ```solidity
     event Repossessed(
         uint256 fundsRepossessed_,
-        address destination_
+        address indexed destination_
     );
 ```
 
@@ -1446,9 +1446,9 @@ Some token was removed from the loan.
 
 ```solidity
     event Skimmed(
-        address token_,
+        address indexed token_,
         uint256 amount_,
-        address destination_
+        address indexed destination_
     );
 ```
 

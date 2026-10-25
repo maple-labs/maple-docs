@@ -446,7 +446,7 @@ A default version was set.
 
 ```solidity
     event DefaultVersionSet(
-        uint256 version_
+        uint256 indexed version_
     );
 ```
 
@@ -464,9 +464,9 @@ A version of an implementation, at some address, was registered, with an optiona
 
 ```solidity
     event ImplementationRegistered(
-        uint256 version_,
-        address implementationAddress_,
-        address initializer_
+        uint256 indexed version_,
+        address indexed implementationAddress_,
+        address indexed initializer_
     );
 ```
 
@@ -486,8 +486,8 @@ A proxy contract was deployed with some initialization arguments.
 
 ```solidity
     event InstanceDeployed(
-        uint256 version_,
-        address instance_,
+        uint256 indexed version_,
+        address indexed instance_,
         bytes initializationArguments_
     );
 ```
@@ -508,9 +508,9 @@ A instance has upgraded by proxying to a new implementation, with some migration
 
 ```solidity
     event InstanceUpgraded(
-        address instance_,
-        uint256 fromVersion_,
-        uint256 toVersion_,
+        address indexed instance_,
+        uint256 indexed fromVersion_,
+        uint256 indexed toVersion_,
         bytes migrationArguments_
     );
 ```
@@ -532,7 +532,7 @@ The MapleGlobals was set.
 
 ```solidity
     event MapleGlobalsSet(
-        address mapleGlobals_
+        address indexed mapleGlobals_
     );
 ```
 
@@ -550,8 +550,8 @@ An upgrade path was disabled, with an optional migrator contract.
 
 ```solidity
     event UpgradePathDisabled(
-        uint256 fromVersion_,
-        uint256 toVersion_
+        uint256 indexed fromVersion_,
+        uint256 indexed toVersion_
     );
 ```
 
@@ -570,9 +570,9 @@ An upgrade path was enabled, with an optional migrator contract.
 
 ```solidity
     event UpgradePathEnabled(
-        uint256 fromVersion_,
-        uint256 toVersion_,
-        address migrator_
+        uint256 indexed fromVersion_,
+        uint256 indexed toVersion_,
+        address indexed migrator_
     );
 ```
 

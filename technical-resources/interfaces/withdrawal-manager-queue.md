@@ -142,7 +142,7 @@ Returns if a user is able to withdraw. Required for compatibility with pool mana
     function isInExitWindow(
         address owner
     )
-        view
+        pure
         returns (
             bool isInExitWindow
         );
@@ -196,7 +196,7 @@ Gets the total amount of funds that need to be locked to fulfill exits. NOTE: Al
 
 ```solidity
     function lockedLiquidity()
-        view
+        pure
         returns (
             uint256 lockedLiquidity
         );
@@ -388,7 +388,7 @@ Gets the amount of shares that can be withdrawn. NOTE: Values just passed throug
         address owner,
         uint256 assets
     )
-        view
+        pure
         returns (
             uint256 redeemableAssets,
             uint256 resultingShares
@@ -829,7 +829,7 @@ Emitted when a manual redemption takes place.
 
 ```solidity
     event ManualSharesDecreased(
-        address owner,
+        address indexed owner,
         uint256 sharesDecreased
     );
 ```
@@ -849,8 +849,8 @@ Emitted when a manual redemption is processed.
 
 ```solidity
     event ManualSharesIncreased(
-        uint256 requestId,
-        address owner,
+        uint256 indexed requestId,
+        address indexed owner,
         uint256 sharesAdded
     );
 ```
@@ -871,7 +871,7 @@ Emitted when the withdrawal type of an account is updated.
 
 ```solidity
     event ManualWithdrawalSet(
-        address owner,
+        address indexed owner,
         bool isManual
     );
 ```
@@ -891,8 +891,8 @@ Emitted when a withdrawal request is created.
 
 ```solidity
     event RequestCreated(
-        uint256 requestId,
-        address owner,
+        uint256 indexed requestId,
+        address indexed owner,
         uint256 shares
     );
 ```
@@ -913,7 +913,7 @@ Emitted when a withdrawal request is updated.
 
 ```solidity
     event RequestDecreased(
-        uint256 requestId,
+        uint256 indexed requestId,
         uint256 shares
     );
 ```
@@ -933,8 +933,8 @@ Emitted when a withdrawal request is processed.
 
 ```solidity
     event RequestProcessed(
-        uint256 requestId,
-        address owner,
+        uint256 indexed requestId,
+        address indexed owner,
         uint256 shares,
         uint256 assets
     );
@@ -957,7 +957,7 @@ Emitted when a withdrawal request is removed.
 
 ```solidity
     event RequestRemoved(
-        uint256 requestId
+        uint256 indexed requestId
     );
 ```
 

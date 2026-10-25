@@ -889,8 +889,8 @@ Emitted when the pending strategy delegate accepts the ownership transfer.
 
 ```solidity
     event PendingStrategyDelegateAccepted(
-        address previousStrategyDelegate,
-        address newStrategyDelegate
+        address indexed previousStrategyDelegate,
+        address indexed newStrategyDelegate
     );
 ```
 
@@ -909,7 +909,7 @@ Emitted when the pending strategy delegate is set.
 
 ```solidity
     event PendingStrategyDelegateSet(
-        address pendingStrategyDelegate
+        address indexed pendingStrategyDelegate
     );
 ```
 
@@ -927,7 +927,7 @@ Emitted when a pool manager's maximum asset position is set. Zero means no cap i
 
 ```solidity
     event PoolManagerCapSet(
-        address poolManager,
+        address indexed poolManager,
         uint256 cap
     );
 ```
@@ -947,7 +947,7 @@ Emitted when a pending redemption is cancelled for a pool manager.
 
 ```solidity
     event RedemptionCancelled(
-        address poolManager,
+        address indexed poolManager,
         uint256 sharesCancelled
     );
 ```
@@ -967,7 +967,7 @@ Emitted when a pending redemption is processed for a pool manager.
 
 ```solidity
     event RedemptionProcessed(
-        address poolManager,
+        address indexed poolManager,
         uint256 sharesProcessed,
         uint256 assetsWithdrawn
     );
@@ -989,7 +989,7 @@ Emitted when a redemption is requested for a pool manager.
 
 ```solidity
     event RedemptionRequested(
-        address poolManager,
+        address indexed poolManager,
         uint256 sharesRequested
     );
 ```
@@ -1055,7 +1055,7 @@ Emitted when a pool manager funds the strategy manager.
 
 ```solidity
     event StrategyManagerFunded(
-        address poolManager,
+        address indexed poolManager,
         uint256 assetsIn,
         uint256 assetsDeposited,
         uint256 sharesMinted
@@ -1079,7 +1079,7 @@ Emitted when the underlying strategy is set.
 
 ```solidity
     event UnderlyingStrategySet(
-        address underlyingStrategy
+        address indexed underlyingStrategy
     );
 ```
 
