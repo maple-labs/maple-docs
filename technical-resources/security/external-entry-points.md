@@ -6,7 +6,7 @@ Many actors interact with Maple's contracts. This page lists every state-changin
 
 ### Pool
 
-Every Pool function passes through the Pool Permission Manager, so a permissioned Pool restricts them to allowlisted Lenders.
+The Pool Permission Manager checks every function below except `approve`. It checks deposits and mints against the receiver, exits against the share owner, and transfers against both the sender and the recipient. `requestWithdraw` and `withdraw` always revert.
 
 **Enter and Exit Functions**
 

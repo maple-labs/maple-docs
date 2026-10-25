@@ -92,7 +92,7 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 ### Funding reverts after a strategy's assets reach zero while shares remain
 
-**Behaviour.** `fundStrategyManager()` prices new shares with `_convertToShares()`, which divides by `assetsUnderManagement()` when `totalShares` is non-zero. After a full loss the division by zero reverts.
+**Behaviour.** `fundStrategyManager()` calls `fundUnderlyingStrategy()` before it prices new shares. After `recognizeLoss()`, the Aave V3 and Sky strategies reject that call with `MAV3S:LOSS_RECOGNIZED` and `MSS:LOSS_RECOGNIZED`. The Allocation Strategy has no such check, so funding reaches `_convertToShares()`, which divides by `assetsUnderManagement()` when `totalShares` is non-zero and reverts on the division by zero.
 
 **Risk.** Availability only. The Strategy Manager cannot be funded again.
 
@@ -104,7 +104,7 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Risk.** The Pool gives up its claim on any recovery if the impairment is later removed, so a redemption during an impairment should only fund Lender withdrawals that are actually processed.
 
-**Control.** Maple processes the Strategy Manager redemption and the Lender withdrawals it funds in one batch. While the batch runs, the Operational Admin can block Lenders from cancelling queued requests through the Pool Permission Manager, which controls access to `removeSharesById()` under the `WM:removeSharesById` function id.
+**Control.** On a Pool at `FUNCTION_LEVEL`, once the Pool has requested the redemption from the Strategy Manager, the Operational Admin sets Pool bitmaps for `P:removeShares` and `WM:removeSharesById` that Lenders do not hold. This stops Lenders from cancelling queued requests through either route. The Operational Admin then processes the Strategy Manager redemption and the Lender withdrawals it funds in one transaction. The bitmaps do not restrict allowlisted Lenders, and they have no effect on a Pool at `PUBLIC` or `POOL_LEVEL`.
 
 ### Remaining Pools absorb what an exiting Pool forfeits during an impairment
 
@@ -172,7 +172,7 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Risk.** An instance created directly through its factory and not configured in the same transaction could be configured by anyone.
 
-**Control.** `MapleStrategyDeployer.deploy()` and `MaplePoolDeployer` create, wire and complete configuration in one transaction. The factories only accept callers that Globals approves with `setCanDeployFrom()`, or `setValidPoolDeployer()` for the Pool Manager factory, and Maple approves only the deployer contracts for the Strategy Manager and underlying strategy factories.
+**Control.** `MapleStrategyDeployer.deploy()` and `MaplePoolDeployer` create, wire and complete configuration in one transaction. The factories only accept callers that Globals approves with `setCanDeployFrom()`, and Maple approves only the deployer contracts for the Strategy Manager and underlying strategy factories.
 
 ### Globals holds a non-zero bootstrap amount before a Pool or strategy is deployed
 
