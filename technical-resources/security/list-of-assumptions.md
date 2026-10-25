@@ -52,7 +52,7 @@ Only the Operational Admin can call `setPendingStrategyDelegate()`, and only the
 
 #### 5. Liquidity Bots and the Liquidity Router are trusted Maple infrastructure.
 
-`fundStrategyManager()` is restricted to an Operator, meaning the Strategy Delegate or an address Globals registers as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`. `processRedemption()` is open to Operators and the Operational Admin. The per-pool and strategy caps bound how much a bot can move, not when or in whose interest. Maple is assumed to secure the bot keys like the rest of its operational infrastructure and to run them in each Pool's interest. The contracts do stop bots from acting on a strategy whose `impairedAssets()` is non-zero.
+`fundStrategyManager()` is restricted to an Operator, meaning the Strategy Delegate or an address Globals registers as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`. `processRedemption()` is open to Operators and the Operational Admin. The per-pool and strategy caps bound how much a bot can move, not when or in whose interest. Maple is assumed to secure the bot keys like the rest of its operational infrastructure and to run them in each Pool's interest. The contracts do stop bots from acting on an impaired strategy, see [Liquidity Bot Actions](../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 #### 6. Managed Wallets in the Allocation Strategy are trusted actors.
 
