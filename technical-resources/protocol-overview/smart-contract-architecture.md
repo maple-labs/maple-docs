@@ -2,72 +2,7 @@
 
 In this section, the architecture of the Maple v7 protocol is outlined, including the rationale behind each decision.
 
-```mermaid
-flowchart TB
-    subgraph Singletons
-        GT[Governor Timelock]
-        G[Maple Globals]
-        T[Maple Treasury]
-        PPM[Pool Permission Manager]
-        GT -->|admin| G
-    end
-
-    subgraph Deployment
-        PD[Pool Deployer]
-        SD[Strategy Deployer]
-        PMF[Pool Manager Factory]
-        WMF[Withdrawal Manager Factory]
-        OTLMF[Open Term Loan Manager Factory]
-        LF[Open Term Loan Factory]
-        SMF[Strategy Manager Factory]
-        USF[Strategy Factories<br/>Aave V3, Sky, Allocation]
-        PD --> PMF
-        PD --> WMF
-        PD --> OTLMF
-        SD --> SMF
-        SD --> USF
-    end
-
-    subgraph PerPool["Per Pool"]
-        P[Pool]
-        PM[Pool Manager]
-        WM[Withdrawal Manager]
-        OTLM[Open Term Loan Manager]
-        LOAN[Open Term Loan]
-        P -->|manager| PM
-        PM -->|withdrawalManager| WM
-        PM -->|strategyList| OTLM
-        LOAN -->|lender| OTLM
-    end
-
-    subgraph Shared["Shared Strategy"]
-        SM[Strategy Manager]
-        US[Underlying Strategy<br/>Aave V3, Sky or Allocation]
-        V[(Aave pool, Sky PSM and sUSDS,<br/>or Managed Wallets)]
-        SM -->|underlyingStrategy| US
-        US --> V
-    end
-
-    LR[Liquidity Router]
-
-    PM -->|poolPermissionManager| PPM
-    PM -->|strategyList, strategyCapOf| SM
-    SM -->|sharesOf| PM
-    BOT[Liquidity Bot] -->|executeActions| LR
-    LR -->|fundStrategyManager, requestRedeem,<br/>cancelRedemption, processRedemption| SM
-    PMF --> PM
-    WMF --> WM
-    OTLMF --> OTLM
-    LF --> LOAN
-    SMF --> SM
-    USF --> US
-    OTLM -->|platform fees| T
-    US -->|protocol fees| T
-    G -.->|roles, allowlists, pauses| PM
-    G -.-> SM
-    G -.-> US
-    G -.-> LR
-```
+![v7 Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
 
 ## [Pool](../pools/pools.md)
 
