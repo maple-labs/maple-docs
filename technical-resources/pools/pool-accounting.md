@@ -19,8 +19,10 @@ $$
 where:
 
 $$
-\begin{align} \nonumber outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) \end{align}
+\begin{align} \nonumber outstandingInterest(t) = accountedInterest + \frac{issuanceRate \times (t - domainStart)}{PRECISION} \end{align}
 $$
+
+The Open Term Loan Manager stores `issuanceRate` scaled by `PRECISION`, which is `1e27`.
 
 ```mermaid
 flowchart LR

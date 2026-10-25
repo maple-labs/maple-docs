@@ -4,9 +4,15 @@ The Pool contract is the core unit that keeps tracks of liquidity provider share
 
 The pool contract is an implementation of a Tokenized Vault Standard ([ERC-4626](https://erc4626.info/)), implementing the full interface defined in the [specification](https://eips.ethereum.org/EIPS/eip-4626).
 
-### Call Gating & Permissions
+### Call Checks & Permissions
 
-All state-changing Pool calls are gated by the `PoolManager` via a `checkCall` modifier that delegates to `PoolManager.canCall(functionId, caller, args)`. Common function identifiers include `P:deposit`, `P:depositWithPermit`, `P:mint`, `P:mintWithPermit`, `P:redeem`, `P:requestRedeem`, and `P:removeShares`. The `PoolPermissionManager` config (allowlist/bitmaps/levels) ultimately determines which addresses can call which Pool functions.
+The Pool checks deposits, exits and transfers through a `checkCall` modifier that calls `PoolManager.canCall(functionId, caller, args)`. `canCall` asks the `PoolPermissionManager` whether one or two addresses hold the permission for the function id, and its config (allowlist/bitmaps/levels) decides the answer. The checked address depends on the function:
+
+* `P:deposit`, `P:depositWithPermit`, `P:mint`, `P:mintWithPermit`: the receiver.
+* `P:redeem`, `P:requestRedeem`, `P:removeShares`: the owner of the shares.
+* `P:transfer`, `P:transferFrom`: the account sending the shares and the recipient.
+
+`approve`, `increaseAllowance`, `decreaseAllowance` and `permit` do not run `checkCall`.
 
 ## Permits
 
@@ -18,13 +24,13 @@ Although Pools were built to be maximally compliant with the tokenized vault sta
 
 ## Withdrawals
 
-Exiting the pool by **calling `withdraw` is NOT encouraged**, as the recommended method to exit is through `redeem`. This is due to the accruing mechanism used along with the fact that the current WithdrawalManager implementation enforces that the full **share** amount withdrawn must match the amount requested for withdrawal. Since the value of the LP tokens accrues every block, the number of shares that corresponds to the withdrawal amount is continuously decreasing and will result in a different value depending on when the block is mined. It is therefore encouraged that users exit by calling `redeem` with the number of shares that they would like to exit with.
+`withdraw` and `requestWithdraw` always revert. The Pool Manager rejects them with `PM:PW:NOT_ENABLED` and `PM:RW:NOT_ENABLED`. Lenders exit by calling `requestRedeem` with the number of shares they would like to exit with, and the Withdrawal Manager then processes the redemption.
 
 ## Redeem
 
-In order to exit from a Pool, an LP must first call `requestRedeem` before they can call `redeem`. This function moves the LP's shares to another contract and subjects them to the specific withdrawal mechanism. More details on the current WithdrawalManager mechanism are included [here](withdrawal-manager.md).
+In order to exit from a Pool, an LP calls `requestRedeem`. This function moves the LP's shares to another contract and subjects them to the specific withdrawal mechanism. More details on the current WithdrawalManager mechanism are included [here](withdrawal-manager.md).
 
-Once the conditions contained in the WithdrawalManager are met, the users can call `redeem` and burn their LP shares for cash. Depending on the withdrawal mechanism the funds asset may be sent directly to the user.
+When the WithdrawalManager processes the request, it redeems the shares and sends the funds asset directly to the user. A user set to manual withdrawal instead calls `redeem` after processing to burn their LP shares for cash.
 
 **NOTE:** View functions, like `maxRedeem`, `maxWithdraw`, `previewRedeem` and `previewWithdraw`, returns values compliant to the withdrawal mechanism, meaning if that a given user is not allowed to redeem at the current time, it'll return `0`. If the user is able to redeem, it'll return the redeemable amount.
 

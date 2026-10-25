@@ -17,7 +17,7 @@ _NOTE_: Withdrawal requests can only be submitted in the form of redemption requ
 
 ### Withdrawal Queue (FIFO)
 
-The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If there is insufficient liquidity to process all requests, only the earliest requests are processed. The remainder stay in the queue to be processed later.
+The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If the Pool does not hold enough liquidity to redeem every share the call is asked to process, the call reverts with `WM:PR:LOW_LIQUIDITY` and processes nothing. Requests the call does not reach stay in the queue to be processed later.
 
 ### Request Processing
 
@@ -37,9 +37,9 @@ The formula for calculating the exchange rate of shares to assets is defined as:
 
 ### Partial Redemptions
 
-If there is insufficient liquidity available during the processing of a request, it will be processed partially (_note this is only applicable to the last request being processed in the queue_). This means that only a portion of the shares from the original withdrawal request will be redeemed. The remainder will retain their original position in the queue and may be processed again at any time. The formula for calculating the number of shares that can be redeemed is defined as follows:
+If the shares left to process run out partway through a request, that request is processed partially (_note this is only applicable to the last request being processed in the queue_). This means that only a portion of the shares from the original withdrawal request will be redeemed. The remainder keeps its original position in the queue and is processed first on the next call. The number of shares processed from a request is:
 
-`redeemableShares(user) = min(lockedShares(user), lockedShares(user) * availableAssets / requiredAssets)`
+`processedShares = min(requestShares, remainingSharesToProcess)`
 
 ### Adjust or Cancel a Request (removeSharesById)
 
@@ -48,7 +48,7 @@ The request owner can reduce or cancel a specific pending request at any time be
 1. The request exists (`WM:RSBI:INVALID_REQUEST`).
 2. The caller owns it (`WM:RSBI:NOT_OWNER`).
 3. `sharesToRemove` is non-zero and no more than the request's shares.
-4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool, for a Lender on the Pool's allowlist, and whenever no bitmap is configured for this function id.
+4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool and for a Lender on the Pool's allowlist. Otherwise a private Pool denies the call, a `POOL_LEVEL` Pool checks the Pool-wide bitmap, and a `FUNCTION_LEVEL` Pool checks the bitmap for this function id. An unset function bitmap allows the call only at `FUNCTION_LEVEL`.
 
 - If `sharesToRemove` equals the current request shares, the request is cancelled. Otherwise the request is decreased and remains in the queue with the original position.
 - Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.

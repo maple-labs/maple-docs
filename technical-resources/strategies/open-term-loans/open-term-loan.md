@@ -86,7 +86,9 @@ $$
 
 ### `paymentDueDate()`
 
-$$paymentDueDate = \min(callDueDate, impairedDueDate, normalDueDate)$$
+$$paymentDueDate = \min_{\neq 0}(callDueDate, impairedDueDate, normalDueDate)$$
+
+$$\min_{\neq 0}$$ takes the earliest date and ignores any date that is zero (unset).
 
 ### `_defaultDates()`
 
@@ -110,7 +112,7 @@ $$
 
 ### `defaultDate()`
 
-$$defaultDate = \min(callDefaultDate, impairedDefaultDate, normalDefaultDate)$$
+$$defaultDate = \min_{\neq 0}(callDefaultDate, impairedDefaultDate, normalDefaultDate)$$
 
 ## Loan Calls
 

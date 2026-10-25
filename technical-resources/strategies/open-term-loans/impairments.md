@@ -12,11 +12,11 @@ When a Loan is impaired, there are three possible outcomes to resolve the impair
 
 ### Manual Impairment Reversion
 
-A Loan impairment can be removed manually, meaning that the principal and owed interest are deducted from the `unrealizedLosses` and added to the `principalOut` and `accountedInterest` respectively. This is performed through a call to `removeLoanImpairment` that can be made either by the Pool Delegate or the Governor. In this situation, the Loan payment schedule reverts to its original state, and the Pool accounting reverts back to its regular state.
+A Loan impairment can be removed manually. Removal deducts the principal and the interest accrued up to the impairment from `unrealizedLosses` and leaves `principalOut` unchanged. It restores the Loan's issuance rate and adds the interest accrued between the impairment and the removal to `accountedInterest`. This is performed through a call to `removeLoanImpairment` that can be made either by the Pool Delegate or the Governor. In this situation, the Loan payment schedule reverts to its original state, and the Pool accounting reverts back to its regular state.
 
 ### Reversion by Payment or Refinance
 
-If a Borrower is able to make a full payment according to the Loan schedule, or the Borrower and Pool Delegate reach an agreement and are able to refinance the Loan, the impairment is removed. In this case the loan state is updated normally, setting the next payment due date a full payment interval from either the refinance or the impairment date in the case of a regular payment. The Pool removed `unrealizedLosses` and continues normal operation.
+If a Borrower is able to make a full payment according to the Loan schedule, or the Borrower and Pool Delegate reach an agreement and are able to refinance the Loan, the impairment is removed. In this case the loan state is updated normally, setting the next payment due date a full payment interval from the time of the payment or refinance. The Pool removes the `unrealizedLosses` and continues normal operation.
 
 ### Loan Default
 
