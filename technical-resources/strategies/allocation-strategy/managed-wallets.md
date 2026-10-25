@@ -2,7 +2,7 @@
 
 A Managed Wallet is a Maple-operated address that an Allocation Strategy releases capital to. It is not a protocol contract. Once assets leave the strategy through `deployAssets()`, the contract has no custody of them and no on-chain view of what happens to them until the wallet returns them or an admin writes them off.
 
-## Two permission gates
+## Two permission checks
 
 A wallet must pass two independent checks before it can act on a given strategy. Every wallet entry point (`deployAssets()`, `returnAssets()`, `realizeYield()`) re-checks both on each call, so revoking either one cuts access immediately.
 

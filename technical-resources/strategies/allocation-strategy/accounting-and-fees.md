@@ -16,7 +16,7 @@ The Allocation Strategy accounts on a cash basis. Capital with a Managed Wallet 
 
 ## Views
 
-The Strategy Manager reads two headline figures. `assetsUnderManagement()` feeds the Pool's share price. `availableToWithdraw()` gates every deployment and withdrawal.
+The Strategy Manager reads two headline figures. `assetsUnderManagement()` feeds the Pool's share price. `availableToWithdraw()` caps every deployment and withdrawal.
 
 ```
 assetsUnderManagement() = totalDeployedAssets + availableToWithdraw()
