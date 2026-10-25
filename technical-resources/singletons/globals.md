@@ -58,19 +58,15 @@ The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` and 
 | `OT_LOAN_FACTORY`, `OT_LOAN_MANAGER_FACTORY`, `OT_REFINANCER`, `BORROWER_ACTIONS` | Open Term Loan and Loan Manager | Loan factories, refinancer and borrower helper contracts |
 | `LOAN_FACTORY` | Globals | Lets valid borrowers deploy from loan factories |
 
-`FT_LOAN_MANAGER_FACTORY`, `LIQUIDATOR_FACTORY` and `WITHDRAWAL_MANAGER_FACTORY` remain for the deprecated `isFactory` and `isPoolDeployer` views that pre-v7 factories still call.
-
 `setValidMapleManagedWallet(wallet, isValid)` writes the `MAPLE_MANAGED_WALLET` key through `setValidInstanceOf`, so it carries the same Governor-or-Operational-Admin check and the same function grants and revokes. See [Managed Wallets](../strategies/allocation-strategy/managed-wallets.md).
 
 ## Deployment permissions
 
-Every v7 factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either directly or, for the Pool Manager Factory, through the deprecated `isPoolDeployer` view that now forwards to it. `canDeployFrom(factory, caller)` returns true when:
+Every v7 factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either directly or, for the Pool Manager Factory, through the `isPoolDeployer` view, which forwards to it. `canDeployFrom(factory, caller)` returns true when:
 
 * `setCanDeployFrom(factory, caller, true)` has allowed the pair (Governor or Operational Admin), or
 * the factory is a `LOAN_FACTORY` and the caller is a valid borrower, or
 * the factory is a `STRATEGY_FACTORY` and the caller is a Pool Manager.
-
-`setValidPoolDeployer` is deprecated and can only disable an address.
 
 ## Fees and bootstrap amounts
 
@@ -91,10 +87,6 @@ The Governor or Security Admin controls three switches:
 * `setFunctionUnpause(contract, sig, bool)` re-enables one function on a paused contract.
 
 Contracts call `isFunctionPaused(msg.sig)` in their `whenNotPaused` modifier, which evaluates to `(protocolPaused || isContractPaused[contract]) && !isFunctionUnpaused[contract][sig]`. See [Emergency Protocol Pause](../security/emergency-protocol-pause.md).
-
-## Parameters without a v7 consumer
-
-`setPriceOracle`, `setManualOverridePrice` and `getLatestPrice`, the cover setters `setMinCoverAmount` and `setMaxCoverLiquidationPercent`, and `setValidCollateralAsset` remain in the contract and are still callable, but no v7 contract reads the values they set.
 
 ## Proxy
 

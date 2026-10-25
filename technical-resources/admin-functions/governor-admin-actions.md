@@ -16,9 +16,6 @@ Governor only:
 * `setTimelockWindows`
 * `unscheduleCall(caller, contract, functionId, callData)` (removes any caller's scheduled call)
 * `setValidPoolAsset`
-* `setValidCollateralAsset` (no v7 consumer)
-* `setValidPoolDeployer` (deprecated, can only disable)
-* `setPriceOracle` and `setManualOverridePrice` (no v7 consumer)
 * `setImplementation` on the Globals proxy
 
 Shared with the Operational Admin:
@@ -33,7 +30,6 @@ Shared with the Operational Admin:
 * `setValidPoolDelegate`
 * `setValidStrategyDelegate`
 * `setPlatformManagementFeeRate`, `setPlatformOriginationFeeRate`, `setPlatformServiceFeeRate`
-* `setMinCoverAmount`, `setMaxCoverLiquidationPercent` (no v7 consumer)
 
 Shared with the Security Admin:
 

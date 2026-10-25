@@ -18,7 +18,7 @@ The Governor address in Globals is the `GovernorTimelock` contract. Proposals ar
 * `LoanManager.upgrade()`, function id `LM:UPGRADE`, when the Pool Delegate calls it
 * `WithdrawalManager.upgrade()`, function id `WM:UPGRADE`, when the Pool Delegate calls it
 
-The Security Admin can call both functions without a scheduled call. `PoolManager.upgrade()` is no longer in this list. In Pool Manager v5.0.0 only the Security Admin can call it, and no scheduled call is involved. Strategy Managers and strategies likewise have Security Admin only upgrades with no timelock.
+The Security Admin can call both functions without a scheduled call. Only the Security Admin can call `PoolManager.upgrade()`, with no scheduled call. Strategy Managers and strategies likewise have Security Admin only upgrades with no timelock.
 
 ### How the check works
 

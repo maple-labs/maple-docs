@@ -14,7 +14,6 @@ The Operational Admin is the address stored as `operationalAdmin` in [Maple Glob
 * `setValidPoolDelegate`
 * `setValidStrategyDelegate`
 * `setPlatformManagementFeeRate`, `setPlatformOriginationFeeRate`, `setPlatformServiceFeeRate`
-* `setMinCoverAmount`, `setMaxCoverLiquidationPercent` (no v7 consumer)
 
 ## Pool Manager
 

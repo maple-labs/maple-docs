@@ -1,6 +1,6 @@
 # Pool Delegate
 
-The Pool Delegate administers one Pool. Globals records the binding in `poolDelegates`, and the Pool Manager stores the address as `poolDelegate`. In v7 the Pool Delegate no longer moves capital into strategies. It sets how much of the Pool each strategy may hold, can request or cancel its Pool's exit from a Strategy Manager, and manages open-term loans. See [Pool Manager](../pools/pool-manager.md).
+The Pool Delegate administers one Pool. Globals records the binding in `poolDelegates`, and the Pool Manager stores the address as `poolDelegate`. The Pool Delegate does not move capital into strategies. It sets how much of the Pool each strategy may hold, can request or cancel its Pool's exit from a Strategy Manager, and manages open-term loans. See [Pool Manager](../pools/pool-manager.md).
 
 ## Pool Manager
 

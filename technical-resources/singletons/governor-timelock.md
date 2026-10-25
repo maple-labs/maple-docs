@@ -43,8 +43,8 @@
 - Grant `EXECUTOR_ROLE` to a new account:
   1) `proposeRoleUpdates([EXECUTOR_ROLE], [newExecutor], [true])` (ROLE_ADMIN).
   2) After delay, `executeProposals([id], [timelock], [abi.encodeWithSelector(timelock.updateRole.selector, EXECUTOR_ROLE, newExecutor, true)])` (EXECUTOR).
-- Set a per‑function override (e.g., extend delay for `globals.setPriceOracle`):
-  1) Schedule `setFunctionTimelockParameters(globals, setPriceOracle.selector, 2 days, 1 day)` to the timelock (PROPOSER).
+- Set a per‑function override (e.g., extend delay for `globals.setMapleTreasury`):
+  1) Schedule `setFunctionTimelockParameters(globals, setMapleTreasury.selector, 2 days, 1 day)` to the timelock (PROPOSER).
   2) Execute after the prior timelock for that function has elapsed (EXECUTOR).
 
 **Events and Monitoring**
