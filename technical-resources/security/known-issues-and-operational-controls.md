@@ -104,4 +104,4 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Risk.** The Pool gives up its claim on any recovery if the impairment is later removed, so a redemption during an impairment should only fund Lender withdrawals that are actually processed.
 
-**Control.** Maple processes the Strategy Manager redemption and the Lender withdrawals it funds in one batch. While the batch runs, the Operational Admin can block Lenders from cancelling queued requests through the Pool Permission Manager, which gates `removeSharesById()` under the `WM:removeSharesById` function id.
+**Control.** Maple processes the Strategy Manager redemption and the Lender withdrawals it funds in one batch. While the batch runs, the Operational Admin can block Lenders from cancelling queued requests through the Pool Permission Manager, which controls access to `removeSharesById()` under the `WM:removeSharesById` function id.

@@ -378,7 +378,7 @@ Every Pool function passes through the Pool Permission Manager, so a permissione
 * `fundUnderlyingStrategy`
 * `withdrawFromUnderlyingStrategy`
 
-**Managed Wallet Permissioned Functions** (addresses registered in Globals as `MAPLE_MANAGED_WALLET`, each also gated by its own permission flag)
+**Managed Wallet Permissioned Functions** (addresses registered in Globals as `MAPLE_MANAGED_WALLET`, each also needing its own permission flag)
 
 * `deployAssets`
 * `realizeYield`
