@@ -1,6 +1,6 @@
 # Security Admin
 
-The Security Admin is the address stored as `securityAdmin` in [Maple Globals](../singletons/globals.md), appointed by the Governor with `setSecurityAdmin`. It has three jobs: pausing, upgrading instances, and containing incidents on the Allocation Strategy. It has no say over fees, caps, impairments or capital movement.
+The Security Admin is the address stored as `securityAdmin` in [Maple Globals](../singletons/globals.md), appointed by the Governor with `setSecurityAdmin`. It has three jobs: pausing, upgrading instances, and containing incidents on the Allocation Strategy. It has no say over fees or impairments. On caps and capital movement, it acts only through the Allocation Strategy incident controls below.
 
 ## Globals
 
@@ -37,4 +37,4 @@ Shared with the Strategy Delegate, on each [Allocation Strategy](../strategies/a
 * `setPermissions(accounts, canDeployAssets, canReturnAssets, canRealizeYield)` can revoke every flag on any address. Granting any flag requires the address to be a registered `MAPLE_MANAGED_WALLET`.
 * `setDeploymentCaps(accounts, amounts)` can set a cap of zero on any address. A non-zero cap requires a registered `MAPLE_MANAGED_WALLET`.
 
-The Security Admin cannot call `impair`, `recognizeLoss` or any other strategy function. See [Managed Wallets](../strategies/allocation-strategy/managed-wallets.md).
+Apart from these three functions and `upgrade()`, the Security Admin cannot call any strategy function, including `impair` and `recognizeLoss`. See [Managed Wallets](../strategies/allocation-strategy/managed-wallets.md).

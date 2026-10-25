@@ -6,7 +6,7 @@
 - Prevents immediate parameter and role changes. Certain meta‑changes are themselves timelocked.
 
 **Key Roles**
-- `PROPOSER_ROLE`: Schedules proposals via `scheduleProposals(...)` or `proposeRoleUpdates(...)`.
+- `PROPOSER_ROLE`: Schedules proposals via `scheduleProposals(...)`.
 - `EXECUTOR_ROLE`: Executes queued proposals during their execution window via `executeProposals(...)`.
 - `CANCELLER_ROLE`: Unschedules proposals via `unscheduleProposals(...)` (cannot unschedule role updates).
 - `ROLE_ADMIN`: Proposes role changes using `proposeRoleUpdates(...)` and manages token withdrawer pending address.
@@ -16,7 +16,7 @@
 - Defaults are set at deployment to at least `MIN_DELAY = 1 day` and `MIN_EXECUTION_WINDOW = 1 day`.
 - Default parameters can be changed with `setDefaultTimelockParameters(delay, executionWindow)`. This function is `onlySelf` and must be executed via a timelocked proposal to the timelock itself.
 - Per‑function overrides: `setFunctionTimelockParameters(target, selector, delay, executionWindow)` supports either both values set to zero (use defaults) or both meeting minimums. This function is `onlySelf` and must be timelocked.
-- Changing a function’s timelock uses that function’s prior timelock parameters to gate the change (cannot reduce a delay instantly).
+- Changing a function’s timelock uses that function’s current timelock parameters, so a delay cannot be reduced instantly.
 
 **Proposal Lifecycle**
 - Schedule: `scheduleProposals(address[] targets, bytes[] data)` records proposals with `delayedUntil` and `validUntil` and computes a `proposalHash = keccak256(target, data)`.
@@ -26,7 +26,7 @@
 - Window semantics: Executable if `block.timestamp` is within `[delayedUntil, validUntil]` via `isExecutable(id)`.
 
 **Security Notes**
-- `onlySelf` gates sensitive meta‑operations (`updateRole`, timelock config), ensuring they can only be changed through the timelock.
+- `onlySelf` restricts sensitive meta-operations (`updateRole`, timelock config) to calls the timelock makes to itself, so they can only change through a proposal.
 - Binds execution to exact calldata via the stored `proposalHash`.
 - Disallows scheduling to EOAs (`target.code.length > 0`).
 - Role updates, once queued, cannot be unscheduled.
@@ -37,9 +37,9 @@
 
 **Typical Workflows**
 - Schedule and execute a MapleGlobals change:
-  1) `scheduleProposals([globals], [abi.encodeWithSelector(globals.setPlatformServiceFeeRate.selector, newRate)])` (PROPOSER).
+  1) `scheduleProposals([globals], [abi.encodeWithSelector(globals.setPlatformServiceFeeRate.selector, poolManager, newRate)])` (PROPOSER).
   2) Wait until `isExecutable(id)` returns true within the execution window.
-  3) `executeProposals([id], [globals], [encodedData])` (EXECUTOR).
+  3) `executeProposals([id], [globals], [abi.encodeWithSelector(globals.setPlatformServiceFeeRate.selector, poolManager, newRate)])` (EXECUTOR).
 - Grant `EXECUTOR_ROLE` to a new account:
   1) `proposeRoleUpdates([EXECUTOR_ROLE], [newExecutor], [true])` (ROLE_ADMIN).
   2) After delay, `executeProposals([id], [timelock], [abi.encodeWithSelector(timelock.updateRole.selector, EXECUTOR_ROLE, newExecutor, true)])` (EXECUTOR).
@@ -61,4 +61,4 @@
 
 **Context**
 - This contract replaces a Governor EOA so that all governor‑privileged transactions are enforced to pass through a timelock.
-- Pool Delegate–level timelocks (e.g., contract upgrades) remain documented separately. See `technical-resources/admin-functions/timelocks.md`.
+- Pool Delegate timelocks, such as contract upgrades, are covered in [Timelocked Functions](../admin-functions/timelocks.md).
