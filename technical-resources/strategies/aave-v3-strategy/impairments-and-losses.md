@@ -23,17 +23,7 @@ The call sets `isLossRecognized = true`, zeroes `lastRecordedTotalAssets` and `i
 - `assetsUnderManagement()`, `availableToWithdraw()` and `unrealizedLosses()` return `0`.
 - Fees accrued but not yet harvested are forfeited. The strategy never harvests again.
 - The aTokens stay in the contract until `recoverPosition()` moves them.
-
-Every function with the `whenLossNotRecognized` modifier reverts with `MAV3S:LOSS_RECOGNIZED` for any caller:
-
-| Reverts after a loss | Still callable |
-|---|---|
-| `fundUnderlyingStrategy` | `recoverPosition` |
-| `withdrawFromUnderlyingStrategy` | `claimRewards` |
-| `impair`, `removeImpairment` | `multicall` |
-| `setMetadata`, `setReferralCode` | `upgrade`, `migrate`, `setImplementation` |
-| `setStrategyDelegateFeeRate`, `setStrategyProtocolFeeRate` | All view functions |
-| `setUseVirtualUnderlyingBalance` | |
+- Funding, withdrawals, impairment changes and the strategy's setters revert with `MAV3S:LOSS_RECOGNIZED`.
 
 The Strategy Manager still holds shares for each Pool against an AUM of `0`. `processRedemption()` reverts with `MSM:PR:ZERO_ASSETS` because the shares convert to no assets, and `fundStrategyManager()` reverts with a division by zero in its share conversion. The Strategy Manager is finished once a loss is recognised. See [Known Issues and Operational Controls](../../security/known-issues-and-operational-controls.md).
 
