@@ -21,7 +21,7 @@
 | `Loan Term` | The conditions, such as payment interval and interest rate, that are specified in a loan agreement between a Borrower and a Pool Delegate. |
 | `Managed Wallet` | A Maple-operated address approved in Globals and permissioned on an Allocation Strategy to deploy capital, return it and report yield. |
 | `Operational Admin` | Maple's operations multisig, set in Globals. Handles day-to-day administration such as approving delegates, activating Pool Managers and Strategy Managers and setting platform fee rates, without a timelock. |
-| `Operator` | Any caller a Strategy Manager allows to move capital: the Strategy Delegate, a `LIQUIDITY_BOT` address or the `LIQUIDITY_ROUTER`. Bots lose Operator status while the Underlying Strategy is impaired. |
+| `Operator` | Any caller a Strategy Manager allows to move capital: the Strategy Delegate, a `LIQUIDITY_BOT` address or the `LIQUIDITY_ROUTER`. Bots lose Operator status while the Underlying Strategy is impaired, see [Liquidity Bot Actions](../admin-functions/liquidity-bot-actions.md#the-impairment-block). |
 | `Pending shares` | Shares a Pool has asked to redeem from a Strategy Manager that have not yet been processed. Recorded in `pendingSharesOf` and still counted in `sharesOf` until `processRedemption()` burns them. |
 | `Pool` | The ERC-4626 vault that holds lenders' deposited assets, administered by a single Pool Delegate through its Pool Manager. |
 | `Pool Delegate` | The approved entity that owns one Pool Manager. It sets the Pool's liquidity cap, fee rate and strategy caps, underwrites and funds loans, manages impairments and defaults, and can request or cancel its Pool's redemptions from a Strategy Manager. It does not fund strategies or process strategy redemptions. |

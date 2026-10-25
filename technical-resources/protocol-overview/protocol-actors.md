@@ -37,7 +37,7 @@ The Pool Delegate cannot fund a strategy, process a strategy redemption or attac
 
 ## Strategy Delegate
 
-A Strategy Delegate owns exactly one Strategy Manager, which Globals enforces through `ownedStrategyManager`. The Strategy Delegate deploys the Strategy Manager and its Underlying Strategy through `MapleStrategyDeployer.deploy()` and pays the bootstrap deposit. It is always an Operator, so it can fund, request, cancel and process redemptions even while the strategy is impaired. It also:
+A Strategy Delegate owns exactly one Strategy Manager, which Globals enforces through `ownedStrategyManager`. The Strategy Delegate deploys the Strategy Manager and its Underlying Strategy through `MapleStrategyDeployer.deploy()` and pays the bootstrap deposit. It is always an Operator, even while the strategy is impaired. It also:
 
 * Sets `poolManagerCapOf` per Pool and `strategyLiquidityCap` for the whole strategy, shared with the Operational Admin.
 * Sets `strategyDelegateFeeRate` on the Underlying Strategy. No other role can.
@@ -74,7 +74,7 @@ Liquidity Bots are Maple-operated addresses that move capital between Pools and 
 * `LIQUIDITY_ROUTER_BOT` addresses call `MapleLiquidityRouter.executeActions()`, which batches actions across Strategy Managers. The router itself is registered as `LIQUIDITY_ROUTER`.
 * `WITHDRAWAL_REDEEMER` addresses call `processRedemptions()` on a Withdrawal Manager to pay queued lender withdrawals.
 
-A Strategy Manager treats the Strategy Delegate, a `LIQUIDITY_BOT` and the `LIQUIDITY_ROUTER` as Operators. Operators fund a strategy and request, cancel and process redemptions. Every action stays inside the strategy cap, pool manager cap and strategy liquidity cap, and bots lose Operator status while the Underlying Strategy reports `impairedAssets() != 0`. See [Liquidity Bot functions](../admin-functions/liquidity-bot-actions.md) and [Liquidity Router](../strategies/liquidity-router.md).
+A Strategy Manager treats the Strategy Delegate, a `LIQUIDITY_BOT` and the `LIQUIDITY_ROUTER` as Operators. Operators fund a strategy and request, cancel and process redemptions. Every action stays inside the strategy cap, pool manager cap and strategy liquidity cap. Bots stop as soon as the Underlying Strategy reports an impairment. See [Liquidity Bot functions](../admin-functions/liquidity-bot-actions.md#the-impairment-block) and [Liquidity Router](../strategies/liquidity-router.md).
 
 ## Managed Wallet
 
