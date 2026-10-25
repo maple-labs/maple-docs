@@ -20,7 +20,7 @@ The Strategy Delegate is always an Operator, even while the Underlying Strategy 
 * `processRedemption` (Operator or Operational Admin)
 * `setPoolManagerCap`, `setStrategyLiquidityCap` (shared with the Operational Admin)
 * `acceptStrategyDelegate` (pending Strategy Delegate only)
-* `multicall` (open to anyone, each inner call re-checks the original caller)
+* `multicall` (anyone, each inner call runs its own checks against the original caller)
 
 The Strategy Delegate cannot call `upgrade`, `setPendingStrategyDelegate` or `setActive`, and cannot set `strategyCapOf` on a Pool Manager. That cap belongs to the Pool Delegate.
 
