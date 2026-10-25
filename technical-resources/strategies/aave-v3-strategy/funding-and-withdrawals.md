@@ -12,12 +12,13 @@ sequenceDiagram
     participant SM as Strategy Manager
     participant PM as Pool Manager
     participant Pool
+    participant Asset as fundsAsset
     participant AS as Aave V3 Strategy
     participant Aave as Aave V3 Pool
 
     Op->>SM: fundStrategyManager(poolManager, assetsIn, data)
     SM->>PM: requestFunds(strategy, assetsIn)
-    PM->>Pool: transferFrom(pool, strategy, assetsIn)
+    PM->>Asset: transferFrom(pool, strategy, assetsIn)
     Pool-->>AS: assetsIn
     SM->>AS: fundUnderlyingStrategy(assetsIn, data)
     Note over AS: harvest accrued fees
