@@ -127,7 +127,7 @@ The Liquidity Router only accepts calls from accounts registered under `LIQUIDIT
 
 ### 8. Set caps
 
-Apart from the Open Term Loan Manager caps set in step 5, every cap defaults to zero, so no capital moves until the delegates raise them. Caps can change at any time after the procedure.
+Apart from the Open Term Loan Manager caps set in step 5, `strategyCapOf` on each Pool Manager and `strategyLiquidityCap` on each Strategy Manager stay at zero, which blocks funding until the delegates raise them. `deploymentCapOf` on the Allocation Strategy is also zero, which blocks Managed Wallet drawdowns. A zero `poolManagerCapOf` means no per-Pool limit. Caps can change at any time after the procedure.
 
 | Cap | Contract and function | Allowed callers |
 | --- | --- | --- |
@@ -145,6 +145,6 @@ The fork test asserts the following after the procedure, and the same checks app
 * **Globals.** The implementation slot holds the v5.0.0 implementation, the instance keys and `canDeployFrom()` grants from step 2 are set, and `bootstrapMint()` is `1e6` for USDC, USDT and USDG. Each Strategy Delegate passes `isStrategyDelegate()` and `ownedStrategyManager()` returns its Strategy Manager. Each Managed Wallet is valid under `MAPLE_MANAGED_WALLET`.
 * **Factories.** `implementationOf()`, `defaultVersion()` and `upgradeEnabledForPath()` return the values registered in step 3.
 * **Pool Managers and Withdrawal Managers.** `implementation()` points at the v5.0.0 and v2.0.1 implementations, `active()` and `configured()` are true, each Pool Manager returns `type(uint256).max` from `strategyCapOf(openTermLoanManager)`, and `strategyList` holds only the Open Term Loan Manager plus the attached Strategy Managers.
-* **Strategy Managers.** `active()` and `configured()` are true, `sharesOf(address(0))` and `totalShares()` equal the bootstrap amount, `assetsUnderManagement()` is at least the bootstrap amount and `unrealizedLosses()` is zero. Each Underlying Strategy reports the factory, asset, delegate and fee rates it was deployed with.
+* **Strategy Managers.** `active()` and `configured()` are true, `sharesOf(address(0))` is within 3 units of the bootstrap amount to allow for rounding, `totalShares()` equals `sharesOf(address(0))`, `assetsUnderManagement()` is at least the bootstrap amount and `unrealizedLosses()` is zero. Each Underlying Strategy reports the factory, asset, delegate and fee rates it was deployed with.
 * **End to end.** A Lender deposits into each upgraded Pool, requests a redemption and is paid out. Each Pool then funds every Strategy Manager attached to it, requests a partial redemption and receives the assets back, with `assetsOf()`, `sharesOf()`, `assetsUnderManagement()` and `totalShares()` moving by the expected amounts.
 * **Non-upgraded Pools.** Lenders can still deposit, request and redeem on every Pool that stays on its old implementation, and the AQRU Pool can still fund, call, impair and refinance loans.
