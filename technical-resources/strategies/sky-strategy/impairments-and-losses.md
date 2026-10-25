@@ -36,8 +36,7 @@ From the moment `isLossRecognized` is `true`:
 
 - `assetsUnderManagement()`, `availableToWithdraw()` and `unrealizedLosses()` return `0`, regardless of the sUSDS balance the strategy still holds.
 - The Strategy Manager reports zero AUM, so every Pool's shares in it are worth zero and the loss is reflected in the Pool share prices the next time they are read.
-- `fundUnderlyingStrategy`, `withdrawFromUnderlyingStrategy`, `impair`, `removeImpairment`, `setFallbackTout`, `setMetadata`, `setReferralCode`, `setStrategyDelegateFeeRate` and `setStrategyProtocolFeeRate` revert with `MSS:LOSS_RECOGNIZED` for every caller. A Strategy Manager that tries to fund the strategy reverts at this check.
-- `recoverPosition()`, `multicall()` and the proxy functions (`upgrade`, `migrate`, `setImplementation`) remain callable.
+- Funding, withdrawals, impairment changes and the strategy's setters revert with `MSS:LOSS_RECOGNIZED`.
 
 ## Recovering the position
 
