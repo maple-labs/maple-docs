@@ -63,11 +63,12 @@ A Managed Wallet with `canRealizeYield` brings surplus in with `realizeYield(yie
 ```mermaid
 sequenceDiagram
     participant W as Managed Wallet
+    participant Asset as fundsAsset
     participant AS as Allocation Strategy
     participant SD as Strategy Delegate
     participant T as Maple Treasury
 
-    W->>AS: approve(strategy, yield)
+    W->>Asset: approve(strategy, yield)
     W->>AS: realizeYield(yield, duration, metadata)
     AS->>SD: delegateFee
     AS->>T: protocolFee

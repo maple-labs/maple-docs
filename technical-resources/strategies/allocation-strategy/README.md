@@ -1,6 +1,6 @@
 # Allocation Strategy
 
-Some sources of yield have no smart contract that a Pool can deposit into directly, such as activity run off-chain or spread across several protocols. The Allocation Strategy lets Maple Pools earn from them. It holds the Pool's capital and releases it to Managed Wallets, which are Maple-operated addresses with their own permissions and limits. The wallets put the capital to work and send profits back, and the strategy counts yield only once that cash arrives. A Pool can only withdraw capital that the wallets have returned.
+Some sources of yield have no smart contract that a Pool can deposit into directly, such as activity run off-chain or spread across several protocols. The Allocation Strategy lets Maple Pools earn from them. It holds the Pool's capital and releases it to Managed Wallets, which are Maple-operated addresses with their own permissions and limits. The wallets put the capital to work and send profits back, and the strategy counts yield only once that cash arrives. A Pool can withdraw the cash the strategy holds, minus yield still vesting. Capital deployed to Managed Wallets must come back before the Pool can withdraw it.
 
 The strategy sits behind a [Strategy Manager](../strategy-manager.md), which is the only contract that moves pool capital into or out of it.
 

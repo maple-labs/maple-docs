@@ -70,4 +70,4 @@ The Strategy Delegate or Operational Admin sweeps it with `skim(recipient)`. The
 
 `skim()` never changes `recordedAssets`, so `assetsUnderManagement()` and `availableToWithdraw()` are unaffected. A stray transfer therefore cannot inflate the Pool's reported AUM or share price by landing in the contract. Because it only moves the surplus, `skim()` cannot reach vesting yield (inside `recordedAssets`) or deployed capital (not in the contract at all).
 
-To bring a stray transfer back into accounting properly, skim it to a Managed Wallet and have that wallet call `returnAssets()`, which credits `deployedAssetsOf` and `recordedAssets` correctly. See [Managed Wallets](managed-wallets.md#returning-assets).
+To bring a stray transfer back into accounting, skim it to a Managed Wallet with `canRealizeYield` and have that wallet book it with `realizeYield()`, subject to `yieldCap` and the cooldown. `returnAssets()` cannot book it, because it only accepts principal up to `deployedAssetsOf[onBehalfOf]` and reverts with `MAS:RA:EXCEEDS_ASSETS` above that. See [Realizing yield](accounting-and-fees.md#realizing-yield).
