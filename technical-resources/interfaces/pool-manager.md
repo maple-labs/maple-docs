@@ -87,7 +87,7 @@ Adds a new strategy. NOTE: The PoolManager address is encoded and prepended to t
 
 ### `addStrategyManager`
 
-Registers an already-deployed strategy manager with the pool. Callable by any caller while the pool manager is not yet configured (typically during deployment). Once \`completeConfiguration()\` has been called, only the governor (timelock-gated) may call this function.
+Registers an already-deployed strategy manager with the pool. Callable by any caller while the pool manager is not yet configured (typically during deployment). Once \`completeConfiguration()\` has been called, only the governor (through its timelock) may call this function.
 
 ```solidity
     function addStrategyManager(
