@@ -48,7 +48,7 @@ Only the Operational Admin can start a handover with `setPendingStrategyDelegate
 
 ## Governor
 
-The Governor is the `GovernorTimelock` contract, the admin of Globals. A multisig proposes, and every action waits for the timelock delay before execution. The Governor sets protocol-wide parameters in Globals: the Treasury, Security Admin and Operational Admin addresses, timelock windows, valid pool and collateral assets and price oracles. Once a Pool is configured, only the Governor can attach a strategy with `addStrategy()` or `addStrategyManager()`. The Governor can also set strategy caps, impair loans, trigger defaults, set the protocol strategy fee rate, pause the protocol and manage factory versions. See [Governor functions](../admin-functions/governor-admin-actions.md) and [Governor Timelock](../singletons/governor-timelock.md).
+The Governor is the `GovernorTimelock` contract, the admin of Globals. A multisig proposes, and every action waits for the timelock delay before execution. The Governor sets protocol-wide parameters in Globals: the Treasury, Security Admin and Operational Admin addresses, timelock windows and valid pool assets. Once a Pool is configured, only the Governor can attach a strategy with `addStrategy()` or `addStrategyManager()`. The Governor can also set strategy caps, impair loans, trigger defaults, set the protocol strategy fee rate, pause the protocol and manage factory versions. See [Governor functions](../admin-functions/governor-admin-actions.md) and [Governor Timelock](../singletons/governor-timelock.md).
 
 ## Operational Admin
 

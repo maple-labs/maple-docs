@@ -75,6 +75,6 @@
 | `strategyDelegateFeeRate`, `strategyProtocolFeeRate` | Underlying Strategy fee rates on yield, scaled by `1e6`, paid to the Strategy Delegate and the Treasury. Their sum cannot exceed `1e6`. |
 | `strategyLiquidityCap` | Strategy Manager, the cap on total `assetsUnderManagement()`. |
 | `totalDeployedAssets` | Allocation Strategy, the total capital currently held by Managed Wallets. |
-| `unrealizedLosses` | An amount of losses that is accounted and represented in the Pool's value, but it still can be recovered, either through repayments or liquidations. The Pool Manager sums it across loan managers and Strategy Managers. |
+| `unrealizedLosses` | An amount of losses that is accounted and represented in the Pool's value, but can still be recovered. The Pool Manager sums it across loan managers and Strategy Managers. |
 | `yieldCap` | Allocation Strategy, the maximum `yield` a single `realizeYield()` call may report. |
 | `yieldStart`, `yieldDeadline`, `yieldLastRealized` | Allocation Strategy timestamps. Yield vests from `yieldStart` to `yieldDeadline`, and `yieldLastRealized` starts the one-hour cooldown between `realizeYield()` calls. |
