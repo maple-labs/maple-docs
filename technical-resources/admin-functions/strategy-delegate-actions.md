@@ -13,7 +13,7 @@ A Strategy Delegate cannot be revoked while it still owns a Strategy Manager.
 
 ## Strategy Manager
 
-The Strategy Delegate is always an Operator, even while the Underlying Strategy reports impaired assets. Bots lose Operator status in that case.
+The Strategy Delegate is always an Operator, even while the Underlying Strategy reports impaired assets. See [The impairment block](liquidity-bot-actions.md#the-impairment-block).
 
 * `fundStrategyManager` (Operator)
 * `requestRedeem`, `cancelRedemption` (Operator, or the Pool Delegate of the named Pool Manager)

@@ -10,7 +10,7 @@ From the contracts' point of view a bot is an address registered in [Maple Globa
 
 ## `LIQUIDITY_BOT`: direct Strategy Manager calls
 
-The [Strategy Manager](../strategies/strategy-manager.md) resolves an Operator on every call. The check passes for the Strategy Delegate unconditionally. For any other caller it returns false if `underlyingStrategy.impairedAssets()` is non-zero, and otherwise passes when the caller is registered as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`.
+The [Strategy Manager](../strategies/strategy-manager.md) resolves an Operator on every call. The check passes for the Strategy Delegate at all times. For any other caller it returns false if `underlyingStrategy.impairedAssets()` is non-zero, and otherwise passes when the caller is registered as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`.
 
 A `LIQUIDITY_BOT` can therefore call:
 
@@ -31,7 +31,7 @@ A bot address can hold one key or both.
 
 ## The impairment block
 
-Once an Underlying Strategy reports `impairedAssets() != 0`, both `LIQUIDITY_BOT` and `LIQUIDITY_ROUTER` callers fail the Operator check on that Strategy Manager. Only the Strategy Delegate can fund or process redemptions until the impairment is removed. On the Aave V3 and Sky strategies `recognizeLoss` also resets `impairedAssets` to zero. On the Allocation Strategy only `removeImpairment` or `recognizeLossAndRemoveImpairment` does.
+Once an Underlying Strategy reports `impairedAssets() != 0`, both `LIQUIDITY_BOT` and `LIQUIDITY_ROUTER` callers fail the Operator check on that Strategy Manager. Until the impairment is removed, only the Strategy Delegate can fund. The Strategy Delegate and the Pool Delegate can still request and cancel redemptions, and the Strategy Delegate and the Operational Admin can still process them. On the Aave V3 and Sky strategies `recognizeLoss` also resets `impairedAssets` to zero. On the Allocation Strategy only `removeImpairment` or `recognizeLossAndRemoveImpairment` does.
 
 ## Limits that apply to every Operator call
 
