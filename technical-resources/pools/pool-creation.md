@@ -51,7 +51,7 @@ function deployPool(
 5. Emits `PoolDeployed(pool, poolManager, withdrawalManager, strategies, strategyManagers)`.
 6. Sets the delegate management fee rate, liquidity cap, Pool Permission Manager and Withdrawal Manager, then calls `completeConfiguration`.
 
-Addresses are deterministic. `getPoolDeploymentAddresses`, `getQueueWithdrawalManagerAddress` and `getStrategiesAddresses` return the addresses a deployment will produce, so they can be registered or funded in advance.
+Addresses are deterministic. `getPoolDeploymentAddresses`, `getQueueWithdrawalManagerAddress` and `getStrategiesAddresses` return the addresses a deployment will produce.
 
 ## Activation
 

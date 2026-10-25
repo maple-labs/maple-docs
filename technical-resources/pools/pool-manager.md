@@ -54,10 +54,6 @@ A Pool accepts deposits only once `active` is true. The Governor or Operational 
 
 The Operational Admin nominates a new Pool Delegate with `setPendingPoolDelegate`. The nominee calls `acceptPoolDelegate`, which updates `ownedPoolManager` in Globals and replaces `poolDelegate`.
 
-## Multicall
-
-`multicall(bytes[] data)` delegatecalls each payload into the Pool Manager itself and bubbles up any revert. It has no access control of its own. Each inner call keeps its own check. It lets an admin set several caps, or attach a Strategy Manager and cap it, in one transaction.
-
 ## Access control
 
 | Function | Allowed callers |
@@ -77,7 +73,11 @@ The Operational Admin nominates a new Pool Delegate with `setPendingPoolDelegate
 | `triggerDefault` | Pool Delegate, Governor or Operational Admin |
 | `requestFunds` | A registered strategy or Strategy Manager |
 | `requestRedeem`, `processRedeem`, `removeShares` | Pool |
-| `multicall` | Anyone, each inner call enforces its own check |
+| `multicall` | Anyone. Each inner call runs its own checks against the original caller. |
 | `upgrade` | Security Admin |
 
 "Anyone before configuration" means the Pool Deployer in practice, because deployment and configuration happen in one transaction. Every function above except `multicall` also reverts while Globals has it paused.
+
+## Multicall
+
+`multicall(bytes[] data)` delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
