@@ -12,7 +12,7 @@ The impairment surfaces through one view:
 unrealizedLosses() = min(impairedAssets, assetsUnderManagement())
 ```
 
-The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to exit assets, so redemptions price in the write-down while reported AUM stays unchanged. While `impairedAssets` is non-zero, the Strategy Manager also stops treating the Liquidity Bot and Liquidity Router as operators. Only the Strategy Delegate can fund the strategy, and only the Strategy Delegate or Operational Admin can process redemptions. See [Strategy Manager](../strategy-manager.md).
+The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to exit assets, so redemptions price in the write-down while reported AUM stays unchanged. While `impairedAssets` is non-zero, Liquidity Bots cannot act on the Strategy Manager. See [Liquidity Bot Actions](../../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 ## Recognising a loss
 
