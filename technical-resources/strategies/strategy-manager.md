@@ -1,6 +1,6 @@
 # Strategy Manager
 
-`MapleStrategyManager` sits between any number of Pools and one Underlying Strategy. It tracks each Pool's share of the shared position, gates how much each Pool and the strategy as a whole can hold, and runs the redemption queue. It never holds assets itself. The function reference is on the [StrategyManager interface page](../interfaces/strategy-manager.md).
+`MapleStrategyManager` sits between any number of Pools and one Underlying Strategy. It tracks each Pool's share of the shared position, caps how much each Pool and the strategy as a whole can hold, and runs the redemption queue. It never holds assets itself. The function reference is on the [StrategyManager interface page](../interfaces/strategy-manager.md).
 
 ## Initialization
 
