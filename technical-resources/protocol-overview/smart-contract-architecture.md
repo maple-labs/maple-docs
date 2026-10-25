@@ -78,7 +78,7 @@ flowchart TB
 
 `MaplePoolManager` (v5.0.0) has a one-to-one relationship with its Pool and holds the Pool's administrative state: `poolDelegate`, `liquidityCap`, `delegateManagementFeeRate`, `withdrawalManager`, `poolPermissionManager` and `strategyList`. The list holds two kinds of entry, Open Term Loan Managers flagged in `isStrategy` and shared Strategy Managers flagged in `isStrategyManager`, each with a `strategyCapOf` limit.
 
-The Pool Manager computes `totalAssets()` as the Pool's balance plus each loan manager's `assetsUnderManagement()` and each Strategy Manager's `assetsOf(poolManager)`. It moves capital out of the Pool only through `requestFunds(destination, amount)`, which a loan manager or Strategy Manager calls and which reverts if the caller's exposure would exceed its cap. After configuration, only the Governor can add a strategy, and only the Operational Admin can remove a Strategy Manager, once the Pool's position in it is zero. The v5.0.0 migration removed every `strategyList` entry that is not an Open Term Loan Manager, including the pool-owned Aave and Sky strategies. See [Pool Manager](../pools/pool-manager.md).
+The Pool Manager computes `totalAssets()` as the Pool's balance plus each loan manager's `assetsUnderManagement()` and each Strategy Manager's `assetsOf(poolManager)`. It moves capital out of the Pool only through `requestFunds(destination, amount)`, which a loan manager or Strategy Manager calls and which reverts if the caller's exposure would exceed its cap. After configuration, only the Governor can add a strategy, and only the Operational Admin can remove a Strategy Manager, once the Pool's position in it is zero. See [Pool Manager](../pools/pool-manager.md).
 
 ## Open Term Loan Manager and Loans
 
