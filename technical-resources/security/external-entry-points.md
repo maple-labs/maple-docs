@@ -37,7 +37,7 @@ Every Pool function passes through the Pool Permission Manager, so a permissione
 
 ### PoolManager, StrategyManager, AaveV3Strategy, SkyStrategy, AllocationStrategy
 
-* `multicall` - Delegatecalls each entry back into the contract itself. Every inner call keeps its own access check against the original caller, so `multicall` grants nothing by itself.
+* `multicall`: delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Permissioned Functions
 
