@@ -2,24 +2,24 @@
 
 `MaplePoolManager` (v5.0.0 in v7) is the control contract for a Pool. It holds the Pool's configuration, records which strategies the Pool may fund and the cap on each, releases Pool cash to those strategies, aggregates `totalAssets` and `unrealizedLosses`, and routes withdrawal requests to the Withdrawal Manager. The Pool itself stays minimal and immutable, so anything that may need to change lives here. Full interface: [PoolManager](../interfaces/pool-manager.md).
 
-## Owned strategies and attached Strategy Managers
+## Open Term Loan Manager and attached Strategy Managers
 
-A Pool Manager holds two kinds of position. `strategyList` holds both.
+A Pool Manager holds two kinds of position: its [Open Term Loan Manager](../strategies/open-term-loans/README.md), which only this Pool funds, and Strategy Managers, which several Pools share. `strategyList` holds both.
 
-|  | Owned strategy | Strategy Manager |
+|  | Open Term Loan Manager | Strategy Manager |
 | --- | --- | --- |
 | Registered by | `addStrategy`, which deploys it from a `STRATEGY_FACTORY` | `addStrategyManager`, which attaches an existing instance |
 | Flag | `isStrategy` | `isStrategyManager` |
 | Belongs to | This Pool only | Several Pools, each holding shares |
 | Reports to the Pool Manager | `assetsUnderManagement()`, `unrealizedLosses()` | `assetsOf(poolManager)`, `unrealizedLossesOf(poolManager)` |
 
-In v7 the [Open Term Loan Manager](../strategies/open-term-loans/README.md) is the only owned strategy. Every other strategy is reached through a [Strategy Manager](../strategies/strategy-manager.md). [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md) explains the flows between them.
+Every other strategy is reached through a [Strategy Manager](../strategies/strategy-manager.md). [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md) explains the flows between them.
 
-`addStrategy(strategyFactory, salt, extraDeploymentData)` deploys the strategy from the factory with a caller-supplied salt, prepends the Pool Manager address to the deployment data, and checks that `assetsUnderManagement()` on the new strategy does not revert.
+`addStrategy(strategyFactory, salt, extraDeploymentData)` deploys the Open Term Loan Manager from its factory with a caller-supplied salt, prepends the Pool Manager address to the deployment data, and checks that `assetsUnderManagement()` on the new Open Term Loan Manager does not revert.
 
 `addStrategyManager(strategyManager)` requires that the address is not already registered as either kind, that a `STRATEGY_MANAGER_FACTORY` registered in Globals deployed it, that it supports the Pool's asset (`isAssetSupported(asset)`), and that `assetsOf(poolManager)` does not revert.
 
-`removeStrategyManager(strategyManager)` requires the Pool's position to be zero (`assetsOf(poolManager) == 0`). It removes the address from `strategyList`, clears `isStrategyManager` and resets the cap to zero. Owned strategies cannot be removed through the Pool Manager.
+`removeStrategyManager(strategyManager)` requires the Pool's position to be zero (`assetsOf(poolManager) == 0`). It removes the address from `strategyList`, clears `isStrategyManager` and resets the cap to zero. The Open Term Loan Manager cannot be removed through the Pool Manager.
 
 ## Strategy caps
 

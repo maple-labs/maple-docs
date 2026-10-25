@@ -1,6 +1,6 @@
 # Creating a Pool
 
-`MaplePoolDeployer` deploys and configures everything a Pool needs in one transaction: the Pool Manager (which deploys the Pool), the queue-based Withdrawal Manager, any owned strategies, and the Strategy Managers the Pool will fund. Only a Pool Delegate can call it. Full interface: [PoolDeployer](../interfaces/pool-deployer.md).
+`MaplePoolDeployer` deploys and configures everything a Pool needs in one transaction: the Pool Manager (which deploys the Pool), the queue-based Withdrawal Manager, the Open Term Loan Manager, and the Strategy Managers the Pool will fund. Only a Pool Delegate can call it. Full interface: [PoolDeployer](../interfaces/pool-deployer.md).
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ The deployment reverts unless all of the following hold in Globals.
 2. The Pool Deployer is registered as a pool deployer (`isPoolDeployer`) and may deploy from the Withdrawal Manager factory (`canDeployFrom`).
 3. `poolManagerFactory` is a `POOL_MANAGER_FACTORY` instance, `withdrawalManagerFactory` is a `WITHDRAWAL_MANAGER_QUEUE_FACTORY` instance and `poolPermissionManager` is a `POOL_PERMISSION_MANAGER` instance.
 4. The Pool asset is a valid pool asset (`isPoolAsset`).
-5. Each owned-strategy factory is a `STRATEGY_FACTORY` instance. Globals lets any Pool Manager deploy from such a factory without further setup.
+5. The Open Term Loan Manager factory is a `STRATEGY_FACTORY` instance. Globals lets any Pool Manager deploy from such a factory without further setup.
 6. Each Strategy Manager was deployed by a `STRATEGY_MANAGER_FACTORY` instance and supports the Pool asset. The [Strategy Deployer](../strategies/strategy-deployer.md) deploys Strategy Managers beforehand.
 7. `initialSupply` is zero, or Globals has a migration admin to receive the initial shares.
 
@@ -35,7 +35,7 @@ function deployPool(
 | `PoolConfigParams` | `poolPermissionManager` | `address` | The Pool Permission Manager |
 |  | `delegateManagementFeeRate` | `uint256` | Delegate management fee rate, where `100_0000` is 100% |
 |  | `liquidityCap` | `uint256` | Maximum `totalAssets` the Pool accepts |
-| `StrategyDeployParams` (one per owned strategy) | `factory` | `address` | Strategy factory |
+| `StrategyDeployParams` (the Open Term Loan Manager) | `factory` | `address` | Strategy factory |
 |  | `cap` | `uint256` | Strategy cap, zero leaves it unset |
 |  | `salt` | `bytes32` | CREATE2 salt |
 |  | `deploymentData` | `bytes` | Factory-specific data. The Pool Manager address is prepended automatically |

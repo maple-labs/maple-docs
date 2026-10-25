@@ -2,7 +2,7 @@
 
 The Open Term Loan Manager is responsible for managing the accounting state of all Open Term Loans tied to it via the initial funding. This includes storing the start dates and effective issuance rates resulting from the next expected payment of each Open Term Loan, accruing interest due from a Loans operations (i.e. payments, impairments, refinances, defaults), providing the total assets under management information to the Pool. The Loan Manager also handles a Loan Payment by distributing the `fundsAsset` to the Pool and the relevant Management and Service Fees to the Treasury and Pool Delegate.
 
-In v7 the Open Term Loan Manager is the only strategy a Pool owns directly. The Pool Manager deploys it through `addStrategy` and limits it with a strategy cap, see [Pool Manager](../../pools/pool-manager.md). Full interface: [OpenTermLoanManager](../../interfaces/open-term-loan-manager.md).
+Each Pool has its own Open Term Loan Manager, which no other Pool can fund. The Pool Manager deploys it through `addStrategy` and limits it with a strategy cap, see [Pool Manager](../../pools/pool-manager.md). Full interface: [OpenTermLoanManager](../../interfaces/open-term-loan-manager.md).
 
 ## Key Terms
 
