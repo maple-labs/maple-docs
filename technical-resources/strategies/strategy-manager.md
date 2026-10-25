@@ -47,11 +47,15 @@ The Strategy Delegate and Maple's Liquidity Bots operate the Strategy Manager. I
 | `processRedemption` | Operator or Operational Admin |
 | `setPendingStrategyDelegate` | Operational Admin |
 | `acceptStrategyDelegate` | The pending Strategy Delegate |
-| `multicall` | Anyone, each inner call is checked against the original caller |
+| `multicall` | Anyone. Each inner call runs its own checks against the original caller. |
 | `migrate`, `setImplementation` | Factory |
 | `upgrade` | Security Admin |
 
 Every state-changing function except `multicall()` also reverts while paused in Globals.
+
+## Multicall
+
+`multicall(bytes[] data)` delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Accounting
 
@@ -167,6 +171,3 @@ sequenceDiagram
 
 `setPendingStrategyDelegate()` overwrites any existing nomination, and `address(0)` cancels it. `acceptStrategyDelegate()` calls Globals, which requires that the current delegate owns this Strategy Manager (so the manager must already be activated), that the new delegate is a valid Strategy Delegate, and that the new delegate owns no other Strategy Manager.
 
-## Multicall
-
-`multicall(bytes[] data)` delegatecalls each entry back into the Strategy Manager, preserving `msg.sender`, so an admin can set both caps in one transaction. It needs no access check of its own because every inner call enforces its own against the original caller.
