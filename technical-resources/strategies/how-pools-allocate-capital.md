@@ -163,7 +163,7 @@ sequenceDiagram
 
 ## Actors
 
-The Pool Delegate no longer moves capital. It sets limits, and the Strategy Delegate and Liquidity Bots move assets within them. Each Strategy Manager has exactly one Strategy Delegate, and a Strategy Delegate owns at most one Strategy Manager.
+The Pool Delegate does not move capital. It sets limits, and the Strategy Delegate and Liquidity Bots move assets within them. Each Strategy Manager has exactly one Strategy Delegate, and a Strategy Delegate owns at most one Strategy Manager.
 
 | Actor | Role in allocation |
 | --- | --- |
