@@ -58,7 +58,7 @@
 | `HUNDRED_PERCENT` | `1e6` (written `100_0000` in some contracts). Every fee rate is scaled by it. |
 | `impairedAssets` | Underlying Strategy, the assets recorded as impaired. Reported through `unrealizedLosses()`, capped at `assetsUnderManagement()`. |
 | `isInstanceOf` | Globals allowlist keyed by an instance key and an address. Registers factories, bots, routers, underlying protocol contracts and Managed Wallets. |
-| `issuanceRate` | The amount of interest per second accrued by the Loan Manager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled up to 30 decimal places for improved precision. |
+| `issuanceRate` | The amount of interest per second accrued by the Loan Manager, representing the aggregate current rate of accrual of interest across all outstanding Loans. This value is scaled by `1e27` (`PRECISION`) for improved precision. |
 | `lastRecordedTotalAssets` | Aave V3 and Sky strategies, the position value after the last fee harvest. Growth above it is the yield that fees accrue on. |
 | `lateFeeRate` | A flat rate against principal that is charged when a Loan makes a late payment. |
 | `lateInterestPremiumRate` | The rate at which to increase the interest rate by for late payments. |

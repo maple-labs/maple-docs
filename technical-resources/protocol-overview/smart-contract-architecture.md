@@ -37,7 +37,7 @@ flowchart TB
         P -->|manager| PM
         PM -->|withdrawalManager| WM
         PM -->|strategyList| OTLM
-        OTLM -->|lender| LOAN
+        LOAN -->|lender| OTLM
     end
 
     subgraph Shared["Shared Strategy"]
@@ -53,7 +53,8 @@ flowchart TB
     PM -->|poolPermissionManager| PPM
     PM -->|strategyList, strategyCapOf| SM
     SM -->|sharesOf| PM
-    LR -->|executeActions| SM
+    BOT[Liquidity Bot] -->|executeActions| LR
+    LR -->|fundStrategyManager, requestRedeem,<br/>cancelRedemption, processRedemption| SM
     PMF --> PM
     WMF --> WM
     OTLMF --> OTLM

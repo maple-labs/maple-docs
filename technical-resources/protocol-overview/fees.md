@@ -93,7 +93,7 @@ Accrued fees are withdrawn from the underlying protocol and paid out whenever a 
 
 ### Allocation Strategy: cash basis
 
-The Allocation Strategy earns nothing on its own. A Managed Wallet reports profit by calling `realizeYield(yield, duration, metadata)` and transferring the yield in. Fees come out of that gross amount immediately, and the net yield vests into `recordedAssets` over `duration`:
+The Allocation Strategy earns nothing on its own. A Managed Wallet reports profit by calling `realizeYield(yield, duration, metadata)` and transferring the yield in. Fees come out of that gross amount immediately. The net yield joins `recordedAssets` at once and vests over `duration`. Until it vests, `availableToWithdraw()` and `assetsUnderManagement()` exclude it:
 
 ```
 delegateFee = yield * strategyDelegateFeeRate / 1e6

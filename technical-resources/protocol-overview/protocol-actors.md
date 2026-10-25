@@ -60,7 +60,7 @@ The Operational Admin is Maple's operations multisig. It runs day-to-day adminis
 * Shares the Strategy Delegate's cap, impairment and loss powers, sets `strategyProtocolFeeRate` with the Governor, and can process strategy redemptions.
 * Starts Pool Delegate and Strategy Delegate handovers.
 
-It cannot set a delegate fee rate, fund a strategy, or change Managed Wallet permissions and deployment caps. See [Operational Admin functions](../admin-functions/operational-admin-actions.md).
+It cannot set `strategyDelegateFeeRate`, fund a strategy, or change Managed Wallet permissions and deployment caps. See [Operational Admin functions](../admin-functions/operational-admin-actions.md).
 
 ## Security Admin
 
