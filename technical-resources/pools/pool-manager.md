@@ -34,7 +34,7 @@ Strategies pull cash from the Pool through `requestFunds(destination, amount)`. 
 3. Checks the cap: `_assetsUnderManagement(caller) + amount <= strategyCapOf[caller]`, reverting with `PM:RF:STRATEGY_CAP`.
 4. Transfers `amount` of the Pool's asset from the Pool to `destination`.
 
-The Open Term Loan Manager passes itself as the destination. A Strategy Manager passes its Underlying Strategy, so assets never sit in the Strategy Manager. The Pool approves the Pool Manager for an unlimited amount of its asset at construction and the approval cannot be revoked, so the cap is the only limit on the transfer. The Pool Delegate cover check and the locked-liquidity check of earlier versions are gone.
+The Open Term Loan Manager passes itself as the destination. A Strategy Manager passes its Underlying Strategy, so assets never sit in the Strategy Manager. The Pool approves the Pool Manager for an unlimited amount of its asset at construction and the approval cannot be revoked, so the cap is the only limit on the transfer.
 
 ## Accounting
 
@@ -42,7 +42,7 @@ The Open Term Loan Manager passes itself as the destination. A Strategy Manager 
 
 ## Defaults
 
-The Pool Delegate, the Governor or the Operational Admin calls `triggerDefault(loan)`. The Pool Manager reads the loan's `lender()`, which is the Open Term Loan Manager, and calls `triggerDefault(loan, address(0))` on it. Open-term loans hold no collateral, so there is no liquidator and the default completes in one transaction. The Pool Manager emits `CollateralLiquidationFinished(loan, losses)`. See [Defaults](../strategies/open-term-loans/defaults.md).
+The Pool Delegate, the Governor or the Operational Admin calls `triggerDefault(loan)`. The Pool Manager reads the loan's `lender()`, which is the Open Term Loan Manager, and calls `triggerDefault(loan, address(0))` on it. The default completes in one transaction, and the Pool Manager emits `CollateralLiquidationFinished(loan, losses)`. See [Defaults](../strategies/open-term-loans/defaults.md).
 
 ## Configuration and activation
 
@@ -57,10 +57,6 @@ The Operational Admin nominates a new Pool Delegate with `setPendingPoolDelegate
 ## Multicall
 
 `multicall(bytes[] data)` delegatecalls each payload into the Pool Manager itself and bubbles up any revert. It has no access control of its own. Each inner call keeps its own check. It lets an admin set several caps, or attach a Strategy Manager and cap it, in one transaction.
-
-## Pool Delegate cover
-
-v7 removes Pool Delegate cover. `depositCover`, `withdrawCover` and the cover contract are gone, and the storage slot is kept as `__deprecated_poolDelegateCover`. `hasSufficientCover()` remains as a `pure` function that always returns `true`, because the Open Term Loan Manager only pays delegate management fees when it is true.
 
 ## Access control
 
@@ -85,7 +81,3 @@ v7 removes Pool Delegate cover. `depositCover`, `withdrawCover` and the cover co
 | `upgrade` | Security Admin |
 
 "Anyone before configuration" means the Pool Deployer in practice, because deployment and configuration happen in one transaction. Every function above except `multicall` also reverts while Globals has it paused.
-
-## Upgrading to v5.0.0
-
-Existing Pool Managers upgrade through `MaplePoolManagerMigratorV500`. The migrator walks `strategyList` from the end, keeps every strategy deployed from an `OT_LOAN_MANAGER_FACTORY`, and removes everything else, clearing `isStrategy` and emitting `StrategyRemoved` for each. A fixed-term loan manager must report zero `assetsUnderManagement` or the migration reverts with `PMM:NON_ZERO_AUM`. Legacy Aave and Sky strategies are removed without a balance check, so they are emptied before the upgrade. The migrator sets no cap on the kept Open Term Loan Manager, so its `strategyCapOf` is `0` and loan funding reverts with `PM:RF:STRATEGY_CAP` until a cap is set. The v7 upgrade sets it to `type(uint256).max`. Upgrading is optional. A Pool Manager that stays on its previous implementation keeps its strategies and its cyclical Withdrawal Manager.

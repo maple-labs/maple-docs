@@ -14,8 +14,6 @@ The deployment reverts unless all of the following hold in Globals.
 6. Each Strategy Manager was deployed by a `STRATEGY_MANAGER_FACTORY` instance and supports the Pool asset. The [Strategy Deployer](../strategies/strategy-deployer.md) deploys Strategy Managers beforehand.
 7. `initialSupply` is zero, or Globals has a migration admin to receive the initial shares.
 
-Only queue-based Withdrawal Managers can be deployed. The cyclical variant is no longer supported.
-
 ## deployPool
 
 ```solidity

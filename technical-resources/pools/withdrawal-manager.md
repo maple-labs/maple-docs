@@ -76,13 +76,11 @@ Each withdrawal request can be processed automatically (by default) or manually 
 - Events: `RequestCreated`, `RequestDecreased`, `RequestRemoved`, `RequestProcessed`, `ManualWithdrawalSet`, `EmptyRedemptionsProcessed`, `ManualSharesIncreased`, `ManualSharesDecreased`.
 - Queue pointers: `nextRequestId` and `lastRequestId` track processing range. `processEmptyRedemptions(n)` advances `nextRequestId` over empty entries to keep processing efficient.
 
-### Legacy Functions
-
-For the sake of backwards compatibility with the `PoolManager`, certain functions used in the previous version of the withdrawal manager have been retained. These are as follows:
+### Other View Functions
 
 * `lockedShares()`: returns the amount of `manualSharesAvailable` (only used for manual withdrawals).
-* `lockedLiquidity()`: returns zero. The v7 Pool Manager no longer reads it, because `requestFunds` enforces strategy caps instead of locked liquidity.
-* `isInExitWindow()`: returns `true`, since there are no more withdrawal windows and withdrawals can be processed at any time.
+* `lockedLiquidity()`: returns zero. The Pool Manager does not read it.
+* `isInExitWindow()`: returns `true`, because withdrawals can be processed at any time.
 
 ### Key Assumptions
 
