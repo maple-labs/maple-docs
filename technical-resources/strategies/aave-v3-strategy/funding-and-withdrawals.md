@@ -85,12 +85,6 @@ Emits `RewardsClaimed(rewardToken, amount)`.
 
 `referralCode` is the `uint16` the strategy passes on every Aave `supply()` call. The Strategy Delegate or Operational Admin can change it with `setReferralCode(uint16)`. The call reverts if the value does not change or if a loss has been recognised. It only affects future supplies.
 
-## Multicall
-
-`multicall(bytes[] data)` lets an externally owned account batch several calls into one transaction, for example impairing the position and updating the referral code together. The strategy `delegatecall`s each entry into itself and bubbles up the first revert with its original data.
-
-`multicall` itself has no access control or pause check. It does not need one. A `delegatecall` preserves `msg.sender`, so every batched function checks its own permissions and pause state against the account that called `multicall`.
-
 ## Metadata
 
 `strategyMetadata` is a free-form string the contract stores but never interprets. It is set at initialization and the Strategy Delegate or Operational Admin can replace it with `setMetadata(string)`. The call reverts if the new value hashes to the current one or if a loss has been recognised.

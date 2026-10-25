@@ -51,7 +51,7 @@ The strategy stores only the Strategy Manager address. It reads every other acto
 | `setStrategyDelegateFeeRate` | Strategy Delegate |
 | `setStrategyProtocolFeeRate` | Governor, Operational Admin |
 | `setUseVirtualUnderlyingBalance` | Governor, Operational Admin |
-| `multicall` | Anyone. Each batched call re-checks the original caller, see [Funding and Withdrawals](funding-and-withdrawals.md#multicall). |
+| `multicall` | Anyone. Each inner call runs its own checks against the original caller. |
 | `upgrade` | Security Admin |
 | `migrate` | Factory |
 | `setImplementation` | Factory |
@@ -60,6 +60,10 @@ Two modifiers apply across the table:
 
 - `whenNotPaused` guards every state-changing function except `multicall`. Globals can pause each function selector individually, see [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
 - `whenLossNotRecognized` guards every state-changing function except `recoverPosition`, `claimRewards`, `multicall` and the proxy functions. See [Impairments and Losses](impairments-and-losses.md).
+
+## Multicall
+
+`multicall(bytes[] data)` delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Contract interfaces
 
