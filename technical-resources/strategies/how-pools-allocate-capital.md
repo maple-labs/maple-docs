@@ -1,14 +1,14 @@
 # How Pools Allocate Capital
 
-Before v7 every strategy belonged to exactly one Pool, so each Pool needed its own copy of each strategy contract. v7 keeps that model for open-term loans and adds shared strategies, where many Pools fund one position through a Strategy Manager. This page explains how the Pool Manager treats both, the three caps that bound a shared allocation, and the flows that move capital in and out.
+A Pool funds open-term loans through its own Open Term Loan Manager, and shared strategies through Strategy Managers, where many Pools fund one position. This page explains how the Pool Manager treats both, the three caps that bound a shared allocation, and the flows that move capital in and out.
 
 ## Two ways to allocate
 
-A Pool Manager keeps a single `strategyList`. Each entry is either a strategy the Pool owns (its Open Term Loan Manager, created through `addStrategy()`) or a shared Strategy Manager attached with `addStrategyManager()`. Both call `requestFunds()` on the Pool Manager to draw capital, and both report into `totalAssets()`:
+A Pool Manager keeps a single `strategyList`. Each entry is either the Pool's Open Term Loan Manager, created through `addStrategy()`, or a shared Strategy Manager attached with `addStrategyManager()`. Both call `requestFunds()` on the Pool Manager to draw capital, and both report into `totalAssets()`:
 
 ```
 totalAssets() = pool asset balance
-              + Σ strategy.assetsUnderManagement()     for owned strategies
+              + openTermLoanManager.assetsUnderManagement()
               + Σ strategyManager.assetsOf(poolManager) for Strategy Managers
 ```
 
