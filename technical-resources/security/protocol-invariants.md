@@ -24,7 +24,7 @@ Properties of pools, Strategy Managers and strategies. A condition in brackets l
    * Invariant G: block.timestamp >= domainStart
    * Invariant H: payment.startDate == loan.dateFunded() || loan.datePaid()
    * Invariant I: payment.issuanceRate == theoretical calculation (minus management fees)
-   * Invariant J: impairmentFor(loan).impairmentDate >= paymentFor(loan).startDate (if impairmentDate != 0)
+   * Invariant J: impairmentFor(loan).impairedDate >= paymentFor(loan).startDate (if impairedDate != 0)
    * Invariant K: assetsUnderManagement - unrealizedLosses - ∑outstandingValue(loan) ~= 0
    * Invariant L: fundsAsset.balanceOf(OTLM) == 0
    * Invariant M: fundsAsset.allowance(OTLM, address(loan)) == 0
