@@ -48,7 +48,7 @@ The request owner can reduce or cancel a specific pending request at any time be
 1. The request exists (`WM:RSBI:INVALID_REQUEST`).
 2. The caller owns it (`WM:RSBI:NOT_OWNER`).
 3. `sharesToRemove` is non-zero and no more than the request's shares.
-4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already gates with `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool, for a Lender on the Pool's allowlist, and whenever no bitmap is configured for this function id.
+4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool, for a Lender on the Pool's allowlist, and whenever no bitmap is configured for this function id.
 
 - If `sharesToRemove` equals the current request shares, the request is cancelled. Otherwise the request is decreased and remains in the queue with the original position.
 - Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.
