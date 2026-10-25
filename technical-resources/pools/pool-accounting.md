@@ -2,15 +2,15 @@
 
 ## Total Pool Value (`totalAssets`)
 
-The Pool Manager computes `totalAssets` as the Pool's cash plus the value of every position in `strategyList`:
+The Pool Manager computes `totalAssets` as the Pool's cash, plus the value of its Open Term Loan Manager, plus its share of each Strategy Manager it funds:
 
 $$
-\begin{align} \nonumber totalAssets = cash + \sum{assetsUnderManagement_{owned}} + \sum{assetsOf_{strategyManagers}} \end{align}
+\begin{align} \nonumber totalAssets = cash + assetsUnderManagement_{openTermLoanManager} + \sum{assetsOf_{strategyManagers}} \end{align}
 $$
 
-For an owned strategy the Pool Manager reads `assetsUnderManagement()`. For a [Strategy Manager](../strategies/strategy-manager.md), which several Pools share, it reads `assetsOf(poolManager)`, the Pool's share of the Strategy Manager's total assets in proportion to the shares the Pool Manager holds.
+For the [Open Term Loan Manager](../strategies/open-term-loans/open-term-loan-manager.md) the Pool Manager reads `assetsUnderManagement()`. For a [Strategy Manager](../strategies/strategy-manager.md), which several Pools share, it reads `assetsOf(poolManager)`, the Pool's share of the Strategy Manager's total assets in proportion to the shares the Pool Manager holds.
 
-In v7 the only owned strategy is the [Open Term Loan Manager](../strategies/open-term-loans/open-term-loan-manager.md), whose value is:
+The Open Term Loan Manager's value is:
 
 $$
 \begin{align} \nonumber assetsUnderManagement = \sum\Big({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}\Big) \end{align}
@@ -35,7 +35,7 @@ flowchart LR
 `unrealizedLosses` is a paper loss: value the Pool expects to lose but has not yet written off. The Pool Manager sums each position's unrealized loss and caps the total at `totalAssets`:
 
 $$
-\begin{align} \nonumber unrealizedLosses = \min\Big(\sum{unrealizedLosses_{owned}} + \sum{unrealizedLossesOf_{strategyManagers}},\ totalAssets\Big) \end{align}
+\begin{align} \nonumber unrealizedLosses = \min\Big(unrealizedLosses_{openTermLoanManager} + \sum{unrealizedLossesOf_{strategyManagers}},\ totalAssets\Big) \end{align}
 $$
 
 Two events raise it:
