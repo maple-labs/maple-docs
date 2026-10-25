@@ -35,7 +35,7 @@ Globals then records `ownedStrategyManager` for the delegate and sets the manage
 
 ## Access control
 
-**Operator** is not a fixed address. `_isOperator()` passes for the Strategy Delegate unconditionally. It also passes for any address registered in Globals as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`, but only while the Underlying Strategy reports `impairedAssets() == 0`. An impairment blocks automated actors immediately. It does not block the Strategy Delegate, a Pool Delegate requesting or cancelling, or the Operational Admin processing.
+The Strategy Delegate and Maple's Liquidity Bots operate the Strategy Manager. In the table below, **Operator** means the Strategy Delegate, an address registered in Globals as `LIQUIDITY_BOT`, or the Liquidity Router (`LIQUIDITY_ROUTER`). Bots and the Liquidity Router stop as soon as the Underlying Strategy reports an impairment, but the Strategy Delegate does not. See [Liquidity Bot Actions](../admin-functions/liquidity-bot-actions.md#the-impairment-block) for the details.
 
 | Function | Allowed callers |
 | --- | --- |

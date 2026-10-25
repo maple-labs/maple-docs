@@ -26,7 +26,7 @@ The router is a plain contract, not a proxy, and stores an immutable `globals` a
 
 Granting or revoking either key takes effect immediately. A bot registered only as `LIQUIDITY_BOT` can call Strategy Managers directly but cannot use the router.
 
-`executeActions()` reverts while paused in Globals, and each Strategy Manager applies its own pause check. Because the router acts as an Operator, a Strategy Manager rejects it whenever the Underlying Strategy has impaired assets. See [Access control](strategy-manager.md#access-control).
+`executeActions()` reverts while paused in Globals, and each Strategy Manager applies its own pause check. Because the router acts as an Operator, a Strategy Manager rejects it whenever the Underlying Strategy has impaired assets. See [Liquidity Bot Actions](../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 ## Actions
 
