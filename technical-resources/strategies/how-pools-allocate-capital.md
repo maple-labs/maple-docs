@@ -57,7 +57,7 @@ Two rules follow from this split:
 | `poolManagerCapOf[poolManager]` | Strategy Manager | How much this Pool may hold in the Strategy Manager, checked after shares are minted | Strategy Delegate or Operational Admin |
 | `strategyLiquidityCap` | Strategy Manager | Total assets the Strategy Manager may hold across all Pools, checked last | Strategy Delegate or Operational Admin |
 
-A cap on the Pool Manager defaults to zero, which blocks funding until the Pool Delegate raises it. The two caps on the Strategy Manager treat zero as unlimited. See [Caps](strategy-manager.md#caps) for the `type(uint256).max` block value.
+A cap on the Pool Manager defaults to zero, which blocks funding until the Pool Delegate raises it. `strategyLiquidityCap` also blocks funding at zero. `poolManagerCapOf` treats zero as unlimited and `type(uint256).max` as blocked. See [Caps](strategy-manager.md#caps).
 
 ## Funding
 

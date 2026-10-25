@@ -111,7 +111,7 @@ Conversions that move value round down, so remainders stay in the position for a
 6. Mints `convertToShares(assetsDeposited)` against the pre-deposit total. Zero shares reverts.
 7. Checks `poolManagerCapOf`, then `strategyLiquidityCap`.
 
-A cap breach reverts the whole transaction, including the deposit into the underlying protocol. If `assetsUnderManagement()` has fallen to zero while shares remain, for example after a recognized loss, step 6 divides by zero and the Strategy Manager can no longer be funded.
+A cap breach reverts the whole transaction, including the deposit into the underlying protocol. Once a loss is recognized, the Aave V3 and Sky strategies revert step 5 with `MAV3S:LOSS_RECOGNIZED` and `MSS:LOSS_RECOGNIZED`, so the Strategy Manager cannot be funded again. The Allocation Strategy has no such check. If its `assetsUnderManagement()` falls to zero while shares remain, for example after a recognized loss, step 6 divides by zero and funding reverts.
 
 ## Redemptions
 
@@ -142,7 +142,7 @@ The two steps may run back to back in one transaction, through `multicall()` or 
 
 ## Caps
 
-`strategyLiquidityCap` bounds `assetsUnderManagement()` across all Pools. Zero means no cap.
+`strategyLiquidityCap` bounds `assetsUnderManagement()` across all Pools. It is a hard limit with no special values, so zero blocks all funding. The [Strategy Deployer](strategy-deployer.md) sets it only when given a non-zero value.
 
 `poolManagerCapOf[poolManager]` bounds `assetsOf(poolManager)`, measured against live value rather than cumulative deposits, so it frees up as the Pool redeems or absorbs a loss. It has three states:
 
