@@ -11,7 +11,7 @@ Any user holding shares can perform a withdrawal request.
 * When making the request the user specifies the amount of shares that should be redeemed and that amount of shares is then transferred to the withdrawal manager where it remains in custody.
 * Once the withdrawal is processed the request is deleted and the user can again make another one.
 * The user can also adjust an existing withdrawal request, but only in a downwards manner (by returning some of the shares locked).
-* Additionally, the pool delegate or protocol admins also have the ability to remove any withdrawal request from the queue. This is primarily for the sake of preventing abuse of the withdrawal mechanism.
+* Additionally, the pool delegate or protocol admins also have the ability to remove any withdrawal request from the queue. This lets them unblock the queue if a request cannot be processed.
 
 _NOTE_: Withdrawal requests can only be submitted in the form of redemption requests (indicating the number of shares to redeem), `requestWithdraw()` and `withdraw()` functions are disabled.
 
