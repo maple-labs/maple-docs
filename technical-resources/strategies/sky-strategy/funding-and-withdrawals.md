@@ -76,7 +76,3 @@ sUSDS `deposit()` takes a Sky referral code as its last argument. The strategy p
 ## Metadata
 
 `strategyMetadata` is a free-text string stored for off-chain tooling. The contract does not interpret it. The Strategy Delegate or Operational Admin updates it with `setMetadata(metadata)`, which reverts if the new string hashes to the same value as the current one.
-
-## Multicall
-
-`multicall(data)` executes each entry of `data` as a `delegatecall` into the strategy itself and reverts with the inner error if any entry fails. It has no access control of its own because a `delegatecall` preserves `msg.sender`, so every batched function still checks the original caller. An unauthorized caller gains nothing by routing a privileged call through `multicall()`. It lets an EOA batch admin calls, for example `impair()` and `setReferralCode()`, in one transaction.

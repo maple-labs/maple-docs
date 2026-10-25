@@ -43,11 +43,15 @@ The strategy stores no admin addresses of its own. It reads the Strategy Delegat
 | `setFallbackTout`, `setReferralCode`, `setMetadata` | Strategy Delegate, Operational Admin |
 | `setStrategyDelegateFeeRate` | Strategy Delegate |
 | `setStrategyProtocolFeeRate` | Governor, Operational Admin |
-| `multicall` | Anyone. Each batched call is checked against the original caller. |
+| `multicall` | Anyone. Each inner call runs its own checks against the original caller. |
 | `upgrade` | Security Admin |
 | `migrate`, `setImplementation` | Factory |
 
 Every state-changing function except `multicall` can be paused through Globals (`isFunctionPaused`). Once a loss is recognized, every state-changing function except `recoverPosition`, `multicall` and the proxy functions reverts. See [Impairments and Losses](impairments-and-losses.md).
+
+## Multicall
+
+`multicall(bytes[] data)` delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Contract interfaces
 
