@@ -53,28 +53,22 @@ Every Pool function passes through the Pool Permission Manager, so a permissione
 * `setContractPause`
 * `setDefaultTimelockParameters`
 * `setFunctionUnpause`
-* `setManualOverridePrice`
 * `setMapleTreasury`
-* `setMaxCoverLiquidationPercent`
 * `setMigrationAdmin`
-* `setMinCoverAmount`
 * `setOperationalAdmin`
 * `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
-* `setPriceOracle`
 * `setProtocolPause`
 * `setSecurityAdmin`
 * `setTimelockWindow`
 * `setTimelockWindows`
 * `setValidBorrower`
-* `setValidCollateralAsset`
 * `setValidInstanceOf`
 * `setValidMapleManagedWallet`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
-* `setValidPoolDeployer`
 * `setValidStrategyDelegate`
 * `unscheduleCall` (any caller's scheduled call)
 
@@ -84,8 +78,6 @@ Every Pool function passes through the Pool Permission Manager, so a permissione
 * `activateStrategyManager`
 * `setBootstrapMint`
 * `setCanDeployFrom`
-* `setMaxCoverLiquidationPercent`
-* `setMinCoverAmount`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`

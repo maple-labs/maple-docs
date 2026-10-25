@@ -14,7 +14,7 @@ This assumption is made since all tokens that are used in the Maple protocol hav
 
 #### 3. Pool Delegates are trusted actors.
 
-Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. They have a public reputation to protect, and are incentivized to act in the protocol's best interest to grow their pool's size. Liquidity Providers and Stakers are inherently trusting a Pool Delegate with their funds when they enter a Maple Pool. This means that they are trusting the Pool Delegate to handle funds and liquidation proceedings in a trusted manner.
+Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. They have a public reputation to protect, and are incentivized to act in the protocol's best interest to grow their pool's size. Lenders trust a Pool Delegate with their funds when they enter a Maple Pool.
 
 #### 4. The Governor & Operational Admin are trusted actors.
 
@@ -86,10 +86,6 @@ Until `completeConfiguration()` is called, anyone can call `setUnderlyingStrateg
 
 The Strategy Deployer transfers `bootstrapMint(fundsAsset)` from the Strategy Delegate into the underlying strategy and records the resulting shares against the zero address, which protects the share price before the first Pool funds the strategy. If Globals holds zero for that asset the step is skipped and the Strategy Manager starts with no shares. Setting the amount is an operational checklist item, not something the contracts enforce.
 
-#### 14. Legacy Aave and Sky strategies are drained before a Pool is migrated.
-
-`MaplePoolManagerMigratorV500` removes pool-owned Aave and Sky strategies from `strategyList` without checking their balance. Only fixed-term loan managers must report zero `assetsUnderManagement()`. Any value left in a legacy strategy drops out of the Pool's accounting at migration, so draining them is a precondition the operator verifies.
-
-#### 15. Bootstrap shares remain outstanding for the life of a Strategy Manager.
+#### 14. Bootstrap shares remain outstanding for the life of a Strategy Manager.
 
 The shares `completeConfiguration()` records against the zero address cannot be redeemed, because `processRedemption()` only accepts a valid Pool Manager. `totalShares` therefore never returns to zero after configuration, and the share price never resets to one asset per share.

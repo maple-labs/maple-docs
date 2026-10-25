@@ -27,10 +27,10 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant L: fundsAsset.balanceOf(OTLM) == 0
    * Invariant M: fundsAsset.allowance(OTLM, address(loan)) == 0
 
-* Pool (non-liquidating)
+* Pool
    * Invariant A: totalAssets >= fundsAsset balance of pool
    * Invariant B: ∑balanceOfAssets == totalAssets (with rounding)
-   * Invariant C: totalAssets >= totalSupply (in non-liquidating scenario)
+   * Invariant C: totalAssets >= totalSupply (when the Pool has no losses)
    * Invariant D: convertToAssets(totalSupply) == totalAssets (with rounding)
    * Invariant E: convertToShares(totalAssets) == totalSupply (with rounding)
    * Invariant F: balanceOfAssets[user] >= balanceOf[user]
@@ -40,7 +40,7 @@ Properties that must hold at all times across pools, Strategy Managers and strat
    * Invariant J: unrealizedLosses == poolManager.unrealizedLosses()
    * Invariant K: convertToExitShares == poolManager.convertToExitShares()
 
-* PoolManager (non-liquidating)
+* PoolManager
    * Invariant A: totalAssets == cash + ∑assetsOf(poolManager)[strategyManager] + ∑assetsUnderManagement[strategy]
    * Invariant B: unrealizedLosses <= totalAssets
    * Invariant C: totalAssets() and unrealizedLosses() never revert

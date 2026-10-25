@@ -18,14 +18,6 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Control.** Before the final redemption is processed, the Strategy Delegate or Security Admin calls `cancelYield()` to return the unvested yield to a Managed Wallet, and `realizeYield()` is not called while no Pool holds shares.
 
-### Legacy Aave and Sky strategies are drained before a Pool is migrated
-
-**Behaviour.** `MaplePoolManagerMigratorV500` removes every strategy that is not an Open Term Loan Manager from `strategyList`. It requires zero `assetsUnderManagement()` only for fixed-term loan managers.
-
-**Risk.** Assets left in a pool-owned Aave or Sky strategy drop out of `totalAssets()` at migration and the Pool's share price falls.
-
-**Control.** The migration runbook withdraws every legacy strategy to zero and checks the balance before the Pool Manager upgrade is executed. See [v7 Deployment and Upgrade](../releases/v7-deployment-and-upgrade.md).
-
 ### Strategy Managers and Pool Managers are created through their deployers
 
 **Behaviour.** Until `completeConfiguration()` is called, a new Strategy Manager accepts `setUnderlyingStrategy()`, `setPoolManagerCap()` and `setStrategyLiquidityCap()` from any caller, and a new Pool Manager accepts `addStrategy()`, `addStrategyManager()`, `setWithdrawalManager()` and its other setters from any caller.
