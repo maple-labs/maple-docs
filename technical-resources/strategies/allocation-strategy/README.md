@@ -58,15 +58,15 @@ The strategy stores only two addresses, `strategyManager` and `fundsAsset`. It r
 | `setStrategyProtocolFeeRate`        | Governor, Operational Admin                                           |
 | `setYieldCap`                       | Strategy Delegate, Operational Admin                                  |
 | `skim`                              | Strategy Delegate, Operational Admin                                  |
-| `multicall`                         | Anyone. Each batched call enforces its own check against the original caller. |
+| `multicall` | Anyone. Each inner call runs its own checks against the original caller. |
 | `upgrade`                           | Security Admin                                                        |
 | `migrate`, `setImplementation`      | Factory                                                               |
 
 Every state-changing function except `multicall` carries `whenNotPaused`, so the Security Admin can pause any of them individually or pause the whole contract through Globals. See [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
 
-### Multicall
+## Multicall
 
-`multicall(data)` runs each entry in `data` as a `delegatecall` back into the strategy and reverts the whole batch with the first inner error. Because a `delegatecall` keeps `msg.sender`, each inner function checks the address that called `multicall()`, not the strategy itself, so routing a privileged call through `multicall()` gains nothing. The reentrancy lock is taken and released per inner call, so a batch of guarded functions runs in sequence without tripping it. A typical use is impairing one position and recognizing a loss on another in one transaction.
+`multicall(bytes[] data)` delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Interfaces
 
