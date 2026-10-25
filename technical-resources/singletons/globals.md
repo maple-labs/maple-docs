@@ -45,7 +45,7 @@ The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` and 
 | `POOL_MANAGER_FACTORY` | Globals, Strategy Manager, Pool Deployer, Loan Manager and Withdrawal Manager initializers | Identifies genuine Pool Managers |
 | `STRATEGY_MANAGER_FACTORY` | Globals, Pool Manager, Strategy Deployer, Liquidity Router, strategy initializers | Identifies genuine Strategy Managers |
 | `UNDERLYING_STRATEGY_FACTORY` | Strategy Deployer, Strategy Manager | Factories allowed to produce the strategy behind a Strategy Manager |
-| `STRATEGY_FACTORY` | Pool Manager, Globals | Factories for pool-owned strategies such as Loan Managers |
+| `STRATEGY_FACTORY` | Pool Manager, Globals | Factories the Pool Manager deploys from, such as the Open Term Loan Manager factory |
 | `LIQUIDITY_BOT` | Strategy Manager | Bots that call the Strategy Manager directly |
 | `LIQUIDITY_ROUTER` | Strategy Manager | The `MapleLiquidityRouter` contract |
 | `LIQUIDITY_ROUTER_BOT` | Liquidity Router | Bots allowed to call `executeActions` |
