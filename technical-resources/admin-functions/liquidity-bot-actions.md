@@ -42,7 +42,7 @@ Once an Underlying Strategy reports `impairedAssets() != 0`, both `LIQUIDITY_BOT
 
 ## `WITHDRAWAL_REDEEMER`: the LP redemption queue
 
-The queue [Withdrawal Manager](../pools/withdrawal-manager.md) gates its processing functions with `onlyRedeemer`, which passes for a registered `WITHDRAWAL_REDEEMER`, the Pool Delegate or the Operational Admin:
+The queue [Withdrawal Manager](../pools/withdrawal-manager.md) restricts its processing functions with `onlyRedeemer`, which passes for a registered `WITHDRAWAL_REDEEMER`, the Pool Delegate or the Operational Admin:
 
 * `processRedemptions(maxSharesToProcess)` fills requests in order and reverts with `WM:PR:LOW_LIQUIDITY` if the Pool cannot cover the full amount.
 * `processEmptyRedemptions(numberOfRequests)` skips cancelled requests at the head of the queue.

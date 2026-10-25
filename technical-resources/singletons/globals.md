@@ -14,7 +14,7 @@
 
 The Governor is the `GovernorTimelock` contract, so every Governor-only function below executes after that contract's delay. See [Governor Timelock](governor-timelock.md).
 
-Three modifiers gate the setters: `onlyGovernor`, `onlyGovernorOrOperationalAdmin` and `onlyGovernorOrSecurityAdmin`. The [Admin Functions](../admin-functions/README.md) pages list which functions each role reaches.
+Three modifiers restrict who can call the setters: `onlyGovernor`, `onlyGovernorOrOperationalAdmin` and `onlyGovernorOrSecurityAdmin`. The [Admin Functions](../admin-functions/README.md) pages list which functions each role reaches.
 
 ## Delegate registries
 
@@ -34,7 +34,7 @@ The Governor or Operational Admin calls the approve and activate functions. The 
 * `activateStrategyManager` checks that the Strategy Manager came from a factory registered under `STRATEGY_MANAGER_FACTORY`, that its `strategyDelegate()` is approved and owns nothing yet, then records the binding and calls `setActive(true)` on the Strategy Manager. A Strategy Manager rejects funding until this call happens.
 * `transferOwnedStrategyManager(from, to)` is called by the Strategy Manager, not by an admin. `msg.sender` must be the Strategy Manager that `from` owns, and `to` must be an approved delegate that owns nothing. The Strategy Manager calls it from `acceptStrategyDelegate()`, which completes the handover that the Operational Admin starts with `setPendingStrategyDelegate()`.
 
-The registry also gates deployment. `MapleStrategyDeployer.deploy()` and the Strategy Manager initializer both require `isStrategyDelegate(msg.sender)`, so only an approved Strategy Delegate can create a Strategy Manager. See [Strategy Deployer](../strategies/strategy-deployer.md) and [Strategy Manager](../strategies/strategy-manager.md).
+The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` and the Strategy Manager initializer both require `isStrategyDelegate(msg.sender)`, so only an approved Strategy Delegate can create a Strategy Manager. See [Strategy Deployer](../strategies/strategy-deployer.md) and [Strategy Manager](../strategies/strategy-manager.md).
 
 ## Instance allowlists
 
