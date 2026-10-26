@@ -35,6 +35,12 @@ Pool delegates or protocol administrators can modify the allowlist of lenders us
 
 The `hasPermission` function is responsible for determining whether a lender or a group of lenders has permission to access specific functions within a lending pool. These actions can include, but are not limited to, depositing assets, withdrawing assets, or any other operations defined by the lending protocol. A complete list of functions checked can be found in the `canCall()` function of the `PoolManager`.
 
+### Function IDs
+
+The Pool Manager checks these function ids through `canCall()`: `P:deposit`, `P:depositWithPermit`, `P:mint`, `P:mintWithPermit`, `P:redeem`, `P:withdraw`, `P:requestRedeem`, `P:requestWithdraw`, `P:removeShares`, `P:transfer` and `P:transferFrom`.
+
+The queue Withdrawal Manager adds one id of its own. `removeSharesById(requestId, shares)`, which lets a request owner reclaim part of a specific request, first checks that the caller owns the request and then calls `hasPermission(poolManager, msg.sender, "WM:removeSharesById")`, reverting with `WM:RSBI:NOT_ALLOWED` on failure. This brings it in line with `P:removeShares`, which was already checked through the Pool Manager. No bitmap needs to be set for the new id. A lender who already clears the Pool's permission level passes, because an unset bitmap matches every lender, so the function stays open on existing Pools unless a Pool Delegate sets a bitmap for it.
+
 The `hasPermission` function evaluates whether access should be granted based on the following steps:
 
 * Public Pool: If the lending pool is set to the `PUBLIC` permission level, the function automatically allows access. This means that lenders can freely interact with the pool, as there are no restrictions.

@@ -1,73 +1,76 @@
-# Overview
+# Governor
 
-The Governor is the on‑chain `GovernorTimelock` contract managed by a multisig (and other designated roles). It controls administrative functions in the protocol. See `technical-resources/singletons/governor-timelock.md` for scheduling and execution flows.
-
-
-# Governor-Permissioned Functions
+The Governor is the `GovernorTimelock` contract. Every function below is scheduled and executed through it, so it lands only after that contract's delay. See [Governor Timelock](../singletons/governor-timelock.md) for the proposal flow. Where a function is shared with another role, the note says so.
 
 ## Globals
 
-* `acceptGovernor`
-* `activatePoolManager`
-* `setBootstrapMint`
-* `setCanDeployFrom`
-* `setContractPause`
-* `setDefaultTimelockParameters`
-* `setFunctionUnpause`
-* `setManualOverridePrice`
-* `setMapleTreasury`
-* `setMaxCoverLiquidationPercent`
-* `setMigrationAdmin`
-* `setMinCoverAmount`
+Governor only:
+
+* `setPendingGovernor`, then `acceptGovernor` (called by the pending Governor)
 * `setOperationalAdmin`
-* `setPendingGovernor`
-* `setPlatformManagementFeeRate`
-* `setPlatformOriginationFeeRate`
-* `setPlatformServiceFeeRate`
-* `setPriceOracle`
-* `setProtocolPause`
 * `setSecurityAdmin`
+* `setMapleTreasury`
+* `setMigrationAdmin`
+* `setDefaultTimelockParameters`
 * `setTimelockWindow`
 * `setTimelockWindows`
-* `setValidBorrower`
-* `setValidCollateralAsset`
-* `setValidInstanceOf`
+* `unscheduleCall(caller, contract, functionId, callData)` (removes any caller's scheduled call)
 * `setValidPoolAsset`
+* `setImplementation` on the Globals proxy
+
+Shared with the Operational Admin:
+
+* `activatePoolManager`
+* `activateStrategyManager`
+* `setBootstrapMint`
+* `setCanDeployFrom`
+* `setValidBorrower`
+* `setValidInstanceOf`
+* `setValidMapleManagedWallet`
 * `setValidPoolDelegate`
-* `setValidPoolDeployer`
-* `unscheduleCall`
+* `setValidStrategyDelegate`
+* `setPlatformManagementFeeRate`, `setPlatformOriginationFeeRate`, `setPlatformServiceFeeRate`
 
-Note: `setValidPoolDeployer` is deprecated for enabling deployers and only supports disabling. Use `setCanDeployFrom(factory, account, true)` together with `setValidInstanceOf(<FACTORY_KEY>, factory, true)` to allow deployments.
+Shared with the Security Admin:
 
-## PoolManager
+* `setProtocolPause`
+* `setContractPause`
+* `setFunctionUnpause`
 
-* `addStrategy`
-* `setDelegateManagementFeeRate`
-* `setLiquidityCap`
-* `setPoolPermissionManager`
-* `setWithdrawalManager` (only before initial configuration; callable prior to `completeConfiguration`)
-* `triggerDefault`
+To let an account deploy from a factory, call `setValidInstanceOf(<FACTORY_KEY>, factory, true)` and `setCanDeployFrom(factory, account, true)`. See [Maple Globals](../singletons/globals.md).
 
-## Open Term Loan
+## Pool Manager
 
-* `skim`
+* `addStrategy` (Governor only once the Pool is configured)
+* `addStrategyManager` (Governor only once the Pool is configured)
+* `setDelegateManagementFeeRate`, `setLiquidityCap`, `setStrategyCap`, `setPoolPermissionManager` (shared with the Pool Delegate and Operational Admin)
+* `triggerDefault` (shared with the Pool Delegate and Operational Admin)
+
+The Governor cannot call `upgrade` on a Pool Manager. That is the Security Admin's function.
 
 ## Open Term Loan Manager
 
-* `impairLoan`
-* `removeLoanImpairment`
+* `impairLoan` (shared with the Pool Delegate)
+* `removeLoanImpairment` (the Governor can remove any impairment, the Pool Delegate only one it made itself)
+
+## Open Term Loan
+
+* `skim` (shared with the borrower)
+
+## Underlying Strategies
+
+On each Aave V3, Sky and Allocation Strategy, shared with the Operational Admin:
+
+* `setStrategyProtocolFeeRate` (the sum with `strategyDelegateFeeRate` must not exceed `HUNDRED_PERCENT`)
+* `setUseVirtualUnderlyingBalance` (Aave V3 only)
 
 ## Pool Permission Manager
 
-* `configurePool`
-* `setLenderAllowlist`
-* `setLenderBitmaps`
-* `setPermissionAdmin`
-* `setPoolBitmaps`
-* `setPoolPermissionLevel`
+* `setPermissionAdmin` (shared with the Operational Admin)
+* `setLenderBitmaps` (shared with the Operational Admin and permission admins)
+* `configurePool`, `setLenderAllowlist`, `setPoolBitmaps`, `setPoolPermissionLevel` (shared with the Pool's Pool Delegate and the Operational Admin)
+* `setImplementation` on the Pool Permission Manager proxy
 
-## Upgrading Contracts
+## Proxy factories
 
-The Governor can upgrade the following contracts:
-* Globals
-* Withdrawal Manager
+On every `MapleProxyFactory` (Pool Manager, Withdrawal Manager, Loan, Loan Manager, Strategy Manager and each strategy factory) the Governor alone can call `registerImplementation`, `enableUpgradePath`, `disableUpgradePath`, `setDefaultVersion` and `setGlobals`. No instance can be upgraded to a version the Governor has not registered and enabled.

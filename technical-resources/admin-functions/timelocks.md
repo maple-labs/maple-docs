@@ -1,45 +1,42 @@
-# Overview
+# Timelocked Functions
 
-Timelocks are a mechanism to delay an action that may have significant effects. This allows any stakeholders that foresee the transaction impacting them negatively the appropriate time to react accordingly.
+A timelock delays an action with significant effects so that anyone it affects has time to react. Maple uses two mechanisms.
 
-# Governor-Level vs Pool-Delegate Timelocks
+| Mechanism | Who it applies to | Where it is enforced |
+|---|---|---|
+| Governor Timelock | Every Governor function | The `GovernorTimelock` contract, which is the Governor |
+| Scheduled calls in Globals | Pool Delegate upgrades | `isValidScheduledCall` in `MapleGlobals`, checked by the target contract |
 
-- Governor‑privileged actions now route through a dedicated `GovernorTimelock` contract. See `technical-resources/singletons/governor-timelock.md` for roles, lifecycle, and usage.
-- Pool Delegate–level timelocks (e.g., PoolManager/LoanManager/WithdrawalManager upgrades) continue to use the protocol timelock checks documented on this page.
+## Governor Timelock
 
-# Affected Actions
+The Governor address in Globals is the `GovernorTimelock` contract. Proposals are scheduled, wait out a delay, and are executed within a window. Every function on the [Governor](governor-admin-actions.md) page is delayed this way, including `PoolManager.addStrategyManager()`, `PoolManager.addStrategy()`, role and allowlist changes in Globals, and registering upgrade paths on factories. See [Governor Timelock](../singletons/governor-timelock.md) for roles and the proposal lifecycle.
 
-The following actions require a timelocked execution:
-* `PoolManager.upgrade()`
-* `LoanManager.upgrade()`
-* `WithdrawalManager.upgrade()`
+## Scheduled calls in Globals
 
-# Scheduling
+### Affected actions
 
-To perform a timelocked action Pool Delegates need to perform the following actions:
-1. Call `scheduleCall()` on the `MapleGlobals` contract.
-2. Wait for the predetermined time to pass.
-3. Call the target contract with the same parameters.
+* `LoanManager.upgrade()`, function id `LM:UPGRADE`, when the Pool Delegate calls it
+* `WithdrawalManager.upgrade()`, function id `WM:UPGRADE`, when the Pool Delegate calls it
 
-Example:
+The Security Admin can call both functions without a scheduled call. Only the Security Admin can call `PoolManager.upgrade()`, with no scheduled call. Strategy Managers and strategies likewise have Security Admin only upgrades with no timelock.
+
+### How the check works
+
+1. The Pool Delegate calls `scheduleCall(contract, functionId, callData)` on Globals. Globals stores `block.timestamp` and `keccak256(abi.encode(callData))` under the caller, contract and function id.
+2. After the delay, the Pool Delegate calls the target function with the same calldata.
+3. The target calls `isValidScheduledCall(msg.sender, address(this), functionId, msg.data)`. The call is valid when `block.timestamp` is within `[timestamp + delay, timestamp + delay + duration]` and the calldata hash matches.
+4. The target then calls `unscheduleCall(caller, functionId, callData)` so the same schedule cannot be reused.
+
+The delay and duration come from `timelockParametersOf[contract][functionId]`. When that entry has a zero duration, `defaultTimelockParameters` applies.
+
 ```
-Pool Delegate wants to upgrade the poolManager to v2.
+Pool Delegate wants to upgrade a Withdrawal Manager to version 3.
 
-1. Call `globals.scheduleCall()`, passing the PoolManager address and the "upgrade" calldata properly encoded.
-2. Wait for 2 weeks.
-3. Call `upgrade` directly on the PoolManager.
-
-The PoolManager contract will perform a check against Globals to ensure the call has been properly upgraded.
+1. Call globals.scheduleCall(withdrawalManager, "WM:UPGRADE", abi.encodeCall(upgrade, (3, arguments))).
+2. Wait for the delay.
+3. Call withdrawalManager.upgrade(3, arguments) before the window closes.
 ```
 
-# Configuration
+### Configuration
 
-Timelocks parameters are set by the `Governor` and can be changed at any time, having a retroactive effect.
-
-Example:
-```
-1. Current timelock is 2 weeks
-2. Actor A schedules a call to a contract.
-3. After 1 week, the Governor changes the time to be 1 week.
-3. A can immediately call execute the contract, since it's been 1 week since the call was scheduled.
-```
+The Governor sets the windows with `setTimelockWindow`, `setTimelockWindows` and `setDefaultTimelockParameters`. Changes apply to calls that are already scheduled, because the check reads the current parameters at execution time. The Governor can also remove any scheduled call with the four-argument `unscheduleCall(caller, contract, functionId, callData)`.
