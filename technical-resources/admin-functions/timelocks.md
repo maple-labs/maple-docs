@@ -1,6 +1,6 @@
 # Timelocked Functions
 
-A timelock delays an action with significant effects so that anyone it affects has time to react. v7 uses two mechanisms.
+A timelock delays an action with significant effects so that anyone it affects has time to react. Maple uses two mechanisms.
 
 | Mechanism | Who it applies to | Where it is enforced |
 |---|---|---|

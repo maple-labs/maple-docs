@@ -1,6 +1,6 @@
 # Maple Globals
 
-`MapleGlobals` (v5.0.0 in v7) is the singleton that stores protocol-wide configuration: the admin roles, the Pool Delegate and Strategy Delegate registries, the instance allowlists, platform fee rates, bootstrap amounts, timelock parameters and pause switches. Every other contract reads it live on each privileged call. The full function list is in the [Globals interface](../interfaces/globals.md).
+`MapleGlobals` (v5.0.0) is the singleton that stores protocol-wide configuration: the admin roles, the Pool Delegate and Strategy Delegate registries, the instance allowlists, platform fee rates, bootstrap amounts, timelock parameters and pause switches. Every other contract reads it live on each privileged call. The full function list is in the [Globals interface](../interfaces/globals.md).
 
 ## Roles
 
@@ -18,7 +18,7 @@ Three modifiers restrict who can call the setters: `onlyGovernor`, `onlyGovernor
 
 ## Delegate registries
 
-Globals binds each delegate to at most one managed contract. v7 adds a Strategy Delegate registry alongside the Pool Delegate one, with the same shape.
+Globals binds each delegate to at most one managed contract. It keeps a Strategy Delegate registry alongside the Pool Delegate one, with the same shape.
 
 | | Pool Delegate | Strategy Delegate |
 |---|---|---|
@@ -38,7 +38,7 @@ The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` requ
 
 ## Instance allowlists
 
-`isInstanceOf[key][address]` is a generic allowlist keyed by a `bytes32` label. The Governor or Operational Admin writes it with `setValidInstanceOf`. Contracts read it to decide whether a factory, contract or account is trusted for a given purpose. v7 contracts read these keys:
+`isInstanceOf[key][address]` is a generic allowlist keyed by a `bytes32` label. The Governor or Operational Admin writes it with `setValidInstanceOf`. Contracts read it to decide whether a factory, contract or account is trusted for a given purpose. The protocol contracts read these keys:
 
 | Key | Read by | Purpose |
 |---|---|---|
@@ -62,7 +62,7 @@ The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` requ
 
 ## Deployment permissions
 
-Every v7 factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either directly or, for the Pool Manager Factory, through the `isPoolDeployer` view, which forwards to it. `canDeployFrom(factory, caller)` returns true when:
+Every factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either directly or, for the Pool Manager Factory, through the `isPoolDeployer` view, which forwards to it. `canDeployFrom(factory, caller)` returns true when:
 
 * `setCanDeployFrom(factory, caller, true)` has allowed the pair (Governor or Operational Admin), or
 * the factory is a `LOAN_FACTORY` and the caller is a valid borrower, or
@@ -72,11 +72,11 @@ Every v7 factory checks `globals.canDeploy(msg.sender)` in `createInstance`, eit
 
 `setPlatformManagementFeeRate`, `setPlatformOriginationFeeRate` and `setPlatformServiceFeeRate` store a rate per Pool Manager, each capped at `HUNDRED_PERCENT` (`100_0000`). The Governor or Operational Admin sets them. Strategy protocol fee rates live on each strategy instead, see [Strategies](../strategies/README.md).
 
-`bootstrapMint[asset]` is the permanent dead-address deposit that protects a new vault's share price. The Pool reads it once at deployment and mints that many shares to `address(0)` on the first deposit. In v7 the Strategy Deployer reads the same value: `deploy()` pulls `bootstrapMint(fundsAsset)` from the Strategy Delegate into the underlying strategy, and `completeConfiguration` records the resulting shares against `address(0)`. The value must be non-zero for an asset before its first Strategy Manager is deployed, because a Strategy Manager deployed while it is zero has no bootstrap protection.
+`bootstrapMint[asset]` is the permanent dead-address deposit that protects a new vault's share price. The Pool reads it once at deployment and mints that many shares to `address(0)` on the first deposit. The Strategy Deployer reads the same value: `deploy()` pulls `bootstrapMint(fundsAsset)` from the Strategy Delegate into the underlying strategy, and `completeConfiguration` records the resulting shares against `address(0)`. The value must be non-zero for an asset before its first Strategy Manager is deployed, because a Strategy Manager deployed while it is zero has no bootstrap protection.
 
 ## Timelocks
 
-Globals holds the scheduled-call mechanism that Pool Delegates use for upgrades: `scheduleCall`, `isValidScheduledCall`, `unscheduleCall`, `setTimelockWindow`, `setTimelockWindows` and `setDefaultTimelockParameters`. In v7 only the Loan Manager and Withdrawal Manager `upgrade` functions check it. See [Timelocked Functions](../admin-functions/timelocks.md).
+Globals holds the scheduled-call mechanism that Pool Delegates use for upgrades: `scheduleCall`, `isValidScheduledCall`, `unscheduleCall`, `setTimelockWindow`, `setTimelockWindows` and `setDefaultTimelockParameters`. Only the Loan Manager and Withdrawal Manager `upgrade` functions check it. See [Timelocked Functions](../admin-functions/timelocks.md).
 
 ## Pausing
 

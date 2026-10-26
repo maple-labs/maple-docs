@@ -46,7 +46,7 @@ To let an account deploy from a factory, call `setValidInstanceOf(<FACTORY_KEY>,
 * `setDelegateManagementFeeRate`, `setLiquidityCap`, `setStrategyCap`, `setPoolPermissionManager` (shared with the Pool Delegate and Operational Admin)
 * `triggerDefault` (shared with the Pool Delegate and Operational Admin)
 
-The Governor cannot call `upgrade` on a Pool Manager. That is the Security Admin's function in v7.
+The Governor cannot call `upgrade` on a Pool Manager. That is the Security Admin's function.
 
 ## Open Term Loan Manager
 

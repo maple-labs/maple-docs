@@ -1,6 +1,6 @@
 # Operational Admin
 
-The Operational Admin is the address stored as `operationalAdmin` in [Maple Globals](../singletons/globals.md). The Governor appoints and replaces it with `setOperationalAdmin`. It handles routine protocol operations without the Governor's delay, and in v7 it also onboards Strategy Delegates and shares most strategy lifecycle controls with them.
+The Operational Admin is the address stored as `operationalAdmin` in [Maple Globals](../singletons/globals.md). The Governor appoints and replaces it with `setOperationalAdmin`. It handles routine protocol operations without the Governor's delay, and it also onboards Strategy Delegates and shares most strategy lifecycle controls with them.
 
 ## Globals
 

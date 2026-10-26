@@ -13,7 +13,7 @@ The Pool Delegate administers one Pool. Globals records the binding in `poolDele
 
 Before `completeConfiguration` is called, `addStrategy`, `addStrategyManager`, `setWithdrawalManager` and `completeConfiguration` itself have no caller check. The Pool Deployer calls them in the deployment transaction. After configuration, `addStrategy` and `addStrategyManager` become Governor only and `setWithdrawalManager` cannot be called.
 
-The Pool Delegate cannot call `upgrade` on the Pool Manager. In v7 that is the Security Admin's function.
+The Pool Delegate cannot call `upgrade` on the Pool Manager. That is the Security Admin's function.
 
 ## Open Term Loan Manager
 

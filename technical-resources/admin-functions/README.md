@@ -1,6 +1,6 @@
 # Admin Functions
 
-Every privileged function in v7 checks `msg.sender` against a role read from [Maple Globals](../singletons/globals.md) or a delegate stored on the instance. The matrix shows which roles reach which contracts. The role pages in this section list the exact functions and the conditions attached to them.
+Every privileged function checks `msg.sender` against a role read from [Maple Globals](../singletons/globals.md) or a delegate stored on the instance. The matrix shows which roles reach which contracts. The role pages in this section list the exact functions and the conditions attached to them.
 
 | Role | Globals | Pool Manager | Withdrawal Manager | Open Term Loan Manager | Strategy Manager | Underlying Strategies | Liquidity Router |
 |---|---|---|---|---|---|---|---|
