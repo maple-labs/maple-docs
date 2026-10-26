@@ -1,6 +1,6 @@
 # Interfaces
 
-Reference pages for the external interface of every Maple v7 contract, generated from the Solidity natspec and grouped by subsystem. Each page lists the contract's functions and events, the members it inherits from the proxy interfaces, and any structs or enums its functions use.
+Reference pages for the external interface of every Maple contract, generated from the Solidity natspec and grouped by subsystem. Each page lists the contract's functions and events, the members it inherits from the proxy interfaces, and any structs or enums its functions use.
 
 ## Globals and Timelock
 
