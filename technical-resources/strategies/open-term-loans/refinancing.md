@@ -1,4 +1,4 @@
-# Refinance Actions
+# Refinancing
 
 Refinancing is defined as the revision of Loan terms, as per an agreement between the two parties involved with the Loan: the Borrower and Lender. The following actions can be performed in any permutation desired:
 - Increase `principal`: requires additional funds to be added by the Lender
@@ -13,7 +13,7 @@ Refinancing is defined as the revision of Loan terms, as per an agreement betwee
 
 Note that the Refinancer contract should never set the `fundsAsset`.
 
-# Refinance Procedure
+## Refinance Procedure
 
 In order to facilitate a refinance, an agreement must be reached on-chain between the Lender and Borrower. This is performed using two functions:
 
@@ -35,7 +35,7 @@ This function will take the hash of these changes, the deadline and the Refinanc
 
 ### `acceptNewTerms()`
 
-This function is called by the other party, the Borrower. In the call, the same parameters are passed to agree to the terms: the smart contract address of the Refinancer, the deadline and the array of ABI-encoded function calls. The call reverts if the deadline has passed.
+This function is called by the other party, the Borrower, or by an address registered as a `BORROWER_ACTIONS` instance in Globals. In the call, the same parameters are passed to agree to the terms: the smart contract address of the Refinancer, the deadline and the array of ABI-encoded function calls. The call reverts if the deadline has passed.
 
 This function calculates the hash again and compares it with the hash that was added to storage when `proposeNewTerms()` was called.
 
@@ -44,8 +44,8 @@ If the hashes match, the function calls are executed in a for loop as delegateca
 ```js
 for (uint256 i; i < calls_.length; ++i) {
     ( bool success, ) = refinancer_.delegatecall(calls_[i]);
-    require(success, "MLI:ANT:FAILED");
+    require(success, "ML:ANT:FAILED");
 }
 ```
 
-Once all of these execute successfully, any change in principal, along with the interest and fees accrued up to the refinance, is settled between the Borrower and Lender, after which the refinance is considered complete.
+Once all of these execute successfully, any change in principal, along with the interest and fees accrued up to the refinance, is settled between the Borrower and Lender, after which the refinance is considered complete. Accepting new terms also clears any open loan call or impairment.

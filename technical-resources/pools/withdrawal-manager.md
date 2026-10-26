@@ -1,8 +1,6 @@
-# WithdrawalManager (Queue)
+# Withdrawal Manager
 
-### Overview
-
-The process of withdrawing assets that have been deposited into a Maple pool is managed by the `WithdrawalManager`. This contract allows users to submit withdrawal requests and holds custody of their shares until the request is processed. Once the withdrawal request is processed the shares in custody will be exchanged for assets using the current exchange rate and then transferred to the owner of the shares.
+The queue-based `MapleWithdrawalManager` handles exits from a Pool. Lenders submit redemption requests, the contract escrows their shares in a FIFO queue, and when a request is processed it exchanges the shares for assets at the current exit rate and sends them to the owner. The November 2026 release ships v2.0.1, whose only functional change is a permission check on `removeSharesById`. Storage is unchanged, so the upgrade is an implementation swap with no migrator. Full interface: [WithdrawalManagerQueue](../interfaces/withdrawal-manager-queue.md).
 
 ### Withdrawal Request
 
@@ -13,13 +11,13 @@ Any user holding shares can perform a withdrawal request.
 * When making the request the user specifies the amount of shares that should be redeemed and that amount of shares is then transferred to the withdrawal manager where it remains in custody.
 * Once the withdrawal is processed the request is deleted and the user can again make another one.
 * The user can also adjust an existing withdrawal request, but only in a downwards manner (by returning some of the shares locked).
-* Additionally, the pool delegate or protocol admins also have the ability to remove any withdrawal request from the queue. This is primarily for the sake of preventing abuse of the withdrawal mechanism.
+* Additionally, the pool delegate or protocol admins also have the ability to remove any withdrawal request from the queue. This lets them unblock the queue if a request cannot be processed.
 
 _NOTE_: Withdrawal requests can only be submitted in the form of redemption requests (indicating the number of shares to redeem), `requestWithdraw()` and `withdraw()` functions are disabled.
 
 ### Withdrawal Queue (FIFO)
 
-The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If there is insufficient liquidity to process all requests, only the earliest requests are processed. The remainder stay in the queue to be processed later.
+The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If the Pool does not hold enough liquidity to redeem every share the call is asked to process, the call reverts with `WM:PR:LOW_LIQUIDITY` and processes nothing. Requests the call does not reach stay in the queue to be processed later.
 
 ### Request Processing
 
@@ -31,7 +29,7 @@ _NOTE_: The amount of shares must be specified and are assumed to be a reasonabl
 
 ### Exchange Rate
 
-When a withdrawal request is processed, the amount of assets withdrawn is calculated by converting the requested shares into assets using the current exchange rate. This means that the exchange rate for different users' withdrawal requests may vary depending on when the requests are processed. If any loans have been impaired or are in the process of liquidation, the value of each share will decrease until the impairments and/or liquidations are finalized. Therefore, performing a withdrawal during a liquidation may result in a lower amount of assets being withdrawn compared to if the withdrawal occurs after the liquidation is finalized and some or all losses have been recovered.
+When a withdrawal request is processed, the amount of assets withdrawn is calculated by converting the requested shares into assets using the current exchange rate. This means that the exchange rate for different users' withdrawal requests may vary depending on when the requests are processed. If any loan or strategy is impaired, `unrealizedLosses` lowers the value of each share until the impairment is removed or the loss is realised. A request processed while an impairment is open therefore receives fewer assets than one processed after the impairment is removed. See [Exchange Rates](exchange-rates.md).
 
 The formula for calculating the exchange rate of shares to assets is defined as:
 
@@ -39,17 +37,19 @@ The formula for calculating the exchange rate of shares to assets is defined as:
 
 ### Partial Redemptions
 
-If there is insufficient liquidity available during the processing of a request, it will be processed partially (_note this is only applicable to the last request being processed in the queue_). This means that only a portion of the shares from the original withdrawal request will be redeemed. The remainder will retain their original position in the queue and may be processed again at any time. The formula for calculating the number of shares that can be redeemed is defined as follows:
+If the shares left to process run out partway through a request, that request is processed partially (_note this is only applicable to the last request being processed in the queue_). This means that only a portion of the shares from the original withdrawal request will be redeemed. The remainder keeps its original position in the queue and is processed first on the next call. The number of shares processed from a request is:
 
-`redeemableShares(user) = min(lockedShares(user), lockedShares(user) * availableAssets / requiredAssets)`
+`processedShares = min(requestShares, remainingSharesToProcess)`
 
 ### Adjust or Cancel a Request (removeSharesById)
 
-The request owner can reduce or cancel a specific pending request at any time before it is processed by calling:
+The request owner can reduce or cancel a specific pending request at any time before it is processed by calling `removeSharesById(requestId, sharesToRemove)`. The checks run in this order:
 
-`removeSharesById(requestId, sharesToRemove)`
+1. The request exists (`WM:RSBI:INVALID_REQUEST`).
+2. The caller owns it (`WM:RSBI:NOT_OWNER`).
+3. `sharesToRemove` is non-zero and no more than the request's shares.
+4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool and for a Lender on the Pool's allowlist. Otherwise a private Pool denies the call, a `POOL_LEVEL` Pool checks the Pool-wide bitmap, and a `FUNCTION_LEVEL` Pool checks the bitmap for this function id. An unset function bitmap allows the call only at `FUNCTION_LEVEL`.
 
-- Caller must be the request owner.
 - If `sharesToRemove` equals the current request shares, the request is cancelled. Otherwise the request is decreased and remains in the queue with the original position.
 - Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.
 - Use `requests(requestId)` or `requestsByOwner(owner)` to inspect pending requests and shares.
@@ -63,22 +63,24 @@ Each withdrawal request can be processed automatically (by default) or manually 
 
 ### Roles & Permissions
 
-- OnlyPoolManager: `addShares`, `processExit`, `removeShares` (Pool-driven queue interactions).
-- OnlyRedeemer (WITHDRAWAL_REDEEMER instance, Pool Delegate, or Operational Admin): `processRedemptions`, `processEmptyRedemptions`, `removeRequest`.
-- Unprivileged user (request owner): `removeSharesById` (decrease or cancel a request).
+| Function | Allowed callers |
+| --- | --- |
+| `addShares`, `processExit`, `removeShares` | Pool Manager |
+| `processRedemptions`, `processEmptyRedemptions`, `removeRequest` | A `WITHDRAWAL_REDEEMER` instance, the Pool Delegate or the Operational Admin |
+| `setManualWithdrawal` | Pool Delegate or Operational Admin |
+| `removeSharesById` | The request owner, with the `WM:removeSharesById` permission |
+| `upgrade` | Pool Delegate through a scheduled call, or the Security Admin |
 
 ### Events & Queue Internals
 
 - Events: `RequestCreated`, `RequestDecreased`, `RequestRemoved`, `RequestProcessed`, `ManualWithdrawalSet`, `EmptyRedemptionsProcessed`, `ManualSharesIncreased`, `ManualSharesDecreased`.
 - Queue pointers: `nextRequestId` and `lastRequestId` track processing range. `processEmptyRedemptions(n)` advances `nextRequestId` over empty entries to keep processing efficient.
 
-### Legacy Functions
-
-For the sake of backwards compatibility with the `PoolManager`, certain functions used in the previous version of the withdrawal manager have been retained. These are as follows:
+### Other View Functions
 
 * `lockedShares()`: returns the amount of `manualSharesAvailable` (only used for manual withdrawals).
-* `lockedLiquidity()`: returns zero, meaning it's at the pool delegate's discretion how much liquidity should be available for servicing withdrawals.
-* `isInExitWindow()`: returns `true`, since there are no more withdrawal windows and withdrawals can be processed at any time.
+* `lockedLiquidity()`: returns zero. The Pool Manager does not read it.
+* `isInExitWindow()`: returns `true`, because withdrawals can be processed at any time.
 
 ### Key Assumptions
 

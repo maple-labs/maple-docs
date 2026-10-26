@@ -2,15 +2,15 @@
 
 ## Total Pool Value (`totalAssets`)
 
-Total pool value is represented using `totalAssets`.
-
-This value is calculated using the following equation:
+The Pool Manager computes `totalAssets` as the Pool's cash, plus the value of its Open Term Loan Manager, plus its share of each Strategy Manager it funds:
 
 $$
-\begin{align} \nonumber totalAssets = cash + \sum{assetsUnderManagement_{strategies}} \end{align}
+\begin{align} \nonumber totalAssets = cash + assetsUnderManagement_{openTermLoanManager} + \sum{assetsOf_{strategyManagers}} \end{align}
 $$
 
-where:
+For the [Open Term Loan Manager](../strategies/open-term-loans/open-term-loan-manager.md) the Pool Manager reads `assetsUnderManagement()`. For a [Strategy Manager](../strategies/strategy-manager.md), which several Pools share, it reads `assetsOf(poolManager)`, the Pool's share of the Strategy Manager's total assets in proportion to the shares the Pool Manager holds.
+
+The Open Term Loan Manager's value is:
 
 $$
 \begin{align} \nonumber assetsUnderManagement = \sum\Big({outstandingPrincipal_{loan}} + {outstandingInterest_{loan}}\Big) \end{align}
@@ -19,32 +19,30 @@ $$
 where:
 
 $$
-\begin{align} \nonumber outstandingInterest(t) = accountedInterest + issuanceRate \times (t - domainStart) \end{align}
+\begin{align} \nonumber outstandingInterest(t) = accountedInterest + \frac{issuanceRate \times (t - domainStart)}{PRECISION} \end{align}
 $$
 
-The relationship between the Pool, PoolManager, and LoanManagers regarding value representation is shown in the diagram below.
+The Open Term Loan Manager stores `issuanceRate` scaled by `PRECISION`, which is `1e27`.
 
-<div align="center"><img src="https://github.com/user-attachments/assets/4b64a334-57c5-4746-bbbc-f9d6c41e7940" alt="" height="500"></div>
+```mermaid
+flowchart LR
+    Pool -->|"totalAssets(), unrealizedLosses()"| PM[Pool Manager]
+    PM -->|"assetsUnderManagement(), unrealizedLosses()"| OTLM[Open Term Loan Manager]
+    PM -->|"assetsOf(pm), unrealizedLossesOf(pm)"| SM[Strategy Manager]
+    SM -->|"assetsUnderManagement(), unrealizedLosses()"| US[Underlying Strategy]
+```
 
 ## Unrealized Losses
 
-`unrealizedLosses` is an accounting variable that represents a "paper loss". The Pool Delegate and Governor both have the ability to "impair" a strategy and represent a paper loss in the pool. `unrealizedLosses` is also incremented during an active collateral liquidation in a Loan. `unrealizedLosses` is used to prevent large liquidity events in situations where it is public knowledge that a Pool will incur a loss in the future.
-
-In the case the unrealizedLosses > 0, there are two exchange rates that are maintained, one for deposits and one for withdrawals. This is to prevent malicious depositors from taking advantage of a situation where they know that paper loss will be removed. Consider a situation where there is a single loan outstanding for $900k with $10k of outstanding interest, and there is 100k of cash in the pool. The `totalSupply` of LP tokens is 1m. In this situation, the effective exchange rate is:
+`unrealizedLosses` is a paper loss: value the Pool expects to lose but has not yet written off. The Pool Manager sums each position's unrealized loss and caps the total at `totalAssets`:
 
 $$
-\large \begin{align} \nonumber exchangeRate &= \frac{totalAssets}{totalSupply} \\ \nonumber exchangeRate &= \frac{900000 + 100000 + 10000}{1000000} \\ \nonumber exchangeRate &= 1.01 \end{align}
+\begin{align} \nonumber unrealizedLosses = \min\Big(unrealizedLosses_{openTermLoanManager} + \sum{unrealizedLossesOf_{strategyManagers}},\ totalAssets\Big) \end{align}
 $$
 
-After impairing the loan, `unrealizedLosses` gets set to 910k. Now, with `unrealizedLosses` considered, the exchange rate becomes:
+Two events raise it:
 
-$$
-\large \begin{align} \nonumber exchangeRate &= \frac{totalAssets}{totalSupply} \\ \nonumber exchangeRate &= \frac{900000 + 100000 + 10000 - 910000}{1000000} \\ \nonumber exchangeRate &= 0.1 \end{align}
-$$
+* The Pool Delegate or Governor impairs a loan on the Open Term Loan Manager, which adds the loan's principal and the interest accrued so far. See [Impairments](../strategies/open-term-loans/impairments.md).
+* An Underlying Strategy records an impairment. Each Strategy Manager funding it reports the Pool's pro-rata share of that loss through `unrealizedLossesOf(poolManager)`.
 
-Without the two exchange rate model, a depositor could deposit $1m at a 0.1 exchange rate and get 10m shares. Once `unrealizedLosses` was removed, their shares would be worth $10.1m.
-
-For this reason, two exchange rates are maintained during an unrealizedLosses scenario. This accomplishes two things:
-
-1. Discourages withdrawals - LPs are incentivized to wait until the strategy pays back, which restores the original exchange rate.
-2. Discourages deposits - During a scenario where a default is imminent, it is in future LPs' best interest to wait until the borrower either defaults or pays back their loan before entering the pool.
+While `unrealizedLosses` is above zero the Pool prices withdrawals at `totalAssets - unrealizedLosses` and deposits at `totalAssets`. This stops Lenders exiting ahead of a loss and stops new Lenders capturing the jump in value when an impairment is removed. [Exchange Rates](exchange-rates.md) explains the two rates and works through examples.

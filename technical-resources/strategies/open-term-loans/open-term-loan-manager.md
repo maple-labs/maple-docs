@@ -2,6 +2,8 @@
 
 The Open Term Loan Manager is responsible for managing the accounting state of all Open Term Loans tied to it via the initial funding. This includes storing the start dates and effective issuance rates resulting from the next expected payment of each Open Term Loan, accruing interest due from a Loans operations (i.e. payments, impairments, refinances, defaults), providing the total assets under management information to the Pool. The Loan Manager also handles a Loan Payment by distributing the `fundsAsset` to the Pool and the relevant Management and Service Fees to the Treasury and Pool Delegate.
 
+Each Pool has its own Open Term Loan Manager, which no other Pool can fund. The Pool Manager deploys it through `addStrategy` and limits it with a strategy cap, see [Pool Manager](../../pools/pool-manager.md). Full interface: [OpenTermLoanManager](../../interfaces/open-term-loan-manager.md).
+
 ## Key Terms
 
 `issuanceRate` - Denotes how many `fundsAsset` per second the AssetsUnderManagement increases by for the Open Term Loan Manager, denoted using `1e27` decimal precision.
@@ -20,11 +22,14 @@ $$assetsUnderManagement = \sum({outstandingPrincipal_{loan}} + {outstandingInter
 
 where:
 
-$$outstandingInterest = accountedInterest + issuanceRate \times (block.timestamp - domainStart)$$
+$$outstandingInterest = accountedInterest + \frac{issuanceRate \times (block.timestamp - domainStart)}{PRECISION}$$
+
+and `PRECISION` is `1e27`.
 
 ## Fund
 
 * The PoolDelegate directly calls `fund()` which sets up the accounting of the respective Loan in the LoanManager and requests funds from the Pool via the PoolManager and approves the OT-Loan to pull the funds from the LoanManager.
+* The Loan Manager first checks that the Loan comes from an `OT_LOAN_FACTORY` instance and that its borrower is valid in Globals. The Pool Manager reverts with `PM:RF:STRATEGY_CAP` if the Loan Manager's `assetsUnderManagement` plus the principal would exceed its strategy cap, and the Loan reverts with `ML:F:TERMS_NOT_ACCEPTED` unless the Borrower has called `acceptLoanTerms()`.
 
 ## Refinance
 
@@ -62,117 +67,41 @@ The Open Term Loan Manager handles accounting for Open Term Loans by being aware
 
 Note that interest keeps accruing in the Open Term Loan Manager as there is no notion of a `domainEnd`. The assumption is that the Pool Delegate will act to Impair or Default a Open Term Loan in order to make the necessary accounting updates to adjust the issuance rate and stop accruing interest on a Loan where a payment is no longer expected.
 
-## Accounting Examples
+## Accounting Example
 
-See below for examples of how the accounting state changes based on different scenarios. The scenarios assume the Pool only has Open-Term Loans via the Open-Term LoanManager.
+The example below shows how the accounting state changes when a Loan makes interest payments. It assumes the Pool only has Open-Term Loans via the Open-Term LoanManager.
 
-This section is intended to demonstrate multiple scenarios with loans to show how value is represented with `totalAssets`. During each payment, accounting state in the Pool contracts is changed in the following way:
+During each payment, accounting state in the Pool contracts is changed in the following way:
 
-1. Outstanding Interest (which is a combination of `accountedInterest` & `accruedInterest()`) is decreased. This is because the $outstandingInterest$ portion of `assetsUnderManagement` must discretely decrease when a payment is made.
+1. Outstanding Interest (which is a combination of `accountedInterest` & `accruedInterest()`) is decreased by the interest the payment accrued since its start date, not by the amount paid. Any late interest paid adds to cash without first accruing in Outstanding Interest.
 2. `domainStart` is updated to the current timestamp.
-3. `issuanceRate` is updated based on the resulting state.
+3. `issuanceRate` is updated based on the resulting state. While principal remains, the Loan Manager queues the Loan's next payment, so the Loan keeps accruing interest.
 4. Cash in the pool increases.
 
-**Note 1**: For all of the below examples, only interest is being paid so outstanding principal (`principalOut`) remains constant.
+**Note 1**: Only interest is being paid in the example, so outstanding principal (`principalOut`) remains constant.
 
 **Note 2**: For the purpose of simplicity, `issuanceRate` is represented as $units/day$ in the equations below. In reality, it is represented as $units \times 1e27 / second$.
 
-**Note 3**: None of the below diagrams are to scale.
+**Note 3**: The diagram below is not to scale.
 
-**Note 4**: There is no notion of `domainEnd` in the Open-Term LoanManager as interest accrues till either a payment is made.
+**Note 4**: The example assumes zero management fees, so the Pool receives all the interest paid.
 
-### Example 1: Single Loan - Early Payment
+### Example: Single Loan - Early Payment
 
-In this example there is a single Loan that makes an early payment, two days before the payment is due. The interest due on day 10, the payment due date, would have been 5000 units of `fundsAsset` but as the payment is made two days early the interest amount is prorated and only 4000 units of interest.
+In this example a single Loan with 1,000,000 units of principal is funded on day 0 with a 10-day payment interval. The interest due on day 10, the payment due date, would have been 5000 units of `fundsAsset`, so the payment's `issuanceRate` is 500. The Loan makes an early payment two days before the payment is due, so the interest amount is prorated and only 4000 units of interest.
 
 It can be seen during the first payment transaction on day 8 that the accounting gets updated as follows:
 
 $$
-\begin{align} outstandingInterest &= outstandingInterest - 4000 \\ issuanceRate &= \frac{5000}{18-8} = 500 \\ domainStart &= 8 \\ cash &= cash + 4000 \\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
+\begin{align} outstandingInterest &= 500 \times 8 - 4000 = 0 \\ issuanceRate &= \frac{5000}{18-8} = 500 \\ domainStart &= 8 \\ cash &= 0 + 4000 = 4000 \\ totalAssets &= principalOut + cash + outstandingInterest = 1{,}004{,}000 \\ \end{align}
 $$
 
 Note for Open-Term Loans that the new payment due date after a payment made is exactly `block.timestamp` + `paymentInterval` so in this case the new payment due date for payment 2 is day 18. The second payment is made on day 18 below is how the account gets updated:
 
 $$
-\begin{align} outstandingInterest &= outstandingInterest - 5000 \\ issuanceRate &= 0 \\ domainStart &= 18 \\ cash &= cash + 5000 \\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
+\begin{align} outstandingInterest &= 500 \times (18 - 8) - 5000 = 0 \\ issuanceRate &= \frac{5000}{28-18} = 500 \\ domainStart &= 18 \\ cash &= 4000 + 5000 = 9000 \\ totalAssets &= principalOut + cash + outstandingInterest = 1{,}009{,}000 \\ \end{align}
 $$
+
+The principal is still outstanding after day 18, so the Loan Manager queues payment 3, due on day 28, and interest keeps accruing at 500 per day.
 
 <div align="center"><img src="https://user-images.githubusercontent.com/59924029/227527364-750466fc-caf5-44e2-936c-f386f4bfd865.svg" alt="" height="1000"></div>
-
-### Example 2: Single Loan - Late Payment
-
-In this example there is a single Loan that makes a late payment, two days after the payment was due. The interest due on day 10, the payment due date, would have been 5000 units of `fundsAssest` but as the payment is made two days late the interest amount is prorated and 6000 units of normal interest is due and 1000 units of late interest.
-
-Note for this example we assume the `lateInterestPremiumRate` is the same as the `interestRate` and that there is zero `lateFeeRate`.
-
-It can be seen during the first payment transaction on day 12 that the accounting gets updated as follows:
-
-$$
-\begin{align} lateInterest &= 500 * 2 \\ outstandingInterest &= outstandingInterest - 7000 \\ issuanceRate &= \frac{5000}{22-12} = 500 \\ domainStart &= 12 \\ cash &= cash + 7000 \\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Payment 2 is made on time and follows the same logic as Example 1
-
-<div align="center"><img src="https://user-images.githubusercontent.com/59924029/227553957-9fe42cdd-5e5c-4a11-8b6d-36e6290cfc1f.svg" alt="" height="1000"></div>
-
-### Example 3: Double Loan - Single Early Payment
-
-The same first Loan as Example 1 but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
-
-Below demonstrates how the accounting changes on day 5 when the second loan is funded:
-
-$$
-\begin{align} accountedInterest &= 500 * 5 = 2500 \\ outstandingInterest &= outstandingInterest + 2500 \\ issuanceRate &= \frac{5000}{10-0} + \frac{12000}{20-0} = 500 + 600 = 1100 \\ domainStart &= 5 \\ cash &= cash\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 8 when the first Loan makes an early repayment:
-
-$$
-\begin{align} accountedInterest &= 600 * 3 = 1800 \\ outstandingInterest &= outstandingInterest + 1800 - 4000 \\ issuanceRate &= \frac{5000}{18-8} + \frac{12000}{20-0} = 500 + 600 = 1100 \\ domainStart &= 8 \\ cash &= cash + 4000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 18 when the first Loan makes a payment on time:
-
-$$
-\begin{align} accountedInterest &= 600 * 10 = 6000 \\ outstandingInterest &= outstandingInterest + 6000 - 5000 \\ issuanceRate &= \frac{12000}{20-0} = 600\\ domainStart &= 18 \\ cash &= cash + 5000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 25 when the second Loan makes a payment on time:
-
-$$
-\begin{align} outstandingInterest &= outstandingInterest - 12000 \\ issuanceRate &= 0 \\ domainStart &= 25 \\ cash &= cash + 12000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-<div align="center"><img src="https://user-images.githubusercontent.com/59924029/227578088-6d80c034-e264-495e-b9f6-8282b8bdcad8.svg" alt="" height="1750"></div>
-
-### Example 4: Double Loan - Single Late Payment
-
-The same first Loan as Example 2 but a second Loan is funded on day 5 to demonstrate how interest is accrued with more then one Loan.
-
-Note for this example we assume the `lateInterestPremiumRate` is the same as the `interestRate` and that there is zero `lateFeeRate`.
-
-Below demonstrates how the accounting changes on day 5 when the second loan is funded:
-
-$$
-\begin{align} accountedInterest &= 500 * 5 = 2500 \\ outstandingInterest &= outstandingInterest + 2500 \\ issuanceRate &= \frac{5000}{10-0} + \frac{12000}{20-0} = 500 + 600 = 1100 \\ domainStart &= 5 \\ cash &= cash\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 12 when the first Loan makes a late repayment:
-
-$$
-\begin{align} accountedInterest &= 600 * 7 = 4200 \\ lateInterest &= 500 * 2 = 1000 \\ outstandingInterest &= outstandingInterest + 4200 - 7000 \\ issuanceRate &= \frac{5000}{22-12} + \frac{12000}{20-0} = 500 + 600 = 1100 \\ domainStart &= 12 \\ cash &= cash + 7000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 22 when the first Loan makes a payment on time:
-
-$$
-\begin{align} accountedInterest &= 600 * 10 = 6000 \\ outstandingInterest &= outstandingInterest + 6000 - 5000 \\ issuanceRate &= \frac{12000}{20-0} = 600\\ domainStart &= 22 \\ cash &= cash + 5000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-Below demonstrates how the accounting changes on day 25 when the second Loan makes a payment on time:
-
-$$
-\begin{align} outstandingInterest &= outstandingInterest - 12000 \\ issuanceRate &= 0 \\ domainStart &= 25 \\ cash &= cash + 12000\\ totalAssets &= `principalOut` + cash + outstandingInterest \\ \end{align}
-$$
-
-<div align="center"><img src="https://user-images.githubusercontent.com/59924029/227583235-0549d4e3-fb20-4a4c-930b-9b9a37471c65.svg" alt="" height="1750"></div>
