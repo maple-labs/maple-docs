@@ -188,6 +188,7 @@
   * [Timelocks](technical-resources/syrup/time-locks.md)
   * [Recapitalization Module](technical-resources/syrup/recapitalization-module.md)
   * [Emergency Module](technical-resources/syrup/emergency-module.md)
+  * [Deployment and Migration](technical-resources/syrup/deployment-and-migration-procedure.md)
 * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
 * [JavaScript SDK](technical-resources/sdk/README.md)
   * [Introduction](technical-resources/sdk/introduction.md)
