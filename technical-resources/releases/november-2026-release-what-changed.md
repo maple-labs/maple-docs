@@ -1,10 +1,10 @@
-# v7 Release: What Changed
+# November 2026 Release: What Changed
 
-v7 replaces the one-pool-one-strategy model with shared strategies. A new Strategy Manager sits between Pools and an Underlying Strategy, so several Pool Managers can fund the same position and share its profit and loss in proportion to the shares they hold. This page lists what the release adds, upgrades and removes, and which Pools it upgrades.
+The November 2026 release replaces the one-pool-one-strategy model with shared strategies. A new Strategy Manager sits between Pools and an Underlying Strategy, so several Pool Managers can fund the same position and share its profit and loss in proportion to the shares they hold. This page lists what the release adds, upgrades and removes, and which Pools it upgrades.
 
 ## Summary
 
-Before v7, a Pool Manager deployed every strategy it used for its Pool alone. In v7 a Pool Manager holds two kinds of position:
+Before the November 2026 release, a Pool Manager deployed every strategy it used for its Pool alone. Now a Pool Manager holds two kinds of position:
 
 * Its Open Term Loan Manager, which only that Pool funds.
 * Strategy Managers, where the Pool Manager is one of several funders. Each Strategy Manager is paired with one Underlying Strategy (Aave V3, Sky or Allocation) and tracks each Pool's position with internal, non-tokenised shares.
@@ -54,12 +54,12 @@ The release upgrades five Pool Managers from v4.0.0 to v5.0.0 and their queue Wi
 * Secured Lending USDC
 * Secured Lending 2 USDC
 
-Every other mainnet Pool stays on its current Pool Manager implementation. There is no forced migration. A non-upgraded Pool keeps its cyclical withdrawal manager, fixed-term loans and cover contract, and the compatibility tests in the release repository exercise deposits, redemptions and loan actions on those Pools after the upgrade. The step-by-step procedure is on [v7 Release: Deployment and Upgrade](v7-deployment-and-upgrade.md).
+Every other mainnet Pool stays on its current Pool Manager implementation. There is no forced migration. A non-upgraded Pool keeps its cyclical withdrawal manager, fixed-term loans and cover contract, and the compatibility tests in the release repository exercise deposits, redemptions and loan actions on those Pools after the upgrade. The step-by-step procedure is on [November 2026 Release: Deployment and Upgrade](november-2026-release-deployment-and-upgrade.md).
 
 ## Audits
 
-Sherlock and Cantina audited the release. The reports are listed under [Security](../security/security.md#v7-release-november-2026).
+Sherlock and Cantina audited the release. The reports are listed under [Security](../security/security.md#november-2026-release).
 
 ## Addresses
 
-The v7 contracts are not yet deployed to mainnet. Addresses will be published on [Deployed Contracts](../protocol-overview/smart-contract-addresses.md) once the procedure has run.
+The November 2026 release contracts are not yet deployed to mainnet. Addresses will be published on [Deployed Contracts](../protocol-overview/smart-contract-addresses.md) once the procedure has run.

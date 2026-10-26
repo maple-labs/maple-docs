@@ -1,6 +1,6 @@
-# v7 Release: Deployment and Upgrade
+# November 2026 Release: Deployment and Upgrade
 
-This page describes the procedure that deploys the v7 contracts and upgrades five live Pools to use shared strategies. It follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the `maple-core-v2-private` repository. For what the release contains, see [v7 Release: What Changed](v7-what-changed.md).
+This page describes the procedure that deploys the November 2026 release contracts and upgrades five live Pools to use shared strategies. It follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the `maple-core-v2-private` repository. For what the release contains, see [November 2026 Release: What Changed](november-2026-release-what-changed.md).
 
 ## Actors
 
@@ -38,7 +38,7 @@ flowchart TD
 
 **Actor: Deployer**
 
-The script deploys, in order: the `MapleGlobals` implementation, the Pool Deployer and Strategy Deployer, the Pool Manager implementation, initializer and migrator, the queue Withdrawal Manager implementation and initializer, then the factory, implementation and initializer for the Strategy Manager, Aave V3 Strategy, Sky Strategy and Allocation Strategy, and finally the Liquidity Router. Factories, deployers and the router take the existing `MapleGlobals` proxy address as their only constructor argument. The existing `MaplePoolManagerFactory` and `MapleWithdrawalManagerFactory` are reused. The full contract list with versions is on [v7 Release: What Changed](v7-what-changed.md).
+The script deploys, in order: the `MapleGlobals` implementation, the Pool Deployer and Strategy Deployer, the Pool Manager implementation, initializer and migrator, the queue Withdrawal Manager implementation and initializer, then the factory, implementation and initializer for the Strategy Manager, Aave V3 Strategy, Sky Strategy and Allocation Strategy, and finally the Liquidity Router. Factories, deployers and the router take the existing `MapleGlobals` proxy address as their only constructor argument. The existing `MaplePoolManagerFactory` and `MapleWithdrawalManagerFactory` are reused. The full contract list with versions is on [November 2026 Release: What Changed](november-2026-release-what-changed.md).
 
 ### 2. Configure Globals
 
