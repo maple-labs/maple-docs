@@ -1,8 +1,8 @@
 # Smart Contract Architecture
 
-In this section, the architecture of the Maple v7 protocol is outlined, including the rationale behind each decision.
+In this section, the architecture of the Maple protocol is outlined, including the rationale behind each decision.
 
-![v7 Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
+![Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
 
 ## [Pool](../pools/pools.md)
 

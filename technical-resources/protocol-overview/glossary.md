@@ -34,7 +34,7 @@
 | `Strategy liquidity cap` | The limit on a Strategy Manager's total `assetsUnderManagement()` across all Pools, `strategyLiquidityCap`. Set by the Strategy Delegate or Operational Admin. |
 | `Strategy Manager` | `MapleStrategyManager`, the contract that lets several Pools fund one Underlying Strategy. It mints non-transferable shares per Pool Manager, enforces caps and records redemption requests. It never holds assets. |
 | `Underlying protocol` | The external protocol where an Underlying Strategy deploys capital, such as Aave V3 or Sky. For the Allocation Strategy, it is the Managed Wallets. |
-| `Underlying Strategy` | The contract that deploys capital to an underlying protocol and reports its value, liquidity, losses and fees to its Strategy Manager. v7 has Aave V3, Sky and Allocation implementations. |
+| `Underlying Strategy` | The contract that deploys capital to an underlying protocol and reports its value, liquidity, losses and fees to its Strategy Manager. Maple has Aave V3, Sky and Allocation implementations. |
 
 ## Technical Terms
 

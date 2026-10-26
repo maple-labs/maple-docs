@@ -1,6 +1,6 @@
 # Protocol Actors
 
-Every privileged action in Maple v7 belongs to one of the roles below. Globals records most roles and each contract reads them live, so a role change in Globals takes effect everywhere at once.
+Every privileged action in Maple belongs to one of the roles below. Globals records most roles and each contract reads them live, so a role change in Globals takes effect everywhere at once.
 
 | Actor | Where the role is set | Scope |
 |---|---|---|
