@@ -1,10 +1,10 @@
 # Test Report
 
-The v7 contracts are tested with Foundry in the `maple-core-v2-private` repository, which imports every protocol module as a submodule. This page describes the test suites and how to run them. Maple produces the full test output for each release.
+The protocol contracts are tested with Foundry in the `maple-core-v2-private` repository, which imports every protocol module as a submodule. This page describes the test suites and how to run them. Maple produces the full test output for each release.
 
 ## Test suites
 
-Counts are taken from the v7 sources. A test is a `test`, `invariant` or `statefulFuzz` function in a `.t.sol` file.
+Counts are taken from the November 2026 release sources. A test is a `test`, `invariant` or `statefulFuzz` function in a `.t.sol` file.
 
 | Suite | Path | Files | Tests | What it covers |
 | --- | --- | --- | --- | --- |
@@ -12,8 +12,8 @@ Counts are taken from the v7 sources. A test is a `test`, `invariant` or `statef
 | Fuzz | `tests/fuzz` | 23 | 59 | Randomised inputs for Pool accounting, open-term loans and the three underlying strategies. |
 | Invariants | `tests/invariants` | 9 | 8 | Stateful fuzzing. Handlers perform random sequences of deposits, fundings, redemptions, impairments, losses and yield, and the properties on the [Invariants](protocol-invariants.md) page are asserted after every step. |
 | End-to-end | `tests/e2e` | 25 | 61 | Multi-step scenarios: deployment configurations, several Pools sharing one Strategy Manager, impairment and recovery, fee collection and rate changes, and underlying protocol outages such as a halted Sky PSM. |
-| Protocol upgrade | `tests/protocol-upgrade` | 32 | 78 | Rehearsals of mainnet upgrades on a fork, including the full v7 upgrade procedure and compatibility of existing Pools after it. |
-| Health checkers | `tests/health-checkers` | 1 | 1 | The health checker contracts in `contracts/health-checkers/` used by [Critical Monitoring](security.md#critical-monitoring). `tests/health-checkers/ModularReleaseHealthCheckers.t.sol` runs them on a mainnet fork after the v7 upgrade, and `tests/invariants/HealthCheckerInvariants.t.sol` runs them during stateful fuzzing. |
+| Protocol upgrade | `tests/protocol-upgrade` | 32 | 78 | Rehearsals of mainnet upgrades on a fork, including the full November 2026 upgrade procedure and compatibility of existing Pools after it. |
+| Health checkers | `tests/health-checkers` | 1 | 1 | The health checker contracts in `contracts/health-checkers/` used by [Critical Monitoring](security.md#critical-monitoring). `tests/health-checkers/ModularReleaseHealthCheckers.t.sol` runs them on a mainnet fork after the November 2026 upgrade, and `tests/invariants/HealthCheckerInvariants.t.sol` runs them during stateful fuzzing. |
 | Scenarios | `scenarios` | 1 | 1 | A runner that replays Pool and loan scenarios defined as CSV files. |
 
 Tests named `testFork_`, and suites that extend a fork test base, run against a mainnet fork. The Aave V3 and Sky strategy tests use the live Aave and Sky contracts this way.

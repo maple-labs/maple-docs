@@ -30,13 +30,13 @@ During the fuzz testing process, it was discovered that certain overflow conditi
 
 It's known that, in theory, withdrawal managers can be configured to unreasonable terms, for example, making the withdrawal window 1 second, or the cycle duration to be large,or pool delegates can set the withdrawal manager address to an invalid address. However, it's understood that pool delegates are trusted actors and they are working to making the pool well functioning.
 
-## v7 strategy assumptions
+## Strategy assumptions
 
-v7 adds the Strategy Manager, Strategy Deployer, Liquidity Router, the Aave V3 and Sky strategies and the Allocation Strategy. The assumptions below are new or change scope in v7. The core assumptions above still hold.
+The November 2026 release adds the Strategy Manager, Strategy Deployer, Liquidity Router, the Aave V3 and Sky strategies and the Allocation Strategy. The assumptions below are new or change scope in that release. The core assumptions above still hold.
 
 #### 1. Calls made by Maple's own contracts are non-malicious.
 
-The v7 contracts are developed by the Maple smart contracts team and audited before deployment, like the rest of the protocol. Calls between them, for example a Strategy Manager calling `requestFunds()` on a Pool Manager, are trusted.
+These contracts are developed by the Maple smart contracts team and audited before deployment, like the rest of the protocol. Calls between them, for example a Strategy Manager calling `requestFunds()` on a Pool Manager, are trusted.
 
 #### 2. Integrated protocols account for their positions correctly.
 
