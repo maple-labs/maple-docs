@@ -1,6 +1,6 @@
 # Pool Manager
 
-`MaplePoolManager` (v5.0.0 in v7) is the control contract for a Pool. It holds the Pool's configuration, records which strategies the Pool may fund and the cap on each, releases Pool cash to those strategies, aggregates `totalAssets` and `unrealizedLosses`, and routes withdrawal requests to the Withdrawal Manager. The Pool itself stays minimal and immutable, so anything that may need to change lives here. Full interface: [PoolManager](../interfaces/pool-manager.md).
+`MaplePoolManager` (v5.0.0) is the control contract for a Pool. It holds the Pool's configuration, records which strategies the Pool may fund and the cap on each, releases Pool cash to those strategies, aggregates `totalAssets` and `unrealizedLosses`, and routes withdrawal requests to the Withdrawal Manager. The Pool itself stays minimal and immutable, so anything that may need to change lives here. Full interface: [PoolManager](../interfaces/pool-manager.md).
 
 ## Open Term Loan Manager and attached Strategy Managers
 

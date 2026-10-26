@@ -1,6 +1,6 @@
 # Withdrawal Manager
 
-The queue-based `MapleWithdrawalManager` handles exits from a Pool. Lenders submit redemption requests, the contract escrows their shares in a FIFO queue, and when a request is processed it exchanges the shares for assets at the current exit rate and sends them to the owner. v7 ships v2.0.1, whose only functional change is a permission check on `removeSharesById`. Storage is unchanged, so the upgrade is an implementation swap with no migrator. Full interface: [WithdrawalManagerQueue](../interfaces/withdrawal-manager-queue.md).
+The queue-based `MapleWithdrawalManager` handles exits from a Pool. Lenders submit redemption requests, the contract escrows their shares in a FIFO queue, and when a request is processed it exchanges the shares for assets at the current exit rate and sends them to the owner. The November 2026 release ships v2.0.1, whose only functional change is a permission check on `removeSharesById`. Storage is unchanged, so the upgrade is an implementation swap with no migrator. Full interface: [WithdrawalManagerQueue](../interfaces/withdrawal-manager-queue.md).
 
 ### Withdrawal Request
 

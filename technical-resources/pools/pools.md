@@ -1,6 +1,6 @@
 # Pool
 
-The Pool contract is the core unit that keeps tracks of liquidity provider shares and funds, including token transfer capabilities. It's the only necessary contract for Lenders to interact with and it contains all necessary functions to enter and exit positions. It is an immutable contract that contains the minimum necessary logic to allow for a high degree of flexibility in future development of the protocol. v7 changes only the compiler version of `MaplePool`, its behaviour is unchanged. Full interface: [Pool](../interfaces/pool.md).
+The Pool contract is the core unit that keeps tracks of liquidity provider shares and funds, including token transfer capabilities. It's the only necessary contract for Lenders to interact with and it contains all necessary functions to enter and exit positions. It is an immutable contract that contains the minimum necessary logic to allow for a high degree of flexibility in future development of the protocol. The November 2026 release changes only the compiler version of `MaplePool`, its behaviour is unchanged. Full interface: [Pool](../interfaces/pool.md).
 
 The pool contract is an implementation of a Tokenized Vault Standard ([ERC-4626](https://erc4626.info/)), implementing the full interface defined in the [specification](https://eips.ethereum.org/EIPS/eip-4626).
 
