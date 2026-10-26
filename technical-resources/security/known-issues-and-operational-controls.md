@@ -26,7 +26,7 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Risk.** A large manual request at the head of the queue can hold up the requests behind it, even when the Pool holds enough cash for them.
 
-**Control.** Only addresses Maple marks can withdraw manually, and Maple uses it internally and for integrations it supports. The Pool Delegate decides how to handle a manual request at the head of the queue: process it over several smaller batches, remove it with `removeRequest()`, or leave it in place.
+**Control.** Only addresses Maple marks can withdraw manually, and Maple uses it internally and for integrations it supports. Maple can decide how to handle a request which is blocking the queue by removing it with `removeRequest()`, or leaving it in place.
 
 ## Permissions
 
