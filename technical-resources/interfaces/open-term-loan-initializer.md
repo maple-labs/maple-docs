@@ -446,7 +446,7 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event BorrowerAccepted(
-        address borrower_
+        address indexed borrower_
     );
 ```
 
@@ -536,9 +536,9 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event Initialized(
-        address borrower_,
-        address lender_,
-        address fundsAsset_,
+        address indexed borrower_,
+        address indexed lender_,
+        address indexed fundsAsset_,
         uint256 principalRequested_,
         uint32[3] termDetails_,
         uint64[4] rates_
@@ -562,7 +562,7 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event LenderAccepted(
-        address lender_
+        address indexed lender_
     );
 ```
 
@@ -644,7 +644,7 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event PaymentMade(
-        address lender_,
+        address indexed lender_,
         uint256 principalPaid_,
         uint256 interestPaid_,
         uint256 lateInterestPaid_,
@@ -674,7 +674,7 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event PendingBorrowerSet(
-        address pendingBorrower_
+        address indexed pendingBorrower_
     );
 ```
 
@@ -690,7 +690,7 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event PendingLenderSet(
-        address pendingLender_
+        address indexed pendingLender_
     );
 ```
 
@@ -745,7 +745,7 @@ Encodes the initialization arguments for a MapleLoan.
 ```solidity
     event Repossessed(
         uint256 fundsRepossessed_,
-        address destination_
+        address indexed destination_
     );
 ```
 
@@ -762,9 +762,9 @@ Encodes the initialization arguments for a MapleLoan.
 
 ```solidity
     event Skimmed(
-        address token_,
+        address indexed token_,
         uint256 amount_,
-        address destination_
+        address indexed destination_
     );
 ```
 

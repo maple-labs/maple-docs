@@ -96,7 +96,7 @@ Authorizes the lender and deposits assets.
         uint256 amount,
         bytes32 depositData
     )
-        external
+        nonpayable
         returns (
             uint256 shares
         );
@@ -134,7 +134,7 @@ Authorizes the lender and deposits with an ERC‑2612 permit.
         bytes32 permitR,
         bytes32 permitS
     )
-        external
+        nonpayable
         returns (
             uint256 shares
         );
@@ -167,7 +167,7 @@ Deposits assets when already authorized.
         uint256 amount,
         bytes32 depositData
     )
-        external
+        nonpayable
         returns (
             uint256 shares
         );
@@ -195,7 +195,7 @@ Deposits with an ERC‑2612 permit when already authorized.
         bytes32 s,
         bytes32 depositData
     )
-        external
+        nonpayable
         returns (
             uint256 shares
         );

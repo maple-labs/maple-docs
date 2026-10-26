@@ -414,7 +414,7 @@ Emitted when the lender allowlist is updated.
 
 ```solidity
     event LenderAllowlistSet(
-        address poolManager,
+        address indexed poolManager,
         address[] lenders,
         bool[] booleans
     );
@@ -456,7 +456,7 @@ Emitted when a permission admin has been updated.
 
 ```solidity
     event PermissionAdminSet(
-        address account,
+        address indexed account,
         bool isAdmin
     );
 ```
@@ -476,7 +476,7 @@ Emitted when pool bitmaps are updated.
 
 ```solidity
     event PoolBitmapsSet(
-        address poolManager,
+        address indexed poolManager,
         bytes32[] functionIds,
         uint256[] bitmaps
     );
@@ -498,7 +498,7 @@ Emitted when the permission level of a pool is updated.
 
 ```solidity
     event PoolPermissionLevelSet(
-        address poolManager,
+        address indexed poolManager,
         uint256 permissionLevel
     );
 ```

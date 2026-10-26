@@ -1185,8 +1185,8 @@ Emitted when one account has set the allowance of another account over their tok
 
 ```solidity
     event Approval(
-        address owner_,
-        address spender_,
+        address indexed owner_,
+        address indexed spender_,
         uint256 amount_
     );
 ```
@@ -1207,8 +1207,8 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 
 ```solidity
     event BootstrapMintPerformed(
-        address caller_,
-        address receiver_,
+        address indexed caller_,
+        address indexed receiver_,
         uint256 assets_,
         uint256 shares_,
         uint256 bootStrapMintAmount_
@@ -1233,8 +1233,8 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 
 ```solidity
     event Deposit(
-        address caller_,
-        address owner_,
+        address indexed caller_,
+        address indexed owner_,
         uint256 assets_,
         uint256 shares_
     );
@@ -1257,8 +1257,8 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 
 ```solidity
     event OwnershipAccepted(
-        address previousOwner_,
-        address newOwner_
+        address indexed previousOwner_,
+        address indexed newOwner_
     );
 ```
 
@@ -1277,8 +1277,8 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 
 ```solidity
     event PendingOwnerSet(
-        address owner_,
-        address pendingOwner_
+        address indexed owner_,
+        address indexed pendingOwner_
     );
 ```
 
@@ -1297,7 +1297,7 @@ A new redemption request has been made.
 
 ```solidity
     event RedemptionRequested(
-        address owner_,
+        address indexed owner_,
         uint256 shares_,
         uint256 escrowedShares_
     );
@@ -1319,7 +1319,7 @@ Shares have been removed.
 
 ```solidity
     event SharesRemoved(
-        address owner_,
+        address indexed owner_,
         uint256 shares_
     );
 ```
@@ -1339,8 +1339,8 @@ Emitted when tokens have moved from one account to another.
 
 ```solidity
     event Transfer(
-        address owner_,
-        address recipient_,
+        address indexed owner_,
+        address indexed recipient_,
         uint256 amount_
     );
 ```
@@ -1361,9 +1361,9 @@ Emitted when tokens have moved from one account to another.
 
 ```solidity
     event Withdraw(
-        address caller_,
-        address receiver_,
-        address owner_,
+        address indexed caller_,
+        address indexed receiver_,
+        address indexed owner_,
         uint256 assets_,
         uint256 shares_
     );
@@ -1387,7 +1387,7 @@ A new withdrawal request has been made.
 
 ```solidity
     event WithdrawRequested(
-        address owner_,
+        address indexed owner_,
         uint256 assets_,
         uint256 escrowedShares_
     );
