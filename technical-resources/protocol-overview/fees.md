@@ -1,5 +1,7 @@
 # Fees
 
+Maple charges fees on loan payments and on strategy yield. Loan fees go to the Pool Delegate and the `MapleTreasury`, and strategy fees go to the Strategy Delegate and the `MapleTreasury`. Lenders receive everything that remains.
+
 ## Loan Fees
 
 Loan fees in the Maple protocol can be separated into two categories:
@@ -65,3 +67,40 @@ $$
 $$
 
 The remainder of the interest (net interest) goes to the Liquidity Providers.
+
+## Strategy Fees
+
+Each Underlying Strategy charges two fees on the yield it earns, never on principal:
+
+1. `strategyDelegateFeeRate`, paid to the Strategy Delegate.
+2. `strategyProtocolFeeRate`, paid to the `MapleTreasury`.
+
+Both rates are scaled by `1e6` (`HUNDRED_PERCENT`), so `50_000` is 5%. Each rate must not exceed `1e6`, and the two together must not exceed `1e6`. The initializer checks the sum at deployment and both setters check it again. The Strategy Delegate sets `strategyDelegateFeeRate` through `setStrategyDelegateFeeRate()`, and the Governor or Operational Admin sets `strategyProtocolFeeRate` through `setStrategyProtocolFeeRate()`.
+
+The Strategy Manager charges nothing. It prices Pool shares on the Underlying Strategy's `assetsUnderManagement()`, which is already net of fees. Pool management fees apply to loan interest only and never touch strategy yield.
+
+### Aave V3 and Sky: accrual basis
+
+These strategies earn yield continuously as the aToken balance or sUSDS value grows, so fees accrue on the growth since the last harvest:
+
+```
+yieldAccrued = currentTotalAssets - lastRecordedTotalAssets   (zero if not positive)
+delegateFee  = yieldAccrued * strategyDelegateFeeRate / 1e6
+protocolFee  = yieldAccrued * strategyProtocolFeeRate / 1e6
+```
+
+Accrued fees are withdrawn from the underlying protocol and paid out whenever a call touches the position: `fundUnderlyingStrategy()`, `withdrawFromUnderlyingStrategy()`, `setStrategyDelegateFeeRate()` and `setStrategyProtocolFeeRate()`. Each of these resets `lastRecordedTotalAssets` to the position after the harvest, so a rate change applies only to yield earned after it. Between harvests, `assetsUnderManagement()` and `availableToWithdraw()` already deduct the accrued fees, so Pools never count fee amounts as their own value. Very small accruals can round a fee down to zero. The Sky Strategy's fee-rate setters revert while Sky halts the PSM `buyGem()` path (`tout == type(uint256).max`).
+
+### Allocation Strategy: cash basis
+
+The Allocation Strategy earns nothing on its own. A Managed Wallet reports profit by calling `realizeYield(yield, duration, metadata)` and transferring the yield in. Fees come out of that gross amount immediately. The net yield joins `recordedAssets` at once and vests over `duration`. Until it vests, `availableToWithdraw()` and `assetsUnderManagement()` exclude it:
+
+```
+delegateFee = yield * strategyDelegateFeeRate / 1e6
+protocolFee = yield * strategyProtocolFeeRate / 1e6
+netYield    = yield - delegateFee - protocolFee
+```
+
+Fees apply only to the yield passed in that call, never to yield still vesting from earlier calls. Changing a fee rate on the Allocation Strategy harvests nothing, because nothing accrues between calls.
+
+See the accounting pages for [Aave V3](../strategies/aave-v3-strategy/accounting-and-fees.md), [Sky](../strategies/sky-strategy/accounting-and-fees.md) and the [Allocation Strategy](../strategies/allocation-strategy/accounting-and-fees.md).

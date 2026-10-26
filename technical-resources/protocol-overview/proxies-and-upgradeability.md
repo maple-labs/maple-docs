@@ -24,7 +24,7 @@ In order to manage versions in the `MapleProxyFactory`, the following actions ar
 
 ### Governance, Allowlisting, and Timelocks
 
-- Factories are allowlisted in Globals using `setValidInstanceOf("<FACTORY_KEY>", <factoryAddress>, true)` and deploy permissions are granted per account using `setCanDeployFrom(<factoryAddress>, <account>, true)`. Note: `setValidPoolDeployer` is deprecated for enabling deployers and should not be used for that purpose.
+- Factories are allowlisted in Globals using `setValidInstanceOf("<FACTORY_KEY>", <factoryAddress>, true)` and deploy permissions are granted per account using `setCanDeployFrom(<factoryAddress>, <account>, true)`.
 - Governor‑privileged actions (e.g., adding versions, enabling upgrade paths, setting defaults) must be scheduled and executed via the `GovernorTimelock` (schedule → delay → execution window).
 - Certain contract upgrades initiated by pool‑level admins (e.g., Pool Delegate) require a valid scheduled call recorded in Globals before execution. The Security Admin may have direct execution rights depending on the contract ACLs.
 
