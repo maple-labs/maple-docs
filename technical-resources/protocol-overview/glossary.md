@@ -45,7 +45,7 @@
 | `assetsOf(poolManager)` | A Strategy Manager view of one Pool's position: `sharesOf[poolManager] * assetsUnderManagement() / totalShares`. The Pool Manager adds it to `totalAssets()`. |
 | `assetsUnderManagement` | An Underlying Strategy's total value net of accrued fees, passed through by the Strategy Manager. For the Allocation Strategy it is `totalDeployedAssets + availableToWithdraw()`. |
 | `availableToWithdraw` | How much an Underlying Strategy can pay out right now, net of accrued fees. For the Allocation Strategy it is `recordedAssets - unrealizedYield()`. |
-| `bootstrapMint` | Globals mapping from asset to the bootstrap amount. The Pool mints it to `address(0)` on its first deposit, and the Strategy Deployer seeds each new Strategy Manager with it. |
+| `bootstrapMint` | Globals mapping from asset to the bootstrap amount. The Pool mints it to address(0) on its first deposit, and the Strategy Deployer seeds each new Strategy Manager with it, which in turn assigns the resulting shares to address(0). |
 | `calledPrincipal` | The amount of principal that has been called and must be returned on the next loan payment. |
 | `dateCalled` | The date on which the loan was called. |
 | `dateFunded` | The date on which the loan was funded. |
