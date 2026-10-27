@@ -154,7 +154,7 @@ A non-zero `poolManagerCapOf` requires a valid Pool Manager, and both setters re
 
 ## Strategy Delegate handover
 
-The Operational Admin nominates the successor and the successor must accept, so a handover cannot complete from one key alone. The current delegate's consent is never checked.
+The Operational Admin nominates the successor and the successor must accept, so a handover cannot complete from one key alone.
 
 ```mermaid
 sequenceDiagram

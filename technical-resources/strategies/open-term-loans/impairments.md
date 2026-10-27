@@ -25,4 +25,4 @@ In the case that the Borrower is unable to make the payment, the Loan can be def
 Example scenario with an impairment [here](../../pools/exchange-rates.md).
 
 ## Access Control
-Both the Pool Delegate and Governor are allowed to impair a Loan at any given time. If the Governor impairs the Loan, the Pool Delegate DOES NOT have the right to revert the impairment. If the Pool Delegate impairs the Loan, the Governor DOES have the right to revert the impairment. In practice a loan is called before it is impaired, so the next payment due is the full principal. The contracts do not enforce this order.
+The Pool Delegate is allowed to impair a Loan at any given time. The Governor Timelock has the rights to revert the impairment. In practice a loan is called before it is impaired, so the next payment due is the full principal. The contracts do not enforce this order. Operationally the Governor Timelock is not used to impair a loan.
