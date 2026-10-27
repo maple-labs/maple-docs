@@ -60,6 +60,8 @@ The registry also controls who can deploy. `MapleStrategyDeployer.deploy()` requ
 
 `setValidMapleManagedWallet(wallet, isValid)` writes the `MAPLE_MANAGED_WALLET` key through `setValidInstanceOf`, so it carries the same Governor-or-Operational-Admin check and the same function grants and revokes. See [Managed Wallets](../strategies/allocation-strategy/managed-wallets.md).
 
+Two further allowlists are not keyed. `setValidBorrower` (Governor or Operational Admin) approves a Borrower, read through `isBorrower`. `setValidPoolAsset` (Governor) approves an asset that Pools and strategies may use, read through `isPoolAsset`.
+
 ## Deployment permissions
 
 Every factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either directly or, for the Pool Manager Factory, through the `isPoolDeployer` view, which forwards to it. `canDeployFrom(factory, caller)` returns true when:
@@ -72,7 +74,7 @@ Every factory checks `globals.canDeploy(msg.sender)` in `createInstance`, either
 
 `setPlatformManagementFeeRate`, `setPlatformOriginationFeeRate` and `setPlatformServiceFeeRate` store a rate per Pool Manager, each capped at `HUNDRED_PERCENT` (`100_0000`). The Governor or Operational Admin sets them. Strategy protocol fee rates live on each strategy instead, see [Strategies](../strategies/README.md).
 
-`bootstrapMint[asset]` is the permanent dead-address deposit that protects a new vault's share price. The Pool reads it once at deployment and mints that many shares to `address(0)` on the first deposit. The Strategy Deployer reads the same value: `deploy()` pulls `bootstrapMint(fundsAsset)` from the Strategy Delegate into the underlying strategy, and `completeConfiguration` records the resulting shares against `address(0)`. The value must be non-zero for an asset before its first Strategy Manager is deployed, because a Strategy Manager deployed while it is zero has no bootstrap protection.
+`bootstrapMint[asset]` is the permanent dead-address deposit that protects the share price of a new Pool or Strategy Manager. The Pool reads it once at deployment and mints that many shares to `address(0)` on the first deposit. The Strategy Deployer reads the same value: `deploy()` pulls `bootstrapMint(fundsAsset)` from the Strategy Delegate into the underlying strategy, and `completeConfiguration` records the resulting shares against `address(0)`. The value must be non-zero for an asset before its first Strategy Manager is deployed, because a Strategy Manager deployed while it is zero has no bootstrap protection.
 
 ## Timelocks
 

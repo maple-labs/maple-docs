@@ -34,6 +34,8 @@ sequenceDiagram
 - `aaveToken` to still be registered in Globals as a `STRATEGY_VAULT`. Globals can delist a market after deployment to block further funding,
 - no recognised loss and no pause on the function.
 
+Aave's `supply()` also reverts when the reserve is frozen or the deposit would exceed its supply cap, so funding fails in those states.
+
 The function harvests accrued fees, records the aToken balance, approves the Aave pool and calls `supply()` with the stored `referralCode`. It returns `deployedAssets`, the increase in the aToken balance, rather than echoing `assetsIn`. It then sets `lastRecordedTotalAssets` to the new balance and emits `StrategyFunded(strategyManager, assetsIn, deployedAssets)`. The Strategy Manager mints shares against `deployedAssets`.
 
 The Strategy Manager also calls this function once during `completeConfiguration()` to deploy the bootstrap deposit.
@@ -68,7 +70,7 @@ sequenceDiagram
 
 A single Aave `withdraw()` call pulls the requested `assets` and any accrued fees together. The strategy pays the fees, forwards `assets` to `destination`, sets `lastRecordedTotalAssets` to the new aToken balance and emits `StrategyWithdrawal(destination, assets)`.
 
-If the reserve cannot serve the withdrawal, Aave reverts and the whole call fails. See [the 100% utilisation revert](impairments-and-losses.md#aave-liquidity-and-the-100-utilisation-revert).
+The Strategy Manager checks the amount against `availableToWithdraw()` first and reverts with `MSM:PR:NOT_ENOUGH_LIQUIDITY` when the reserve cannot serve the withdrawal. If Aave still cannot serve it, Aave reverts and the whole call fails. See [the 100% utilisation revert](impairments-and-losses.md#aave-liquidity-and-the-100-utilisation-revert).
 
 ## Rewards
 
@@ -80,7 +82,7 @@ Aave markets may pay incentive rewards in a token separate from the funds asset.
 - The full amount goes to the Maple Treasury. There is no Strategy Delegate share.
 - Rewards are not part of AUM and the function remains callable after a loss is recognised.
 
-Emits `RewardsClaimed(rewardToken, amount)`.
+Emits `RewardsClaimed(rewardToken, claimed)`, where `claimed` is the amount Aave actually paid rather than the `amount` argument.
 
 ## Referral code
 

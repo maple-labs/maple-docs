@@ -2,7 +2,7 @@
 
 Each Maple Pool has two exchange rates, one for deposits and one for withdrawals, which can be seen in the `convertToAssets`, `convertToExitAssets`, `convertToShares` and `convertToExitShares` functions.
 
-The difference is because when withdrawing assets from a pool the protocol takes into account `unrealizedLosses` ([more info here](pool-accounting.md)) which can be thought of as a paper loss due to a loan or strategy impairment. As a result the withdrawal exchange rate needs to take any `unrealizedLosses` into account to stop LPs front running any losses, this design makes any losses more equitable across all LPs. The reason that two exchange rates must be maintained in the case of an unrealized loss is that a new LP can take advantage of an impairment being removed by depositing right before the unrealizedLoss is reduced. This reduction can result in a significant discrete increase in the exchange rate, which can be exploited by a depositor. For this reason, the deposit exchange rate does not recognize the unrealized loss while the withdrawal rate does.
+The difference is because when withdrawing assets from a pool the protocol takes into account `unrealizedLosses` ([more info here](pool-accounting.md)) which can be thought of as a paper loss due to a loan or strategy impairment. As a result the withdrawal exchange rate needs to take any `unrealizedLosses` into account to stop LPs front running any losses, this design makes any losses more equitable across all LPs. The reason that two exchange rates must be maintained in the case of an unrealized loss is that a new LP can take advantage of an impairment being removed by depositing right before the unrealizedLoss is reduced. This reduction can result in a significant discrete increase in the exchange rate, which can be exploited by a Lender. For this reason, the deposit exchange rate does not recognize the unrealized loss while the withdrawal rate does.
 
 #### `convertToAssets`
 
@@ -24,7 +24,7 @@ $$
 
 ## Example: Loan Impairment
 
-Below is an example of how the exchange rates work when a loan is impaired and the impairment is later removed. If one exchange rate was used during this process, a depositor could have deposited at a 0.6 exchange rate and withdrawn at a 1.1 exchange rate once the impairment was removed. This would be an unfair distribution of funds as that depositor would capture value belonging to the LPs who were in the pool when the loan was impaired.
+Below is an example of how the exchange rates work when a loan is impaired and the impairment is later removed. If one exchange rate was used during this process, a Lender could have deposited at a 0.6 exchange rate and withdrawn at a 1.1 exchange rate once the impairment was removed. This would be an unfair distribution of funds as that Lender would capture value belonging to the LPs who were in the pool when the loan was impaired.
 
 ```
 # Pre-Impairment

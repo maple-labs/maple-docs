@@ -12,11 +12,11 @@ The impairment surfaces through one view:
 unrealizedLosses() = min(impairedAssets, assetsUnderManagement())
 ```
 
-The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to exit assets, so redemptions price in the write-down while reported AUM stays unchanged. While `impairedAssets` is non-zero, Liquidity Bots cannot act on the Strategy Manager. See [Liquidity Bot Actions](../../admin-functions/liquidity-bot-actions.md#the-impairment-block).
+The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to exit assets, so redemptions price in the write-down while reported AUM stays unchanged. While `impairedAssets` is non-zero, Liquidity Bots and the Liquidity Router cannot act on the Strategy Manager. The Strategy Delegate remains an Operator. See [Liquidity Bot Actions](../../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 ## Recognising a loss
 
-`recognizeLoss()` takes no arguments. It is an all-or-nothing shutdown of the strategy instance, not a partial write-off. The Strategy Delegate or Operational Admin calls it once, after withdrawing everything that can reasonably be recovered. It cannot be undone.
+`recognizeLoss()` takes no arguments. It is an all-or-nothing shutdown of the strategy instance, not a partial write-off. The Strategy Delegate or Operational Admin calls it once a loss is final. It cannot be undone.
 
 The call sets `isLossRecognized = true`, zeroes `lastRecordedTotalAssets` and `impairedAssets`, and emits `LossRecognized()`. From then on:
 
@@ -25,7 +25,7 @@ The call sets `isLossRecognized = true`, zeroes `lastRecordedTotalAssets` and `i
 - The aTokens stay in the contract until `recoverPosition()` moves them.
 - Funding, withdrawals, impairment changes and the strategy's setters revert with `MAV3S:LOSS_RECOGNIZED`.
 
-The Strategy Manager still holds shares for each Pool against an AUM of `0`. `processRedemption()` reverts with `MSM:PR:ZERO_ASSETS` because the shares convert to no assets, and `fundStrategyManager()` reverts when it calls `fundUnderlyingStrategy()`. The Strategy Manager is finished once a loss is recognised. See [Known Issues and Operational Controls](../../security/known-issues-and-operational-controls.md).
+The Strategy Manager still holds shares for each Pool against an AUM of `0`. Each Pool's `totalAssets()` drops by its whole position in the strategy. `processRedemption()` reverts with `MSM:PR:ZERO_ASSETS` because the shares convert to no assets, and `fundStrategyManager()` reverts when it calls `fundUnderlyingStrategy()`. The Strategy Manager is finished once a loss is recognised. See [Known Issues and Operational Controls](../../security/known-issues-and-operational-controls.md).
 
 ## Recovering the position
 

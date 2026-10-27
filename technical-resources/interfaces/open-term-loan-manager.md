@@ -544,13 +544,13 @@ Triggers the default of a loan.
 | Index |         Name         |    Type   | Internal Type | Description                  |
 | :---: | :------------------: | :-------: | :-----------: | ---------------------------- |
 |   0   |        `loan_`       | `address` |   `address`   | Loan to trigger the default. |
-|   1   | `liquidatorFactory_` | `address` |   `address`   |                              |
+|   1   | `liquidatorFactory_` | `address` |   `address`   | Ignored. Open-term loans have no collateral, so the Pool Manager passes the zero address. |
 
 #### Return Values:
 
 | Index |            Name            |    Type   | Internal Type | Description                                                                 |
 | :---: | :------------------------: | :-------: | :-----------: | --------------------------------------------------------------------------- |
-|   0   |   `liquidationComplete_`   |   `bool`  |     `bool`    |                                                                             |
+|   0   |   `liquidationComplete_`   |   `bool`  |     `bool`    | Always true, because an open-term default completes in one transaction.     |
 |   1   |     `remainingLosses_`     | `uint256` |   `uint256`   | The amount of un-recovered principal and interest (net of management fees). |
 |   2   | `unrecoveredPlatformFees_` | `uint256` |   `uint256`   | The amount of un-recovered platform fees.                                   |
 

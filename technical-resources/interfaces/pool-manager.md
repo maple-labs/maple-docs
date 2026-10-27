@@ -371,7 +371,7 @@ The address of the implementation contract being proxied.
 
 ### `isStrategy`
 
-Returns whether or not the given address is a registered strategy. These are legacy strategies set to be depreciated in future for the new modular strategies.
+Returns whether or not the given address is a registered strategy. These are legacy strategies set to be deprecated in future for the new modular strategies.
 
 ```solidity
     function isStrategy(
@@ -1039,7 +1039,7 @@ Sets the address of the pool permission manager.
 
 ### `setStrategyCap`
 
-Sets the pool's AUM exposure cap to a strategy. The strategy must be an instance of a valid strategy factory if the cap is non-zero.
+Sets the pool's AUM exposure cap to a strategy or Strategy Manager. The address must be an instance of a valid strategy or Strategy Manager factory if the cap is non-zero.
 
 ```solidity
     function setStrategyCap(

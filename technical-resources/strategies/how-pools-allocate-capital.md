@@ -12,7 +12,7 @@ totalAssets() = pool asset balance
               + Σ strategyManager.assetsOf(poolManager) for Strategy Managers
 ```
 
-`unrealizedLosses()` is built the same way, using `unrealizedLossesOf(poolManager)` for Strategy Managers. Only the Governor can attach a Strategy Manager to a configured Pool, and the Strategy Manager must support the Pool's asset. The Operational Admin can detach one with `removeStrategyManager()` once the Pool's `assetsOf()` in it is zero. Detaching also resets the Pool's cap for it to zero.
+`unrealizedLosses()` is built the same way, using `unrealizedLossesOf(poolManager)` for Strategy Managers. Only the Governor can attach a Strategy Manager to a configured Pool, so an attach waits for the Governor Timelock delay, and the Strategy Manager must support the Pool's asset. The Operational Admin can detach one with `removeStrategyManager()` once the Pool's `assetsOf()` in it is zero. Detaching also resets the Pool's cap for it to zero.
 
 ```mermaid
 flowchart TD
@@ -168,9 +168,10 @@ The Pool Delegate does not move capital. It sets limits, and the Strategy Delega
 | Actor | Role in allocation |
 | --- | --- |
 | Pool Delegate | Sets `strategyCapOf` for each attached strategy. Can request and cancel redemptions for its own Pool. |
-| Strategy Delegate | Sets both Strategy Manager caps. Can fund, request, cancel and process on its Strategy Manager at any time, including while the Underlying Strategy is impaired. |
+| Strategy Delegate | Sets both Strategy Manager caps and its own fee rate. Impairs the Underlying Strategy and recognises losses. Can fund, request, cancel and process on its Strategy Manager at any time, including while the Underlying Strategy is impaired. |
 | Operational Admin | Sets both Strategy Manager caps, processes redemptions, nominates a new Strategy Delegate, activates Strategy Managers in Globals and detaches them from Pools. |
-| Governor | Attaches Strategy Managers to configured Pools. Can also activate them in Globals and set `strategyCapOf`. |
+| Governor | Attaches Strategy Managers to configured Pools, after the Governor Timelock delay. Can also activate them in Globals and set `strategyCapOf`. |
+| Security Admin | Does not move capital. Pauses contracts through Globals and upgrades Strategy Managers and Underlying Strategies. On the Allocation Strategy, sets Managed Wallet permissions and deployment caps and can cancel unvested yield. |
 | Liquidity Bot | Funds, requests, cancels and processes on behalf of Pools, directly or through the Liquidity Router. Blocked while the Underlying Strategy has impaired assets. |
 | Managed Wallet | Draws capital from and returns it to an Allocation Strategy. See [Managed Wallets](allocation-strategy/managed-wallets.md). |
 

@@ -12,7 +12,7 @@ Impairments reach the Pools through one view:
 unrealizedLosses() = min(impairedAssets, assetsUnderManagement())
 ```
 
-The [Strategy Manager](../strategy-manager.md) reads this value, caps it at its own AUM and apportions it to each Pool by shares. The `min()` means unrealized losses can never exceed what the strategy reports as AUM, and they fall to `0` automatically once AUM does.
+The [Strategy Manager](../strategy-manager.md) reads this value, caps it at its own AUM and apportions it to each Pool by shares. The `min()` means unrealized losses can never exceed what the strategy reports as AUM, and they fall to `0` automatically once AUM does. While `impairedAssets` is non-zero, Liquidity Bots and the Liquidity Router cannot act on the Strategy Manager. The Strategy Delegate remains an Operator. See [Liquidity Bot Actions](../../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 `removeImpairment(assets)` reverses a write-down. The same callers may use it, `assets` must be non-zero and must not exceed `impairedAssets`. It emits `ImpairmentRemoved(assets)`.
 
@@ -20,7 +20,7 @@ Both functions revert once a loss is recognized.
 
 ## Recognizing a loss
 
-`recognizeLoss()` takes no arguments. It is a one-way shutdown of the whole strategy, not a partial write-off. The Strategy Delegate or Operational Admin calls it once the recoverable part of the position has been withdrawn and the remainder is considered lost. It requires that a loss has not already been recognized.
+`recognizeLoss()` takes no arguments. It is a one-way shutdown of the whole strategy, not a partial write-off. The Strategy Delegate or Operational Admin calls it once the position is considered lost. It requires that a loss has not already been recognized.
 
 On success the strategy:
 

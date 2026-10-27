@@ -2,7 +2,7 @@
 
 Whenever a Borrower is no longer able to meet their obligations, the Pool Delegate, Governor or Operational Admin have the option to trigger a default by calling `triggerDefault()` on the PoolManager. This process realizes the Loan's losses and adjusts the Pool accounting accordingly.
 
-Every Loan has a defined payment interval which determines when payments are expected to be made by the Borrower. If the Borrower does not make a payment before the expected due date, there is a grace period during which they can make a late payment. After the grace period passes the loan is considered to be in default, and the Pool Delegate has the *option* to trigger the default. The Loan enforces this: `repossess` reverts with `ML:R:NOT_IN_DEFAULT` unless `isInDefault()` is true, meaning the current time is past the loan's `defaultDate()`.
+Every Loan has a defined payment interval which determines when payments are expected to be made by the Borrower. If the Borrower does not make a payment before the expected due date, there is a grace period during which they can make a late payment. After the grace period passes the loan is considered to be in default, and the Pool Delegate, Governor or Operational Admin has the option to trigger the default. The Loan enforces this: `repossess` reverts with `ML:R:NOT_IN_DEFAULT` unless `isInDefault()` is true, meaning the current time is past the loan's `defaultDate()`.
 
 These conditions are illustrated in the diagram below.
 

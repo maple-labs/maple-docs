@@ -11,17 +11,17 @@ Any user holding shares can perform a withdrawal request.
 * When making the request the user specifies the amount of shares that should be redeemed and that amount of shares is then transferred to the withdrawal manager where it remains in custody.
 * Once the withdrawal is processed the request is deleted and the user can again make another one.
 * The user can also adjust an existing withdrawal request, but only in a downwards manner (by returning some of the shares locked).
-* Additionally, the pool delegate or protocol admins also have the ability to remove any withdrawal request from the queue. This lets them unblock the queue if a request cannot be processed.
+* Additionally, the Pool Delegate, the Operational Admin or a registered redeemer can also remove any withdrawal request from the queue. This lets them unblock the queue if a request cannot be processed.
 
 _NOTE_: Withdrawal requests can only be submitted in the form of redemption requests (indicating the number of shares to redeem), `requestWithdraw()` and `withdraw()` functions are disabled.
 
 ### Withdrawal Queue (FIFO)
 
-The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the pool delegate or protocol admins process withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If the Pool does not hold enough liquidity to redeem every share the call is asked to process, the call reverts with `WM:PR:LOW_LIQUIDITY` and processes nothing. Requests the call does not reach stay in the queue to be processed later.
+The withdrawal queue contains all pending withdrawal requests and maintains their ordering from first to last. Whenever the Pool Delegate, the Operational Admin or a registered redeemer processes withdrawal requests, they are processed in that order (**FIFO**). This means earlier requests are processed before later requests. If the Pool does not hold enough liquidity to redeem every share the call is asked to process, the call reverts with `WM:PR:LOW_LIQUIDITY` and processes nothing. Requests the call does not reach stay in the queue to be processed later.
 
 ### Request Processing
 
-The pool delegate or any of the protocol admins can at any time process any amount of shares that are pending redemption. The amount of shares to be processed is specified in advance, and as many redemption requests as possible will be processed using that amount of shares. The requests are processed based on their position in the queue (first to last), and using the current exchange rate.
+The Pool Delegate, the Operational Admin or a registered redeemer can at any time process any amount of shares that are pending redemption. The amount of shares to be processed is specified in advance, and as many redemption requests as possible will be processed using that amount of shares. The requests are processed based on their position in the queue (first to last), and using the current exchange rate.
 
 _NOTE_: The `processRedemptions()` function has a reentrancy guard since it performs external calls.
 
@@ -48,7 +48,7 @@ The request owner can reduce or cancel a specific pending request at any time be
 1. The request exists (`WM:RSBI:INVALID_REQUEST`).
 2. The caller owns it (`WM:RSBI:NOT_OWNER`).
 3. `sharesToRemove` is non-zero and no more than the request's shares.
-4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request can be paused for a Pool. The check passes on a public Pool and for a Lender on the Pool's allowlist. Otherwise a private Pool denies the call, a `POOL_LEVEL` Pool checks the Pool-wide bitmap, and a `FUNCTION_LEVEL` Pool checks the bitmap for this function id. An unset function bitmap allows the call only at `FUNCTION_LEVEL`.
+4. The caller holds the `WM:removeSharesById` permission for this Pool in the Pool Permission Manager (`WM:RSBI:NOT_ALLOWED`). This check is new in v2.0.1. It brings `removeSharesById` in line with `removeShares`, which the Pool already checks against `P:removeShares`, so both ways of cancelling a request pass through the same permission check. The check passes on a public Pool and for a Lender on the Pool's allowlist. Otherwise a private Pool denies the call, a `POOL_LEVEL` Pool checks the Pool-wide bitmap, and a `FUNCTION_LEVEL` Pool checks the bitmap for this function id. An unset function bitmap allows the call only at `FUNCTION_LEVEL`.
 
 - If `sharesToRemove` equals the current request shares, the request is cancelled. Otherwise the request is decreased and remains in the queue with the original position.
 - Returns `(sharesReturned, sharesRemaining)` and transfers the returned LP shares back to the owner.
@@ -56,7 +56,7 @@ The request owner can reduce or cancel a specific pending request at any time be
 
 ### Manual Requests (2 step process)
 
-Each withdrawal request can be processed automatically (by default) or manually by calling `requestRedeem()` first then calling `redeem()`. The pool delegate or any protocol admin can enable manual requests for users who want to opt-out of automatic processing. The difference between automatic and manual requests is as follows:
+Each withdrawal request can be processed automatically (by default) or manually by calling `requestRedeem()` first then calling `redeem()`. The Pool Delegate or Operational Admin can enable manual requests for users who want to opt-out of automatic processing. The difference between automatic and manual requests is as follows:
 
 * Automatic requests will be immediately redeemed on processing.
 * Manual requests will be redeemed any time after processing (when the `redeem()` function is actually called). Manual withdrawal requests are primarily supported so that the protocol remains ERC-4626 compatible (**internal use only**). Automatic requests are the default and preferred way of handling withdrawals.
@@ -84,7 +84,7 @@ Each withdrawal request can be processed automatically (by default) or manually 
 
 ### Key Assumptions
 
-Generally a push pattern for token transfers is not recommended as it can lead to uncontrolled revert conditions. In the case of the `WithdrawalManager` this could mean issues such as the queue being blocked. This is a known issue and to address this we have added the `removeRequest()` function that can be called by the pool delegate or protocol admin to unblock the queue. Additionally:
+Generally a push pattern for token transfers is not recommended as it can lead to uncontrolled revert conditions. In the case of the `WithdrawalManager` this could mean issues such as the queue being blocked. This is a known issue and to address this we have added the `removeRequest()` function that can be called by the Pool Delegate, the Operational Admin or a registered redeemer to unblock the queue. Additionally:
 
 * No tokens with callbacks will be used.
 * This queue based withdrawal manager will only be used in permissioned pools, not public pools to avoid denial of service attacks.

@@ -6,7 +6,7 @@ Lightweight router for lender integrations with Syrup pools. Provides stable ent
 
 ### `asset`
 
-Returns the underlying asset of the ERC‑4626 vault (pool).
+Returns the underlying asset of the ERC-4626 Pool.
 
 ```solidity
     function asset()
@@ -20,7 +20,7 @@ Returns the underlying asset of the ERC‑4626 vault (pool).
 
 ### `pool`
 
-Returns the Maple Pool (ERC‑4626 vault) address.
+Returns the Maple Pool (ERC-4626) address.
 
 ```solidity
     function pool()

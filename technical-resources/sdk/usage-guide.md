@@ -135,7 +135,7 @@ Ensure you have the following installed and set up:
 - A React application (created using `create-react-app` or similar)
 - ethers v5 installed in your project
 - MetaMask/Rabby extension installed in your browser
-- A wallet with sufficient permissions to interact with the pool (see [Checking Permissions with Subgraph](#checking-permissions-with-subgraph))
+- A wallet with sufficient permissions to interact with the pool (see [Querying Permissions with Subgraph](#querying-permissions-with-subgraph))
 
 ### Step-by-Step Guide
 

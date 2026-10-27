@@ -62,7 +62,7 @@ The strategy stores only two addresses, `strategyManager` and `fundsAsset`. It r
 | `upgrade`                           | Security Admin                                                        |
 | `migrate`, `setImplementation`      | Factory                                                               |
 
-Every state-changing function except `multicall` carries `whenNotPaused`, so the Security Admin can pause any of them individually or pause the whole contract through Globals. See [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
+Every state-changing function except `multicall` carries `whenNotPaused`, so the Governor or Security Admin can pause the contract or the whole protocol through Globals, and unpause single functions on it. See [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
 
 ## Multicall
 

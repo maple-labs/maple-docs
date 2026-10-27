@@ -1203,7 +1203,7 @@ Emitted when one account has set the allowance of another account over their tok
 
 ### `BootstrapMintPerformed`
 
-Initial shares amount was minted to the zero address to prevent the first depositor frontrunning exploit.
+Initial shares amount was minted to the zero address to prevent the first-deposit frontrunning exploit.
 
 ```solidity
     event BootstrapMintPerformed(
@@ -1223,7 +1223,7 @@ Initial shares amount was minted to the zero address to prevent the first deposi
 |   1   |       `receiver_`      | `address` |   `address`   | The user that was minted the shares.                                                          |
 |   2   |        `assets_`       | `uint256` |   `uint256`   | The amount of assets deposited.                                                               |
 |   3   |        `shares_`       | `uint256` |   `uint256`   | The amount of shares that would have been minted to the user if it was not the first deposit. |
-|   4   | `bootStrapMintAmount_` | `uint256` |   `uint256`   | The amount of shares that was minted to the zero address to protect the first depositor.      |
+|   4   | `bootStrapMintAmount_` | `uint256` |   `uint256`   | The amount of shares that was minted to the zero address to protect the first Lender.      |
 
 
 

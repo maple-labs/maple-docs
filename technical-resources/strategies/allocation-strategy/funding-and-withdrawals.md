@@ -24,7 +24,7 @@ Only the Strategy Manager can call `fundUnderlyingStrategy()`. It adds `assetsIn
 
 ## Withdrawing
 
-The Strategy Manager pulls capital back when it processes a redemption or when a Liquidity Bot moves capital elsewhere, by calling `withdrawFromUnderlyingStrategy(destination, assets, data)`.
+The Strategy Manager pulls capital back when it processes a redemption, by calling `withdrawFromUnderlyingStrategy(destination, assets, data)`.
 
 ```mermaid
 sequenceDiagram

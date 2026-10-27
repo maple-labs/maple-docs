@@ -33,7 +33,7 @@ assetsUnderManagement = currentTotalAssets - delegateFee - protocolFee
 
 Valuation reads `tout` through `_getTout()`. While the live `tout` is `type(uint256).max` (a halt), `_getTout()` substitutes `fallbackTout` so that `assetsUnderManagement()` keeps returning a finite figure instead of collapsing to zero or reverting. The Strategy Manager and every Pool share price depend on this view, so the fallback keeps them stable through a halt.
 
-`setFallbackTout(fallbackTout)` is the only way to change the fallback. The Strategy Delegate or Operational Admin calls it, the new value must differ from the current one, and it cannot exceed `1e18` (a 100% fee). In normal operation it should mirror the live `tout`, so that valuation does not jump when a halt begins. Nothing else reads `fallbackTout`. Withdrawals and fee collection always use the live `tout`.
+`setFallbackTout(fallbackTout)` is the only way to change the fallback. The Strategy Delegate or Operational Admin calls it, the new value must differ from the current one, and it cannot exceed `1e18` (a 100% fee). In normal operation it should mirror the live `tout`, so that valuation does not jump when a halt begins. Nothing else reads `fallbackTout`. Withdrawals and fee collection always use the live `tout`. `fallbackTout` starts at `0`, so until it is set a halt values the position with no exit fee.
 
 ## Available liquidity
 
@@ -56,7 +56,7 @@ delegateFee  = yieldAccrued * strategyDelegateFeeRate / 1e6
 protocolFee  = yieldAccrued * strategyProtocolFeeRate / 1e6
 ```
 
-`assetsUnderManagement()` and `availableToWithdraw()` always subtract these fees, so readers never see value that the next harvest will remove. If the position is worth less than `lastRecordedTotalAssets`, for example after `tout` rises, both fees are zero.
+`assetsUnderManagement()` and `availableToWithdraw()` always subtract these fees, so readers never see value that the next harvest will remove. If the position is worth less than `lastRecordedTotalAssets`, for example after `tout` rises, both fees are zero. Fees accrue on any rise in `currentTotalAssets`, including one caused by a fall in `tout` or by a lower fallback value.
 
 The strategy harvests fees at the start of `fundUnderlyingStrategy()`, `setStrategyDelegateFeeRate()` and `setStrategyProtocolFeeRate()`, and together with the withdrawal in `withdrawFromUnderlyingStrategy()`. Each harvest makes one sUSDS `withdraw()` and one PSM `buyGem()` that pays the strategy both fees plus any withdrawal amount. It skips both calls when that total is zero. The strategy then transfers each non-zero fee, `delegateFee` to the Strategy Delegate and `protocolFee` to the Maple Treasury, and emits `StrategyFeesCollected(delegateFee, protocolFee)`, even when both are zero. The calling function then sets `lastRecordedTotalAssets` to the resulting position, which becomes the baseline for the next accrual.
 

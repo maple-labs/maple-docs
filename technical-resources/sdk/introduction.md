@@ -22,9 +22,11 @@ TypeChain exports are automatically generated TypeScript bindings for Ethereum s
 
 | Export                 | Purpose                                                                     |
 | ---------------------- | --------------------------------------------------------------------------- |
+| `erc20`                | ERC-20 bindings for Pool assets such as USDC                                |
 | `fixedTermLoanManager` | Manages fixed-term loan creation and management functionality               |
 | `loanManager`          | Manages loan creation and management functionality                          |
 | `mapleGlobalsV2`       | Manages global settings and configurations for Maple Protocol (version 2)   |
+| `mapleGlobalsV5`       | Manages global settings and configurations for Maple Protocol (version 5)   |
 | `mapleToken`           | Implements the Maple Protocol token functionality                           |
 | `openTermLoan`         | Implements open-term loans functionality                                    |
 | `openTermLoanManager`  | Manages open-term loan creation and management functionality                |

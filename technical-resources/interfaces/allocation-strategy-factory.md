@@ -194,7 +194,7 @@ Returns the address of an implementation version.
 
 ### `isInstance`
 
-Returns if a given address has been deployed by this factory/
+Returns if a given address has been deployed by this factory.
 
 ```solidity
     function isInstance(
