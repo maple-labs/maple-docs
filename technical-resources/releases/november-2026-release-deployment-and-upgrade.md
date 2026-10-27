@@ -46,13 +46,14 @@ Share accounting, AUM reporting and caps live in the Strategy Manager and are th
 
 ## Which Pools are upgraded
 
-The release upgrades five Pool Managers from v4.0.0 to v5.0.0 and their queue Withdrawal Managers from v2.0.0 to v2.0.1:
+The release upgrades six Pool Managers from v4.0.0 to v5.0.0 and their queue Withdrawal Managers from v2.0.0 to v2.0.1:
 
 * syrupUSDC
 * syrupUSDT
 * syrupUSDG
 * Secured Lending USDC
 * Secured Lending 2 USDC
+* Secured Lending 3 USDC
 
 Every other mainnet Pool stays on its current Pool Manager implementation. There is no forced migration. A non-upgraded Pool keeps its cyclical withdrawal manager, fixed-term loans and cover contract, and the compatibility tests in the release repository exercise deposits, redemptions and loan actions on those Pools after the upgrade. The step-by-step procedure is under [Procedure](#procedure) below.
 
@@ -156,9 +157,9 @@ The release deploys these Strategy Managers. The Aave V3 and Sky Strategy Manage
 **Actors: Security Admin, then Operational Admin**
 
 1. Confirm the prerequisites on the Fixed Term Loan Managers and legacy strategies still hold.
-2. Call `upgrade(500, "")` on the five Pool Managers listed under [Which Pools are upgraded](#which-pools-are-upgraded). The factory runs `MaplePoolManagerMigratorV500`, which walks `strategyList` in reverse, keeps every strategy deployed from an `OT_LOAN_MANAGER_FACTORY`, requires zero AUM on anything from an `FT_LOAN_MANAGER_FACTORY`, and removes everything else, emitting `StrategyRemoved` for each. After the upgrade only the Open Term Loan Manager remains in `strategyList`. `totalAssets()` may fall by the dust left in the legacy strategies, and `unrealizedLosses()` is unchanged.
-3. Call `upgrade(201, "")` on each of the five queue Withdrawal Managers. Only the implementation changes, and `totalShares()` is unchanged.
-4. The Operational Admin calls `setStrategyCap(openTermLoanManager, type(uint256).max)` on each of the five Pool Managers. The cap is zero after the upgrade, and `requestFunds()` reverts with `PM:RF:STRATEGY_CAP` above the cap, so without this call the Open Term Loan Manager cannot fund loans.
+2. Call `upgrade(500, "")` on the six Pool Managers listed under [Which Pools are upgraded](#which-pools-are-upgraded). The factory runs `MaplePoolManagerMigratorV500`, which walks `strategyList` in reverse, keeps every strategy deployed from an `OT_LOAN_MANAGER_FACTORY`, requires zero AUM on anything from an `FT_LOAN_MANAGER_FACTORY`, and removes everything else, emitting `StrategyRemoved` for each. After the upgrade only the Open Term Loan Manager remains in `strategyList`. `totalAssets()` may fall by the dust left in the legacy strategies, and `unrealizedLosses()` is unchanged.
+3. Call `upgrade(201, "")` on each of the six queue Withdrawal Managers. Only the implementation changes, and `totalShares()` is unchanged.
+4. The Operational Admin calls `setStrategyCap(openTermLoanManager, type(uint256).max)` on each of the six Pool Managers. The cap is zero after the upgrade, and `requestFunds()` reverts with `PM:RF:STRATEGY_CAP` above the cap, so without this call the Open Term Loan Manager cannot fund loans.
 
 ### 6. Attach Strategy Managers to Pools
 
@@ -176,7 +177,7 @@ The release deploys these Strategy Managers. The Aave V3 and Sky Strategy Manage
 | PYUSD | USDC | USDT | USDG | USDC |
 | Spreads USDT | | yes | | |
 
-syrupUSDC and Secured Lending USDC share the USDC Strategy Managers. Secured Lending 2 USDC gets no Strategy Managers, so its `strategyList` holds only its Open Term Loan Manager.
+syrupUSDC and Secured Lending USDC share the USDC Strategy Managers. Secured Lending 2 USDC and Secured Lending 3 USDC get no Strategy Managers, so their `strategyList` holds only their Open Term Loan Manager.
 
 ### 7. Register Managed Wallets
 
