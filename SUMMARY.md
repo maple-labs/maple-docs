@@ -85,7 +85,6 @@
   * [Proxies and Upgradeability](technical-resources/protocol-overview/proxies-and-upgradeability.md)
   * [Glossary](technical-resources/protocol-overview/glossary.md)
 * [Releases](technical-resources/releases/README.md)
-  * [November 2026 Release](technical-resources/releases/november-2026-release-deployment-and-upgrade.md)
   * [Strategies Release Deployment Procedure](technical-resources/releases/strategies-release-deployment-procedure.md)
   * [December 2023 Deployment & Upgrade Procedure](technical-resources/releases/december-2023-release-deployment-and-upgrade.md)
   * [Open Term Loan Deployment](technical-resources/releases/open-term-loan-deployment.md)
