@@ -8,7 +8,7 @@ Maple publishes every deployed contract address in its public address registry. 
 | Base L2 | [list](https://github.com/maple-labs/address-registry/blob/main/MapleAddressRegistryBASEL2.md) |
 
 {% hint style="info" %}
-Addresses for the November 2026 release will be added here when it is deployed to mainnet. The registry does not yet list the Strategy Manager, Strategy Deployer, Liquidity Router, Pool Manager v5.0.0, Pool Deployer v5.0.0 or the shared Aave V3, Sky and Allocation strategies.
+The addresses of the deployed November 2026 release contracts are in the address registry.
 {% endhint %}
 
 ## Contracts in the November 2026 release

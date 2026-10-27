@@ -28,15 +28,15 @@ Service fees are charged on outstanding principal and paid with each loan paymen
 `fund()` records the funding date and transfers the principal. Fee amounts are computed at payment time by `getPaymentBreakdown(timestamp)`:
 
 $$
-\large \begin{align} \nonumber interval = timestamp - \max(datePaid, dateFunded) \end{align}
+\large \begin{align} \nonumber Interval = timestamp - \max(datePaid, dateFunded) \end{align}
 $$
 
 $$
-\large \begin{align} \nonumber platformServiceFee = \frac{principal \times platformServiceFeeRate \times interval}{365 \text{ days} \times HUNDRED\_PERCENT} \end{align}
+\large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
 $$
 
 $$
-\large \begin{align} \nonumber delegateServiceFee = \frac{principal \times delegateServiceFeeRate \times interval}{365 \text{ days} \times HUNDRED\_PERCENT} \end{align}
+\large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
 $$
 
 The same formula applies whether the payment is on time, late, called or impaired. A late payment adds late interest but does not change the service fees. `makePayment()` transfers principal returned, interest and both fees to the Loan Manager in one transfer. The Loan Manager sends the delegate service fee to the Pool Delegate and the platform service fee to the `MapleTreasury`.
