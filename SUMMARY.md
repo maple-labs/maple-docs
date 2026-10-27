@@ -140,7 +140,7 @@
   * [External Entry Points](technical-resources/security/external-entry-points.md)
   * [Emergency Pause](technical-resources/security/emergency-protocol-pause.md)
   * [Invariants](technical-resources/security/protocol-invariants.md)
-  * [Testing](technical-resources/security/test-report.md)
+  * [Testing](technical-resources/security/testing.md)
 * [Crosschain Mint/Redeem](technical-resources/crosschain/README.md)
   * [Maple CCIP Receiver](technical-resources/crosschain/maple-ccip-receiver.md)
   * [Failed Message Recovery](technical-resources/crosschain/failed-message-recovery.md)
