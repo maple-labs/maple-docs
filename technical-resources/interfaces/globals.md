@@ -1108,7 +1108,7 @@ Gets security admin address.
 
 ### `setBootstrapMint`
 
-Sets the virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSupply\` to prevent an MEV-exploit vector against the first pool depositor.
+Sets the virtualized first mint that acts as as offset to \`totalAssets\` and \`totalSupply\` to prevent an MEV-exploit vector against the first Lender in a pool.
 
 ```solidity
     function setBootstrapMint(

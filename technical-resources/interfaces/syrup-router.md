@@ -1,12 +1,12 @@
 # SyrupRouter
 
-Lightweight router for lender integrations with Syrup pools. Provides stable entry points for first‑time authorized deposits (with optional ERC‑2612 permits) and subsequent deposits, and exposes the underlying pool, manager, and permission manager addresses.
+Lightweight router for lender integrations with Syrup Pools. Provides stable entry points for first-time authorized deposits (with optional ERC-2612 permits) and subsequent deposits, and exposes the underlying Pool, Pool Manager, and Pool Permission Manager addresses.
 
 ## Functions
 
 ### `asset`
 
-Returns the underlying asset of the ERC‑4626 vault (pool).
+The address of the underlying asset used by the ERC-4626 Pool.
 
 ```solidity
     function asset()
@@ -16,11 +16,17 @@ Returns the underlying asset of the ERC‑4626 vault (pool).
         );
 ```
 
+#### Return Values:
+
+| Index |   Name  |    Type   | Internal Type | Description                          |
+| :---: | :-----: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `asset` | `address` |   `address`   | The address of the underlying asset. |
+
 
 
 ### `pool`
 
-Returns the Maple Pool (ERC‑4626 vault) address.
+The address of the ERC-4626 Pool.
 
 ```solidity
     function pool()
@@ -30,11 +36,17 @@ Returns the Maple Pool (ERC‑4626 vault) address.
         );
 ```
 
+#### Return Values:
+
+| Index |  Name  |    Type   | Internal Type | Description                       |
+| :---: | :----: | :-------: | :-----------: | --------------------------------- |
+|   0   | `pool` | `address` |   `address`   | The address of the ERC-4626 Pool. |
+
 
 
 ### `poolManager`
 
-Returns the Pool Manager address.
+The address of the Pool Manager.
 
 ```solidity
     function poolManager()
@@ -44,11 +56,17 @@ Returns the Pool Manager address.
         );
 ```
 
+#### Return Values:
+
+| Index |      Name     |    Type   | Internal Type | Description                      |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | The address of the Pool Manager. |
+
 
 
 ### `poolPermissionManager`
 
-Returns the Pool Permission Manager address.
+The address of the Pool Permission Manager.
 
 ```solidity
     function poolPermissionManager()
@@ -58,113 +76,137 @@ Returns the Pool Permission Manager address.
         );
 ```
 
+#### Return Values:
+
+| Index |           Name          |    Type   | Internal Type | Description                                 |
+| :---: | :---------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermissionManager` | `address` |   `address`   | The address of the Pool Permission Manager. |
+
 
 
 ### `nonces`
 
-Returns the current nonce for the owner (used in authorization signatures).
+Returns the nonce for the given owner.
 
 ```solidity
     function nonces(
-        address owner
+        address owner_
     )
         view
         returns (
-            uint256
+            uint256 nonce_
         );
 ```
 
 #### Parameters:
 
-| Index |  Name  |   Type   | Internal Type | Description                |
-| :---: | :----: | :------: | :-----------: | -------------------------- |
-|   0   | `owner`| `address`|   `address`   | Address to get nonce for   |
+| Index |   Name   |    Type   | Internal Type | Description                       |
+| :---: | :------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `owner_` | `address` |   `address`   | The address of the owner account. |
+
+#### Return Values:
+
+| Index |   Name   |    Type   | Internal Type | Description                    |
+| :---: | :------: | :-------: | :-----------: | ------------------------------ |
+|   0   | `nonce_` | `uint256` |   `uint256`   | The nonce for the given owner. |
 
 
 
 ### `authorizeAndDeposit`
 
-Authorizes the lender and deposits assets.
+Authorizes and deposits assets into the Pool.
 
 ```solidity
     function authorizeAndDeposit(
-        uint256 bitmap,
-        uint256 deadline,
-        uint8   v,
-        bytes32 r,
-        bytes32 s,
-        uint256 amount,
-        bytes32 depositData
+        uint256 bitmap_,
+        uint256 deadline_,
+        uint8   auth_v,
+        bytes32 auth_r,
+        bytes32 auth_s,
+        uint256 amount_,
+        bytes32 depositData_
     )
         nonpayable
         returns (
-            uint256 shares
+            uint256 shares_
         );
 ```
 
 #### Parameters:
 
-| Index |     Name     |   Type   | Internal Type | Description                      |
-| :---: | :----------: | :------: | :-----------: | -------------------------------- |
-|   0   |  `bitmap`    | `uint256`|   `uint256`   | Lender permission bitmap         |
-|   1   | `deadline`   | `uint256`|   `uint256`   | Authorization expiry timestamp   |
-|   2   |    `v`       |  `uint8` |    `uint8`    | ECDSA v component                |
-|   3   |    `r`       | `bytes32`|   `bytes32`   | ECDSA r component                |
-|   4   |    `s`       | `bytes32`|   `bytes32`   | ECDSA s component                |
-|   5   |  `amount`    | `uint256`|   `uint256`   | Asset amount to deposit          |
-|   6   | `depositData`| `bytes32`|   `bytes32`   | Optional deposit metadata        |
+| Index |      Name      |    Type   | Internal Type | Description                                                             |
+| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------------------------------- |
+|   0   |    `bitmap_`   | `uint256` |   `uint256`   | The bitmap of the permission.                                           |
+|   1   |   `deadline_`  | `uint256` |   `uint256`   | The timestamp after which the `authorize` signature is no longer valid. |
+|   2   |    `auth_v`    |  `uint8`  |    `uint8`    | ECDSA signature v component.                                            |
+|   3   |    `auth_r`    | `bytes32` |   `bytes32`   | ECDSA signature r component.                                            |
+|   4   |    `auth_s`    | `bytes32` |   `bytes32`   | ECDSA signature s component.                                            |
+|   5   |    `amount_`   | `uint256` |   `uint256`   | The amount of assets to deposit.                                        |
+|   6   | `depositData_` | `bytes32` |   `bytes32`   | Optional deposit data.                                                  |
+
+#### Return Values:
+
+| Index |    Name   |    Type   | Internal Type | Description                  |
+| :---: | :-------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares minted. |
 
 
 
 ### `authorizeAndDepositWithPermit`
 
-Authorizes the lender and deposits with an ERC‑2612 permit.
+Authorizes and deposits assets into the Pool with an ERC-2612 `permit`.
 
 ```solidity
     function authorizeAndDepositWithPermit(
-        uint256 bitmap,
-        uint256 authDeadline,
-        uint8   authV,
-        bytes32 authR,
-        bytes32 authS,
-        uint256 amount,
-        bytes32 depositData,
-        uint256 permitDeadline,
-        uint8   permitV,
-        bytes32 permitR,
-        bytes32 permitS
+        uint256 bitmap_,
+        uint256 auth_deadline_,
+        uint8   auth_v,
+        bytes32 auth_r,
+        bytes32 auth_s,
+        uint256 amount_,
+        bytes32 depositData_,
+        uint256 permit_deadline,
+        uint8   permit_v_,
+        bytes32 permit_r_,
+        bytes32 permit_s_
     )
         nonpayable
         returns (
-            uint256 shares
+            uint256 shares_
         );
 ```
 
 #### Parameters:
 
-| Index |      Name      |   Type   | Internal Type | Description                         |
-| :---: | :------------: | :------: | :-----------: | ----------------------------------- |
-|   0   |   `bitmap`     | `uint256`|   `uint256`   | Lender permission bitmap            |
-|   1   | `authDeadline` | `uint256`|   `uint256`   | Authorization expiry timestamp      |
-|   2   |    `authV`     |  `uint8` |    `uint8`    | Auth ECDSA v component              |
-|   3   |    `authR`     | `bytes32`|   `bytes32`   | Auth ECDSA r component              |
-|   4   |    `authS`     | `bytes32`|   `bytes32`   | Auth ECDSA s component              |
-|   5   |   `amount`     | `uint256`|   `uint256`   | Asset amount to deposit             |
-|   6   | `depositData`  | `bytes32`|   `bytes32`   | Optional deposit metadata           |
-|   7   | `permitDeadline`|`uint256`|   `uint256`   | Permit expiry timestamp             |
-|   8   |   `permitV`    |  `uint8` |    `uint8`    | Permit ECDSA v component            |
-|   9   |   `permitR`    | `bytes32`|   `bytes32`   | Permit ECDSA r component            |
-|  10   |   `permitS`    | `bytes32`|   `bytes32`   | Permit ECDSA s component            |
+| Index |        Name       |    Type   | Internal Type | Description                                                             |
+| :---: | :---------------: | :-------: | :-----------: | ----------------------------------------------------------------------- |
+|   0   |     `bitmap_`     | `uint256` |   `uint256`   | The bitmap of the permission.                                           |
+|   1   |  `auth_deadline_` | `uint256` |   `uint256`   | The timestamp after which the `authorize` signature is no longer valid. |
+|   2   |      `auth_v`     |  `uint8`  |    `uint8`    | ECDSA signature v component of the authorization.                       |
+|   3   |      `auth_r`     | `bytes32` |   `bytes32`   | ECDSA signature r component of the authorization.                       |
+|   4   |      `auth_s`     | `bytes32` |   `bytes32`   | ECDSA signature s component of the authorization.                       |
+|   5   |     `amount_`     | `uint256` |   `uint256`   | The amount of assets to deposit.                                        |
+|   6   |   `depositData_`  | `bytes32` |   `bytes32`   | Optional deposit data.                                                  |
+|   7   | `permit_deadline` | `uint256` |   `uint256`   | The timestamp after which the `permit` signature is no longer valid.    |
+|   8   |    `permit_v_`    |  `uint8`  |    `uint8`    | ECDSA signature v component of the token permit.                        |
+|   9   |    `permit_r_`    | `bytes32` |   `bytes32`   | ECDSA signature r component of the token permit.                        |
+|   10  |    `permit_s_`    | `bytes32` |   `bytes32`   | ECDSA signature s component of the token permit.                        |
+
+#### Return Values:
+
+| Index |    Name   |    Type   | Internal Type | Description                  |
+| :---: | :-------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares minted. |
 
 
 
 ### `deposit`
 
-Deposits assets when already authorized.
+Mints `shares` to the sender by depositing `assets` into the Pool.
 
 ```solidity
     function deposit(
-        uint256 amount,
+        uint256 assets,
         bytes32 depositData
     )
         nonpayable
@@ -175,16 +217,22 @@ Deposits assets when already authorized.
 
 #### Parameters:
 
-| Index |     Name     |   Type   | Internal Type | Description               |
-| :---: | :----------: | :------: | :-----------: | ------------------------- |
-|   0   |  `amount`    | `uint256`|   `uint256`   | Asset amount to deposit    |
-|   1   | `depositData`| `bytes32`|   `bytes32`   | Optional deposit metadata  |
+| Index |      Name     |    Type   | Internal Type | Description                      |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------- |
+|   0   |    `assets`   | `uint256` |   `uint256`   | The amount of assets to deposit. |
+|   1   | `depositData` | `bytes32` |   `bytes32`   | Optional deposit data.           |
+
+#### Return Values:
+
+| Index |   Name   |    Type   | Internal Type | Description                  |
+| :---: | :------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares minted. |
 
 
 
 ### `depositWithPermit`
 
-Deposits with an ERC‑2612 permit when already authorized.
+Does an ERC-4626 `deposit` into a Maple Pool with an ERC-2612 `permit`.
 
 ```solidity
     function depositWithPermit(
@@ -203,21 +251,41 @@ Deposits with an ERC‑2612 permit when already authorized.
 
 #### Parameters:
 
-| Index |     Name     |   Type   | Internal Type | Description                      |
-| :---: | :----------: | :------: | :-----------: | -------------------------------- |
-|   0   |  `amount`    | `uint256`|   `uint256`   | Asset amount to deposit          |
-|   1   | `deadline`   | `uint256`|   `uint256`   | Permit expiry timestamp          |
-|   2   |    `v`       |  `uint8` |    `uint8`    | ECDSA v component                |
-|   3   |    `r`       | `bytes32`|   `bytes32`   | ECDSA r component                |
-|   4   |    `s`       | `bytes32`|   `bytes32`   | ECDSA s component                |
-|   5   | `depositData`| `bytes32`|   `bytes32`   | Optional deposit metadata        |
+| Index |      Name     |    Type   | Internal Type | Description                                                          |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------------------------------------------- |
+|   0   |    `amount`   | `uint256` |   `uint256`   | The amount of assets to deposit.                                     |
+|   1   |   `deadline`  | `uint256` |   `uint256`   | The timestamp after which the `permit` signature is no longer valid. |
+|   2   |      `v`      |  `uint8`  |    `uint8`    | ECDSA signature v component.                                         |
+|   3   |      `r`      | `bytes32` |   `bytes32`   | ECDSA signature r component.                                         |
+|   4   |      `s`      | `bytes32` |   `bytes32`   | ECDSA signature s component.                                         |
+|   5   | `depositData` | `bytes32` |   `bytes32`   | Optional deposit data.                                               |
+
+#### Return Values:
+
+| Index |   Name   |    Type   | Internal Type | Description                  |
+| :---: | :------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares minted. |
+
+
 
 ## Events
 
+### `DepositData`
+
+Optional deposit data for off-chain processing.
+
 ```solidity
-event DepositData(
-    address indexed owner,
-    uint256 amount,
-    bytes32 depositData
-);
+    event DepositData(
+        address indexed owner,
+        uint256 amount,
+        bytes32 depositData
+    );
 ```
+
+#### Parameters:
+
+| Index |      Name     |    Type   | Internal Type | Description                      |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------------- |
+|   0   |    `owner`    | `address` |   `address`   | The receiver of the shares.      |
+|   1   |    `amount`   | `uint256` |   `uint256`   | The amount of assets to deposit. |
+|   2   | `depositData` | `bytes32` |   `bytes32`   | Optional deposit data.           |

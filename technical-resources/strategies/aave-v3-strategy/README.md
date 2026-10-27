@@ -58,7 +58,7 @@ The strategy stores only the Strategy Manager address. It reads every other acto
 
 Two modifiers apply across the table:
 
-- `whenNotPaused` guards every state-changing function except `multicall`. Globals can pause each function selector individually, see [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
+- `whenNotPaused` guards every state-changing function except `multicall`. Globals can pause the contract or the whole protocol and unpause single functions, see [Emergency Protocol Pause](../../security/emergency-protocol-pause.md).
 - `whenLossNotRecognized` guards every state-changing function except `recoverPosition`, `claimRewards`, `multicall` and the proxy functions. See [Impairments and Losses](impairments-and-losses.md).
 
 ## Multicall

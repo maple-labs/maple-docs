@@ -6,14 +6,14 @@
 |-|-|
 | `Accrual-basis yield` | Yield recognized continuously as a position in an underlying protocol grows, as in the Aave V3 and Sky strategies. Fees accrue on the growth and are harvested on the next interaction with the position. |
 | `Asset` | An external ERC-20 token that is used to transfer value through the protocol (e.g., USDC, WETH, WBTC). |
-| `Bootstrap mint` | A small permanent deposit the Strategy Delegate pays when a Strategy Manager is deployed. Its shares are assigned to `address(0)` so `totalShares` is never zero, which protects the share price from manipulation. The amount per asset is `bootstrapMint` in Globals. |
+| `Bootstrap mint` | A small permanent deposit that protects a share price from manipulation. On the first deposit into a Pool, the Pool mints the amount as shares to `address(0)`. When a Strategy Manager is deployed, the Strategy Delegate pays the amount and its shares are assigned to `address(0)`. While the amount is non-zero, `totalShares` never returns to zero. The amount per asset is `bootstrapMint` in Globals. |
 | `Borrower` | An institution approved in Globals that borrows from a Pool through an Open Term Loan. |
 | `Cash-basis yield` | Yield recognized only when cash arrives, as in the Allocation Strategy. A Managed Wallet transfers profit in through `realizeYield()` and the net amount vests over a set duration. |
 | `Default` | Occurs when a Borrower fails to make a payment on a loan. Recognizes the full value of the outstanding unpaid Loan as a loss to the Pool. |
 | `Exit rate` | The share price used on redemption. A Strategy Manager values redeemed shares against `assetsUnderManagement() - unrealizedLosses()` rather than gross AUM, so a Pool leaving an impaired strategy bears its share of the loss. The Pool applies the same idea to lender redemptions through `convertToExitShares()`. |
 | `Funds Asset` | An asset that is added as liquidity by LPs and used to facilitate Loans to Borrowers. |
 | `Governor` | The `GovernorTimelock` contract that administers Globals. Every Governor action waits for the timelock delay before it executes. |
-| `Impairment` | A write-down of a position before a loss is confirmed. For a loan, the Pool Delegate sets the payment due date to now and the Pool records an unrealized loss. For a strategy, the Strategy Delegate or Operational Admin records `impairedAssets`, which the Strategy Manager reports as unrealized losses. |
+| `Impairment` | A write-down of a position before a loss is confirmed. For a loan, the Pool Delegate or Governor sets the payment due date to now and the Pool records an unrealized loss. For a strategy, the Strategy Delegate or Operational Admin records `impairedAssets`, which the Strategy Manager reports as unrealized losses. |
 | `Lender` or `Liquidity Provider (LP)` | An entity that deposits assets into a Pool and holds its ERC-4626 shares. |
 | `Liquidity Bot` | A Maple-operated address registered in Globals that moves capital between Pools and strategies within the configured caps, and processes lender withdrawals on the Withdrawal Manager. |
 | `Liquidity Router` | `MapleLiquidityRouter`, a contract that lets a registered bot batch funding and redemption actions across several Strategy Managers in one transaction. |
@@ -23,7 +23,7 @@
 | `Operational Admin` | Maple's operations multisig, set in Globals. Handles day-to-day administration such as approving delegates, activating Pool Managers and Strategy Managers and setting platform fee rates, without a timelock. |
 | `Operator` | Any caller a Strategy Manager allows to move capital: the Strategy Delegate, a `LIQUIDITY_BOT` address or the `LIQUIDITY_ROUTER`. Bots lose Operator status while the Underlying Strategy is impaired, see [Liquidity Bot Actions](../admin-functions/liquidity-bot-actions.md#the-impairment-block). |
 | `Pending shares` | Shares a Pool has asked to redeem from a Strategy Manager that have not yet been processed. Recorded in `pendingSharesOf` and still counted in `sharesOf` until `processRedemption()` burns them. |
-| `Pool` | The ERC-4626 vault that holds lenders' deposited assets, administered by a single Pool Delegate through its Pool Manager. |
+| `Pool` | The ERC-4626 contract that holds Lenders' deposited assets, administered by a single Pool Delegate through its Pool Manager. |
 | `Pool Delegate` | The approved entity that owns one Pool Manager. It sets the Pool's liquidity cap, fee rate and strategy caps, underwrites and funds loans, manages impairments and defaults, and can request or cancel its Pool's redemptions from a Strategy Manager. It does not fund strategies or process strategy redemptions. |
 | `Pool manager cap` | The limit a Strategy Manager places on one Pool's position, `poolManagerCapOf`. Zero means unlimited, and `type(uint256).max` blocks the Pool entirely. Set by the Strategy Delegate or Operational Admin. |
 | `Proxy` | An intermediary smart contract that allows upgrading contracts to newer versions. |
@@ -45,7 +45,7 @@
 | `assetsOf(poolManager)` | A Strategy Manager view of one Pool's position: `sharesOf[poolManager] * assetsUnderManagement() / totalShares`. The Pool Manager adds it to `totalAssets()`. |
 | `assetsUnderManagement` | An Underlying Strategy's total value net of accrued fees, passed through by the Strategy Manager. For the Allocation Strategy it is `totalDeployedAssets + availableToWithdraw()`. |
 | `availableToWithdraw` | How much an Underlying Strategy can pay out right now, net of accrued fees. For the Allocation Strategy it is `recordedAssets - unrealizedYield()`. |
-| `bootstrapMint` | Globals mapping from asset to the bootstrap deposit a new Strategy Manager must be seeded with. |
+| `bootstrapMint` | Globals mapping from asset to the bootstrap amount. The Pool mints it to address(0) on its first deposit, and the Strategy Deployer seeds each new Strategy Manager with it, which in turn assigns the resulting shares to address(0). |
 | `calledPrincipal` | The amount of principal that has been called and must be returned on the next loan payment. |
 | `dateCalled` | The date on which the loan was called. |
 | `dateFunded` | The date on which the loan was funded. |

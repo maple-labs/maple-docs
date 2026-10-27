@@ -12,7 +12,7 @@ unrealizedLosses() = min(impairedAssets, assetsUnderManagement())
 
 The `min` clamp means `unrealizedLosses()` can never exceed the strategy's own AUM, however large `impairedAssets` becomes. Once AUM reaches zero, for example after a full `recognizeLoss()`, `unrealizedLosses()` reads zero even if `impairedAssets` still shows a figure.
 
-The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to assets for redemptions, so an impairment discounts what a Pool can withdraw while leaving its share count intact. See [Strategy Manager](../strategy-manager.md).
+The Strategy Manager subtracts `unrealizedLosses()` from AUM when it converts shares to assets for redemptions, so an impairment discounts what a Pool can withdraw while leaving its share count intact. See [Strategy Manager](../strategy-manager.md). While `impairedAssets` is non-zero, Liquidity Bots and the Liquidity Router cannot act on the Strategy Manager. The Strategy Delegate remains an Operator. See [Liquidity Bot Actions](../../admin-functions/liquidity-bot-actions.md#the-impairment-block).
 
 Impairment is not tied to a wallet. `impairedAssets` is one figure for the whole strategy.
 
@@ -47,4 +47,4 @@ There is no on-chain undo for `recognizeLoss()`. Recovered capital can re-enter 
 
 ## Complete loss
 
-If losses take `assetsUnderManagement()` to zero while the Strategy Manager still has shares outstanding, the Strategy Manager's `fundStrategyManager()` reverts for that strategy. Its share conversion computes `assets * totalShares / totalAssets`, and a zero `totalAssets` with non-zero `totalShares` divides by zero. Funding works again as soon as `assetsUnderManagement()` is non-zero, for example after a `realizeYield()` call.
+If losses take `assetsUnderManagement()` to zero while the Strategy Manager still has shares outstanding, the Strategy Manager's `fundStrategyManager()` reverts for that strategy. Its share conversion computes `assets * totalShares / totalAssets`, and a zero `totalAssets` with non-zero `totalShares` divides by zero. Funding works again once `assetsUnderManagement()` is non-zero. Realized yield vests, so AUM stays at zero until some of it has vested, unless `realizeYield()` is called with a `duration` of zero.

@@ -14,7 +14,7 @@ The caller of `deploy()` becomes the new Strategy Manager's Strategy Delegate an
 
 ## Bootstrap mint
 
-Globals holds `bootstrapMint(asset)`, an amount per funds asset set by the Governor or Operational Admin. If it is non-zero for the Underlying Strategy's `fundsAsset()`, the deployer transfers that amount from the Strategy Delegate, who must have approved the deployer, directly into the Underlying Strategy. `completeConfiguration()` then deploys it into the underlying protocol and records the shares against `address(0)`. If the amount is zero the step is skipped and the Strategy Manager starts with no shares. See [Bootstrap deposit](strategy-manager.md#bootstrap-deposit) for why the seed is permanent.
+Globals holds `bootstrapMint(asset)`, an amount per funds asset set by the Governor or Operational Admin. If it is non-zero for the Underlying Strategy's `fundsAsset()`, the deployer transfers that amount from the Strategy Delegate, who must have approved the deployer, directly into the Underlying Strategy. `completeConfiguration()` then deploys it into the underlying protocol and records the shares against `address(0)`. If the amount is zero the step is skipped and the Strategy Manager starts with no shares. A zero amount leaves the Strategy Manager with no inflation protection. See [Bootstrap deposit](strategy-manager.md#bootstrap-deposit) for why the seed is permanent.
 
 ## Deployment flow
 
@@ -63,7 +63,7 @@ The new Strategy Manager is wired and seeded but cannot move Pool capital yet. T
 | Step | Contract | Function | Caller |
 | --- | --- | --- | --- |
 | Activate the Strategy Manager | Globals | `activateStrategyManager()` | Governor or Operational Admin |
-| Attach it to a Pool | Pool Manager | `addStrategyManager()` | Governor |
+| Attach it to a Pool | Pool Manager | `addStrategyManager()` | Governor, after the Governor Timelock delay |
 | Set the Pool's cap for it | Pool Manager | `setStrategyCap()` | Pool Delegate, Governor or Operational Admin |
 
 Funding reverts until the manager is active, and a Pool can fund it only after attaching it and raising `strategyCapOf` above its default of zero. See [Activation](strategy-manager.md#activation) and [The three caps](how-pools-allocate-capital.md#the-three-caps).

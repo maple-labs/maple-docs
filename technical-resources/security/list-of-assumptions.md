@@ -14,7 +14,7 @@ This assumption is made since all tokens that are used in the Maple protocol hav
 
 #### 3. Pool Delegates are trusted actors.
 
-Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor. Lenders trust a Pool Delegate with their funds when they enter a Maple Pool.
+Pool Delegates have to go through a KYC process and have to get onboarded to the Maple protocol by the Governor or Operational Admin. Lenders trust a Pool Delegate with their funds when they enter a Maple Pool.
 
 #### 4. The Governor & Operational Admin are trusted actors.
 
@@ -24,11 +24,11 @@ The Operational Admin is also a multisig controlled by Maple managed multisigs.
 
 #### 5. Loans are expected to be instantiated with reasonable terms.
 
-During the fuzz testing process, it was discovered that certain overflow conditions can occur in the amortization calculation of the loan, but only at "unreasonable" upper bounds (E.g., 100-year loans with 1 year payment intervals at 100% APR, for >$10b).
+Loan terms such as principal, interest rates, payment interval, notice period and grace period are expected to be set within reasonable bounds. Beyond non-zero checks on principal, payment interval and notice period in the loan initializer, the contracts do not reject extreme values.
 
 #### 6. Pool Delegates don't try to prevent withdrawals.
 
-It's known that, in theory, withdrawal managers can be configured to unreasonable terms, for example, making the withdrawal window 1 second, or the cycle duration to be large,or pool delegates can set the withdrawal manager address to an invalid address. However, it's understood that pool delegates are trusted actors and they are working to making the pool well functioning.
+The Withdrawal Manager queue gives the Pool Delegate and the Operational Admin discretion over redemptions. They decide when requests are processed and how many shares each call processes, they can leave requests in the queue unprocessed, and they can require a Lender to withdraw manually with `setManualWithdrawal()`. The Withdrawal Manager address can only be set before the Pool is configured, so it cannot be swapped out later. However, it's understood that Pool Delegates are trusted actors and they are working to keep the Pool well functioning.
 
 ## Strategy assumptions
 
@@ -64,7 +64,7 @@ The Strategy Delegate or the Operational Admin can call `impair()`, `removeImpai
 
 #### 8. Damage mitigation functions are used responsibly.
 
-The Governor or Security Admin can pause the whole protocol, one contract or one function through Globals. The Strategy Delegate or Operational Admin can set a `fallbackTout` on the Sky strategy that alone determines how the position is valued while the PSM is halted. The Strategy Delegate or Security Admin can call `cancelYield()` on the Allocation Strategy to claw back yield that has not yet streamed to the Pool. These are assumed to be reserved for genuine incidents.
+The Governor or Security Admin can pause the whole protocol or one contract through Globals, and unpause single functions on a paused contract. The Strategy Delegate or Operational Admin can set a `fallbackTout` on the Sky strategy that alone determines how the position is valued while the PSM is halted. The Strategy Delegate or Security Admin can call `cancelYield()` on the Allocation Strategy to claw back yield that has not yet streamed to the Pool. These are assumed to be reserved for genuine incidents.
 
 #### 9. Pool liquidity is not reserved for queued withdrawals.
 
@@ -88,4 +88,4 @@ The Strategy Deployer transfers `bootstrapMint(fundsAsset)` from the Strategy De
 
 #### 14. Bootstrap shares remain outstanding for the life of a Strategy Manager.
 
-The shares `completeConfiguration()` records against the zero address cannot be redeemed, because `processRedemption()` only accepts a valid Pool Manager. `totalShares` therefore never returns to zero after configuration, and the share price never resets to one asset per share.
+The shares `completeConfiguration()` records against the zero address cannot be redeemed, because `processRedemption()` only accepts a valid Pool Manager. While the bootstrap amount is non-zero, `totalShares` therefore never returns to zero after configuration, and the share price never resets to one asset per share.

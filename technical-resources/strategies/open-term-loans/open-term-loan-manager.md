@@ -51,10 +51,10 @@ and `PRECISION` is `1e27`.
 ## Default
 
 * The PoolManager can call `triggerDefault()` on the LoanManager. The entry point to triggering a default is the PoolManager.
-* Note the interface for `triggerDefault(address loan_, address liquidatorFactory_)` takes in a `liquidatorFactory` address, which is ignored for the execution in the Open-Term LoanManager since Open-Term Loans have no collateral. The PoolManager passes the zero address.
-* The natural progression of all defaults is for the Loan to be impaired first, such that the calculation during the default process to occur from the same station Loan accounting state. Thus, `triggerDefault()` performs steps to account for the Loan's impairment first, if it has already not been impaired, as part of the `triggerDefault()` flow.
+* Note the interface for `triggerDefault(address loan_, address liquidatorFactory_)` takes in a `liquidatorFactory` address, which is ignored for the execution in the Open-Term LoanManager since Open-Term Loans have no collateral. The PoolManager passes the zero address. A single-argument `triggerDefault(loan_)` overload does the same without the ignored parameter.
+* The natural progression of all defaults is for the Loan to be impaired first, so that the default calculation starts from the same Loan accounting state. Thus, `triggerDefault()` performs steps to account for the Loan's impairment first, if it has already not been impaired, as part of the `triggerDefault()` flow.
 * Global accounting is updated to update the `principalOut`, `accountedInterest` and `unrealizedLosses`.
-* Any recovered fees from the Loan are distributed to the Pool and Treasury with any `remainingLosses` passed back to the `PoolManager.triggerDefault()`.
+* Recovered funds are distributed to the Treasury and the Pool, any surplus is returned to the Borrower, and any `remainingLosses` passed back to the `PoolManager.triggerDefault()`.
 
 ## Fees
 

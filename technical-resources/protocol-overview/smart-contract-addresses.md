@@ -8,7 +8,7 @@ Maple publishes every deployed contract address in its public address registry. 
 | Base L2 | [list](https://github.com/maple-labs/address-registry/blob/main/MapleAddressRegistryBASEL2.md) |
 
 {% hint style="info" %}
-Addresses for the November 2026 release will be added here when it is deployed to mainnet. The registry does not yet list the Strategy Manager, Strategy Deployer, Liquidity Router, Pool Manager v5.0.0, Pool Deployer v5.0.0 or the shared Aave V3, Sky and Allocation strategies.
+The addresses of the deployed November 2026 release contracts are in the address registry.
 {% endhint %}
 
 ## Contracts in the November 2026 release
@@ -21,7 +21,7 @@ Addresses for the November 2026 release will be added here when it is deployed t
 | `MapleWithdrawalManager` queue implementation and initializer (v2.0.1) | Upgrade for existing Withdrawal Managers |
 | `MapleStrategyManager` factory, implementation and initializer (v1.0.0) | New |
 | `MapleStrategyDeployer` (v1.0.0) | New |
-| `MapleLiquidityRouter` | New |
+| `MapleLiquidityRouter` (v1.0.0) | New |
 | `MapleAaveV3Strategy`, `MapleSkyStrategy` and `MapleAllocationStrategy` factories, implementations and initializers (v1.0.0) | New |
 | One Strategy Manager and Underlying Strategy instance per shared strategy | New |
 

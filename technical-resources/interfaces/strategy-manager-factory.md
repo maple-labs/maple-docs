@@ -194,7 +194,7 @@ Returns the address of an implementation version.
 
 ### `isInstance`
 
-Returns if a given address has been deployed by this factory/
+Returns if a given address has been deployed by this factory.
 
 ```solidity
     function isInstance(
@@ -337,8 +337,8 @@ Whether the upgrade is enabled for a path from a version to another version.
 
 ```solidity
     function upgradeEnabledForPath(
-        uint256 toVersion_,
-        uint256 fromVersion_
+        uint256 fromVersion_,
+        uint256 toVersion_
     )
         view
         returns (
@@ -348,10 +348,10 @@ Whether the upgrade is enabled for a path from a version to another version.
 
 #### Parameters:
 
-| Index |      Name      |    Type   | Internal Type | Description              |
-| :---: | :------------: | :-------: | :-----------: | ------------------------ |
-|   0   |  `toVersion_`  | `uint256` |   `uint256`   | The initial version.     |
-|   1   | `fromVersion_` | `uint256` |   `uint256`   | The destination version. |
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The version to upgrade from. |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The version to upgrade to.   |
 
 #### Return Values:
 

@@ -1,6 +1,6 @@
-# Test Report
+# Testing
 
-The protocol contracts are tested with Foundry in the `maple-core-v2-private` repository, which imports every protocol module as a submodule. This page describes the test suites and how to run them. Maple produces the full test output for each release.
+The protocol contracts are tested with Foundry in a single repository that imports every protocol module as a submodule. This page describes the test suites and how to run them. Maple produces the full test output for each release.
 
 ## Test suites
 

@@ -51,7 +51,7 @@ The Strategy Delegate and Maple's Liquidity Bots operate the Strategy Manager. I
 | `migrate`, `setImplementation` | Factory |
 | `upgrade` | Security Admin |
 
-Every state-changing function except `multicall()` also reverts while paused in Globals.
+Every state-changing function except `multicall()` also reverts while paused in Globals. Until `completeConfiguration()` is called, anyone can call the setters in the first two rows, so an instance created directly through the factory rather than the Strategy Deployer can be configured by anyone.
 
 ## Multicall
 
@@ -74,7 +74,7 @@ assetsOf(poolManager)           = sharesOf[poolManager] * assetsUnderManagement(
 unrealizedLossesOf(poolManager) = ceil(sharesOf[poolManager] * unrealizedLosses() / totalShares)
 ```
 
-When `totalShares` is zero, every conversion returns its input one to one.
+When `totalShares` is zero, every conversion returns its input one to one, except `unrealizedLossesOf()`, which returns `0`.
 
 ### Exit conversions
 

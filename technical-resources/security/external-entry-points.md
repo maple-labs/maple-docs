@@ -6,7 +6,7 @@ Many actors interact with Maple's contracts. This page lists every state-changin
 
 ### Pool
 
-The Pool Permission Manager checks every function below except `approve`. It checks deposits and mints against the receiver, exits against the share owner, and transfers against both the sender and the recipient. `requestWithdraw` and `withdraw` always revert.
+The Pool Permission Manager checks every function below except the allowance functions (`approve`, `permit`, `increaseAllowance` and `decreaseAllowance`). It checks deposits and mints against the receiver, exits against the share owner, and transfers against both the sender and the recipient. `requestWithdraw` and `withdraw` always revert.
 
 **Enter and Exit Functions**
 
@@ -23,6 +23,9 @@ The Pool Permission Manager checks every function below except `approve`. It che
 **ERC20 functions**
 
 * `approve`
+* `decreaseAllowance`
+* `increaseAllowance`
+* `permit`
 * `transfer`
 * `transferFrom`
 
@@ -32,14 +35,46 @@ The Pool Permission Manager checks every function below except `approve`. It che
 
 ### Globals
 
-* `scheduleCall` - Although publicly callable, only calls scheduled by the Governor and Pool Delegates can have state-changing effects.
-* `unscheduleCall` - The caller can only unschedule calls it scheduled itself.
+* `scheduleCall` - Although publicly callable, only Pool Delegate upgrades on the Withdrawal Manager and Open Term Loan Manager check for a scheduled call.
+* `unscheduleCall` - A contract can unschedule any call scheduled against itself, which is how the Withdrawal Manager and Open Term Loan Manager consume a scheduled upgrade.
 
 ### PoolManager, StrategyManager, AaveV3Strategy, SkyStrategy, AllocationStrategy
 
 * `multicall`: delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
 ## Permissioned Functions
+
+### GovernorTimelock
+
+The Governor address on every other contract is this Timelock, so each Governor action below runs through a scheduled proposal. See [Governor Timelock](../singletons/governor-timelock.md).
+
+**Proposer Permissioned Functions** (`PROPOSER_ROLE`)
+
+* `scheduleProposals`
+
+**Executor Permissioned Functions** (`EXECUTOR_ROLE`)
+
+* `executeProposals` - Only after the proposal's delay has passed and within its execution window.
+
+**Canceller Permissioned Functions** (`CANCELLER_ROLE`)
+
+* `unscheduleProposals`
+
+**Role Admin Permissioned Functions** (`ROLE_ADMIN`)
+
+* `proposeRoleUpdates`
+* `setPendingTokenWithdrawer`
+
+**Timelock Permissioned Functions** (only the Timelock itself, through an executed proposal)
+
+* `setDefaultTimelockParameters`
+* `setFunctionTimelockParameters`
+* `updateRole`
+
+**Token Withdrawer Permissioned Functions**
+
+* `acceptTokenWithdrawer` - The pending token withdrawer.
+* `withdrawERC20Token` - The token withdrawer, with no delay.
 
 ### Globals
 
@@ -53,6 +88,7 @@ The Pool Permission Manager checks every function below except `approve`. It che
 * `setContractPause`
 * `setDefaultTimelockParameters`
 * `setFunctionUnpause`
+* `setImplementation` (on the proxy)
 * `setMapleTreasury`
 * `setMigrationAdmin`
 * `setOperationalAdmin`
@@ -106,6 +142,7 @@ The Pool Permission Manager checks every function below except `approve`. It che
 **Governor Permissioned Functions**
 
 * `configurePool`
+* `setImplementation` (on the proxy)
 * `setLenderAllowlist`
 * `setLenderBitmaps`
 * `setPermissionAdmin`
@@ -201,6 +238,28 @@ The Pool Permission Manager checks every function below except `approve`. It che
 
 * `processWithdraw`
 * `requestWithdraw`
+
+### PoolDeployer
+
+**Pool Delegate Permissioned Functions**
+
+* `deployPool`
+
+### Proxy Factories
+
+The PoolManager, WithdrawalManager, StrategyManager, OpenTermLoan, OpenTermLoanManager and strategy factories share one access model.
+
+**Governor Permissioned Functions**
+
+* `disableUpgradePath`
+* `enableUpgradePath`
+* `registerImplementation`
+* `setDefaultVersion`
+* `setGlobals`
+
+**Deployer Permissioned Functions** (callers allowed by `canDeploy` in Globals)
+
+* `createInstance`
 
 ### StrategyManager
 

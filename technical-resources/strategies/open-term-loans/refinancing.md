@@ -19,7 +19,7 @@ In order to facilitate a refinance, an agreement must be reached on-chain betwee
 
 ### `proposeNewTerms()`
 
-This function is called by the Lender, through the `Loan Manager`, passing in the smart contract address of the Refinancer contract, a deadline by which the terms must be accepted, and an array of ABI-encoded function calls.
+This function is called by the Lender, through the `Loan Manager`, passing in the smart contract address of the Refinancer contract, a deadline by which the terms must be accepted, and an array of ABI-encoded function calls. The Refinancer must be registered in Globals as an `OT_REFINANCER` instance and the array of calls must not be empty.
 
 For example:
 ```js
@@ -28,10 +28,14 @@ bytes[] memory data = new bytes[](2);
 data[0] = abi.encodeWithSignature("setInterestRate(uint64)",    newInterestRate_);
 data[1] = abi.encodeWithSignature("increasePrincipal(uint256)", principalIncrease_);
 
-loan.proposeNewTerms(address(refinancer), deadline, data);
+loanManager.proposeNewTerms(address(loan), address(refinancer), deadline, data);
 ```
 
 This function will take the hash of these changes, the deadline and the Refinancer smart contract address, and save it into storage in the Loan.
+
+### `rejectNewTerms()`
+
+Either party can withdraw a proposal before it is accepted. The Pool Delegate calls `rejectNewTerms()` through the Loan Manager, and the Borrower calls it on the Loan. It clears the stored commitment.
 
 ### `acceptNewTerms()`
 
@@ -48,4 +52,4 @@ for (uint256 i; i < calls_.length; ++i) {
 }
 ```
 
-Once all of these execute successfully, any change in principal, along with the interest and fees accrued up to the refinance, is settled between the Borrower and Lender, after which the refinance is considered complete. Accepting new terms also clears any open loan call or impairment.
+Once all of these execute successfully, any change in principal, along with the interest and fees accrued up to the refinance, is settled between the Borrower and Lender, after which the refinance is considered complete. Accepting new terms also clears any open loan call or impairment. A principal increase is funded through the Pool Manager, so it reverts if the Open Term Loan Manager would exceed its strategy cap.

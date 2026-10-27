@@ -2,13 +2,25 @@
 
 Whenever a Borrower is no longer able to meet their obligations, the Pool Delegate, Governor or Operational Admin have the option to trigger a default by calling `triggerDefault()` on the PoolManager. This process realizes the Loan's losses and adjusts the Pool accounting accordingly.
 
-Every Loan has a defined payment interval which determines when payments are expected to be made by the Borrower. If the Borrower does not make a payment before the expected due date, there is a grace period during which they can make a late payment. After the grace period passes the loan is considered to be in default, and the Pool Delegate has the *option* to trigger the default. The Loan enforces this: `repossess` reverts with `ML:R:NOT_IN_DEFAULT` unless `isInDefault()` is true, meaning the current time is past the loan's `defaultDate()`.
+Every Loan has a defined payment interval which determines when payments are expected to be made by the Borrower. If the Borrower does not make a payment before the expected due date, there is a grace period during which they can make a late payment. After the grace period passes the loan is considered to be in default, and the Pool Delegate, Governor or Operational Admin has the option to trigger the default. The Loan enforces this: `repossess` reverts with `ML:R:NOT_IN_DEFAULT` unless `isInDefault()` is true, meaning the current time is past the loan's `defaultDate()`.
 
-These conditions are illustrated in the diagram below.
+A call or an impairment can bring the default date forward. `defaultDate()` is the earliest of three dates: the normal payment due date plus `gracePeriod`, `dateCalled` plus `noticePeriod` with no grace period, and `dateImpaired` plus `gracePeriod`. A payment that satisfies the call or clears the impairment returns the loan to the normal path.
 
-![](https://user-images.githubusercontent.com/44272939/142062302-05d024a8-5b3e-4394-b06d-5b5149106f91.png)
+These paths are illustrated in the diagram below.
 
-Open-term loans hold no collateral, so a default completes atomically in a single transaction. The Pool Manager calls `triggerDefault(loan, address(0))` on the Open Term Loan Manager, which impairs the loan first if it is not already impaired, so the accounting always starts from the impaired state.
+```mermaid
+flowchart TD
+    F[Funded loan] --> N[Payment due<br/>later of dateFunded and datePaid + paymentInterval]
+    F --> C[Principal called<br/>due at dateCalled + noticePeriod]
+    F --> I[Impaired<br/>due at dateImpaired]
+    N --> NG[+ gracePeriod]
+    I --> IG[+ gracePeriod]
+    NG --> D[In default<br/>earliest of the three dates has passed]
+    C --> D
+    IG --> D
+```
+
+Open-term loans hold no collateral, so a default completes atomically in a single transaction. The Pool Manager calls `triggerDefault(loan, address(0))` on the Open Term Loan Manager, which records an impairment in its own accounting first if the loan is not already impaired, so the accounting always starts from the impaired state.
 
 ## Loss Accounting
 

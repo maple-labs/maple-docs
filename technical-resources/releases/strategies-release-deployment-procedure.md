@@ -1,5 +1,9 @@
 # Smart Contract Deployments & Upgrade Procedure for Strategies Release
 
+{% hint style="info" %}
+This procedure is superseded. The November 2026 release replaces these strategies with shared strategies behind Strategy Managers.
+{% endhint %}
+
 The following contracts will be deployed with the relevant release tags.
 
 * [Maple Globals](https://github.com/maple-labs/globals-v2/blob/main/contracts/MapleGlobals.sol) instance with updated logic.

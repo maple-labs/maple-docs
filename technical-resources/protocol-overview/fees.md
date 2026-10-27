@@ -20,10 +20,16 @@ The naming convention for fees in the smart contracts is: `actorCategoryType`. S
 
 ### Service Fees
 
-Service fees are paid during loan payments. Service fees are calculated in the following way:
+Service fees are charged on outstanding principal and paid with each loan payment, on top of interest. The Loan stores two annualized rates, scaled by `1e6` (the `HUNDRED_PERCENT` constant, so `100_000` is 10%). It never stores a fee amount.
 
-* `delegateServiceFeeRate` is a loan term that is specified on loan instantiation as an annualized rate scaled by `1e6` (the `HUNDRED_PERCENT` constant). It is a rate, not a nominal currency amount (e.g., `100_000` = 10%).
-* `platformServiceFeeRate` is a Governor-settable variable in globals that is settable on a Pool level. When a loan is funded, the service fee amount to be paid is calculated using the following formula for both the delegate and platform service fees:
+* `delegateServiceFeeRate` is a loan term set when the loan is created and changes only through a refinance.
+* `platformServiceFeeRate` is set per Pool in Globals by the Governor or Operational Admin. The Loan reads it from Globals when it is initialized and again on each refinance, and uses the cached value for every payment in between. A change in Globals reaches an existing loan only at its next refinance.
+
+`fund()` records the funding date and transfers the principal. Fee amounts are computed at payment time by `getPaymentBreakdown(timestamp)`:
+
+$$
+\large \begin{align} \nonumber Interval = timestamp - \max(datePaid, dateFunded) \end{align}
+$$
 
 $$
 \large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
@@ -33,30 +39,18 @@ $$
 \large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
 $$
 
-Both of these values are saved in storage of the Loan contract and used for all payments for a loan until it either refinances or matures.
+The same formula applies whether the payment is on time, late, called or impaired. A late payment adds late interest but does not change the service fees. `makePayment()` transfers principal returned, interest and both fees to the Loan Manager in one transfer. The Loan Manager sends the delegate service fee to the Pool Delegate and the platform service fee to the `MapleTreasury`.
+
+On default, the Loan Manager calculates the platform service fee up to the impairment date and pays it to the `MapleTreasury` from recovered funds before the Pool receives anything. The delegate service fee is not collected on a defaulted loan.
 
 ### Refinancing of Service Fees
 
-In the case of a refinance, three things happen with regards to service fees:
+Open Term Loans have no maturity date, so a refinance is the only point at which service fee terms change. When the Borrower accepts new terms through `acceptNewTerms()`:
 
-1. The `delegateServiceFeeRate` can be updated by updating the fee terms as a part of the refinance (optionally). If no change is made, the same service fee is used.
-2. The platform service fee is recalculated and saved based on the resulting terms of the refinance operation and the current `platformServiceFeeRate` set in globals.
-
-Both are done using the same formula:
-
-$$
-\large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
-$$
-
-$$
-\large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
-$$
-
-3. The platform and delegate service fee amounts that have accrued between the last payment or funding (whichever is greatest) and the refinance are paid during the refinance using the following formula:
-
-$$
-\large \begin{align} \nonumber refinanceServiceFee = serviceFee \times \frac{(timestamp - \max(datePaid, dateFunded))}{paymentInterval} \end{align}
-$$
+1. The Loan computes interest and both service fees accrued from the last payment or funding date up to the refinance, using the rates in force before the refinance, and settles them as part of the refinance.
+2. The refinancer calls apply the new terms. `setDelegateServiceFeeRate()` updates `delegateServiceFeeRate` if it is included. Otherwise the rate is unchanged.
+3. The Loan reads `platformServiceFeeRate` for the Pool from Globals again and caches it.
+4. `datePaid` is set to the refinance time, so the next payment accrues from the refinance under the new rates and principal.
 
 ## Management Fees
 
@@ -83,11 +77,17 @@ The Strategy Manager charges nothing. It prices Pool shares on the Underlying St
 
 These strategies earn yield continuously as the aToken balance or sUSDS value grows, so fees accrue on the growth since the last harvest:
 
-```
-yieldAccrued = currentTotalAssets - lastRecordedTotalAssets   (zero if not positive)
-delegateFee  = yieldAccrued * strategyDelegateFeeRate / 1e6
-protocolFee  = yieldAccrued * strategyProtocolFeeRate / 1e6
-```
+$$
+\large \begin{align} \nonumber yieldAccrued = \max(currentTotalAssets - lastRecordedTotalAssets, 0) \end{align}
+$$
+
+$$
+\large \begin{align} \nonumber delegateFee = \frac{yieldAccrued \times strategyDelegateFeeRate}{1 \times 10^6} \end{align}
+$$
+
+$$
+\large \begin{align} \nonumber protocolFee = \frac{yieldAccrued \times strategyProtocolFeeRate}{1 \times 10^6} \end{align}
+$$
 
 Accrued fees are withdrawn from the underlying protocol and paid out whenever a call touches the position: `fundUnderlyingStrategy()`, `withdrawFromUnderlyingStrategy()`, `setStrategyDelegateFeeRate()` and `setStrategyProtocolFeeRate()`. Each of these resets `lastRecordedTotalAssets` to the position after the harvest, so a rate change applies only to yield earned after it. Between harvests, `assetsUnderManagement()` and `availableToWithdraw()` already deduct the accrued fees, so Pools never count fee amounts as their own value. Very small accruals can round a fee down to zero. The Sky Strategy's fee-rate setters revert while Sky halts the PSM `buyGem()` path (`tout == type(uint256).max`).
 
@@ -95,11 +95,17 @@ Accrued fees are withdrawn from the underlying protocol and paid out whenever a 
 
 The Allocation Strategy earns nothing on its own. A Managed Wallet reports profit by calling `realizeYield(yield, duration, metadata)` and transferring the yield in. Fees come out of that gross amount immediately. The net yield joins `recordedAssets` at once and vests over `duration`. Until it vests, `availableToWithdraw()` and `assetsUnderManagement()` exclude it:
 
-```
-delegateFee = yield * strategyDelegateFeeRate / 1e6
-protocolFee = yield * strategyProtocolFeeRate / 1e6
-netYield    = yield - delegateFee - protocolFee
-```
+$$
+\large \begin{align} \nonumber delegateFee = \frac{yield \times strategyDelegateFeeRate}{1 \times 10^6} \end{align}
+$$
+
+$$
+\large \begin{align} \nonumber protocolFee = \frac{yield \times strategyProtocolFeeRate}{1 \times 10^6} \end{align}
+$$
+
+$$
+\large \begin{align} \nonumber netYield = yield - delegateFee - protocolFee \end{align}
+$$
 
 Fees apply only to the yield passed in that call, never to yield still vesting from earlier calls. Changing a fee rate on the Allocation Strategy harvests nothing, because nothing accrues between calls.
 
