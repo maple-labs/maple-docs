@@ -44,6 +44,38 @@ The Pool Permission Manager checks every function below except the allowance fun
 
 ## Permissioned Functions
 
+### GovernorTimelock
+
+The Governor address on every other contract is this Timelock, so each Governor action below runs through a scheduled proposal. See [Governor Timelock](../singletons/governor-timelock.md).
+
+**Proposer Permissioned Functions** (`PROPOSER_ROLE`)
+
+* `scheduleProposals`
+
+**Executor Permissioned Functions** (`EXECUTOR_ROLE`)
+
+* `executeProposals` - Only after the proposal's delay has passed and within its execution window.
+
+**Canceller Permissioned Functions** (`CANCELLER_ROLE`)
+
+* `unscheduleProposals`
+
+**Role Admin Permissioned Functions** (`ROLE_ADMIN`)
+
+* `proposeRoleUpdates`
+* `setPendingTokenWithdrawer`
+
+**Timelock Permissioned Functions** (only the Timelock itself, through an executed proposal)
+
+* `setDefaultTimelockParameters`
+* `setFunctionTimelockParameters`
+* `updateRole`
+
+**Token Withdrawer Permissioned Functions**
+
+* `acceptTokenWithdrawer` - The pending token withdrawer.
+* `withdrawERC20Token` - The token withdrawer, with no delay.
+
 ### Globals
 
 **Governor Permissioned Functions**
