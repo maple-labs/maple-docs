@@ -1,35 +1,33 @@
-# Overview
-There are many actors that can interact with Maple's contracts, so this page serves the purpose to outline all possible entry points for each actor.
+# External Entry Points
 
-# Public Callable Functions
+Many actors interact with Maple's contracts. This page lists every state-changing entry point, grouped by contract and by who can call it. View functions are not listed. Almost every function below also reverts while it is paused through Globals, see [Emergency Pause](emergency-protocol-pause.md).
+
+## Public Callable Functions
 
 ### Pool
 
+The Pool Permission Manager checks every function below except the allowance functions (`approve`, `permit`, `increaseAllowance` and `decreaseAllowance`). It checks deposits and mints against the receiver, exits against the share owner, and transfers against both the sender and the recipient. `requestWithdraw` and `withdraw` always revert.
+
 **Enter and Exit Functions**
 
-* `Deposit`
-* `DepositWithPermit`
-* `Mint`
-* `MintWithPermit`
-* `Redeem`
-* `Remove Shares`
-* `RequestRedeem`
-* `RequestWithdraw`
-* `Withdraw`
+* `deposit`
+* `depositWithPermit`
+* `mint`
+* `mintWithPermit`
+* `redeem`
+* `removeShares`
+* `requestRedeem`
+* `requestWithdraw`
+* `withdraw`
 
 **ERC20 functions**
 
 * `approve`
+* `decreaseAllowance`
+* `increaseAllowance`
+* `permit`
 * `transfer`
 * `transferFrom`
-
-### FixedTermLoan
-
-* `closeLoan`
-* `makePayment`
-* `postCollateral`
-* `returnFunds`
-* `skim`
 
 ### OpenTermLoan
 
@@ -37,82 +35,93 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 ### Globals
 
-* `scheduleCall` - Although publicly callable, only calls scheduled by Governor and PoolDelegates can have state changing capabilities.
-* `unscheduleCall`
+* `scheduleCall` - Although publicly callable, only Pool Delegate upgrades on the Withdrawal Manager and Open Term Loan Manager check for a scheduled call.
+* `unscheduleCall` - A contract can unschedule any call scheduled against itself, which is how the Withdrawal Manager and Open Term Loan Manager consume a scheduled upgrade.
 
-### Liquidator
+### PoolManager, StrategyManager, AaveV3Strategy, SkyStrategy, AllocationStrategy
 
-* `liquidatePortion` - Used to perform liquidations.
+* `multicall`: delegatecalls each entry back into the contract and reverts the whole batch with the first inner error. It has no access, pause or reentrancy check of its own. Each inner call runs its own checks against the original caller.
 
-### PoolManager
+## Permissioned Functions
 
-* `depositCover`
+### GovernorTimelock
 
-# Permissioned Functions
+The Governor address on every other contract is this Timelock, so each Governor action below runs through a scheduled proposal. See [Governor Timelock](../singletons/governor-timelock.md).
 
-### FixedTermLoan
+**Proposer Permissioned Functions** (`PROPOSER_ROLE`)
 
-**Factory Permissioned Functions**
+* `scheduleProposals`
 
-* `migrate`
-* `setImplementation`
+**Executor Permissioned Functions** (`EXECUTOR_ROLE`)
 
-**Security Admin Permissioned Functions**
+* `executeProposals` - Only after the proposal's delay has passed and within its execution window.
 
-* `upgrade`
+**Canceller Permissioned Functions** (`CANCELLER_ROLE`)
 
-**Borrower Permissioned Functions**
+* `unscheduleProposals`
 
-* `acceptBorrower`
-* `drawdownFunds`
-* `proposeNewTerms`
-* `rejectNewTerms`
-* `removeCollateral`
-* `setPendingBorrower`
+**Role Admin Permissioned Functions** (`ROLE_ADMIN`)
 
-**Lender Permissioned Functions**
+* `proposeRoleUpdates`
+* `setPendingTokenWithdrawer`
 
-* `acceptLender`
-* `acceptNewTerms`
-* `fundLoan`
-* `impairLoan`
-* `rejectNewTerms`
-* `removeLoanImpairment`
-* `repossess`
-* `setPendingLender`
+**Timelock Permissioned Functions** (only the Timelock itself, through an executed proposal)
+
+* `setDefaultTimelockParameters`
+* `setFunctionTimelockParameters`
+* `updateRole`
+
+**Token Withdrawer Permissioned Functions**
+
+* `acceptTokenWithdrawer` - The pending token withdrawer.
+* `withdrawERC20Token` - The token withdrawer, with no delay.
 
 ### Globals
 
 **Governor Permissioned Functions**
 
-* `acceptGovernor`
+* `acceptGovernor` (pending Governor only)
 * `activatePoolManager`
+* `activateStrategyManager`
 * `setBootstrapMint`
 * `setCanDeployFrom`
 * `setContractPause`
 * `setDefaultTimelockParameters`
 * `setFunctionUnpause`
-* `setManualOverridePrice`
+* `setImplementation` (on the proxy)
 * `setMapleTreasury`
-* `setMaxCoverLiquidationPercent`
 * `setMigrationAdmin`
-* `setMinCoverAmount`
+* `setOperationalAdmin`
 * `setPendingGovernor`
 * `setPlatformManagementFeeRate`
 * `setPlatformOriginationFeeRate`
 * `setPlatformServiceFeeRate`
-* `setPriceOracle`
 * `setProtocolPause`
 * `setSecurityAdmin`
 * `setTimelockWindow`
 * `setTimelockWindows`
 * `setValidBorrower`
-* `setValidCollateralAsset`
 * `setValidInstanceOf`
+* `setValidMapleManagedWallet`
 * `setValidPoolAsset`
 * `setValidPoolDelegate`
-* `setValidPoolDeployer`
-* `unscheduleCall`
+* `setValidStrategyDelegate`
+* `unscheduleCall` (any caller's scheduled call)
+
+**Operational Admin Permissioned Functions**
+
+* `activatePoolManager`
+* `activateStrategyManager`
+* `setBootstrapMint`
+* `setCanDeployFrom`
+* `setPlatformManagementFeeRate`
+* `setPlatformOriginationFeeRate`
+* `setPlatformServiceFeeRate`
+* `setValidBorrower`
+* `setValidInstanceOf`
+* `setValidMapleManagedWallet`
+* `setValidPoolDelegate`
+* `setValidStrategyDelegate`
 
 **Security Admin Permissioned Functions**
 
@@ -124,11 +133,16 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `transferOwnedPoolManager`
 
+**Strategy Manager Permissioned Functions**
+
+* `transferOwnedStrategyManager`
+
 ### PoolPermissionManager
 
 **Governor Permissioned Functions**
 
 * `configurePool`
+* `setImplementation` (on the proxy)
 * `setLenderAllowlist`
 * `setLenderBitmaps`
 * `setPermissionAdmin`
@@ -148,7 +162,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `setLenderBitmaps`
 
-**Pool Delegate Permissioned Functions**
+**Pool Delegate Permissioned Functions** (for the Pool they own)
 
 * `configurePool`
 * `setLenderAllowlist`
@@ -162,42 +176,55 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `migrate`
 * `setImplementation`
 
-**Governor Permissioned Functions**
-
-* `finishCollateralLiquidation`
-* `triggerDefault`
-
 **Security Admin Permissioned Functions**
 
 * `upgrade`
 
-**Deployer Permissioned Functions**
+**Governor Permissioned Functions**
 
 * `addStrategy`
-* `completeConfiguration`
+* `addStrategyManager`
 * `setDelegateManagementFeeRate`
 * `setLiquidityCap`
-* `setWithdrawalManager`
+* `setPoolPermissionManager`
+* `setStrategyCap`
+* `triggerDefault`
+
+**Operational Admin Permissioned Functions**
+
+* `removeStrategyManager`
+* `setDelegateManagementFeeRate`
+* `setLiquidityCap`
+* `setPendingPoolDelegate`
+* `setPoolPermissionManager`
+* `setStrategyCap`
+* `triggerDefault`
 
 **Pool Delegate Permissioned Functions**
 
-* `acceptPoolDelegate`
-* `addStrategy`
-* `finishCollateralLiquidation`
-* `setAllowedLender`
+* `acceptPoolDelegate` (pending Pool Delegate only)
 * `setDelegateManagementFeeRate`
-* `setIsStrategy`
 * `setLiquidityCap`
-* `setOpenToPublic`
-* `setPendingPoolDelegate`
+* `setPoolPermissionManager`
+* `setStrategyCap`
 * `triggerDefault`
-* `withdrawCover`
+
+**Deployer Permissioned Functions** (any caller until `completeConfiguration` is called)
+
+* `addStrategy`
+* `addStrategyManager`
+* `completeConfiguration`
+* `setDelegateManagementFeeRate`
+* `setLiquidityCap`
+* `setPoolPermissionManager`
+* `setStrategyCap`
+* `setWithdrawalManager`
 
 **Globals Permissioned Functions**
 
 * `setActive`
 
-**Loan Manager Permissioned Functions**
+**Strategy and Strategy Manager Permissioned Functions** (registered strategies and Strategy Managers, within their cap)
 
 * `requestFunds`
 
@@ -212,44 +239,230 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `processWithdraw`
 * `requestWithdraw`
 
-### FixedTermLoanManager
+### PoolDeployer
+
+**Pool Delegate Permissioned Functions**
+
+* `deployPool`
+
+### Proxy Factories
+
+The PoolManager, WithdrawalManager, StrategyManager, OpenTermLoan, OpenTermLoanManager and strategy factories share one access model.
+
+**Governor Permissioned Functions**
+
+* `disableUpgradePath`
+* `enableUpgradePath`
+* `registerImplementation`
+* `setDefaultVersion`
+* `setGlobals`
+
+**Deployer Permissioned Functions** (callers allowed by `canDeploy` in Globals)
+
+* `createInstance`
+
+### StrategyManager
 
 **Factory Permissioned Functions**
 
 * `migrate`
 * `setImplementation`
 
-**Governor Permissioned Functions**
+**Security Admin Permissioned Functions**
 
-* `impairLoan`
-* `removeLoanImpairment`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
+* `upgrade`
+
+**Deployer Permissioned Functions** (any caller until `completeConfiguration` is called)
+
+* `completeConfiguration`
+* `setPoolManagerCap`
+* `setStrategyLiquidityCap`
+* `setUnderlyingStrategy`
+
+**Globals Permissioned Functions**
+
+* `setActive`
+
+**Strategy Delegate Permissioned Functions**
+
+* `acceptStrategyDelegate` (pending Strategy Delegate only)
+* `cancelRedemption`
+* `fundStrategyManager`
+* `processRedemption`
+* `requestRedeem`
+* `setPoolManagerCap`
+* `setStrategyLiquidityCap`
+
+**Operational Admin Permissioned Functions**
+
+* `processRedemption`
+* `setPendingStrategyDelegate`
+* `setPoolManagerCap`
+* `setStrategyLiquidityCap`
+
+**Liquidity Bot and Liquidity Router Permissioned Functions** (addresses registered in Globals as `LIQUIDITY_BOT` or `LIQUIDITY_ROUTER`, blocked while the underlying strategy has `impairedAssets`)
+
+* `cancelRedemption`
+* `fundStrategyManager`
+* `processRedemption`
+* `requestRedeem`
+
+**Pool Delegate Permissioned Functions** (for the Pool Manager named in the call)
+
+* `cancelRedemption`
+* `requestRedeem`
+
+### StrategyDeployer
+
+**Strategy Delegate Permissioned Functions**
+
+* `deploy`
+
+### LiquidityRouter
+
+**Liquidity Router Bot Permissioned Functions** (addresses registered in Globals as `LIQUIDITY_ROUTER_BOT`)
+
+* `executeActions`
+
+### AaveV3Strategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
 
 **Security Admin Permissioned Functions**
 
 * `upgrade`
 
-**Pool Delegate Permissioned Functions**
+**Strategy Manager Permissioned Functions**
 
-* `acceptNewTerms`
-* `fund`
-* `impairLoan`
-* `rejectNewTerms`
-* `removeLoanImpairment`
-* `setAllowedSlippage`
-* `setMinRatio`
-* `updateAccounting`
+* `fundUnderlyingStrategy`
+* `withdrawFromUnderlyingStrategy`
 
-**Pool Manager Permissioned Functions**
+**Strategy Delegate Permissioned Functions**
 
-* `finishCollateralLiquidation`
-* `triggerDefault`
+* `claimRewards`
+* `impair`
+* `recognizeLoss`
+* `recoverPosition`
+* `removeImpairment`
+* `setMetadata`
+* `setReferralCode`
+* `setStrategyDelegateFeeRate`
 
-**Loan Permissioned Functions**
+**Operational Admin Permissioned Functions**
 
-* `claim`
+* `claimRewards`
+* `impair`
+* `recognizeLoss`
+* `recoverPosition`
+* `removeImpairment`
+* `setMetadata`
+* `setReferralCode`
+* `setStrategyProtocolFeeRate`
+* `setUseVirtualUnderlyingBalance`
+
+**Governor Permissioned Functions**
+
+* `setStrategyProtocolFeeRate`
+* `setUseVirtualUnderlyingBalance`
+
+### SkyStrategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `upgrade`
+
+**Strategy Manager Permissioned Functions**
+
+* `fundUnderlyingStrategy`
+* `withdrawFromUnderlyingStrategy`
+
+**Strategy Delegate Permissioned Functions**
+
+* `impair`
+* `recognizeLoss`
+* `recoverPosition`
+* `removeImpairment`
+* `setFallbackTout`
+* `setMetadata`
+* `setReferralCode`
+* `setStrategyDelegateFeeRate`
+
+**Operational Admin Permissioned Functions**
+
+* `impair`
+* `recognizeLoss`
+* `recoverPosition`
+* `removeImpairment`
+* `setFallbackTout`
+* `setMetadata`
+* `setReferralCode`
+* `setStrategyProtocolFeeRate`
+
+**Governor Permissioned Functions**
+
+* `setStrategyProtocolFeeRate`
+
+### AllocationStrategy
+
+**Factory Permissioned Functions**
+
+* `migrate`
+* `setImplementation`
+
+**Security Admin Permissioned Functions**
+
+* `cancelYield`
+* `setDeploymentCaps`
+* `setPermissions`
+* `upgrade`
+
+**Strategy Manager Permissioned Functions**
+
+* `fundUnderlyingStrategy`
+* `withdrawFromUnderlyingStrategy`
+
+**Managed Wallet Permissioned Functions** (addresses registered in Globals as `MAPLE_MANAGED_WALLET`, each also needing its own permission flag)
+
+* `deployAssets`
+* `realizeYield`
+* `returnAssets`
+
+**Strategy Delegate Permissioned Functions**
+
+* `cancelYield`
+* `impair`
+* `recognizeLoss`
+* `recognizeLossAndRemoveImpairment`
+* `removeImpairment`
+* `setDeploymentCaps`
+* `setMetadata`
+* `setPermissions`
+* `setStrategyDelegateFeeRate`
+* `setYieldCap`
+* `skim`
+
+**Operational Admin Permissioned Functions**
+
+* `impair`
+* `recognizeLoss`
+* `recognizeLossAndRemoveImpairment`
+* `removeImpairment`
+* `setMetadata`
+* `setStrategyProtocolFeeRate`
+* `setYieldCap`
+* `skim`
+
+**Governor Permissioned Functions**
+
+* `setStrategyProtocolFeeRate`
 
 ### WithdrawalManager (Queue)
 
@@ -258,24 +471,30 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `migrate`
 * `setImplementation`
 
-**Governor Permissioned Functions**
+**Security Admin Permissioned Functions**
 
-* `processRedemptions`
-* `removeRequest`
-* `setManualWithdrawal`
-
-**Operational Admin Permission Functions**
-
-* `processRedemptions`
-* `removeRequest`
-* `setManualWithdrawal`
+* `upgrade`
 
 **Pool Delegate Permissioned Functions**
 
-* `upgrade`
+* `processEmptyRedemptions`
 * `processRedemptions`
 * `removeRequest`
 * `setManualWithdrawal`
+* `upgrade` (through a scheduled call)
+
+**Operational Admin Permissioned Functions**
+
+* `processEmptyRedemptions`
+* `processRedemptions`
+* `removeRequest`
+* `setManualWithdrawal`
+
+**Redeemer Permissioned Functions** (addresses registered in Globals as `WITHDRAWAL_REDEEMER`)
+
+* `processEmptyRedemptions`
+* `processRedemptions`
+* `removeRequest`
 
 **Pool Manager Permissioned Functions**
 
@@ -283,16 +502,7 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `processExit`
 * `removeShares`
 
-**Redeemer Permissioned Functions**
-
-* `processRedemptions`
-* `removeShares`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**User Callable Functions**
+**User Callable Functions** (request owner only, subject to the Pool Permission Manager)
 
 * `removeSharesById`
 
@@ -311,17 +521,18 @@ There are many actors that can interact with Maple's contracts, so this page ser
 
 * `upgrade`
 
-**Borrower Permissioned Functions**
+**Borrower Permissioned Functions** (the Borrower, or an address registered in Globals as `BORROWER_ACTIONS` where noted)
 
-* `acceptBorrower`
-* `acceptNewTerms`
-* `rejectNewTerms`
-* `setPendingBorrower`
+* `acceptBorrower` (pending Borrower only)
+* `acceptLoanTerms` (also Borrower Actions)
+* `acceptNewTerms` (also Borrower Actions)
+* `rejectNewTerms` (also Borrower Actions)
+* `setPendingBorrower` (also Borrower Actions)
 * `skim`
 
 **Lender Permissioned Functions**
 
-* `acceptLender`
+* `acceptLender` (pending Lender only)
 * `callPrincipal`
 * `fund`
 * `impair`
@@ -356,7 +567,8 @@ There are many actors that can interact with Maple's contracts, so this page ser
 * `proposeNewTerms`
 * `rejectNewTerms`
 * `removeCall`
-* `removeLoanImpairment`
+* `removeLoanImpairment` (unless the Governor impaired the loan)
+* `upgrade` (through a scheduled call)
 
 **Pool Manager Permissioned Functions**
 
@@ -365,105 +577,3 @@ There are many actors that can interact with Maple's contracts, so this page ser
 **Loan Permissioned Functions**
 
 * `claim`
-
-### Aave Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `claimRewards`
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-### Basic Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setStrategyFeeRate`
-
-### Sky Strategy
-
-**Factory Permissioned Functions**
-
-* `migrate`
-* `setImplementation`
-
-**Security Admin Permissioned Functions**
-
-* `upgrade`
-
-**Governor Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`
-
-**Operational Admin Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`
-
-**Pool Delegate Permissioned Functions**
-
-* `deactivateStrategy`
-* `impairStrategy`
-* `reactivateStrategy`
-* `setPsm`
-* `setStrategyFeeRate`

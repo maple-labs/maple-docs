@@ -41,15 +41,15 @@ Returns whether or not a pool is active.
     function active()
         view
         returns (
-            bool
+            bool active_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |    Name   |  Type  | Internal Type | Description                 |
+| :---: | :-------: | :----: | :-----------: | --------------------------- |
+|   0   | `active_` | `bool` |     `bool`    | True if the pool is active. |
 
 
 
@@ -59,27 +59,48 @@ Adds a new strategy. NOTE: The PoolManager address is encoded and prepended to t
 
 ```solidity
     function addStrategy(
-        address strategyFactory_,
-        bytes extraDeploymentData_
+        address strategyFactory,
+        bytes32 salt,
+        bytes extraDeploymentData
     )
         nonpayable
         returns (
-            address strategy_
+            address strategy
         );
 ```
 
 #### Parameters:
 
-| Index |          Name          |    Type   | Internal Type | Description                                 |
-| :---: | :--------------------: | :-------: | :-----------: | ------------------------------------------- |
-|   0   |   `strategyFactory_`   | `address` |   `address`   | The address of the strategy factory to use. |
-|   1   | `extraDeploymentData_` |  `bytes`  |    `bytes`    | The data to construct the strategy.         |
+| Index |          Name         |    Type   | Internal Type | Description                                                   |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------------------------------- |
+|   0   |   `strategyFactory`   | `address` |   `address`   | The address of the strategy factory to use.                   |
+|   1   |         `salt`        | `bytes32` |   `bytes32`   | The salt used by the factory to deploy the strategy instance. |
+|   2   | `extraDeploymentData` |  `bytes`  |    `bytes`    | The data to construct the strategy.                           |
 
 #### Return Values:
 
-| Index |     Name    |    Type   | Internal Type | Description                      |
-| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
-|   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
+| Index |    Name    |    Type   | Internal Type | Description                      |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `strategy` | `address` |   `address`   | The address of the new strategy. |
+
+
+
+### `addStrategyManager`
+
+Registers an already-deployed strategy manager with the pool. Callable by any caller while the pool manager is not yet configured (typically during deployment). Once \`completeConfiguration()\` has been called, only the governor (through its timelock) may call this function.
+
+```solidity
+    function addStrategyManager(
+        address strategyManager
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |        Name       |    Type   | Internal Type | Description                          |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager` | `address` |   `address`   | The address of the strategy manager. |
 
 
 
@@ -91,15 +112,15 @@ Gets the address of the funds asset.
     function asset()
         view
         returns (
-            address
+            address asset_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                     |
+| :---: | :------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `asset_` | `address` |   `address`   | The address of the funds asset. |
 
 
 
@@ -109,31 +130,31 @@ Checks if a scheduled call can be executed.
 
 ```solidity
     function canCall(
-        bytes32 functionId_,
-        address caller_,
-        bytes data_
+        bytes32 functionId,
+        address caller,
+        bytes data
     )
         view
         returns (
-            bool canCall_,
-            string errorMessage_
+            bool canCall,
+            string errorMessage
         );
 ```
 
 #### Parameters:
 
-| Index |      Name     |    Type   | Internal Type | Description                |
-| :---: | :-----------: | :-------: | :-----------: | -------------------------- |
-|   0   | `functionId_` | `bytes32` |   `bytes32`   | The function to check.     |
-|   1   |   `caller_`   | `address` |   `address`   | The address of the caller. |
-|   2   |    `data_`    |  `bytes`  |    `bytes`    | The data of the call.      |
+| Index |     Name     |    Type   | Internal Type | Description                |
+| :---: | :----------: | :-------: | :-----------: | -------------------------- |
+|   0   | `functionId` | `bytes32` |   `bytes32`   | The function to check.     |
+|   1   |   `caller`   | `address` |   `address`   | The address of the caller. |
+|   2   |    `data`    |  `bytes`  |    `bytes`    | The data of the call.      |
 
 #### Return Values:
 
-| Index |       Name      |   Type   | Internal Type | Description                                        |
-| :---: | :-------------: | :------: | :-----------: | -------------------------------------------------- |
-|   0   |    `canCall_`   |  `bool`  |     `bool`    | True if the call can be executed, false otherwise. |
-|   1   | `errorMessage_` | `string` |    `string`   | The error message if the call cannot be executed.  |
+| Index |      Name      |   Type   | Internal Type | Description                                        |
+| :---: | :------------: | :------: | :-----------: | -------------------------------------------------- |
+|   0   |    `canCall`   |  `bool`  |     `bool`    | True if the call can be executed, false otherwise. |
+|   1   | `errorMessage` | `string` |    `string`   | The error message if the call cannot be executed.  |
 
 
 
@@ -156,15 +177,15 @@ Returns whether or not a pool is configured.
     function configured()
         view
         returns (
-            bool
+            bool configured_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                     |
+| :---: | :-----------: | :----: | :-----------: | ------------------------------- |
+|   0   | `configured_` | `bool` |     `bool`    | True if the pool is configured. |
 
 
 
@@ -174,25 +195,25 @@ Returns the amount of exit shares for the input amount.
 
 ```solidity
     function convertToExitShares(
-        uint256 assets_
+        uint256 amount
     )
         view
         returns (
-            uint256 shares_
+            uint256 shares
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description |
-| :---: | :-------: | :-------: | :-----------: | ----------- |
-|   0   | `assets_` | `uint256` |   `uint256`   |             |
+| Index |   Name   |    Type   | Internal Type | Description             |
+| :---: | :------: | :-------: | :-----------: | ----------------------- |
+|   0   | `amount` | `uint256` |   `uint256`   | Address of the account. |
 
 #### Return Values:
 
-| Index |    Name   |    Type   | Internal Type | Description                         |
-| :---: | :-------: | :-------: | :-----------: | ----------------------------------- |
-|   0   | `shares_` | `uint256` |   `uint256`   | Amount of shares able to be exited. |
+| Index |   Name   |    Type   | Internal Type | Description                         |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | Amount of shares able to be exited. |
 
 
 
@@ -204,34 +225,15 @@ Gets the delegate management fee rate.
     function delegateManagementFeeRate()
         view
         returns (
-            uint256
+            uint256 delegateManagementFeeRate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
-
-
-
-### `depositCover`
-
-Deposits cover into the pool.
-
-```solidity
-    function depositCover(
-        uint256 amount_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-
-| Index |    Name   |    Type   | Internal Type | Description                     |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover to deposit. |
+| Index |             Name             |    Type   | Internal Type | Description                                     |
+| :---: | :--------------------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
 
 
 
@@ -255,54 +257,35 @@ The address of the proxy factory.
 
 
 
-### `finishCollateralLiquidation`
-
-Finishes the collateral liquidation
-
-```solidity
-    function finishCollateralLiquidation(
-        address loan_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-
-| Index |   Name  |    Type   | Internal Type | Description                              |
-| :---: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|   0   | `loan_` | `address` |   `address`   | Loan that had its collateral liquidated. |
-
-
-
 ### `getEscrowParams`
 
 Gets the information of escrowed shares.
 
 ```solidity
     function getEscrowParams(
-        address,
-        uint256 shares_
+        address owner,
+        uint256 shares
     )
         view
         returns (
-            uint256 escrowShares_,
-            address destination_
+            uint256 escrowShares,
+            address destination
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                                     |
-| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
-|   0   |    \`\`   | `address` |   `address`   |                                                 |
-|   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares to get the information of. |
+| Index |   Name   |    Type   | Internal Type | Description                                     |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The address of the owner of the shares.         |
+|   1   | `shares` | `uint256` |   `uint256`   | The amount of shares to get the information of. |
 
 #### Return Values:
 
-| Index |       Name      |    Type   | Internal Type | Description                     |
-| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `escrowShares_` | `uint256` |   `uint256`   | The amount of escrowed shares.  |
-|   1   |  `destination_` | `address` |   `address`   | The address of the destination. |
+| Index |      Name      |    Type   | Internal Type | Description                     |
+| :---: | :------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `escrowShares` | `uint256` |   `uint256`   | The amount of escrowed shares.  |
+|   1   |  `destination` | `address` |   `address`   | The address of the destination. |
 
 
 
@@ -314,15 +297,15 @@ Gets the address of the globals.
     function globals()
         view
         returns (
-            address globals_
+            address globals
         );
 ```
 
 #### Return Values:
 
-| Index |    Name    |    Type   | Internal Type | Description                 |
-| :---: | :--------: | :-------: | :-----------: | --------------------------- |
-|   0   | `globals_` | `address` |   `address`   | The address of the globals. |
+| Index |    Name   |    Type   | Internal Type | Description                 |
+| :---: | :-------: | :-------: | :-----------: | --------------------------- |
+|   0   | `globals` | `address` |   `address`   | The address of the globals. |
 
 
 
@@ -334,35 +317,35 @@ Gets the address of the governor.
     function governor()
         view
         returns (
-            address governor_
+            address governor
         );
 ```
 
 #### Return Values:
 
-| Index |     Name    |    Type   | Internal Type | Description                  |
-| :---: | :---------: | :-------: | :-----------: | ---------------------------- |
-|   0   | `governor_` | `address` |   `address`   | The address of the governor. |
+| Index |    Name    |    Type   | Internal Type | Description                  |
+| :---: | :--------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `governor` | `address` |   `address`   | The address of the governor. |
 
 
 
 ### `hasSufficientCover`
 
-Returns if pool has sufficient cover.
+Returns whether the pool has sufficient cover. Pool delegate cover is deprecated, so this always returns true.
 
 ```solidity
     function hasSufficientCover()
-        view
+        pure
         returns (
-            bool hasSufficientCover_
+            bool hasSufficientCover
         );
 ```
 
 #### Return Values:
 
-| Index |          Name         |  Type  | Internal Type | Description                        |
-| :---: | :-------------------: | :----: | :-----------: | ---------------------------------- |
-|   0   | `hasSufficientCover_` | `bool` |     `bool`    | True if pool has sufficient cover. |
+| Index |         Name         |  Type  | Internal Type | Description |
+| :---: | :------------------: | :----: | :-----------: | ----------- |
+|   0   | `hasSufficientCover` | `bool` |     `bool`    | True.       |
 
 
 
@@ -388,29 +371,57 @@ The address of the implementation contract being proxied.
 
 ### `isStrategy`
 
-Returns whether or not the given address is a strategy.
+Returns whether or not the given address is a registered strategy. These are legacy strategies set to be deprecated in future for the new modular strategies.
 
 ```solidity
     function isStrategy(
-        address
+        address strategy_
     )
         view
         returns (
-            bool
+            bool isStrategy_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                  |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `strategy_` | `address` |   `address`   | The address of the strategy. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                                   |
+| :---: | :-----------: | :----: | :-----------: | --------------------------------------------- |
+|   0   | `isStrategy_` | `bool` |     `bool`    | True if the address is a registered strategy. |
+
+
+
+### `isStrategyManager`
+
+Returns whether or not the given address is a registered strategy manager.
+
+```solidity
+    function isStrategyManager(
+        address strategyManager_
+    )
+        view
+        returns (
+            bool isStrategyManager_
+        );
+```
+
+#### Parameters:
+
+| Index |        Name        |    Type   | Internal Type | Description                          |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager_` | `address` |   `address`   | The address of the strategy manager. |
+
+#### Return Values:
+
+| Index |         Name         |  Type  | Internal Type | Description                                           |
+| :---: | :------------------: | :----: | :-----------: | ----------------------------------------------------- |
+|   0   | `isStrategyManager_` | `bool` |     `bool`    | True if the address is a registered strategy manager. |
 
 
 
@@ -422,15 +433,15 @@ Gets the liquidity cap for the pool.
     function liquidityCap()
         view
         returns (
-            uint256
+            uint256 liquidityCap_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                     |
+| :---: | :-------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The liquidity cap for the pool. |
 
 
 
@@ -440,25 +451,25 @@ Gets the amount of assets that can be deposited.
 
 ```solidity
     function maxDeposit(
-        address receiver_
+        address receiver
     )
         view
         returns (
-            uint256 maxAssets_
+            uint256 maxAssets
         );
 ```
 
 #### Parameters:
 
-| Index |     Name    |    Type   | Internal Type | Description                           |
-| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `receiver_` | `address` |   `address`   | The address to check the deposit for. |
+| Index |    Name    |    Type   | Internal Type | Description                           |
+| :---: | :--------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `receiver` | `address` |   `address`   | The address to check the deposit for. |
 
 #### Return Values:
 
-| Index |     Name     |    Type   | Internal Type | Description |
-| :---: | :----------: | :-------: | :-----------: | ----------- |
-|   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                           |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `maxAssets` | `uint256` |   `uint256`   | The maximum amount assets to deposit. |
 
 
 
@@ -468,25 +479,25 @@ Gets the amount of shares that can be minted.
 
 ```solidity
     function maxMint(
-        address receiver_
+        address receiver
     )
         view
         returns (
-            uint256 maxShares_
+            uint256 maxShares
         );
 ```
 
 #### Parameters:
 
-| Index |     Name    |    Type   | Internal Type | Description                        |
-| :---: | :---------: | :-------: | :-----------: | ---------------------------------- |
-|   0   | `receiver_` | `address` |   `address`   | The address to check the mint for. |
+| Index |    Name    |    Type   | Internal Type | Description                        |
+| :---: | :--------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `receiver` | `address` |   `address`   | The address to check the mint for. |
 
 #### Return Values:
 
-| Index |     Name     |    Type   | Internal Type | Description |
-| :---: | :----------: | :-------: | :-----------: | ----------- |
-|   0   | `maxShares_` | `uint256` |   `uint256`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                        |
+| :---: | :---------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `maxShares` | `uint256` |   `uint256`   | The maximum amount shares to mint. |
 
 
 
@@ -496,25 +507,25 @@ Gets the amount of shares that can be redeemed.
 
 ```solidity
     function maxRedeem(
-        address owner_
+        address owner
     )
         view
         returns (
-            uint256 maxShares_
+            uint256 maxShares
         );
 ```
 
 #### Parameters:
 
-| Index |   Name   |    Type   | Internal Type | Description                              |
-| :---: | :------: | :-------: | :-----------: | ---------------------------------------- |
-|   0   | `owner_` | `address` |   `address`   | The address to check the redemption for. |
+| Index |   Name  |    Type   | Internal Type | Description                              |
+| :---: | :-----: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address to check the redemption for. |
 
 #### Return Values:
 
-| Index |     Name     |    Type   | Internal Type | Description |
-| :---: | :----------: | :-------: | :-----------: | ----------- |
-|   0   | `maxShares_` | `uint256` |   `uint256`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                          |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `maxShares` | `uint256` |   `uint256`   | The maximum amount shares to redeem. |
 
 
 
@@ -524,25 +535,25 @@ Gets the amount of assets that can be withdrawn.
 
 ```solidity
     function maxWithdraw(
-        address owner_
+        address owner
     )
         view
         returns (
-            uint256 maxAssets_
+            uint256 maxAssets
         );
 ```
 
 #### Parameters:
 
-| Index |   Name   |    Type   | Internal Type | Description                            |
-| :---: | :------: | :-------: | :-----------: | -------------------------------------- |
-|   0   | `owner_` | `address` |   `address`   | The address to check the withdraw for. |
+| Index |   Name  |    Type   | Internal Type | Description                            |
+| :---: | :-----: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `owner` | `address` |   `address`   | The address to check the withdraw for. |
 
 #### Return Values:
 
-| Index |     Name     |    Type   | Internal Type | Description |
-| :---: | :----------: | :-------: | :-----------: | ----------- |
-|   0   | `maxAssets_` | `uint256` |   `uint256`   |             |
+| Index |     Name    |    Type   | Internal Type | Description                            |
+| :---: | :---------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `maxAssets` | `uint256` |   `uint256`   | The maximum amount assets to withdraw. |
 
 
 
@@ -567,6 +578,25 @@ Modifies the proxy's storage by delegate-calling a migrator contract with some a
 
 
 
+### `multicall`
+
+Allows EOAs to batch admin calls.
+
+```solidity
+    function multicall(
+        bytes[] data
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |  Name  |    Type   | Internal Type | Description        |
+| :---: | :----: | :-------: | :-----------: | ------------------ |
+|   0   | `data` | `bytes[]` |   `bytes[]`   | Array of calldata. |
+
+
+
 ### `pendingPoolDelegate`
 
 Gets the address of the pending pool delegate.
@@ -575,15 +605,15 @@ Gets the address of the pending pool delegate.
     function pendingPoolDelegate()
         view
         returns (
-            address
+            address pendingPoolDelegate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |          Name          |    Type   | Internal Type | Description                               |
+| :---: | :--------------------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `pendingPoolDelegate_` | `address` |   `address`   | The address of the pending pool delegate. |
 
 
 
@@ -595,15 +625,15 @@ Gets the address of the pool.
     function pool()
         view
         returns (
-            address
+            address pool_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |   Name  |    Type   | Internal Type | Description              |
+| :---: | :-----: | :-------: | :-----------: | ------------------------ |
+|   0   | `pool_` | `address` |   `address`   | The address of the pool. |
 
 
 
@@ -615,55 +645,35 @@ Gets the address of the pool delegate.
     function poolDelegate()
         view
         returns (
-            address
+            address poolDelegate_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
-
-
-
-### `poolDelegateCover`
-
-Gets the address of the pool delegate cover.
-
-```solidity
-    function poolDelegateCover()
-        view
-        returns (
-            address
-        );
-```
-
-#### Return Values:
-
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name      |    Type   | Internal Type | Description                       |
+| :---: | :-------------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `poolDelegate_` | `address` |   `address`   | The address of the pool delegate. |
 
 
 
 ### `poolPermissionManager`
 
-Gets the address of the pool delegate cover.
+Gets the address of the pool permission manager.
 
 ```solidity
     function poolPermissionManager()
         view
         returns (
-            address
+            address poolPermissionManager_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |           Name           |    Type   | Internal Type | Description                                 |
+| :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermissionManager_` | `address` |   `address`   | The address of the pool permission manager. |
 
 
 
@@ -673,27 +683,27 @@ Gets the amount of shares that can be redeemed.
 
 ```solidity
     function previewRedeem(
-        address owner_,
-        uint256 shares_
+        address owner,
+        uint256 shares
     )
         view
         returns (
-            uint256 assets_
+            uint256 assets
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                               |
-| :---: | :-------: | :-------: | :-----------: | ----------------------------------------- |
-|   0   |  `owner_` | `address` |   `address`   | The address to check the redemption for.  |
-|   1   | `shares_` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
+| Index |   Name   |    Type   | Internal Type | Description                               |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The address to check the redemption for.  |
+|   1   | `shares` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
 
 #### Return Values:
 
-| Index |    Name   |    Type   | Internal Type | Description                                                  |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
-|   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`shares\_\`. |
+| Index |   Name   |    Type   | Internal Type | Description                                                |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   | `assets` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`shares\`. |
 
 
 
@@ -703,27 +713,27 @@ Gets the amount of assets that can be redeemed.
 
 ```solidity
     function previewWithdraw(
-        address owner_,
-        uint256 assets_
+        address owner,
+        uint256 assets
     )
         view
         returns (
-            uint256 shares_
+            uint256 shares
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                               |
-| :---: | :-------: | :-------: | :-----------: | ----------------------------------------- |
-|   0   |  `owner_` | `address` |   `address`   | The address to check the redemption for.  |
-|   1   | `assets_` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
+| Index |   Name   |    Type   | Internal Type | Description                               |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The address to check the redemption for.  |
+|   1   | `assets` | `uint256` |   `uint256`   | The amount of requested shares to redeem. |
 
 #### Return Values:
 
-| Index |    Name   |    Type   | Internal Type | Description                                                  |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------------------------------------ |
-|   0   | `shares_` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`assets\_\`. |
+| Index |   Name   |    Type   | Internal Type | Description                                                |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of assets that will be returned for \`assets\`. |
 
 
 
@@ -733,31 +743,31 @@ Processes a redemptions of shares for assets from the pool.
 
 ```solidity
     function processRedeem(
-        uint256 shares_,
-        address owner_,
-        address sender_
+        uint256 shares,
+        address owner,
+        address sender
     )
         nonpayable
         returns (
-            uint256 redeemableShares_,
-            uint256 resultingAssets_
+            uint256 redeemableShares,
+            uint256 resultingAssets
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                                   |
-| :---: | :-------: | :-------: | :-----------: | --------------------------------------------- |
-|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.               |
-|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.       |
-|   2   | `sender_` | `address` |   `address`   | The address of the sender of the redeem call. |
+| Index |   Name   |    Type   | Internal Type | Description                                   |
+| :---: | :------: | :-------: | :-----------: | --------------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares to redeem.               |
+|   1   |  `owner` | `address` |   `address`   | The address of the owner of the shares.       |
+|   2   | `sender` | `address` |   `address`   | The address of the sender of the redeem call. |
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description                     |
-| :---: | :-----------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
-|   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
+| Index |        Name        |    Type   | Internal Type | Description                     |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `redeemableShares` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
+|   1   |  `resultingAssets` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
 
 
 
@@ -767,31 +777,31 @@ Processes a redemptions of shares for assets from the pool.
 
 ```solidity
     function processWithdraw(
-        uint256 assets_,
-        address owner_,
-        address sender_
+        uint256 assets,
+        address owner,
+        address sender
     )
         nonpayable
         returns (
-            uint256 redeemableShares_,
-            uint256 resultingAssets_
+            uint256 redeemableShares,
+            uint256 resultingAssets
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                                     |
-| :---: | :-------: | :-------: | :-----------: | ----------------------------------------------- |
-|   0   | `assets_` | `uint256` |   `uint256`   | The amount of assets to withdraw.               |
-|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.         |
-|   2   | `sender_` | `address` |   `address`   | The address of the sender of the withdraw call. |
+| Index |   Name   |    Type   | Internal Type | Description                                     |
+| :---: | :------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `assets` | `uint256` |   `uint256`   | The amount of assets to withdraw.               |
+|   1   |  `owner` | `address` |   `address`   | The address of the owner of the shares.         |
+|   2   | `sender` | `address` |   `address`   | The address of the sender of the withdraw call. |
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description                     |
-| :---: | :-----------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
-|   1   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
+| Index |        Name        |    Type   | Internal Type | Description                     |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `redeemableShares` | `uint256` |   `uint256`   | The amount of shares redeemed.  |
+|   1   |  `resultingAssets` | `uint256` |   `uint256`   | The amount of assets withdrawn. |
 
 
 
@@ -801,27 +811,46 @@ Requests a redemption of shares from the pool.
 
 ```solidity
     function removeShares(
-        uint256 shares_,
-        address owner_
+        uint256 shares,
+        address owner
     )
         nonpayable
         returns (
-            uint256 sharesReturned_
+            uint256 sharesReturned
         );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                             |
-| :---: | :-------: | :-------: | :-----------: | --------------------------------------- |
-|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.         |
-|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares. |
+| Index |   Name   |    Type   | Internal Type | Description                             |
+| :---: | :------: | :-------: | :-----------: | --------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares to redeem.         |
+|   1   |  `owner` | `address` |   `address`   | The address of the owner of the shares. |
 
 #### Return Values:
 
-| Index |        Name       |    Type   | Internal Type | Description                     |
-| :---: | :---------------: | :-------: | :-----------: | ------------------------------- |
-|   0   | `sharesReturned_` | `uint256` |   `uint256`   | The amount of shares withdrawn. |
+| Index |       Name       |    Type   | Internal Type | Description                     |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------- |
+|   0   | `sharesReturned` | `uint256` |   `uint256`   | The amount of shares withdrawn. |
+
+
+
+### `removeStrategyManager`
+
+Removes a strategy manager from the pool and clears its strategy cap. Only callable by the operational admin after this pool manager has no assets in the strategy manager.
+
+```solidity
+    function removeStrategyManager(
+        address strategyManager
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |        Name       |    Type   | Internal Type | Description                          |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager` | `address` |   `address`   | The address of the strategy manager. |
 
 
 
@@ -831,18 +860,18 @@ Strategy can request funds from the pool via the poolManager.
 
 ```solidity
     function requestFunds(
-        address destination_,
-        uint256 principal_
+        address destination,
+        uint256 amount
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |      Name      |    Type   | Internal Type | Description                                     |
-| :---: | :------------: | :-------: | :-----------: | ----------------------------------------------- |
-|   0   | `destination_` | `address` |   `address`   | The address to send the funds to.               |
-|   1   |  `principal_`  | `uint256` |   `uint256`   | The principal amount to fund the strategy with. |
+| Index |      Name     |    Type   | Internal Type | Description                       |
+| :---: | :-----------: | :-------: | :-----------: | --------------------------------- |
+|   0   | `destination` | `address` |   `address`   | The address to send the funds to. |
+|   1   |    `amount`   | `uint256` |   `uint256`   | Amount to fund the strategy with. |
 
 
 
@@ -852,20 +881,20 @@ Requests a redemption of shares from the pool.
 
 ```solidity
     function requestRedeem(
-        uint256 shares_,
-        address owner_,
-        address sender_
+        uint256 shares,
+        address owner,
+        address sender
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                              |
-| :---: | :-------: | :-------: | :-----------: | ---------------------------------------- |
-|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
-|   1   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
-|   2   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
+| Index |   Name   |    Type   | Internal Type | Description                              |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
+|   1   |  `owner` | `address` |   `address`   | The address of the owner of the shares.  |
+|   2   | `sender` | `address` |   `address`   | The address of the sender of the shares. |
 
 
 
@@ -875,22 +904,22 @@ Requests a withdrawal of assets from the pool.
 
 ```solidity
     function requestWithdraw(
-        uint256 shares_,
-        uint256 assets_,
-        address owner_,
-        address sender_
+        uint256 shares,
+        uint256 assets,
+        address owner,
+        address sender
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                              |
-| :---: | :-------: | :-------: | :-----------: | ---------------------------------------- |
-|   0   | `shares_` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
-|   1   | `assets_` | `uint256` |   `uint256`   | The amount of assets to withdraw.        |
-|   2   |  `owner_` | `address` |   `address`   | The address of the owner of the shares.  |
-|   3   | `sender_` | `address` |   `address`   | The address of the sender of the shares. |
+| Index |   Name   |    Type   | Internal Type | Description                              |
+| :---: | :------: | :-------: | :-----------: | ---------------------------------------- |
+|   0   | `shares` | `uint256` |   `uint256`   | The amount of shares to redeem.          |
+|   1   | `assets` | `uint256` |   `uint256`   | The amount of assets to withdraw.        |
+|   2   |  `owner` | `address` |   `address`   | The address of the owner of the shares.  |
+|   3   | `sender` | `address` |   `address`   | The address of the sender of the shares. |
 
 
 
@@ -900,16 +929,16 @@ Sets a the pool to be active or inactive.
 
 ```solidity
     function setActive(
-        bool active_
+        bool active
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |    Name   |  Type  | Internal Type | Description                 |
-| :---: | :-------: | :----: | :-----------: | --------------------------- |
-|   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
+| Index |   Name   |  Type  | Internal Type | Description                 |
+| :---: | :------: | :----: | :-----------: | --------------------------- |
+|   0   | `active` | `bool` |     `bool`    | Whether the pool is active. |
 
 
 
@@ -919,16 +948,16 @@ Sets the value for the delegate management fee rate.
 
 ```solidity
     function setDelegateManagementFeeRate(
-        uint256 delegateManagementFeeRate_
+        uint256 delegateManagementFeeRate
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |             Name             |    Type   | Internal Type | Description                                     |
-| :---: | :--------------------------: | :-------: | :-----------: | ----------------------------------------------- |
-|   0   | `delegateManagementFeeRate_` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
+| Index |             Name            |    Type   | Internal Type | Description                                     |
+| :---: | :-------------------------: | :-------: | :-----------: | ----------------------------------------------- |
+|   0   | `delegateManagementFeeRate` | `uint256` |   `uint256`   | The value for the delegate management fee rate. |
 
 
 
@@ -938,37 +967,16 @@ Modifies the proxy's implementation address.
 
 ```solidity
     function setImplementation(
-        address implementation_
+        address newImplementation_
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |        Name       |    Type   | Internal Type | Description |
-| :---: | :---------------: | :-------: | :-----------: | ----------- |
-|   0   | `implementation_` | `address` |   `address`   |             |
-
-
-
-### `setIsStrategy`
-
-Sets if the strategy is valid in the isStrategy mapping.
-
-```solidity
-    function setIsStrategy(
-        address strategy_,
-        bool isStrategy_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-
-| Index |      Name     |    Type   | Internal Type | Description                    |
-| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
-|   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy    |
-|   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
+| Index |         Name         |    Type   | Internal Type | Description                                |
+| :---: | :------------------: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `newImplementation_` | `address` |   `address`   | The address of an implementation contract. |
 
 
 
@@ -978,35 +986,35 @@ Sets the value for liquidity cap.
 
 ```solidity
     function setLiquidityCap(
-        uint256 liquidityCap_
+        uint256 liquidityCap
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |       Name      |    Type   | Internal Type | Description                  |
-| :---: | :-------------: | :-------: | :-----------: | ---------------------------- |
-|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value for liquidity cap. |
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `liquidityCap` | `uint256` |   `uint256`   | The value for liquidity cap. |
 
 
 
 ### `setPendingPoolDelegate`
 
-Sets an address as the pending pool delegate.
+Sets an address as the pending pool delegate. Passing address(0) cancels a pending transfer. Can only be called by the operational admin.
 
 ```solidity
     function setPendingPoolDelegate(
-        address pendingPoolDelegate_
+        address pendingPoolDelegate
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |          Name          |    Type   | Internal Type | Description                           |
-| :---: | :--------------------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `pendingPoolDelegate_` | `address` |   `address`   | The address of the new pool delegate. |
+| Index |          Name         |    Type   | Internal Type | Description                           |
+| :---: | :-------------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `pendingPoolDelegate` | `address` |   `address`   | The address of the new pool delegate. |
 
 
 
@@ -1016,16 +1024,37 @@ Sets the address of the pool permission manager.
 
 ```solidity
     function setPoolPermissionManager(
-        address poolPermissionManager_
+        address poolPermission
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |           Name           |    Type   | Internal Type | Description |
-| :---: | :----------------------: | :-------: | :-----------: | ----------- |
-|   0   | `poolPermissionManager_` | `address` |   `address`   |             |
+| Index |       Name       |    Type   | Internal Type | Description                                 |
+| :---: | :--------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermission` | `address` |   `address`   | The address of the pool permission manager. |
+
+
+
+### `setStrategyCap`
+
+Sets the pool's AUM exposure cap to a strategy or Strategy Manager. The address must be an instance of a valid strategy or Strategy Manager factory if the cap is non-zero.
+
+```solidity
+    function setStrategyCap(
+        address strategy,
+        uint256 cap
+    )
+        nonpayable;
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                                  |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `strategy` | `address` |   `address`   | The address of the strategy.                 |
+|   1   |    `cap`   | `uint256` |   `uint256`   | The pool's AUM exposure cap to the strategy. |
 
 
 
@@ -1035,16 +1064,44 @@ Sets the address of the withdrawal manager.
 
 ```solidity
     function setWithdrawalManager(
-        address withdrawalManager_
+        address withdrawalManager
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |         Name         |    Type   | Internal Type | Description                            |
-| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
-|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
+| Index |         Name        |    Type   | Internal Type | Description                            |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager` | `address` |   `address`   | The address of the withdrawal manager. |
+
+
+
+### `strategyCapOf`
+
+Gets the pool's AUM exposure cap to a given strategy or strategy manager. The maximum amount of this pool's assets that may be deployed at any one time.
+
+```solidity
+    function strategyCapOf(
+        address strategy_
+    )
+        view
+        returns (
+            uint256 cap_
+        );
+```
+
+#### Parameters:
+
+| Index |     Name    |    Type   | Internal Type | Description                                      |
+| :---: | :---------: | :-------: | :-----------: | ------------------------------------------------ |
+|   0   | `strategy_` | `address` |   `address`   | The address of the strategy or strategy manager. |
+
+#### Return Values:
+
+| Index |  Name  |    Type   | Internal Type | Description                  |
+| :---: | :----: | :-------: | :-----------: | ---------------------------- |
+|   0   | `cap_` | `uint256` |   `uint256`   | The pool's AUM exposure cap. |
 
 
 
@@ -1054,25 +1111,25 @@ Gets the address of the strategy in the list.
 
 ```solidity
     function strategyList(
-        uint256
+        uint256 index_
     )
         view
         returns (
-            address
+            address strategy_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `uint256` |   `uint256`   |             |
+| Index |   Name   |    Type   | Internal Type | Description                      |
+| :---: | :------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `index_` | `uint256` |   `uint256`   | The index to get the address of. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description              |
+| :---: | :---------: | :-------: | :-----------: | ------------------------ |
+|   0   | `strategy_` | `address` |   `address`   | The address in the list. |
 
 
 
@@ -1084,15 +1141,15 @@ Returns the length of the \`strategyList\`.
     function strategyListLength()
         view
         returns (
-            uint256 strategyListLength_
+            uint256 strategyListLength
         );
 ```
 
 #### Return Values:
 
-| Index |          Name         |    Type   | Internal Type | Description                         |
-| :---: | :-------------------: | :-------: | :-----------: | ----------------------------------- |
-|   0   | `strategyListLength_` | `uint256` |   `uint256`   | The length of the \`strategyList\`. |
+| Index |         Name         |    Type   | Internal Type | Description                         |
+| :---: | :------------------: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `strategyListLength` | `uint256` |   `uint256`   | The length of the \`strategyList\`. |
 
 
 
@@ -1104,56 +1161,54 @@ Returns the amount of total assets.
     function totalAssets()
         view
         returns (
-            uint256 totalAssets_
+            uint256 totalAssets
         );
 ```
 
 #### Return Values:
 
-| Index |      Name      |    Type   | Internal Type | Description                |
-| :---: | :------------: | :-------: | :-----------: | -------------------------- |
-|   0   | `totalAssets_` | `uint256` |   `uint256`   | Amount of of total assets. |
+| Index |      Name     |    Type   | Internal Type | Description                |
+| :---: | :-----------: | :-------: | :-----------: | -------------------------- |
+|   0   | `totalAssets` | `uint256` |   `uint256`   | Amount of of total assets. |
 
 
 
 ### `triggerDefault`
 
-Triggers the default of a loan.
+Triggers the default of a loan held by the pool's loan manager.
 
 ```solidity
     function triggerDefault(
-        address loan_,
-        address liquidatorFactory_
+        address loan_
     )
         nonpayable;
 ```
 
 #### Parameters:
 
-| Index |         Name         |    Type   | Internal Type | Description                            |
-| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
-|   0   |        `loan_`       | `address` |   `address`   | Loan to trigger the default.           |
-|   1   | `liquidatorFactory_` | `address` |   `address`   | Factory used to deploy the liquidator. |
+| Index |   Name  |    Type   | Internal Type | Description                         |
+| :---: | :-----: | :-------: | :-----------: | ----------------------------------- |
+|   0   | `loan_` | `address` |   `address`   | The address of the loan to default. |
 
 
 
 ### `unrealizedLosses`
 
-Returns the amount unrealized losses.
+Returns the sum of unrealized losses reported by every registered strategy and strategy manager.
 
 ```solidity
     function unrealizedLosses()
         view
         returns (
-            uint256 unrealizedLosses_
+            uint256 unrealizedLosses
         );
 ```
 
 #### Return Values:
 
-| Index |         Name        |    Type   | Internal Type | Description                  |
-| :---: | :-----------------: | :-------: | :-----------: | ---------------------------- |
-|   0   | `unrealizedLosses_` | `uint256` |   `uint256`   | Amount of unrealized losses. |
+| Index |        Name        |    Type   | Internal Type | Description                                                              |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------------------------------------------ |
+|   0   | `unrealizedLosses` | `uint256` |   `uint256`   | Aggregate unrealized losses across all strategies and strategy managers. |
 
 
 
@@ -1163,7 +1218,7 @@ Upgrades a contract implementation to a specific version. Access control logic c
 
 ```solidity
     function upgrade(
-        uint256 version_,
+        uint256 toVersion_,
         bytes arguments_
     )
         nonpayable;
@@ -1173,7 +1228,7 @@ Upgrades a contract implementation to a specific version. Access control logic c
 
 | Index |     Name     |    Type   | Internal Type | Description                                    |
 | :---: | :----------: | :-------: | :-----------: | ---------------------------------------------- |
-|   0   |  `version_`  | `uint256` |   `uint256`   |                                                |
+|   0   | `toVersion_` | `uint256` |   `uint256`   | The version to upgrade to.                     |
 |   1   | `arguments_` |  `bytes`  |    `bytes`    | Some encoded arguments to use for the upgrade. |
 
 
@@ -1186,36 +1241,15 @@ Gets the address of the withdrawal manager.
     function withdrawalManager()
         view
         returns (
-            address
+            address withdrawalManager_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
-
-
-
-### `withdrawCover`
-
-Withdraws cover from the pool.
-
-```solidity
-    function withdrawCover(
-        uint256 amount_,
-        address recipient_
-    )
-        nonpayable;
-```
-
-#### Parameters:
-
-| Index |     Name     |    Type   | Internal Type | Description                      |
-| :---: | :----------: | :-------: | :-----------: | -------------------------------- |
-|   0   |   `amount_`  | `uint256` |   `uint256`   | The amount of cover to withdraw. |
-|   1   | `recipient_` | `address` |   `address`   | The address of the recipient.    |
+| Index |         Name         |    Type   | Internal Type | Description                            |
+| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
 
 
 
@@ -1227,7 +1261,7 @@ Emitted when a collateral liquidations is finished.
 
 ```solidity
     event CollateralLiquidationFinished(
-        address loan_,
+        address indexed loan_,
         uint256 unrealizedLosses_
     );
 ```
@@ -1241,115 +1275,21 @@ Emitted when a collateral liquidations is finished.
 
 
 
-### `CollateralLiquidationTriggered`
-
-Emitted when a collateral liquidations is triggered.
-
-```solidity
-    event CollateralLiquidationTriggered(
-        address loan_
-    );
-```
-
-#### Parameters:
-
-| Index |   Name  |    Type   | Internal Type | Description              |
-| :---: | :-----: | :-------: | :-----------: | ------------------------ |
-|   0   | `loan_` | `address` |   `address`   | The address of the loan. |
-
-
-
-### `CoverDeposited`
-
-Emitted when cover is deposited.
-
-```solidity
-    event CoverDeposited(
-        uint256 amount_
-    );
-```
-
-#### Parameters:
-
-| Index |    Name   |    Type   | Internal Type | Description                    |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
-|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover deposited. |
-
-
-
-### `CoverLiquidated`
-
-Emitted when cover is liquidated in the case of a loan defaulting.
-
-```solidity
-    event CoverLiquidated(
-        uint256 toTreasury_,
-        uint256 toPool_
-    );
-```
-
-#### Parameters:
-
-| Index |      Name     |    Type   | Internal Type | Description                               |
-| :---: | :-----------: | :-------: | :-----------: | ----------------------------------------- |
-|   0   | `toTreasury_` | `uint256` |   `uint256`   | The amount of cover sent to the Treasury. |
-|   1   |   `toPool_`   | `uint256` |   `uint256`   | The amount of cover sent to the Pool.     |
-
-
-
-### `CoverWithdrawn`
-
-Emitted when cover is withdrawn.
-
-```solidity
-    event CoverWithdrawn(
-        uint256 amount_
-    );
-```
-
-#### Parameters:
-
-| Index |    Name   |    Type   | Internal Type | Description                    |
-| :---: | :-------: | :-------: | :-----------: | ------------------------------ |
-|   0   | `amount_` | `uint256` |   `uint256`   | The amount of cover withdrawn. |
-
-
-
 ### `DelegateManagementFeeRateSet`
 
 Emitted when a new management fee rate is set.
 
 ```solidity
     event DelegateManagementFeeRateSet(
-        uint256 managementFeeRate_
+        uint256 managementFeeRate
     );
 ```
 
 #### Parameters:
 
-| Index |         Name         |    Type   | Internal Type | Description                        |
-| :---: | :------------------: | :-------: | :-----------: | ---------------------------------- |
-|   0   | `managementFeeRate_` | `uint256` |   `uint256`   | The amount of management fee rate. |
-
-
-
-### `IsStrategySet`
-
-Emitted when a strategy is set as valid.
-
-```solidity
-    event IsStrategySet(
-        address strategy_,
-        bool isStrategy_
-    );
-```
-
-#### Parameters:
-
-| Index |      Name     |    Type   | Internal Type | Description                    |
-| :---: | :-----------: | :-------: | :-----------: | ------------------------------ |
-|   0   |  `strategy_`  | `address` |   `address`   | The address of the strategy.   |
-|   1   | `isStrategy_` |   `bool`  |     `bool`    | Whether the strategy is valid. |
+| Index |         Name        |    Type   | Internal Type | Description                        |
+| :---: | :-----------------: | :-------: | :-----------: | ---------------------------------- |
+|   0   | `managementFeeRate` | `uint256` |   `uint256`   | The amount of management fee rate. |
 
 
 
@@ -1359,15 +1299,15 @@ Emitted when a new liquidity cap is set.
 
 ```solidity
     event LiquidityCapSet(
-        uint256 liquidityCap_
+        uint256 liquidityCap
     );
 ```
 
 #### Parameters:
 
-| Index |       Name      |    Type   | Internal Type | Description                 |
-| :---: | :-------------: | :-------: | :-----------: | --------------------------- |
-|   0   | `liquidityCap_` | `uint256` |   `uint256`   | The value of liquidity cap. |
+| Index |      Name      |    Type   | Internal Type | Description                 |
+| :---: | :------------: | :-------: | :-----------: | --------------------------- |
+|   0   | `liquidityCap` | `uint256` |   `uint256`   | The value of liquidity cap. |
 
 
 
@@ -1377,17 +1317,17 @@ Emitted when the pending pool delegate accepts the ownership transfer.
 
 ```solidity
     event PendingDelegateAccepted(
-        address previousDelegate_,
-        address newDelegate_
+        address indexed previousDelegate,
+        address indexed newDelegate
     );
 ```
 
 #### Parameters:
 
-| Index |         Name        |    Type   | Internal Type | Description                           |
-| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
-|   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
+| Index |        Name        |    Type   | Internal Type | Description                           |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `previousDelegate` | `address` |   `address`   | The address of the previous delegate. |
+|   1   |    `newDelegate`   | `address` |   `address`   | The address of the new delegate.      |
 
 
 
@@ -1397,17 +1337,17 @@ Emitted when the pending pool delegate is set.
 
 ```solidity
     event PendingDelegateSet(
-        address previousDelegate_,
-        address newDelegate_
+        address indexed previousDelegate,
+        address indexed newDelegate
     );
 ```
 
 #### Parameters:
 
-| Index |         Name        |    Type   | Internal Type | Description                           |
-| :---: | :-----------------: | :-------: | :-----------: | ------------------------------------- |
-|   0   | `previousDelegate_` | `address` |   `address`   | The address of the previous delegate. |
-|   1   |    `newDelegate_`   | `address` |   `address`   | The address of the new delegate.      |
+| Index |        Name        |    Type   | Internal Type | Description                           |
+| :---: | :----------------: | :-------: | :-----------: | ------------------------------------- |
+|   0   | `previousDelegate` | `address` |   `address`   | The address of the previous delegate. |
+|   1   |    `newDelegate`   | `address` |   `address`   | The address of the new delegate.      |
 
 
 
@@ -1427,15 +1367,15 @@ Emitted when the pool permission manager is set.
 
 ```solidity
     event PoolPermissionManagerSet(
-        address poolPermissionManager_
+        address indexed poolPermissionManager
     );
 ```
 
 #### Parameters:
 
-| Index |           Name           |    Type   | Internal Type | Description                                 |
-| :---: | :----------------------: | :-------: | :-----------: | ------------------------------------------- |
-|   0   | `poolPermissionManager_` | `address` |   `address`   | The address of the pool permission manager. |
+| Index |           Name          |    Type   | Internal Type | Description                                 |
+| :---: | :---------------------: | :-------: | :-----------: | ------------------------------------------- |
+|   0   | `poolPermissionManager` | `address` |   `address`   | The address of the pool permission manager. |
 
 
 
@@ -1445,19 +1385,19 @@ Emitted when a redemption of shares from the pool is processed.
 
 ```solidity
     event RedeemProcessed(
-        address owner_,
-        uint256 redeemableShares_,
-        uint256 resultingAssets_
+        address indexed owner,
+        uint256 redeemableShares,
+        uint256 resultingAssets
     );
 ```
 
 #### Parameters:
 
-| Index |         Name        |    Type   | Internal Type | Description                      |
-| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
-|   0   |       `owner_`      | `address` |   `address`   | The owner of the shares.         |
-|   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
-|   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
+| Index |        Name        |    Type   | Internal Type | Description                      |
+| :---: | :----------------: | :-------: | :-----------: | -------------------------------- |
+|   0   |       `owner`      | `address` |   `address`   | The owner of the shares.         |
+|   1   | `redeemableShares` | `uint256` |   `uint256`   | The amount of redeemable shares. |
+|   2   |  `resultingAssets` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
 
 
 
@@ -1467,17 +1407,17 @@ Emitted when a redemption of shares from the pool is requested.
 
 ```solidity
     event RedeemRequested(
-        address owner_,
-        uint256 shares_
+        address indexed owner,
+        uint256 shares
     );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                      |
-| :---: | :-------: | :-------: | :-----------: | -------------------------------- |
-|   0   |  `owner_` | `address` |   `address`   | The owner of the shares.         |
-|   1   | `shares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
+| Index |   Name   |    Type   | Internal Type | Description                      |
+| :---: | :------: | :-------: | :-----------: | -------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The owner of the shares.         |
+|   1   | `shares` | `uint256` |   `uint256`   | The amount of redeemable shares. |
 
 
 
@@ -1487,15 +1427,15 @@ Emitted when a pool is sets to be active or inactive.
 
 ```solidity
     event SetAsActive(
-        bool active_
+        bool active
     );
 ```
 
 #### Parameters:
 
-| Index |    Name   |  Type  | Internal Type | Description                 |
-| :---: | :-------: | :----: | :-----------: | --------------------------- |
-|   0   | `active_` | `bool` |     `bool`    | Whether the pool is active. |
+| Index |   Name   |  Type  | Internal Type | Description                 |
+| :---: | :------: | :----: | :-----------: | --------------------------- |
+|   0   | `active` | `bool` |     `bool`    | Whether the pool is active. |
 
 
 
@@ -1505,17 +1445,17 @@ Emitted when shares are removed from the pool.
 
 ```solidity
     event SharesRemoved(
-        address owner_,
-        uint256 shares_
+        address indexed owner,
+        uint256 shares
     );
 ```
 
 #### Parameters:
 
-| Index |    Name   |    Type   | Internal Type | Description                             |
-| :---: | :-------: | :-------: | :-----------: | --------------------------------------- |
-|   0   |  `owner_` | `address` |   `address`   | The address of the owner of the shares. |
-|   1   | `shares_` | `uint256` |   `uint256`   | The amount of shares removed.           |
+| Index |   Name   |    Type   | Internal Type | Description                             |
+| :---: | :------: | :-------: | :-----------: | --------------------------------------- |
+|   0   |  `owner` | `address` |   `address`   | The address of the owner of the shares. |
+|   1   | `shares` | `uint256` |   `uint256`   | The amount of shares removed.           |
 
 
 
@@ -1525,15 +1465,71 @@ Emitted when a new strategy is added.
 
 ```solidity
     event StrategyAdded(
-        address strategy_
+        address indexed strategy
     );
 ```
 
 #### Parameters:
 
-| Index |     Name    |    Type   | Internal Type | Description                      |
-| :---: | :---------: | :-------: | :-----------: | -------------------------------- |
-|   0   | `strategy_` | `address` |   `address`   | The address of the new strategy. |
+| Index |    Name    |    Type   | Internal Type | Description                      |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------- |
+|   0   | `strategy` | `address` |   `address`   | The address of the new strategy. |
+
+
+
+### `StrategyCapSet`
+
+Emitted when the pool's AUM exposure cap to a strategy is set.
+
+```solidity
+    event StrategyCapSet(
+        address indexed strategy,
+        uint256 cap
+    );
+```
+
+#### Parameters:
+
+| Index |    Name    |    Type   | Internal Type | Description                                  |
+| :---: | :--------: | :-------: | :-----------: | -------------------------------------------- |
+|   0   | `strategy` | `address` |   `address`   | The address of the strategy.                 |
+|   1   |    `cap`   | `uint256` |   `uint256`   | The pool's AUM exposure cap to the strategy. |
+
+
+
+### `StrategyManagerAdded`
+
+Emitted when a strategy manager is registered with the pool.
+
+```solidity
+    event StrategyManagerAdded(
+        address indexed strategyManager
+    );
+```
+
+#### Parameters:
+
+| Index |        Name       |    Type   | Internal Type | Description                          |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager` | `address` |   `address`   | The address of the strategy manager. |
+
+
+
+### `StrategyManagerRemoved`
+
+Emitted when a strategy manager is removed from the pool.
+
+```solidity
+    event StrategyManagerRemoved(
+        address indexed strategyManager
+    );
+```
+
+#### Parameters:
+
+| Index |        Name       |    Type   | Internal Type | Description                          |
+| :---: | :---------------: | :-------: | :-----------: | ------------------------------------ |
+|   0   | `strategyManager` | `address` |   `address`   | The address of the strategy manager. |
 
 
 
@@ -1563,35 +1559,13 @@ Emitted when the withdrawal manager is set.
 
 ```solidity
     event WithdrawalManagerSet(
-        address withdrawalManager_
+        address indexed withdrawalManager
     );
 ```
 
 #### Parameters:
 
-| Index |         Name         |    Type   | Internal Type | Description                            |
-| :---: | :------------------: | :-------: | :-----------: | -------------------------------------- |
-|   0   | `withdrawalManager_` | `address` |   `address`   | The address of the withdrawal manager. |
-
-
-
-### `WithdrawalProcessed`
-
-Emitted when withdrawal of assets from the pool is processed.
-
-```solidity
-    event WithdrawalProcessed(
-        address owner_,
-        uint256 redeemableShares_,
-        uint256 resultingAssets_
-    );
-```
-
-#### Parameters:
-
-| Index |         Name        |    Type   | Internal Type | Description                      |
-| :---: | :-----------------: | :-------: | :-----------: | -------------------------------- |
-|   0   |       `owner_`      | `address` |   `address`   | The owner of the assets.         |
-|   1   | `redeemableShares_` | `uint256` |   `uint256`   | The amount of redeemable shares. |
-|   2   |  `resultingAssets_` | `uint256` |   `uint256`   | The amount of assets redeemed.   |
+| Index |         Name        |    Type   | Internal Type | Description                            |
+| :---: | :-----------------: | :-------: | :-----------: | -------------------------------------- |
+|   0   | `withdrawalManager` | `address` |   `address`   | The address of the withdrawal manager. |
 

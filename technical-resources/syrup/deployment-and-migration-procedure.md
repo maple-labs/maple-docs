@@ -22,7 +22,7 @@ To add any module to the SYRUP contract, the following transactions need to be m
 
 2. After the time lock period passed, the `Governor` should call `Token.addModule(module)`, where module is the Recapitalization module address.
 
-3. The module is now able to mint tokens according to its specific business rule. However, to kickstart the issuance, an issuance window needs to be scheduled. Refer to [this documentation](technical-resources/syrup/recapitalization-module.md#scheduling) for how to do that.
+3. The module is now able to mint tokens according to its specific business rule. However, to kickstart the issuance, an issuance window needs to be scheduled. Refer to [this documentation](recapitalization-module.md#scheduling) for how to do that.
 
 4. The `Governor` needs to set an actor as `RECAPITALIZATION_CLAIMER` in Globals, using the function `setInstanceOf("RECAPITALIZATION_CLAIMER", claimer address, true)`.
 

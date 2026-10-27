@@ -248,7 +248,7 @@
 
 ```solidity
     event Initialized(
-        address poolManager_
+        address indexed poolManager_
     );
 ```
 

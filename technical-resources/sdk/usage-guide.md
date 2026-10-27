@@ -35,7 +35,7 @@ Access contract addresses using the `addresses` object:
 import { addresses } from '@maplelabs/maple-js';
 
 // Returns the contract address for MapleToken on Ethereum Mainnet
-const contractAddress = addresses.mainnet.MapleToken;
+const contractAddress = addresses['mainnet-prod'].MapleToken;
 ```
 
 ### Connecting to a Contract
@@ -45,12 +45,13 @@ To connect to a contract, you'll need its address and a signer. The `signer` sho
 **Connecting to a Contract Usage**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js';
+import { addresses, mapleGlobalsV5 } from '@maplelabs/maple-js';
 
-const contractAddress = addresses.mainnet.MapleToken;
+// Address of the Maple Globals proxy on Ethereum Mainnet
+const contractAddress = addresses['mainnet-prod'].NonTransparentProxy;
 const signer = 'yourSigner';
 
-const contract = mapleGlobals.core.connect(contractAddress, signer);
+const contract = mapleGlobalsV5.core.connect(contractAddress, signer);
 ```
 
 ### Interacting with a Contract
@@ -62,7 +63,7 @@ Once connected to a contract, you can call any available methods using the `cont
 Basic queries can be called using the standard `await` pattern:
 
 ```js
-const basicQuery = await contract.lpCooldownPeriod();
+const basicQuery = await contract.governor();
 ```
 
 **Usage for Transactions**
@@ -70,10 +71,10 @@ const basicQuery = await contract.lpCooldownPeriod();
 When executing a transaction, use the `.wait()` method to resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
 
 ```js
-import { pool } from '@maplelabs/maple-js';
+import { poolV2 } from '@maplelabs/maple-js';
 
-const poolContract = pool.core.connect(poolAddress, signer);
-const method = await (await poolContract.deposit(depositAmount)).wait();
+const poolContract = poolV2.core.connect(poolAddress, signer);
+const method = await (await poolContract.deposit(depositAmount, account)).wait();
 ```
 
 ## Checking Permissions and Onboarding
@@ -85,7 +86,7 @@ Before a wallet can deposit into a Maple pool, it must have a sufficient `permis
 To ensure your wallet has the necessary permissions:
 
 1. **Maple Webapp**: Onboard and verify your account at [Maple Webapp](https://app.maple.finance/). Add your wallets to the account to automatically receive the required permissions.
-2. **Syrup Pools**: Make an initial deposit through the [Syrup UI](https://syrup.fi/) to set permissions.
+2. **Syrup Pools**: Make an initial deposit through the [Maple Webapp](https://app.maple.finance/earn) to set permissions.
 
 ### Querying Permissions with Subgraph
 
@@ -120,7 +121,7 @@ Use the following endpoint to execute the query: `https://api.maple.finance/v2/g
 - **poolV2**: Retrieves pool permission details.
 - **account**: Retrieves the `permissionsBitmap` for the account.
 
-Ensure that the account's `permissionsBitmap` meets or exceeds the pool's requirements before attempting to deposit. For more details on permissions, refer to the [Pool Permission Manager documentation](technical-resources/singletons/pool-permission-manager.md).
+Before depositing, check that the account's `permissionsBitmap` includes every bit the pool requires. To run the same check the pool runs, call `hasPermission(poolManager, lender, functionId)` on the Pool Permission Manager with `functionId` set to `P:deposit` as a `bytes32`. For more details on permissions, refer to the [Pool Permission Manager documentation](../singletons/pool-permission-manager.md).
 
 ## Example Integration with React
 
@@ -134,7 +135,7 @@ Ensure you have the following installed and set up:
 - A React application (created using `create-react-app` or similar)
 - ethers v5 installed in your project
 - MetaMask/Rabby extension installed in your browser
-- A wallet with sufficient permissions to interact with the pool (see [Checking Permissions with Subgraph](#checking-permissions-with-subgraph))
+- A wallet with sufficient permissions to interact with the pool (see [Querying Permissions with Subgraph](#querying-permissions-with-subgraph))
 
 ### Step-by-Step Guide
 

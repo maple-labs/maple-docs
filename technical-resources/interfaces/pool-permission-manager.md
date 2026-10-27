@@ -40,12 +40,12 @@ Configures the permissions of a pool.
 
 #### Parameters:
 
-| Index |        Name        |     Type    | Internal Type | Description |
-| :---: | :----------------: | :---------: | :-----------: | ----------- |
-|   0   |   `poolManager_`   |  `address`  |   `address`   |             |
-|   1   | `permissionLevel_` |  `uint256`  |   `uint256`   |             |
-|   2   |   `functionIds_`   | `bytes32[]` |  `bytes32[]`  |             |
-|   3   |   `poolBitmaps_`   | `uint256[]` |  `uint256[]`  |             |
+| Index |        Name        |     Type    | Internal Type | Description                                          |
+| :---: | :----------------: | :---------: | :-----------: | ---------------------------------------------------- |
+|   0   |   `poolManager_`   |  `address`  |   `address`   | Address of the pool manager.                         |
+|   1   | `permissionLevel_` |  `uint256`  |   `uint256`   | Permission level of the pool.                        |
+|   2   |   `functionIds_`   | `bytes32[]` |  `bytes32[]`  | List of function identifiers to set the bitmaps for. |
+|   3   |   `poolBitmaps_`   | `uint256[]` |  `uint256[]`  | List of permission bitmaps.                          |
 
 
 
@@ -63,15 +63,15 @@ Returns the address of the \`MapleGlobals\` contract.
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index | Name |    Type   | Internal Type | Description                               |
+| :---: | :--: | :-------: | :-----------: | ----------------------------------------- |
+|   0   | `globals` | `address` |   `address`   | Address of the \`MapleGlobals\` contract. |
 
 
 
 ### `hasPermission`
 
-Checks if the lender has permission to interact with a pool. The function identifier defines the function to check the permission for.
+Checks if one or more lenders have permission to interact with a pool. The function identifier defines the function to check the permission for.
 
 ```solidity
     function hasPermission(
@@ -87,17 +87,17 @@ Checks if the lender has permission to interact with a pool. The function identi
 
 #### Parameters:
 
-| Index |      Name      |     Type    | Internal Type | Description |
-| :---: | :------------: | :---------: | :-----------: | ----------- |
-|   0   | `poolManager_` |  `address`  |   `address`   |             |
-|   1   |   `lenders_`   | `address[]` |  `address[]`  |             |
-|   2   |  `functionId_` |  `bytes32`  |   `bytes32`   |             |
+| Index |      Name      |     Type    | Internal Type | Description                  |
+| :---: | :------------: | :---------: | :-----------: | ---------------------------- |
+|   0   | `poolManager_` |  `address`  |   `address`   | Address of the pool manager. |
+|   1   |   `lenders_`   | `address[]` |  `address[]`  | List of lender addresses.    |
+|   2   |  `functionId_` |  `bytes32`  |   `bytes32`   | Function identifier.         |
 
 #### Return Values:
 
-| Index |       Name       |  Type  | Internal Type | Description |
-| :---: | :--------------: | :----: | :-----------: | ----------- |
-|   0   | `hasPermission_` | `bool` |     `bool`    |             |
+| Index |       Name       |  Type  | Internal Type | Description                                                |
+| :---: | :--------------: | :----: | :-----------: | ---------------------------------------------------------- |
+|   0   | `hasPermission_` | `bool` |     `bool`    | \`true\` if all lenders have permission, \`false\` if not. |
 
 
 
@@ -119,17 +119,17 @@ Checks if the lender has permission to interact with a pool. The function identi
 
 #### Parameters:
 
-| Index |      Name      |    Type   | Internal Type | Description |
-| :---: | :------------: | :-------: | :-----------: | ----------- |
-|   0   | `poolManager_` | `address` |   `address`   |             |
-|   1   |    `lender_`   | `address` |   `address`   |             |
-|   2   |  `functionId_` | `bytes32` |   `bytes32`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `poolManager_` | `address` |   `address`   | Address of the pool manager. |
+|   1   |    `lender_`   | `address` |   `address`   | Address of the lender.       |
+|   2   |  `functionId_` | `bytes32` |   `bytes32`   | Function identifier.         |
 
 #### Return Values:
 
-| Index |       Name       |  Type  | Internal Type | Description |
-| :---: | :--------------: | :----: | :-----------: | ----------- |
-|   0   | `hasPermission_` | `bool` |     `bool`    |             |
+| Index |       Name       |  Type  | Internal Type | Description                                              |
+| :---: | :--------------: | :----: | :-----------: | -------------------------------------------------------- |
+|   0   | `hasPermission_` | `bool` |     `bool`    | \`true\` if the lender has permission, \`false\` if not. |
 
 
 
@@ -170,16 +170,16 @@ Checks if a pool has allowlisted a lender.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-|   1   | \`\` | `address` |   `address`   |             |
+| Index | Name |    Type   | Internal Type | Description                  |
+| :---: | :--: | :-------: | :-----------: | ---------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | Address of the pool manager. |
+|   1   | `lender` | `address` |   `address`   | Address of the lender.       |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index | Name |  Type  | Internal Type | Description                                              |
+| :---: | :--: | :----: | :-----------: | -------------------------------------------------------- |
+|   0   | `isAllowlisted` | `bool` |     `bool`    | \`true\` if the lender is allowlisted, \`false\` if not. |
 
 
 
@@ -199,15 +199,15 @@ Returns the permission bitmap of a lender.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index | Name |    Type   | Internal Type | Description            |
+| :---: | :--: | :-------: | :-----------: | ---------------------- |
+|   0   | `lender` | `address` |   `address`   | Address of the lender. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index | Name |    Type   | Internal Type | Description                      |
+| :---: | :--: | :-------: | :-----------: | -------------------------------- |
+|   0   | `bitmap` | `uint256` |   `uint256`   | Permission bitmap of the lender. |
 
 
 
@@ -227,15 +227,15 @@ Checks if the account is a permission admin.
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index | Name |    Type   | Internal Type | Description             |
+| :---: | :--: | :-------: | :-----------: | ----------------------- |
+|   0   | `account` | `address` |   `address`   | Address of the account. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index | Name |  Type  | Internal Type | Description                                                      |
+| :---: | :--: | :----: | :-----------: | ---------------------------------------------------------------- |
+|   0   | `isAdmin` | `bool` |     `bool`    | \`true\` if the account is a permission admin, \`false\` if not. |
 
 
 
@@ -255,15 +255,15 @@ Returns the permission level of a pool. Permission levels: private (0), function
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index | Name |    Type   | Internal Type | Description                  |
+| :---: | :--: | :-------: | :-----------: | ---------------------------- |
+|   0   | `poolManager` | `address` |   `address`   | Address of the pool manager. |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index | Name |    Type   | Internal Type | Description                   |
+| :---: | :--: | :-------: | :-----------: | ----------------------------- |
+|   0   | `permissionLevel` | `uint256` |   `uint256`   | Permission level of the pool. |
 
 
 
@@ -284,16 +284,16 @@ Returns a function-specific pool permission bitmap. Return the pool-level permis
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
-|   1   | \`\` | `bytes32` |   `bytes32`   |             |
+| Index | Name |    Type   | Internal Type | Description                                |
+| :---: | :--: | :-------: | :-----------: | ------------------------------------------ |
+|   0   | `poolManager` | `address` |   `address`   | Address of the pool manager.               |
+|   1   | `functionId` | `bytes32` |   `bytes32`   | Identifier of the function (zero if none). |
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index | Name |    Type   | Internal Type | Description                    |
+| :---: | :--: | :-------: | :-----------: | ------------------------------ |
+|   0   | `bitmap` | `uint256` |   `uint256`   | Permission bitmap of the pool. |
 
 
 
@@ -312,11 +312,11 @@ Sets the allowlist status of one or more lenders.
 
 #### Parameters:
 
-| Index |      Name      |     Type    | Internal Type | Description |
-| :---: | :------------: | :---------: | :-----------: | ----------- |
-|   0   | `poolManager_` |  `address`  |   `address`   |             |
-|   1   |   `lenders_`   | `address[]` |  `address[]`  |             |
-|   2   |   `booleans_`  |   `bool[]`  |    `bool[]`   |             |
+| Index |      Name      |     Type    | Internal Type | Description                                        |
+| :---: | :------------: | :---------: | :-----------: | -------------------------------------------------- |
+|   0   | `poolManager_` |  `address`  |   `address`   | Address of the pool manager.                       |
+|   1   |   `lenders_`   | `address[]` |  `address[]`  | List of lender addresses to set the allowlist for. |
+|   2   |   `booleans_`  |   `bool[]`  |    `bool[]`   | List of boolean values.                            |
 
 
 
@@ -334,10 +334,10 @@ Sets the permission bitmaps of one or more lenders.
 
 #### Parameters:
 
-| Index |    Name    |     Type    | Internal Type | Description |
-| :---: | :--------: | :---------: | :-----------: | ----------- |
-|   0   | `lenders_` | `address[]` |  `address[]`  |             |
-|   1   | `bitmaps_` | `uint256[]` |  `uint256[]`  |             |
+| Index |    Name    |     Type    | Internal Type | Description                                      |
+| :---: | :--------: | :---------: | :-----------: | ------------------------------------------------ |
+|   0   | `lenders_` | `address[]` |  `address[]`  | List of lender addresses to set the bitmaps for. |
+|   1   | `bitmaps_` | `uint256[]` |  `uint256[]`  | List of permission bitmaps.                      |
 
 
 
@@ -355,10 +355,10 @@ Sets the permission admin status of an account.
 
 #### Parameters:
 
-| Index |         Name         |    Type   | Internal Type | Description |
-| :---: | :------------------: | :-------: | :-----------: | ----------- |
-|   0   |  `permissionAdmin_`  | `address` |   `address`   |             |
-|   1   | `isPermissionAdmin_` |   `bool`  |     `bool`    |             |
+| Index |         Name         |    Type   | Internal Type | Description                                                      |
+| :---: | :------------------: | :-------: | :-----------: | ---------------------------------------------------------------- |
+|   0   |  `permissionAdmin_`  | `address` |   `address`   | Address of the account.                                          |
+|   1   | `isPermissionAdmin_` |   `bool`  |     `bool`    | \`true\` if the account is a permission admin, \`false\` if not. |
 
 
 
@@ -377,11 +377,11 @@ Sets the permission bitmaps of a pool.
 
 #### Parameters:
 
-| Index |      Name      |     Type    | Internal Type | Description |
-| :---: | :------------: | :---------: | :-----------: | ----------- |
-|   0   | `poolManager_` |  `address`  |   `address`   |             |
-|   1   | `functionIds_` | `bytes32[]` |  `bytes32[]`  |             |
-|   2   |   `bitmaps_`   | `uint256[]` |  `uint256[]`  |             |
+| Index |      Name      |     Type    | Internal Type | Description                                          |
+| :---: | :------------: | :---------: | :-----------: | ---------------------------------------------------- |
+|   0   | `poolManager_` |  `address`  |   `address`   | Address of the pool manager.                         |
+|   1   | `functionIds_` | `bytes32[]` |  `bytes32[]`  | List of function identifiers to set the bitmaps for. |
+|   2   |   `bitmaps_`   | `uint256[]` |  `uint256[]`  | List of permission bitmaps.                          |
 
 
 
@@ -399,10 +399,10 @@ Sets the permission level of a pool. Permission levels: private (0), function-le
 
 #### Parameters:
 
-| Index |        Name        |    Type   | Internal Type | Description |
-| :---: | :----------------: | :-------: | :-----------: | ----------- |
-|   0   |   `poolManager_`   | `address` |   `address`   |             |
-|   1   | `permissionLevel_` | `uint256` |   `uint256`   |             |
+| Index |        Name        |    Type   | Internal Type | Description                  |
+| :---: | :----------------: | :-------: | :-----------: | ---------------------------- |
+|   0   |   `poolManager_`   | `address` |   `address`   | Address of the pool manager. |
+|   1   | `permissionLevel_` | `uint256` |   `uint256`   | Pool permission level.       |
 
 
 
@@ -414,7 +414,7 @@ Emitted when the lender allowlist is updated.
 
 ```solidity
     event LenderAllowlistSet(
-        address poolManager,
+        address indexed poolManager,
         address[] lenders,
         bool[] booleans
     );
@@ -456,7 +456,7 @@ Emitted when a permission admin has been updated.
 
 ```solidity
     event PermissionAdminSet(
-        address account,
+        address indexed account,
         bool isAdmin
     );
 ```
@@ -476,7 +476,7 @@ Emitted when pool bitmaps are updated.
 
 ```solidity
     event PoolBitmapsSet(
-        address poolManager,
+        address indexed poolManager,
         bytes32[] functionIds,
         uint256[] bitmaps
     );
@@ -498,7 +498,7 @@ Emitted when the permission level of a pool is updated.
 
 ```solidity
     event PoolPermissionLevelSet(
-        address poolManager,
+        address indexed poolManager,
         uint256 permissionLevel
     );
 ```

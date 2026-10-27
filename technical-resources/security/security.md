@@ -83,7 +83,7 @@ The January 2026 release is for the Maple CCIP Receiver on Ethereum mainnet allo
 
 ### November 2026 Release
 
-The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. It does this alongside the strategies it owns directly; after the upgrade, the loans via Open Term Loan Manager remain the same.
+The November 2026 release replaces the one-to-one link between a Maple Pool and its strategies with shared strategies. A MaplePoolManager can now fund Strategy Managers, which combine capital from several Pool Managers into one underlying position. Each Pool keeps its own Open Term Loan Manager for open-term loans.
 
 | Auditor  | Report Link |
 | -------- | ----------- |
@@ -94,7 +94,7 @@ The November 2026 release replaces the one-to-one link between a Maple Pool and 
 
 ## Bug Bounty
 
-The Maple protocol has an active bug bounty to incentive whitehat hackers to report any issues discovered in the protocol to allow for the opportunity for a patch to be made before the exploit is performed by a malicious actor. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/).
+Maple runs an active bug bounty that rewards anyone who reports an issue in the protocol, so it can be fixed before it is exploited. For all information related to the ongoing bug bounty for these contracts run by [Immunefi](https://immunefi.com/), please visit this [site](https://immunefi.com/bounty/maple/). Behaviours listed on the [Known Issues and Operational Controls](known-issues-and-operational-controls.md) page are handled by operating procedure and are out of scope for the bounty.
 
 
 ## Critical Monitoring
@@ -111,14 +111,10 @@ Additionally all smart contracts get programmatically verified on Etherscan via 
 
 In the case of a critical incident, a multisig is able to trigger a protocol pause. This function can temporarily disable almost all functions in the Maple protocol. This will allow for the incident response team to address the situation and minimize any potential harm that would be done. More information on the Emergency Pause function is outlined on this [page](emergency-protocol-pause.md).
 
-## Oracle/Flash Loan Protections
+## Flash Loan and Front-Running Protections
 
-Maple Finance has implemented a number of protections to mitigate the risk of flash loans and front-running attacks. These protections are outlined below.
+No Pool or Strategy Manager reads a price oracle. The Aave V3 and Sky strategies value their positions from the balances those underlying protocols report, and open-term loans are accounted for at principal plus accrued interest, so there is no price feed to manipulate inside a transaction. Three mechanisms remove the remaining ways to profit from a sudden change in Pool value.
 
-1. Chainlink Oracles - Maple Finance uses Chainlink oracles to provide price feeds for the protocol. Chainlink oracles are decentralized and provide a high level of security and reliability. In addition, Chainlink oracles are designed to be resistant to flash loan attacks since they provide price data from off-chain sources. More information on Chainlink oracles can be found [here](https://docs.chain.link/).
-2. Oracle Wrappers - Maple Finance uses oracle wrappers to provide additional security and reliability to the Chainlink oracles. Oracle wrappers are designed to prevent oracle outages and oracle manipulation from causing issues in the protocol, specifically during liquidations.
-3. Withdrawal Cooldowns - With withdrawal cooldowns, LPs are required to wait a certain amount of time before they can withdraw their funds. This is done to prevent flash loan attacks from being able to front-run LPs and deposit and withdraw funds to profit unfairly from discrete increases in pool value.
-
-## Front-Running Protections
-
-Every ERC-20 asset has a `bootstrapMint` amount that is set by the Governor. This is to prevent attackers from front-running the first depositor in a Pool to get an unfair distribution of Pool value. Outlines of this exploit can be found [here](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf) under finding 5.1.1.
+1. **Queue-based withdrawals.** A Lender cannot deposit and withdraw in the same transaction. `requestRedeem()` escrows the shares in the Withdrawal Manager, and the Pool Delegate, the Operational Admin or a registered redeemer processes the queue later with `processRedemptions()`. See [Withdrawal Manager](../pools/withdrawal-manager.md).
+2. **Two exchange rates.** While a loan or strategy is impaired the Pool reports the expected loss as `unrealizedLosses()`. Deposits are priced with `convertToShares()` against `totalAssets()`, exits with `convertToExitShares()` against `totalAssets() - unrealizedLosses()`. A Lender who enters during an impairment pays the full price and one who exits bears their share of the pending loss, so nobody gains from timing an impairment or its removal. The Strategy Manager applies the same pair of rates to the Pool Managers that fund it through `convertToShares()` and `convertToExitShares()`. See [Exchange Rates](../pools/exchange-rates.md).
+3. **Bootstrap mint.** Globals holds a `bootstrapMint` amount per asset, set by the Governor or the Operational Admin. On the first deposit into a Pool, `MaplePool` mints `BOOTSTRAP_MINT` shares to the zero address and the Lender receives the remainder. This stops anyone from front-running the first Lender to inflate the share price, the exploit described under finding 5.1.1 of the [Spearbit 2022 report](https://docs.google.com/viewer?url=https://github.com/maple-labs/maple-v2-audits/files/10223545/Maple.Finance.v2.-.Spearbit.pdf). The Strategy Deployer gives every Strategy Manager the same defence. It transfers the bootstrap amount from the Strategy Delegate into the underlying strategy, and `completeConfiguration()` records the resulting shares against the zero address, where nothing can redeem them. See [Strategy Deployer](../strategies/strategy-deployer.md).

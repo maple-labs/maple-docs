@@ -1,41 +1,49 @@
-# Overview
+# Smart Contract Architecture
 
-In this section, the architecture of the Maple V2 protocol is outlined, including the rationale behind each decision.
+In this section, the architecture of the Maple protocol is outlined, including the rationale behind each decision.
 
-![V2 Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
+![Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
 
-# [Pool](../pools/pools.md)
-The pool implements the vault standard ([ERC4626](https://erc4626.info/)) and its intentionally kept as simple as possible, containing mostly token and deposit/withdrawal functionality. It's the only contract that LPs need to interact with to participate in the protocol. Due to immutability, some of the logic is delegated to the contract called `PoolManager`, which is the only external facing contract that the Pool interacts with.
+## [Pool](../pools/pools.md)
 
-# [PoolManager](../pools/pool-manager.md)
+The pool implements the vault standard ([ERC4626](https://erc4626.info/)) and it is intentionally kept as simple as possible, containing mostly token and deposit/withdrawal functionality. It's the only contract that LPs need to interact with to participate in the protocol. Due to immutability, some of the logic is delegated to the contract called `PoolManager`, which is the only external facing contract that the Pool interacts with.
+
+## [PoolManager](../pools/pool-manager.md)
 
 Pools and PoolManagers currently have a one-to-one relationship (architecturally this is allowed to change), meaning that a single Pool contract is associated with a single PoolManager and vice versa. Its main responsibility is to hold almost all of the administrative functions, as well as serve as the interface between the Pool and the other parts of the protocol architecture.
 
-The main actors that interact with the PoolManager are the Pool Delegate, Governor and other Maple contracts. No external facing actor is expected to use the Pool Manager directly. The Pool Delegate uses the PoolManager to administrate strategies, performing actions such as funding and refinancing, and setting Pool parameters, such as liquidity cap and fees. Other contracts use the PoolManager to route calls to the Pool to perform operations such as withdrawals.
+The main actors that interact with the PoolManager are the Pool Delegate, Governor, Operational Admin and other Maple contracts. No external facing actor is expected to use the Pool Manager directly. The Pool Delegate uses the PoolManager to set Pool parameters, such as liquidity cap, fees and the cap on each strategy. The PoolManager funds two kinds of strategy: the Pool's Open Term Loan Manager and shared Strategy Managers. Other contracts use the PoolManager to route calls to the Pool to perform operations such as withdrawals.
 
-# LoanManagers (Primary yield strategy)
+## Open Term Loan Manager
 
-The LoanManager is used to keep track of all outstanding Loan accounting. A PoolManager can have many LoanManagers, but a given LoanManager only interacts and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. With multiple LoanManagers it is possible to completely change the existing value accrual mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. In the current architecture, LoanManagers are attached to the PoolManager as strategies via `addStrategy` using the appropriate LoanManager factory. There are two types of LoanManagers in the Maple protocol: fixed-term LoanManagers and open-term LoanManagers.
+The Open Term Loan Manager is used to keep track of all outstanding Loan accounting for its Pool. It only interacts with and reports to a single PoolManager. The accounting is done on a separate contract and not directly on the Pool because it allows for future flexibility. It is possible to completely change the existing value accrual mechanism, or support multiple value accrual mechanisms in parallel in the future, without needing to migrate pool tokens. The Open Term Loan Manager is attached to the PoolManager as a strategy via `addStrategy` using the Open Term Loan Manager factory.
 
-# Loans
+## Loans
 
-A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. There are two types of Loans in the Maple protocol: fixed-term Loans and open-term Loans.
+A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. All new Loans in the Maple protocol are open-term Loans. See [Open Term Loans](../strategies/open-term-loans/README.md).
 
-# External Strategies (Secondary yield strategy)
-External strategies such as Aave and Sky are used to deposit cash into the pool to earn yield as a secondary yield source for the Pool. A Pool can have many external strategies but a strategy can only interact with one Pool Manager.
+## Strategy Managers
 
-# WithdrawalManager
+Pools can also allocate capital to shared strategies. A shared strategy is two contracts. The [Strategy Manager](../strategies/strategy-manager.md) tracks each Pool's share of one position, and several Pools can fund it at once. The Underlying Strategy deploys that capital to one underlying protocol: [Aave V3](../strategies/aave-v3-strategy/README.md), [Sky](../strategies/sky-strategy/README.md), or Managed Wallets through the [Allocation Strategy](../strategies/allocation-strategy/README.md). A Strategy Manager only accepts Pool Managers as funders, and it never holds assets itself.
 
-In order to maximize capital efficiency, at any given time, the majority of the assets deposited by Liquidity Providers are directed towards funding loans and therefore, are not available to be withdrawn by LPs. Although depositors are entitled to the full value of their position, full liquidity might not be available at any given time. To address this in an equitable way, the WithdrawalManager contract is used.
+## Liquidity Router
 
-WithdrawalManagers are developed to cater for a specific pool's needs with regards to liquidity management, giving Pool Delegates the flexibility to configure the best withdrawal mechanic for their needs.
+The [Liquidity Router](../strategies/liquidity-router.md) lets Maple's Liquidity Bots batch funding and redemption actions across several Strategy Managers in one transaction. It holds no assets and grants no permission beyond what each Strategy Manager already allows.
 
-# [Maple Globals](../singletons/globals.md)
+## WithdrawalManager
+
+In order to maximize capital efficiency, at any given time, the majority of the assets deposited by Liquidity Providers are directed towards funding loans and therefore, are not available to be withdrawn by LPs. Although Lenders are entitled to the full value of their position, full liquidity might not be available at any given time. To address this in an equitable way, the WithdrawalManager contract is used.
+
+Each Pool has a queue-based WithdrawalManager that processes withdrawal requests in the order they were made. See [Withdrawal Manager](../pools/withdrawal-manager.md).
+
+## [Maple Globals](../singletons/globals.md)
 
 MapleGlobals is a singleton contract responsible for holding protocol-wide parameters. The administrative actor of MapleGlobals is the `Governor` which can configure all the needed parameters in a central place. The `Governor` acts on behalf of the Maple DAO.
 
-The MapleGlobals contract is also used to perform and control [time-locked](../admin-functions/timelocks.md) actions, such as smart contract upgrades, which can directly affect depositors.
+The MapleGlobals contract is also used to perform and control [time-locked](../admin-functions/timelocks.md) actions, such as smart contract upgrades, which can directly affect Lenders.
 
-# Factories
+## Factories
 
-Within the Maple protocol there will be multiple instances of each contract described above, so for efficiency of deployment, a factory pattern is employed. Factories are contracts that are responsible to create new instances of specific contracts and to manage and perform upgrades. Factories are managed in an allowlist in MapleGlobals, maintained by the Governor. This allows protocol contracts to verify on-chain that contracts have been vetted by the Maple DAO. For example, a Loan Manager can check if it is funding a Loan that is part of the Maple protocol, as to avoid funding a Loan with malicious smart contract logic. Further, some (and eventually more/all) factories rely on MapleGlobals to determine if their caller is allowed to deploy an instance.
+Within the Maple protocol there will be multiple instances of each contract described above, so for efficiency of deployment, a factory pattern is employed. Factories are contracts that are responsible to create new instances of specific contracts and to manage and perform upgrades. Factories are managed in an allowlist in MapleGlobals, maintained by the Governor or Operational Admin. This allows protocol contracts to verify on-chain that contracts have been vetted by the Maple DAO. For example, a Loan Manager can check if it is funding a Loan that is part of the Maple protocol, as to avoid funding a Loan with malicious smart contract logic. Further, factories rely on MapleGlobals to determine if their caller is allowed to deploy an instance.
+
+The [Pool Deployer](../pools/pool-creation.md) and the [Strategy Deployer](../strategies/strategy-deployer.md) use these factories to create a new Pool or shared strategy, with all of its contracts, in one transaction.
