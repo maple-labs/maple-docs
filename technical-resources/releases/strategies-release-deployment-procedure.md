@@ -1,7 +1,7 @@
 # Smart Contract Deployments & Upgrade Procedure for Strategies Release
 
 {% hint style="info" %}
-This procedure is superseded. The November 2026 release replaces these strategies with shared strategies behind Strategy Managers. See [November 2026 Release: What Changed](november-2026-release-what-changed.md).
+This procedure is superseded. The November 2026 release replaces these strategies with shared strategies behind Strategy Managers. See [November 2026 Release](november-2026-release-deployment-and-upgrade.md).
 {% endhint %}
 
 The following contracts will be deployed with the relevant release tags.

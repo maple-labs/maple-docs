@@ -20,43 +20,37 @@ The naming convention for fees in the smart contracts is: `actorCategoryType`. S
 
 ### Service Fees
 
-Service fees are paid during loan payments. Service fees are calculated in the following way:
+Service fees are charged on outstanding principal and paid with each loan payment, on top of interest. The Loan stores two annualized rates, scaled by `1e6` (the `HUNDRED_PERCENT` constant, so `100_000` is 10%). It never stores a fee amount.
 
-* `delegateServiceFeeRate` is a loan term that is specified on loan instantiation as an annualized rate scaled by `1e6` (the `HUNDRED_PERCENT` constant). It is a rate, not a nominal currency amount (e.g., `100_000` = 10%).
-* `platformServiceFeeRate` is stored per Pool in Globals and set by the Governor or Operational Admin. When a loan is funded, the service fee amount to be paid is calculated using the following formula for both the delegate and platform service fees:
+* `delegateServiceFeeRate` is a loan term set when the loan is created and changes only through a refinance.
+* `platformServiceFeeRate` is set per Pool in Globals by the Governor or Operational Admin. The Loan reads it from Globals when it is initialized and again on each refinance, and uses the cached value for every payment in between. A change in Globals reaches an existing loan only at its next refinance.
 
-$$
-\large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
-$$
+`fund()` records the funding date and transfers the principal. Fee amounts are computed at payment time by `getPaymentBreakdown(timestamp)`:
 
 $$
-\large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
+\large \begin{align} \nonumber interval = timestamp - \max(datePaid, dateFunded) \end{align}
 $$
 
-Both of these values are saved in storage of the Loan contract and used for all payments for a loan until it either refinances or matures.
+$$
+\large \begin{align} \nonumber platformServiceFee = \frac{principal \times platformServiceFeeRate \times interval}{365 \text{ days} \times HUNDRED\_PERCENT} \end{align}
+$$
+
+$$
+\large \begin{align} \nonumber delegateServiceFee = \frac{principal \times delegateServiceFeeRate \times interval}{365 \text{ days} \times HUNDRED\_PERCENT} \end{align}
+$$
+
+The same formula applies whether the payment is on time, late, called or impaired. A late payment adds late interest but does not change the service fees. `makePayment()` transfers principal returned, interest and both fees to the Loan Manager in one transfer. The Loan Manager sends the delegate service fee to the Pool Delegate and the platform service fee to the `MapleTreasury`.
+
+On default, the Loan Manager calculates the platform service fee up to the impairment date and pays it to the `MapleTreasury` from recovered funds before the Pool receives anything. The delegate service fee is not collected on a defaulted loan.
 
 ### Refinancing of Service Fees
 
-In the case of a refinance, three things happen with regards to service fees:
+Open Term Loans have no maturity date, so a refinance is the only point at which service fee terms change. When the Borrower accepts new terms through `acceptNewTerms()`:
 
-1. The `delegateServiceFeeRate` can be updated by updating the fee terms as a part of the refinance (optionally). If no change is made, the same service fee is used.
-2. The platform service fee is recalculated and saved based on the resulting terms of the refinance operation and the current `platformServiceFeeRate` set in globals.
-
-Both are done using the same formula:
-
-$$
-\large \begin{align} \nonumber platformServiceFee = platformServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
-$$
-
-$$
-\large \begin{align} \nonumber delegateServiceFee = delegateServiceFeeRate \times principal \times \frac{Interval}{oneYear} \end{align}
-$$
-
-3. The platform and delegate service fee amounts that have accrued between the last payment or funding (whichever is greatest) and the refinance are paid during the refinance using the following formula:
-
-$$
-\large \begin{align} \nonumber refinanceServiceFee = serviceFee \times \frac{(timestamp - \max(datePaid, dateFunded))}{paymentInterval} \end{align}
-$$
+1. The Loan computes interest and both service fees accrued from the last payment or funding date up to the refinance, using the rates in force before the refinance, and settles them as part of the refinance.
+2. The refinancer calls apply the new terms. `setDelegateServiceFeeRate()` updates `delegateServiceFeeRate` if it is included. Otherwise the rate is unchanged.
+3. The Loan reads `platformServiceFeeRate` for the Pool from Globals again and caches it.
+4. `datePaid` is set to the refinance time, so the next payment accrues from the refinance under the new rates and principal.
 
 ## Management Fees
 

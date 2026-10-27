@@ -2,7 +2,7 @@
 
 Each Pool funds open-term loans through its own Open Term Loan Manager. The Pool Manager deploys it through `addStrategy` and funds it under a strategy cap, with no [Strategy Manager](../strategy-manager.md) in between. Every other strategy is shared between Pools through a Strategy Manager, see [How Pools Allocate Capital](../how-pools-allocate-capital.md).
 
-All loans in the protocol are open-term loans. Their functionality can be summarized as follows:
+All new loans in the protocol are open-term loans. Their functionality can be summarized as follows:
 
 1. Execution of loan financing.
 2. Computation of payment amounts and schedules for interest-only payments.

@@ -24,11 +24,11 @@ The Operational Admin is also a multisig controlled by Maple managed multisigs.
 
 #### 5. Loans are expected to be instantiated with reasonable terms.
 
-During the fuzz testing process, it was discovered that certain overflow conditions can occur in the amortization calculation of the loan, but only at "unreasonable" upper bounds (E.g., 100-year loans with 1 year payment intervals at 100% APR, for >$10b).
+Loan terms such as principal, interest rates, payment interval, notice period and grace period are expected to be set within reasonable bounds. Beyond non-zero checks on principal, payment interval and notice period in the loan initializer, the contracts do not reject extreme values.
 
 #### 6. Pool Delegates don't try to prevent withdrawals.
 
-It's known that, in theory, withdrawal managers can be configured to unreasonable terms, for example, making the withdrawal window 1 second, or the cycle duration to be large,or pool delegates can set the withdrawal manager address to an invalid address. However, it's understood that pool delegates are trusted actors and they are working to making the pool well functioning.
+The Withdrawal Manager queue gives the Pool Delegate and the Operational Admin discretion over redemptions. They decide when requests are processed and how many shares each call processes, they can leave requests in the queue unprocessed, and they can require a Lender to withdraw manually with `setManualWithdrawal()`. The Withdrawal Manager address can only be set before the Pool is configured, so it cannot be swapped out later. However, it's understood that Pool Delegates are trusted actors and they are working to keep the Pool well functioning.
 
 ## Strategy assumptions
 

@@ -20,7 +20,7 @@ The Open Term Loan Manager is used to keep track of all outstanding Loan account
 
 ## Loans
 
-A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. All Loans in the Maple protocol are open-term Loans. See [Open Term Loans](../strategies/open-term-loans/README.md).
+A MapleLoan is the contract that represents the agreement between a Lender and a Borrower, defining all of the rules of the engagement. In it, all of the term details are set and enforced. This includes Loan terms, payment schedules, fee structures, and default conditions. Loans are the mechanism through which the revenue is generated for Pool Delegates and the Maple protocol, as well as yield for Liquidity Providers. All new Loans in the Maple protocol are open-term Loans. See [Open Term Loans](../strategies/open-term-loans/README.md).
 
 ## Strategy Managers
 

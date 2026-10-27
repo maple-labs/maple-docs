@@ -78,15 +78,15 @@ The default version.
     function defaultVersion()
         view
         returns (
-            uint256
+            uint256 defaultVersion_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `uint256` |   `uint256`   |             |
+| Index |        Name       |    Type   | Internal Type | Description |
+| :---: | :---------------: | :-------: | :-----------: | ----------- |
+|   0   | `defaultVersion_` | `uint256` |   `uint256`   |             |
 
 
 
@@ -194,29 +194,29 @@ Returns the address of an implementation version.
 
 ### `isInstance`
 
-Returns if a given address has been deployed by this factory/
+Returns if a given address has been deployed by this factory.
 
 ```solidity
     function isInstance(
-        address
+        address instance_
     )
         view
         returns (
-            bool
+            bool isInstance_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `address` |   `address`   |             |
+| Index |     Name    |    Type   | Internal Type | Description           |
+| :---: | :---------: | :-------: | :-----------: | --------------------- |
+|   0   | `instance_` | `address` |   `address`   | The address to check. |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |      Name     |  Type  | Internal Type | Description                                                            |
+| :---: | :-----------: | :----: | :-----------: | ---------------------------------------------------------------------- |
+|   0   | `isInstance_` | `bool` |     `bool`    | A boolean indication if the address has been deployed by this factory. |
 
 
 
@@ -228,15 +228,15 @@ The address of the MapleGlobals contract.
     function mapleGlobals()
         view
         returns (
-            address
+            address mapleGlobals_
         );
 ```
 
 #### Return Values:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   |      | `address` |   `address`   |             |
+| Index |       Name      |    Type   | Internal Type | Description |
+| :---: | :-------------: | :-------: | :-----------: | ----------- |
+|   0   | `mapleGlobals_` | `address` |   `address`   |             |
 
 
 
@@ -337,27 +337,27 @@ Whether the upgrade is enabled for a path from a version to another version.
 
 ```solidity
     function upgradeEnabledForPath(
-        uint256,
-        uint256
+        uint256 fromVersion_,
+        uint256 toVersion_
     )
         view
         returns (
-            bool
+            bool allowed_
         );
 ```
 
 #### Parameters:
 
-| Index | Name |    Type   | Internal Type | Description |
-| :---: | :--: | :-------: | :-----------: | ----------- |
-|   0   | \`\` | `uint256` |   `uint256`   |             |
-|   1   | \`\` | `uint256` |   `uint256`   |             |
+| Index |      Name      |    Type   | Internal Type | Description                  |
+| :---: | :------------: | :-------: | :-----------: | ---------------------------- |
+|   0   | `fromVersion_` | `uint256` |   `uint256`   | The version to upgrade from. |
+|   1   |  `toVersion_`  | `uint256` |   `uint256`   | The version to upgrade to.   |
 
 #### Return Values:
 
-| Index | Name |  Type  | Internal Type | Description |
-| :---: | :--: | :----: | :-----------: | ----------- |
-|   0   |      | `bool` |     `bool`    |             |
+| Index |    Name    |  Type  | Internal Type | Description                     |
+| :---: | :--------: | :----: | :-----------: | ------------------------------- |
+|   0   | `allowed_` | `bool` |     `bool`    | Whether the upgrade is enabled. |
 
 
 

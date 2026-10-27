@@ -110,7 +110,7 @@ sequenceDiagram
 
 ## Redemptions
 
-Leaving a strategy takes two steps. `requestRedeem()` records shares as pending without burning them. `processRedemption()` burns the shares, prices them at the exit rate net of unrealized losses, and calls `withdrawFromUnderlyingStrategy()`, which sends assets from the Underlying Strategy directly to the Pool. A pending request can be reduced with `cancelRedemption()`. Requests are tracked per Pool and are independent of the Withdrawal Manager's Lender queue.
+Leaving a strategy takes two steps. `requestRedeem()` records shares as pending without burning them. `processRedemption()` burns the shares, prices them at the exit rate net of unrealized losses, and calls `withdrawFromUnderlyingStrategy()`, which sends assets from the Underlying Strategy directly to the Pool. A pending request can be reduced with `cancelRedemption()`. Requests are tracked per Pool and are independent of the Withdrawal Manager's Lender queue. A Pool that exits while the Underlying Strategy carries an impairment takes its share of that loss, because shares are redeemed at the exit rate.
 
 When the underlying protocol has liquidity, both steps can run in one transaction through the [Liquidity Router](liquidity-router.md) or `multicall()`.
 

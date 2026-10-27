@@ -1,6 +1,68 @@
-# November 2026 Release: Deployment and Upgrade
+# November 2026 Release
 
-This page describes the procedure that deploys the November 2026 release contracts and upgrades five live Pools to use shared strategies. It follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the `maple-core-v2-private` repository. For what the release contains, see [November 2026 Release: What Changed](november-2026-release-what-changed.md).
+The November 2026 release replaces the one-pool-one-strategy model with shared strategies. A new Strategy Manager sits between Pools and an Underlying Strategy, so several Pool Managers can fund the same position and share its profit and loss in proportion to the shares they hold. This page lists what the release adds, upgrades and removes, which Pools it upgrades, and the procedure that deploys the contracts and upgrades those Pools. The procedure follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the `maple-core-v2-private` repository.
+
+## Summary
+
+Before the November 2026 release, a Pool Manager deployed every strategy it used for its Pool alone. Now a Pool Manager holds two kinds of position:
+
+* Its Open Term Loan Manager, which only that Pool funds.
+* Strategy Managers, where the Pool Manager is one of several funders. Each Strategy Manager is paired with one Underlying Strategy (Aave V3, Sky or Allocation) and tracks each Pool's position with internal, non-tokenised shares.
+
+Share accounting, AUM reporting and caps live in the Strategy Manager and are the same for every strategy. Logic specific to each underlying protocol lives in the Underlying Strategy, so adding an underlying protocol means writing a new Underlying Strategy. Strategy Managers only accept Pool Managers as funders, never Lenders, so KYC, permissioning and redemptions stay in the Pool contracts. See [How Pools Allocate Capital](../strategies/how-pools-allocate-capital.md) for the funding and redemption flows.
+
+## New contracts
+
+| Contract | Module | Version | Purpose |
+| --- | --- | --- | --- |
+| `MapleStrategyManager`, `MapleStrategyManagerFactory`, `MapleStrategyManagerInitializer` | strategy-manager | v1.0.0 | Pools capital from several Pool Managers into one Underlying Strategy and services redemption requests. See [Strategy Manager](../strategies/strategy-manager.md). |
+| `MapleStrategyDeployer` | strategy-manager | v1.0.0 | Deploys a Strategy Manager and its Underlying Strategy in one transaction and performs the bootstrap funding. See [Strategy Deployer](../strategies/strategy-deployer.md). |
+| `MapleLiquidityRouter` | strategy-manager | v1.0.0 | Lets a permissioned Liquidity Bot batch fund, request and process actions across Strategy Managers. See [Liquidity Router](../strategies/liquidity-router.md). |
+| `MapleAaveV3Strategy`, `MapleAaveV3StrategyFactory`, `MapleAaveV3StrategyInitializer` | defi-strategies | v1.0.0 | Aave V3 and SparkLend Underlying Strategy owned by a Strategy Manager. See [Aave V3 Strategy](../strategies/aave-v3-strategy/README.md). |
+| `MapleSkyStrategy`, `MapleSkyStrategyFactory`, `MapleSkyStrategyInitializer` | defi-strategies | v1.0.0 | Sky (PSM and sUSDS) Underlying Strategy owned by a Strategy Manager. See [Sky Strategy](../strategies/sky-strategy/README.md). |
+| `MapleAllocationStrategy`, `MapleAllocationStrategyFactory`, `MapleAllocationStrategyInitializer` | allocation-strategy | v1.0.0 | Deploys assets to permissioned Managed Wallets under per-wallet caps and handles yield, impairment and loss recognition. See [Allocation Strategy](../strategies/allocation-strategy/README.md). |
+| `MaplePoolManagerMigratorV500` | pool | v5.0.0 | One-off migrator that removes legacy strategies from existing Pool Managers during the v4 to v5 upgrade. |
+
+## Upgraded contracts
+
+| Contract | Module | Version | Factory version | What changed |
+| --- | --- | --- | --- | --- |
+| `MapleGlobals` | globals | v5.0.0 | n/a (`setImplementation()`) | Adds the Strategy Delegate registry: `setValidStrategyDelegate()`, `activateStrategyManager()`, `transferOwnedStrategyManager()`, `isStrategyDelegate()` and `ownedStrategyManager()`. Adds `setValidMapleManagedWallet()`, which writes the `MAPLE_MANAGED_WALLET` instance key. |
+| `MaplePoolManager` | pool | v5.0.0 | 500 | Funds Strategy Managers as well as the Open Term Loan Manager. Adds `addStrategyManager()`, `removeStrategyManager()`, `setStrategyCap()` and `multicall()`. Rewrites `requestFunds()` around a per-strategy cap. `totalAssets()` and `unrealizedLosses()` read `assetsOf()` and `unrealizedLossesOf()` from Strategy Managers. `triggerDefault()` only routes to the Open Term Loan Manager. Pool Delegate Cover is removed. See [Pool Manager](../pools/pool-manager.md). |
+| `MaplePoolManagerInitializer` | pool | v5.0.0 | 500 | No longer deploys a Pool Delegate Cover. The Pool is the only contract the Pool Manager creates. |
+| `MaplePoolDeployer` | pool | v5.0.0 | n/a (not a proxy) | One queue-only `deployPool()` taking structs. Deploys the Open Term Loan Manager with a caller-supplied salt and cap, and attaches existing Strategy Managers. Cyclical withdrawal managers can no longer be deployed. See [Creating a Pool](../pools/pool-creation.md). |
+| `MapleWithdrawalManager` (queue) | withdrawal-manager-queue | v2.0.1 | 201 | `removeSharesById()` now also checks `hasPermission(poolManager, msg.sender, "WM:removeSharesById")` on the Pool Permission Manager and reverts with `WM:RSBI:NOT_ALLOWED`. Storage is unchanged, so the upgrade needs no migrator. Compiler moved to 0.8.34. See [Withdrawal Manager](../pools/withdrawal-manager.md). |
+
+`MaplePoolManagerFactory` and `MapleWithdrawalManagerFactory` are unchanged and keep their mainnet addresses. `MaplePool` is recompiled under 0.8.34 with no functional change. The Pool Permission Manager, Open Term Loan and Open Term Loan Manager are not part of this release.
+
+## Removed functionality
+
+* **Fixed-term loans and the Fixed Term Loan Manager.** The fixed-term loan modules are no longer part of the protocol repository. The migrator removes each Fixed Term Loan Manager from `strategyList` and reverts with `PMM:NON_ZERO_AUM` if it still reports assets under management.
+* **Liquidator.** The Pool Manager no longer runs collateral liquidations. `triggerDefault()` calls `triggerDefault()` on the loan's Open Term Loan Manager and emits `CollateralLiquidationFinished`. Globals keeps only a deprecated compatibility shim for the already-deployed `LiquidatorFactory`.
+* **Pool Delegate Cover.** `MaplePoolDelegateCover` is deleted along with `depositCover()` and `withdrawCover()`. The storage slot is kept as `__deprecated_poolDelegateCover`, and `hasSufficientCover()` is now `pure` and returns `true` so delegate fees in the loan manager keep flowing.
+* **Cyclical withdrawal manager deployments.** The Pool Deployer only deploys queue withdrawal managers, and `setWithdrawalManager()` requires a factory registered under `WITHDRAWAL_MANAGER_QUEUE_FACTORY`. Existing cyclical withdrawal managers on non-upgraded Pools keep working.
+* **Legacy per-Pool Aave and Sky strategies.** The migrator removes them from the upgraded Pool Managers without a balance check, so they are drained first. Their replacements are shared Aave V3 and Sky Strategy Managers.
+* `setIsStrategy()` is removed from the Pool Manager. `addStrategy()` now takes an explicit `salt` and is restricted to the Governor once the Pool Manager is configured.
+
+## Which Pools are upgraded
+
+The release upgrades five Pool Managers from v4.0.0 to v5.0.0 and their queue Withdrawal Managers from v2.0.0 to v2.0.1:
+
+* syrupUSDC
+* syrupUSDT
+* syrupUSDG
+* Secured Lending USDC
+* Secured Lending 2 USDC
+
+Every other mainnet Pool stays on its current Pool Manager implementation. There is no forced migration. A non-upgraded Pool keeps its cyclical withdrawal manager, fixed-term loans and cover contract, and the compatibility tests in the release repository exercise deposits, redemptions and loan actions on those Pools after the upgrade. The step-by-step procedure is under [Procedure](#procedure) below.
+
+## Audits
+
+Sherlock and Cantina audited the release. The reports are listed under [Security](../security/security.md#november-2026-release).
+
+## Addresses
+
+The November 2026 release contracts are not yet deployed to mainnet. Addresses will be published on [Deployed Contracts](../protocol-overview/smart-contract-addresses.md) once the procedure has run.
 
 ## Actors
 
@@ -38,7 +100,7 @@ flowchart TD
 
 **Actor: Deployer**
 
-The script deploys, in order: the `MapleGlobals` implementation, the Pool Deployer and Strategy Deployer, the Pool Manager implementation, initializer and migrator, the queue Withdrawal Manager implementation and initializer, then the factory, implementation and initializer for the Strategy Manager, Aave V3 Strategy, Sky Strategy and Allocation Strategy, and finally the Liquidity Router. Factories, deployers and the router take the existing `MapleGlobals` proxy address as their only constructor argument. The existing `MaplePoolManagerFactory` and `MapleWithdrawalManagerFactory` are reused. The full contract list with versions is on [November 2026 Release: What Changed](november-2026-release-what-changed.md).
+The script deploys, in order: the `MapleGlobals` implementation, the Pool Deployer and Strategy Deployer, the Pool Manager implementation, initializer and migrator, the queue Withdrawal Manager implementation and initializer, then the factory, implementation and initializer for the Strategy Manager, Aave V3 Strategy, Sky Strategy and Allocation Strategy, and finally the Liquidity Router. Factories, deployers and the router take the existing `MapleGlobals` proxy address as their only constructor argument. The existing `MaplePoolManagerFactory` and `MapleWithdrawalManagerFactory` are reused. The full contract list with versions is under [New contracts](#new-contracts) and [Upgraded contracts](#upgraded-contracts) above.
 
 ### 2. Configure Globals
 
@@ -94,7 +156,7 @@ The release deploys these Strategy Managers. The Aave V3 and Sky Strategy Manage
 **Actors: Security Admin, then Operational Admin**
 
 1. Confirm the prerequisites on the Fixed Term Loan Managers and legacy strategies still hold.
-2. Call `upgrade(500, "")` on the Pool Managers of syrupUSDC, syrupUSDT, syrupUSDG, Secured Lending USDC and Secured Lending 2 USDC. The factory runs `MaplePoolManagerMigratorV500`, which walks `strategyList` in reverse, keeps every strategy deployed from an `OT_LOAN_MANAGER_FACTORY`, requires zero AUM on anything from an `FT_LOAN_MANAGER_FACTORY`, and removes everything else, emitting `StrategyRemoved` for each. After the upgrade only the Open Term Loan Manager remains in `strategyList`. `totalAssets()` may fall by the dust left in the legacy strategies, and `unrealizedLosses()` is unchanged.
+2. Call `upgrade(500, "")` on the five Pool Managers listed under [Which Pools are upgraded](#which-pools-are-upgraded). The factory runs `MaplePoolManagerMigratorV500`, which walks `strategyList` in reverse, keeps every strategy deployed from an `OT_LOAN_MANAGER_FACTORY`, requires zero AUM on anything from an `FT_LOAN_MANAGER_FACTORY`, and removes everything else, emitting `StrategyRemoved` for each. After the upgrade only the Open Term Loan Manager remains in `strategyList`. `totalAssets()` may fall by the dust left in the legacy strategies, and `unrealizedLosses()` is unchanged.
 3. Call `upgrade(201, "")` on each of the five queue Withdrawal Managers. Only the implementation changes, and `totalShares()` is unchanged.
 4. The Operational Admin calls `setStrategyCap(openTermLoanManager, type(uint256).max)` on each of the five Pool Managers. The cap is zero after the upgrade, and `requestFunds()` reverts with `PM:RF:STRATEGY_CAP` above the cap, so without this call the Open Term Loan Manager cannot fund loans.
 
