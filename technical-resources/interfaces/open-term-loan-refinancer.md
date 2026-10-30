@@ -404,7 +404,7 @@ Function to increase the principal during a refinance.
 
 ### `setDelegateServiceFeeRate`
 
-Function to set the delegateServiceFeeRate during a refinance. The rate is denominated in 1e18 units.
+Function to set the delegateServiceFeeRate during a refinance. The rate is denominated in 1e6 units.
 
 ```solidity
     function setDelegateServiceFeeRate(
@@ -442,7 +442,7 @@ Function to set the gracePeriod during a refinance.
 
 ### `setInterestRate`
 
-Function to set the interestRate during a refinance. The interest rate is measured with 18 decimals of precision.
+Function to set the interestRate during a refinance. The interest rate is denominated in 1e6 units.
 
 ```solidity
     function setInterestRate(
@@ -539,7 +539,7 @@ Function to set the paymentInterval during a refinance. The interval is denomina
 
 ### `DelegateServiceFeeRateSet`
 
-The value for the service fee rate for the PoolDelegate (1e18 units).
+The value for the service fee rate for the PoolDelegate (1e6 units).
 
 ```solidity
     event DelegateServiceFeeRateSet(

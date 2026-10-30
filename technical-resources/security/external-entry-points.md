@@ -33,6 +33,15 @@ The Pool Permission Manager checks every function below except the allowance fun
 
 * `makePayment`
 
+### SyrupRouter
+
+`deposit` and `depositWithPermit` check the caller's `P:deposit` permission in the Pool Permission Manager. `authorizeAndDeposit` and `authorizeAndDepositWithPermit` first set the caller's bitmap from a signature by a Permission Admin.
+
+* `authorizeAndDeposit`
+* `authorizeAndDepositWithPermit`
+* `deposit`
+* `depositWithPermit`
+
 ### Globals
 
 * `scheduleCall` - Although publicly callable, only Pool Delegate upgrades on the Withdrawal Manager and Open Term Loan Manager check for a scheduled call.
@@ -260,6 +269,10 @@ The PoolManager, WithdrawalManager, StrategyManager, OpenTermLoan, OpenTermLoanM
 **Deployer Permissioned Functions** (callers allowed by `canDeploy` in Globals)
 
 * `createInstance`
+
+**Instance Functions** (called by the instance being upgraded, whose own `upgrade` function controls access)
+
+* `upgradeInstance`
 
 ### StrategyManager
 

@@ -28,6 +28,36 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 
 **Control.** Only addresses Maple marks can withdraw manually, and Maple uses it internally and for integrations it supports. Maple can decide how to handle a request which is blocking the queue by removing it with `removeRequest()`, or leaving it in place.
 
+### The Pool does not implement every ERC-4626 function as the standard describes
+
+**Behaviour.** The Pool exposes the ERC-4626 interface, but withdrawals run through the Withdrawal Manager queue. It differs from the standard in these ways:
+
+* `withdraw()` reverts with `PM:PW:NOT_ENABLED`. The Pool's `requestWithdraw()` also reverts, with `PM:RW:NOT_ENABLED`.
+* `maxWithdraw()` and `previewWithdraw()` always return zero.
+* `redeem()` only works for shares the queue has already processed for a Lender marked for manual withdrawal.
+* `maxRedeem()` returns that Lender's `manualSharesAvailable`, and zero for everyone else.
+* `previewRedeem()` returns zero unless the caller has manual shares available, and reverts with `WM:PR:TOO_MANY_SHARES` when the shares exceed them. The standard says a preview must not depend on per-user limits.
+
+**Risk.** An integration that calls `withdraw()`, reads `maxWithdraw()` or `maxRedeem()` to size an exit, or expects `previewRedeem()` to quote any amount can revert or read zero where it expects a value.
+
+**Control.** This is by design. Lenders exit with `requestRedeem()` and wait for the queue. `convertToExitAssets()` gives the current exit price for any amount of shares, and `requestsByOwner()` on the Withdrawal Manager lists a Lender's queued requests. See [Pool](../pools/pools.md) and [Withdrawal Manager](../pools/withdrawal-manager.md).
+
+### Redemptions are priced when processed and have no minimum output
+
+**Behaviour.** `requestRedeem()` escrows shares in the Withdrawal Manager and records no price and no minimum. When `processRedemptions()` reaches a request, `_calculateRedemption()` prices the shares at that moment on `totalAssets()` minus `unrealizedLosses()`, and the Pool transfers the result to the Lender. The Lender takes no action between the request and the payment.
+
+**Risk.** The exit price can change between the request and the payment. A Lender who queued before an impairment can receive less than the request was worth when made, and cannot set a floor.
+
+**Control.** This is by design, so that the queue is processed in order without requests failing one by one. `convertToExitAssets()` is public, so a Lender can read the current price before the queue reaches them, and a Lender can cancel an unprocessed request with `removeShares()` on the Pool or `removeSharesById()` on the Withdrawal Manager, unless the Pool restricts those functions as described in [Redeeming from an impaired Strategy Manager realises the loss](#redeeming-from-an-impaired-strategy-manager-realises-the-loss).
+
+### A blacklisted Lender holds up the withdrawal queue
+
+**Behaviour.** `processRedemptions()` processes requests in order. For each request it calls `redeem()` on the Pool, which transfers the funds asset to the request owner. USDC and USDT reject transfers to a blacklisted address, so the transfer reverts and the whole `processRedemptions()` call reverts with it.
+
+**Risk.** Availability only. While a blacklisted Lender's request is at the head of the queue, no request behind it can be processed.
+
+**Control.** The Pool Delegate, the Operational Admin or a Withdrawal Redeemer removes the request with `removeRequest()`, which returns the shares to the Lender and lets the queue continue. Maple runs KYC checks on Lenders in permissioned Pools, so this is a low likelihood event. See [Withdrawal Manager](../pools/withdrawal-manager.md).
+
 ## Permissions
 
 ### Pool permissions check the Lender, not the caller
@@ -71,6 +101,14 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 **Risk.** An address removed as a Borrower between the two calls can still accept and take over the loan.
 
 **Control.** Maple vets every Borrower through due diligence before registering it, and accepts this risk.
+
+### Anyone can make a payment on an open-term loan
+
+**Behaviour.** `makePayment()` has no caller check. It pulls the payment from `msg.sender` with `transferFrom()` and sends it to the Loan Manager, so any address that holds the funds asset and has set an allowance can pay on a loan.
+
+**Risk.** A third party can pay interest to clear a call or an impairment without the Borrower's involvement. The Pool receives the payment either way, so no funds are at risk.
+
+**Control.** This is intended, so that a Borrower can pay from any address. Every payment is credited to the loan, and the Pool Delegate calls the full principal before impairing a loan, so a payment that clears an impairment also returns the principal. See [Open Term Loan](../strategies/open-term-loans/open-term-loan.md).
 
 ## Strategy Managers
 
@@ -189,6 +227,14 @@ Some protocol behaviours are handled by operating procedure rather than by code.
 **Risk.** An integration compiled against an earlier interface can revert when it calls a function whose signature has changed.
 
 **Control.** Only the Governor can register an implementation or enable an upgrade path, and the Governor is the [Governor Timelock](../singletons/governor-timelock.md). Each upgrade is public for the timelock delay before it executes, so integrators can review it and adapt. Each integrator is responsible for its own contracts.
+
+### Not all pools need to be upgraded during a release
+
+**Behaviour.** If a pool is required to stay on a prior release version or is being deprecated Maple may choose to not upgrade it as part of a release. 
+
+**Risk.** Integrators may need to support two versions if functionality or interfaces differer between releases. 
+
+**Control.** This is intentional. Maple does not upgrade these Pools. Maple ensures that the withdrawal manager keeps processing withdrawals on each of them so Lenders can request and redeem their shares. The release upgrade tests check that a Lender can deposit, request a redemption and redeem on each of these Pools after the upgrade.
 
 ### Governor Timelock token withdrawals are not delayed
 

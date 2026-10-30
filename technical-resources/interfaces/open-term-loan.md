@@ -463,7 +463,7 @@ The address of the implementation contract being proxied.
 
 ### `interestRate`
 
-The annualized interest rate (APR), in units of 1e18, (i.e. 1% is 0.01e18).
+The annualized interest rate (APR), in units of 1e6, (i.e. 1% is 0.01e6).
 
 ```solidity
     function interestRate()

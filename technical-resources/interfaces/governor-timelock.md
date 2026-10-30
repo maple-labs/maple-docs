@@ -462,7 +462,7 @@ Sets the function timelock parameters
 
 ### `setPendingTokenWithdrawer`
 
-Sets the pending token withdrawer. Only the token withdrawer can set the pending token withdrawer.
+Sets the pending token withdrawer. Only an address with the `ROLE_ADMIN` role can set the pending token withdrawer.
 
 ```solidity
     function setPendingTokenWithdrawer(
