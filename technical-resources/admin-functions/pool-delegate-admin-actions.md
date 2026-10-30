@@ -26,7 +26,7 @@ The Pool Delegate cannot call `upgrade` on the Pool Manager. That is the Securit
 * `impairLoan`
 * `removeLoanImpairment` (only if the Governor did not make the impairment)
 
-The Loan Manager forwards `proposeNewTerms`, `rejectNewTerms`, `callPrincipal` and `removeCall` to the Open Term Loan, which accepts them only from its lender.
+The Loan Manager forwards `proposeNewTerms`, `rejectNewTerms`, `callPrincipal` and `removeCall` to the Open Term Loan, which accepts them only from its lender. The Borrower can also call `rejectNewTerms` on the Open Term Loan directly.
 
 ## Strategy Manager
 
