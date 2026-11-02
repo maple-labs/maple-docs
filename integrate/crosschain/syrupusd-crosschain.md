@@ -49,6 +49,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% tab title="Arc" %}
 <table><thead><tr><th width="230.33941650390625">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.arc.io/token/0x0dc6b79f3c3854e4d74514fd4d29be6c96beee39">0x0dC6b79F3c3854E4d74514fD4d29BE6c96Beee39</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.arc.io/token/0x6be14E674f741faa78da2fEcF00870C8B753A0BB">0x6be14E674f741faa78da2fEcF00870C8B753A0BB</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.arc.io/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://explorer.arc.io/address/0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4">0x46c87ABb22510DE522121BE80adbB0Ca05Fb14E4</a></td></tr></tbody></table>
 {% endtab %}
+
+{% tab title="X Layer" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://xlayerscan.com/address/0xD503b0581aa504e75B345bF4Cb8c359D8D1a042f">0xD503b0581aa504e75B345bF4Cb8c359D8D1a042f</a></td></tr><tr><td>Pool</td><td><a href="https://xlayerscan.com/address/0xF981950e47Ec3D060B524EcbdA80e146E6e36a90">0xF981950e47Ec3D060B524EcbdA80e146E6e36a90</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://xlayerscan.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDC/USDC)</td><td><a href="https://xlayerscan.com/address/0x04c00259887Cc94764DF190c8D3663c765618204">0x04c00259887Cc94764DF190c8D3663c765618204</a></td></tr></tbody></table>
+{% endtab %}
 {% endtabs %}
 
 ### syrupUSDT
@@ -69,6 +73,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% tab title="Ink" %}
 <table><thead><tr><th width="229.51220703125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0x8A76fe7fA6da27f85a626c5C53730B38D13603d7">0x8A76fe7fA6da27f85a626c5C53730B38D13603d7</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x543164a51401a468B6Fee3F7db27a30871448ff5">0x543164a51401a468B6Fee3F7db27a30871448ff5</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.inkonchain.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDT/USDT)</td><td><a href="https://explorer.inkonchain.com/address/0x8B4EF9c2B61fdfd0c45d9897C923822aEfe10B85">0x8B4EF9c2B61fdfd0c45d9897C923822aEfe10B85</a></td></tr></tbody></table>
 {% endtab %}
+
+{% tab title="X Layer" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://xlayerscan.com/address/0xD7f1eB70a6A471548a2fab5e0Af5Eb8CB289D547">0xD7f1eB70a6A471548a2fab5e0Af5Eb8CB289D547</a></td></tr><tr><td>Pool</td><td><a href="https://xlayerscan.com/address/0xde6969b8e1DC5a72E29232335B79B618163cba86">0xde6969b8e1DC5a72E29232335B79B618163cba86</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://xlayerscan.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDT/USDT)</td><td><a href="https://xlayerscan.com/address/0x224b4E0f7Ea4CbCB0Bf8c402173c9F1fE8824602">0x224b4E0f7Ea4CbCB0Bf8c402173c9F1fE8824602</a></td></tr></tbody></table>
+{% endtab %}
 {% endtabs %}
 
 ### syrupUSDG
@@ -88,6 +96,10 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 
 {% tab title="Ink" %}
 <table><thead><tr><th width="229.98095703125">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://explorer.inkonchain.com/address/0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018">0xeBE9ed66eFe0948D0c1B72b0157Fc17733667018</a></td></tr><tr><td>Pool</td><td><a href="https://explorer.inkonchain.com/address/0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F">0x376d6f0e7718B6F5642D92F13ca516c8B4f5A91F</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://explorer.inkonchain.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://explorer.inkonchain.com/address/0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35">0xbc9E6Fa14945C6f486d17e0aF4f982d63310Ee35</a></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="X Layer" %}
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://xlayerscan.com/address/0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf">0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf</a></td></tr><tr><td>Pool</td><td><a href="https://xlayerscan.com/address/0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED">0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://xlayerscan.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
