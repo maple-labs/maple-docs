@@ -18,6 +18,7 @@
   * [GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet)
   * [SDK](https://docs.maple.finance/technical-resources/sdk)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
+  * [Tracking Strategy Allocations](integrate/technical-resources/tracking-strategy-allocations.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
 
 ## syrupUSDC/USDT/USDG for Lenders
