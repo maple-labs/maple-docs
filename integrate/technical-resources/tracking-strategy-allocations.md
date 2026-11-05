@@ -20,12 +20,12 @@ AUM breaks down into four parts:
 
 `AUM` = `loansUsd` + `collateralUsd` + `assetsUsd` + `assetsInStrategiesUsd`
 
-| Component | What it is | Where to get it |
-| --- | --- | --- |
-| `loansUsd` | Principal outstanding on active loans | `syrupGlobals.aumTimeSeries`, or `openTermLoans` / `nativeLoans` per loan |
-| `collateralUsd` | USD value of collateral posted against those loans | `syrupGlobals.aumTimeSeries`, or `poolCollaterals` per Pool |
-| `assetsUsd` | Cash held by the Pools | `syrupGlobals.aumTimeSeries`, or `poolV2.assets` per Pool |
-| `assetsInStrategiesUsd` | Capital the Pools have allocated to strategies | `syrupGlobals.aumTimeSeries`, or the sum of `currentValue` over a Pool's strategy positions |
+| Component               | What it is                                         | Where to get it                                                                             |
+| ----------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `loansUsd`              | Principal outstanding on active loans              | `syrupGlobals.aumTimeSeries`, or `openTermLoans` / `nativeLoans` per loan                   |
+| `collateralUsd`         | USD value of collateral posted against those loans | `syrupGlobals.aumTimeSeries`, or `poolCollaterals` per Pool                                 |
+| `assetsUsd`             | Cash held by the Pools                             | `syrupGlobals.aumTimeSeries`, or `poolV2.assets` per Pool                                   |
+| `assetsInStrategiesUsd` | Capital the Pools have allocated to strategies     | `syrupGlobals.aumTimeSeries`, or the sum of `currentValue` over a Pool's strategy positions |
 
 The per-strategy and per-Pool detail behind `assetsInStrategiesUsd` is described below.
 
@@ -42,14 +42,14 @@ For how the contracts work, see [How Pools Allocate Capital](../../technical-res
 
 All queries run against the public Maple GraphQL API at `https://api.maple.finance/v2/graphql` and need no authentication. Addresses sent to the API must be lowercase.
 
-| Pool | `poolId` |
-| --- | --- |
+| Pool      | `poolId`                                     |
+| --------- | -------------------------------------------- |
 | syrupUSDC | `0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b` |
 | syrupUSDT | `0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d` |
 | syrupUSDG | `0x87b65c4aaffa76881f9e96f3e7ed945ddfc3cd7a` |
 
 {% hint style="warning" %}
-Example responses on this page are illustrative. Values, positions and strategy states will differ from what the API returns.
+Example responses on this page are illustrative. Values, positions and strategy states will differ.
 {% endhint %}
 
 ### AUM breakdown, including strategies
@@ -386,18 +386,18 @@ The figures are illustrative.
 
 ## How yield shows up
 
-* **Allocation strategies** realize yield in steps through `realizeYield` transactions. `amount` is gross of `delegateFee` and `protocolFee`. The net yield vests linearly into the strategy's value until `allocationStrategy.yieldDeadline`. See [Allocation Strategy](../../technical-resources/strategies/allocation-strategy/README.md).
-* **Aave V3 and Sky strategies** accrue yield continuously. Measure it from the change in `currentValue` over time. See [Aave V3 Strategy](../../technical-resources/strategies/aave-v3-strategy/README.md) and [Sky Strategy](../../technical-resources/strategies/sky-strategy/README.md).
+* **Allocation strategies** realize yield in steps through `realizeYield` transactions. `amount` is gross of `delegateFee` and `protocolFee`. The net yield vests linearly into the strategy's value until `allocationStrategy.yieldDeadline`. See [Allocation Strategy](../../technical-resources/strategies/allocation-strategy/).
+* **Aave V3 and Sky strategies** accrue yield continuously. Measure it from the change in `currentValue` over time. See [Aave V3 Strategy](../../technical-resources/strategies/aave-v3-strategy/) and [Sky Strategy](../../technical-resources/strategies/sky-strategy/).
 
 ## Units and parsing
 
-| Field | Units | Example raw value | Parsed value |
-| --- | --- | --- | --- |
-| `currentValue`, `depositedAssets`, `withdrawnAssets`, caps, `amount` | Pool asset decimals (`fundsAsset.decimals`, or a transaction's `decimals`) | `1000000000` (USDC, 6 decimals) | 1,000 USDC |
-| Transaction `value` | USD, 6 decimals | `1000000000` | $1,000 |
-| `delegateFeeRate`, `protocolFeeRate` | 6 decimals, `1000000` = 100% | `100000` | 10% |
-| `aumTimeSeries` USD fields | USD, 8 decimals | `100000000000` | $1,000 |
-| `timestamp`, `yieldDeadline` | Unix seconds | `1794268800` | Tue, 10 Nov 2026 |
+| Field                                                                | Units                                                                      | Example raw value               | Parsed value     |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------- | ---------------- |
+| `currentValue`, `depositedAssets`, `withdrawnAssets`, caps, `amount` | Pool asset decimals (`fundsAsset.decimals`, or a transaction's `decimals`) | `1000000000` (USDC, 6 decimals) | 1,000 USDC       |
+| Transaction `value`                                                  | USD, 6 decimals                                                            | `1000000000`                    | $1,000           |
+| `delegateFeeRate`, `protocolFeeRate`                                 | 6 decimals, `1000000` = 100%                                               | `100000`                        | 10%              |
+| `aumTimeSeries` USD fields                                           | USD, 8 decimals                                                            | `100000000000`                  | $1,000           |
+| `timestamp`, `yieldDeadline`                                         | Unix seconds                                                               | `1794268800`                    | Tue, 10 Nov 2026 |
 
 ## Caveats
 
@@ -407,7 +407,7 @@ The figures are illustrative.
 
 ## Contracts and source code
 
-* [Strategies](../../technical-resources/strategies/README.md) explains each contract, starting with [How Pools Allocate Capital](../../technical-resources/strategies/how-pools-allocate-capital.md).
+* [Strategies](../../technical-resources/strategies/) explains each contract, starting with [How Pools Allocate Capital](../../technical-resources/strategies/how-pools-allocate-capital.md).
 * [Contract Addresses](../../technical-resources/protocol-overview/smart-contract-addresses.md) lists the deployed Strategy Manager and strategy contracts.
 * [November 2026 Release](../../technical-resources/releases/november-2026-release-deployment-and-upgrade.md) covers the release that introduced shared strategies, and [Audits and Security Practices](../../technical-resources/security/security.md) lists its audits.
 * The full schema is in the [Maple GraphQL API](https://studio.apollographql.com/public/maple-api/home?variant=mainnet) reference, which also has these queries saved in its "Modular Strategies" collection.
