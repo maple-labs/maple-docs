@@ -295,13 +295,15 @@ Submit a withdrawal request to the pool.
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```solidity
-interface IPool { function requestRedeem(uint256 shares, address receiver) external returns (uint256); }
+interface IPool { function requestRedeem(uint256 shares, address owner) external returns (uint256); }
 
-function requestWithdrawal(address pool, uint256 shares, address receiver) external {
-    IPool(pool).requestRedeem(shares, receiver);
+function requestWithdrawal(address pool, uint256 shares, address owner) external {
+    IPool(pool).requestRedeem(shares, owner);
 }
 ```
 {% endcode %}
+
+The second argument is the owner of the shares, not a receiver. When the request is processed, the assets are sent to the owner.
 
 Withdrawals are processed automatically by Maple. If there is sufficient liquidity in the pool, the withdrawal will be processed within a few minutes. Expected processing time is typically less than 2 days, but it can take up to 30 days depending on available liquidity.
 
