@@ -711,7 +711,7 @@ After calculating `sharesToRedeem` or fetching `availableShares`, call the `requ
 ```solidity
 function requestRedeem(
 	uint256 shares,   // Shares to redeem (from Step 1 or Step 2)
-	address receiver  // Address to receive the assets
+	address owner     // Owner of the shares, who also receives the assets
 )
 ```
 {% endcode %}
