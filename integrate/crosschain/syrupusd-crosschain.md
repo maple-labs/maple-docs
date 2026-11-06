@@ -99,7 +99,7 @@ _Note: syrupUSDC on Tempo is a_ [_TIP-20 token_](https://docs.tempo.xyz/protocol
 {% endtab %}
 
 {% tab title="X Layer" %}
-<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://xlayerscan.com/address/0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf">0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf</a></td></tr><tr><td>Pool</td><td><a href="https://xlayerscan.com/address/0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED">0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://xlayerscan.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr></tbody></table>
+<table><thead><tr><th width="229.8880615234375">Type</th><th>Address</th></tr></thead><tbody><tr><td>Token</td><td><a href="https://xlayerscan.com/address/0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf">0x2fD3eb40826fd396d6Fc24c2dCA83e5f56828faf</a></td></tr><tr><td>Pool</td><td><a href="https://xlayerscan.com/address/0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED">0xCbC13Bb13b81d03d96B5d6410E5975f68cBF54ED</a></td></tr><tr><td>Token Admin (Timelock)</td><td><a href="https://xlayerscan.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b">0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b</a></td></tr><tr><td>Price Feed (syrupUSDG/USDG)</td><td><a href="https://xlayerscan.com/address/0xa5EfE11AF21Aea9f99876188Bf2D5d1A42132B49">0xa5EfE11AF21Aea9f99876188Bf2D5d1A42132B49</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
