@@ -124,7 +124,7 @@ query Strategies {
     delegateFeeRate       # 6 decimals e.g. 100000 = 10% of yield
     protocolFeeRate       # 6 decimals
     strategyLiquidityCap  # in fundsAsset decimals
-    impairedAssets        # unrealized losses under impairment, not yet written off
+    impairedAssets        # impaired, not yet written off
     allocationStrategy {
       metadata            # onchain JSON e.g. {"category":"U.S. Treasuries"}
       yieldDeadline       # unix seconds; realized net yield vests linearly until then
@@ -402,11 +402,11 @@ The figures are illustrative.
 
 ## Caveats
 
-* **Each strategy holds a small seed that belongs to no Pool.** At setup a strategy is funded with a bootstrap deposit, `1e6` base units (1 token) for the current strategies, which can never be redeemed. It appears as a `fund` transaction whose `pool` is null. No position includes it, so it counts toward no Pool's AUM. See [Bootstrap deposit](../../technical-resources/strategies/strategy-manager.md#bootstrap-deposit).
+* **Each strategy holds a bootstrap deposit that belongs to no Pool.** The deployer seeded each current strategy with `1e6` base units (1 token), which no one can redeem. The deposit appears as a `fund` transaction whose `pool` is null. No position includes it, so it is in no Pool's AUM. See [Bootstrap deposit](../../technical-resources/strategies/strategy-manager.md#bootstrap-deposit).
 * **`currentValue` is always live.** It returns the latest value and ignores the `block` argument. For history, use `aumTimeSeries` or store snapshots.
-* **An impairment is an unrealized loss; a recognized loss is a write-off.** The two show in different fields:
-  * An impairment marks part of a strategy's assets as a likely loss without writing it off, the same way for every strategy type. The Strategy Manager's `impairedAssets` rises and its `state` becomes `Impaired`. Each position shows its share in `unrealizedLosses`. Removing the impairment reverses all three.
-  * A recognized loss is permanent. It appears as a `recognizeLoss` row in `strategyTxes` and lowers `currentValue`. When an Aave V3 or Sky strategy recognizes a loss, it writes off the whole position: `impairedAssets` and `unrealizedLosses` return to 0, and `state` stays `Impaired`.
+* **An impairment is an unrealized loss; a recognized loss is a write-off.**
+  * An impairment raises the Strategy Manager's `impairedAssets`, sets its `state` to `Impaired`, and shows each position's share in `unrealizedLosses`. It works the same for every strategy type, and removing it reverses all three.
+  * A recognized loss is permanent. It appears as a `recognizeLoss` row in `strategyTxes` and lowers `currentValue`. An Aave V3 or Sky strategy writes off the whole position, so `impairedAssets` and `unrealizedLosses` return to 0 while `state` stays `Impaired`.
 
 ## Contracts and source code
 
