@@ -23,7 +23,7 @@ AUM breaks down into four parts:
 | Component               | What it is                                         | Where to get it                                                                             |
 | ----------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `loansUsd`              | Principal outstanding on active loans              | `syrupGlobals.aumTimeSeries`, or `openTermLoans` / `nativeLoans` per loan                   |
-| `collateralUsd`         | USD value of collateral posted against those loans | `syrupGlobals.aumTimeSeries`, or `poolCollaterals` per Pool                                 |
+| `collateralUsd`         | USD value of collateral posted against those loans | `syrupGlobals.aumTimeSeries`, or `poolV2.poolMeta.poolCollaterals` per Pool                 |
 | `assetsUsd`             | Cash held by the Pools                             | `syrupGlobals.aumTimeSeries`, or `poolV2.assets` per Pool                                   |
 | `assetsInStrategiesUsd` | Capital the Pools have allocated to strategies     | `syrupGlobals.aumTimeSeries`, or the sum of `currentValue` over a Pool's strategy positions |
 
@@ -124,7 +124,7 @@ query Strategies {
     delegateFeeRate       # 6 decimals e.g. 100000 = 10% of yield
     protocolFeeRate       # 6 decimals
     strategyLiquidityCap  # in fundsAsset decimals
-    impairedAssets        # Aave V3 and Sky losses show here
+    impairedAssets        # impaired amount; on Allocation strategies it can still include written-off losses
     allocationStrategy {
       metadata            # onchain JSON e.g. {"category":"U.S. Treasuries"}
       yieldDeadline       # unix seconds; realized net yield vests linearly until then
@@ -341,7 +341,7 @@ Variables:
   "data": {
     "strategyManagerTxes": [
       {
-        "id": "0x9f1c…-12",
+        "id": "0xe8c04874b1332a95ba15961c5e4a13f28ba65c3c-12",
         "type": "fund",
         "pool": {
           "id": "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
@@ -358,7 +358,7 @@ Variables:
     ],
     "strategyTxes": [
       {
-        "id": "0x4b7e…-7",
+        "id": "0x973a4d8605592525f5029c3ab989304a186561df-7",
         "type": "realizeYield",
         "amount": "312500000000",
         "delegateFee": "0",
@@ -397,13 +397,16 @@ The figures are illustrative.
 | Transaction `value`                                                  | USD, 6 decimals                                                            | `1000000000`                    | $1,000           |
 | `delegateFeeRate`, `protocolFeeRate`                                 | 6 decimals, `1000000` = 100%                                               | `100000`                        | 10%              |
 | `aumTimeSeries` USD fields                                           | USD, 8 decimals                                                            | `100000000000`                  | $1,000           |
+| `poolCollaterals` `assetValueUsd`                                    | USD, 6 decimals                                                            | `1000000000`                    | $1,000           |
 | `timestamp`, `yieldDeadline`                                         | Unix seconds                                                               | `1794268800`                    | Tue, 10 Nov 2026 |
 
 ## Caveats
 
-* **Strategy AUM sits slightly below onchain AUM.** A strategy's AUM is the sum of `currentValue` over its positions. Each strategy also holds bootstrap shares worth `1e6` base units (1 token) that belong to no Pool. They appear as a `fund` transaction whose `pool` is null.
+* **Each strategy holds a bootstrap deposit that belongs to no Pool.** The deployer seeded each current strategy with `1e6` base units (1 token), which no one can redeem. The deposit appears as a `fund` transaction whose `pool` is null. No position includes it, so it is in no Pool's AUM. See [Bootstrap deposit](../../technical-resources/strategies/strategy-manager.md#bootstrap-deposit).
 * **`currentValue` is always live.** It returns the latest value and ignores the `block` argument. For history, use `aumTimeSeries` or store snapshots.
-* **Losses show in two places.** Allocation strategy losses show in a position's `unrealizedLosses`. Aave V3 and Sky losses show in the Strategy Manager's `impairedAssets` and `state`, not in `unrealizedLosses`.
+* **An impairment is an unrealized loss; a recognized loss is a write-off.**
+  * An impairment raises the Strategy Manager's `impairedAssets`, sets its `state` to `Impaired`, and shows each position's share in `unrealizedLosses`. It works the same for every strategy type, and removing it reverses all three.
+  * A recognized loss is permanent. It appears as a `recognizeLoss` row in `strategyTxes` and lowers `currentValue`. On an Allocation strategy it leaves `impairedAssets` unchanged, so until the impairment is removed the same loss can show in both the lower `currentValue` and `unrealizedLosses`. See [Impairments and Losses](../../technical-resources/strategies/allocation-strategy/impairments-and-losses.md). An Aave V3 or Sky strategy writes off the whole position, so `impairedAssets` and `unrealizedLosses` return to 0 while `state` stays `Impaired`.
 
 ## Contracts and source code
 
