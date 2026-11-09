@@ -7,7 +7,7 @@ description: Query each Pool's liquidity profile from the Maple GraphQL API.
 Each Maple Pool publishes a liquidity profile showing how much of its capital can return to the Pool, and how fast. It works in three parts:
 
 * **Sources.** The Pool's capital, from loans to strategy allocations, grouped into time windows from instant to 30+ days.
-* **Interest due.** Interest borrowers owe on active loans in each window, paid on top of the sources.
+* **Interest due.** Interest borrowers owe on active loans in each window, net of management fees, on top of the sources.
 * **Withdrawal queue.** Pending withdrawals, and how quickly withdrawals were processed over the last 12 months.
 
 The profile for each Pool is on the Maple transparency page, under **Liquidity**:
@@ -16,7 +16,7 @@ The profile for each Pool is on the Maple transparency page, under **Liquidity**
 * [syrupUSDT](https://maple.finance/transparency/products/syrupusdt)
 * [syrupUSDG](https://maple.finance/transparency/products/syrupusdg)
 
-The same data is available from the API through the `liquidity` field on a Pool. The transparency page reads this field, so the two always match.
+The same data is available from the API through the `liquidity` field on a Pool. The transparency page rebuilds from this field every 4 hours, so it can trail the API by a few hours.
 
 ## Query
 
@@ -29,7 +29,7 @@ The query runs against the public Maple GraphQL API at `https://api.maple.financ
 | syrupUSDG | `0x87b65c4aaffa76881f9e96f3e7ed945ddfc3cd7a` |
 
 {% hint style="info" %}
-This query can take up to around 30 seconds to respond due to the amount of data. We recommend caching the result and refreshing it periodically.
+This query can take up to around 1 minute to respond due to the amount of data. We recommend caching the result and refreshing it periodically.
 {% endhint %}
 
 ### One Pool's liquidity profile
@@ -49,7 +49,7 @@ query PoolLiquidity($poolId: ID!) {
         timing              # free-text timing for the row, e.g. "T+1 banking days"; null if none
         window              # instant, 24h, 3d, 7d, 30d or 30d+
         windowOrder         # 1 (instant) to 6 (30d+)
-        loanCount
+        loanCount           # loans or positions behind the row; null for idle cash
         amount              # in the Pool asset's decimals
         cumulativeAmount    # running total up to and including this row
         pctOfTotalAssets    # fraction of totalAssets, 0 to 1
@@ -60,12 +60,12 @@ query PoolLiquidity($poolId: ID!) {
         window
         windowOrder
         loanCount
-        amount              # interest due on active loans within this window
+        amount              # net interest due in this window alone
         cumulativeAmount
       }
       withdrawalQueue {
         pendingAmount       # waiting to be processed, in the Pool asset's decimals
-        asOf                # unix seconds when the queue was last read
+        asOf                # unix seconds of the latest block reflected
         total               # withdrawals processed over the trailing 12 months
         medianMinutes       # median time to process a withdrawal
         withinMedian
@@ -209,7 +209,7 @@ Variables:
 }
 ```
 
-The response is shortened to the first five sources and the first two interest windows.
+The response is shortened to the first five sources and the first two interest windows. Values in a live response will differ.
 
 **Reading this example:** syrupUSDT holds 274.66M USDT (6 decimals).
 
@@ -259,8 +259,9 @@ query SyrupLiquidity {
 | `30d`     | 5             | <30 days                       |
 | `30d+`    | 6             | 30+ days                       |
 
-* **Loans** are grouped by days to their next call or maturity, such as `Loans · 8-30 days`. A loan row's `amount` is the Pool's share of the group.
-* **Interest due** is paid on top of deposits, so it adds to the amounts in `sources`.
+* **Loans** are grouped by days to their next call or maturity, such as `Loans · 8-30 days`.
+* **Row amounts** include accrued interest. Each `amount` is principal plus a share of the Pool's accrued interest, so the rows sum to `totalAssets` within a few units of rounding.
+* **Interest due** is paid on top of deposits, so it adds to the amounts in `sources`. It is net of management fees and runs until each loan's principal returns, on the date its source row uses. It excludes late interest and loans under $1,000 of principal.
 * **Amounts** are strings in the Pool asset's decimals: 6 for USDC, USDT and USDG. Percentages are fractions from 0 to 1.
 
 ## Getting help
