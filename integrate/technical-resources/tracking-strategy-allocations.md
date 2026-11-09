@@ -124,7 +124,7 @@ query Strategies {
     delegateFeeRate       # 6 decimals e.g. 100000 = 10% of yield
     protocolFeeRate       # 6 decimals
     strategyLiquidityCap  # in fundsAsset decimals
-    impairedAssets        # impaired, not yet written off
+    impairedAssets        # impaired amount; on Allocation strategies it can still include written-off losses
     allocationStrategy {
       metadata            # onchain JSON e.g. {"category":"U.S. Treasuries"}
       yieldDeadline       # unix seconds; realized net yield vests linearly until then
@@ -406,7 +406,7 @@ The figures are illustrative.
 * **`currentValue` is always live.** It returns the latest value and ignores the `block` argument. For history, use `aumTimeSeries` or store snapshots.
 * **An impairment is an unrealized loss; a recognized loss is a write-off.**
   * An impairment raises the Strategy Manager's `impairedAssets`, sets its `state` to `Impaired`, and shows each position's share in `unrealizedLosses`. It works the same for every strategy type, and removing it reverses all three.
-  * A recognized loss is permanent. It appears as a `recognizeLoss` row in `strategyTxes` and lowers `currentValue`. An Aave V3 or Sky strategy writes off the whole position, so `impairedAssets` and `unrealizedLosses` return to 0 while `state` stays `Impaired`.
+  * A recognized loss is permanent. It appears as a `recognizeLoss` row in `strategyTxes` and lowers `currentValue`. On an Allocation strategy it leaves `impairedAssets` unchanged, so until the impairment is removed the same loss can show in both the lower `currentValue` and `unrealizedLosses`. See [Impairments and Losses](../../technical-resources/strategies/allocation-strategy/impairments-and-losses.md). An Aave V3 or Sky strategy writes off the whole position, so `impairedAssets` and `unrealizedLosses` return to 0 while `state` stays `Impaired`.
 
 ## Contracts and source code
 
