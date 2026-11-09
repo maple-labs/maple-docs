@@ -42,7 +42,7 @@ For how the contracts work, see [How Pools Allocate Capital](../../technical-res
 
 All queries run against the public Maple GraphQL API at `https://api.maple.finance/v2/graphql` and need no authentication. Addresses sent to the API must be lowercase.
 
-| Pool      | `poolId`                                     |
+| Pool      | **poolId**                                   |
 | --------- | -------------------------------------------- |
 | syrupUSDC | `0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b` |
 | syrupUSDT | `0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d` |
