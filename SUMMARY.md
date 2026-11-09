@@ -19,6 +19,7 @@
   * [SDK](https://docs.maple.finance/technical-resources/sdk)
   * [Collateral & Yield Disclosure](integrate/technical-resources/collateral-and-yield-disclosure.md)
   * [Tracking Strategy Allocations](integrate/technical-resources/tracking-strategy-allocations.md)
+  * [Tracking Liquidity](integrate/technical-resources/tracking-liquidity.md)
   * [Configure MCP Server](integrate/technical-resources/configure-mcp-server.md)
 
 ## syrupUSDC/USDT/USDG for Lenders
