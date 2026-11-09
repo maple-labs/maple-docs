@@ -16,7 +16,7 @@ The profile for each Pool is on the Maple transparency page, under **Liquidity**
 * [syrupUSDT](https://maple.finance/transparency/products/syrupusdt)
 * [syrupUSDG](https://maple.finance/transparency/products/syrupusdg)
 
-The same data is available from the API through the `liquidity` field on a Pool. The transparency page is built from this field every 4 hours, while the API returns the latest figures, so the two can differ by a few hours of activity.
+The same data is available from the API through the `liquidity` field on a Pool. The transparency page rebuilds from this field every 4 hours, so it can trail the API by a few hours.
 
 ## Query
 
@@ -60,12 +60,12 @@ query PoolLiquidity($poolId: ID!) {
         window
         windowOrder
         loanCount
-        amount              # net interest due on active loans within this window alone
+        amount              # net interest due in this window alone
         cumulativeAmount
       }
       withdrawalQueue {
         pendingAmount       # waiting to be processed, in the Pool asset's decimals
-        asOf                # unix seconds of the newest indexed block the figure reflects
+        asOf                # unix seconds of the latest block reflected
         total               # withdrawals processed over the trailing 12 months
         medianMinutes       # median time to process a withdrawal
         withinMedian
@@ -260,8 +260,8 @@ query SyrupLiquidity {
 | `30d+`    | 6             | 30+ days                       |
 
 * **Loans** are grouped by days to their next call or maturity, such as `Loans · 8-30 days`.
-* **Accrued interest** is included in the rows. Each row's `amount` is its principal plus its share of the Pool's accrued interest, so the rows add up to `totalAssets`, give or take a few units of rounding.
-* **Interest due** is paid on top of deposits, so it adds to the amounts in `sources`. It is net of management fees and runs to the date each loan's principal comes back, the same date its source row uses. Late interest on overdue payments and loans under $1,000 of principal are left out.
+* **Row amounts** include accrued interest. Each `amount` is principal plus a share of the Pool's accrued interest, so the rows sum to `totalAssets` within a few units of rounding.
+* **Interest due** is paid on top of deposits, so it adds to the amounts in `sources`. It is net of management fees and runs until each loan's principal returns, on the date its source row uses. It excludes late interest and loans under $1,000 of principal.
 * **Amounts** are strings in the Pool asset's decimals: 6 for USDC, USDT and USDG. Percentages are fractions from 0 to 1.
 
 ## Getting help
