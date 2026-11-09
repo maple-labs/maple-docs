@@ -7,7 +7,7 @@ description: Query each Pool's liquidity profile from the Maple GraphQL API.
 Each Maple Pool publishes a liquidity profile showing how much of its capital can return to the Pool, and how fast. It works in three parts:
 
 * **Sources.** The Pool's capital, from loans to strategy allocations, grouped into time windows from instant to 30+ days.
-* **Interest due.** Interest borrowers pay on active loans in each window, net of management fees, on top of the sources.
+* **Interest due.** Interest borrowers owe on active loans in each window, net of management fees, on top of the sources.
 * **Withdrawal queue.** Pending withdrawals, and how quickly withdrawals were processed over the last 12 months.
 
 The profile for each Pool is on the Maple transparency page, under **Liquidity**:
@@ -29,7 +29,7 @@ The query runs against the public Maple GraphQL API at `https://api.maple.financ
 | syrupUSDG | `0x87b65c4aaffa76881f9e96f3e7ed945ddfc3cd7a` |
 
 {% hint style="info" %}
-This query can take up to around 50 seconds to respond due to the amount of data. We recommend caching the result and refreshing it periodically.
+This query can take up to around 1 minute to respond due to the amount of data. We recommend caching the result and refreshing it periodically.
 {% endhint %}
 
 ### One Pool's liquidity profile
