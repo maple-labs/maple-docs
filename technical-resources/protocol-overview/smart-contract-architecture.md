@@ -2,7 +2,7 @@
 
 In this section, the architecture of the Maple protocol is outlined, including the rationale behind each decision.
 
-![Protocol Architecture](../../.gitbook/assets/SystemArchitecture.png)
+![Protocol Architecture](../../.gitbook/assets/SystemArchitectureNew.png)
 
 ## [Pool](../pools/pools.md)
 
