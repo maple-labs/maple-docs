@@ -1,6 +1,6 @@
 # November 2026 Release
 
-The November 2026 release replaces the one-pool-one-strategy model with shared strategies. A new Strategy Manager sits between Pools and an Underlying Strategy, so several Pool Managers can fund the same position and share its profit and loss in proportion to the shares they hold. This page lists what the release adds, upgrades and removes, which Pools it upgrades, and the procedure that deploys the contracts and upgrades those Pools. The procedure follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the `maple-core-v2-private` repository.
+The November 2026 release replaces the one-pool-one-strategy model with shared strategies. A new Strategy Manager sits between Pools and an Underlying Strategy, so several Pool Managers can fund the same position and share its profit and loss in proportion to the shares they hold. This page lists what the release adds, upgrades and removes, which Pools it upgrades, and the procedure that deploys the contracts and upgrades those Pools. The procedure follows the deployment script (`scripts/ModularReleaseDeployment.s.sol`) and the fork test that runs the full procedure against mainnet state (`tests/protocol-upgrade/modular-release/`) in the [`maple-core-v2`](https://github.com/maple-labs/maple-core-v2) repository.
 
 ## Summary
 
