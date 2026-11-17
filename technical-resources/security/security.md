@@ -87,8 +87,8 @@ The November 2026 release replaces the one-to-one link between a Maple Pool and 
 
 | Auditor  | Report Link |
 | -------- | ----------- |
-| Sherlock | [`2026-09 - Sherlock Report`](https://drive.google.com/file/d/1WOQ8uYCD2F_ylKTc_ZjKh9myoYPV28Lw/view?usp=sharing) |
-| Cantina| [`2026-10 - Cantina Report`](https://drive.google.com/file/d/1Cv1quA30NcqJFTo0JXCY9g7CNTZ47YMk/view?usp=sharing) |
+| Sherlock | [`2026-09 - Sherlock Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2026-november/Sherlock-Maple-Finance-Modular-Sep-2026.pdf) |
+| Cantina| [`2026-10 - Cantina Report`](https://github.com/maple-labs/maple-core-v2/blob/main/audits/2026-november/Cantina-Maple-Finance-Modular-Oct-2026.pdf) |
 
 
 
